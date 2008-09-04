@@ -1,0 +1,40 @@
+#!/usr/bin/perl -w
+use strict;
+use autodie;
+use constant DEBUG => 1;
+
+my $changes = shift;
+
+if (not $changes) {
+    $changes = "../Changes" if -f "../Changes";
+    $changes = "Changes"    if -f "Changes";
+}
+
+print "Chunking $changes\n" if DEBUG;
+
+open(my $changes_fh, '<', $changes);
+
+{
+    local $/ = "\n" . ("_" x 76) . "\n";
+
+    <$changes_fh>; # Discard header
+
+    my $old_date = "";
+    my $chunk_fh;
+
+    while (<$changes_fh>) {
+        my ($year, $month, $day) = m{(\d{4})/(\d{2})/(\d{2})};
+
+        # We only use YYYY-MM for dates, days are ignored
+
+        my $new_date = "$year-$month";
+
+        if ($new_date ne $old_date) {
+            open($chunk_fh, '>', "$new_date.txt");
+            $old_date = $new_date;
+            print STDERR "$new_date\n" if DEBUG;
+        }
+
+        print {$chunk_fh} $_;
+    }
+}
