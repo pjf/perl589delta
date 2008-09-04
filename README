@@ -19,12 +19,16 @@ The procedure for volunteering to take a chunk of work is:
     * Grab the latest copy of the repository.  With git you can
       use:
 
-        git clone .....
+        git clone git://github.com/pfenwick/perl589delta.git 
 
-      if you're working without git, you can download the master
+      If you've got your commit-bit already, you can use:
+
+        git clone git@github.com:pfenwick/perl589delta.git
+
+      If you're working without git, you can download the master
       branch files at:
 
-        http://...
+        http://github.com/pfenwick/perl589delta/tarball/master
 
     * Look at the Volunteers.txt file and select a free month.
       Send a note to pjf@cpan.org saying which month you're
