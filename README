@@ -1,0 +1,52 @@
+Welcome to the perl589delta project!
+
+This project exists to distribute the work involved with writing
+the perl589delta.pod file for the 5.8.9 release of Perl.
+
+Getting involved is easy.  You volunteer to handle a month's worth
+of changelog, and then write the relevant sections of the perldelta
+for those changes, or as much as you can given the time you
+have available.
+
+This project uses git for change control.  You don't have to use
+git to be a contributor, but it's encouraged.
+
+The procedure for volunteering to take a chunk of work is:
+
+    * If you want to work with the full git environment, register
+      for an account on http://github.com/ .
+
+    * Grab the latest copy of the repository.  With git you can
+      use:
+
+        git clone .....
+
+      if you're working without git, you can download the master
+      branch files at:
+
+        http://...
+
+    * Look at the Volunteers.txt file and select a free month.
+      Send a note to pjf@cpan.org saying which month you're
+      going to work on.  Paul will send you a commit bit, but
+      you can start work without it.
+
+    * Do all your work on the branch with your chunk number.  You
+      can switch to yur branch with:
+
+        git checkout 1970-01
+
+      Replace 1970-01 with your chunk ID.
+
+      If you're not using git, just make changes normally and
+      send patches to pjf@cpan.org, who will apply them to your
+      branch.
+
+    * Work on your branch, not on the master.  The master branch
+      is ONLY for completed chunks, and for shared resources such
+      as the Volunteers file and helper programs.
+
+    * When your chunk is COMPLETED, e-mail pjf@cpan.org to arrange
+      for it to be merged into the master branch.
+
+    * Feel warm and fuzzy about your contributions to Perl!
