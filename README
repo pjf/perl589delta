@@ -46,6 +46,11 @@ The procedure for volunteering to take a chunk of work is:
       send patches to pjf@cpan.org, who will apply them to your
       branch.
 
+    * The files in the split/ directory are the Changes file
+      already broken down by month.  You'll probably find them
+      much more useful than trying to work through the Changes
+      file itself.
+
     * Work on your branch, not on the master.  The master branch
       is ONLY for completed chunks, and for shared resources such
       as the Volunteers file and helper programs.
@@ -54,3 +59,17 @@ The procedure for volunteering to take a chunk of work is:
       for it to be merged into the master branch.
 
     * Feel warm and fuzzy about your contributions to Perl!
+
+= TOOLS =
+
+
+* bin/get-changes 
+
+Downloads the latest Changes file.  You probably won't need this,
+unless you're working on super recent chunks.
+
+* bin/split-changes
+
+Splits the changes file up by months and puts the results in the
+splits/ directory.  You probably won't need this either unless
+you're working on super recent chunks.
