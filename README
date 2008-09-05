@@ -3,9 +3,9 @@ Welcome to the perl589delta project!
 This project exists to distribute the work involved with writing
 the perl589delta.pod file for the 5.8.9 release of Perl.
 
-Getting involved is easy.  You volunteer to handle a month's worth
-of changelog, and then write the relevant sections of the perldelta
-for those changes, or as much as you can given the time you
+Getting involved is easy.  You volunteer to handle a month's worth of
+changelog (a chunk), and then write the relevant sections of the
+perldelta for those changes, or as much as you can given the time you
 have available.
 
 This project uses git for change control.  You don't have to use
