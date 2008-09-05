@@ -30,9 +30,9 @@ open(my $changes_fh, '<', $changes);
         my $new_date = "$year-$month";
 
         if ($new_date ne $old_date) {
-            open($chunk_fh, '>', "$new_date.txt");
+            open($chunk_fh, '>', "splits/$new_date.txt");
             $old_date = $new_date;
-            print STDERR "$new_date\n" if DEBUG;
+            print STDERR "splits/$new_date.txt\n" if DEBUG;
         }
 
         print {$chunk_fh} $_;
