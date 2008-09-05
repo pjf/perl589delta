@@ -1,0 +1,10 @@
+#!/usr/bin/perl -w
+use strict;
+use autodie qw(:all);
+
+system('wget http://mirrors.develooper.com/perl/APC/perl-5.8.x/Changes');
+
+if (-f "Changes.1") {
+    print "mv Changes.1 Changes\n";
+    rename("Changes.1","Changes");
+}
