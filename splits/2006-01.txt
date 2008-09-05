@@ -1,0 +1,16 @@
+[ 27029] By: nicholas				   on 2006/01/31  23:39:33
+	Log: lib/CPAN/SIGNATURE is supposed to be in the MANIFEST, and therefore
+	     the tarball.
+     Branch: maint-5.8/perl
+	   ! MANIFEST
+____________________________________________________________________________
+[ 27026] By: nicholas				   on 2006/01/31  16:25:24
+	Log: Break a leg.
+     Branch: maint-5.8/perl
+	   ! patchlevel.h
+____________________________________________________________________________
+[ 27025] By: nicholas				   on 2006/01/31  16:03:49
+	Log: Update Changes
+     Branch: maint-5.8/perl
+	   ! Changes patchlevel.h
+____________________________________________________________________________

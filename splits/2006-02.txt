@@ -1,0 +1,932 @@
+[ 27318] By: nicholas				   on 2006/02/24  17:07:53
+	Log: Integrate:
+	     [ 26990]
+	     Avoid using space to create 2 functions just to force mathoms to be
+	     linked. Instead, force the link via the perl interpreter structure
+	     via a function pointer that gets replaced at run time anyway.
+     Branch: maint-5.8/perl
+	  !> embed.fnc embed.h intrpvar.h mathoms.c perl.c proto.h
+____________________________________________________________________________
+[ 27317] By: nicholas				   on 2006/02/24  16:36:54
+	Log: Integrate:
+	     [ 26007]
+	     Merge pp_andassign, pp_orassign, and pp_dorassign into pp_and,
+	     pp_or, and pp_defined, respectively.
+	     
+	     [ 26008]
+	     Typos in opcode.pl this time.
+	     
+	     [ 26015]
+	     Allow passing of the full enum name into the tryAMAGICbin family of
+	     macros, to avoid needing C pre-processor string concatenation within
+	     the lowest level expansion.
+	     
+	     [ 26039]
+	     Merge pp_slt, pp_sgt and pp_sge into pp_sle. (The most commonly used
+	     of the 4. Not that any are that popular.)
+	     
+	     [ 26589]
+	     The two never used NOTYET switch ops can go.
+	     
+	     [ 27071]
+	     Silence a warning about "statement not reached" from the Sun C compiler.
+	     It was accurate - the conditional code used to give 2 return statements.
+	     
+	     [ 27082]
+	     I believe that mathoms have been completely TODOne.
+	     
+	     [ 27106]
+	     Move Perl_save_long, Perl_save_I16, Perl_save_I8, Perl_save_iv,
+	     Perl_save_nogv, Perl_save_list, Perl_save_destructor to mathoms.c
+	     Perl_save_svref can't actually move because it calls a static function.
+	     
+	     [ 27113]
+	     Optimise index so that if the big string is ISO-8859-1 but the little
+	     string is UTF-8, it tries to downgrade the little string, rather than
+	     upgrade the big string. For half-meg big strings this is a fourfold
+	     speed gain.
+	     
+	     [ 27116]
+	     Fix bug 38454 (rindex corrects for $[ on bytes rather than UTF-8)
+	     
+	     [ 27117]
+	     Some refactoring to converge pp_index and pp_rindex
+	     
+	     [ 27118]
+	     Merge pp_index and pp_rindex - we have another mathom.
+	     
+	     [ 27119]
+	     pp_hex can be implemented trivially by pp_oct, making pp_hex a mathom.
+	     
+	     [ 27121]
+	     pp_pop can be implemented by pp_shift.
+	     
+	     [ 27122]
+	     Create new macros AMG_CALLun_var, AMG_CALLun_var and tryAMAGICun_var
+	     which don't do the pre-processor string manipulation internally.
+	     
+	     [ 27123]
+	     Avoid gcc warning about possibly uninitialised variables.
+	     
+	     [ 27124]
+	     All the trancendental unary operators can be merged into PP_sin
+	     (cos, exp, log, sqrt)
+     Branch: maint-5.8/perl
+	   ! mathoms.c pp.c scope.c utf8.c
+	  !> opcode.h opcode.pl pod/perltodo.pod pp.h pp_ctl.c t/op/index.t
+____________________________________________________________________________
+[ 27316] By: nicholas				   on 2006/02/24  15:19:21
+	Log: Integrate:
+	     [ 26007]
+	     Merge pp_andassign, pp_orassign, and pp_dorassign into pp_and,
+	     pp_or, and pp_defined, respectively.
+	     
+	     [ 26008]
+	     Typos in opcode.pl this time.
+	     
+	     [ 26035]
+	     The rarely used lcfirst and ucfirst share almost all their code.
+	     Merge the two as pp_ucfirst.
+	     
+	     [ 26057]
+	     Don't declare a function inside another function
+	     
+	     [ 26058]
+	     Patch from Gisle to add NO_MATHOMS to the Compile-time options.
+	     
+	     [ 26077]
+	     Define PERL_DEFAULT_DO_EXEC3_IMPLEMENTATION earlier in perl.h
+	     (that is, before embed.h, that uses this symbol, is included)
+	     
+	     [ 26099]
+	     Subject: [PATCH] mathoms prototypes aren't prototypes
+	     From: Andy Lester <andy@petdance.com>
+	     Date: Fri, 11 Nov 2005 17:20:30 -0600
+	     Message-ID: <20051111232030.GA882@petdance.com>
+     Branch: maint-5.8/perl
+	   ! mathoms.c pp.c
+	  !> opcode.h opcode.pl perl.c perl.h pp_ctl.c pp_hot.c
+____________________________________________________________________________
+[ 27315] By: nicholas				   on 2006/02/24  14:55:44
+	Log: Integrate:
+	     [ 25983]
+	     The PERL_EFF_ACCESS_[RWX]_OK macros are all defined as triples, so
+	     can be refactored to a single platform dependent PERL_EFF_ACCESS macro
+	     with the other 3 implemented in terms of it.
+	     
+	     [ 25984]
+	     PERL_EFF_ACCESS_[RWX]_OK can go.
+	     
+	     [ 25986]
+	     ftrwrite, ftrexec, fteread, ftewrite and fteexec can all be merged
+	     with Perl_pp_ftrread().
+	     
+	     [ 25987]
+	     Oops. This new panic was meant to be added to the documented
+	     diagnostics.
+	     
+	     [ 25988]
+	     Meta-oops. Change 25987 was not the change you were looking for.
+	     
+	     [ 25989]
+	     Once more, with feeling.
+	     [Mmm, has someone been swapping the coffee for decaf?]
+	     [Actual cause - make sure the edited version of the file is in the
+	     correct directory]
+	     
+	     [ 25990]
+	     Merge msgsnd, msgrcv with Perl_pp_shmwrite().
+	     "Perfection is achieved not when there's nothing more to add,
+	     but when there's nothing left to remove" (Antoine de Saint-Exupéry)
+	     
+	     [ 25991]
+	     Subject: Re: Configure -Dno_mathoms
+	     From: gisle@ActiveState.com (Gisle Aas)
+	     Date: 01 Nov 2005 03:27:49 -0800
+	     Message-ID: <lrslug7glm.fsf@caliper.activestate.com>
+	     
+	     [ 25999]
+	     The remaining special logic in pp_syswrite can be moved into pp_send,
+	     which is actually already 50% syswrite.
+	     
+	     [ 26000]
+	     pp_semop can fit within Perl_pp_shmwrite().
+	     
+	     [ 26053]
+	     Subject: patch@26052 - compile rule for mathoms.c
+	     From: "John E. Malmberg" <wb8tyw@qsl.net>
+	     Date: Tue, 08 Nov 2005 23:09:03 -0500
+	     Message-ID: <4371765F.1000900@qsl.net>
+     Branch: maint-5.8/perl
+	  !> mathoms.c opcode.h opcode.pl perl.c pod/perldiag.pod pp_sys.c
+	  !> vms/descrip_mms.template
+____________________________________________________________________________
+[ 27314] By: nicholas				   on 2006/02/24  14:21:24
+	Log: Integrate:
+	     [ 25929]
+	     It appears that it's trivially easy to alias opcode functions in
+	     the opcode table. We should be able to get both a speed and size
+	     saving here. Time will tell how much.
+	     
+	     [ 25930]
+	     Try to preserve the lost opcode alias info in comments
+	     extent to change #25929
+	     
+	     [ 25937]
+	     Replace the 3 currently "unreachable" ops with a single op body
+	     unimplemented_op() that panics descriptively if ever reached.
+	     
+	     [ 25939]
+	     Simplify the implementation of the "unimplemented" message in the
+	     conditionally compiled ops.
+	     
+	     [ 25940]
+	     All the ops that are simply C<return some_other_op();> can be bypassed
+	     in the op dispatch table, and the bodies retired.
+	     
+	     [ 25958]
+	     Merge ftsize ftmtime ftatime ftctime into Perl_pp_ftis
+	     
+	     [ 25959]
+	     Correct error in 25958 for threaded builds.
+	     
+	     [ 25960]
+	     Avoid a pad panic by attempting to use dTARGET; in an op that didn't
+	     flag that it needed a target (OP_FTIS)
+	     
+	     [ 25961]
+	     Merge ftzero ftsock ftchr ftblk ftfile ftdir ftpipe into
+	     Perl_pp_ftrowned
+	     
+	     [ 25962]
+	     Move ftsuid ftsgid ftsvtx into Perl_pp_ftrowned.
+	     
+	     [ 25963]
+	     Move the conditonal compiles that report absence of kill and chown
+	     from pp_kill() and pp_chown() into apply().
+	     
+	     [ 25964]
+	     unlink chmod utime kill can be merged into Perl_pp_chown().
+	     
+	     [ 25968]
+	     Avoiding source code duplication for the lstat() on filehandle %s
+	     warning also makes the object code slightly smaller.
+	     
+	     [ 25972]
+	     Perl_pp_symlink and Perl_pp_link can be merged. The diff looks evil,
+	     but the actual finished code is not as bad as it seems.
+	     
+	     [ 25982]
+	     Subject: [PATCH] bad semicolon in pp_ftrowned
+	     From: Andy Lester <andy@petdance.com>
+	     Date: Fri, 4 Nov 2005 00:37:54 -0600
+	     Message-ID: <20051104063753.GA3863@petdance.com>
+	     
+	     [ 25997]
+	     Fix a Win32 linker error following change #25972
+     Branch: maint-5.8/perl
+	  !> doio.c mathoms.c opcode.h opcode.pl pod/perldiag.pod pp.c
+	  !> pp_ctl.c pp_sys.c
+____________________________________________________________________________
+[ 27310] By: nicholas				   on 2006/02/24  13:20:45
+	Log: Integrate:
+	     [ 25893]
+	     Replace gv_fetchmethod() with a macro to call gv_fetchmethod_autoload()
+	     with the extra TRUE argument.
+	     
+	     [ 25895]
+	     Replace hv_iternext() with a macro that calls hv_iternext_flags with
+	     an extra 0 argument. Move the old body to mathoms.c
+	     
+	     [ 25897]
+	     Replace hv_magic() with a macro to call sv_magic() directly. Move the
+	     old body to mathoms.c
+	     
+	     [ 25898]
+	     init_i18nl14n is a mathom.
+	     
+	     [ 25900]
+	     save_hints is a mathom.
+	     
+	     [ 25901]
+	     Functions that die aren't exactly well used code.
+	     (ck_retarget, oopsCV, pp_padany, pp_threadsv, pp_mapstart)
+	     
+	     [ 25903]
+	     Replace is_utf8_string_loc() with a macro that passes the extra 0
+	     argument to is_utf8_string_loc(). Correct the description of its
+	     parameters in its POD.
+	     
+	     [ 25905]
+	     Replace uvuni_to_utf8() with a macro that passes the extra 0 argument
+	     to uvuni_to_utf8_flags(). Move the old body to mathoms.c
+	     
+	     [ 25906]
+	     Given that sv_nosharing performs the same function as sv_nolocking
+	     and sv_unnolocking (ie sweet FA), we might as well use the 1 function
+	     to initialise all 3 variables, and elimiate the other two.
+	     For some reason all 3 are listed as being in the public API. Daft.
+	     
+	     [ 25907]
+	     Perl_is_utf8_* share a lot of common code. Pull that out into a new
+	     function S_is_utf8_common.
+	     
+	     [ 25909]
+	     is_utf8_alnum() and is_utf8_alnumc() can use is_utf8_common() too.
+	     
+	     [ 25910]
+	     const const bad bad.
+	     gcc bad bad too, because it didn't grumble one bit. (or two, for that
+	     matter).
+	     
+	     [ 25911]
+	     perlsio_binmode() is pretty much a mathom on UNIX platforms, but it is
+	     used on Cygwin, at least.
+	     
+	     [ 25916]
+	     is_utf8_string_loc() is now a macro, don't use its Perl_-prefixed form
+	     
+	     [ 25918]
+	     Fixed threaded builds following change 25916
+	     
+	     [ 25921]
+	     uvchr_to_utf8() and utf8n_to_uvchr() are mathoms on ASCII based
+	     systems, and not on EBCDIC, so some more thinking is going to be
+	     needed here.
+	     
+	     [ 25926]
+	     A more elegant way to deal with utf8n_to_uvchr() and utf8n_to_uvuni().
+	     
+	     [ 25946]
+	     This should clear up 'Perl_do_exec' undefined; warnings on win32
+	     
+	     [ 25947]
+	     This *really* should clear up Win32's Perl_do_exec undefined warnings
+     Branch: maint-5.8/perl
+	   ! global.sym mathoms.c proto.h utf8.c
+	  !> embed.fnc embed.h gv.c gv.h hv.c hv.h intrpvar.h locale.c op.c
+	  !> perl.h perlio.c pp.c pp_ctl.c pp_hot.c utf8.h util.c
+____________________________________________________________________________
+[ 27308] By: nicholas				   on 2006/02/24  12:11:35
+	Log: Integrate:
+	     [ 25883]
+	     sv_2pv_nolen, sv_2pvbyte_nolen and sv_2pvutf8_nolen can all be replaced
+	     with terse macros, and the function bodies retired.
+	     
+	     [ 25884]
+	     Add a new SMAGIC flag, to signal a call to SvSETMAGIC. Add it to
+	     sv_catpvn_flags and sv_catsv_flags, and then re-implement sv_catpvn_mg
+	     and sv_catsv_mg as calls to sv_catpvn_flags and sv_catsv_flags
+	     respectively.
+	     
+	     [ 25885]
+	     Replace sv_catsv_mg and sv_catpvn_mg, and move the obsolete bodies to
+	     mathoms.c
+	     
+	     [ 25886]
+	     Replace the body of the rarely used sv_setpviv_mg with a call to
+	     sv_setpviv followed by SvSETMAGIC.
+	     
+	     [ 25889]
+	     Replace do_open() with a macro to call do_openn() with the extra two
+	     0 paramters. Move the old body to mathoms.c.
+	     
+	     [ 25890]
+	     Replace do_exec() with a macro to call do_exec3() with the extra two
+	     0 arguments. Move the old body to mathoms.c
+	     
+	     [ 25891]
+	     Replace do_aexec() with a macro to call do_aexec5() with the two extra
+	     0 arguments. Move the old body to mathoms.c
+	     
+	     [ 25892]
+	     I think we have a winner. do_pipe hasn't been called since 4.036.
+	     Maybe we should just remove this appendix.
+	     
+	     [ 25896]
+	     Fix win32 breakage inadvertently introduced by 25889
+	     
+	     [ 25899]
+	     I infer that change 25891 as-is would break OS2. This should fix it.
+     Branch: maint-5.8/perl
+	   ! doio.c mathoms.c
+	  !> embed.fnc embed.h perl.h proto.h sv.c sv.h
+____________________________________________________________________________
+[ 27305] By: nicholas				   on 2006/02/24  11:35:40
+	Log: Integrate:
+	     [ 25867]
+	     Makefiles like tabs, not spaces.
+	     
+	     [ 25869]
+	     gv_fullname and gv_efullname are definately mathoms.
+	     
+	     [ 25871]
+	     gv_fullname3 and gv_efullname3 are definately mathoms. They even say so.
+	     
+	     [ 25872]
+	     Coverage stats say av_fake() is a mathom too.
+	     
+	     [ 25873]
+	     Additional mathoms from doio.c
+	     
+	     [ 25875]
+	     Change to use sv_force_normal_flags() directly, rather than calling
+	     sv_force_normal() to call sv_force_normal_flags().
+	     
+	     [ 25876]
+	     sv_taint() can easily be replaced by a macro.
+	     
+	     [ 25877]
+	     Oops, missed an sv_force_normal()
+	     
+	     [ 25878]
+	     Replace sv_unref with a macro that calls sv_unref_flags
+	     
+	     [ 25879]
+	     Replace sv_force_normal with a macro that calls sv_force_normal_flags.
+	     
+	     [ 25880]
+	     sv_utf8_upgrade declares itself to be a mathom, so off it goes.
+	     Remove duplicate declaration of Perl_sv_2uv
+	     
+	     [ 25882]
+	     All the private implementations of @foo for compilers that can't do
+	     complex macro expansions became dead wood sometime around 5.7.3
+	     (Don't tell Otava this)
+     Branch: maint-5.8/perl
+	   ! mathoms.c
+	  !> NetWare/sv_nw.c av.c doio.c embed.fnc embed.h gv.c mg.c
+	  !> proto.h sv.c sv.h win32/Makefile win32/makefile.mk
+____________________________________________________________________________
+[ 27303] By: nicholas				   on 2006/02/24  10:56:28
+	Log: Integrate:
+	     [ 25866]
+	     Add a new file, mathoms.c, to hold old code kept around for binary
+	     compatability with previous versions of Perl.  Change also includes
+	     various Makefile changes to compile the new file and link it into 
+	     libperl.
+	     
+	     (Would have pulled more, but perforce branching behaviour would bite)
+     Branch: maint-5.8/perl
+	   + mathoms.c
+	  !> MANIFEST Makefile.SH Makefile.micro NetWare/Makefile globals.c
+	  !> numeric.c op.c perlio.c plan9/mkfile sv.c utf8.c
+	  !> vms/descrip_mms.template win32/Makefile win32/makefile.mk
+	  !> wince/Makefile.ce
+____________________________________________________________________________
+[ 27285] By: nicholas				   on 2006/02/23  15:02:49
+	Log: Update Changes
+     Branch: maint-5.8/perl
+	   ! Changes patchlevel.h
+____________________________________________________________________________
+[ 27284] By: nicholas				   on 2006/02/23  14:49:22
+	Log: Integrate:
+	     [ 27002]
+	     Code assumes that *FOO{SCALAR} will always return a scalar reference,
+	     so make it so, creating $FOO if necessary.
+	     (Effectively this is a policy decision that PERL_DONT_CREATE_GVSV is
+	     visible to XS code, but isn't visible to Perl code)
+     Branch: maint-5.8/perl
+	  !> pp.c t/op/gv.t
+____________________________________________________________________________
+[ 27281] By: nicholas				   on 2006/02/23  13:35:27
+	Log: Update Changes
+     Branch: maint-5.8/perl
+	   ! Changes patchlevel.h
+____________________________________________________________________________
+[ 27280] By: nicholas				   on 2006/02/23  13:32:51
+	Log: Missed file from running embed.pl
+     Branch: maint-5.8/perl
+	   ! embedvar.h
+____________________________________________________________________________
+[ 27277] By: nicholas				   on 2006/02/23  00:51:58
+	Log: Integrate:
+	     [ 26980]
+	     PERL_DONT_CREATE_GVSV wasn't as effective as it should have been.
+	     
+	     plus restore the description (but now to perl589delta.pod)
+     Branch: maint-5.8/perl
+	   ! pod/perl589delta.pod
+	  !> gv.c
+____________________________________________________________________________
+[ 27275] By: nicholas				   on 2006/02/22  23:58:35
+	Log: In Perl_sv_dup, merge the copy code for the 3 simple types (IV,NV,RV).
+     Branch: maint-5.8/perl
+	   ! sv.c
+____________________________________________________________________________
+[ 27266] By: nicholas				   on 2006/02/21  23:57:15
+	Log: Integrate:
+	     [ 27030]
+	     Subject: [patch] arena rework - unify arenaroots
+	     From: Jim Cromie <jim.cromie@gmail.com>
+	     Message-ID: <43DF3D0A.3040102@gmail.com>
+	     Date: Tue, 31 Jan 2006 03:33:46 -0700
+	     
+	     [ 27262]
+	     PL_body_arenas should be set to NULL when the interpreter is cleared.
+     Branch: maint-5.8/perl
+	   ! sv.c
+	  !> embedvar.h hv.c intrpvar.h perlapi.h
+____________________________________________________________________________
+[ 27253] By: nicholas				   on 2006/02/20  23:42:25
+	Log: Integrate:
+	     [ 26170]
+	     Remove all the now unused new_XFOO()/del_XFOO() macros
+	     
+	     [ 26172]
+	     With -DPURFIY we change the flags so that everything is allocated
+	     directly. (Don't use arenas at all.) This seems a rather elegant way
+	     to simplify some of the code in sv.c by removing conditional
+	     compilation.
+	     
+	     [ 26173]
+	     Norman observed that a couple of macros could make the body defintion
+	     table a lot more readable.
+	     
+	     [ 26184]
+	     Flip the sign of the value in body details offset, and change its type
+	     to size_t.
+	     
+	     [ 26439]
+	     Avoid negating an unsigned value. (The offset in the SV body table)
+	     
+	     [ 27090]
+	     Eliminate a croak we can't get to.
+	     
+	     [ 27091]
+	     Merge and refactor the PVAV and PVHV code in Perl_sv_upgrade, which
+	     reduces the object size by about 80 bytes.
+	     
+	     [ 27092]
+	     Remove "Can't upgrade to undef" from perldiag, as the corresponding
+	     code is now gone from sv_upgrade.
+	     
+	     [ 27094]
+	     new_body_type doesn't need to subtract the offset, that's what
+	     new_body_allocated is for.
+	     
+	     [ 27095]
+	     The message "Can't upgrade that kind of scalar" can be far more
+	     informative.
+	     
+	     [ 27109]
+	     In Perl_sv_upgrade, the assignment to new_type_details only needs to
+	     be done once.
+     Branch: maint-5.8/perl
+	   ! sv.c
+	  !> pod/perldiag.pod
+____________________________________________________________________________
+[ 27246] By: nicholas				   on 2006/02/20  16:41:57
+	Log: Integrate:
+	     [ 26169]
+	     sv_clear can manipulate the arena array directly too.
+	     Also, I think that we may have been "leaking" NV bodies in blead since
+	     25051. Oops. (Will not have been detectable except with -DPURIFY as
+	     the leak is not returning them as free to the arena)
+     Branch: maint-5.8/perl
+	   ! sv.c
+____________________________________________________________________________
+[ 27232] By: nicholas				   on 2006/02/19  23:57:27
+	Log: Integrate:
+	     [ 26165]
+	     Eliminate new_body_offset from sv_dup()
+	     
+	     [ 26166]
+	     Eliminate new_body_length from sv_dup. Replace SvTYPE(sstr) with
+	     sv_type, which is a constant variable with the same value.
+	     
+	     [ 26167]
+	     Merge the arms of the switch. The decision about what comes from an
+	     arena and what comes from malloc is now solely in the table.
+	     
+	     [ 26168]
+	     We only need to zero new bodies for upgrades. sv_dup doesn't need to
+	     zero as it's copying over the same sized structure. So change
+	     new_NOARENA to malloc(), and add new_NOARENAZ() to calloc()
+	     
+	     [ 26378]
+	     Perl_sv_dup should be allocating bodies based on *size*, not the
+	     length to copy.
+	     
+	     [ 27159]
+	     Coalesce 2 if blocks with duplicated conditions in Perl_sv_dup.
+     Branch: maint-5.8/perl
+	   ! sv.c
+____________________________________________________________________________
+[ 27226] By: nicholas				   on 2006/02/19  12:07:56
+	Log: Integrate:
+	     [ 26164]
+	     Merge the last remaining case duplication in sv_upgrade
+     Branch: maint-5.8/perl
+	  !> sv.c
+____________________________________________________________________________
+[ 27225] By: nicholas				   on 2006/02/19  11:49:31
+	Log: Integrate:
+	     [ 26159]
+	     Add a flag to the body details of which types come from arenas.
+	     Update the allocation information for all the types.
+	     Add a new macro new_NOARENA() for allocating the non-arena types.
+	     Use calloc rather than malloc for the new_NOARENA so that the Zero()
+	     can be skipped.
+	     
+	     [ 26161]
+	     new_body_inline doesn't need to be passed the root, as it's already
+	     inferring the arenaroot directly from the passed-in type.
+	     
+	     [ 26162]
+	     Eliminate new_body_offset from sv_upgrade
+	     
+	     [ 26163]
+	     Eliminate new_body_length from sv_upgrade
+     Branch: maint-5.8/perl
+	   ! sv.c
+____________________________________________________________________________
+[ 27224] By: nicholas				   on 2006/02/19  11:30:33
+	Log: Integrate:
+	     [ 26155]
+	     Rename sv_upgrade's parameter mt to new_type.
+	     
+	     [ 26156]
+	     const and static for the const static private table.
+	     Replace the "upgrade" special case for SVt_PV with assertions as it's
+	     not been needed since we forced *up*grades.
+	     
+	     [ 26158]
+	     Simplify the expression for the upgrade logic for SVt_IV.
+	     Replace the "can't happen" comment for SVt_PVIV with assertions
+	     that it didn't happen.
+	     
+	     (except the bit about assertions)
+     Branch: maint-5.8/perl
+	  !> sv.c
+____________________________________________________________________________
+[ 27217] By: nicholas				   on 2006/02/18  11:50:06
+	Log: Integrate:
+	     [ 26151]
+	     "Can you see what it is yet?"
+	     Next steps towards making as much as possible table driven.
+	     
+	     [ 26152]
+	     All that can be in the first switch statement of sv_upgrade is now
+	     table driven. The shrinking continues on the morrow.
+	     
+	     [ 26623]
+	     If NV_ZERO_IS_ALLBITS_ZERO is not true, then it's important to inialise
+	     the NV only if the new body has an NV. (D'oh!)
+     Branch: maint-5.8/perl
+	  !> sv.c
+____________________________________________________________________________
+[ 27216] By: nicholas				   on 2006/02/18  11:07:18
+	Log: Integrate:
+	     [ 26146]
+	     s/SvTYPE(sv)/old_type/ in sv_upgrade because we already have that value
+	     in that variable.
+	     Don't compile S_new_body with -DPURIFY
+	     
+	     [ 26149]
+	     Merge sizeof_body_by_svtype and offset_by_svtype into a single array
+	     of structures.
+	     
+	     [ 26150]
+	     Add the size of the structure to copy as a field in the per type
+	     data table.
+     Branch: maint-5.8/perl
+	   ! sv.c
+____________________________________________________________________________
+[ 27206] By: nicholas				   on 2006/02/17  13:04:04
+	Log: Integrate:
+	     [ 26141]
+	     Subject: Re: eliminate discreet arenaroots
+	     From: Jim Cromie <jim.cromie@gmail.com>
+	     Message-ID: <4378E5B0.3010708@gmail.com>
+	     Date: Mon, 14 Nov 2005 12:29:52 -0700
+	     
+	     [ 26142]
+	     PL_pte_root and PL_pte_arenaroot can be exterminated. Which reveals
+	     an erroneous remaining reference to PL_pte_root to correct.
+	     
+	     [ 26143]
+	     Oi gcc, No! sizeof(void) is an error. *Not* 1.
+	     Wanting sizeof(void) isn't even a compilation error with -ansi
+	     -pedantic. Just a warning. Lame! I'm going to send it back for a full
+	     refund. Hateful software.
+	     
+	     [ 26148]
+	     Move the location of the definition of the arena slot used for pte
+	     into sv.h, to keep it in one central place.
+	     Change it to use SVt_RV. (Having SVt_IV for real use will be useful.
+	     SVt_RV has no body, and doesn't pretend to have one, so it is spare.)
+	     
+	     [ 26171]
+	     Map the HE arena onto SV type 0 (SVt_NULL).
+	     Abolish PL_he_root and PL_he_arenaroot.
+     Branch: maint-5.8/perl
+	   ! hv.c intrpvar.h sv.c sv.h
+	  !> embedvar.h ext/XS/APItest/APItest.xs perlapi.h
+____________________________________________________________________________
+[ 27191] By: nicholas				   on 2006/02/15  09:44:22
+	Log: Integrate:
+	     [ 26129]
+	     Provide a crude way for specifying the command line for
+	     make test.valgrind
+	     
+	     [ 26846]
+	     Adapt test.valgrind make target to recent valgrinds (3.x)
+	     by Jim Cromie
+	     
+	     [ 27128]
+	     Subject: [patch] several broken make *.valgrind targets
+	     From: Jim Cromie <jim.cromie@gmail.com>
+	     Date: Tue, 07 Feb 2006 15:11:54 -0700
+	     Message-ID: <43E91B2A.4060700@gmail.com>
+     Branch: maint-5.8/perl
+	   ! t/TEST
+	  !> Makefile.SH
+____________________________________________________________________________
+[ 27183] By: nicholas				   on 2006/02/14  22:06:00
+	Log: Unlike 5.9, SVt_IV needs to be freed. Only SVt_NULL can exit early.
+     Branch: maint-5.8/perl
+	   ! sv.c
+____________________________________________________________________________
+[ 27175] By: nicholas				   on 2006/02/13  21:02:41
+	Log: Getting the old_length wrong for SVt_PVNV in Perl_sv_upgrade causes
+	     surprisingly subtle bugs. Now fixed. (Cause being that the expression
+	     to get the length of PVNV differs between blead and maint, because
+	     blead's structures have been space optimised.)
+     Branch: maint-5.8/perl
+	   ! sv.c
+____________________________________________________________________________
+[ 27170] By: nicholas				   on 2006/02/13  15:32:10
+	Log: Integrate:
+	     [ 27133]
+	     lastparen in the regexp structure is never initialised, and so will
+	     still be uninitialised after a failed match, yet various points in
+	     mg.c read it come what may. Should fix bug 38461.
+	     
+	     [ 27169]
+	     All the bits of clone_params.flags need to be initialised, not just
+	     CLONEf_JOIN_IN.
+     Branch: maint-5.8/perl
+	  !> ext/threads/threads.xs regcomp.c
+____________________________________________________________________________
+[ 27168] By: nicholas				   on 2006/02/12  21:10:26
+	Log: Integrate:
+	     [ 25904]
+	     global.sym appears to have become out of date. Oops.
+	     
+	     [ 25923]
+	     Arrange to only output each symbol once into global.sym
+	     
+	     [ 25924]
+	     Perl_csighandler was in global.sym twice.
+     Branch: maint-5.8/perl
+	  !> embed.pl global.sym
+____________________________________________________________________________
+[ 27167] By: nicholas				   on 2006/02/12  20:48:31
+	Log: Make cross upgrades work (eg a request to "upgrade" PV to NV)
+     Branch: maint-5.8/perl
+	   ! sv.c
+____________________________________________________________________________
+[ 27165] By: nicholas				   on 2006/02/12  18:18:04
+	Log: Integrate:
+	     [ 25051]
+	     Unwrap the del_Xfoo() macros by explicitly noting the arena to free
+	     the body to. This comletely eliminates the second switch statement.
+     Branch: maint-5.8/perl
+	   ! sv.c
+____________________________________________________________________________
+[ 27164] By: nicholas				   on 2006/02/12  11:20:06
+	Log: Perl_sv_upgrade is not void in maint, so need to return TRUE.
+     Branch: maint-5.8/perl
+	   ! sv.c
+____________________________________________________________________________
+[ 27163] By: nicholas				   on 2006/02/12  00:29:55
+	Log: Integrate:
+	     [ 24897]
+	     Move the offset calculations outside of new_body/del_body.
+	     This makes some of the upgrade code slightly simpler.
+	     
+	     [ 24899]
+	     If NV_ZERO_IS_ALLBITS_ZERO there's no need to explicitly set the NVX
+	     to 0.0, as the memset has already done it.
+	     
+	     [ 24900]
+	     S_del_body is sufficiently small that inlining it is a space win.
+	     
+	     [ 24918]
+	     As there will be no old body to dispose of, we can return immediately.
+	     
+	     [ 25053]
+	     Copying the first parameter in the macro del_body seems to reduce
+	     code size.	 Presumably an expression is no longer evaluated twice.
+	     
+	     [ 25066]
+	     Inlining del_HE is actually a space optimisation.
+	     It's therefore likely also to be a speed optimisation. :-)
+	     
+	     [ 25069]
+	     Provide a macro version of S_new_body to inline it within the hot code.
+	     
+	     [ 25113]
+	     Subject: [patch: sv.c] reuse new_body_inline in Perl_new_body
+	     From: Jim Cromie <jcromie@divsol.com>
+	     Date: Sun, 10 Jul 2005 15:59:30 -0600
+	     Message-ID: <42D19A42.8040409@divsol.com>
+     Branch: maint-5.8/perl
+	  !> embed.fnc embed.h hv.c proto.h sv.c
+____________________________________________________________________________
+[ 27160] By: nicholas				   on 2006/02/11  15:13:04
+	Log: Integrate:
+	     [ 24896]
+	     Refactor sv_dup to memcpy from source to destination, and only
+	     explicitly copy the structure members that need explicit duplication.
+     Branch: maint-5.8/perl
+	   ! sv.c
+____________________________________________________________________________
+[ 27157] By: nicholas				   on 2006/02/11  10:48:48
+	Log: Integrate:
+	     [ 24894]
+	     Subject: [PATCH] squeeze repetition out of Perl_sv_free_arenas
+	     From: Jim Cromie <jcromie@divsol.com>
+	     Message-ID: <42B3C388.2090902@divsol.com>
+	     Date: Sat, 18 Jun 2005 00:47:36 -0600
+	     
+	     [ 24895]
+	     Squeeze a little more savings by moving pte and he arenas into the
+	     common arena free code.
+	     
+	     [ 24914]
+	     Replace the non-const initialiser block + loop with a series of calls
+	     to a small static function.
+	     c.f. "I will replace you with a small shell script..."
+     Branch: maint-5.8/perl
+	  !> hv.h perl.h sv.c
+____________________________________________________________________________
+[ 27156] By: nicholas				   on 2006/02/11  10:09:35
+	Log: Integrate:
+	     [ 24892]
+	     sv_upgrade by memcpy
+	     AV and HV cases need tidyup
+	     
+	     [ 24893]
+	     update AVs and HVs using the old_body, and remove all of the local
+	     variables used to hold the SV body piecemeal.
+     Branch: maint-5.8/perl
+	   ! sv.c
+____________________________________________________________________________
+[ 27150] By: nicholas				   on 2006/02/10  11:49:32
+	Log: Integrate:
+	     [ 24886]
+	     Move freeing the old body after the creating of the new body.
+	     
+	     [ 24887]
+	     Missing aTHX_ (noticed by Jim Cromie)
+	     
+	     [ 24888]
+	     Collect a little more information about the body we're getting rid of
+	     
+	     [ 24890]
+	     Change 24886 was buggy - should be taking (and passing in) the
+	     address of the arena.
+	     
+	     [ 24891]
+	     Fix compiling with -DPURIFY
+     Branch: maint-5.8/perl
+	  !> sv.c
+____________________________________________________________________________
+[ 27149] By: nicholas				   on 2006/02/10  11:25:06
+	Log: Integrate:
+	     [ 24881]
+	     new_pte/del_pte can use new_body/del_body too
+	     
+	     [ 24885]
+	     The only way is up!
+	     (*up*grades. Or croak)
+     Branch: maint-5.8/perl
+	   ! sv.c
+____________________________________________________________________________
+[ 27147] By: nicholas				   on 2006/02/10  11:04:46
+	Log: Integrate:
+	     [ 24878]
+	     Replace all the new/del static functions with calls to a single pair
+	     of functions that uproot/plant bodies
+     Branch: maint-5.8/perl
+	   ! sv.c
+	  !> embed.fnc embed.h proto.h
+____________________________________________________________________________
+[ 27146] By: nicholas				   on 2006/02/10  10:29:10
+	Log: Integrate:
+	     [ 24876]
+	     Replace all the S_more_* functions with a single function.
+	     Saves 1.5K on the object file in OS X when built with -Os
+	     
+	     [ 24877]
+	     Making more_* return a pointer, and swapping to a ternary ?: in
+	     new_* seems to generate slightly terser object code.
+     Branch: maint-5.8/perl
+	   ! sv.c
+____________________________________________________________________________
+[ 27144] By: nicholas				   on 2006/02/09  22:33:56
+	Log: Integrate:
+	     [ 24875]
+	     Subject: [PATCH] Re: [perl #36048] Refactor S_more_*v into one function
+	     From: Jim Cromie <jcromie@divsol.com>
+	     Message-ID: <42ADC8ED.4090009@divsol.com>
+	     Date: Mon, 13 Jun 2005 11:57:01 -0600
+	     
+	     Plus fixups - xiv_allocated, xnv_allocated, xpviv_allocated structures,
+	     cast corrections in S_{new,del}_x[in]v, and more_thingy declarations
+	     for the 2 types that no longer use arenas in 5.9 (IVs and RVs)
+     Branch: maint-5.8/perl
+	   ! embedvar.h intrpvar.h sv.c sv.h
+____________________________________________________________________________
+[ 27143] By: nicholas				   on 2006/02/09  21:49:46
+	Log: Restore changes 24459 and 24467 (GVs from arenas) (ie reverse 26559)
+	     as the arena re-working is started.
+     Branch: maint-5.8/perl
+	   ! embed.fnc embed.h embedvar.h intrpvar.h perlapi.h proto.h sv.c
+____________________________________________________________________________
+[ 27142] By: nicholas				   on 2006/02/09  21:12:42
+	Log: Integrate:
+	     [ 24544]
+	     create an "allocated" structure for PVs, PVAVs and PVHVs
+     Branch: maint-5.8/perl
+	  !> av.h hv.h intrpvar.h sv.c sv.h
+____________________________________________________________________________
+[ 27141] By: nicholas				   on 2006/02/09  20:34:26
+	Log: Integrate:
+	     [ 24258]
+	     Merge common code. Reduces object size by 1K on x86, 6K on PPC
+	     
+	     [ 24340]
+	     The if() clause is the wrong way round, so OOK can never be true in
+	     this case. Given that OOK is never undone, we could never have been
+	     correctly upgrading a PV with OOK to HV or AV. I believe that only
+	     SVt_NULL is the only type ever upgraded to HV or AV.
+     Branch: maint-5.8/perl
+	   ! sv.c
+____________________________________________________________________________
+[ 27058] By: nicholas				   on 2006/02/03  11:35:30
+	Log: Create perl589delta.pod
+     Branch: maint-5.8/perl
+	   + pod/perl589delta.pod
+	   ! MANIFEST Makefile.SH pod.lst pod/perl.pod
+	   ! vms/descrip_mms.template win32/Makefile win32/makefile.mk
+	   ! win32/pod.mak
+____________________________________________________________________________
+[ 27055] By: nicholas				   on 2006/02/02  17:28:37
+	Log: Update Changes, and create Changes5.8.8
+     Branch: maint-5.8/perl
+	  +> Changes5.8.8
+	   ! Changes MANIFEST patchlevel.h
+____________________________________________________________________________
+[ 27041] By: nicholas				   on 2006/02/01  18:22:12
+	Log: That was 5.8.8.
+     Branch: maint-5.8/perl
+	   ! patchlevel.h
+____________________________________________________________________________
+[ 27040] By: nicholas				   on 2006/02/01  18:08:07
+	Log: Regenerated files that shipped with 5.8.8.
+     Branch: maint-5.8/perl
+	   ! ext/B/B/Asmdata.pm perlapi.c
+____________________________________________________________________________

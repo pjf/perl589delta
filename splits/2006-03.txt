@@ -1,0 +1,189 @@
+[ 27624] By: nicholas				   on 2006/03/28  19:35:56
+	Log: Integrate:
+	     [ 22819]
+	     Add new dUNDERBAR and UNDERBAR macros, to help XS writers to
+	     access the $_ variable, even when there is a lexical one in scope.
+	     
+	     (but use the ppport.h compatibility definitions of the two, and change
+	     the documentation to make it clear that lexical $_ is 5.9.2 and later)
+     Branch: maint-5.8/perl
+	   ! XSUB.h pod/perlapi.pod
+____________________________________________________________________________
+[ 27623] By: nicholas				   on 2006/03/28  16:42:11
+	Log: Integrate:
+	     [ 21729]
+	     Subject: [PATCH] Re: Storable Error
+	     From: Nicholas Clark <nick@ccl4.org>
+	     Date: Sat, 9 Aug 2003 00:35:36 +0100
+	     Message-ID: <20030809003535.C20130@plum.flirble.org>
+	     
+	     [ 22300]
+	     The new -Dq option didn't actually work!
+	     
+	     [ 27622]
+	     Only compile Perl_hv_assert with DEBUGGING.
+     Branch: maint-5.8/perl
+	  !> embed.fnc hv.c makedef.pl perl.c perl.h pod/perlrun.pod
+	  !> proto.h
+____________________________________________________________________________
+[ 27614] By: nicholas				   on 2006/03/27  16:31:27
+	Log: Actually make PERL_FLEXIBLE_EXCEPTIONS compile (although it still fails
+	     3 tests - t/op/eval.t, t/op/sort.t and ext/XS/APItest/t/call.t)
+     Branch: maint-5.8/perl
+	   ! perl.c pp_ctl.c
+____________________________________________________________________________
+[ 27606] By: nicholas				   on 2006/03/25  17:59:37
+	Log: Integrate:
+	     [ 26673]
+	     Remove code duplicated a few lines above by change 19695.
+	     
+	     [ 26760]
+	     Avoid possible dereference of NULL in the initialization of PL_origalen.
+	     This can only happen when perlparse is called with no argv.
+	     Don't try to update PL_origargv unless PL_origalen is at least 2.
+	     
+	     [ 26779]
+	     Make setting 'PL_origalen = 1' before perl_parse() disable
+	     argv[0] munging when $0 is assigned to.
+     Branch: maint-5.8/perl
+	  !> mg.c perl.c pod/perlembed.pod toke.c
+____________________________________________________________________________
+[ 27605] By: nicholas				   on 2006/03/25  17:42:10
+	Log: Integrate:
+	     [ 21538]
+	     Fix off-by-one in $0 set magic. (From Autrijus.)
+	     The whole PL_origalen thing in perl.c looks very hokey.
+	     
+	     [ 21546]
+	     Will the real off by one please stand up?
+	     
+	     [ 21664]
+	     Orphaned submission from #21546.
+	     
+	     [ 21833]
+	     Subject: [PATCH] setting $0 still broken
+	     From: Jan Dubois <jand@ActiveState.com>
+	     Date: Thu, 27 Nov 2003 21:09:51 -0800
+	     Message-ID: <f3mdsv8dcv4asle0kbhiijk0adu1l25sr3@4ax.com>
+     Branch: maint-5.8/perl
+	  !> mg.c perl.c
+____________________________________________________________________________
+[ 27604] By: nicholas				   on 2006/03/25  15:15:28
+	Log: Integrate:
+	     [ 23471]
+	     Subject: [PATCH blead] [perl #3038] Re: $qr = qr/^a$/m; $x =~ $qr; fails
+	     From: Rick Delaney <rick@bort.ca>
+	     Date: Sun, 31 Oct 2004 22:40:40 -0500
+	     Message-ID: <20041101034040.GC1232@biff.bort.ca>
+     Branch: maint-5.8/perl
+	  +> t/op/regexp_qr.t
+	   ! regexec.c
+	  !> MANIFEST pp.c pp_hot.c t/op/regexp.t
+____________________________________________________________________________
+[ 27512] By: nicholas				   on 2006/03/15  20:21:52
+	Log: When bless() changes the overloading state of the passed in reference,
+	     and there are other references to this object, then brute force search
+	     for the other references, and perform the same change on them. Fixes
+	     bug 34925.
+	     
+	     Integrate the regression tests from:
+	     [ 27506]
+	     Moving the overloading flag from the reference to the referant allows
+	     (re)?blessing of overloaded objects to work correctly.
+	     
+	     [ 27508]
+	     Test for reblessing objects with weak references.
+	     
+	     [ 27510]
+	     D'oh! 27508 wasn't quite testing what I wanted it to test. This does.
+     Branch: maint-5.8/perl
+	   ! embed.fnc embed.h lib/overload.t proto.h sv.c
+____________________________________________________________________________
+[ 27509] By: nicholas				   on 2006/03/15  18:14:26
+	Log: Integrate:
+	     The overload.t tests from 23357 (Turn regcomp into a list op)
+	     
+	     [ 27501]
+	     Partially convert overload.t to Test::More
+	     
+	     [ 27502]
+	     Further conversion of overload.t
+	     
+	     [ 27504]
+	     Further conversion of overload.t
+	     
+	     [ 27505]
+	     Finish converting overload.t to Test::More
+     Branch: maint-5.8/perl
+	   ! lib/overload.t
+____________________________________________________________________________
+[ 27426] By: nicholas				   on 2006/03/08  21:24:41
+	Log: Avoid writing over the input string in the case 'F' in moreswitches.
+     Branch: maint-5.8/perl
+	   ! perl.c
+____________________________________________________________________________
+[ 27395] By: nicholas				   on 2006/03/06  21:28:10
+	Log: sv_2iv and sv_2uv can go in mathoms.c now.
+     Branch: maint-5.8/perl
+	   ! mathoms.c sv.c
+____________________________________________________________________________
+[ 27394] By: nicholas				   on 2006/03/06  21:11:18
+	Log: Integrate:
+	     [ 26265]
+	     The extra return is actually a duplicated code path, and can go.
+	     
+	     [ 26285]
+	     The early return for SvIOKp(sv) in sv_2[iu]v_flags is actually code
+	     duplication.
+	     
+	     [ 26286]
+	     Move vast swathes of common code from sv_2iv_flags and sv_2uv_flags
+	     into S_sv_2iuv_common.
+	     
+	     [ 26289]
+	     3 instances of SvIsUV_on(sv); can be replaced with one.
+     Branch: maint-5.8/perl
+	   ! sv.c
+____________________________________________________________________________
+[ 27392] By: nicholas				   on 2006/03/06  20:40:15
+	Log: Integrate:
+	     [ 25322]
+	     Subject: [PATCH blead] Use SvGETMAGIC more often
+	     From: Rick Delaney <rick@bort.ca>
+	     Date: Mon, 22 Aug 2005 13:00:33 -0400
+	     Message-ID: <20050822170033.GH7674@localhost.localdomain>
+	     
+	     [ 26185]
+	     Subject: [PATCH] concat interacts badly with magic
+	     From: Robin Houston <robin@cpan.org>
+	     Date: Mon, 21 Nov 2005 17:03:39 +0000
+	     Message-ID: <20051121170339.GA8214@rpc142.cs.man.ac.uk>
+	     
+	     [ 26190]
+	     Revert change #26185, which could have some unwanted side-effects.
+	     (lib/warnings.t had failures due to this patch.)
+	     Moreover Dave Mitchell correctly pointed out that [perl #37722]
+	     wasn't really a bug.
+     Branch: maint-5.8/perl
+	  !> doio.c pp.c pp_ctl.c pp_hot.c sv.c t/op/tie.t universal.c
+	  !> xsutils.c
+____________________________________________________________________________
+[ 27391] By: nicholas				   on 2006/03/06  18:13:50
+	Log: Integrate:
+	     [ 22074]
+	     Some of the bitwise manipulation PP functions weren't checking
+	     whether their arguments were magical before using them.
+	     (bug [#24816]).
+	     
+	     [ 22163]
+	     Subject:  Re: [perl #24816] Magic vars seem unsure if they are purely numeric
+	     From:  Yitzchak Scott-Thoennes <sthoenna@efn.org>
+	     Date:  Thu, 15 Jan 2004 14:10:37 -0800
+	     Message-Id:  <20040115221037.GA2392@efn.org>
+	     
+	     Add sv_2iv_flags() to allow magic to be optionally processed.
+     Branch: maint-5.8/perl
+	   ! t/op/bop.t
+	  !> doop.c embed.fnc embed.h global.sym pod/perlapi.pod pp.c
+	  !> proto.h sv.c sv.h
+____________________________________________________________________________

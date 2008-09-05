@@ -1,0 +1,176 @@
+[ 28443] By: nicholas				   on 2006/06/27  22:39:26
+	Log: Integrate:
+	     [ 28189]
+	     A Configure probe for C99 variadic macros, based on code from Jarkko.
+	     
+	     [ 28263]
+	     Oops. Fix bad #! lines when not using userelocatableinc
+	     
+	     [ 28283]
+	     Re-generation after backports of
+	     #28188 Only ask about MAD for 5.9.0 and greater. Otherwise silently
+	     #28189 A Configure probe for C99 variadic macros, based on code from
+	     #28202 Take advantage of the bug that binexp ignores the Configure
+	     #28263 Oops. Fix bad #! lines when not using userelocatableinc
+	     One small cleanup fix added. Some small re-ordering. Some whitespace.
+	     
+	     [ 28284]
+	     If I needed this now, I'll probably need it next time too :)
+	     
+	     [ 28286]
+	     HAS_HAS WAS NOW HAS
+     Branch: maint-5.8/perl
+	  !> Configure Cross/config.sh-arm-linux NetWare/config.wc
+	  !> Porting/Glossary Porting/config.sh config_h.SH configure.com
+	  !> epoc/config.sh handy.h plan9/config_sh.sample uconfig.sh
+	  !> win32/config.bc win32/config.gc win32/config.vc
+	  !> win32/config.vc64
+____________________________________________________________________________
+[ 28442] By: nicholas				   on 2006/06/27  22:20:20
+	Log: Integrate:
+	     [ 28024]
+	     OK, Win32 must no have snprintf()/vsnprintf 
+	     
+	     [ 28025]
+	     I was mistaken.  Borland and gcc do have snprintf() and vsnprintf()
+	     on Win32.
+	     
+	     [ 28026]
+	     Subject: [PATCH] fix 27987 for MSVC (was Re: Smoke [5.9.4] 28020 FAIL(m) MSWin32 Win2000 SP4 (x86/1 cpu))
+	     From: Abe Timmerman <abe@ztreet.demon.nl>
+	     Date: Sun, 30 Apr 2006 15:15:24 +0200
+	     Message-Id: <200604301515.24580.abe@ztreet.demon.nl>
+	     
+	     [ 28051]
+	     Subject: RE: [PATCH] fix 27987 for MSVC (was Re: Smoke [5.9.4] 28020 FAIL(m) MSWin32 Win2000 SP4 (x86/1 cpu))
+	     From: "Jan Dubois" <jand@ActiveState.com>
+	     Date: Mon, 1 May 2006 18:55:11 -0700
+	     Message-ID: <08ff01c66d8b$7282e320$2217a8c0@candy>
+	     
+	     Subject: Re: [PATCH] fix 27987 for MSVC (was Re: Smoke [5.9.4] 28020 FAIL(m)
+	     From: "H.Merijn Brand" <h.m.brand@xs4all.nl>
+	     Date: Tue, 2 May 2006 09:23:51 +0200
+	     Message-ID: <20060502092351.7bae0896@pc09>
+	     
+	     [ 28052]
+	     Ahem. And here's the rest of #28051...
+	     
+	     [ 28053]
+	     Sigh. Third time lucky.
+     Branch: maint-5.8/perl
+	  !> win32/config.vc win32/config.vc64 win32/config_H.bc
+	  !> win32/config_H.gc win32/config_H.vc win32/config_H.vc64
+	  !> win32/win32.h
+____________________________________________________________________________
+[ 28441] By: nicholas				   on 2006/06/27  22:15:42
+	Log: Integrate:
+	     [ 27863]
+	     Support for -DDEBUGGING and its alias -DEBUGGING
+     Branch: maint-5.8/perl
+	  !> Configure INSTALL config_h.SH
+____________________________________________________________________________
+[ 28440] By: nicholas				   on 2006/06/27  22:00:05
+	Log: Integrate:
+	     [ 27686]
+	     First stab at a more reliable Glossary. This now is (again)
+	     mostly generated. (Well, It's a repair to the existing version
+	     "based on" a generated version, which is now well sorted, but
+	     still incomplete for less obvious reasons).
+     Branch: maint-5.8/perl
+	  !> Porting/Glossary
+____________________________________________________________________________
+[ 28439] By: nicholas				   on 2006/06/27  21:54:10
+	Log: Integrate:
+	     [ 27370]
+	     Subject: [PATCH] Support for __builtin_expect and __builtin_choose_expr
+	     From: Andy Lester <andy@petdance.com>
+	     Date: Wed, 28 Dec 2005 15:34:08 -0600
+	     Message-ID: <20051228213408.GB26033@petdance.com>
+	     
+	     [ 27372]
+	     Make Win32 configuration changes for HAS_BUILTIN_CHOOSE_EXPR and
+	     HAS_BUILTIN_EXPECT.
+	     
+	     [ 27373]
+	     Add d_builtin_choose_expr and d_builtin_expect to configure.com as
+	     'undef'.
+	     
+	     [ 27412]
+	     Complete change #27407/27410 on Win32 and tidy up change #27372
+	     
+	     [ 27473]
+	     Subject: [PATCH] Reapply change 24432
+	     From: "Jan Dubois" <jand@ActiveState.com>
+	     Date: Fri, 10 Mar 2006 18:21:39 -0800
+	     Message-ID: <01b001c644b2$879a1f50$6062a8c0@candy>
+     Branch: maint-5.8/perl
+	  !> Configure Porting/Glossary config_h.SH configure.com perl.h
+	  !> win32/config.bc win32/config.gc win32/config.vc
+	  !> win32/config.vc64 win32/config_H.bc win32/config_H.gc
+	  !> win32/config_H.vc win32/config_H.vc64
+____________________________________________________________________________
+[ 28438] By: nicholas				   on 2006/06/27  21:34:26
+	Log: Integrate:
+	     [ 27363]
+	     Subject: [perl #38385] _h2ph_pre.ph / $Config{cppsymbols} omits gcc-3.4+ cpp "predefined macros" 
+	     Date: Tue, 31 Jan 2006 09:50:32 -0800
+	     From: Jason Vas Dias (via RT) <perlbug-followup@perl.org>
+	     
+	     [ 27367]
+	     #27363 broke HP-UX (and others). if [[ ... ]] syntax not supported
+     Branch: maint-5.8/perl
+	  !> Configure utils/h2ph.PL
+____________________________________________________________________________
+[ 28437] By: nicholas				   on 2006/06/27  21:21:12
+	Log: Integrate:
+	     [ 27189]
+	     Subject: Patch for perl to compile/work on DragonFlyBSD
+	     From: Robert Sebastian Gerus <arachnist@gmail.com>
+	     Date: Tue, 14 Feb 2006 17:27:52 +0100
+	     Message-ID: <4a1e16420602140827w17fd6595w@mail.gmail.com>
+	     
+	     [ 27190]
+	     Added hints/dragonfly.sh for #27189
+	     
+	     [ 27263]
+	     Additional hints needed to build threaded Perls on NetBSD.
+     Branch: maint-5.8/perl
+	  +> hints/dragonfly.sh
+	  !> Configure MANIFEST Makefile.SH hints/netbsd.sh
+____________________________________________________________________________
+[ 28436] By: nicholas				   on 2006/06/27  20:49:08
+	Log: Integrate:
+	     [ 26606]
+	     Add probe for snprintf () and vsnprintf ()
+	     
+	     Subject: [PATCH] snprintf() and vsnprintf() (was Re: [PATCH] Configure: stdio char (un)signedness)
+	     From: Steve Peters <steve@fisharerojo.org>
+	     Date: Mon, 2 Jan 2006 09:37:27 -0600
+	     Message-ID: <20060102153727.GA14247@mccoy.peters.homeunix.org>
+	     
+	     [ 26630]
+	     Add snprintf() and vsnprintf() to the various Win32 configuration 
+	     files.
+	     
+	     [ 26632]
+	     Added snprintf() and vsnprintf() to configure.com as 'undef'. 
+	     
+	     [ 26655]
+	     Reorder changes made in change 26630
+	     
+	     (Keep the order in win32/config.* and win32/config_H.* the same as in
+	     Configure and config_H.SH for easier diffing)
+	     
+	     [ 26668]
+	     Test if the probed availability of v?snprintf () is
+	     actually usable. Thanks to Russ and Jarkko.
+	     
+	     [ 26703]
+	     Make v?snprintf available on VMS v7.3-2 and later and clean up
+	     some other version-dependency checks.
+     Branch: maint-5.8/perl
+	  !> Configure Porting/Glossary config_h.SH configure.com handy.h
+	  !> win32/config.bc win32/config.gc win32/config.vc
+	  !> win32/config.vc64 win32/config_H.bc win32/config_H.gc
+	  !> win32/config_H.vc win32/config_H.vc64
+____________________________________________________________________________

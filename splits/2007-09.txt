@@ -1,0 +1,7 @@
+[ 31996] By: nicholas				   on 2007/09/30  11:22:31
+	Log: Right. So fixing [] and {} not to leave extra references was not enough
+	     to avoid reblessing slow down. There's also code out there that blesses
+	     reference to a fresh lexical. So search the local pad.
+     Branch: maint-5.8/perl
+	   ! sv.c
+____________________________________________________________________________

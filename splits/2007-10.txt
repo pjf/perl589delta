@@ -1,0 +1,38 @@
+[ 32025] By: nicholas				   on 2007/10/04  11:15:04
+	Log: Go searching the pads of all the subroutines in the call stack, both
+	     for the object itself, and references that point to it. This gets
+	     nearly every construction on CPAN.
+	     Also, scalars in the save stack can't be freed or have a reference of
+	     zero, so don't waste time checking this.
+     Branch: maint-5.8/perl
+	   ! embed.fnc embed.h proto.h sv.c
+____________________________________________________________________________
+[ 32019] By: nicholas				   on 2007/10/03  21:37:14
+	Log: Also search the tmps stack for references to the scalar we're blessing
+	     in or out of overloading.
+     Branch: maint-5.8/perl
+	   ! sv.c
+____________________________________________________________________________
+[ 32018] By: nicholas				   on 2007/10/03  20:54:25
+	Log: Integrate:
+	     [ 32016]
+	     Test for a subtle pre-5.10 bug. Before 5.10 the overloading flag was
+	     stored on the reference rather than the referent. Despite the fact that
+	     objects can only be accessed via references (even internally), the 
+	     referent actually knows that it's blessed, not the references. So
+	     taking a new, unrelated, reference to it gives an object. However, the
+	     overloading-or-not flag was on the reference prior to 5.10, and taking
+	     a new reference didn't (use to) copy it (prior to 5.8.9).
+	     So test that the bug can't return - overloading should work on a
+	     reference to something already blessed into a package with overloading.
+	     
+	     [ 32017]
+	     I can't spell (well know fact) and while I'm there correct other
+	     spelling, grammar and capitalisation imperfections.
+	     
+	     
+	     And then fix the bug (the change in pp.c)
+     Branch: maint-5.8/perl
+	   ! pp.c
+	  !> lib/overload.t
+____________________________________________________________________________

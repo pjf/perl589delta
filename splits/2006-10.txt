@@ -1,0 +1,246 @@
+[ 29163] By: nicholas				   on 2006/10/30  18:26:48
+	Log: Integrate:
+	     [ 26177]
+	     Subject: Reworked PERL_TRACK_MEMPOOL patch
+	     From: "Jan Dubois" <jand@ActiveState.com>
+	     Date: Fri, 18 Nov 2005 11:38:24 -0800
+	     Message-ID: <003601c5ec77$a45eb260$2217a8c0@candy>
+	     
+	     [tweaked so as to remove the automatic define of -DPERL_TRACK_MEMPOOL
+	     on -DDEBUGGING]
+     Branch: maint-5.8/perl
+	  !> perl.h util.c
+____________________________________________________________________________
+[ 29141] By: nicholas				   on 2006/10/29  22:02:32
+	Log: Integrate:
+	     [The Perl_magic_killbackrefs change from:]
+	     [ 24966]
+	     Remove the reference loop between symbol tables and typeglobs.
+	     Typeglobs now have a weak reference onto their symbol table.
+	     
+	     [ 26132]
+	     Mark all places where perl needs to look at a possibly-freed scalar
+	     with a macro SvIS_FREED(sv)
+     Branch: maint-5.8/perl
+	  !> av.c mg.c op.c pad.c pp_hot.c sv.h
+____________________________________________________________________________
+[ 29137] By: nicholas				   on 2006/10/29  20:23:57
+	Log: Integrate:
+	     [ 26060]
+	     Add a comment about possible future refactoring of the pad code.
+	     
+	     [ 26123]
+	     Suppress gcc warnings when ignoring the return value of io_close(),
+	     as suggested by Gisle Aas.
+	     
+	     [ 26124]
+	     Fix indentation of apidoc for sv_2pvutf8
+	     (so perlapi.pod is correctly generated)
+	     
+	     [ 26176]
+	     Down with "warning: code has no effect"
+     Branch: maint-5.8/perl
+	  !> XSUB.h embed.fnc pad.c pod/perlapi.pod proto.h sv.c
+____________________________________________________________________________
+[ 29136] By: nicholas				   on 2006/10/29  20:01:41
+	Log: Integrate:
+	     [ 26112]
+	     Fix breakages that prevended -DPERL_POISON from compiling.
+     Branch: maint-5.8/perl
+	  !> handy.h sv.h
+____________________________________________________________________________
+[ 29135] By: nicholas				   on 2006/10/29  19:31:39
+	Log: Integrate:
+	     [ 25917]
+	     POD nit spotted by Jarkko
+	     
+	     [ 25938]
+	     Further pod nit spotted by Jarkko
+	     
+	     [ 25944]
+	     Fix nit in pod nit fix
+     Branch: maint-5.8/perl
+	  !> pod/perlhack.pod
+____________________________________________________________________________
+[ 29134] By: nicholas				   on 2006/10/29  19:28:47
+	Log: Integrate:
+	     [ 25914]
+	     Subject: [PATCH] S_tokereport's unused parm
+	     From: Andy Lester <andy@petdance.com>
+	     Date: Mon, 31 Oct 2005 00:04:59 -0600
+	     Message-ID: <20051031060459.GC10767@petdance.com>
+     Branch: maint-5.8/perl
+	  !> embed.fnc embed.h proto.h toke.c
+____________________________________________________________________________
+[ 29132] By: nicholas				   on 2006/10/29  19:16:37
+	Log: Integrate:
+	     [ 25808]
+	     Subject: Re: [PATCH] Re: [perl #37350] $#{@$aref} in debugger gives: Bizarre copy of ARRAY in leave
+	     From: Robin Houston <robin@cpan.org>
+	     Date: Oct 14, 2005 1:54 AM
+	     Message-ID: <20051013235457.GA23386@rpc142.cs.man.ac.uk>
+     Branch: maint-5.8/perl
+	   ! mathoms.c op.c t/op/array.t
+	  !> embed.fnc embed.h global.sym op.h proto.h
+____________________________________________________________________________
+[ 29129] By: nicholas				   on 2006/10/29  18:29:46
+	Log: Integrate:
+	     [ 25697]
+	     Subject: proposal [perl #34301]:  IO::Socket calls getpeername far too often
+	     From: Peter.Dintelmann@Dresdner-Bank.com (Peter Dintelmann)
+	     Date: Thu, 2 Jun 2005 13:34:49 +0200
+	     Message-ID: <E9A2605289D8D7468B1A21EC24E59D2101852447@naimucx5.muc.allianz>
+	     
+	     [ 25861]
+	     Subject: Re: IO::File performace issue
+	     From: gisle@ActiveState.com (Gisle Aas)
+	     Date: 27 Oct 2005 01:00:39 -0700
+	     Message-ID: <lrvezjv17c.fsf@caliper.activestate.com>
+	     
+	     Also includes a version bump for IO::File.
+	     
+	     [ 26300]
+	     Fixup the setsockopt usage message; missing OPTVAL.
+	     
+	     [ 26400]
+	     Subject: [PATCH] latest switch/say/~~
+	     From: Robin Houston <robin@cpan.org>
+	     Date: Sat, 17 Dec 2005 20:44:31 +0000
+	     Message-Id: <20051217204431.GB28940@rpc142.cs.man.ac.uk>
+	     
+	     [ 26405]
+	     Attempt at making IO::Handle backwards compatible again
+	     
+	     [ 26481]
+	     Given that IO::Socket is documented as exporting all of Socket's
+	     exports, there's no need for IO::Socket::INET or IO::Socket::UNIX to
+	     use both. (And re-exporting removes some of the efficiency of the new
+	     constants implementation)
+	     
+	     [ 26868]
+	     Don't warn about a directory being closed in the DESTROY for
+	     IO::Dir.
+	     
+	     [ 26921]
+	     Subject: Avoid most getprotobyname/number calls in IO::Socket::INET
+	     From: Gisle Aas <gisle@ActiveState.com>
+	     Date: 18 Jan 2006 09:28:24 -0800
+	     Message-ID: <lr3bjlbg3r.fsf@caliper.activestate.com>
+	     
+	     [ 26941]
+	     Subject: Simplify &IO::Handle::say
+	     From: Gisle Aas <gisle@ActiveState.com>
+	     Date: 24 Jan 2006 05:01:28 -0800
+	     Message-ID: <lrzmll7pav.fsf@caliper.activestate.com>
+	     
+	     [ 27609]
+	     Update to IO-1.23
+     Branch: maint-5.8/perl
+	  !> ext/IO/ChangeLog ext/IO/IO.pm ext/IO/lib/IO/Dir.pm
+	  !> ext/IO/lib/IO/File.pm ext/IO/lib/IO/Handle.pm
+	  !> ext/IO/lib/IO/Socket.pm ext/IO/lib/IO/Socket/INET.pm
+	  !> ext/IO/lib/IO/Socket/UNIX.pm ext/IO/t/io_multihomed.t
+	  !> ext/IO/t/io_pipe.t ext/IO/t/io_sock.t ext/IO/t/io_taint.t
+	  !> ext/IO/t/io_tell.t ext/IO/t/io_udp.t ext/IO/t/io_unix.t
+____________________________________________________________________________
+[ 29087] By: nicholas				   on 2006/10/22  23:09:33
+	Log: Integrate:
+	     [ 27737]
+	     Give more information in the panic in ss_dup. (Although I'm not sure
+	     if croak() works at this point, given PerlIO's dependency on a
+	     functional interpreter.)
+	     
+	     [ 29084]
+	     Fix a bug introduced by change 29079
+	     
+	     [ 29086]
+	     Fix the other bug introduced by change 29079
+     Branch: maint-5.8/perl
+	  !> sv.c
+____________________________________________________________________________
+[ 29081] By: nicholas				   on 2006/10/22  21:00:37
+	Log: No need to save the PVX to the save stack when saving a GV, as the
+	     string buffer is only used as part of get/set magic when reading/
+	     writing the stringified form. Keep the old save type in case any
+	     code out there is still generating the old format on the save stack.
+     Branch: maint-5.8/perl
+	   ! scope.c scope.h sv.c
+____________________________________________________________________________
+[ 29080] By: nicholas				   on 2006/10/22  20:12:38
+	Log: Integrate:
+	     [ 29079]
+	     const the variable used for the save stack type in Perl_ss_dup().
+     Branch: maint-5.8/perl
+	  !> sv.c
+____________________________________________________________________________
+[ 29022] By: nicholas				   on 2006/10/15  09:41:52
+	Log: Integrate:
+	     [ 25254]
+	     Another typo fix
+     Branch: maint-5.8/perl
+	  !> XSUB.h pod/perlapi.pod
+____________________________________________________________________________
+[ 29021] By: nicholas				   on 2006/10/15  09:22:52
+	Log: Integrate:
+	     [ 27987]
+	     Subject: Re: [PATCH] use snprintf/strlcpy/strlcat when useful
+	     From: Jarkko Hietaniemi <jhietaniemi@gmail.com>
+	     Date: Tue, 25 Apr 2006 18:23:39 +0300
+	     Message-ID: <444E3EFB.8020503@gmail.com>
+	     
+	     [ 27988]
+	     Fix typo in function call
+     Branch: maint-5.8/perl
+	  !> op.c perl.h perlio.c pp_ctl.c regcomp.c sv.c toke.c
+	  !> universal.c util.c
+____________________________________________________________________________
+[ 29014] By: nicholas				   on 2006/10/14  16:42:04
+	Log: Integrate:
+	     [ 25105]
+	     Message-ID: <42D0F25E.3040801@gmail.com>
+	     Date: Sun, 10 Jul 2005 13:03:10 +0300
+	     From: Jarkko Hietaniemi <jhietaniemi@gmail.com>
+	     Subject: [PATCH] yet another way of debugging memory allocations
+	     
+	     adds PERL_MEM_LOG and PERL_MEM_LOG_STDERR options
+	     
+	     [ 25109]
+	     From: Jarkko Hietaniemi <jhietaniemi@gmail.com>
+	     Date: Sun, 10 Jul 2005 21:50:27 +0300
+	     Subject: [PATCH] yet another way of debugging memory allocations
+	     Message-ID: <42D16DF3.4040806@gmail.com>
+	     
+	     tweak PERL_MEM_LOG
+	     
+	     [ 25115]
+	     Subject: [patch: handy.c]	update Newx API pod to mention PERL_MEM_LOG build opt
+	     From: Jim Cromie <jcromie@divsol.com>
+	     Date: Mon, 11 Jul 2005 19:18:02 -0600
+	     Message-ID: <42D31A4A.1020305@divsol.com>
+	     
+	     (with some minor tweaks)
+	     
+	     [ 25116]
+	     Change New*() to Newx*() in various comments and documentation
+	     
+	     [ 25128]
+	     Subject: Make PERL_MEM_LOG more portable.
+	     From:  Jarkko Hietaniemi <jhietaniemi@gmail.com>
+	     Date:  Mon, 11 Jul 2005 15:29:46 +0300
+	     Message-Id:  <42D2663A.4050204@gmail.com>
+	     
+	     [ 27204]
+	     Subject: Re: how to build with -DPERL_MEM_LOG ?
+	     From: Andy Dougherty <doughera@lafayette.edu>
+	     Date: Fri, 3 Feb 2006 11:55:58 -0500 (EST)
+	     Message-ID: <Pine.SOC.4.62.0602031129530.9630@maxwell.phys.lafayette.edu>
+     Branch: maint-5.8/perl
+	  !> handy.h pod/perlapi.pod pod/perlhack.pod util.c x2p/a2p.h
+____________________________________________________________________________
+[ 29013] By: nicholas				   on 2006/10/14  15:13:34
+	Log: Integrate:
+	     [ 25104]
+	     silence some compiler warnings
+     Branch: maint-5.8/perl
+	  !> embed.fnc gv.h proto.h
+____________________________________________________________________________

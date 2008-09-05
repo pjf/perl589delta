@@ -1,0 +1,338 @@
+[ 31223] By: nicholas				   on 2007/05/15  18:19:27
+	Log: Integrate:
+	     [ 30978]
+	     Subject: [PATCH - again] Re: [perl #41574] cond_wait hang ups under MSWin32
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Wed, 18 Apr 2007 14:32:16 -0400
+	     Message-ID: <1ff86f510704181132qf94b413mfda6aaa0f347df28@mail.gmail.com>
+	     
+	     Makes the test "TODO" on Win32, where it is not reliable, and turns
+	     the 50 separate tests in one single test for less line noise
+	     
+	     [ 31079]
+	     Subject: [PATCH] Safely store user locks in threads::shared
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Mon, 23 Apr 2007 13:21:11 -0400
+	     Message-ID: <1ff86f510704231021l6989ee0bkd68ab89e99bf8c6b@mail.gmail.com>
+	     
+	     [ 31216]
+	     Subject: [PATCH] threads::shared 1.11
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Message-ID: <1ff86f510705140517n1c140d96nca36667bcbbc27f@mail.gmail.com>
+	     Date: Mon, 14 May 2007 08:17:51 -0400
+     Branch: maint-5.8/perl
+	  !> ext/threads/shared/Changes ext/threads/shared/README
+	  !> ext/threads/shared/shared.pm ext/threads/shared/shared.xs
+	  !> ext/threads/shared/t/stress.t
+____________________________________________________________________________
+[ 31210] By: nicholas				   on 2007/05/13  10:56:13
+	Log: Integrate:
+	     [ 30918]
+	     Subject: [PATCH] g++ in Tru64: align sockaddr and sockaddr_in defs
+	     From: Jarkko Hietaniemi <jhi@cc.hut.fi>
+	     Date: Thu, 12 Apr 2007 05:19:30 +0300 (EEST)
+	     Message-Id: <200704120219.l3C2JUGZ294947@kosh.hut.fi>
+     Branch: maint-5.8/perl
+	  !> hints/dec_osf.sh
+____________________________________________________________________________
+[ 31162] By: nicholas				   on 2007/05/07  11:15:06
+	Log: Integrate:
+	     [ 31019]
+	     Move Module::Pluggable tests up under main test directory.
+     Branch: maint-5.8/perl
+	  +> (branch 50 files)
+	   - lib/Module/Pluggable/t/01use.t
+	   - lib/Module/Pluggable/t/02alsoworks.t
+	   - lib/Module/Pluggable/t/02works.t
+	   - lib/Module/Pluggable/t/02works_taint.t
+	   - lib/Module/Pluggable/t/03diffname.t
+	   - lib/Module/Pluggable/t/04acmedir.t
+	   - lib/Module/Pluggable/t/04acmedir_single.t
+	   - lib/Module/Pluggable/t/04acmepath.t
+	   - lib/Module/Pluggable/t/04acmepath_single.t
+	   - lib/Module/Pluggable/t/05postpath.t
+	   - lib/Module/Pluggable/t/06multipath.t
+	   - lib/Module/Pluggable/t/07instantiate.t
+	   - lib/Module/Pluggable/t/08nothing.t
+	   - lib/Module/Pluggable/t/09require.t
+	   - lib/Module/Pluggable/t/10innerpack.t
+	   - lib/Module/Pluggable/t/10innerpack_inner.t
+	   - lib/Module/Pluggable/t/10innerpack_noinner.t
+	   - lib/Module/Pluggable/t/10innerpack_override.t
+	   - lib/Module/Pluggable/t/11usetwice.t
+	   - lib/Module/Pluggable/t/12only.t
+	   - lib/Module/Pluggable/t/12onlyarray.t
+	   - lib/Module/Pluggable/t/12onlyregex.t
+	   - lib/Module/Pluggable/t/13except.t
+	   - lib/Module/Pluggable/t/13exceptarray.t
+	   - lib/Module/Pluggable/t/13exceptregex.t
+	   - lib/Module/Pluggable/t/14package.t
+	   - lib/Module/Pluggable/t/15topicsafe.t
+	   - lib/Module/Pluggable/t/16different_extension.t
+	   - lib/Module/Pluggable/t/17devel_inner_package.t
+	   - lib/Module/Pluggable/t/18skipped_package.t
+	   - lib/Module/Pluggable/t/19can_ok_clobber.t
+	   - lib/Module/Pluggable/t/20dodgy_files.t
+	   - lib/Module/Pluggable/t/acme/Acme/MyTest/Plugin/Foo.pm
+	   - lib/Module/Pluggable/t/lib/Acme/MyTest/Plugin/Foo.pm
+	   - lib/Module/Pluggable/t/lib/ExtTest/Plugin/Bar.plugin
+	   - lib/Module/Pluggable/t/lib/ExtTest/Plugin/Foo.plugin
+	   - lib/Module/Pluggable/t/lib/ExtTest/Plugin/Quux/Foo.plugin
+	   - lib/Module/Pluggable/t/lib/InnerTest/Plugin/Foo.pm
+	   - lib/Module/Pluggable/t/lib/MyOtherTest/Plugin/Bar.pm
+	   - lib/Module/Pluggable/t/lib/MyOtherTest/Plugin/Foo.pm
+	   - lib/Module/Pluggable/t/lib/MyOtherTest/Plugin/Quux.pm
+	   - lib/Module/Pluggable/t/lib/MyOtherTest/Plugin/Quux/Foo.pm
+	   - lib/Module/Pluggable/t/lib/MyTest/Extend/Plugin/Bar.pm
+	   - lib/Module/Pluggable/t/lib/MyTest/Plugin/Bar.pm
+	   - lib/Module/Pluggable/t/lib/MyTest/Plugin/Foo.pm
+	   - lib/Module/Pluggable/t/lib/MyTest/Plugin/Quux/Foo.pm
+	   - lib/Module/Pluggable/t/lib/No/Middle.pm
+	   - lib/Module/Pluggable/t/lib/OddTest/Plugin/-Dodgy.pm
+	   - lib/Module/Pluggable/t/lib/OddTest/Plugin/Foo.pm
+	   - lib/Module/Pluggable/t/lib/TA/C/A/I.pm
+	  !> MANIFEST t/TEST t/harness
+____________________________________________________________________________
+[ 31161] By: nicholas				   on 2007/05/07  10:47:46
+	Log: Integrate all the B changes from:
+	     [ 30841]
+	     Subject: Re: pmdynflags and thread safety
+	     From: demerphq <demerphq@gmail.com>
+	     Date: Wed, 4 Apr 2007 01:46:26 +0200
+	     Message-ID: <9b18b3110704031646p7ac8dbearf9e41397a5f884d8@mail.gmail.com>
+	     
+	     [ 30853]
+	     Remove op_pmnext from PMOPs, and instead store the list for reset as
+	     an array hanging from the mg_ptr of the symbol table magic.
+	     (Previously the linked list head was in the mg_obj member)
+	     
+	     [ 30860]
+	     Merge op_pmreplstart and op_pmstash/op_pmstashpv into a union in
+	     PMOP, as both pointers never need to be set at the same time.
+	     
+	     [ 30865]
+	     Turn op_pmreplroot in struct pmop into a real union.
+	     
+	     [ 30980]
+	     Subject: Re: new C3 MRO patch
+	     From: "Brandon Black" <blblack@gmail.com>
+	     Date: Tue, 17 Apr 2007 13:14:36 -0500
+	     Message-ID: <84621a60704171114k29b0460el5b08ce5185d55ed5@mail.gmail.com>
+	     
+	     [ 31053]
+	     Adjust test count.
+	     
+	     [ 31153]
+	     Tweak change 30841 so that B works on maint too.
+     Branch: maint-5.8/perl
+	  !> ext/B/B.pm ext/B/B.xs ext/B/B/Deparse.pm ext/B/defsubs_h.PL
+	  !> ext/B/t/b.t ext/B/t/concise-xs.t
+____________________________________________________________________________
+[ 31155] By: nicholas				   on 2007/05/05  22:00:24
+	Log: Change 31133 should have added pop_return, not push_return.
+	     So much for my memory.
+     Branch: maint-5.8/perl
+	   ! embed.fnc embed.h global.sym
+____________________________________________________________________________
+[ 31151] By: nicholas				   on 2007/05/05  10:43:04
+	Log: Naff orf.
+     Branch: maint-5.8/perl
+	   - perly.act perly.tab
+____________________________________________________________________________
+[ 31150] By: nicholas				   on 2007/05/05  10:42:36
+	Log: Integrate:
+	     [ 30675]
+	     Silence a couple of warnings caused by change #30672.
+	     
+	     [ 30830]
+	     The op slab allocator can call calloc() instead of malloc(), and save
+	     a Zero(). Also, argument m is unused.
+	     
+	     [ 30858]
+	     Add editor block.
+	     
+	     [ 30861]
+	     Re-ordering OP_STUB in the switch statement in Perl_peep saves a goto.
+	     
+	     [ 30879]
+	     Subject: [PATCH] Cast markstack values to I32
+	     From: Jan Dubois <jand@ActiveState.com>
+	     Date: Mon, 09 Apr 2007 18:11:32 -0700
+	     Message-ID: <prol131i8b27re246alnhmem4mj13fcl2b@4ax.com>
+	     
+	     [ 30900]
+	     Silence the g++ warnings "right-hand operand of comma has no effect"
+	     
+	     [ 30903]
+	     Work round what appears to be a bug in Sun C++ 5.8 2005/10/13
+	     If we just cast GvSVn(gv) to void, it ignores evaluating it for
+	     its side effect.
+	     
+	     [ 30931]
+	     Change 18797 (Patch for [perl #9402], known also as "glibc _moddi3 bug
+	     with negative quads", or also as RedHat bug #65612.) was a bit brute
+	     force. In reality, we don't need to have an auto-detecting pp_i_modulo
+	     unless we're compiled with 64 bit IVs and on glibc.
+	     
+	     [ 30964]
+	     get rid of warning due to empty dangling else in malloc.c
+	     
+	     [ 30965]
+	     fix casting warning in pp_ord()
+	     
+	     [ 30966]
+	     Subject: [PATCH] sv.c: %d ne size_t
+	     From: Jarkko Hietaniemi <jhi@cc.hut.fi>
+	     Date: Mon, 16 Apr 2007 14:31:42 +0300 (EEST)
+	     Message-Id: <200704161131.l3GBVg3n104476@kosh.hut.fi>
+	     
+	     [ 31010]
+	     Where possible, use SvIV instead of SvIVX, SvNV instead of SvNVX,
+	     SvUV instead of SvUVX, and SvPV* variants instead of SvPVX*.
+	     Document that the non-x variants are preferable whenever the expression
+	     has no side effects. (Compilers perform common subexression
+	     elimination). Likewise SvREFCNT_inc simple variants are valid for all
+	     cases apart from expressions with side effects.
+	     
+	     [ 31032]
+	     A safer version of CopFILE, by Jarkko
+	     
+	     [ 31038]
+	     Remove the unnecessary allocation of and assignment to hunk[3], as the
+	     perl API functions called don't need a NUL terminated string.
+     Branch: maint-5.8/perl
+	  +> perly.act perly.tab
+	  !> XSUB.h cop.h doio.c gv.c malloc.c op.c op.h perl.c
+	  !> pod/perlapi.pod pp.c pp.h pp_ctl.c pp_pack.c pp_sys.c sv.c
+	  !> sv.h
+____________________________________________________________________________
+[ 31149] By: nicholas				   on 2007/05/05  09:32:31
+	Log: Integrate:
+	     [ 30847]
+	     C++ compilation fix by Steve Peters
+	     
+	     [ 30848]
+	     g++ on NetBSD needs to have environ declared as well.
+     Branch: maint-5.8/perl
+	  !> perl.h
+____________________________________________________________________________
+[ 31146] By: nicholas				   on 2007/05/04  22:15:30
+	Log: Integrate:
+	     [ 30897]
+	     Make the don't-use-nm symbol table probes work under C++.
+	     
+	     [ 30904]
+	     If the test programs for strtoul(), strtoull() or strtouq() fail, don't
+	     assume that the functions work.
+	     
+	     [ 30919]
+	     When removing the test program source, also remove the compiled
+	     executable.
+	     
+	     [ 30977]
+	     1. Move #30327 to the generation location
+	     2. Regen after backports
+	     3. Include Jarkko's $run and \n patch
+	     
+	     [ 31040]
+	     Major *try* cleanup: introduce $rm_try; Some whitespace cleanups;
+	     Small textual nit from Jarkko
+	     
+	     [ 31043]
+	     Missed quotes in protocheck for rm_try
+	     
+	     [ 31066]
+	     Leave try.c and include files where they are if we need them later
+     Branch: maint-5.8/perl
+	  !> Configure Porting/config_h.pl config_h.SH
+____________________________________________________________________________
+[ 31145] By: nicholas				   on 2007/05/04  21:08:19
+	Log: Integrate:
+	     [ 30562]
+	     Subject: [PATCH] DB_File with g++ and db v1
+	     From: Jarkko Hietaniemi <jhi@iki.fi>
+	     Date: Mon, 12 Mar 2007 22:01:34 -0400
+	     Message-ID: <45F605FE.1090606@iki.fi>
+	     
+	     [ 30852]
+	     Subject: [PATCH] Allow any *DBM_File to work for DynaLoader testing
+	     From: "Jerry D. Hedden" <jdhedden@1979.usna.com>
+	     Date: Wed, 4 Apr 2007 09:57:16 -0400
+	     Message-ID: <1ff86f510704040657t732af552jbcbdb8804d134ff7@mail.gmail.com>
+	     
+	     [ 30898]
+	     Cast needed to get POSIX compiling with g++ on FreeBSD.
+	     
+	     [ 31080]
+	     Subject: [PATCH] fixed Fcntl::S_IFMT() breakage introduced by change 30674 (blead 26701)
+	     From: Alexey Tourbin <at@altlinux.ru>
+	     Date: Wed, 25 Apr 2007 18:12:22 +0400
+	     Message-ID: <20070425141222.GA24828@solemn.turbinal>
+	     
+	     [ 31117]
+	     Upgrade to XSLoader 0.08
+	     
+	     [ 31138]
+	     Subject: [perl #42844] careless use of gethostbyname() in Socket.xs 
+	     From: kan@dcit.cz (via RT) <perlbug-followup@perl.org>
+	     Date: Tue, 01 May 2007 09:17:22 -0700
+	     Message-ID: <rt-3.6.HEAD-6655-1178036242-364.42844-75-0@perl.org>
+     Branch: maint-5.8/perl
+	  +> ext/Fcntl/t/mode.t
+	  !> MANIFEST ext/DB_File/DB_File.xs ext/DynaLoader/XSLoader_pm.PL
+	  !> ext/DynaLoader/t/DynaLoader.t ext/DynaLoader/t/XSLoader.t
+	  !> ext/Fcntl/Fcntl.pm ext/POSIX/POSIX.xs ext/Socket/Socket.pm
+	  !> ext/Socket/Socket.xs
+____________________________________________________________________________
+[ 31144] By: nicholas				   on 2007/05/04  20:20:33
+	Log: Integrate:
+	     [ 29176]
+	     Don't run ext/Sys/Syslog/t/constants.t with taint mode, so it's
+	     not systematically skipped
+     Branch: maint-5.8/perl
+	  !> ext/Sys/Syslog/t/constants.t
+____________________________________________________________________________
+[ 31143] By: nicholas				   on 2007/05/04  19:37:09
+	Log: Integrate:
+	     [ 30972]
+	     Sys::Syslog was missing from Maintainers.pl
+	     
+	     [ 31022]
+	     Reflect change of path for Module::Pluggable's tests in Maintainers.pl
+	     
+	     [ 31096]
+	     More up-to-date info about the metaunits
+	     
+	     [ 31126]
+	     Subject: [PATCH] Add John Peacock as maintainer of version.pm
+	     From: Gerard Goossen <gerard@tty.nl>
+	     Date: Thu, 3 May 2007 16:23:58 +0200
+	     Message-ID: <20070503142358.GE27210@ostwald>
+	     
+	     [ 31142]
+	     Add a few manpages to Maintainers.pl
+     Branch: maint-5.8/perl
+	  !> Porting/Maintainers.pl Porting/pumpkin.pod
+____________________________________________________________________________
+[ 31133] By: nicholas				   on 2007/05/03  23:37:24
+	Log: Add push_return to the CORE/EXT export list, as Data::Alias needs it.
+     Branch: maint-5.8/perl
+	   ! embed.fnc embed.h global.sym
+____________________________________________________________________________
+[ 31129] By: nicholas				   on 2007/05/03  16:01:36
+	Log: Integrate:
+	     [ 30716]
+	     Subject: symbol-exports needed for Data::Alias
+	     From: Matthijs van Duin <xmath@cpan.org>
+	     Date: Tue, 20 Mar 2007 14:59:15 +0100
+	     Message-ID: <20070320135915.GA25192@cds.nl>
+     Branch: maint-5.8/perl
+	  !> embed.fnc embed.h global.sym
+____________________________________________________________________________
+[ 31128] By: nicholas				   on 2007/05/03  15:34:16
+	Log: Integrate:
+	     [ 31072]
+	     Upgrade to CPAN-1.9101
+     Branch: maint-5.8/perl
+	  !> lib/CPAN.pm lib/CPAN/Kwalify/distroprefs.dd
+____________________________________________________________________________

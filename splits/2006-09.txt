@@ -1,0 +1,26 @@
+[ 28854] By: nicholas				   on 2006/09/16  17:19:07
+	Log: Integrate:
+	     [ 24803]
+	     hash key code cleanup
+     Branch: maint-5.8/perl
+	  !> embed.fnc hv.c hv.h proto.h
+____________________________________________________________________________
+[ 28852] By: nicholas				   on 2006/09/16  16:20:26
+	Log: Integrate:
+	     [ 24352]
+	     Skip PL_sig_sv when PERL_IMPLICIT_CONTEXT is defined
+	     (rather than when PERL_IMPLICIT_SYS is defined)
+     Branch: maint-5.8/perl
+	  !> makedef.pl
+____________________________________________________________________________
+[ 28775] By: nicholas				   on 2006/09/02  16:01:36
+	Log: Integrate:
+	     [ 28771]
+	     Change the generation of {} and [] from 3 ops to 1, and avoid 1 mortal
+	     on the tempstack, by augmenting pp_anonlist and pp_anonhash to accept
+	     OPf_SPECIAL to mean "return a reference to the aggregate" on the stack
+	     rather than the aggregate itself.
+     Branch: maint-5.8/perl
+	  !> ext/B/B/Deparse.pm ext/B/t/concise-xs.t ext/B/t/f_map.t
+	  !> ext/B/t/f_sort.t ext/Devel/Peek/t/Peek.t op.c op.h pp.c
+____________________________________________________________________________

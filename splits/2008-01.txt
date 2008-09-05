@@ -1,0 +1,172 @@
+[ 33107] By: nicholas				   on 2008/01/29  17:04:46
+	Log: Integrate:
+	     [ 29301]
+	     Subject: [PATCH] Study SUSPEND (and recursion) properly
+	     From: demerphq <demerphq@gmail.com>
+	     Date: Thu, 16 Nov 2006 20:32:11 +0100
+	     Message-ID: <9b18b3110611161132j695ee86ata939a149b08efb11@mail.gmail.com>
+	     
+	     [just the tests, which pass here already]
+     Branch: maint-5.8/perl
+	  !> t/op/pat.t
+____________________________________________________________________________
+[ 33100] By: craigb				   on 2008/01/29  03:34:59
+	Log: 2 hunks from 27648 needed to keep maint-5.8 compileable on VMS.
+     Branch: maint-5.8/perl
+	   ! vms/vms.c
+____________________________________________________________________________
+[ 33039] By: nicholas				   on 2008/01/22  17:41:53
+	Log: Integrate:
+	     [ 29960]
+	     Display the process id as part of the trace output if running with -Dv
+	     (Might be nice to display the thread ID too under ithreads, but I can't
+	     see a clean way to get that)
+     Branch: maint-5.8/perl
+	  !> deb.c
+____________________________________________________________________________
+[ 33008] By: nicholas				   on 2008/01/18  22:13:06
+	Log: Integrate:
+	     [ 30373]
+	     Fix VMS exit handling broken in Test::Harness 2.64. Also
+	     submitted as http://rt.cpan.org/Public/Bug/Display.html?id=24985
+	     on CPAN RT queue.
+	     
+	     [ 31717]
+	     Subject: Harness prove-switches.t for fixed bug 30952
+	     From: Reini Urban <rurban@x-ray.at>
+	     Date: Tue, 14 Aug 2007 22:49:32 +0200
+	     Message-Id: <46C2155C.3000905@x-ray.at>
+	     
+	     [ 31764]
+	     Subject: Re: [patch] First batch of whitespace patches (Test::Harness)
+	     From: Max Maischein <corion@corion.net>
+	     Date: Fri, 24 Aug 2007 22:04:56 +0200
+	     Message-ID: <46CF39E8.8020707@corion.net>
+	     
+	     [ 33007]
+	     Bump $Test::Harness::Results::VERSION to '0.01_01'
+     Branch: maint-5.8/perl
+	  !> lib/Test/Harness/Results.pm lib/Test/Harness/Straps.pm
+	  !> lib/Test/Harness/t/prove-switches.t
+____________________________________________________________________________
+[ 33006] By: nicholas				   on 2008/01/18  20:15:11
+	Log: Integrate:
+	     [ 31767]
+	     Subject: [PATCH at 31761] RE: MakeMaker + static misbehaviour
+	     From: "Konovalov, Vadim Vladimirovich \(Vadim\)** CTR **" <vkonovalov@alcatel-lucent.com>
+	     Date: Thu, 30 Aug 2007 08:11:04 +0200
+	     Message-ID: <D16F05D0CAAA234BA2B753B80DE6100D4486C3@DEEXC1U02.de.lucent.com>
+	     
+	     [ 31768]
+	     Need to bump MakeMaker's $VERSION too.
+	     
+	     [ 31968]
+	     DragonflyBSD is a BSD too
+	     
+	     [ 31969]
+	     Hey, but "or" is low-prec. So this statement never worked.
+	     
+	     [ 32494]
+	     Upgrade to ExtUtils::MakeMaker 6.37_02
+	     
+	     [ 32517]
+	     Upgrade to ExtUtils::MakeMaker 6.37_03
+	     
+	     [ 32520]
+	     Ignore .git directories
+	     
+	     [ 32546]
+	     Upgrade to ExtUtils::MakeMaker 6.38
+	     
+	     [ 32585]
+	     Upgrade to ExtUtils::MakeMaker 6.40.
+	     
+	     [ 32600]
+	     Upgrade to ExtUtils::MakeMaker 6.42
+     Branch: maint-5.8/perl
+	  +> lib/ExtUtils/t/maketext_filter.t
+	  +> t/lib/MakeMaker/Test/Setup/XS.pm
+	  !> (integrate 39 files)
+____________________________________________________________________________
+[ 33005] By: nicholas				   on 2008/01/18  19:14:53
+	Log: Integrate:
+	     [ 31360]
+	     Make pipe shutdown on VMS care about whether PerlIO has already
+	     shut down.
+	     
+	     [ 31661]
+	     Subject: [patch@31658] Dynamically load dbg xterm on VMS
+	     From: "John E. Malmberg" <wb8tyw@qsl.net>
+	     Date: Thu, 26 Jul 2007 00:28:04 -0500
+	     Message-ID: <46A830E4.1040708@qsl.net>
+	     
+	     [ 32106]
+	     Normalize the case of some VMS syscalls so the prototypes are
+	     kosher on a system with older headers.
+	     
+	     [ 32577]
+	     Fix missing sharpbang definition in configure.com.
+	     
+	     [ 32602]
+	     Tolkien quote for vms/vms.c.
+     Branch: maint-5.8/perl
+	  !> configure.com vms/descrip_mms.template vms/vms.c
+____________________________________________________________________________
+[ 32992] By: nicholas				   on 2008/01/18  07:24:06
+	Log: Reverse change 31634, which should not have been integrated as it
+	     refers to a varable added by a change incompatible with 5.8.x
+	     Thanks to Bob Walker for finding this.
+     Branch: maint-5.8/perl
+	   ! perl.c
+____________________________________________________________________________
+[ 32991] By: nicholas				   on 2008/01/17  17:17:05
+	Log: Integrate:
+	     [ 27345]
+	     Move all the de-tainting logic for runperl into test.pl.
+	     
+	     [ 31731]
+	     Subject: [PATCH] Change 31710 causes t/op/taint.t to fail
+	     From: Reini Urban <rurban@x-ray.at>
+	     Date: Fri, 17 Aug 2007 08:56:38 +0200
+	     Message-Id: <46C546A6.6020000@x-ray.at>
+	     
+	     [ 31758]
+	     Subject: [PATCH] Revert/fix 31731 - Empty PATH taint test on Cygwin
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Tue, 28 Aug 2007 10:43:41 -0400
+	     Message-ID: <1ff86f510708280743n7c0424berb9a402f864dcd399@mail.gmail.com>
+	     
+	     [ 32611]
+	     Subject: [PATCH] Must have /bin under Cygwin
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Tue, 11 Dec 2007 13:35:55 -0500
+	     Message-ID: <1ff86f510712111035u7f8da6e8h1a1cbd9d85d27c03@mail.gmail.com>
+     Branch: maint-5.8/perl
+	  !> t/op/taint.t t/op/utftaint.t t/test.pl
+____________________________________________________________________________
+[ 32985] By: nicholas				   on 2008/01/16  15:39:57
+	Log: Update Changes
+     Branch: maint-5.8/perl
+	   ! Changes patchlevel.h
+____________________________________________________________________________
+[ 32984] By: nicholas				   on 2008/01/16  15:21:04
+	Log: Up*grade to Text::Balanced 1.98, which is the most recent version that
+	     does not require version.pm.
+	     * for some value of gravity.
+     Branch: maint-5.8/perl
+	   ! lib/Text/Balanced.pm lib/Text/Balanced/Changes
+	   ! lib/Text/Balanced/README lib/Text/Balanced/t/00-load.t
+	   ! lib/Text/Balanced/t/extmul.t lib/Text/Balanced/t/extqlk.t
+____________________________________________________________________________
+[ 32983] By: nicholas				   on 2008/01/16  14:41:22
+	Log: Reverse change 26510 as various existing modules rely on this bug:
+	     
+	     Change 26510 by gisle@gisle-ask on 2005/12/28 11:01:46
+	     
+	     Remove test for NUL ending in r?instr().
+	     This test is actually harmful because we will search
+	     for any garbage found past the empty search string.
+	     Ref change 26509.
+     Branch: maint-5.8/perl
+	   ! util.c
+____________________________________________________________________________
