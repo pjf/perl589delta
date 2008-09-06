@@ -42,6 +42,11 @@ code is compatible with it, as this configuration may give useful performance
 improvements. For existing installations we would not recommend changing to
 this configuration unless thorough testing is performed before deployment.
 
+=item *
+
+Reblessing an object from a class that doesn't use overloads to one
+that does (or vice versa) is now faster.
+
 =back
 
 =head1 Installation and Configuration Improvements
