@@ -15,6 +15,54 @@ There are no changes incompatible with 5.8.8.
 
 =head1 Modules and Pragmata
 
+=over
+
+=item *
+
+C<B> upgraded to ?
+
+=over
+
+=item *
+
+PMOP handling fixes.
+
+=back
+
+=item *
+
+C<CPAN> upgraded to version 1.9101
+
+=item *
+
+C<threads::shared> upgraded to version 1.11
+
+=over
+
+=item *
+
+User locks are now store in a safier manner.
+
+=back
+
+=item *
+
+C<Socket> upgraded to version 1.79
+
+=over
+
+=item *
+
+This fixes an optimistic use of C<gethostbyname()>.
+
+=back
+
+=item *
+
+C<XSLoader> upgraded to version 0.08
+
+=back
+
 =head1 Utility Changes
 
 =head1 New Documentation
@@ -51,11 +99,19 @@ that does (or vice versa) is now faster.
 
 =head1 Installation and Configuration Improvements
 
+F<g++> support was tuned, especially for FreeBSD.
+
+C<Configure> is now better at removing temporary files.
+
+There are improved hints for DEC/OSF.
+
 =head1 Selected Bug Fixes
 
 =head1 New or Changed Diagnostics
 
 =head1 Changed Internals
+
+C<av_reify>, C<lex_end>, C<mod>, C<op_clear>, C<pop_return>, C<qerror>, C<setdefout>, C<vivify_defelem> and C<yylex> are now visible to perl core extensions. This was required by L<Data::Alias>.
 
 =head1 New Tests
 
