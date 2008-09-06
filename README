@@ -13,6 +13,11 @@ git to be a contributor, but it's encouraged.
 
 The procedure for volunteering to take a chunk of work is:
 
+    * To help co-ordinate efforts between volunteers, you are
+      encouraged to join the perl589delta mailing list at
+      
+          http://groups.google.com/group/perl589delta
+
     * If you want to work with the full git environment, register
       for an account on http://github.com/ .
 
@@ -31,9 +36,9 @@ The procedure for volunteering to take a chunk of work is:
         http://github.com/pfenwick/perl589delta/tarball/master
 
     * Look at the Volunteers.txt file and select a free month.
-      Send a note to pjf@cpan.org saying which month you're
-      going to work on.  Paul will send you a commit bit, but
-      you can start work without it.
+      Send a note to perl589delta@googlegroups.com saying which
+      month you're going to work on.  You'll be given a commit bit, 
+      but you can start work without it.
 
     * Do all your work on the branch with your chunk number.  You
       can switch to yur branch with:
@@ -43,8 +48,9 @@ The procedure for volunteering to take a chunk of work is:
       Replace 1970-01 with your chunk ID.
 
       If you're not using git, just make changes normally and
-      send patches to pjf@cpan.org, who will apply them to your
-      branch.
+      send patches to perl589delta@googlegroups.com, and they'll
+      get applied to your branch.  It will help if you put
+      [PATCH] in the subject line.
 
     * The files in the split/ directory are the Changes file
       already broken down by month.  You'll probably find them
