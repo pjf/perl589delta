@@ -2,13 +2,13 @@
 2006-02 - Nobody
 2006-03 - Stephen Steneker (aka Stennie)
 2006-04 - Stephen Steneker (aka Stennie)
-2006-05 - Nobody
+2006-05 - Shlomi Fish
 2006-06 - Nobody
 2006-09 - Nobody
 2006-10 - Nobody
 2007-01 - Nobody
 2007-02 - Nobody
-2007-03 - Nobody
+2007-03 - Vincent Pit
 2007-04 - Vincent Pit
 2007-05 - DONE, MERGED (Vincent Pit)
 2007-09 - DONE, MERGED (Paul Fenwick)
