@@ -13,7 +13,9 @@ There are no changes incompatible with 5.8.8.
 
 =head1 Core Enhancements
 
-Nicholas Clark allowed symbolic references to have embedded NULs. The new public function C<get_cvn_flags> can be used in extensions if you have to handle them.
+Nicholas Clark allowed symbolic references to have embedded NULs. The new
+public function C<get_cvn_flags> can be used in extensions if you have to
+handle them.
 
 =head1 Modules and Pragmata
 
@@ -78,7 +80,8 @@ C<DB> upgraded to version 1.30
 
 =item *
 
-Andreas J. Koenig contributed two functions to save and load the debugger history.
+Andreas J. Koenig contributed two functions to save and load the debugger
+history.
 
 =back
 
@@ -144,7 +147,8 @@ C<XSLoader> upgraded to version 0.08
 
 =item *
 
-C<XS::APItest> and C<XS::Typemap> are for internal use only and hence no longer installed.
+C<XS::APItest> and C<XS::Typemap> are for internal use only and hence
+no longer installed.
 
 =back
 
@@ -182,7 +186,8 @@ that does (or vice versa) is now faster.
 
 =item *
 
-C<diagnostics> no longer uses C<$&>, which results in large speedups for regexp matching in all code using it.
+C<diagnostics> no longer uses C<$&>, which results in large speedups
+for regexp matching in all code using it.
 
 =back
 
@@ -190,7 +195,10 @@ C<diagnostics> no longer uses C<$&>, which results in large speedups for regexp 
 
 F<g++> support was tuned, especially for FreeBSD.
 
-C<Configure> is now better at removing temporary files. Tom Callaway (from RedHat) also contributed patches that completes the set of flags passed to the compiler and the linker. Especially, C<-fPIC> is now enabled on linux.
+C<Configure> is now better at removing temporary files. Tom Callaway
+(from RedHat) also contributed patches that completes the set of flags
+passed to the compiler and the linker. Especially, C<-fPIC> is now
+enabled on linux.
 
 There are improved hints for DEC/OSF.
 
@@ -214,7 +222,8 @@ On VMS, escaped dots will be preserved when converted to UNIX syntax.
 
 =item *
 
-L<B::Deparse> has been instructed on how to properly deparse C<print readpipe $x, $y>.
+L<B::Deparse> has been instructed on how to properly deparse C<print
+readpipe $x, $y>.
 
 =item *
 
@@ -226,13 +235,19 @@ C<keys %+> no longer throws an C<'ambiguous'> warning.
 
 =head2 Maximal count of pending signals (%s) exceeded
 
-This new fatal error occurs when the perl process has to abort due to too many pending signals, which is bound to prevent perl from being able to handle further incoming signals safely.
+This new fatal error occurs when the perl process has to abort due to
+too many pending signals, which is bound to prevent perl from being
+able to handle further incoming signals safely.
 
 =head1 Changed Internals
 
-C<av_reify>, C<lex_end>, C<mod>, C<op_clear>, C<pop_return>, C<qerror>, C<setdefout>, C<vivify_defelem> and C<yylex> are now visible to perl core extensions. This was required by L<Data::Alias>.
+C<av_reify>, C<lex_end>, C<mod>, C<op_clear>, C<pop_return>,
+C<qerror>, C<setdefout>, C<vivify_defelem> and C<yylex> are now
+visible to perl core extensions. This was required by L<Data::Alias>.
 
-C<set> magic on localizing/assigning to a magic variable will now only trigger for I<container magics>, i.e. it will for C<%ENV> or C<%SIG> but not for C<$#array>.
+C<set> magic on localizing/assigning to a magic variable will now only
+trigger for I<container magics>, i.e. it will for C<%ENV> or C<%SIG>
+but not for C<$#array>.
 
 =head1 New Tests
 
@@ -240,7 +255,9 @@ C<set> magic on localizing/assigning to a magic variable will now only trigger f
 
 =head1 Platform Specific Problems
 
-Ilya Zakharevich has added and documented several C<Window*> and C<Clipbrd*> functions to C<OS2::Process>, and then bumped C<OS2::REXX::DLL> to 1.03.
+Ilya Zakharevich has added and documented several C<Window*> and
+C<Clipbrd*> functions to C<OS2::Process>, and then bumped
+C<OS2::REXX::DLL> to 1.03.
 
 =head1 Reporting Bugs
 
