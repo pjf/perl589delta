@@ -13,9 +13,15 @@ There are no changes incompatible with 5.8.8.
 
 =head1 Core Enhancements
 
+Nicholas Clark allowed symbolic references to have embedded NULs. The new public function C<get_cvn_flags> can be used in extensions if you have to handle them.
+
 =head1 Modules and Pragmata
 
 =over
+
+=item *
+
+C<AutoSplit> upgraded to 1.05
 
 =item *
 
@@ -58,7 +64,51 @@ New type B::HE added with methods VAL, HASH, SVKEY_force
 
 =item *
 
+C<bignum> upgraded to 0.20
+
+=item *
+
 C<CPAN> upgraded to version 1.9101
+
+=item *
+
+C<DB> upgraded to version 1.30
+
+=over
+
+=item *
+
+Andreas J. Koenig contributed two functions to save and load the debugger history.
+
+=back
+
+=item *
+
+C<Encode> upgraded to version 2.20
+
+=item *
+
+C<ExtUtils::Constant> upgraded to version 0.04
+
+=item *
+
+C<Math::BigFloat> upgraded to version 1.54
+
+=item *
+
+C<Math::BigInt> upgraded to version 1.82
+
+=item *
+
+C<Math::BigRat> upgraded to version 0.18
+
+=item *
+
+C<Module::Pluggable> upgraded to version 3.6
+
+=item *
+
+C<Pod::Html> upgraded to version 1.08
 
 =item *
 
@@ -71,6 +121,10 @@ C<threads::shared> upgraded to version 1.11
 User locks are now store in a safier manner.
 
 =back
+
+=item *
+
+L<Shell> upgraded to version 0.72
 
 =item *
 
@@ -87,6 +141,10 @@ This fixes an optimistic use of C<gethostbyname()>.
 =item *
 
 C<XSLoader> upgraded to version 0.08
+
+=item *
+
+C<XS::APItest> and C<XS::Typemap> are for internal use only and hence no longer installed.
 
 =back
 
@@ -122,29 +180,67 @@ this configuration unless thorough testing is performed before deployment.
 Reblessing an object from a class that doesn't use overloads to one
 that does (or vice versa) is now faster.
 
+=item *
+
+C<diagnostics> no longer uses C<$&>, which results in large speedups for regexp matching in all code using it.
+
 =back
 
 =head1 Installation and Configuration Improvements
 
 F<g++> support was tuned, especially for FreeBSD.
 
-C<Configure> is now better at removing temporary files.
+C<Configure> is now better at removing temporary files. Tom Callaway (from RedHat) also contributed patches that completes the set of flags passed to the compiler and the linker. Especially, C<-fPIC> is now enabled on linux.
 
 There are improved hints for DEC/OSF.
 
 =head1 Selected Bug Fixes
 
+=head2 Smaller fixes
+
+=over 4
+
+=item *
+
+It's now possible to overload C<eq> when using C<nomethod>.
+
+=item *
+
+The reference count of PerlIO file descriptors is now correctly handled.
+
+=item *
+
+On VMS, escaped dots will be preserved when converted to UNIX syntax.
+
+=item *
+
+L<B::Deparse> has been instructed on how to properly deparse C<print readpipe $x, $y>.
+
+=item *
+
+C<keys %+> no longer throws an C<'ambiguous'> warning.
+
+=back
+
 =head1 New or Changed Diagnostics
+
+=head2 Maximal count of pending signals (%s) exceeded
+
+This new fatal error occurs when the perl process has to abort due to too many pending signals, which is bound to prevent perl from being able to handle further incoming signals safely.
 
 =head1 Changed Internals
 
 C<av_reify>, C<lex_end>, C<mod>, C<op_clear>, C<pop_return>, C<qerror>, C<setdefout>, C<vivify_defelem> and C<yylex> are now visible to perl core extensions. This was required by L<Data::Alias>.
+
+C<set> magic on localizing/assigning to a magic variable will now only trigger for I<container magics>, i.e. it will for C<%ENV> or C<%SIG> but not for C<$#array>.
 
 =head1 New Tests
 
 =head1 Known Problems
 
 =head1 Platform Specific Problems
+
+Ilya Zakharevich has added and documented several C<Window*> and C<Clipbrd*> functions to C<OS2::Process>, and then bumped C<OS2::REXX::DLL> to 1.03.
 
 =head1 Reporting Bugs
 
