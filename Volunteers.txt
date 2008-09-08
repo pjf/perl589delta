@@ -4,7 +4,7 @@
 2006-04 - Stephen Steneker (aka Stennie)
 2006-05 - Shlomi Fish
 2006-06 - Nobody
-2006-09 - Nobody
+2006-09 - Mark Aufflick
 2006-10 - Nobody
 2007-01 - Nobody
 2007-02 - Nobody
@@ -12,7 +12,7 @@
 2007-04 - DONE, MERGED (Vincent Pit)
 2007-05 - DONE, MERGED (Vincent Pit)
 2007-09 - DONE, MERGED (Paul Fenwick)
-2007-10 - Nobody
+2007-10 - Jacinta Richardson
 2007-11 - Shawn M Moore (aka Sartak)
 2007-12 - Nobody
 2008-01 - Nobody
