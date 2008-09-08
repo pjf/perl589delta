@@ -50,17 +50,19 @@ The procedure for volunteering to take a chunk of work is:
     * Do all your work on the branch with your chunk number.  You
       can switch to your branch and make sure it's up-to-date with:
 
-        git checkout 1970-01
+        git checkout -b 1970-01 origin/1970-01
         git merge master
+        git push origin 1970-01
 
       Replace 1970-01 with your chunk ID.  The 'git merge master'
       will make sure you've got the latest perl589delta.pod
-      and tools.
+      and tools.  The push line will make sure your changes go
+      back to the main repo.
 
-      If you're not using git, just make changes normally and
-      send patches to perl589delta@googlegroups.com, and they'll
-      get applied to your branch.  It will help if you put
-      [PATCH] in the subject line.
+      If you're not using git, or don't want to worry about the branches,
+      just make changes normally and send patches to
+      perl589delta@googlegroups.com, and they'll get applied to your branch.
+      It will help if you put [PATCH] in the subject line.
 
     * The files in the split/ directory are the Changes file
       already broken down by month.  You'll probably find them
