@@ -86,8 +86,9 @@ The procedure for volunteering to take a chunk of work is:
       as you'd like, e-mail perl589delta@googlegroups.com
       to arrange for it to be merged into the master branch.
       Please be sure to note if your work is completed, if there
-      are items in the TODO file, or if you've been removing the
-      completed items from the split file.
+      are items in the TODO file, if you only got up to a certain 
+      spot, or if you've been removing the completed items from
+      the split file.
 
     * Feel warm and fuzzy about your contributions to Perl!
 
