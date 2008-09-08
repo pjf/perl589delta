@@ -31,10 +31,18 @@ up on work.
 If this looks achievable, and you'd still like to help out, then I'd suggest
 you follow the instructions at the bottom of:
 
-        http://github.com/pfenwick/perl589delta/tree/master
+    http://github.com/pfenwick/perl589delta/tree/master
 
 Volunteer for a chunk as usual, but just drop a note to the list that you'll
 be using it to document easy changes before handing it back.  We'll all love
 you for it.
 
-If you have any questions, mail them to perl589delta@googlegroups.com .
+If nothing else, consider joining the mailing list at:
+
+    http://groups.google.com/group/perl589delta
+
+If there's any small tasks that need doing, that's the first place
+they'll be posted.
+
+If you have any questions, mail them to the list at
+perl589delta@googlegroups.com .

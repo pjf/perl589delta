@@ -8,6 +8,13 @@ changelog (a chunk), and then write the relevant sections of the
 perldelta for those changes, or as much as you can given the time you
 have available.
 
+If you're not a Perl-guts ninja, and aren't sure if you're able
+to help, read the micro-helpers HOWTO at:
+
+  http://github.com/pfenwick/perl589delta/tree/master/Micro-helpers-HOWTO.txt
+
+If you want to dive in, then read on!
+
 This project uses git for change control.  You don't have to use
 git to be a contributor, but it's encouraged.
 
