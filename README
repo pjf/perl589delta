@@ -71,10 +71,29 @@ The procedure for volunteering to take a chunk of work is:
       is ONLY for completed chunks, and for shared resources such
       as the Volunteers file and helper programs.
 
-    * When your chunk is COMPLETED, e-mail pjf@cpan.org to arrange
-      for it to be merged into the master branch.
+    * If anything is too hard, simply note them (including the
+      patch number) in the TODO file in your branch.  It's okay
+      to skip changes; you're encouraged to do so if it keeps
+      you productive.
+
+    * Alternatively, if most of the changes are difficult to
+      comprehend, feel free to just document the changes that
+      do make sense.  To track these, the recommended method
+      is to remove the completed changes from your split file
+      to prevent duplicate work later on.
+
+    * When your chunk is completed, or when you've done as much
+      as you'd like, e-mail perl589delta@googlegroups.com
+      to arrange for it to be merged into the master branch.
+      Please be sure to note if your work is completed, if there
+      are items in the TODO file, or if you've been removing the
+      completed items from the split file.
 
     * Feel warm and fuzzy about your contributions to Perl!
+
+    * If you have any questions, don't hesitate to e-mail
+      the group on perl589delta@googlegroups.com for assistance,
+      or ask on #p5p on irc.perl.org.
 
 = TOOLS AND RESOURCES =
 
