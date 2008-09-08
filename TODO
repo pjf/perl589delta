@@ -2,3 +2,7 @@
 * in 2006-10.txt, chage 29129 integrates 26400, '[PATCH] latest switch/say/~~'
   which doesn't make sense to me (switch/say/~~ is not in 5.8.9). Please
   re-check. --moritz
+* I guess change 28879 (integrated in 30048) could be interesting, but so far
+  I couldn't figure out what it actually does. --moritz
+* Change 30046 integrates 'Subject: [perl #40239] New hints file for
+  MidnightBSD'  which I don't know where to add. --moritz

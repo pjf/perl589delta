@@ -133,6 +133,10 @@ L<Shell> upgraded to version 0.72
 
 C<Socket> upgraded to version 1.79
 
+=item *
+
+C<Test::Harness> upgraded version to 2.64
+
 =over
 
 =item *
@@ -238,6 +242,24 @@ fits into Latin-1.
 
 Reduced number of calls to C<getpeername> in L<IO::Socket> (29129).
 
+=item *
+
+Using C<#!perl -d> could trigger an assertion, which has been fixed (30075).
+
+=item *
+
+Don't stringify tied code references in C<@INC> when calling C<require>.
+(30068)
+
+=item *
+
+Code references in C<@INC> report the correct file name when C<__FILE__> is
+used (30068).
+
+=item *
+
+Width and precion in sprintf didn't handle wide characters correctly (30058).
+
 =back
 
 =head1 New or Changed Diagnostics
@@ -273,6 +295,23 @@ trigger for I<container magics>, i.e. it will for C<%ENV> or C<%SIG>
 but not for C<$#array>.
 
 =head1 New Tests
+
+=over 4
+
+=item *
+
+Regression tests for anchored regexes using C<\s> that failed to set C<$&>
+(30073).
+
+=item * 
+
+Regression tests for sprinf with 64 bit semantics (30058).
+
+=item *
+
+Tests for tainting and C<open> with C<|-> as second argument (30048).
+
+=back
 
 =head1 Known Problems
 
