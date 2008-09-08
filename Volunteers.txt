@@ -1,5 +1,5 @@
 2006-01 - DONE (no actual changes required)
-2006-02 - Moritz
+2006-02 - DONE, MERGED (Moritz Lenz)
 2006-03 - Stephen Steneker (aka Stennie)
 2006-04 - Stephen Steneker (aka Stennie)
 2006-05 - Shlomi Fish
