@@ -103,6 +103,10 @@ The procedure for volunteering to take a chunk of work is:
 The Perl Repository browser.  If you need to look up what a particular
 patch entails, you can do it here.
 
+* http://github.com/feeds/pfenwick/commits/perl589delta/master
+
+This is a feed for watching the progress on the main branch.
+
 * #p5p on irc.perl.org
 
 This is the IRC channel where many of the Perl 5 porters hang
