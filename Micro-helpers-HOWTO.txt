@@ -1,0 +1,40 @@
+So, you want to help out writing the Perl 5.8.9 release notes, but you don't
+have much time, or have never poked around the guts of Perl?  That's okay, we
+still need you!  Firstly, the full instructions can be found at the
+bottom of:
+
+   http://github.com/pfenwick/perl589delta/
+
+However if you just want a quick test to see if your knowledge is a good
+fit for the project, then I'd recommend looking over one of the split files
+(which isn't marked as done), which can be found at:
+
+   http://github.com/pfenwick/perl589delta/tree/master/splits/
+
+At this point I know what you're thinking...  It's filled with all sorts of
+things about Perl's internals that don't make any sense.  Don't worry, I
+don't know what a lot of them mean either, and to help out you don't need to
+either!
+
+The big thing is that you can look through the changes and spot something
+that *does* make sense.  Even if it's something as simple as "upgraded
+Module::Example to 1.23".  That belongs in the release notes (many of the
+internal changes don't), so you can add it.  Easy!
+
+The trick then becomes making sure that nobody goes and repeats the work of
+trying to add that information a second time.  Luckily, this is easy as
+well.  When you make your change, simply delete the relevant change from the
+splits file.  If you progress in this way, we'll know everything left in the
+splits file is still remaining for review, and there's no chance of doubling
+up on work.
+
+If this looks achievable, and you'd still like to help out, then I'd suggest
+you follow the instructions at the bottom of:
+
+        http://github.com/pfenwick/perl589delta/tree/master
+
+Volunteer for a chunk as usual, but just drop a note to the list that you'll
+be using it to document easy changes before handing it back.  We'll all love
+you for it.
+
+If you have any questions, mail them to perl589delta@googlegroups.com .
