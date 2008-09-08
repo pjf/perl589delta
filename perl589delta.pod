@@ -258,10 +258,6 @@ able to handle further incoming signals safely.
 This new fatal error occurs when a file test operator is used that is 
 not availble on the current platfom (25987).
 
-=head2 Can't upgrade %s (%d) to %d
-
-This error now reports the type of things that made the upgrade fail (27253).
-
 =head2 Panic: attempt to call %s in %s
 
 This new fatal error occurs when a file test operator is used that is 
