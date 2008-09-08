@@ -365,7 +365,7 @@ for regexp matching in all code using it.
 
 =item *
 
-Regular expressions lasses of a single character are now treated the same as
+Regular expressions classes of a single character are now treated the same as
 if the character had been used as a literal, meaning that code that uses
 char-classes as an escaping mechanism will see a speedup. (Yves Orton)
 
