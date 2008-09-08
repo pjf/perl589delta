@@ -121,7 +121,7 @@ C<threads::shared> upgraded to version 1.11
 
 =item *
 
-User locks are now store in a safier manner.
+User locks are now stored in a safer manner.
 
 =back
 
