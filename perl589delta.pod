@@ -232,12 +232,7 @@ C<keys %+> no longer throws an C<'ambiguous'> warning.
 =item * 
 
 C<index> works faster now if the search string is stored in UTF-8 but actually
-fits into Latin-1
-
-=item * 
-
-C<index> works faster now if the search string is stored in UTF-8 but actually
-fits into Latin-1
+fits into Latin-1.
 
 =item * 
 
