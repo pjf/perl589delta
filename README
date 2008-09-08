@@ -76,12 +76,19 @@ The procedure for volunteering to take a chunk of work is:
 
     * Feel warm and fuzzy about your contributions to Perl!
 
-= TOOLS =
+= TOOLS AND RESOURCES =
 
 * http://public.activestate.com/cgi-bin/perlbrowse
 
 The Perl Repository browser.  If you need to look up what a particular
 patch entails, you can do it here.
+
+* #p5p on irc.perl.org
+
+This is the IRC channel where many of the Perl 5 porters hang
+out.  They've agreed to make themselves available to volunteers of
+the Perl 5.8.9 delta effort.  If you need assistance, especially
+about what a given patch does or needs, don't hesitate to ask on #p5p.
 
 * bin/get-changes 
 
