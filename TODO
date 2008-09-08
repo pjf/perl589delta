@@ -1,1 +1,4 @@
 * Double-check B version number before final release
+* in 2006-10.txt, chage 29129 integrates 26400, '[PATCH] latest switch/say/~~'
+  which doesn't make sense to me (switch/say/~~ is not in 5.8.9). Please
+  re-check. --moritz

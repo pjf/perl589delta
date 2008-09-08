@@ -234,6 +234,15 @@ C<keys %+> no longer throws an C<'ambiguous'> warning.
 C<index> works faster now if the search string is stored in UTF-8 but actually
 fits into Latin-1
 
+=item * 
+
+C<index> works faster now if the search string is stored in UTF-8 but actually
+fits into Latin-1
+
+=item * 
+
+Reduced number of calls to C<getpeername> in L<IO::Socket> (29129).
+
 =back
 
 =head1 New or Changed Diagnostics
@@ -243,6 +252,15 @@ fits into Latin-1
 This new fatal error occurs when the perl process has to abort due to
 too many pending signals, which is bound to prevent perl from being
 able to handle further incoming signals safely.
+
+=head2 Panic: attempt to call %s in %s
+
+This new fatal error occurs when a file test operator is used that is 
+not availble on the current platfom (25987).
+
+=head2 Can't upgrade %s (%d) to %d
+
+This error now reports the type of things that made the upgrade fail (27253).
 
 =head2 Panic: attempt to call %s in %s
 
