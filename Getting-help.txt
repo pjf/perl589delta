@@ -1,0 +1,20 @@
+If you're encountering patches that seem to require an in-depth knowledge of
+the more arcane parts of Perl, you've got a few options to avoid being bogged
+down:
+
+1) Ignore it, document it as needing to be done in the TODO file, and keep
+   moving.
+
+2) Use the tool at http://public.activestate.com/cgi-bin/perlbrowse to
+   look up the patch.  This can often be very enlightening.
+
+3) Hop onto #p5p on irc.perl.org.  You've got a good chance of finding the
+   person who wrote the original patch there, or someone who intimately
+   knows what it does.  They're friendly, and are expecting perl589delta
+   volunteers.
+
+If you're taking the "light" approach of simply picking out low-hanging fruit,
+documenting them, and removing the completed sections from the split files,
+then keep doing what you're doing.  However you're welcome to try the above
+methods if you want to clear out some of those more tricky changes.
+
