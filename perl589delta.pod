@@ -17,13 +17,34 @@ Nicholas Clark allowed symbolic references to have embedded NULs. The new
 public function C<get_cvn_flags> can be used in extensions if you have to
 handle them.
 
+It's now possible to call C<stat> and the C<-X> filestat operators on
+dirhandles. When the situation is ambiguous, it favours the file handle
+semantics. They also treat C<*FILE{IO}> filehandles like C<*FILE> filehandles.
+
 =head1 Modules and Pragmata
+
+=head2 New Modules
+
+=over
+
+=item *
+
+C<Module::Pluggable> is a simple framework to create modules that accept
+pluggable sub-modules. The bundled version is 3.6.
+
+=back
+
+=head2 Updated Modules
 
 =over
 
 =item *
 
 C<AutoSplit> upgraded to 1.05
+
+=item *
+
+C<autouse> upgraded to version 1.06
 
 =item *
 
@@ -66,7 +87,35 @@ New type B::HE added with methods VAL, HASH, SVKEY_force
 
 =item *
 
+B<B::Debug> upgraded to version 1.03
+
+=item *
+
+C<B::Deparse> upgraded to version 0.81
+
+=item *
+
+C<B::Lint> upgraded to version 1.09
+
+=item *
+
+C<B::Terse> upgraded to version 1.04
+
+=item *
+
+C<base> upgraded to version 2.08
+
+=item *
+
+C<Benchmark> upgraded to version 1.10
+
+=item *
+
 C<bignum> upgraded to 0.20
+
+=item *
+
+C<CGI> upgraded to version 3.28
 
 =item *
 
@@ -87,11 +136,59 @@ history.
 
 =item *
 
+C<DB_File> upgraded to version 1.815
+
+=item *
+
+C<diagnostics> upgraded to version 1.16
+
+=item *
+
 C<Encode> upgraded to version 2.20
 
 =item *
 
+C<Exporter> upgraded to version 5.60
+
+=item *
+
 C<ExtUtils::Constant> upgraded to version 0.04
+
+=item *
+
+C<ExtUtils::MakeMaker> upgraded to version 6.32
+
+=item *
+
+C<Fatal> upgraded to version 1.05
+
+=over
+
+=item *
+
+Allows to make fatal built-ins in CORE::GLOBAL.
+
+=back
+
+=item *
+
+C<File::Glob> upgraded to version 1.06
+
+=over
+
+=item *
+
+Fixes spurious results with brackets inside braces.
+
+=back
+
+=item *
+
+C<FileCache> upgraded to version 1.07
+
+=item *
+
+C<libnet> upgraded to version 1.20
 
 =item *
 
@@ -107,27 +204,27 @@ C<Math::BigRat> upgraded to version 0.18
 
 =item *
 
-C<Module::Pluggable> upgraded to version 3.6
-
-=item *
-
 C<Pod::Html> upgraded to version 1.08
 
 =item *
 
-C<threads::shared> upgraded to version 1.11
-
-=over
+C<Pod::Perldoc> is now maintained by Hakim Cassimally (osfameron).
 
 =item *
 
-User locks are now stored in a safer manner.
+C<POSIX::remove> can removes empty directories.
 
-=back
+=item *
+
+L<SelfLoader> upgraded to version 1.10
 
 =item *
 
 L<Shell> upgraded to version 0.72
+
+=item *
+
+L<sigtrap> upgraded to version 1.04
 
 =item *
 
@@ -138,6 +235,74 @@ C<Socket> upgraded to version 1.79
 =item *
 
 This fixes an optimistic use of C<gethostbyname()>.
+
+=back
+
+=item *
+
+C<Storable> upgraded to 2.16
+
+=item *
+
+C<Switch> upgraded to version 2.13
+
+=item *
+
+C<Test::Simple> upgraded to version 0.70
+
+=item *
+
+C<Text::ParseWords> upgraded to version 3.25
+
+=item *
+
+C<Text::Tabs> upgraded to version 2007.1117
+
+=over
+
+=item *
+
+This made it able to handle newlines.
+
+=back
+
+=item *
+
+C<Text::Wrap> upgraded to version 2006.1117
+
+=item *
+
+C<Tie::Memoize> upgraded to version 1.1
+
+=over
+
+=item *
+
+Tie::Memoize::EXISTS now correctly caches its results.
+
+=back
+
+=item *
+
+C<Time::gmtime> upgraded to version 1.03
+
+=item *
+
+C<Time::HiRes> upgraded to version 1.9707
+
+=item *
+
+C<threads> upgraded to 1.61
+
+=item *
+
+C<threads::shared> upgraded to version 1.11
+
+=over
+
+=item *
+
+User locks are now stored in a safer manner.
 
 =back
 
@@ -155,6 +320,15 @@ no longer installed.
 =head1 Utility Changes
 
 =head1 New Documentation
+
+As usual, the documentation received its share of corrections, clarifications
+and other nitfixes. More C<< X<...> >> tags were added for indexing.
+
+L<perlunitut> is a tutorial written by Juerd Waalboer on Unicode-related
+terminology and how to correctly handle Unicode in Perl scripts.
+
+L<perlreguts> describe the internals of the regular expressions engine. It has
+been contributed by Yves Orton.
 
 =head1 Performance Enhancements
 
@@ -189,6 +363,12 @@ that does (or vice versa) is now faster.
 C<diagnostics> no longer uses C<$&>, which results in large speedups
 for regexp matching in all code using it.
 
+=item *
+
+Regular expressions lasses of a single character are now treated the same as
+if the character had been used as a literal, meaning that code that uses
+char-classes as an escaping mechanism will see a speedup. (Yves Orton)
+
 =back
 
 =head1 Installation and Configuration Improvements
@@ -198,7 +378,7 @@ F<g++> support was tuned, especially for FreeBSD.
 C<Configure> is now better at removing temporary files. Tom Callaway
 (from RedHat) also contributed patches that completes the set of flags
 passed to the compiler and the linker. Especially, C<-fPIC> is now
-enabled on linux.
+enabled on linux. It will also croak when your F</dev/null> isn't a device.
 
 There are improved hints for DEC/OSF.
 
@@ -238,6 +418,10 @@ fits into Latin-1.
 
 Reduced number of calls to C<getpeername> in L<IO::Socket> (29129).
 
+=item *
+
+C<chr(65535)> ought to be allowed in regexes.
+
 =back
 
 =head1 New or Changed Diagnostics
@@ -264,6 +448,15 @@ This error now reports the type of things that made the upgrade fail (27253).
 
 =head1 Changed Internals
 
+The new API function C<newSV_type> can be used to replace more efficiently the
+common idiom
+
+    sv = newSV(0);
+    sv_upgrade(sv, type);
+
+A C<sigbit> public function was added to test the sign of a NV. It maps to the
+system one when available.
+
 C<av_reify>, C<lex_end>, C<mod>, C<op_clear>, C<pop_return>,
 C<qerror>, C<setdefout>, C<vivify_defelem> and C<yylex> are now
 visible to perl core extensions. This was required by L<Data::Alias>.
@@ -281,6 +474,13 @@ but not for C<$#array>.
 Ilya Zakharevich has added and documented several C<Window*> and
 C<Clipbrd*> functions to C<OS2::Process>, and then bumped
 C<OS2::REXX::DLL> to 1.03.
+
+C<Win32> and C<Win32API> were moved from F<win32/> to F<ext/> and then
+respectively updated to 0.27 by Jan Dubois and 0.1001 by Yitzchak
+Scott-Thoennes. Jan Dubois also made so C<readdir()>, C<cwd()>, C<$^X> and
+C<@INC> would use the alternate (short) filename if the long name is outside
+the current codepage. The C<PATH> envirnoment variable now also uses ANSI
+filenames. And then he added C<killpg()> support on C<MSWin32>.
 
 =head1 Reporting Bugs
 
