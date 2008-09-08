@@ -3,9 +3,9 @@
 2006-03 - Stephen Steneker (aka Stennie)
 2006-04 - Stephen Steneker (aka Stennie)
 2006-05 - Shlomi Fish
-2006-06 - Nobody
+2006-06 - DONE (no actual changes required)
 2006-09 - Mark Aufflick
-2006-10 - Nobody
+2006-10 - Moritz
 2007-01 - Nobody
 2007-02 - Nobody
 2007-03 - Vincent Pit
