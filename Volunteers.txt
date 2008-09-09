@@ -2,12 +2,12 @@
 2006-02 - DONE, MERGED (Moritz Lenz)
 2006-03 - Stephen Steneker (aka Stennie)
 2006-04 - Stephen Steneker (aka Stennie)
-2006-05 - Shlomi Fish
+2006-05 - ==> Nobody <==
 2006-06 - DONE (no actual changes required)
 2006-09 - Mark Aufflick
 2006-10 - DONE, MERGED (Moritz Lenz)
 2007-01 - Up to line 1100, Moritz Lenz
-2007-02 - Nobody
+2007-02 - ==> Nobody <==
 2007-03 - DONE, MERGED (Vincent Pit)
 2007-04 - DONE, MERGED (Vincent Pit)
 2007-05 - DONE, MERGED (Vincent Pit)
@@ -15,8 +15,8 @@
 2007-10 - Jacinta Richardson
 2007-11 - Shawn M Moore (aka Sartak)
 2007-12 - theorbtwo
-2008-01 - Nobody
-2008-02 - Nobody
-2008-03 - Nobody
+2008-01 - Adam Flott
+2008-02 - ==> Nobody <==
+2008-03 - ==> Nobody <==
 2008-04 - Abhijit Menon-Sen (aka crab)
-2008-05 - Nobody
+2008-05 - ==> Nobody <==
