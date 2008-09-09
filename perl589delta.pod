@@ -40,6 +40,10 @@ pluggable sub-modules. The bundled version is 3.6.
 
 =item *
 
+C<AutoLoader> upgraded to 5.63
+
+=item *
+
 C<AutoSplit> upgraded to 1.05
 
 =item *
@@ -87,6 +91,10 @@ New type B::HE added with methods VAL, HASH, SVKEY_force
 
 =item *
 
+C<B::C> upgraded to 1.05
+
+=item *
+
 B<B::Debug> upgraded to version 1.03
 
 =item *
@@ -120,6 +128,22 @@ C<CGI> upgraded to version 3.28
 =item *
 
 C<CPAN> upgraded to version 1.9101
+
+=item *
+
+C<Data::Dumper> upgraded to version 2.121_11
+
+=over
+
+=item *
+
+Performance enhancements (28963)
+
+=item *
+
+Fixes hash iterator current position with the pure Perl version #40668 (29224)
+
+=back
 
 =item *
 
@@ -176,6 +200,14 @@ Allows to make fatal built-ins in CORE::GLOBAL.
 
 =item *
 
+C<File::Basename> upgraded to version 2.76
+
+=item *
+
+C<File::Find> upgraded to version 1.11
+
+=item *
+
 C<File::Glob> upgraded to version 1.06
 
 =over
@@ -188,7 +220,15 @@ Fixes spurious results with brackets inside braces.
 
 =item *
 
+C<File::Path> upgraded to version 1.09
+
+=item *
+
 C<FileCache> upgraded to version 1.07
+
+=item *
+
+C<FindBin> upgraded to version 1.48
 
 =item *
 
@@ -537,6 +577,13 @@ enabled on linux. It will also croak when your F</dev/null> isn't a device.
 
 There are improved hints for DEC/OSF.
 
+Added C<d_pseudofork> to C<Configure> which is a new configuration variable,
+available as C<$Config{d_pseudofork}> in the L<Config> module, has been added,
+to distinguish real fork() support from fake pseudofork used on Windows
+platforms.
+
+L<ptar> and L<ptardiff> are no longer installed to C<$installbin>
+
 =head1 Selected Bug Fixes
 
 =over 4
@@ -702,6 +749,11 @@ List slices with indices out of range now work more consistently (30026).
 The C<-s> switch on the shebang line is again capable of parsing options with
 arguments of the form C<-foo=bar> (29865).
 
+=item *
+
+No longer segfaults when your locale charset is not utf8 with
+C<use open ':locale'> and printing Unicode characters to STDERR (30213)
+
 =back
 
 =head2 Platform specific fixes
@@ -748,6 +800,11 @@ correctly includes "or a subroutine". (RT #38955)
 
 This error in L<Fatal> previously did not show the name of the builtin in
 question (now represented by %s above).
+
+=head2 Offset outside string
+
+Changed to add the seek operation and is now included in the default warnings
+pragma (28903).
 
 =head1 Changed Internals
 
