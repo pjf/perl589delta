@@ -15,10 +15,11 @@
 
 2006-03 - Stephen Steneker (aka Stennie)    Last seen,  8th Sep
 2006-04 - Stephen Steneker (aka Stennie)    Last seen,  8th Sep
-2007-01 - Up to line 2538 , Moritz Lenz     Last seen,  8th Sep
+2007-01 - Up to line 2538 , Moritz Lenz     Last seen,  9th Sep
 2007-11 - Shawn M Moore (aka Sartak)        Last seen,  7th Sep
 2007-12 - theorbtwo                         Last seen,  8th Sep
-2008-01 - Adam Flott                        Last seen   9th Sep
+2008-01 - Adam Flott                        Last seen,  9th Sep
+2008-02 - Spiros Denaxas                    Last seen,  9th Sep
 2008-03 - Jacinta Richardson                Last seen,  9th Sep
 2008-04 - Abhijit Menon-Sen (aka crab)      Last seen,  9th Sep
 2008-05 - Mark Aufflick                     Last seen,  9th Sep
