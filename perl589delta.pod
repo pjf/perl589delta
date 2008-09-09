@@ -260,6 +260,10 @@ used (30068).
 
 Width and precion in sprintf didn't handle wide characters correctly (30058).
 
+=item *
+
+List slices with indices out of range now work more consistently (30026).
+
 =back
 
 =head1 New or Changed Diagnostics
@@ -310,6 +314,11 @@ Regression tests for sprinf with 64 bit semantics (30058).
 =item *
 
 Tests for tainting and C<open> with C<|-> as second argument (30048).
+
+=item *
+
+C<exit> can now be called in expressions that the optimizer constant-folds
+(29976).
 
 =back
 
