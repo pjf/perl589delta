@@ -1,0 +1,329 @@
+[ 34096] By: nicholas				   on 2008/06/30  20:44:32
+	Log: Integrate:
+	     [ 34095]
+	     Integrate:
+	     [ 34090]
+	     Upgrade to Win32-0.37
+	     
+	     [ 34094]
+	     Upgrade to Win32-0.38
+	     (including changes to GetCurrentThreadId.t which should have gone into
+	     the 0.37 upgrade, but which I missed then)
+     Branch: maint-5.8/perl
+	  !> ext/Win32/Changes ext/Win32/Win32.pm ext/Win32/Win32.xs
+	  !> ext/Win32/t/GetCurrentThreadId.t
+____________________________________________________________________________
+[ 34082] By: nicholas				   on 2008/06/24  10:30:46
+	Log: Integrate:
+	     [ 33718]
+	     Integrate:
+	     (only the ext/IPC/SysV/SysV.xs part of) 
+	     
+	     [ 32703]
+	     Subject: [PATCH] ext/ consting
+	     From: "Robin Barker" <Robin.Barker@npl.co.uk>
+	     Message-ID: <46A0F33545E63740BC7563DE59CA9C6D09399D@exchsvr2.npl.ad.local>
+	     
+	     Date: Sat, 22 Dec 2007 00:39:47 -0000
+	     
+	     [ 32709]
+	     Upgrade to IPC::SysV 1.99_07
+	     
+	     [ 33719]
+	     Integrate:
+	     [ 32780]
+	     Upgrade to IPC::SysV 2.00
+     Branch: maint-5.8/perl
+	  +> ext/IPC/SysV/Changes ext/IPC/SysV/MANIFEST.SKIP
+	  +> ext/IPC/SysV/TODO ext/IPC/SysV/const-c.inc
+	  +> ext/IPC/SysV/const-xs.inc ext/IPC/SysV/lib/IPC/Msg.pm
+	  +> ext/IPC/SysV/lib/IPC/Semaphore.pm
+	  +> ext/IPC/SysV/lib/IPC/SharedMem.pm ext/IPC/SysV/lib/IPC/SysV.pm
+	  +> ext/IPC/SysV/regen.pl ext/IPC/SysV/t/pod.t
+	  +> ext/IPC/SysV/t/podcov.t ext/IPC/SysV/t/shm.t
+	  +> ext/IPC/SysV/typemap
+	   - ext/IPC/SysV/ChangeLog ext/IPC/SysV/MANIFEST
+	   - ext/IPC/SysV/Msg.pm ext/IPC/SysV/Semaphore.pm
+	   - ext/IPC/SysV/SysV.pm
+	  !> MANIFEST ext/IPC/SysV/Makefile.PL ext/IPC/SysV/README
+	  !> ext/IPC/SysV/SysV.xs ext/IPC/SysV/t/ipcsysv.t
+	  !> ext/IPC/SysV/t/msg.t ext/IPC/SysV/t/sem.t mkppport.lst
+____________________________________________________________________________
+[ 34066] By: nicholas				   on 2008/06/16  17:12:59
+	Log: Integrate:
+	     [ 34065]
+	     Integrate:
+	     [ 33979]
+	     Probably starting with the changes in change #33897,
+	     t/run/exit.t has been failing on Win32.  Update the skipping
+	     mechanism to do more that check for the definition of
+	     POSIX::WIFEXITED.
+	     
+	     [ 33982]
+	     Subject: Re: [perl #55160] perlbug AutoReply: Fix cygwin mount test
+	     From: "Reini Urban" <rurban@x-ray.at>
+	     Date: Sun, 1 Jun 2008 14:51:59 +0200
+	     Message-ID: <6910a60806010551u30199befr43761fe53d5d896@mail.gmail.com>
+	     
+	     [ 34024]
+	     Subject: Fwd: [PATCH-2] Re: testing $/ with in memory files
+	     From: Bram <p5p@perl.wizbit.be>
+	     Date: Mon, 26 May 2008 09:12:58 +0200
+	     Message-ID: <20080526091258.vbcecy2dc00gwg08@horde.wizbit.be>
+	     
+	     [ 34054]
+	     Subject: [PATCH] Re: testing $/ with in memory files
+	     From: Bram <p5p@perl.wizbit.be>
+	     Date: Sat, 14 Jun 2008 18:20:05 +0200
+	     Message-ID: <20080614182005.yxuyk1mntwkog0o0@horde.wizbit.be>
+	     
+	     [ 34056]
+	     Subject: [perl #47746] Not OK: perl 5.10.0 +RC1 on ia64-linux 2.4.21-sgi302r24
+	     From: "John P. Linderman" <jpl@research.att.com>
+	     Date: Tue, 27 Nov 2007 13:50:14 -0500 (EST)
+	     Message-Id: <200711271850.lARIoEfN14794612@raptor.research.att.com>
+	     
+	     [ 34060]
+	     Make lib/open.t under -Duseperlio
+     Branch: maint-5.8/perl
+	  !> lib/open.t t/base/rs.t t/lib/cygwin.t t/op/stat.t t/run/exit.t
+____________________________________________________________________________
+[ 34037] By: nicholas				   on 2008/06/09  18:17:41
+	Log: Integrate:
+	     [ 34033]
+	     Integrate:
+	     [ 33978]
+	     Subject: [perl #54828] perlio.c has a problem (both 5.8 and 5.10) 
+	     From: "Goro Fuji" (via RT) <perlbug-followup@perl.org>
+	     Date: Sun, 25 May 2008 23:10:42 -0700
+	     Message-ID: <rt-3.6.HEAD-11257-1211782242-1590.54828-75-0@perl.org>
+	     
+	     First chunk of the patch only
+	     
+	     [ 34002]
+	     Subject: [perl #55302] cc_runtime syntax error
+	     From: "Reini Urban via RT" <perlbug-followup@perl.org>
+	     Date: Wed, 04 Jun 2008 14:07:05 -0700
+	     Message-ID: <rt-3.6.HEAD-11257-1212613625-313.55302-15-0@perl.org>
+     Branch: maint-5.8/perl
+	  !> cc_runtime.h perlio.c
+____________________________________________________________________________
+[ 34036] By: nicholas				   on 2008/06/09  17:51:09
+	Log: Integrate:
+	     [ 34032]
+	     Integrate:
+	     [ 33988]
+	     Embarrassing errors to find: missing quotes in sed commands
+	     
+	     [ 33990]
+	     #33988 for AIX 3 and AIX 4: missing quotes in sed commands
+     Branch: maint-5.8/perl
+	  !> hints/aix.sh hints/aix_3.sh hints/aix_4.sh
+____________________________________________________________________________
+[ 34035] By: nicholas				   on 2008/06/08  22:20:43
+	Log: Integrate:
+	     [ 34034]
+	     Integrate:
+	     [ 33989]
+	     Subject: AW: IO::Dir destructor
+	     From: "Dintelmann, Peter" <Peter.Dintelmann@dresdner-bank.com>
+	     Date: Mon, 2 Jun 2008 14:48:35 +0200
+	     Message-ID: <3852726AFA94DE4F87E616F13F416A5F0216D9BE@naimucu1.ffz00k.rootdom.net>
+	     
+	     [ 33996]
+	     Forgot to update version in DirHandle.pm after updating.
+	     No cookie for me.
+     Branch: maint-5.8/perl
+	  !> lib/DirHandle.pm
+____________________________________________________________________________
+[ 34018] By: nicholas				   on 2008/06/07  17:06:39
+	Log: Integrate:
+	     [ 34017]
+	     Integrate:
+	     [ 33977]
+	     Subject: [perl #54424] perlipc mistype 
+	     From: andrew@sundale.net (via RT) <perlbug-followup@perl.org>
+	     Date: Sun, 18 May 2008 22:20:06 -0700
+	     Message-ID: <rt-3.6.HEAD-11257-1211174406-1790.54424-75-0@perl.org>
+	     
+	     [ 33985]
+	     Subject: [perl #36516] attributes.pm documentation is recursive and incomplete 
+	     From: "reneeb via RT" <perlbug-followup@perl.org>
+	     Date: Sun, 25 May 2008 07:30:37 -0700
+	     Message-ID: <rt-3.6.HEAD-19826-1211725834-911.36516-15-0@perl.org>
+	     
+	     with some spelling nits
+	     
+	     [ 33992]
+	     Small typo fix in Carp.pm
+	     
+	     [ 34014]
+	     $Carp::VERSION++ following change 33992.
+	     
+	     [ 34016]
+	     $attributes::VERSION++ following change 33985.
+     Branch: maint-5.8/perl
+	  !> lib/Carp.pm lib/attributes.pm pod/perlipc.pod
+____________________________________________________________________________
+[ 34015] By: nicholas				   on 2008/06/07  16:16:05
+	Log: Integrate:
+	     [ 33955]
+	     Integrate:
+	     ...
+	     
+	     [ 33951]
+	     Add index() tests for embedded nulls
+	     
+	     Subject:  Re: [perl #53746] bug with index() matching beyond end of string when \0 bytes (00000000) are involved
+	     From:  Abigail <abigail@abigail.be>
+	     Date:  Tue, 6 May 2008 14:57:36 +0200
+	     Message-Id:  <20080506125736.GC17310@abigail.be>
+	     
+	     [ 33952]
+	     [perl #53746] bug with index() matching beyond end of string
+	     An off-by-one error meant that index($str,...)
+	     was effectively being executed as index("$str\0", ...).
+	     Probably introduced by change #26511.
+     Branch: maint-5.8/perl
+	  !> t/op/index.t util.c
+____________________________________________________________________________
+[ 34013] By: nicholas				   on 2008/06/07  15:12:43
+	Log: Integrate:
+	     [ 33955]
+	     Integrate:
+	     ...
+	     
+	     [ 33927]
+	     Subject: [PATCH] lib.pm should not warn about loading .par files
+	     From: Paul Fenwick <pjf@perltraining.com.au>
+	     Date: Thu, 22 May 2008 23:24:34 +1000
+	     Message-ID: <48357412.5020703@perltraining.com.au>
+	     
+	     ...
+	     
+	     [ 34011]
+	     Integrate:
+	     [ 33973]
+	     Subject: [PATCH] Re: recent 'lib.pm' change => dual-life lib.pm
+	     From: Steffen Mueller <wyp3rlx02@sneakemail.com>
+	     Date: Tue, 27 May 2008 13:50:05 +0200
+	     Message-ID: <483BF56D.2020803@sneakemail.com>
+	     
+	     [ 33980]
+	     Subject: [PATCH] Fix for lib.pm Config detection
+	     From: Steffen Mueller <wyp3rlx02@sneakemail.com>
+	     Date: Sun, 01 Jun 2008 17:36:55 +0200
+	     Message-ID: <20080601153657.26607.qmail@lists.develooper.com>
+     Branch: maint-5.8/perl
+	  !> lib/lib.t lib/lib_pm.PL
+____________________________________________________________________________
+[ 34012] By: nicholas				   on 2008/06/07  15:02:39
+	Log: Integrate:
+	     [ 33955]
+	     Integrate:
+	     ...
+	     
+	     [ 33937]
+	     [perl #54758] Perl 5.10 memory corruption
+	     When @a = sort @a is pessimised if @a has magic,
+	     growing the stack requires various pointers to be reset in case
+	     the stack gets reallocated.
+	     
+	     ...
+     Branch: maint-5.8/perl
+	  !> pp_sort.c
+____________________________________________________________________________
+[ 34010] By: nicholas				   on 2008/06/07  14:27:04
+	Log: Integrate:
+	     [ 33976]
+	     Integrate:
+	     [ 32827]
+	     Upgrade to Devel::PPPort 3.13_01
+	     
+	     [ 33672]
+	     Upgrade to Devel::PPPort 3.13_02
+	     
+	     [ 33824]
+	     Upgrade to Devel::PPPort 3.13_03
+	     
+	     [ 33975]
+	     Upgrade to Devel::PPPort 3.14
+     Branch: maint-5.8/perl
+	  +> ext/Devel/PPPort/parts/base/5010000
+	  +> ext/Devel/PPPort/parts/base/5011000
+	  +> ext/Devel/PPPort/parts/inc/newSVpv
+	  +> ext/Devel/PPPort/parts/todo/5010000
+	  +> ext/Devel/PPPort/parts/todo/5011000
+	  +> ext/Devel/PPPort/t/format.t ext/Devel/PPPort/t/newSVpv.t
+	  !> (integrate 71 files)
+____________________________________________________________________________
+[ 34009] By: nicholas				   on 2008/06/07  14:01:05
+	Log: Integrate:
+	     [ 33960]
+	     Integrate:
+	     ...
+	     
+	     [ 33948]
+	     Upgrade to Locale-Maketext-1.13
+     Branch: maint-5.8/perl
+	  !> Porting/Maintainers.pl lib/Locale/Maketext.pm
+	  !> lib/Locale/Maketext/Guts.pm lib/Locale/Maketext/GutsLoader.pm
+____________________________________________________________________________
+[ 34008] By: nicholas				   on 2008/06/07  12:29:04
+	Log: Fix up MANIFEST after 34007.
+     Branch: maint-5.8/perl
+	   ! MANIFEST
+____________________________________________________________________________
+[ 34007] By: nicholas				   on 2008/06/07  12:11:34
+	Log: Integrate:
+	     [ 23075]
+	     Subject: Bug with NEXT when called from an eval block
+	     From: Dave Rolsky <autarch@urth.org>
+	     Date: Fri, 9 Jul 2004 17:06:07 -0500 (CDT)
+	     Message-ID: <Pine.LNX.4.58.0407091703010.4578@urth.org>
+	     
+	     [ 25261]
+	     Subject: [PATCH] Typos in *.p[lm]
+	     From: "Piotr Fusik" <pfusik@op.pl>
+	     Date: Sun, 31 Jul 2005 12:50:04 +0200
+	     Message-ID: <001401c595bd$dccb5d80$0bd34dd5@piec>
+	     
+	     [ 33943]
+	     Integrate:
+	     ...
+	     
+	     [ 33416]
+	     Subject: Re: [PATCH] NEXT.pm bug within overloaded stringification
+	     From: Marcel Grünauer <gr@univie.ac.at>
+	     Message-Id: <511B0A54-AB2D-4A65-A02E-E2E07C043EAB@univie.ac.at>
+	     Date: Mon, 3 Mar 2008 16:08:48 +0100
+	     
+	     (a resend of <7BBCFD93-91CF-4656-A97F-ED5E749F7B2E@univie.ac.at>)
+	     
+	     ...
+	     
+	     [ 33439]
+	     Bump VERSION after change #33416
+	     (so we don't end up with different code but same version in
+	     5.10.0 and, say, 5.10.1)
+	     
+	     ...
+	     
+	     [ 34006]
+	     Integrate:
+	     [ 33991]
+	     Update to NEXT by Damian.
+	     This fixes the working of NEXT with AUTOLOAD.
+	     
+	     [ 33995]
+	     Bump NEXT version to 0.61 for CPAN release
+     Branch: maint-5.8/perl
+	  +> lib/NEXT/t/stringify.t
+	  !> lib/NEXT.pm lib/NEXT/t/next.t
+____________________________________________________________________________
+[ 33994] By: craigb				   on 2008/06/04  03:05:26
+	Log: Perl_start_glob VMS fix adapted from change #33993 for 5.8.x since
+	     other dependencies prevent integration.
+     Branch: maint-5.8/perl
+	   ! doio.c
+____________________________________________________________________________

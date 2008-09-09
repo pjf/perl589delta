@@ -2,6 +2,7 @@
 use strict;
 use autodie;
 use constant DEBUG => 1;
+use constant ALREADY_DONE => "2008-05";
 
 my $changes = shift;
 
@@ -28,6 +29,9 @@ open(my $changes_fh, '<', $changes);
         # We only use YYYY-MM for dates, days are ignored
 
         my $new_date = "$year-$month";
+
+        # Skip already split files.
+        next if ($new_date le ALREADY_DONE);
 
         if ($new_date ne $old_date) {
             open($chunk_fh, '>', "splits/$new_date.txt");
