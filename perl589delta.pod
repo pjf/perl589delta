@@ -85,7 +85,7 @@ history.
 
 =back
 
-=item 
+=item *
 
 C<Devel::PPPort> upgraded to version 3.14_01
 
