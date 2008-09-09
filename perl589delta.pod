@@ -85,6 +85,10 @@ history.
 
 =back
 
+=item 
+
+C<Devel::PPPort> upgraded to version 3.14_01
+
 =item *
 
 C<Encode> upgraded to version 2.20
@@ -264,6 +268,11 @@ Width and precion in sprintf didn't handle wide characters correctly (30058).
 
 List slices with indices out of range now work more consistently (30026).
 
+=item *
+
+The C<-s> switch on the shebang line is again capable of parsing options with
+arguments of the form C<-foo=bar> (29865).
+
 =back
 
 =head1 New or Changed Diagnostics
@@ -297,6 +306,9 @@ visible to perl core extensions. This was required by L<Data::Alias>.
 C<set> magic on localizing/assigning to a magic variable will now only
 trigger for I<container magics>, i.e. it will for C<%ENV> or C<%SIG>
 but not for C<$#array>.
+
+A lot of small improvents in the code base were made due to reports from
+the Coverity static code analyzer.
 
 =head1 New Tests
 

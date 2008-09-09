@@ -6,3 +6,6 @@
   I couldn't figure out what it actually does. --moritz
 * Change 30046 integrates 'Subject: [perl #40239] New hints file for
   MidnightBSD'  which I don't know where to add. --moritz
+* 29759 integrates 25953, which introduces a new header file. Should that be
+  mentioned somehow? --moritz
+* Don't know if and how 29721 -> 29138 should be mentioned --moritz
