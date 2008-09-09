@@ -369,6 +369,12 @@ Regular expressions classes of a single character are now treated the same as
 if the character had been used as a literal, meaning that code that uses
 char-classes as an escaping mechanism will see a speedup. (Yves Orton)
 
+=item *
+
+Creating anonymous array and hash references (ie. C<[]> and C<{}>) now incurs
+no more overhead than creating an anonymous list or hash. Nicholas Clark provid
+changes with a saving of two ops and one stack push, measured as a 6.4% improve 
+
 =back
 
 =head1 Installation and Configuration Improvements
@@ -421,6 +427,19 @@ Reduced number of calls to C<getpeername> in L<IO::Socket> (29129).
 =item *
 
 C<chr(65535)> ought to be allowed in regexes.
+
+=back
+
+=head2 Platform specific fixes
+
+=head3 Windows and OS/2
+
+=over 4
+
+=item *
+
+A build problem with specifying C<USE_MULTI> and C<USE_ITHREADS> but without
+C<USE_IMP_SYS> has been fixed.
 
 =back
 
