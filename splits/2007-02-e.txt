@@ -1,0 +1,571 @@
+[ 30270] By: nicholas				   on 2007/02/13  22:52:13
+	Log: Integrate:
+	     [ 29274]
+	     A first regression test for the debugger, by Shlomi Fish
+	     and Richard Foley.
+	     
+	     [ 29275]
+	     debugger test could hang if run with umask 0002
+	     
+	     [ 29278]
+	     Move the test files for the debugger in a t/ subdirectory, so they
+	     don't get installed
+	     
+	     [ 29280]
+	     Tweaks to the debugger test by Richard Foley,
+	     plus fix auxiliary file path
+     Branch: maint-5.8/perl
+	  +> lib/perl5db.t lib/perl5db/t/eval-line-bug
+	  !> MANIFEST
+____________________________________________________________________________
+[ 30269] By: nicholas				   on 2007/02/13  21:18:26
+	Log: Integrate:
+	     [ 28322]
+	     Subject: [PATCH] perlio.c: nobody was freeing PL_perlio_fd_refcnt, now PerlIO_cleanup() is
+	     From: jhi@cc.hut.fi (Jarkko Hietaniemi)
+	     Date: Sun, 28 May 2006 18:15:35 +0300 (EEST)
+	     Message-Id: <20060528151535.BEA3E6D08C@seth.hut.fi>
+	     
+	     [ 28329]
+	     Revert change 28322, which makes ithreads panic
+	     
+	     [ 29045]
+	     Subject: [PATCH] blead valgrind finding
+	     From: Jarkko Hietaniemi <jhi@iki.fi>
+	     Date: Wed, 18 Oct 2006 20:07:54 -0400
+	     Message-ID: <4536C1DA.4060600@iki.fi>
+	     
+	     [ 29046]
+	     Remove free() part of change #29045, which causes
+	     panics from miniperl in FreeBSD/multithreaded
+	     
+	     [ 29050]
+	     Memory leak fix, by Jarkko
+	     
+	     [ 29060]
+	     More leak fixes, by Jarkko
+	     
+	     [ 29065]
+	     Enable perlio mutexes under threads (by Jarkko)
+	     
+	     [ 29066]
+	     Adjustment to symbol lists after latest changes (by Jarkko)
+	     
+	     [ 29070]
+	     Fix in perl.h for compiling with g++.
+	     
+	     [ 29073]
+	     Always defining PERLIO_TERM, even if it's empty, makes for a simpler
+	     PERL_SYS_TERM
+	     
+	     [ 29074]
+	     Add PERLIO_INIT to PERL_SYS_INIT.
+	     I infer that this was accidentally omitted from change 29060
+	     
+	     [ 29075]
+	     Semicolon consistency between PERL_FPU_INIT and the other INITs.
+	     
+	     [ 29077]
+	     Add PERLIO_INIT and PERLIO_TERM to PERL_SYS_INIT* and PERL_SYS_TERM*
+	     in */*ish.h headers.
+	     
+	     [ 29424]
+	     I think #29060 / #29073 missed this
+	     
+	     [ 29425]
+	     Don't try to export fd_refcnt symbols when building without USE_PERLIO
+	     to keep the Win32 linker happy
+	     
+	     [ 29442]
+	     Subject: Re: [PATCH] Re: [PATCH] Re: [PATCH] abstract mempool header testing
+	     From: demerphq <demerphq@gmail.com>
+	     Date: Sat, 2 Dec 2006 14:48:54 +0100
+	     Message-ID: <9b18b3110612020548l7c5aefd4m19cb0b5c4395abb4@mail.gmail.com>
+	     
+	     [ 29451]
+	     Change #29424 may well be correct in itself, but currently doesn't
+	     work when perl is built with PERL_IMPLICIT_SYS because PERLIO_TERM
+	     uses PerlMemShared_free() which, in that case, involves the perlhost
+	     that has already been freed itself by perl_free(), which is called
+	     before PERL_SYS_TERM().
+	     
+	     The order of perl_destruct(), perl_free(), PERL_SYS_TERM() cannot
+	     be changed (it is advertised in perlembed for a start), so just
+	     revert #29424 and the appropriate parts of #29442 for now.
+	     
+	     Perhaps PL_perlio_fd_refcnt needs allocating differently, or else
+	     the perlhost needs freeing later (after PerlIO)?
+	     
+	     [ 29465]
+	     Subject: [PATCH] Re: When should PERL_SYS_TERM() be called? [was: Re: [PATCH] Re: [PATCH] Re: [PATCH] abstract mempool header testing]
+	     From: Jarkko Hietaniemi <jhi@iki.fi>
+	     Date: Mon, 04 Dec 2006 22:53:03 -0500
+	     Message-ID: <4574ED1F.40508@iki.fi>
+	     
+	     Re-instates #29424 (previously reverted by #29451), now fixed to work
+	     with PERL_IMPLICIT_SYS, thanks to Jan Dubois. Also adds PERLIO_TERM to
+	     the Symbian port.
+	     
+	     [ 29477]
+	     Subject: [PATCH] Re: When should PERL_SYS_TERM() be called? [was: Re: [PATCH] Re: [PATCH] Re: [PATCH] abstract mempool header testing]
+	     From: Jarkko Hietaniemi <jhi@iki.fi>
+	     Date: Tue, 05 Dec 2006 16:08:33 -0500
+	     Message-ID: <4575DFD1.1060108@iki.fi>
+	     
+	     Fixes a problem spotted by Jan Dubois:
+	     
+	     The PerlMemShared pool is only shared between the interpreters that
+	     can share data structures (interpreters created by perl_clone(), which
+	     mean pseudo-fork, and threads.xs).	 The pool is not shared between
+	     interpreters that are created separately by perl_alloc().
+	     [...]
+	     I guess this means PL_perlio_fd_refcnt needs to be allocated and
+	     freed by standard malloc() and not go through any abstraction.
+	     
+	     [ 29694]
+	     Update copyright for perlio.c
+	     
+	     [ 29700]
+	     Normalize copyright of perlio.c for years >= 2006
+	     
+	     [ 29811]
+	     Subject: [PATCH] Symbian/S90 further fixes
+	     From: jhi@cc.hut.fi (Jarkko Hietaniemi)
+	     Date: Mon, 15 Jan 2007 06:11:52 +0200 (EET)
+	     Message-Id: <20070115041152.374AB43A67@anubis.hut.fi>
+	     
+	     [ 29813]
+	     Revert perl.h part of change 29811, which breaks compilation with gcc
+	     
+	     [ 29826]
+	     Proper symbian fix (replacing change #29813) by Jarkko
+	     
+	     [ 30079]
+	     Subject: [PATCH] one more iteration on PerlIO_teardown prototype
+	     From: jhi@cc.hut.fi (Jarkko Hietaniemi)
+	     Date: Tue, 30 Jan 2007 04:20:21 +0200 (EET)
+	     Message-Id: <20070130022021.6051443A67@anubis.hut.fi>
+	     
+	     [ 30120]
+	     In vms/gen_shrfls.pl, consider EXTERN_C declarations as function
+	     candidates, not global variable candidates.  Currently only needed
+	     for PerlIO_teardown.
+	     
+	     
+	     plus add dummy HINTS_REFCNT_INIT and HINTS_REFCNT_TERM in hv.h
+     Branch: maint-5.8/perl
+	   ! embedvar.h hv.h perlapi.h
+	  !> dosish.h epoc/epocish.h makedef.pl mpeix/mpeixish.h
+	  !> os2/os2ish.h perl.h perlio.c perlio.sym perliol.h perlvars.h
+	  !> plan9/plan9ish.h unixish.h vms/gen_shrfls.pl vms/vmsish.h
+	  !> win32/perllib.c win32/win32.c
+____________________________________________________________________________
+[ 30266] By: nicholas				   on 2007/02/13  19:46:40
+	Log: Integrate:
+	     [ 27197]
+	     Pod::Plainer is tested, actually (spotted by chromatic)
+	     
+	     [ 27198]
+	     CPAN::FirstTime can go as well from the untested module list
+     Branch: maint-5.8/perl
+	  !> t/lib/1_compile.t
+____________________________________________________________________________
+[ 30263] By: nicholas				   on 2007/02/13  19:23:41
+	Log: Integrate:
+	     [ 27059]
+	     Change PL_perlio_fd_refcnt from a fixed size static array to a pointer
+	     to a dynamic array.
+	     
+	     [ 27166]
+	     Fix change 27059 so that it actually works with >16 file descriptors.
+	     With programmers like these, we need Stadler & Waldorf on code review.
+     Branch: maint-5.8/perl
+	   ! embed.h proto.h
+	  !> embedvar.h perlapi.h perlio.c perlvars.h
+____________________________________________________________________________
+[ 30262] By: nicholas				   on 2007/02/13  18:05:20
+	Log: Integrate:
+	     [ 26522]
+	     add tests for MY_CXT API and improve its documentation
+	     
+	     [ 29124]
+	     Subject: [PATCH] Change MY_CXT ref in perl.h
+	     From: "Jerry D. Hedden" <jdhedden@yahoo.com>
+	     Date: Thu, 26 Oct 2006 08:35:46 -0700 (PDT)
+	     Message-ID: <20061026153546.71547.qmail@web30214.mail.mud.yahoo.com>
+     Branch: maint-5.8/perl
+	  +> ext/XS/APItest/t/my_cxt.t
+	  !> MANIFEST ext/XS/APItest/APItest.pm ext/XS/APItest/APItest.xs
+	  !> perl.h pod/perlxs.pod
+____________________________________________________________________________
+[ 30261] By: nicholas				   on 2007/02/13  17:58:37
+	Log: Integrate:
+	     [ 26774]
+	     s/superceded/superseded/g
+     Branch: maint-5.8/perl
+	  !> Changes5.004 Changes5.6 handy.h pod/perlapi.pod
+____________________________________________________________________________
+[ 30260] By: nicholas				   on 2007/02/13  17:34:53
+	Log: The hash lookup in dMY_CXT_SV has been assuming a string constant
+	     because it was using MY_CXT_KEY, sizeof(MY_CXT_KEY) - 1.
+	     So enforce this assumption by switching from hv_fetch() to hv_fetchs().
+	     Now buggy code won't compile.
+     Branch: maint-5.8/perl
+	   ! perl.h
+____________________________________________________________________________
+[ 30259] By: nicholas				   on 2007/02/13  16:04:12
+	Log: Integrate:
+	     [ 26483]
+	     Using a hash reference rather than a hash can save a hash copy.
+	     
+	     [ 26484]
+	     Tests for creating constants where prototypes or other symbols of the
+	     same name already exist.
+	     
+	     [ 26485]
+	     The value from caller doesn't change, so my $pkg = caller;
+	     should be moved out of the loop.
+	     
+	     [ 26487]
+	     Rework constant.pm to take advantage of the space savings of proxy
+	     constant subroutines whenever it can.
+	     
+	     [ 26502]
+	     As what we're doing is generating subroutines, which are methods, we
+	     need to invalidate cached methods. For constant.pm we need to create
+	     &Internals::inc_sub_generation
+	     
+	     [ 30255]
+	     Change 26487 left some debugging code in, and through the wonders of
+	     autovivification, that code actually introduced a bug, most easily
+	     visible for the for the non-5.9.x case.
+     Branch: maint-5.8/perl
+	  !> lib/constant.pm lib/constant.t universal.c
+____________________________________________________________________________
+[ 30253] By: nicholas				   on 2007/02/12  23:35:15
+	Log: Correct formatting in Changes
+     Branch: maint-5.8/perl
+	   ! Changes
+____________________________________________________________________________
+[ 30251] By: nicholas				   on 2007/02/12  23:24:50
+	Log: Integrate:
+	     [ 27991]
+	     Subject: [PATCH] t/op/loopctl.t using test.pl
+	     From: David Landgren <david@landgren.net>
+	     Date: Thu, 27 Apr 2006 19:13:28 +0200
+	     Message-ID: <4450FBB8.8070203@landgren.net>
+	     
+	     [ 27993]
+	     Subject: [PATCH] t/op/sort.t using test.pl
+	     From: David Landgren <david@landgren.net>
+	     Date: Thu, 27 Apr 2006 18:25:56 +0200
+	     Message-ID: <4450F094.2010907@landgren.net>
+	     
+	     [ 27998]
+	     Subject: [PATCH] t/op/auto.pl using test.pl
+	     From: David Landgren <david@landgren.net>
+	     Date: Fri, 28 Apr 2006 13:56:30 +0200
+	     Message-ID: <445202EE.6000604@landgren.net>
+	     
+	     [ 27999]
+	     Subject: [PATCH] t/op/delete.t using test.pl
+	     From: David Landgren <david@landgren.net>
+	     Date: Fri, 28 Apr 2006 15:03:39 +0200
+	     Message-ID: <445212AB.4080404@landgren.net>
+	     
+	     [ 28000]
+	     Subject: [PATCH] t/op/defins.pl using test.pl
+	     From: David Landgren <david@landgren.net>
+	     Date: Fri, 28 Apr 2006 14:27:39 +0200
+	     Message-ID: <44520A3B.1080707@landgren.net>
+	     
+	     [ 28056]
+	     Subject: [PATCH] t/op/hashwarn.t using test.pl
+	     From: David Landgren <david@landgren.net>
+	     Date: Sat, 29 Apr 2006 17:51:28 +0200
+	     Message-ID: <44538B80.2060503@landgren.net>
+	     
+	     [ 28057]
+	     Subject: Re: [PATCH] t/op/glob.t using test.pl
+	     From: David Landgren <david@landgren.net>
+	     Date: Sat, 29 Apr 2006 15:32:07 +0200
+	     Message-ID: <44536AD7.4060608@landgren.net>
+	     
+	     [ 28094]
+	     Subject: [PATCH] t/op/context.t using test.pl
+	     From: David Landgren <david@landgren.net>
+	     Date: Wed, 03 May 2006 16:20:40 +0200
+	     Message-ID: <4458BC38.6050600@landgren.net>
+	     
+	     [ 28095]
+	     Subject: [PATCH] t/op/grep.t using test.pl
+	     From: David Landgren <david@landgren.net>
+	     Date: Wed, 03 May 2006 15:53:38 +0200
+	     Message-ID: <4458B5E2.7090103@landgren.net>
+	     
+	     [ 28097]
+	     Resubmit change #28095
+     Branch: maint-5.8/perl
+	   ! t/op/hashwarn.t
+	  !> t/op/auto.t t/op/context.t t/op/defins.t t/op/delete.t
+	  !> t/op/glob.t t/op/grep.t t/op/loopctl.t t/op/sort.t
+____________________________________________________________________________
+[ 30250] By: nicholas				   on 2007/02/12  22:50:56
+	Log: Integrate:
+	     [ 26897]
+	     Make sure the most common IPPROTO_* constants are always available.
+	     These are well known numbers so it should not be a problem to
+	     hardcode values when no constant is provided by the C library.
+	     Ref <http://www.iana.org/assignments/protocol-numbers>.
+	     
+	     On some old glibc systems (eg Redhat 6) IPPROTO_TCP is an enum only
+	     and this change workaround that problem as well.
+	     
+	     [ 26902]
+	     Use the IPPROTO_TCP constant instead of 6.
+	     
+	     [ 26903]
+	     Allow IPPROTO_ICMP and IPPROTO_UDP to be exported.
+	     These were introduced in change 26897.
+	     
+	     [ 27851]
+	     Coverity is flagging a potential problem because it sees a check for
+	     NULL and assumes that this means that the variable host could be
+	     NULL. It can't, and the check added in change 13291 was a little bit
+	     more than the minimal solution needed for the bug report
+	     [ID 20011126.148]
+	     Hence remove the NULL check.
+     Branch: maint-5.8/perl
+	  !> ext/Socket/Makefile.PL ext/Socket/Socket.pm
+	  !> ext/Socket/Socket.xs ext/Socket/t/Socket.t
+____________________________________________________________________________
+[ 30249] By: nicholas				   on 2007/02/12  22:38:50
+	Log: Integrate:
+	     [ 28312]
+	     Upgrade to Sys-Syslog-0.14
+	     
+	     [ 28410]
+	     Upgrade to Sys::Syslog 0.16
+	     
+	     [ 28610]
+	     Upgrade to Sys-Syslog-0.17
+	     
+	     [ 28611]
+	     The rest of the changes for Sys-Syslog-0.17 which my new patch no
+	     longer automatically "p4 edits" for me.
+	     
+	     [ 28782]
+	     Upgrade to Sys::Syslog 0.18
+     Branch: maint-5.8/perl
+	  !> ext/Sys/Syslog/Changes ext/Sys/Syslog/Makefile.PL
+	  !> ext/Sys/Syslog/README ext/Sys/Syslog/Syslog.pm
+	  !> ext/Sys/Syslog/Syslog.xs ext/Sys/Syslog/fallback/const-c.inc
+	  !> ext/Sys/Syslog/t/constants.t ext/Sys/Syslog/t/syslog.t
+____________________________________________________________________________
+[ 30248] By: nicholas				   on 2007/02/12  22:12:39
+	Log: Integrate:
+	     [ 28933]
+	     Subject: [PATCH] Update Stratus VOS files.
+	     From: "Green, Paul" <Paul.Green@stratus.com>
+	     Date: Tue, 3 Oct 2006 17:40:03 -0400
+	     Message-ID: <F5F42E77A43DD944B6D664B00A5401CB022CA121@EXNA.corp.stratus.com>
+     Branch: maint-5.8/perl
+	  +> vos/syslog.h
+	  !> MANIFEST vos/Changes vos/vos.c
+____________________________________________________________________________
+[ 30247] By: nicholas				   on 2007/02/12  22:11:52
+	Log: Integrate:
+	     [ 28494]
+	     Math-Complex now dual-lived with Jarkko Hietaniemi as the maintainer.
+	     Also, sync'ing up with the CPAN version of the module.
+	     
+	     [ 29932]
+	     Upgrade to Math-Complex-1.37.
+     Branch: maint-5.8/perl
+	  !> Porting/Maintainers.pl lib/Math/Complex.pm lib/Math/Complex.t
+	  !> lib/Math/Trig.pm lib/Math/Trig.t
+____________________________________________________________________________
+[ 30246] By: nicholas				   on 2007/02/12  21:59:14
+	Log: Integrate:
+	     [ 26573]
+	     Documentation fix for File::Temp::new
+	     
+	     Subject: [perl #38127] Bug in perldoc File::Temp 
+	     From: pm@capmon.dk (via RT) <perlbug-followup@perl.org>
+	     Date: Mon, 02 Jan 2006 02:48:41 -0800
+	     Message-ID: <rt-3.0.11-38127-126764.0.578515622359532@perl.org>
+	     
+	     [ 28755]
+	     Upgrade to File-Temp-0.17.	 Also, a change to Tim Jenness's email.
+	     
+	     [ 29935]
+	     Upgrade to File-Temp-0.18.
+     Branch: maint-5.8/perl
+	  +> lib/File/Temp/t/cmp.t lib/File/Temp/t/seekable.t
+	  !> AUTHORS MANIFEST lib/File/Temp.pm
+____________________________________________________________________________
+[ 30245] By: nicholas				   on 2007/02/12  21:38:51
+	Log: Reverse change 26741 and restore two tests to t/io/fs.t that appear
+	     to be working now.
+     Branch: maint-5.8/perl
+	   ! t/io/fs.t
+____________________________________________________________________________
+[ 30244] By: nicholas				   on 2007/02/12  21:35:09
+	Log: Integrate:
+	     [ 27939]
+	     Subject: Update to AUTHORS file
+	     From: Joshua Rodd <joshua@rodd.us>
+	     Date: Sat, 22 Apr 2006 14:39:11 -0400
+	     Message-ID: <20060422183911.GA19435@rodd.us>
+	     
+	     [ 28102]
+	     Subject: [PATCH] Email address changes
+	     From: "Jan Dubois" <jand@activestate.com>
+	     Date: Thu, 4 May 2006 15:28:19 -0700
+	     Message-ID: <007101c66fca$0b651a50$2217a8c0@candy>
+	     
+	     [ 28973]
+	     Address update for Jerry D. Hedden
+     Branch: maint-5.8/perl
+	  !> AUTHORS
+____________________________________________________________________________
+[ 30243] By: nicholas				   on 2007/02/12  21:33:38
+	Log: Integrate:
+	     [ 27393]
+	     Update David Dyck's e-mail address.
+	     
+	     [ 27400]
+	     Make report on bad filenames easier to read
+	     
+	     [ 27464]
+	     gozer took over from gsar (some time ago).
+	     
+	     [ 27494]
+	     threads and threads::shared are now dual-lived modules
+	     
+	     [ 28033]
+	     Add a --percentage option to checkAUTHORS.pl to show rankings as
+	     percentages.
+	     
+	     [ 28068]
+	     cumulative totals and list reverse for checkAUTHORS.pl
+	     
+	     [ 28103]
+	     Teach checkAUTHORS.pl about Sarathy's new email address.
+	     
+	     [ 28118]
+	     Tie::RefHash is now dual life, maintained by Yuval Kogman.
+	     
+	     [ 28506]
+	     Update Audrey Tang's email throughout various files.
+	     
+	     [ 28596]
+	     Additional reason for ssh passphrase failures.
+	     
+	     [ 28707]
+	     Update Porting/Maintainers.pl w.r.t. #28695, #28703 and #28706.
+	     
+	     [ 28711]
+	     New authors
+	     
+	     [ 28724]
+	     Actually, Richard Clamp doesn't maintain Module::CoreList anymore.
+	     
+	     [ 28796]
+	     Add Exporter in the dual-lived module list
+	     
+	     [ 28810]
+	     Update Porting/Maintainers.pl w.r.t. #28809
+	     
+	     [ 28812]
+	     Update Porting/Maintainers.pl w.r.t. #28811
+	     
+	     [ 28845]
+	     MakeMaker is being split in new sub-distributions on CPAN
+	     
+	     [ 28895]
+	     Saddest patch I ever had to apply.
+	     
+	     [ 28932]
+	     Text::Soundex is now dual-lived.
+	     
+	     [ 29114]
+	     Add Term::UI and Object::Accessor to the list of dual-life modules
+	     
+	     [ 29292]
+	     Update checkcfgvars.pl: config.ce is in win32/ in 5.9.x
+	     Leave wince/config.ce in the list as well, though, because that still
+	     exists in 5.8.x
+	     
+	     [ 29362]
+	     Tune configure.com checking to ignore trailing comments.
+	     
+	     [ 29370]
+	     Even better configure.com handling for checkcfgvar.pl
+	     
+	     [ 29579]
+	     ExtUtils::Command is now maintained separately from MakeMaker
+	     
+	     [ 29841]
+	     Typo fix, by Robin Barker
+	     
+	     [ 29844]
+	     Subject: [PATCH] Re: Dual-lived AutoLoader
+	     From: Steffen Mueller <o6hhmk002@sneakemail.com>
+	     Date: Tue, 16 Jan 2007 15:29:44 +0100
+	     Message-ID: <45ACE158.4080102@sneakemail.com>
+	     
+	     [ 30025]
+	     Change Tels' contact address
+     Branch: maint-5.8/perl
+	  !> AUTHORS Porting/Maintainers.pl Porting/check83.pl
+	  !> Porting/checkAUTHORS.pl Porting/checkcfgvar.pl
+	  !> Porting/repository.pod
+____________________________________________________________________________
+[ 30242] By: nicholas				   on 2007/02/12  21:17:51
+	Log: Integrate:
+	     [ 25718]
+	     Upgrade to Test-Simple-0.62.
+	     [well, some missing files. Hateful prohibition on branch then integrate
+	     I assume]
+	     
+	     [ 26743]
+	     VMS needs the meta-quoted version of $0
+	     
+	     [ 28514]
+	     Upgrade to Test-Simple-0.63
+	     
+	     [ 28517]
+	     Hmmm...patch didn't warn about rejects in tbt_01basic.t.
+	     
+	     [ 28519]
+	     Clear up test based on line number differences between the core and the
+	     Test-Simple version.
+	     
+	     [ 28586]
+	     Upgrade to Test-Simple-0.64
+	     
+	     [ 28836]
+	     Upgrade to Test-Simple-0.64_02
+	     
+	     [ 29211]
+	     Upgrade to Test::Simple 0.64_03
+	     
+	     [ 29244]
+	     Upgrade to Test-Simple-0.65.
+	     
+	     [ 29444]
+	     Upgrade to Test-Simple-0.66.
+	     
+	     [ 29933]
+	     Upgrade to Test-Simple-0.67
+     Branch: maint-5.8/perl
+	  +> lib/Test/Simple/t/carp.t
+	  !> (integrate 32 files)
+____________________________________________________________________________
+[ 30241] By: nicholas				   on 2007/02/12  20:43:49
+	Log: Move the pop_return() into Perl_delete_eval_scope() from both of its
+	     callers.
+     Branch: maint-5.8/perl
+	   ! op.c perl.c pp_ctl.c
+____________________________________________________________________________

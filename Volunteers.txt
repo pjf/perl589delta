@@ -27,7 +27,16 @@
 
 == AVAILABLE ==
 
-2006-05 - ==> Nobody <== 56k
-2007-02 - ==> Nobody <== 194k
-2008-02 - ==> Nobody <== 59k
-2008-09 - ==> Nobody <== 31k (and growing!)
+2006-05   - ==> Nobody <== 56k
+2007-02-a - ==> Nobody <== 20k
+2007-02-b - ==> Nobody <== 20k
+2007-02-c - ==> Nobody <== 20k
+2007-02-d - ==> Nobody <== 20k
+2007-02-e - ==> Nobody <== 20k
+2007-02-f - ==> Nobody <== 20k
+2007-02-g - ==> Nobody <== 20k
+2007-02-h - ==> Nobody <== 20k
+2007-02-i - ==> Nobody <== 20k
+2007-02-j - ==> Nobody <== 4k
+2008-02   - ==> Nobody <== 59k
+2008-09   - ==> Nobody <== 31k (and growing!)

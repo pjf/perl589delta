@@ -1,0 +1,544 @@
+[ 30292] By: nicholas				   on 2007/02/14  17:29:10
+	Log: Integrate:
+	     [ 28273]
+	     Subject: [PATCH] literal string macros
+	     From: Marcus Holland-Moritz <mhx-perl@gmx.net>
+	     Date: Mon, 22 May 2006 13:39:33 +0200
+	     Message-ID: <20060522133933.65ea93ce@r2d2>
+	     
+	     [ 29486]
+	     No need to upgrade if all we're going to do is return.
+	     
+	     [ 29872]
+	     Given that we now do the tests in S_visit() to avoid calling the
+	     helper function when skippable, no need to retain those tests
+	     inside the helper functions do_clean_objs() and do_clean_named_objs().
+	     
+	     [ 29983]
+	     Neither gv_fetchpvn_flags() nor hv_fetch() need a NUL terminated
+	     string, so don't bother allocating buffer space or adding a NUL.
+	     
+	     [ 29987]
+	     Convert the last remaining 256 byte "small"bufs to 128 bytes.
+	     (The actual size doesn't matter, as the buffers are only there to
+	     save a malloc() for the common, short, case. Coverage reports suggest
+	     that we aren't actually testing the long case. Yet - will fix this)
+	     
+	     [ 30000]
+	     As we're not passing over (or copying in) a NUL, don't need that extra
+	     byte for it, so correct the < to <= so that we use the smallbuf
+	     whenever possible.
+	     
+	     [ 30015]
+	     Stop S_incline needing to temporarily write a '\0' into its passed-in
+	     buffer. (Requires adding gv_fetchfile_flags(), savesharedpvn() and
+	     CopFILE_setn() to provide pointer/length versions of APIs)
+	     
+	     [ 30024]
+	     A test to exercise the smallbuf overflow code in S_incline, and a
+	     refactoring of that code to use only one 128 char array, not two.
+	     
+	     [ 30064]
+	     Add av_create_and_push() and av_create_and_unshift_one() to refactor
+	     out two repeated idioms.
+	     
+	     [ 30101]
+	     A few more places where we know the length for sv_setpv() or sv_catpv()
+	     
+	     [ 30229]
+	     Un-TODO tests avec change #30228
+     Branch: maint-5.8/perl
+	  !> av.c cop.h doio.c embed.fnc embed.h global.sym gv.c handy.h
+	  !> mg.c op.c perl.c pod/perlapi.pod pp_ctl.c proto.h sv.c
+	  !> t/comp/parser.t toke.c util.c
+____________________________________________________________________________
+[ 30291] By: nicholas				   on 2007/02/14  16:37:49
+	Log: Integrate:
+	     [ 29761]
+	     Fix bug [perl #41234] : the tokenizer understands "=cute"
+	     or other words that begin with "cut" as synonyms for "=cut"
+	     
+	     [ 29762]
+	     Update copyright year in "perl -v" output
+	     
+	     [ 29765]
+	     make tr/// threadsafe by moving swash into pad
+	     
+	     [ 29784]
+	     Subject:  Re: AW: umask handling in File::Temp
+	     From:  Gisle Aas <gisle@activestate.com>
+	     Date:  12 Jan 2007 16:10:16 +0100
+	     Message-ID:  <877ivs1dt3.fsf@ask.g.aas.no>
+	     
+	     [ 29837]
+	     when cloning  PL_regex_pad, copy SVf_BREAK flag too
+	     
+	     [ 29839]
+	     make Dump display the SVf_BREAK flag
+	     
+	     [ 30147]
+	     Subject: [PATCH] fix 2 environment handling bugs
+	     From: Jan Dubois <jand@ActiveState.com>
+	     Date: Mon, 05 Feb 2007 21:45:36 -0800
+	     Message-ID: <p81gs2pggh04cngqjam0ejite7ksamiprt@4ax.com>
+	     
+	     [ 30211]
+	     Subject: [perl #41484] qr// stack bug 
+	     From: knew-p5p@pimb.org (via RT) <perlbug-followup@perl.org>
+	     Date: Sat, 10 Feb 2007 19:32:17 -0800
+	     Message-ID: <rt-3.6.HEAD-14573-1171164736-117.41484-75-0@perl.org>
+	     
+	     [ 30212]
+	     Convert new test to using t/test.pl.
+	     (No idea where it could fit better. And since it uses the stack,
+	     it's a bit fragile)
+	     
+	     [ 30228]
+	     Subject: Re: PL_copline inconsistency
+	     From: Rick Delaney <rick@bort.ca>
+	     Date: Sat, 27 Jan 2007 20:29:02 -0500
+	     Message-ID: <20070128012902.GA21572@bort.ca>
+     Branch: maint-5.8/perl
+	  +> t/op/qrstack.t
+	  !> MANIFEST doop.c dump.c op.c perl.c pp_hot.c pp_sys.c sv.c
+	  !> toke.c
+____________________________________________________________________________
+[ 30290] By: nicholas				   on 2007/02/14  16:13:48
+	Log: Integrate:
+	     [ 29660]
+	     remove conflict in pending_ident function and field name
+	     
+	     [ 29705]
+	     Subject: patch: shorten perl.h by six lines
+	     From: "David Nicol" <davidnicol@gmail.com>
+	     Date: Sat, 6 Jan 2007 00:02:24 -0600
+	     Message-ID: <934f64a20701052202p1c77a226w32634a1c69f584c7@mail.gmail.com>
+	     
+	     [ 29767]
+	     fix typo in hv.c
+	     
+	     [ 29790]
+	     In S_hfreeentries, orig_array can be const.
+	     
+	     [ 29922]
+	     Fix a typo and some doubled spaces in comments.
+	     
+	     [ 29930]
+	     Subject: [perl #41318] Patch: win32.c typo in #define MULTIPLICITY
+	     From: "Devin Heitmueller" (via RT) <perlbug-followup@perl.org>
+	     Date: Mon, 22 Jan 2007 14:46:15 -0800
+	     Message-ID: <rt-3.6.HEAD-1834-1169505975-229.41318-75-0@perl.org>
+     Branch: maint-5.8/perl
+	  !> cop.h embed.fnc embed.h hv.c perl.h pod/perlapi.pod proto.h
+	  !> sv.h toke.c win32/win32.c
+____________________________________________________________________________
+[ 30289] By: nicholas				   on 2007/02/14  15:54:31
+	Log: Integrate:
+	     [ 29626]
+	     Subject: [PATCH] Macroize char class tests in case to remove duplicated code.
+	     From: demerphq <demerphq@gmail.com>
+	     Message-ID: <9b18b3110612270237i40e5ef34ud80898459ee338eb@mail.gmail.com>
+	     Date: Wed, 27 Dec 2006 11:37:36 +0100
+     Branch: maint-5.8/perl
+	  !> regcomp.c
+____________________________________________________________________________
+[ 30288] By: nicholas				   on 2007/02/14  15:29:27
+	Log: Integrate:
+	     [ 27182]
+	     Upgrade to Time-HiRes-1.87
+	     
+	     [ 28745]
+	     Upgrade to Time-HiRes-1.88.
+	     
+	     [ 28747]
+	     Upgrade to Time-HiRes-1.89.
+	     
+	     [ 28748]
+	     Update to Time-HiRes-1.90.
+	     
+	     [ 28919]
+	     Upgrade to Time-HiRes-1.91
+	     
+	     [ 29010]
+	     Upgrade to Time-HiRes-1.92.
+	     
+	     [ 29023]
+	     Upgrade to Time-HiRes-1.93.
+	     
+	     [ 29031]
+	     Upgrade to Time-HiRes-1.94.
+	     
+	     [ 29181]
+	     Forgot to bump Time-HiRes $VERSION in change #29180
+	     (IO's $VERSION is bumped already)
+	     
+	     [ 29423]
+	     Upgrade to Time-HiRes-1.95
+	     
+	     [ 29426]
+	     Upgrade to Time-HiRes-1.96.
+	     
+	     [ 29428]
+	     Fix Time-HiRes linker error on Win32 introduced by upgrades
+	     from version 1.94 (#29423 and #29426)
+	     
+	     Subject: Re: Time::HiRes not happy?
+	     From: "Rafael Garcia-Suarez" <rgarciasuarez@gmail.com>
+	     Date: Fri, 1 Dec 2006 10:26:48 +0100
+	     Message-ID: <b77c1dce0612010126o799d5b8bs4ef37d22d5c7e50@mail.gmail.com>
+	     
+	     [ 29478]
+	     Upgrade to Time-HiRes 1.9702
+	     
+	     [ 29495]
+	     Upgrade to Time-HiRes-1.9703
+	     
+	     [ 29671]
+	     Upgrade to Time-HiRes-1.9704
+	     
+	     [ 30157]
+	     Upgrade to Time-HiRes-1.9705
+     Branch: maint-5.8/perl
+	  +> ext/Time/HiRes/hints/aix.pl ext/Time/HiRes/hints/linux.pl
+	  !> MANIFEST ext/Time/HiRes/Changes ext/Time/HiRes/HiRes.pm
+	  !> ext/Time/HiRes/HiRes.xs ext/Time/HiRes/Makefile.PL
+	  !> ext/Time/HiRes/fallback/const-c.inc ext/Time/HiRes/t/HiRes.t
+____________________________________________________________________________
+[ 30287] By: nicholas				   on 2007/02/14  15:06:55
+	Log: Integrate:
+	     [ 29436]
+	     Upgrade to Devel::PPPort 3.10_01
+	     
+	     [ 29437]
+	     Upgrade to Devel::PPPort 3.10_02
+	     
+	     [ 30280]
+	     Upgrade to Devel::PPPort 3.11
+     Branch: maint-5.8/perl
+	  +> ext/Devel/PPPort/parts/base/5009005
+	  +> ext/Devel/PPPort/parts/todo/5009005
+	  !> (integrate 78 files)
+____________________________________________________________________________
+[ 30286] By: nicholas				   on 2007/02/14  14:15:49
+	Log: Integrate:
+	     [ 28062]
+	     Move some scripts under win32/ce-helpers.
+	     
+	     Subject: RE: Merge WinCE into Win32 directory and remove the the WinCE dir ectory
+	     From: "Konovalov, Vadim Vladimirovich (Vadim)** CTR **" <vkonovalov@Lucent.com>
+	     Date: Tue, 2 May 2006 17:30:59 +0200 
+	     Message-ID: <E3FB32585BF1D411B9E900805FF51A0801BB3F03@ru0022exch001u.ru.lucent.com>
+	     
+	     [ 28072]
+	     Subject: Re: Smoke [5.9.4] 28069 FAIL(M) MSWin32 WinXP/.Net SP2 (x86/2 cpu)
+	     From: Vadim <vadim@vkonovalov.ru>
+	     Date: Wed, 03 May 2006 06:10:59 +0400
+	     Message-ID: <44581133.8080100@vkonovalov.ru>
+	     
+	     [ 28085]
+	     Subject: [PATCH] wince another step
+	     From: "Konovalov, Vadim Vladimirovich (Vadim)** CTR **"
+	     Date: Wed, 3 May 2006 20:11:11 +0200 
+	     Message-ID: <E3FB32585BF1D411B9E900805FF51A0801BCAE1F@ru0022exch001u.ru.lucent.com>
+	     
+	     [ 28096]
+	     Subject: [PATCH-for-28089] wince yet another step
+	     From: "Konovalov, Vadim Vladimirovich (Vadim)** CTR **" <vkonovalov@Lucent.com>
+	     Date: Thu, 4 May 2006 13:04:45 +0200 
+	     Message-ID: <E3FB32585BF1D411B9E900805FF51A0801BCB1EE@ru0022exch001u.ru.lucent.com>
+	     
+	     [ 28100]
+	     Subject: RE: [PATCH-for-28089] wince yet another step
+	     From: "Konovalov, Vadim Vladimirovich (Vadim)** CTR **" <vkonovalov@Lucent.com>
+	     Date: Thu, 4 May 2006 17:32:12 +0200 
+	     Message-ID: <E3FB32585BF1D411B9E900805FF51A0801BCB454@ru0022exch001u.ru.lucent.com>
+	     
+	     [ 28140]
+	     Subject: wince crosscompile patch for 28132
+	     From: Vadim <vadim@vkonovalov.ru>
+	     Date: Tue, 09 May 2006 15:09:43 +0400
+	     Message-ID: <44607877.90603@vkonovalov.ru>
+	     
+	     [ 29145]
+	     Subject: [PATCH@29157] wince patch
+	     From: Vadim <vadim@vkonovalov.ru>
+	     Date: Sat, 28 Oct 2006 23:48:46 +0400
+	     Message-ID: <4543B41E.3070006@vkonovalov.ru>
+	     
+	     [ 29213]
+	     The non-unix parts for localtime_r_needs_tzset
+	     Plus forced Glossary entry. That is a TODO for automation
+	     
+	     [ 29424]
+	     I think #29060 / #29073 missed this
+	     
+	     [ 29451]
+	     Change #29424 may well be correct in itself, but currently doesn't
+	     work when perl is built with PERL_IMPLICIT_SYS because PERLIO_TERM
+	     uses PerlMemShared_free() which, in that case, involves the perlhost
+	     that has already been freed itself by perl_free(), which is called
+	     before PERL_SYS_TERM().
+	     
+	     The order of perl_destruct(), perl_free(), PERL_SYS_TERM() cannot
+	     be changed (it is advertised in perlembed for a start), so just
+	     revert #29424 and the appropriate parts of #29442 for now.
+	     
+	     Perhaps PL_perlio_fd_refcnt needs allocating differently, or else
+	     the perlhost needs freeing later (after PerlIO)?
+	     
+	     [ 29465]
+	     Subject: [PATCH] Re: When should PERL_SYS_TERM() be called? [was: Re: [PATCH] Re: [PATCH] Re: [PATCH] abstract mempool header testing]
+	     From: Jarkko Hietaniemi <jhi@iki.fi>
+	     Date: Mon, 04 Dec 2006 22:53:03 -0500
+	     Message-ID: <4574ED1F.40508@iki.fi>
+	     
+	     Re-instates #29424 (previously reverted by #29451), now fixed to work
+	     with PERL_IMPLICIT_SYS, thanks to Jan Dubois. Also adds PERLIO_TERM to
+	     the Symbian port.
+	     
+	     [ 29604]
+	     Subject: Re: [PATCH] Making adding binary files possible
+	     From: demerphq <demerphq@gmail.com>
+	     Date: Wed, 20 Dec 2006 16:00:33 +0100
+	     Message-ID: <9b18b3110612200700k48157cd1n1f2305f306b7de32@mail.gmail.com>
+	     
+	     plus matching updates to Makefile.SH and patching.pod
+     Branch: maint-5.8/perl
+	  +> win32/ce-helpers/cecopy-lib.pl win32/ce-helpers/comp.pl
+	  +> win32/ce-helpers/compile-all.bat win32/ce-helpers/compile.bat
+	  +> win32/ce-helpers/makedist.pl win32/ce-helpers/registry.bat
+	  +> win32/perlmaince.c
+	   - win32/cecopy-lib.pl win32/comp.pl win32/compile-all.bat
+	   - win32/compile.bat win32/makedist.pl win32/perlmain.c
+	   - win32/registry.bat win32/win32-d.h win32/xconfig.h
+	  !> INSTALL MANIFEST README.ce perl.h perlio.c win32/Makefile.ce
+	  !> win32/config.ce win32/config_H.ce win32/perllib.c win32/vmem.h
+	  !> win32/win32.h win32/wince.c
+____________________________________________________________________________
+[ 30285] By: nicholas				   on 2007/02/14  13:53:42
+	Log: Integrate:
+	     [ 30276]
+	     
+	     [ 30277]
+	     Change 30276 wasn't meant do mess with t/lib/common.pl. Oops.
+	     Undo the mistake.
+     Branch: maint-5.8/perl
+	  !> t/lib/common.pl
+____________________________________________________________________________
+[ 30284] By: nicholas				   on 2007/02/14  13:46:26
+	Log: Restore differences in maint that change 30282 removed.
+	     (It seemed cleaner to do it this way, rather than as part of the
+	     integration)
+     Branch: maint-5.8/perl
+	   ! win32/Makefile.ce win32/config.ce win32/wince.c
+	   ! win32/wincesck.c
+____________________________________________________________________________
+[ 30283] By: nicholas				   on 2007/02/14  13:43:15
+	Log: Dear perforce, just because I merged it before (in the time frame of
+	     this branch) by accident, doesn't mean that I don't want to merge it
+	     now, when the time is right.
+	     http://xkcd.com/c149.html
+     Branch: maint-5.8/perl
+	  +> win32/Makefile.ce
+____________________________________________________________________________
+[ 30282] By: nicholas				   on 2007/02/14  13:38:24
+	Log: Integrate:
+	     [ 28061]
+	     Subject: Re: Merge WinCE into Win32 directory and remove the the WinCE directory
+	     From: demerphq <demerphq@gmail.com>
+	     Date: Mon, 1 May 2006 19:02:09 +0200
+	     Message-ID: <9b18b3110605011002m56c0db99n169ae677efb6d059@mail.gmail.com>
+	     
+	     Plus adjustements to MANIFEST. Also, perlmain.c seemed to be missing
+	     from the patch.
+     Branch: maint-5.8/perl
+	  +> win32/cecopy-lib.pl win32/comp.pl win32/compile-all.bat
+	  +> win32/compile.bat win32/config.ce win32/config_H.ce
+	  +> win32/makedist.pl win32/perl.rc win32/perlmain.c
+	  +> win32/registry.bat win32/win32-d.h win32/win32ceio.c
+	  +> win32/win32iop-o.h win32/wince.c win32/wince.h
+	  +> win32/wincesck.c win32/xconfig.h
+	   - wince/Makefile.ce wince/bin/exetype.pl wince/bin/perlglob.pl
+	   - wince/bin/pl2bat.pl wince/bin/runperl.pl wince/bin/search.pl
+	   - wince/cecopy-lib.pl wince/comp.pl wince/compile-all.bat
+	   - wince/compile.bat wince/config.ce wince/config_H.ce
+	   - wince/config_h.PL wince/config_sh.PL wince/dl_win32.xs
+	   - wince/include/arpa/inet.h wince/include/sys/socket.h
+	   - wince/makedist.pl wince/makeico.pl wince/perl.rc
+	   - wince/perlhost.h wince/perllib.c wince/perlmain.c
+	   - wince/registry.bat wince/runperl.c wince/splittree.pl
+	   - wince/vdir.h wince/vmem.h wince/win32.h wince/win32io.c
+	   - wince/win32iop.h wince/win32thread.c wince/win32thread.h
+	   - wince/wince.c wince/wince.h wince/wincesck.c
+	  !> MANIFEST win32/include/sys/socket.h win32/win32.h
+	  !> win32/win32thread.h
+____________________________________________________________________________
+[ 30281] By: nicholas				   on 2007/02/14  13:33:27
+	Log: Integrate:
+	     [ 28003]
+	     Subject: Merge WinCE and Win32 directories -- Initial patch
+	     From: demerphq <demerphq@gmail.com>
+	     Date: 27-Apr-2006 23:30
+	     Message-ID: <9b18b3110604271430k4de84685jec6535ded195ed94@mail.gmail.com>
+     Branch: maint-5.8/perl
+	  !> win32/config_h.PL win32/dl_win32.xs win32/include/sys/socket.h
+	  !> win32/perlhost.h win32/perllib.c win32/vdir.h win32/vmem.h
+	  !> win32/win32.h
+____________________________________________________________________________
+[ 30279] By: nicholas				   on 2007/02/14  11:47:20
+	Log: Integrate:
+	     [ 29691]
+	     Subject: Re: [PATCH] perlio.c repair
+	     From: Bo Lindbergh <blgl@hagernas.com>
+	     Date: Thu, 4 Jan 2007 18:22:09 +0100
+	     Message-Id: <E22DC961-6821-4AC2-BA2F-9B5B06927758@hagernas.com>
+	     
+	     [ 29701]
+	     Subject: [PATCH] ext/PerlIO/via/via.xs freeing the wrong thing
+	     From: Bo Lindbergh <blgl@hagernas.com>
+	     Date: Fri, 5 Jan 2007 19:19:53 +0100
+	     Message-Id: <C7070BEE-BFB6-4FA2-A50B-BF20CDB3B61F@hagernas.com>
+	     
+	     [ 29894]
+	     Subject: [PATCH] Re: Race condition in IPC::Open3 / Mac OS?
+	     From: Bo Lindbergh <blgl@hagernas.com>
+	     Date: Sat, 20 Jan 2007 02:39:57 +0100
+	     Message-Id: <D256CF03-D814-4973-9DF6-60EA4F26FE10@hagernas.com>
+     Branch: maint-5.8/perl
+	  !> ext/PerlIO/via/via.xs perlio.c
+____________________________________________________________________________
+[ 30275] By: nicholas				   on 2007/02/13  23:54:25
+	Log: Integrate:
+	     [ 27185]
+	     Subject: Getopt::Long::Configure 'no_getopt_compat'
+	     From: Abigail <abigail@abigail.nl>
+	     Date: Tue, 14 Feb 2006 23:58:07 +0100
+	     Message-ID: <20060214225806.GA4120@abigail.nl>
+	     
+	     [ 27186]
+	     Version bump to go along with change #27185
+	     
+	     [ 30086]
+	     Upgrade to Getopt::Long 2.36
+     Branch: maint-5.8/perl
+	  +> lib/Getopt/Long/t/gol-xargv.t lib/Getopt/Long/t/gol-xstring.t
+	  !> MANIFEST lib/Getopt/Long.pm lib/Getopt/Long/CHANGES
+	  !> lib/Getopt/Long/README lib/Getopt/Long/t/gol-basic.t
+	  !> lib/Getopt/Long/t/gol-linkage.t
+____________________________________________________________________________
+[ 30274] By: nicholas				   on 2007/02/13  23:49:45
+	Log: Integrate:
+	     [ 27001]
+	     Add -DPTR_IS_LONG when building with -Duse64bitint on Solaris/i386.  
+	     Otherwise, the build fails in POSIX.
+	     
+	     [ 29339]
+	     Silence some warnings during Configure
+	     
+	     [ 29341]
+	     Upgrade warning should only be issued if upgrade happens
+	     
+	     [ 30155]
+	     Subject: [PATCH hints/linux.sh] libdb may require pthread
+	     From: Jonathan Stowe <jns@gellyfish.com>
+	     Date: Wed, 07 Feb 2007 11:56:17 +0000
+	     Message-Id: <1170849377.13207.14.camel@coriolanus.gellyfish.com>
+     Branch: maint-5.8/perl
+	  !> hints/hpux.sh hints/linux.sh hints/solaris_2.sh
+____________________________________________________________________________
+[ 30273] By: nicholas				   on 2007/02/13  23:40:57
+	Log: Integrate:
+	     [ 26459]
+	     De-duplicate the items in @EXPORT. (@EXPORT is built from all the tags,
+	     and some constants are mentioned in multiple tags).
+	     Should this logic be in Exporter::Heavy?
+	     
+	     [ 26709]
+	     Tweak the code that generates unique entries in @POSIX::EXPORT so that
+	     the array ends up with shared hash key scalars, for a memory saving.
+	     
+	     [ 29571]
+	     POSIX::SigAction::new can be moved into the AUTOLOAD section.
+	     
+	     [ 29586]
+	     Given that POSIX already has AutoLoader loaded, move as much as
+	     possible of POSIX::SigRt out to AutoLoadLand, so that it won't be
+	     loaded unless someone starts using the realtime signals interface.
+	     
+	     [ 29587]
+	     Ensure that POSIX.pm is strict and warnings compliant throughout if
+	     the __END__ is temporarily removed.
+	     
+	     [ 29591]
+	     Disable strictures in POSIX AUTOLOAD
+	     
+	     [ 29592]
+	     Add a regression test to verify that POSIX::AUTOLOAD works,
+	     and silence a potential warning from it.
+     Branch: maint-5.8/perl
+	  !> ext/POSIX/POSIX.pm ext/POSIX/t/posix.t
+____________________________________________________________________________
+[ 30272] By: nicholas				   on 2007/02/13  23:24:02
+	Log: Integrate:
+	     [ 29736]
+	     Make opcode.pl strict and warnings clean.
+	     
+	     [ 29738]
+	     Make autodoc.pl strict clean.
+	     
+	     [ 29739]
+	     Make keywords.pl strict and warnings clean.
+	     
+	     [ 29740]
+	     Make makedef.pl warnings and strict clean.
+	     
+	     [ 29741]
+	     Make minimod.pl warnings and strict clean.
+	     
+	     [ 29742]
+	     Subject: ./miniperl minimod.pl ... Can't locate strict.pm
+	     From: andreas.koenig.7os6VVqR@franz.ak.mind.de (Andreas J. Koenig)
+	     Date: Wed, 10 Jan 2007 04:55:55 +0100
+	     Message-ID: <87lkkbk01g.fsf@k75.linux.bogus>
+	     
+	     [ 29774]
+	     makedef.pl should be able to load "strict"
+     Branch: maint-5.8/perl
+	  !> autodoc.pl keywords.pl makedef.pl minimod.pl opcode.pl
+____________________________________________________________________________
+[ 30271] By: nicholas				   on 2007/02/13  23:07:06
+	Log: Integrate:
+	     [ 28510]
+	     Subject: [PATCH] perl5db.pl: read full lines from remote socket
+	     From: Brendan O'Dea <bod@debian.org>
+	     Date: Sat, 8 Jul 2006 13:27:50 +1000
+	     Message-ID: <20060708032750.GA20454@londo.c47.org>
+	     
+	     [ 29403]
+	     Subject: [PATCH 5.8.8] perl5db on miniperl
+	     From: Ilya Zakharevich <nospam-abuse@ilyaz.org>
+	     Date: Tue, 28 Nov 2006 03:39:05 -0800
+	     Message-ID: <20061128113905.GA18135@powdermilk.math.berkeley.edu>
+	     
+	     [ 29415]
+	     Subject: [PATCH perl5db.pl] MacOSX debugger fork support
+	     From: Richard Foley <Richard.Foley@rfi.net>
+	     Date: Wed, 29 Nov 2006 12:00:53 +0100
+	     Message-Id: <200611291200.53429.Richard.Foley@rfi.net>
+	     
+	     [ 29555]
+	     Subject: [PATCH] perl5db.pl Mac OS X fix
+	     From: Bo Lindbergh <blgl@hagernas.com>
+	     Date: Thu, 14 Dec 2006 13:34:06 +0100
+	     Message-Id: <658AFA03-517E-4068-93CA-06D4A93B5CA5@hagernas.com>
+	     
+	     [ 29582]
+	     lib/perl5db.pl: Remove code now moved to OS2::Process
+	     
+	     Subject: [PATCH 5.8.8] OS/2 build, small change
+	     From: Ilya Zakharevich <nospam-abuse@ilyaz.org>
+	     Date: Mon, 18 Dec 2006 01:20:12 -0800
+	     Message-ID: <20061218092012.GA15022@powdermilk.math.berkeley.edu>
+     Branch: maint-5.8/perl
+	  !> lib/perl5db.pl
+____________________________________________________________________________

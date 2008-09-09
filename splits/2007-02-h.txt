@@ -1,0 +1,535 @@
+[ 30173] By: nicholas				   on 2007/02/08  14:22:18
+	Log: Integrate:
+	     [ 30167]
+	     TODO tests for eval of tainted scalars. (change 29193's regression)
+	     
+	     [ 30168]
+	     opening $0 doesn't work if you change directory. So use test.pl
+	     
+	     [ 30171]
+	     Subject: [PATCH] Re: Change 29193 is a regression
+	     From: Rick Delaney <rick@bort.ca>
+	     Date: Thu, 8 Feb 2007 08:21:37 -0500
+	     Message-ID: <20070208132137.GA24202@bort.ca>
+     Branch: maint-5.8/perl
+	  !> pp_ctl.c t/op/taint.t
+____________________________________________________________________________
+[ 30166] By: nicholas				   on 2007/02/07  22:59:15
+	Log: Integrate:
+	     [ 26027]
+	     Subject: [perl #24254] Attempt to free unreferenced scalar 
+	     From: "Chris Heath via RT" <perlbug-followup@perl.org>
+	     Date: Sun, 06 Nov 2005 20:08:05 -0800
+	     Message-ID: <rt-3.0.11-24254-123984.4.44134155985068@perl.org>
+	     
+	     [ 26043]
+	     Subject: Re: C<undef %::> considered harmful
+	     From: Benjamin Sugars <bsugars@canoe.ca>
+	     Date: Fri, 20 Apr 2001 10:30:20 -0400 (EDT)
+	     Message-ID: <Pine.LNX.4.21.0104201022040.1722-100000@marmot.rim.canoe.ca>
+	     
+	     except the part that increases the refcount of PL_stderrgv, already
+	     fixed separately.
+	     
+	     [ 26192]
+	     Subject: Re: [PATCH] concat interacts badly with magic
+	     From: Robin Houston <robin@cpan.org>
+	     Date: Tue, 22 Nov 2005 14:07:27 +0000
+	     Message-ID: <20051122140727.GA29861@rpc142.cs.man.ac.uk>
+	     
+	     (new version of patch for bug #37722)
+	     
+	     [ 26643]
+	     Fix some compilation warnings
+     Branch: maint-5.8/perl
+	  !> cop.h perl.c pp_hot.c t/lib/warnings/pp_hot t/op/tie.t
+____________________________________________________________________________
+[ 30165] By: nicholas				   on 2007/02/07  22:21:00
+	Log: Integrate:
+	     [ 22821]
+	     make Text::Balanced skip "case /..../" correctly for Switch.pm
+	     
+	     [ 25134]
+	     Subject: [PATCH] #2 try at Text::Balanced patch and maintainership
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Sat, 9 Jul 2005 23:10:29 +0200
+	     Message-Id: <200507092310.30592@bloodgate.com>
+	     
+	     (with minor tweaks)
+	     
+	     [ 25135]
+	     Subject: Re: [perl #25157] [PATCH] Text-Balanced extract_quotelike fails on certain delims in HERE docs
+	     From: David Manura <dm.list@math2.org>
+	     Date: Wed, 21 Jan 2004 20:59:27 -0500
+	     Message-ID: <400F2E7F.9090601@math2.org>
+	     
+	     Fixes perl #25151, 25154, 25156, 25157, 25158 using jumbo patch
+	     included in perl #25157.
+	     
+	     [ 28105]
+	     Upgrade to Text-Balanced-1.98
+	     
+	     [ 28125]
+	     Rollback two changes in Text::Balanced which cause test failures in the
+	     CPAN and bleadperl version of the tests.  Also, the previous bleadperl
+	     version of one test file is a bit more comprehensive than what was in
+	     CPAN, so it has been completely restored.
+	     
+	     [ 28126]
+	     Version bump and typo fix from change #28125.
+	     
+	     [ 28127]
+	     Rename lib/Text/Balanced/t/00.load.t to 
+	     lib/Text/Balanced/t/00-load.t and restore a test to 
+	     lib/Text/Balanced/t/extmul.t.
+	     
+	     [ 28270]
+	     Silence Text::Balanced's 00-load.t when PERL_CORE is defined.
+	     
+	     [ 28287]
+	     Fix a syntax error in test
+	     
+	     [ 29344]
+	     Sync Text::Balanced with the CPAN version (1.99.1)
+	     
+	     [ 29345]
+	     - Restore two Text::Balanced tests, more comprehensive in bleadperl than
+	     in CPAN.
+	     - Restore a local bugfix, tested by the above tests.
+	     - Fix a few typos in the POD for Text::Balanced
+	     - Bump version of Text::Balanced
+	     
+	     [ 29346]
+	     Remove tests for POD or POD coverage -- they're always skipped.
+	     
+	     [ 29609]
+	     Upgrade to Text::Balanced 2.0.0
+     Branch: maint-5.8/perl
+	  +> lib/Text/Balanced/t/00-load.t lib/Text/Balanced/t/00.load.t
+	  +> lib/Text/Balanced/t/pod-coverage.t lib/Text/Balanced/t/pod.t
+	   - lib/Test/Harness/t/pod.t
+	  !> MANIFEST lib/Text/Balanced.pm lib/Text/Balanced/Changes
+	  !> lib/Text/Balanced/README lib/Text/Balanced/t/extcbk.t
+	  !> lib/Text/Balanced/t/extmul.t lib/Text/Balanced/t/extqlk.t
+	  !> lib/Text/Balanced/t/exttag.t lib/Text/Balanced/t/extvar.t
+	  !> lib/Text/Balanced/t/gentag.t
+____________________________________________________________________________
+[ 30164] By: nicholas				   on 2007/02/07  21:38:12
+	Log: Integrate:
+	     [ 28339]
+	     Make VMS-specific device name encoding routine say no more politely.
+	     
+	     [ 28806]
+	     declaration after code nit in vms/vms.c (from Martin Vorlaender)
+	     
+	     [ 28843]
+	     Define d_cplusplus on VMS when appropriate
+	     
+	     [ 28977]
+	     fix a doc typo and a warning typo in VMS::DCLsym
+	     
+	     [ 29144]
+	     When we open a file and pass it along to PerlIO, be sure to enter the
+	     PerlIO world via Unix I/O.	 If you start from stdio, a Unix I/O counter
+	     will get decremented on close even though it was never incremented (and 
+	     may not even exist).  Exposed by #29065.
+	     
+	     [ 29205]
+	     In pipe_exit_routine in vms/vms.c, mark a subprocess we've deleted
+	     as done.  Courtesy of Scott Lepage.
+	     
+	     [ 29326]
+	     Subject: [patch@29297] perl5db.pl detecting forked debugger on VMS.
+	     From: "John E. Malmberg" <wb8tyw@qsl.net>
+	     Date: Sat, 18 Nov 2006 23:07:17 -0500
+	     Message-ID: <455FD875.8050007@qsl.net>
+	     
+	     [ 29380]
+	     xterm debugger support for VMS from John Malmberg (with revisions)
+	     
+	     [ 29572]
+	     Don't try to build Win32 on VMS
+	     
+	     [ 29573]
+	     In vms/vms.c, don't prototype decw$term_port until after 
+	     config.h (via perl.h) is included.	 That's where USE_VMS_DECTERM
+	     is defined.
+	     
+	     [ 30041]
+	     Subject: [perl@30030] blead on OpenVMS doesn't build
+	     From: Abe Timmerman <abe@ztreet.demon.nl>
+	     Date: Sat, 27 Jan 2007 17:26:47 +0100
+	     Message-Id: <200701271726.48347.abe@ztreet.demon.nl>
+	     
+	     Disable DECterm support by default, and when we enable it, 
+	     make sure the image we need is installed, not merely present.
+	     
+	     [ 30108]
+	     Install parser.h on VMS, plus fix some case typos in descrip_mms.template.
+	     
+	     [ 30111]
+	     Install overload.h on VMS, plus more case fix-ups in descrip_mms.template.
+     Branch: maint-5.8/perl
+	  !> configure.com lib/perl5db.pl vms/descrip_mms.template
+	  !> vms/ext/DCLsym/DCLsym.pm vms/ext/Stdio/Stdio.xs vms/vms.c
+____________________________________________________________________________
+[ 30163] By: nicholas				   on 2007/02/07  20:48:27
+	Log: Integrate:
+	     [ 27561]
+	     Subject: [patch@27538] utime patch for VMS
+	     From: "John E. Malmberg" <wb8tyw@qsl.net>
+	     Date: Mon, 20 Mar 2006 08:12:19 -0500
+	     Message-ID: <441EAA33.6010603@qsl.net>
+	     
+	     [ 27669]
+	     fix typo in vms/gen_shrfls.pl itanium detector
+	     
+	     [ 27706]
+	     sort out some utime() issues on VMS
+	     
+	     [ 27806]
+	     Don't die after SS$_NOPRIV in Perl_vmssetenv, courtesy
+	     of Scott Lepage at HP.
+	     
+	     [ 27807]
+	     Honor READALL privilege in cando_by_name (from Scott
+	     Lepage of HP OpenVMS Engineering)
+	     
+	     [ 27808]
+	     Fix bug in prime_env_iter where the terms of a comparison were reversed
+	     so we thought we didn't have a logical name table when we did.  Reported as:
+	     Subject: LWP::Simple crashes on VMSperl
+	     From: "juna" <ggl.20.jj...@spamgourmet.com>
+	     Date: 24 Mar 2006 13:52:41 -0800
+	     Newsgroups: comp.os.vms,comp.lang.perl.misc
+	     Message-ID: <1143237161.931669.48370@t31g2000cwb.googlegroups.com>
+	     
+	     [ 28348]
+	     It's all relative -- better handling of tainted directories
+	     in PATH on VMS (and scrubbing them in t/test.pl).
+	     
+	     [ 28351]
+	     Subject: [PATCH] mg.c: using #ifdef inside a macro call ENONPORTABLE (causes e.g. AIX to barf)
+	     From: Jarkko Hietaniemi <jhi@cc.hut.fi>
+	     Date: Sun, 4 Jun 2006 11:21:30 +0300 (EEST)
+	     Message-Id: <200606040821.k548LUYu010965@vipunen.hut.fi>
+	     
+	     [ 28368]
+	     autosplit one level deeper so we don't miss anything
+	     on a second pass (where lib/auto already exists)
+	     
+	     [ 28448]
+	     Updated handling of signal names and signals for VMS
+     Branch: maint-5.8/perl
+	  !> configure.com mg.c t/test.pl vms/descrip_mms.template
+	  !> vms/gen_shrfls.pl vms/perlvms.pod vms/vms.c vms/vmsish.h
+____________________________________________________________________________
+[ 30162] By: nicholas				   on 2007/02/07  18:45:59
+	Log: Integrate:
+	     [ 27371]
+	     Subject: [PATCH] include configure.com in Porting/checkcfgvar.pl
+	     From: Abe Timmerman <abe@ztreet.demon.nl>
+	     Date: Fri, 3 Mar 2006 18:43:24 +0100
+	     Message-Id: <200603031843.24250.abe@ztreet.demon.nl>
+	     
+	     [ 27374]
+	     Subject: Re: [PATCH] include configure.com in Porting/checkcfgvar.pl
+	     From: Abe Timmerman <abe@ztreet.demon.nl>
+	     Date: Fri, 3 Mar 2006 22:56:47 +0100
+	     Message-Id: <200603032256.47170.abe@ztreet.demon.nl>
+	     
+	     [ 27386]
+	     Subject: PATCH: 2 vms specific build files in perl @ 27383
+	     From: Peter Prymmer <PPrymmer@factset.com>
+	     Date: Sun, 05 Mar 2006 20:30:09 -0500
+	     Message-id: <OFF0B19477.39D9ABEB-ON85257129.00070590-85257129.000840D3@factset.com>
+	     
+	     [ 27563]
+	     Subject: [patch@27529] thread.h - VMS needs more stack
+	     From: "John E. Malmberg" <wb8tyw@qsl.net>
+	     Date: Fri, 17 Mar 2006 11:05:33 -0500
+	     Message-id: <441ADE4D.2090207@qsl.net>
+	     
+	     [ 27593]
+	     improve thread linking options on VMS
+	     
+	     [ 28334]
+	     Subject: [PATCH] redo part of change 27374
+	     From: Abe Timmerman <abe@ztreet.demon.nl>
+	     Date: Mon, 29 May 2006 23:24:51 +0200
+	     Message-id: <200605292324.51714.abe@ztreet.demon.nl>
+     Branch: maint-5.8/perl
+	  !> Porting/checkcfgvar.pl configure.com thread.h
+	  !> vms/descrip_mms.template vms/gen_shrfls.pl
+____________________________________________________________________________
+[ 30161] By: nicholas				   on 2007/02/07  17:31:52
+	Log: Integrate:
+	     [ 26869]
+	     more case tolerance for vms/ext/filespec.t
+	     
+	     [ 27114]
+	     Subject: patch@27082 Allow fatal exceptions to bring up VMS debugger
+	     From: "John E. Malmberg" <wb8tyw@qsl.net>
+	     Date: Sat, 04 Feb 2006 16:04:32 -0500
+	Message-id: <43E516E0.1000508@qsl.net>
+
+	     
+	     [ 27115]
+	     Subject: Re: Configure.com issue, more quoting needed.
+	     From: Peter Prymmer <PPrymmer@factset.com>
+	     Date: Mon, 06 Feb 2006 13:27:14 -0500
+	     Message-id:  <OF3536E719.A8B8D167-ON8525710D.0065011E-8525710D.00655ED0@factset.com>
+     Branch: maint-5.8/perl
+	  !> configure.com vms/ext/filespec.t vms/perlvms.pod vms/vms.c
+____________________________________________________________________________
+[ 30160] By: nicholas				   on 2007/02/07  17:08:56
+	Log: Integrate:
+	     [ 26250]
+	     In vms/vms.c, don't use the thread-specific Newx() during
+	     startup before threads are initialized.  
+	     
+	     [ 26298]
+	     Subject: patch@26253 Allow embedded new lines passed through to commands
+	From: "John E. Malmberg" <wb8tyw@qsl.net>
+	Date: Wed, 07 Dec 2005 22:26:21 -0500
+	     Message-id: <4397A7DD.8030403@qsl.net>
+
+	     
+	     [ 26302]
+	     On VMS, do not use Perl's memory allocator for the home-grown pipe
+	     structures.  They may be allocated during start-up and are torn down
+	     in an exit handler, where thread context and other Perlish support
+	     are iffy.
+     Branch: maint-5.8/perl
+	  !> vms/vms.c
+____________________________________________________________________________
+[ 30159] By: nicholas				   on 2007/02/07  16:57:11
+	Log: Integrate:
+	     [ 25284]
+	     Subject: [patch] blead@25282 - VMS specific fixes. [2nd try]
+	     From: "John E. Malmberg" <wb8tyw@qsl.net>
+	     Date: Wed, 10 Aug 2005 23:26:03 -0400
+	     Message-ID: <42FAC54B.2050207@qsl.net>
+     Branch: maint-5.8/perl
+	  !> lib/vmsish.t t/lib/warnings/doio t/op/anonsub.t t/op/chdir.t
+	  !> t/op/closure.t t/op/lex_assign.t t/op/runlevel.t t/op/stat.t
+	  !> t/x2p/s2p.t utils/c2ph.PL vms/ext/Stdio/test.pl
+____________________________________________________________________________
+[ 30158] By: nicholas				   on 2007/02/07  16:33:27
+	Log: Subject: [PATCH maint@29870] VMS build help
+	     From: "Craig A. Berry" <craigberry@mac.com>
+	     Message-ID: <45AFD18E.9020700@mac.com>
+	     Date: Thu, 18 Jan 2007 13:59:10 -0600
+     Branch: maint-5.8/perl
+	   ! vms/vms.c vms/vmsish.h
+____________________________________________________________________________
+[ 30154] By: nicholas				   on 2007/02/07  10:45:15
+	Log: Integrate:
+	     [ 30153]
+	     Wrap the SvTYPE macro definition in parens.
+     Branch: maint-5.8/perl
+	  !> sv.h
+____________________________________________________________________________
+[ 30145] By: nicholas				   on 2007/02/06  20:28:15
+	Log: Update Changes
+     Branch: maint-5.8/perl
+	   ! Changes patchlevel.h
+____________________________________________________________________________
+[ 30141] By: nicholas				   on 2007/02/05  22:46:22
+	Log: Integrate:
+	     [ 29520]
+	     Rename FBM_TABLE_OFFSET to PERL_FBM_TABLE_OFFSET prior to moving it
+	     to a header.
+	     
+	     [ 29522]
+	     Convert the -1 to a more explicit PERL_FBM_FLAGS_OFFSET_FROM_TABLE.
+	     
+	     [ 29524]
+	     Move PERL_FBM_TABLE_OFFSET and PERL_FBM_FLAGS_OFFSET_FROM_TABLE to sv.h
+	     
+	     [but not this bit:
+	     Stow BmRARE in the SvPVX, and so delete xbm_rare.
+	     Can you see what it is yet?
+	     ]
+	     
+	     [ 29525]
+	     Add BmPREVIOUS_set(), and use it in the one place that BmPREVIOUS is
+	     modified.
+	     
+	     [ 29538]
+	     Correct some assumptions about PVBM table offset in B.xs
+	     
+	     [ 29541]
+	     In theory Perl_magic_setbm() should clear SvTAIL() too. In practice,
+	     I don't think that it matters as this routine is never actualy called
+	     because nothing exposes PVBMs to the world so that the world can assign
+	     to them.
+	     
+	     [ 29635]
+	     Eliminate BmPREVIOUS_set - with the complexity gone from how the datum
+	     is stored, there's no need for it.
+	     
+	     [ 29637]
+	     In Perl_fbm_compile, really rarest should be U32 not I32, as it is
+	     set from a U32, and used as an array index.
+     Branch: maint-5.8/perl
+	   ! sv.h
+	  !> ext/B/B.xs mg.c util.c
+____________________________________________________________________________
+[ 30140] By: nicholas				   on 2007/02/05  22:01:07
+	Log: Integrate:
+	     [ 27195]
+	     Subject: [PATCH] Make XCOPY not prompt every two seconds when rebuilding on Win32
+	     From: demerphq <demerphq@gmail.com>
+	     Date: Mon, 13 Feb 2006 09:41:37 +0100
+	     Message-ID: <9b18b3110602130041q2d64122am5c83392dd75e0413@mail.gmail.com>
+	     
+	     [ 27200]
+	     Subject: [PATCH] stat() on Windows doesn't handle trailing slashes/backslashes correctly
+	     From: "Jan Dubois" <jand@ActiveState.com>
+	     Date: Wed, 15 Feb 2006 17:19:29 -0800
+	     Message-ID: <017901c63297$08e1e3f0$2217a8c0@candy>
+	     
+	     [ 27283]
+	     Subject: [PATCH] Implement ${^WIN32_SLOPPY_STAT}
+	     From: "Jan Dubois" <jand@ActiveState.com>
+	     Date: Tue, 21 Feb 2006 12:36:31 -0800
+	     Message-ID: <019601c63726$7fcca200$6062a8c0@candy>
+	     [ 27421]
+	     Get rid of unnecessary "rmdir /s" calls in Win32 makefiles
+	     
+	     They only existed for the benefit of old shells that didn't
+	     understand "rmdir /s /q", but since change #27195 effectively
+	     drops support for old shells that don't understand "xcopy /y"
+	     it seems unnecessary now.
+	     
+	     Windows NT4, 2000, XP and onwards all support "rmdir /s /q", so
+	     it's probably only the Windows 9x shells that lose out.
+	     
+	     [ 27500]
+	     The first step in supporting VC++ 8.0.  Added macros for the free .NET 2.0 SDK and Visual Studio
+	     2005.  Added these macros to "if" conditions that were appropriate.  Added a fix to prevent
+	     the .NET 1.1 and 2.0 SDK compilers from attempting to build perlglob.exe (they are both missing
+	     the setargv.obj file necessary to do it).
+	     
+	     [ 27503]
+	     Additions to README.win32 and win32/Makefile based on comments from
+	     Steve Hay.
+	     
+	     [ 27528]
+	     Subject: [PATCH] win32_pclose() error exit doesn't unlock mutex
+	     From: Jan Dubois <jand@ActiveState.com>
+	     Date: Thu, 16 Mar 2006 16:30:23 -0800
+	     Message-ID: <02c701c64959$fac63ad0$6062a8c0@candy>
+	     
+	     [ 27530]
+	     Install POD files into "lib\pods" rather than "lib\pod" on Win32
+	     to avoid clashing with "lib\Pod" (cf. perl change #26363)
+	     
+	     Also remove a couple of unused macros from the makefiles
+	     
+	     [ 27532]
+	     Make "distclean" target on Win32 clean up temporary HTML directory
+	     that gets left behind after running the "install" target.
+	     Also clean up a couple of leftover pod2html cache files.
+	     
+	     [ 27555]
+	     Merge some changes from ActivePerl 5.8.8.816
+	     
+	     See:
+	     http://downloads.activestate.com/ActivePerl/src/5.8/AP816_diff.txt
+	     
+	     These changes provide better support for building XS extension modules
+	     using VC++ or MinGW when perl itself was built with the opposite of
+	     those two compilers.
+	     
+	     [ 27556]
+	     Merge some more changes from ActivePerl 5.8.8.816
+	     
+	     See (again):
+	     http://downloads.activestate.com/ActivePerl/src/5.8/AP816_diff.txt
+	     
+	     These changes improve support for the MS 64-bit compiler in
+	     win32/Makefile (and tentatively make the same changes to
+	     win32/makefile.mk), and also switches the now deprecated -Gf switch to
+	     -GF for all flavours of VC++ instead of just the latest ones.
+	     
+	     (See:
+	     http://www.xray.mpe.mpg.de/mailing-lists/perl5-porters/2006-02/msg00353.html
+	     for a comment on the s/-Gf/-GF/ change.)
+	     
+	     [ 27888]
+	     Subject: [PATCH] win32/Makefile changes for Windows 64 bit
+	     From: "Jan Dubois" <jand@ActiveState.com>
+	     Date: Mon, 17 Apr 2006 01:48:34 -0700
+	     Message-ID: <036401c661fb$bc7a1200$2217a8c0@candy>
+	     
+	     and make similar changes to win32/makefile.mk
+	     and delete a spurious extra line from that file
+     Branch: maint-5.8/perl
+	  !> README.win32 installperl win32/Makefile win32/bin/pl2bat.pl
+	  !> win32/config_H.gc win32/config_H.vc win32/makefile.mk
+	  !> win32/win32.c win32/win32io.c wince/wince.c
+____________________________________________________________________________
+[ 30139] By: nicholas				   on 2007/02/05  21:19:54
+	Log: Integrate:
+	     [ 27180]
+	     Subject: [Patch] Enhance Hash::Util
+	     From: demerphq <demerphq@gmail.com>
+	     Date: Mon, 13 Feb 2006 11:39:33 +0100
+	     Message-ID: <9b18b3110602130239w311d05fcr776ae8333776ca2e@mail.gmail.com>
+	     
+	     [ 27181]
+	     Hash::Util tests should check if Hash::Util has been built, not
+	     List::Util (spotted by Rafael).
+	     
+	     [ 27257]
+	     Add tests for the previously untested Hash::Util::all_keys().
+     Branch: maint-5.8/perl
+	  +> ext/Hash/Util/Changes ext/Hash/Util/Makefile.PL
+	  +> ext/Hash/Util/Util.xs ext/Hash/Util/lib/Hash/Util.pm
+	  +> ext/Hash/Util/t/Util.t
+	   - lib/Hash/Util.pm lib/Hash/Util.t
+	  !> MANIFEST win32/Makefile win32/makefile.mk
+____________________________________________________________________________
+[ 30138] By: nicholas				   on 2007/02/05  19:37:53
+	Log: Integrate:
+	     [ 25288]
+	     Make change 25286 better
+	     
+	     Thanks to John E. Malmberg <wb8tyw@qsl.net> for pointing this out.
+	     
+	     [ 26041]
+	     Subject: [PATCH] Remove unused USING_WIDE code from win32 and wince branches
+	     From: "Jan Dubois" <jand@ActiveState.com>
+	     Date: Mon, 7 Nov 2005 20:39:02 -0800
+	     Message-ID: <078001c5e41e$585c4140$6401a8c0@candy>
+	     
+	     [ 26044]
+	     Remove an unused variable left over from change #26041
+     Branch: maint-5.8/perl
+	  !> win32/Makefile win32/bin/pl2bat.pl win32/ext/Win32/Win32.xs
+	  !> win32/makefile.mk win32/perlhost.h win32/win32.c win32/win32.h
+	  !> win32/win32io.c wince/perlhost.h wince/win32.h wince/wince.c
+____________________________________________________________________________
+[ 30137] By: nicholas				   on 2007/02/05  19:11:17
+	Log: Integrate:
+	     [ 29823]
+	     Various cleanup and factorization by Schwern
+	     for tests for warnings and features
+	     
+	     [ 29824]
+	     Simplify the ok/not ok logic
+	     (another refactorisation by Schwern)
+	     
+	     [ 29825]
+	     Use the $Is_MacOS variable
+	     
+	     [ 30123]
+	     Enhance t/lib/common.pl to provide conditional TODOs using eval'd code.
+	     
+	     [ 30136]
+	     t/lib/common.pl can be warnings clean.
+     Branch: maint-5.8/perl
+	  !> t/lib/common.pl
+____________________________________________________________________________

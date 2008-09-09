@@ -1,0 +1,529 @@
+[ 30320] By: nicholas				   on 2007/02/15  16:30:05
+	Log: Integrate:
+	     [ 26845]
+	     Friday the 13th, Part II.	Don't call SYS$GETJPI with fancy case
+	     lookup stuff on older systems that don't know what it means (broken
+	     in #25306).
+	     
+	     [ 27474]
+	     Subject: [PATCH] perl@27437 fix File::Path::mkpath so that perl installs on VMS
+	     From: Peter Prymmer <PPrymmer@factset.com>
+	Date: Fri, 10 Mar 2006 15:24:23 -0500
+	Message-id: <OFBE8F84F1.A708DA4A-ON8525712D.006E4BF7-8525712D.007018C6@factset.com>
+	     
+	     [ 30177]
+	     Switch from Carp to plain old warn in vms/ext/XSSymSet.pm
+	     because Carp now in some cases depends on things that may not
+	     be available from miniperl or before extensions are built.
+	     
+	     [ 30216]
+	     In vms/vms.c's declaration of the LIB$INITIALIZE psect, try to get
+	     all of the attributes we need without any of the ones we don't, and
+	     try to be friendly to older compilers without too much damage to 
+	     readability.  Thanks to Saku Setala for the problem report.
+     Branch: maint-5.8/perl
+	  !> lib/File/Path.pm vms/ext/XSSymSet.pm vms/vms.c
+____________________________________________________________________________
+[ 30319] By: nicholas				   on 2007/02/15  16:15:16
+	Log: Integrate:
+	     [ 27628]
+	     Subject: CLONE for Tie::RefHash
+	     From: Yuval Kogman <nothingmuch@woobling.org>
+	     Date: Mon, 27 Mar 2006 15:34:07 +0200
+	     Message-ID: <20060327133407.GA16901@woobling.org>
+	     
+	     (also rename old Tie::RefHash test, so several test files
+	     are allowed.)
+	     
+	     [ 28177]
+	     Upgrade to Tie::RefHash 1.34, by Yuval Kogman
+     Branch: maint-5.8/perl
+	  +> lib/Tie/RefHash/rebless.t lib/Tie/RefHash/refhash.t
+	  +> lib/Tie/RefHash/storable.t lib/Tie/RefHash/threaded.t
+	   - lib/Tie/RefHash.t
+	  !> MANIFEST lib/Tie/RefHash.pm
+____________________________________________________________________________
+[ 30318] By: nicholas				   on 2007/02/15  14:56:36
+	Log: Integrate:
+	     [ 21013]
+	     use IO; is deprecated.
+	     
+	     [ 26555]
+	     make threads use MY_CXT API rather than using PL_modglobal
+	     
+	     [ 27514]
+	     Make the threads tests silent with regard to the new :unique deprecation warning
+	     
+	     [ 27529]
+	     Subject: [PATCH] threads.xs broken under PERL_IMPLICIT_SYS; 5.8.8 regression 
+	     From: Jan Dubois <jand@ActiveState.com> 
+	     Date: Thu, 16 Mar 2006 19:34:00 -0800
+	     Message-ID: <02e601c64973$a1960cf0$6062a8c0@candy> 
+	     
+	     Also includes a version bump to ext/threads/threads.pm.
+	     
+	     [ 27594]
+	     Subject: [PATCH] (2nd revised) 1st patch to sync blead 'threads' with CPAN
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Thu, 23 Mar 2006 09:19:54 -0700
+	     Message-ID: <20060323091954.fb30e530d17747c2b054d625b8945d88.884826707f.wbe@email.email.secureserver.net>
+	     
+	     [ 27705]
+	     Subject: [PATCH] 2nd patch to sync blead 'threads' with CPAN [REPOST]
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Mon, 03 Apr 2006 06:10:35 -0700
+	     Message-ID: <20060403061035.fb30e530d17747c2b054d625b8945d88.7482c755b8.wbe@email.email.secureserver.net>
+	     
+	     [ 27712]
+	     Subject: [PATCH] threads.pm should overload != operator
+	     From: "Jan Dubois" <jand@ActiveState.com>
+	     Date: Mon, 3 Apr 2006 18:06:24 -0700
+	     Message-ID: <02fc01c65783$fe4820f0$2217a8c0@candy>
+	     
+	     [ 27796]
+	     Fix implementation of threads->_handle on unixes.
+	     See :
+	     Subject: RE: [PATCH] 2nd patch to sync blead 'threads' with CPAN [REPOST]
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Tue, 04 Apr 2006 09:25:20 -0700
+	     Message-ID: <20060404092520.fb30e530d17747c2b054d625b8945d88.4a8a6b16c9.wbe@email.email.secureserver.net>
+	     
+	     [ 27917]
+	     Subject: [REPOST] [PATCH] Remove superfluous counter in threads
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Wed, 19 Apr 2006 05:32:14 -0700
+	     Message-ID: <20060419053214.fb30e530d17747c2b054d625b8945d88.4606123135.wbe@email.secureserver.net>
+	     
+	     [ 27933]
+	     Subject: [PATCH] Rework threads destruct call
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Thu, 20 Apr 2006 13:53:20 -0700
+	     Message-ID: <20060420135320.fb30e530d17747c2b054d625b8945d88.ef565d84db.wbe@email.secureserver.net>
+	     
+	     [ 27957]
+	     Subject: [PATCH] Continuing threads sync
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Mon, 24 Apr 2006 13:00:23 -0700
+	     Message-ID: <20060424130023.fb30e530d17747c2b054d625b8945d88.969ed54130.wbe@email.secureserver.net>
+	     
+	     [ 27961]
+	     Subject: [PATCH] threads - consolidate XS functions
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Tue, 25 Apr 2006 07:50:05 -0700
+	     Message-ID: <20060425075005.fb30e530d17747c2b054d625b8945d88.e23f2fed42.wbe@email.secureserver.net>
+	     
+	     [ 27994]
+	     Subject: [PATCH] threads - miscellaneous
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Wed, 26 Apr 2006 11:24:05 -0700
+	     Message-ID: <20060426112405.fb30e530d17747c2b054d625b8945d88.4331e666e7.wbe@email.secureserver.net>
+	     
+	     [ 28099]
+	     Subject: [PATCH] threads - formatting [REVISED]
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Wed, 03 May 2006 12:34:34 -0700
+	     Message-ID: <20060503123433.fb30e530d17747c2b054d625b8945d88.d352e5da51.wbe@email.secureserver.net>
+	     
+	     [ 28104]
+	     Subject: [PATCH] threads - stack size support
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Thu, 04 May 2006 10:07:58 -0700
+	     Message-ID: <20060504100758.fb30e530d17747c2b054d625b8945d88.1ee893a99c.wbe@email.secureserver.net>
+	     
+	     [ 28134]
+	     Subject: [PATCH] 'threads' patch to fix threaded build on Win32
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Mon, 08 May 2006 10:23:33 -0700
+	     Message-ID: <20060508102333.fb30e530d17747c2b054d625b8945d88.1e447744fc.wbe@email.secureserver.net>
+	     
+	     [ 28168]
+	     Subject: [PATCH] Thread signalling [REVISED]
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Thu, 11 May 2006 08:55:39 -0700
+	     Message-ID: <20060511085539.fb30e530d17747c2b054d625b8945d88.a90037f085.wbe@email.secureserver.net>
+	     
+	     [ 28173]
+	     Subject: [PATCH] Better unsafe signals info in threads.pm
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Thu, 11 May 2006 11:50:15 -0700
+	     Message-ID: <20060511115015.fb30e530d17747c2b054d625b8945d88.8b4855700b.wbe@email.secureserver.net>
+	     
+	     [ 28174]
+	     Threads and signals. Delicious. Tweak change 28168 to add a local
+	     signal handler in the sleeping thread, because some operating systems
+	     deliver the SIGINT to that thread rather than the signalling thread.
+	     
+	     [ 28223]
+	     Subject: [PATCH] threads 1.28
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Wed, 17 May 2006 11:45:32 -0700
+	     Message-ID: <20060517114532.fb30e530d17747c2b054d625b8945d88.ca725822fc.wbe@email.secureserver.net>
+	     
+	     [ 28229]
+	     Subject:  [PATCH] threads core dump in BEGIN
+	     From:  "Jerry D. Hedden" <jerry@hedden.us>
+	     Date:  Thu, 18 May 2006 13:22:20 -0700
+	     Message-Id:  <20060518132220.fb30e530d17747c2b054d625b8945d88.f45de90925.wbe@email.secureserver.net>
+	     
+	     [ 28290]
+	     Subject: [PATCH] Explicit thread context
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Fri, 19 May 2006 13:42:50 -0700
+	     Message-ID: <20060519134250.fb30e530d17747c2b054d625b8945d88.933b701674.wbe@email.secureserver.net>
+	     
+	     [ 28291]
+	     Typo fix
+	     
+	     [ 28310]
+	     Stop a warning generated from thread's Makefile.PL
+	     
+	     [ 28355]
+	     Subject: [PATCH] threads 1.32
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Mon, 05 Jun 2006 06:34:56 -0700
+	     Message-ID: <20060605063456.fb30e530d17747c2b054d625b8945d88.21396dde59.wbe@email.secureserver.net>
+	     
+	     [ 28356]
+	     Subject: [PATCH] random thread test failure
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Mon, 05 Jun 2006 13:28:51 -0700
+	     Message-ID: <20060605132851.fb30e530d17747c2b054d625b8945d88.65486bb40b.wbe@email.secureserver.net>
+	     
+	     [ 28399]
+	     dont warn at exit of detatched threads still running
+	     
+	     [ 28475]
+	     Subject: [PATCH] threads 1.33
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Mon, 03 Jul 2006 09:01:53 -0700
+	     Message-ID: <20060703090153.fb30e530d17747c2b054d625b8945d88.b26e047e0f.wbe@email.secureserver.net>
+	     
+	     [ 28481]
+	     Subject: [PATCH] RE: [PATCH] threads 1.33
+	From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	Message-id: <20060704171845.fb30e530d17747c2b054d625b8945d88.f0db2cab53.wbe@email.secureserver.net>
+	     Date: Tue, 04 Jul 2006 17:18:45 -0700
+	     
+	     exiting from threads works differently on VMS
+	     
+	     [ 28501]
+	     Subject: [PATCH] threads 1.34 - state methods
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Thu, 06 Jul 2006 07:33:13 -0700
+	     Message-ID: <20060706073313.fb30e530d17747c2b054d625b8945d88.baa39d91bc.wbe@email.secureserver.net>
+	     
+	     [ 28529]
+	     Subject: [PATCH] threads 1.35 - Borland compiler fix
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Mon, 10 Jul 2006 06:49:34 -0700
+	     Message-ID: <20060710064934.fb30e530d17747c2b054d625b8945d88.384e3b280c.wbe@email.secureserver.net>
+	     
+	     [ 28543]
+	     Subject: [PATCH] threads 1.36 - Signalling terminated threads core dumps
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Mon, 10 Jul 2006 13:28:25 -0700
+	     Message-ID: <20060710132825.fb30e530d17747c2b054d625b8945d88.5bdc82d2c0.wbe@email.secureserver.net>
+	     
+	     [ 28544]
+	     Adjust test count in threads test
+	     
+	     [ 28598]
+	     Subject: [PATCH] [Fwd: Smoke [5.9.4] 28575 FAIL(XF) OSF1 V5.1 (EV6/4 cpu)]
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Mon, 17 Jul 2006 05:00:01 -0700
+	     Message-ID: <20060717050001.fb30e530d17747c2b054d625b8945d88.b729fe881f.wbe@email.secureserver.net>
+	     
+	     [ 28602]
+	     Upgrade to threads 1.37, by Jerry D. Hedden
+	     
+	     [ 28604]
+	     More tweaks to threads 1.37, by Jerry D. Hedden
+	     
+	     [ 28642]
+	     Subject: [PATCH] threads 1.38
+	     From: "Jerry D. Hedden" <jerry@hedden.us>
+	     Date: Tue, 01 Aug 2006 08:58:52 -0700
+	     Message-ID: <20060801085852.fb30e530d17747c2b054d625b8945d88.ad7fb0a136.wbe@email.secureserver.net>
+	     
+	     [ 28833]
+	     Race condition fix in threads.pm
+	     First patch from:
+	     
+	     Subject: [PATCH] thread 1.41 - A drama in three parts
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Sun, 10 Sep 2006 09:12:06 -0700
+	     Message-ID: <20060910091206.fb30e530d17747c2b054d625b8945d88.321c7cbc94.wbe@email.secureserver.net>
+	     
+	     [ 28834]
+	     Statically allocate the main thread.
+	     2nd patch from:
+	     
+	     Subject: [PATCH] thread 1.41 - A drama in three parts
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Sun, 10 Sep 2006 09:12:06 -0700
+	     Message-ID: <20060910091206.fb30e530d17747c2b054d625b8945d88.321c7cbc94.wbe@email.secureserver.net>
+	     
+	     [ 28835]
+	     Bump version and other misc. changes. 3rd patch from:
+	     
+	     Subject: [PATCH] thread 1.41 - A drama in three parts
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Sun, 10 Sep 2006 09:12:06 -0700
+	     Message-ID: <20060910091206.fb30e530d17747c2b054d625b8945d88.321c7cbc94.wbe@email.secureserver.net>
+	     
+	     [ 28922]
+	     Upgrade to threads-1.42
+	     
+	     [ 28958]
+	     Subject: [PATCH] threads 1.43 - stringify
+	     From: Jerry Hedden <jdhedden@yahoo.com>
+	     Date: Fri, 6 Oct 2006 12:19:41 -0700 (PDT)
+	     Message-ID: <20061006191941.22457.qmail@web30205.mail.mud.yahoo.com>
+	     
+	     [ 29002]
+	     Subject: [PATCH] threads 1.44
+	     From: Jerry Hedden <jdhedden@yahoo.com>
+	     Date: Wed, 11 Oct 2006 05:57:43 -0700 (PDT)
+	     Message-ID: <20061011125743.68567.qmail@web30211.mail.mud.yahoo.com>
+	     
+	     [ 29067]
+	     Comment out Hash::Util and IO::File from prereqs of threads, since
+	     they are both available in the core.
+	     
+	     [ 29069]
+	     Better solution to silencing prereq warnings from threads's
+	     Makefile.PL
+	     
+	     [ 29083]
+	     Removed typo that caused a variable to shadow an existing variable
+	     in an external scope.
+	     
+	     [ 29109]
+	     Subject: [PATCH] threads 1.45
+	     From: "Jerry D. Hedden" <jdhedden@yahoo.com>
+	     Date: Wed, 25 Oct 2006 11:26:29 -0700 (PDT)
+	     Message-ID: <20061025182629.16434.qmail@web30209.mail.mud.yahoo.com>
+	     
+	     [ 29123]
+	     Subject: [PATCH] Make 'threads' conform to perlguts
+	     From: "Jerry D. Hedden" <jdhedden@yahoo.com>
+	     Date: Thu, 26 Oct 2006 11:10:57 -0700 (PDT)
+	     Message-ID: <20061026181057.74650.qmail@web30211.mail.mud.yahoo.com>
+	     
+	     [ 29153]
+	     Subject: [PATCH] threads 1.46
+	     From: "Jerry D. Hedden" <jdhedden@yahoo.com>
+	     Date: Fri, 27 Oct 2006 17:01:11 -0700 (PDT)
+	     Message-ID: <20061028000111.23729.qmail@web30207.mail.mud.yahoo.com>
+	     
+	     [ 29171]
+	     Subject: [PATCH] threads 1.47
+	     From: "Jerry D. Hedden" <jdhedden@yahoo.com>
+	     Date: Tue, 31 Oct 2006 05:26:25 -0800 (PST)
+	     Message-ID: <20061031132626.18317.qmail@web30214.mail.mud.yahoo.com>
+	     
+	     [ 29174]
+	     Fix a case of segfault in ithread destruction
+	     
+	     [ 29199]
+	     Subject: [PATCH] threads 1.49
+	     From: "Jerry D. Hedden" <jdhedden@yahoo.com>
+	     Date: Fri, 3 Nov 2006 05:37:16 -0800 (PST)
+	     Message-ID: <20061103133716.95143.qmail@web30214.mail.mud.yahoo.com>
+	     
+	     [ 29293]
+	     Subject: [PATCH] threads 1.51
+	     From: "Jerry D. Hedden" <jdhedden@yahoo.com>
+	     Date: Wed, 15 Nov 2006 11:36:58 -0800 (PST)
+	     Message-ID: <71793.95536.qm@web30213.mail.mud.yahoo.com>
+	     
+	     [ 29342]
+	     Subject: [PATCH] threads 1.52
+	     From: "Jerry D. Hedden" <jdhedden@yahoo.com>
+	     Date: Tue, 21 Nov 2006 08:26:28 -0800 (PST)
+	     Message-ID: <204140.57721.qm@web30207.mail.mud.yahoo.com>
+	     
+	     [ 29389]
+	     Eliminated unitialised clone_params value bug accidentally added with
+	     change 28229.
+	     
+	     [ 29399]
+	     Subject: [PATCH[ threads 1.53
+	     From: "Jerry D. Hedden" <jdhedden@yahoo.com>
+	     Date: Mon, 27 Nov 2006 09:26:08 -0800 (PST)
+	     Message-ID: <965653.3725.qm@web30206.mail.mud.yahoo.com>
+	     
+	     [ 29557]
+	     Subject: [PATCH] threads 1.54 - Adds ->error() method
+	     From: "Jerry D. Hedden" <jdhedden@yahoo.com>
+	     Date: Thu, 14 Dec 2006 11:17:47 -0800 (PST)
+	     Message-ID: <20061214191748.98286.qmail@web30209.mail.mud.yahoo.com>
+	     
+	     [ 29563]
+	     Subject: [PATCH] threads 1.56
+	     From: "Jerry D. Hedden" <jdhedden@yahoo.com>
+	     Date: Fri, 15 Dec 2006 09:22:17 -0800 (PST)
+	     Message-ID: <20061215172217.10959.qmail@web30211.mail.mud.yahoo.com>
+	     
+	     [ 29608]
+	     Subject: [PATCH] threads 1.57
+	     From: "Jerry D. Hedden" <jdhedden@yahoo.com>
+	     Date: Wed, 20 Dec 2006 10:30:21 -0800 (PST)
+	     Message-ID: <20061220183021.79793.qmail@web30205.mail.mud.yahoo.com>
+	     
+	     [ 29779]
+	     Rationalise refcounting of thread structures
+	     Formerly there could be races with multiple destroys of a thread
+	     structure.
+	     
+	     [ 29796]
+	     unfreed threads should trigger cleanup veto
+	     
+	     The thread pool struct is allocated in the main interpreter, so
+	     don't clean that up if any threads remain, regardless of what
+	     state they are in
+	     
+	     [ 29805]
+	     further refinement to #29796 (cleanup veto)
+	     
+	     [ 29810]
+	     make S_ithread_run() call S_ithread_free() in main context
+	     
+	     Fixes a race condition between detach clearing a thread's
+	     interpreter, and S_ithread_run() freeing itself while
+	     assuming that it's own interpreter still exists.
+	     
+	     [ 29973]
+	     Upgrade to threads 1.58:
+	     * Ignore thread return value(s) in void context
+	     * Check for missing args for 'use threads' options
+	     * Check that stack size argument is numeric
+	     
+	     [ 30152]
+	     Upgrade to threads.pm 1.59 (doc tweaks)
+     Branch: maint-5.8/perl
+	  +> ext/threads/hints/hpux.pl ext/threads/t/blocks.t
+	  +> ext/threads/t/context.t ext/threads/t/err.t
+	  +> ext/threads/t/exit.t ext/threads/t/free.t
+	  +> ext/threads/t/free2.t ext/threads/t/kill.t
+	  +> ext/threads/t/stack.t ext/threads/t/stack_env.t
+	  +> ext/threads/t/state.t
+	   - ext/threads/typemap
+	  !> MANIFEST ext/threads/Changes ext/threads/Makefile.PL
+	  !> ext/threads/README ext/threads/t/basic.t ext/threads/t/end.t
+	  !> ext/threads/t/join.t ext/threads/t/libc.t ext/threads/t/list.t
+	  !> ext/threads/t/problems.t ext/threads/t/stress_cv.t
+	  !> ext/threads/t/stress_re.t ext/threads/t/stress_string.t
+	  !> ext/threads/t/thread.t ext/threads/threads.pm
+	  !> ext/threads/threads.xs
+____________________________________________________________________________
+[ 30316] By: nicholas				   on 2007/02/15  13:28:31
+	Log: Integrate:
+	     [ 26684]
+	     make ithreads shared vars smaller/quicker by eliminating shared_sv
+	     struct. Also document how it works.
+	     
+	     [ 26693]
+	     fix coredump on 'local $shared[N]' introduced by change #24942
+	     
+	     [ 26695]
+	     [perl #37946] preserve the referent associated with a shared RV.
+	     its faster, and the user doesn't see a different address each time
+	     for ref($sharedref).
+	     
+	     [ 28569]
+	     Version bumps for z/OS fixes.
+	     
+	     [ 28807]
+	     Remove empty typemap file
+	     
+	     [ 28923]
+	     Upgrade to threads-shared-1.03
+	     
+	     [ 28931]
+	     Subject: [PATCH] threads-shared 1.03 - Changes, Makefile.PL
+	     From: Jerry Hedden <jdhedden@yahoo.com>
+	     Date: Tue, 3 Oct 2006 07:49:37 -0700 (PDT)
+	     Message-ID: <20061003144937.58522.qmail@web30202.mail.mud.yahoo.com>
+	     
+	     [ 29003]
+	     Subject: [PATCH] threads::shared 1.04
+	     From: Jerry Hedden <jdhedden@yahoo.com>
+	     Date: Thu, 12 Oct 2006 07:47:37 -0700 (PDT)
+	     Message-ID: <20061012144737.56305.qmail@web30207.mail.mud.yahoo.com>
+	     
+	     [ 29072]
+	     Changes for threads::shared to all building with g++.
+	     
+	     [ 29110]
+	     Subject: [PATCH] threads-shared 1.05
+	     From: "Jerry D. Hedden" <jdhedden@yahoo.com>
+	     Date: Wed, 25 Oct 2006 11:27:15 -0700 (PDT)
+	     Message-ID: <20061025182715.561.qmail@web30211.mail.mud.yahoo.com>
+	     
+	     [ 29599]
+	     Subject: [PATCH] threads::shared 1.06
+	     From: "Jerry D. Hedden" <jdhedden@yahoo.com>
+	     Date: Tue, 19 Dec 2006 10:30:47 -0800 (PST)
+	     Message-ID: <525867.40748.qm@web30207.mail.mud.yahoo.com>
+	     
+	     [ 30151]
+	     Upgrade to threads::shared 1.07 (doc tweaks)
+     Branch: maint-5.8/perl
+	  +> ext/threads/shared/Changes
+	   - ext/threads/shared/typemap
+	  !> MANIFEST ext/threads/Changes ext/threads/Makefile.PL
+	  !> ext/threads/README ext/threads/shared/Makefile.PL
+	  !> ext/threads/shared/README ext/threads/shared/shared.pm
+	  !> ext/threads/shared/shared.xs ext/threads/shared/t/0nothread.t
+	  !> ext/threads/shared/t/av_refs.t
+	  !> ext/threads/shared/t/av_simple.t
+	  !> ext/threads/shared/t/blessed.t ext/threads/shared/t/cond.t
+	  !> ext/threads/shared/t/disabled.t ext/threads/shared/t/hv_refs.t
+	  !> ext/threads/shared/t/hv_simple.t
+	  !> ext/threads/shared/t/no_share.t
+	  !> ext/threads/shared/t/shared_attr.t
+	  !> ext/threads/shared/t/sv_refs.t
+	  !> ext/threads/shared/t/sv_simple.t ext/threads/shared/t/wait.t
+	  !> mkppport.lst
+____________________________________________________________________________
+[ 30314] By: nicholas				   on 2007/02/15  13:06:29
+	Log: Integrate:
+	     [ 28662]
+	     Subject: [PATCH] g++ large patch
+	     From: Jarkko Hietaniemi <jhi@iki.fi>
+	     Date: Fri, 04 Aug 2006 08:58:27 +0300
+	     Message-ID: <44D2E203.5050201@iki.fi>
+	     
+	     [ 28674]
+	     Subject: [PATCH] g++ stage 1 reached
+	     From: Jarkko Hietaniemi <jhi@iki.fi>
+	     Date: Tue, 08 Aug 2006 00:02:35 +0300
+	     Message-ID: <44D7AA6B.4040802@iki.fi>
+     Branch: maint-5.8/perl
+	  !> perlio.c win32/config.ce win32/config_H.ce
+____________________________________________________________________________
+[ 30312] By: nicholas				   on 2007/02/15  12:28:42
+	Log: Integrate:
+	     [ 28643]
+	     Silence a couple of Borland compiler warnings
+	     
+	     [ 28769]
+	     Silence some more Borland compiler warnings
+	     (See: http://www.nntp.perl.org/group/perl.daily-build.reports/40471)
+	     
+	     - Change the cryptic pragma warn strings into numbers that are more
+	     easily recognized, and add a new one (8027).
+	     
+	     - Add a similar pragma warn line to fcrypt.c, which doesn't use
+	     win32.h.
+	     
+	     [ 29155]
+	     Initial cleanups to support compiling Win32 with MinGW g++.
+	     
+	     [ 29692]
+	     Silence various VC6 warnings
+     Branch: maint-5.8/perl
+	  !> cop.h ext/B/B.xs perlio.c regexec.c util.c win32/fcrypt.c
+	  !> win32/win32.c win32/win32.h
+____________________________________________________________________________
