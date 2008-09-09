@@ -1,22 +1,32 @@
+== COMPLETED CHUNKS ==
+
 2006-01 - DONE (no actual changes required)
 2006-02 - DONE, MERGED (Moritz Lenz)
-2006-03 - Stephen Steneker (aka Stennie)
-2006-04 - Stephen Steneker (aka Stennie)
-2006-05 - ==> Nobody <==
 2006-06 - DONE (no actual changes required)
 2006-09 - DONE, MERGED (Mark Aufflick)
 2006-10 - DONE, MERGED (Moritz Lenz)
-2007-01 - Up to line 1100, Moritz Lenz
-2007-02 - ==> Nobody <==
 2007-03 - DONE, MERGED (Vincent Pit)
 2007-04 - DONE, MERGED (Vincent Pit)
 2007-05 - DONE, MERGED (Vincent Pit)
 2007-09 - DONE, MERGED (Paul Fenwick)
-2007-10 - Jacinta Richardson
-2007-11 - Shawn M Moore (aka Sartak)
-2007-12 - theorbtwo
-2008-01 - Adam Flott
-2008-02 - ==> Nobody <==
-2008-03 - ==> Nobody <==
-2008-04 - Abhijit Menon-Sen (aka crab)
-2008-05 - Mark Aufflick
+
+== IN PROGRESS ==
+
+2006-03 - Stephen Steneker (aka Stennie)    Last seen,  8th Sep
+2006-04 - Stephen Steneker (aka Stennie)    Last seen,  8th Sep
+2007-01 - Up to line 2538 , Moritz Lenz     Last seen,  8th Sep
+2007-10 - Jacinta Richardson                Last seen,  7th Sep
+2007-11 - Shawn M Moore (aka Sartak)        Last seen,  7th Sep
+2007-12 - theorbtwo                         Last seen,  8th Sep
+2008-01 - Adam Flott                        Last seen   9th Sep
+2008-04 - Abhijit Menon-Sen (aka crab)      Last seen,  9th Sep
+2008-05 - Mark Aufflick                     Last seen,  9th Sep
+
+== AVAILABLE ==
+
+2006-05 - ==> Nobody <== 56k
+2007-02 - ==> Nobody <== 194k
+2008-02 - ==> Nobody <== 59k
+2008-03 - ==> Nobody <== 38k
+2008-06 - ==> Nobody <== 11k
+2008-09 - ==> Nobody <== 31k (and growing!)
