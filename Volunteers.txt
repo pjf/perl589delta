@@ -21,6 +21,7 @@
 2008-01 - Adam Flott                        Last seen   9th Sep
 2008-04 - Abhijit Menon-Sen (aka crab)      Last seen,  9th Sep
 2008-05 - Mark Aufflick                     Last seen,  9th Sep
+2008-06 - Renee Backer                      Last seen,  9th Sep
 
 == AVAILABLE ==
 
@@ -28,5 +29,4 @@
 2007-02 - ==> Nobody <== 194k
 2008-02 - ==> Nobody <== 59k
 2008-03 - ==> Nobody <== 38k
-2008-06 - ==> Nobody <== 11k
 2008-09 - ==> Nobody <== 31k (and growing!)
