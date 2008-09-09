@@ -140,6 +140,10 @@ C<DB_File> upgraded to version 1.815
 
 =item *
 
+C<Devel::PPPort> upgraded to version 3.14_01
+
+=item *
+
 C<diagnostics> upgraded to version 1.16
 
 =item *
@@ -257,6 +261,10 @@ C<Text::ParseWords> upgraded to version 3.25
 =item *
 
 C<Text::Tabs> upgraded to version 2007.1117
+
+=item *
+
+C<Test::Harness> upgraded version to 2.64
 
 =over
 
@@ -439,6 +447,33 @@ Reduced number of calls to C<getpeername> in L<IO::Socket> (29129).
 
 C<chr(65535)> ought to be allowed in regexes.
 
+=item *
+
+Using C<#!perl -d> could trigger an assertion, which has been fixed (30075).
+
+=item *
+
+Don't stringify tied code references in C<@INC> when calling C<require>.
+(30068)
+
+=item *
+
+Code references in C<@INC> report the correct file name when C<__FILE__> is
+used (30068).
+
+=item *
+
+Width and precion in sprintf didn't handle wide characters correctly (30058).
+
+=item *
+
+List slices with indices out of range now work more consistently (30026).
+
+=item *
+
+The C<-s> switch on the shebang line is again capable of parsing options with
+arguments of the form C<-foo=bar> (29865).
+
 =back
 
 =head2 Platform specific fixes
@@ -495,7 +530,32 @@ C<set> magic on localizing/assigning to a magic variable will now only
 trigger for I<container magics>, i.e. it will for C<%ENV> or C<%SIG>
 but not for C<$#array>.
 
+A lot of small improvents in the code base were made due to reports from
+the Coverity static code analyzer.
+
 =head1 New Tests
+
+=over 4
+
+=item *
+
+Regression tests for anchored regexes using C<\s> that failed to set C<$&>
+(30073).
+
+=item * 
+
+Regression tests for sprinf with 64 bit semantics (30058).
+
+=item *
+
+Tests for tainting and C<open> with C<|-> as second argument (30048).
+
+=item *
+
+C<exit> can now be called in expressions that the optimizer constant-folds
+(29976).
+
+=back
 
 =head1 Known Problems
 
