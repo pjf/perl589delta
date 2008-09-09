@@ -156,7 +156,15 @@ C<ExtUtils::Constant> upgraded to version 0.04
 
 =item *
 
-C<ExtUtils::MakeMaker> upgraded to version 6.32
+C<ExtUtils::MakeMaker> upgraded to version 6.42 (33006)
+
+=over
+
+=item *
+
+Too much to list here;  see L<http://search.cpan.org/src/MSCHWERN/ExtUtils-MakeMaker-6.42/Changes>
+
+=back
 
 =item *
 
@@ -249,6 +257,10 @@ C<Switch> upgraded to version 2.13
 =item *
 
 C<Test::Simple> upgraded to version 0.70
+
+=item *
+
+C<Text::Balanced> upgraded to version 1.98 (32984)
 
 =item *
 
@@ -428,6 +440,10 @@ Reduced number of calls to C<getpeername> in L<IO::Socket> (29129).
 
 C<chr(65535)> ought to be allowed in regexes.
 
+=item *
+
+L<ExtUtils::MakeMaker> now detects DragonFlyBSD as a BSDish operating system (33006)
+
 =back
 
 =head2 Platform specific fixes
@@ -483,6 +499,8 @@ visible to perl core extensions. This was required by L<Data::Alias>.
 C<set> magic on localizing/assigning to a magic variable will now only
 trigger for I<container magics>, i.e. it will for C<%ENV> or C<%SIG>
 but not for C<$#array>.
+
+Display the process id as part of the trace output if running with C<-Dv> (33039)
 
 =head1 New Tests
 
