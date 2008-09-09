@@ -9,6 +9,7 @@
 2007-04 - DONE, MERGED (Vincent Pit)
 2007-05 - DONE, MERGED (Vincent Pit)
 2007-09 - DONE, MERGED (Paul Fenwick)
+2008-06 - Renee Backer
 
 == IN PROGRESS ==
 
