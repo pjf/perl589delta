@@ -386,7 +386,11 @@ C<Configure> is now better at removing temporary files. Tom Callaway
 passed to the compiler and the linker. Especially, C<-fPIC> is now
 enabled on linux. It will also croak when your F</dev/null> isn't a device.
 
-There are improved hints for DEC/OSF.
+There are improved hints for DEC/OSF, VOS (33425), Cygwin (33484).
+
+Many compilation warnings were cleaned up (33415, 33417, 33418, 33419,
+33420, 33421, 33427, 33428, 33429, 33435, 33436, 33441, 33444, 33479, 
+
 
 =head1 Selected Bug Fixes
 
@@ -485,6 +489,8 @@ trigger for I<container magics>, i.e. it will for C<%ENV> or C<%SIG>
 but not for C<$#array>.
 
 =head1 New Tests
+
+
 
 =head1 Known Problems
 
