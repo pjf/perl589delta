@@ -95,7 +95,7 @@ C<B::C> upgraded to 1.05
 
 =item *
 
-B<B::Debug> upgraded to version 1.03
+C<B::Debug> upgraded to version 1.03
 
 =item *
 
@@ -510,7 +510,7 @@ used (30068).
 
 =item *
 
-Width and precion in sprintf didn't handle wide characters correctly (30058).
+Width and precision in sprintf didn't handle wide characters correctly (30058).
 
 =item *
 
@@ -552,12 +552,7 @@ able to handle further incoming signals safely.
 =head2 Panic: attempt to call %s in %s
 
 This new fatal error occurs when a file test operator is used that is 
-not availble on the current platfom (25987).
-
-=head2 Panic: attempt to call %s in %s
-
-This new fatal error occurs when a file test operator is used that is 
-not availble on the current platfom (25987).
+not available on the current platform (25987).
 
 =head2 Can't upgrade %s (%d) to %d
 
@@ -587,7 +582,7 @@ C<set> magic on localizing/assigning to a magic variable will now only
 trigger for I<container magics>, i.e. it will for C<%ENV> or C<%SIG>
 but not for C<$#array>.
 
-A lot of small improvents in the code base were made due to reports from
+A lot of small improvements in the code base were made due to reports from
 the Coverity static code analyzer.
 
 =head1 New Tests
@@ -626,7 +621,7 @@ C<Win32> and C<Win32API> were moved from F<win32/> to F<ext/> and then
 respectively updated to 0.27 by Jan Dubois and 0.1001 by Yitzchak
 Scott-Thoennes. Jan Dubois also made so C<readdir()>, C<cwd()>, C<$^X> and
 C<@INC> would use the alternate (short) filename if the long name is outside
-the current codepage. The C<PATH> envirnoment variable now also uses ANSI
+the current codepage. The C<PATH> environment variable now also uses ANSI
 filenames. And then he added C<killpg()> support on C<MSWin32>.
 
 =head1 Reporting Bugs
