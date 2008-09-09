@@ -208,6 +208,14 @@ C<Math::BigRat> upgraded to version 0.18
 
 =item *
 
+C<Math::Complex> upgraded to version 1.48
+
+=item *
+
+C<Math::Trig> upgraded to version 1.13
+
+=item *
+
 C<Pod::Html> upgraded to version 1.08
 
 =item *
