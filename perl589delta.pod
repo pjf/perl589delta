@@ -356,7 +356,7 @@ this configuration unless thorough testing is performed before deployment.
 =item *
 
 Reblessing an object from a class that doesn't use overloads to one
-that does (or vice versa) is now faster.
+that does (or vice versa) is now faster. (31996, 32019, 32025).
 
 =item *
 
@@ -389,6 +389,17 @@ enabled on linux. It will also croak when your F</dev/null> isn't a device.
 There are improved hints for DEC/OSF.
 
 =head1 Selected Bug Fixes
+
+=over 4
+
+=item * 
+
+Overloading flags are now stored on the referent instead of the reference.
+Previously taking a new, unrelated reference to an object could result in
+the original (blessed) reference being able to access the overload while
+the new reference could not.  (Test added in 32016).
+
+=back
 
 =head2 Smaller fixes
 
