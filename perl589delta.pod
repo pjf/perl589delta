@@ -192,6 +192,10 @@ C<FileCache> upgraded to version 1.07
 
 =item *
 
+C<Getopt::Long> upgraded to version 2.36
+
+=item *
+
 C<libnet> upgraded to version 1.20
 
 =item *
@@ -474,6 +478,14 @@ List slices with indices out of range now work more consistently (30026).
 The C<-s> switch on the shebang line is again capable of parsing options with
 arguments of the form C<-foo=bar> (29865).
 
+=item *
+
+tr/// is now threadsafe (29765)
+
+=item *
+
+De-duplictae C<@EXPORT> (26459)
+
 =back
 
 =head2 Platform specific fixes
@@ -486,6 +498,30 @@ arguments of the form C<-foo=bar> (29865).
 
 A build problem with specifying C<USE_MULTI> and C<USE_ITHREADS> but without
 C<USE_IMP_SYS> has been fixed.
+
+=item *
+
+Merge WinCE into Win32 directory (30281-30284, 20862)
+
+=back
+
+=head3 Solaris/i386
+
+=over 4
+
+=item *
+
+Use -DPTR_IS_LONG when using 64 bit integers (27001)
+
+=back
+
+=head3 MacOSX
+
+=over 4
+
+=item *
+
+Added forked terminal support to debugger under MacOSX (29415)
 
 =back
 
@@ -554,6 +590,14 @@ Tests for tainting and C<open> with C<|-> as second argument (30048).
 
 C<exit> can now be called in expressions that the optimizer constant-folds
 (29976).
+
+=item *
+
+Test smallbuf overflow in S_incline (30024)
+
+=item *
+
+Verify POSIX::AUTOLOAD works (29592)
 
 =back
 
