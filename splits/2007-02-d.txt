@@ -68,6 +68,7 @@ ____________________________________________________________________________
 	     Message-ID: <rt-3.6.HEAD-14573-1171164736-117.41484-75-0@perl.org>
 	     
 	     [ 30228]
+             [ APPARENTLY REVERSED IN 30229 ]
 	     Subject: Re: PL_copline inconsistency
 	     From: Rick Delaney <rick@bort.ca>
 	     Date: Sat, 27 Jan 2007 20:29:02 -0500
