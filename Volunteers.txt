@@ -17,6 +17,8 @@
 2006-03 - Stephen Steneker (aka Stennie)    Last seen,  8th Sep
 2006-04 - Stephen Steneker (aka Stennie)    Last seen,  8th Sep
 2006-05 - Michael Peters                    Last seen, 10th Sep
+2007-02-a - Adam Flott                      Last seen, 10th Sep
+2007-02-b - Adam Flott                      Last seen, 10th Sep
 2007-11 - Shawn M Moore (aka Sartak)        Last seen,  7th Sep
 2007-12 - theorbtwo                         Last seen,  8th Sep
 2008-01 - Adam Flott                        Last seen,  9th Sep
@@ -28,8 +30,6 @@
 
 == AVAILABLE ==
 
-2007-02-a - ==> Nobody <== 20k
-2007-02-b - ==> Nobody <== 20k
 2007-02-c - ==> Nobody <== 20k
 2007-02-d - ==> Nobody <== 20k
 2007-02-e - ==> Nobody <== 20k
