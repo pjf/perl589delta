@@ -448,7 +448,7 @@ object from a file with a non-default file extension.
 =item *
 
 C<h2ph> now attempts to deal sensibly with the difference in path implications
-between C<""> and C<E<LT>E<GT>> quoting in C<#include> statements.
+between C<""> and C<<E<lt>E<gt>>> quoting in C<#include> statements.
 
 =back
 
