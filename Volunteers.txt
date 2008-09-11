@@ -20,7 +20,8 @@
 2007-02-a - Adam Flott                      Last seen, 10th Sep
 2007-02-b - Adam Flott                      Last seen, 10th Sep
 2007-02-c - notbenh                         Last seen, 10th Sep
-2007-11 - Shawn M Moore (aka Sartak)        Last seen,  7th Sep
+2007-02-e - Martin Ryan                     Last seen, 11th Sep
+2007-11 - Shawn M Moore (aka Sartak)        (Chunk scheduled for splitting)
 2007-12 - theorbtwo                         Last seen,  8th Sep
 2008-01 - Adam Flott                        Last seen,  9th Sep
 2008-02 - Spiros Denaxas                    Last seen,  9th Sep
@@ -35,7 +36,6 @@
 
 == AVAILABLE ==
 
-2007-02-e - ==> Nobody <== 20k
 2007-02-f - ==> Nobody <== 20k
 2007-02-g - ==> Nobody <== 20k
 2007-02-h - ==> Nobody <== 20k
