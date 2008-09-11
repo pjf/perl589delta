@@ -11,6 +11,7 @@
 2007-05 - DONE, MERGED (Vincent Pit)
 2007-09 - DONE, MERGED (Paul Fenwick)
 2007-10 - DONE, MERGED (Jacinta Richardson)
+2008-05 - DONE, MERGED (Mark Aufflick)
 
 == IN PROGRESS ==
 
@@ -27,7 +28,6 @@
 2008-02 - Spiros Denaxas                    Last seen,  9th Sep
 2008-03 - Jacinta Richardson                Last seen,  9th Sep
 2008-04 - Abhijit Menon-Sen (aka crab)      Last seen,  9th Sep
-2008-05 - Mark Aufflick                     Last seen,  9th Sep
 2008-06 - Renee Backer                      Last seen,  9th Sep
 
 == DON'T PICK YET ==
