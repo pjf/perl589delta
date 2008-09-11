@@ -378,7 +378,7 @@ C<scalar> upgraded to version 0.06
 
 =item *
 
-C<via> upgraded to version 0.05
+C<PerlIO::via> upgraded to version 0.05
 
 =item *
 
