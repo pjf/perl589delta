@@ -41,5 +41,4 @@
 2007-02-h - ==> Nobody <== 20k
 2007-02-i - ==> Nobody <== 20k
 2007-02-j - ==> Nobody <== 4k
-2008-02   - ==> Nobody <== 59k
 2008-09   - ==> Nobody <== 31k (and growing!)
