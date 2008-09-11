@@ -304,7 +304,7 @@ C<threads> upgraded to 1.61
 
 =item *
 
-C<threads::shared> upgraded to version 1.11
+C<threads::shared> upgraded to version 1.21
 
 =over
 
@@ -312,7 +312,28 @@ C<threads::shared> upgraded to version 1.11
 
 User locks are now stored in a safer manner.
 
+=item *
+
+New function C<shared_clone> creates a copy of an object leaving
+shared elements as-is and deep-cloning non-shared elements.
+
 =back
+
+=item *
+
+C<Thread::Queue> upgraded to version 2.08
+
+=item *
+
+C<Thread::Semaphore> upgraded to version 2.08
+
+=item *
+
+C<Math::BigRat> upgraded to version 0.22, implements new C<as_float> method.
+
+=item *
+
+C<Math::Complex>, C<Math::Trig> upgraded to version 1.54.
 
 =item *
 
@@ -323,9 +344,113 @@ C<XSLoader> upgraded to version 0.08
 C<XS::APItest> and C<XS::Typemap> are for internal use only and hence
 no longer installed.
 
+=item *
+
+C<File::Copy> now uses 3-arg open.
+
+=item *
+
+C<POSIX> imports previously duplicated constants from C<Fcntl>, version bumped from 1.14 to 1.15.
+
+=item *
+
+C<Encode::Alias> includes a fix for encoding "646" (aka ASCII) on Solaris.
+
+=item *
+
+C<Fatal> upgraded to version 1.06.
+
+=item *
+
+C<Devel::DProf> upgraded to version 20080331.00.
+
+=item *
+
+C<Devel::Peek> upgraded to version 1.04
+
+=item *
+
+C<encoding> upgraded to version 0.11
+
+=item *
+
+C<scalar> upgraded to version 0.06
+
+=item *
+
+C<via> upgraded to version 0.05
+
+=item *
+
+C<Socket> upgraded to version 1.81
+
+=item *
+
+C<Embed> upgraded to version 1.28
+
+=item *
+
+C<File::Basename> upgraded to version 2.77
+
+=item *
+
+C<File::Find> upgraded to version 1.13
+
+=item *
+
+C<OS2::REXX> upgraded to version 1.04
+
+=item *
+
+C<ExtUtils::Command> upgraded to version 1.14
+
+=item *
+
+C<Autoloader> upgraded to version 5.66
+
+=item *
+
+C<AutoSplit> upgraded to version 1.06
+
+=item *
+
+C<Cwd> upgraded to version 3.27 with C const-ing and some platform specific
+improvements (including for VMS).
+
+=item *
+
+C<File::Spec>, C<File::Spec::Epoc>, C<File::Spec::Mac>, C<File::Spec::Functions>
+C<File::Spec::Unix>, C<File::Spec::VMS>, C<File::Spec::Win32> upgraded to version
+3.2701 with improved handling of bad arguments and some platform specific
+improvements (Including for VMS and Cygwin)
+
+=item *
+
+C<Time::HiRes> upgraded to version 1.9715 with various build improvements and minor
+platform-specific bug fixes (including for HP-UX 11 ia64)
+
+=item *
+
+C<Digest::SHA> upgraded to version 5.46
+
+=item *
+
+C<DynaLoader> upgraded to version 1.09 and can now dynamically load a loadable
+object from a file with a non-default file extension.
+
+
 =back
 
 =head1 Utility Changes
+
+=over 4
+
+=item *
+
+C<h2ph> now attempts to deal sensibly with the difference in path implications
+between C<""> and C<E<LT>E<GT>> quoting in C<#include> statements.
+
+=back
 
 =head1 New Documentation
 
@@ -337,6 +462,11 @@ terminology and how to correctly handle Unicode in Perl scripts.
 
 L<perlreguts> describe the internals of the regular expressions engine. It has
 been contributed by Yves Orton.
+
+L<reverse> function documentation recieved scalar context examples.
+
+L<perlre> documentation updated to reflect the differences between
+C<[[:xxxxx:]]> and C<\p{IsXxxxx}> matches.
 
 =head1 Performance Enhancements
 
@@ -383,6 +513,17 @@ Creating anonymous array and hash references (ie. C<[]> and C<{}>) now incurs
 no more overhead than creating an anonymous list or hash. Nicholas Clark provid
 changes with a saving of two ops and one stack push, measured as a 6.4% improve 
 
+=item *
+
+Creating anonymous array and hash references (ie. C<[]> and C<{}>) now incurs
+no more overhead than creating an anonymous list or hash. Nicholas Clark provid
+changes with a saving of two ops and one stack push, measured as a 6.4% improve
+
+=item *
+
+Substitutions with repeated right hand expressions (ie. C<s///ge>) are now more
+efficient.
+
 =back
 
 =head1 Installation and Configuration Improvements
@@ -406,6 +547,93 @@ Overloading flags are now stored on the referent instead of the reference.
 Previously taking a new, unrelated reference to an object could result in
 the original (blessed) reference being able to access the overload while
 the new reference could not.  (Test added in 32016).
+
+=item *
+
+C<encoding> pragma now correctly ignores anything following an C<@> character in
+the C<LC_ALL> and C<LANG> environment variables. (RT # 49646)
+
+=item *
+
+Magic is no longer invoked twice by the expression C<\&$x>
+
+=item *
+
+A segfault observed with some gcc 3.3 optimisations is resolved.
+
+=item *
+
+A possible segfault when L<unpack> used in scalar context with C<()> groups
+is resolved. (RT #50256)
+
+=item *
+
+Resolved issue where C<$!> could be changed by a signal handler interrupting
+a C<system()> call.
+
+=back
+
+=head2 Platform specific fixes
+
+=head3 Darwin / MacOS X
+
+=over 4
+
+=item *
+
+Various improvements to 64 bit builds.
+
+=back
+
+=head3 Windows
+
+=over 4
+
+=item *
+
+C<File::Find> used to fail when the target dir is a bare drive letter and
+C<no_chdir> is 1 (the default is 0). (RT #41555)
+
+=item *
+
+A build problem with specifying C<USE_MULTI> and C<USE_ITHREADS> but without
+C<USE_IMP_SYS> has been fixed.
+
+=item *
+
+The process id is no longer truncated to 16 bits on some Windows platforms
+( L<http://bugs.activestate.com/show_bug.cgi?id=72443> )
+
+=back
+
+=head3 VMS
+
+=over 4
+
+=item *
+
+Fixed PerlIO::Scalar in-memory file record-style reads.
+
+=back
+
+=head3 OS/2
+
+=over 4
+
+=item *
+
+A build problem with specifying C<USE_MULTI> and C<USE_ITHREADS> but without
+C<USE_IMP_SYS> has been fixed.
+
+=back
+
+=head3 Tru64
+
+=over 4
+
+=item *
+
+Aligned floating point build policies for cc and gcc. 
 
 =back
 
@@ -511,6 +739,16 @@ not availble on the current platfom (25987).
 
 This error now reports the type of things that made the upgrade fail (27253).
 
+=head2 %s argument is not a HASH or ARRAY element or a subroutine
+
+This error, thrown if an invalid argument is provided to C<exists> now
+correctly includes "or a subroutine". (RT #38955)
+
+=head2 Cannot make the non-overridable builtin %s fatal
+
+This error in L<Fatal> previously did not show the name of the builtin in
+question (now represented by %s above).
+
 =head1 Changed Internals
 
 The new API function C<newSV_type> can be used to replace more efficiently the
@@ -557,20 +795,78 @@ C<exit> can now be called in expressions that the optimizer constant-folds
 
 =back
 
+=over 4
+
+=item *
+
+Significantly improved testing for C<$/> usage with PerlIO::Scalar in-memory
+files.
+
+=back
+
 =head1 Known Problems
 
-=head1 Platform Specific Problems
+=head1 Platform Specific Notes
 
-Ilya Zakharevich has added and documented several C<Window*> and
-C<Clipbrd*> functions to C<OS2::Process>, and then bumped
-C<OS2::REXX::DLL> to 1.03.
+=head2 Win32
 
-C<Win32> and C<Win32API> were moved from F<win32/> to F<ext/> and then
-respectively updated to 0.27 by Jan Dubois and 0.1001 by Yitzchak
-Scott-Thoennes. Jan Dubois also made so C<readdir()>, C<cwd()>, C<$^X> and
-C<@INC> would use the alternate (short) filename if the long name is outside
-the current codepage. The C<PATH> envirnoment variable now also uses ANSI
-filenames. And then he added C<killpg()> support on C<MSWin32>.
+C<readdir()>, C<cwd()>, C<$^X> and C<@INC> now use the alternate (short)
+filename if the long name is outside the current codepage (Jan Dubois).
+
+=head3 Updated Modules
+
+=over 4
+
+=item *
+
+C<Win32> upgraded to version 0.36. Now has a documented 'WinVista' response
+from GetOSName and support for Vista's privilege elevation in C<IsAdminUser>.
+Support for Unicode characters in path names. Improved cygwin and Win64
+compatibility.
+
+=item *
+
+C<Win32API> updated to 0.1001
+
+=item *
+
+C<killpg()> support added to C<MSWin32> (Jan Dubois).
+
+=item *
+
+C<File::Spec::Win32> upgraded to version 3.2701 (see above).
+
+=back
+
+=head2 OS/2
+
+=head3 Updated Modules
+
+=over 4
+
+=item *
+
+C<OS2::Process>: Ilya Zakharevich has added and documented several C<Window*> and
+C<Clipbrd*> functions.
+
+=item *
+
+C<OS2::REXX::DLL>, C<OS2::REXX> updated to version 1.03
+
+=back
+
+=head2 VMS
+
+=head3 Updated Modules
+
+=over 4
+
+=item *
+
+C<File::Spec::VMS> upgraded to version 3.2701 (see above).
+
+=back
+
 
 =head1 Reporting Bugs
 
