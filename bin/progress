@@ -1,0 +1,57 @@
+#!/usr/bin/perl -w
+use strict;
+use autodie;
+use Hash::Util qw(lock_keys);
+use FindBin qw($Bin);
+
+my $SPLITS = "$Bin/../splits";
+
+open(my $volunteers_fh, '<', "$Bin/../Volunteers.txt");
+
+# Done files are simply renamed, so count them here...
+
+my %total = (
+    done     => 0,
+    progress => 0,
+    todo     => 0,
+);
+
+# Typo protection.
+lock_keys(%total);
+
+while (glob("$SPLITS/DONE-*")) {
+    $total{done} += -s $_;
+}
+
+# Now skip forward to the "in progress" section.
+
+while (<$volunteers_fh>) {
+    last if /IN PROGRESS/;
+}
+
+while (<$volunteers_fh>) {
+    next if not /^(\S+) - /;
+    $total{progress} += -s "$SPLITS/$1.txt";
+    last if /^== /; # Break out at next heading.
+}
+
+while (glob("$SPLITS/*.txt")) {
+    next if /README/;
+    next if /2008-02\.txt/;     # This file has been split.
+    $total{todo} += -s $_;
+}
+
+my $total_bytes = $total{todo};
+
+# Subtract done and in-progress chunks from our total todo count.
+$total{todo} = $total{todo} - $total{done} - $total{progress};
+
+printf("Done:        %9d bytes (%2d%%)\n", $total{done}, $total{done}*100/$total_bytes);
+printf("In-Progress: %9d bytes (%2d%%)\n", $total{progress}, $total{progress}*100/$total_bytes);
+printf("Remaining:   %9d bytes (%2d%%)\n", $total{todo}, $total{todo}*100/$total_bytes);
+
+print "\n\n";
+
+my $changes_bytes = -s "$Bin/../Changes";
+
+printf "Unaccounted bytes: %d\n", $changes_bytes - $total_bytes;
