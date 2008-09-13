@@ -755,25 +755,11 @@ ____________________________________________________________________________
 	Log: Integrate:
 	     [ 33115]
 	     Integrate:
-	     [ 32786]
-	     Upgrade to Math-Complex-1.38
-	     
-	     [ 32908]
-	     Upgrade to Math-Complex-1.42
 	     
 	     [ 32914]
 	     1e4 isn't large enough with 16 byte long doubles (at least on x86_64).
 	     However, 1e5 does take us "to infinity and beyond"
 	     (Plus use cmp_ok, for better diagnostics)
-	     
-	     [ 32929]
-	     Upgrade to Math-Complex-1.43
-	     
-	     [ 32970]
-	     Upgrade to Math-Complex-1.44
-	     
-	     [ 32989]
-	     Upgrade to Math-Complex-1.47
 	     
 	     [ 33118]
 	     Integrate:
@@ -1304,9 +1290,6 @@ ____________________________________________________________________________
 	     Date: Tue, 20 Mar 2007 13:16:46 -0700 (PDT)
 	     Message-ID: <196803.14702.qm@web30215.mail.mud.yahoo.com>
 	     
-	     [ 31382]
-	     Upgrade to PathTools 3.25
-	     
 	     [ 31431]
 	     Make File::Spec::VMS->splitdir stop returning an empty first directory
 	     when passed a relative path.  Also, don't split on escaped directory 
@@ -1413,8 +1396,6 @@ ____________________________________________________________________________
 	     
 	     [ 33113]
 	     Integrate:
-	     [ 32652]
-	     Upgrade to File-Temp-0.19
 	     
 	     [ 32657]
 	     Fix a File::Temp test to deal with new Test::More changes.
@@ -1430,23 +1411,8 @@ ____________________________________________________________________________
 	     I guess that it was skipped in rather too many places, so no-one
 	     noticed.
 	     
-	     [ 32735]
-	     Upgrade to File-Temp-0.20
-	     
-	     [ 32787]
-	     Upgrade to AutoLoader-5.64
-	     
-	     [ 32800]
-	     Upgrade to constant-1.15
-	     
-	     [ 32814]
-	     Upgrade to Net-Ping-2.34
-	     
 	     [ 32829]
 	     Move the SelfLoader test files in their own subdirectory
-	     
-	     [ 32830]
-	     Upgrade to SelfLoader 1.13_03
 	     
 	     [ 32871]
 	     Subject: Re: Smoke [5.11.0] 32864 FAIL(F) MSWin32 Win2003 SP2 (x86/1 cpu)
@@ -1467,15 +1433,6 @@ ____________________________________________________________________________
 	     From: Steffen Mueller <l2ot9pa02@sneakemail.com>
 	     Date: Fri, 30 Nov 2007 23:02:03 +0100
 	     Message-ID: <20071130220203.26939.qmail@lists.develooper.com>
-	     
-	     [ 33097]
-	     Upgrade to SelfLoader-1.15
-	     
-	     [ 33098]
-	     Upgrade to Archive-Extract-0.26	
-	     
-	     [ 33099]
-	     Upgrade to Tie-RefHash-1.38
 	     
 	     [ie lots of dual-life pure perl modules]
      Branch: maint-5.8/perl
@@ -1528,9 +1485,7 @@ ____________________________________________________________________________
 	     Date: Wed, 19 Dec 2007 10:17:46 -0500
 	     Message-ID: <1ff86f510712190717r379ffdbt9ed19b8a607b8931@mail.gmail.com>
 	     
-	     [ 32799]
-	     Upgrade to Sys-Syslog-0.24
-	     
+    
 	     [ 33093]
 	     In Safe, load Carp::Heavy only if it exists (to remain
 	     compatible with older perls)

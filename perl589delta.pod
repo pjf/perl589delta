@@ -40,6 +40,14 @@ pluggable sub-modules. The bundled version is 3.6.
 
 =item *
 
+C<Archive::Extract> upgraded to version 0.26
+
+=item *
+
+C<AutoLoader> upgraded to version 5.64
+
+=item *
+
 C<AutoSplit> upgraded to 1.05
 
 =item *
@@ -48,7 +56,7 @@ C<autouse> upgraded to version 1.06
 
 =item *
 
-C<B> upgraded from 1.09_01 to 1.19.
+C<B> upgraded from 1.09_01 to 1.19
 
 =over
 
@@ -87,7 +95,7 @@ New type B::HE added with methods VAL, HASH, SVKEY_force
 
 =item *
 
-B<B::Debug> upgraded to version 1.03
+C<B::Debug> upgraded to version 1.03
 
 =item *
 
@@ -116,6 +124,10 @@ C<bignum> upgraded to 0.20
 =item *
 
 C<CGI> upgraded to version 3.28
+
+=item *
+
+C<constant> upgraded to version 1.15
 
 =item *
 
@@ -188,6 +200,10 @@ Fixes spurious results with brackets inside braces.
 
 =item *
 
+C<File::Temp> upgraded to version 0.20
+
+=item *
+
 C<FileCache> upgraded to version 1.07
 
 =item *
@@ -216,6 +232,14 @@ C<Math::Trig> upgraded to version 1.13
 
 =item *
 
+C<Net::Ping> upgraded to version 2.34.
+
+=item *
+
+C<PathToos> upgraded to version 3.25
+
+=item *
+
 C<Pod::Html> upgraded to version 1.08
 
 =item *
@@ -228,7 +252,7 @@ C<POSIX::remove> can removes empty directories.
 
 =item *
 
-L<SelfLoader> upgraded to version 1.10
+L<SelfLoader> upgraded to version 1.15
 
 =item *
 
@@ -257,6 +281,10 @@ C<Storable> upgraded to 2.16
 =item *
 
 C<Switch> upgraded to version 2.13
+
+=item *
+
+C<Sys-Syslog upraded to version 0.24>
 
 =item *
 
@@ -297,6 +325,8 @@ C<Tie::Memoize> upgraded to version 1.1
 Tie::Memoize::EXISTS now correctly caches its results.
 
 =back
+
+C<Tie::RefHash> upgraded to version 1.38
 
 =item *
 
