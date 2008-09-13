@@ -103,7 +103,7 @@ C<B::Deparse> upgraded to version 0.81
 
 =item *
 
-C<B::Lint> upgraded to version 1.09
+C<B::Lint> upgraded to version 1.11
 
 =item *
 

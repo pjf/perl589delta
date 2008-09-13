@@ -1470,12 +1470,7 @@ ____________________________________________________________________________
 	     
 	     [ 33111]
 	     Integrate:
-	     [ 32651]
-	     Upgrade to B-Lint-1.11
-	     
-	     [ 32654]
-	     Upgrade to Sys-Syslog-0.23
-	     
+     
 	     [ 32656]
 	     Add new Sys::Syslog file to MANIFEST
 	     
