@@ -871,9 +871,6 @@ ____________________________________________________________________________
 	     Date: Sat, 17 Nov 2007 20:03:00 +0100
 	     Message-ID: <20071117190300.GY10696@c4.convolution.nl>
 	     
-	     [ 32462]
-	     Bump $open::VERSION
-	     
 	     [ 32493]
 	     Subject: [PATCH] pod/perlrebackslash.pod: small Unicode additions
 	     From: Jarkko Hietaniemi <jhi@cc.hut.fi>
@@ -1145,12 +1142,6 @@ ____________________________________________________________________________
 	     Date: Fri, 23 Nov 2007 07:43:05 +1100
 	     Message-ID: <4745E9D9.1050102@conway.org>
 	     
-	     [ 32489]
-	     Bump version to 0.79
-	     
-	     [ 32490]
-	     The version appears in the docs too. And update release date.
-	     
 	     [ 32496]
 	     Disallow attributes that are not valid perl
 	     (patch by Damian)
@@ -1332,9 +1323,6 @@ ____________________________________________________________________________
 	     #31709 which was causing failures in ext/Compress/Zlib/t/05examples.t
 	     and ext/IO_Compress_Zlib/t/010examples.t on Win32.
 	     
-	     [ 31772]
-	     Bump $VERSION due to #31686
-	     
 	     [ 32006]
 	     Subject: [PATCH - 2nd revision] /cygdrive is configurable
 	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
@@ -1350,8 +1338,6 @@ ____________________________________________________________________________
 	     Date: Mon, 26 Nov 2007 23:35:30 -0600
 	     Message-id: <474BACA2.5060702@qsl.net>
 	     
-	     [ 32604]
-	     Bump $VERSION of all PathTools modules to 3.2501
      Branch: maint-5.8/perl
 	  !> README.cygwin cygwin/cygwin.c ext/Cwd/Changes ext/Cwd/Cwd.xs
 	  !> ext/Cwd/Makefile.PL ext/Cwd/t/cwd.t lib/Cwd.pm
@@ -1485,9 +1471,6 @@ ____________________________________________________________________________
 	     In Safe, load Carp::Heavy only if it exists (to remain
 	     compatible with older perls)
 	     
-	     [ 33096]
-	     Bump the version of Safe
-	     
 	     [ 33102]
 	     Make this test pass with the Test::More that comes with perl 5.6.2
 	     
@@ -1501,9 +1484,6 @@ ____________________________________________________________________________
 	     In Safe, load Carp::Heavy only if it exists (to remain
 	     compatible with older perls)
 	     
-	     [ 33096]
-	     Bump the version of Safe
-	     
 	     [ 33102]
 	     Make this test pass with the Test::More that comes with perl 5.6.2
 	     
@@ -1515,8 +1495,6 @@ ____________________________________________________________________________
 	     
 	     [ 33164]
 	     Integrate:
-	     [ 33124]
-	     Bump Safe's version
 	     
 	     [ 33171]
 	     Integrate:

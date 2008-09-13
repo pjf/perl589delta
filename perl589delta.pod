@@ -44,6 +44,10 @@ C<Archive::Extract> upgraded to version 0.26
 
 =item *
 
+C<Attribute::Handlers> upgraded to version 0.79
+
+=item *
+
 C<AutoLoader> upgraded to version 5.64
 
 =item *
@@ -202,6 +206,10 @@ Fixes spurious results with brackets inside braces.
 
 C<File::Temp> upgraded to version 0.20
 
+=item * 
+
+C<File::Spec::Unix> upgraded to version 1.5_01
+
 =item *
 
 C<FileCache> upgraded to version 1.07
@@ -232,11 +240,19 @@ C<Math::Trig> upgraded to version 1.13
 
 =item *
 
-C<Net::Ping> upgraded to version 2.34.
+C<Net::Ping> upgraded to version 2.34
 
 =item *
 
-C<PathToos> upgraded to version 3.25
+C<Opcode::Safe> upgraded to version 2.14
+
+=item *
+
+C<open> upgraded to 1.06
+
+=item *
+
+C<PathToos> upgraded to version 3.2501
 
 =item *
 
