@@ -670,6 +670,16 @@ Aligned floating point build policies for cc and gcc.
 
 =back
 
+=head3 RedHat Linux
+
+=over 4
+
+=item *
+
+Revisited a patch from 5.6.1 for RH7.2 for Intel's icc (RT #7916), added an aditional check for $Config{gccversion}.
+
+=back
+
 =head2 Smaller fixes
 
 =over 4
