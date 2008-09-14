@@ -374,6 +374,10 @@ C<Text::ParseWords> upgraded to version 3.25
 
 =item *
 
+C<Text::Soundex> upgraded to version 3.02
+
+=item *
+
 C<Text::Tabs> upgraded to version 2007.1117
 
 =item *

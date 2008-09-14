@@ -67,24 +67,6 @@ ____________________________________________________________________________
 	  !> ext/ODBM_File/t/odbm.t ext/SDBM_File/SDBM_File.pm
 	  !> ext/SDBM_File/SDBM_File.xs ext/SDBM_File/sdbm/sdbm.c
 ____________________________________________________________________________
-[ 30303] By: nicholas				   on 2007/02/14  22:09:03
-	Log: Integrate:
-	     [ 28927]
-	     Move Text::Soundex from lib/ to ext/ and upgrade it to 
-	     Text-Soundex-3.02.
-	     
-	     [ 28991]
-	     Grrr...moved the files, but forgot to update Soundex.pm
-	     
-	     
-	     [yes, 28983 touched Soundex.xs]
-     Branch: maint-5.8/perl
-	  +> ext/Text/Soundex/Changes ext/Text/Soundex/Makefile.PL
-	  +> ext/Text/Soundex/README ext/Text/Soundex/Soundex.pm
-	  +> ext/Text/Soundex/Soundex.xs ext/Text/Soundex/t/Soundex.t
-	   - lib/Text/Soundex.pm lib/Text/Soundex.t
-	  !> MANIFEST
-____________________________________________________________________________
 [ 30302] By: nicholas				   on 2007/02/14  22:00:02
 	Log: Integrate:
 	     [ 29566]
