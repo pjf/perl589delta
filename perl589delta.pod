@@ -306,6 +306,10 @@ C<Math::Complex>, C<Math::Trig> upgraded to version 1.54.
 
 =item *
 
+C<PathTools> upgraded to version 3.22
+
+=item *
+
 C<PerlIO::via> upgraded to version 0.05
 
 =item *

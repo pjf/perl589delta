@@ -73,9 +73,6 @@ ____________________________________________________________________________
 	     Move Text::Soundex from lib/ to ext/ and upgrade it to 
 	     Text-Soundex-3.02.
 	     
-	     [ 28983]
-	     Update to PathTools-3.22.
-	     
 	     [ 28991]
 	     Grrr...moved the files, but forgot to update Soundex.pm
 	     
