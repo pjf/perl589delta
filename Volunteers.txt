@@ -30,15 +30,16 @@
 2008-04 - Abhijit Menon-Sen (aka crab)      Last seen,  9th Sep
 2008-06 - Renee Backer                      Last seen,  9th Sep
 
-== DON'T PICK YET ==
-
-2007-02-d - Has patches to be applied from Drew Stephens
-
 == AVAILABLE ==
 
+2007-02-d - ==> Nobody <== 11k
 2007-02-f - ==> Nobody <== 20k
 2007-02-g - ==> Nobody <== 20k
 2007-02-h - ==> Nobody <== 20k
 2007-02-i - ==> Nobody <== 20k
 2007-02-j - ==> Nobody <== 4k
 2008-09   - ==> Nobody <== 31k (and growing!)
+
+== NOTES ==
+
+2007-02-d - Has been slimmed by Drew Stephens.
