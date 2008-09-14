@@ -99,31 +99,8 @@ ____________________________________________________________________________
 	  +> t/lib/proxy_constant_subs.t
 	  !> MANIFEST dump.c gv.c pp_hot.c sv.h
 ____________________________________________________________________________
-[ 30301] By: nicholas				   on 2007/02/14  21:51:16
-	Log: Two stowaways from change 30299.
-     Branch: maint-5.8/perl
-	   - lib/ExtUtils/META.yml lib/ExtUtils/t/Command.t
-____________________________________________________________________________
-[ 30300] By: nicholas				   on 2007/02/14  21:45:49
-	Log: Integrate:
-	     [ 28987]
-	     Upgrade to ExtUtils-Command-1.12.
-	     
-	     [ 28989]
-	     Adjust test count for ExtUtils::Command
-	     
-	     [ 30146]
-	     Upgrade to ExtUtils-Command-1.13
-     Branch: maint-5.8/perl
-	  !> lib/ExtUtils/Command.pm lib/ExtUtils/Manifest.pm
-	  !> lib/ExtUtils/t/Manifest.t lib/ExtUtils/t/eu_command.t
-____________________________________________________________________________
 [ 30299] By: nicholas				   on 2007/02/14  21:31:37
 	Log: Integrate:
-	     [ 26457]
-	     Fix for pod2man() in ExtUtils::Command::MM to work with 
-	     the Pod::Man 2.04.
-	     
 	     [ 26499]
 	     Removing MAKE_JOBS_FIFO from %ENV causes FreeBSD make to forget about
 	     any -j flags. (And their implied disabling of backwards compatibility,
@@ -137,29 +114,6 @@ ____________________________________________________________________________
 	     
 	     [ 26813]
 	     Assorted VMS-only MakeMaker fixes for blead
-	     
-	     [ 26919]
-	     Make Manifest.t do what is says it's doing.
-	     
-	     [ 26930]
-	     Subject: [PATCH] Tru64: -Uusedl: lib/ExtUtils/t/Embed.t
-	     From: Jarkko Hietaniemi <jhietaniemi@gmail.com>
-	     Date: Mon, 23 Jan 2006 20:34:18 +0200
-	     Message-ID: <43D521AA.7030008@gmail.com>
-	     
-	     [ 27256]
-	     $ExtUtils::MM_Unix::VERSION needs to stay numeric to avoid test
-	     warnings.
-	     
-	     [ 27587]
-	     Get version numbers in line with what's in the CPAN
-	     EU::MM 6.30_01 tarball. (ExtUtils::Install has local changes,
-	     so bump its version number.)
-	     
-	     [ 27590]
-	     Merge changes from CPAN's EU:MM 6.30_01.
-	     The modules that have local changes have superior
-	     version numbers than the CPAN counterparts.
 	     
 	     [ 27591]
 	     No reason to ship MakeMaker's META.yml
@@ -176,16 +130,6 @@ ____________________________________________________________________________
 	     Test 41 was failing because the change to pasthru() in MM_Win32.pm
 	     means that $self->{MAKE} now needs to be initialized.
 	     
-	     [ 27596]
-	     Bump version number of ExtUtils::MM_Win32
-	     
-	     [ 27597]
-	     restore EU::MM test fixes from 26079, 26813, and 26919
-	     that were lost in 27590
-	     
-	     [ 27613]
-	     EU::MM::MM_VMS::one_liner must quote "--" argument
-	     
 	     [ 27708]
 	     Change 27592 disabled the building of manpages for non core-extensions
 	     The init_MAN3PODS method need to be called when no INSTALLMAN3DIR is
@@ -199,27 +143,6 @@ ____________________________________________________________________________
 	     
 	     Sync ExtUtils::Install with CPAN (just trivially change version nos)
 	     
-	     [ 28825]
-	     Upgrade to MakeMaker 6.30_04
-	     
-	     [ 28918]
-	     Update to ExtUtils-Command-1.11
-	     
-	     [ 28921]
-	     Upgrade to ExtUtils-Manifest-1.48
-	     
-	     [ 28929]
-	     Quiet warnings in new test for ExtUtils::Command.
-	     
-	     [ 28984]
-	     Upgrade to ExtUtils-Makemaker-6.31.
-     Branch: maint-5.8/perl
-	  +> lib/ExtUtils/t/INSTALL_BASE.t lib/ExtUtils/t/build_man.t
-	  +> lib/ExtUtils/t/eu_command.t lib/ExtUtils/t/make.t
-	  +> lib/ExtUtils/t/pm.t lib/ExtUtils/t/revision.t
-	   - lib/ExtUtils/t/installbase.t
-	  !> (integrate 45 files)
-____________________________________________________________________________
 [ 30297] By: nicholas				   on 2007/02/14  19:11:41
 	Log: Integrate:
 	     [ 29673]
