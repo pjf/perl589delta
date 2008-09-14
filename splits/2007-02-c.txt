@@ -11,17 +11,6 @@
 	     place would achieve. It doesn't avoid creating a long command-line as we
 	     would like to do.
 	     
-	     [ 29402]
-	     Give perl.exe an icon when built with MinGW and Borland
-	     
-	     It already gets an icon when built with VC++, but the MinGW and Borland
-	     builds were not making any use of the resource file.
-	     
-	     Also add the top-level directory into MinGW's resource compiler search
-	     path to assist ActivePerl builds: see:
-	     http://downloads.activestate.com/ActivePerl/src/5.8/AP819_diff.txt
-	     
-	     
 ____________________________________________________________________________
 [ 30309] By: nicholas				   on 2007/02/14  23:53:19
 	Log: Integrate:
