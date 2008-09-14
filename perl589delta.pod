@@ -592,6 +592,10 @@ is resolved. (RT #50256)
 Resolved issue where C<$!> could be changed by a signal handler interrupting
 a C<system()> call.
 
+=item *
+
+Fixed problems with split, unicode /\s+/ and / \0/.
+
 =back
 
 =head2 Platform specific fixes

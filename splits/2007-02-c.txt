@@ -120,26 +120,3 @@ ____________________________________________________________________________
 	  !> ext/PerlIO/via/via.xs gv.c op.c perlio.c pod/perlapi.pod
 	  !> pod/perlguts.pod pp.c pp_hot.c pp_sys.c proto.h sv.c toke.c
 	  !> universal.c utf8.c
-____________________________________________________________________________
-[ 30294] By: nicholas				   on 2007/02/14  17:41:03
-	Log: Integrate:
-	     [ 29880]
-	     Subject: [PATCH] fix unicode split /\s+/
-	     From: demerphq <demerphq@gmail.com>
-	     Date: Fri, 19 Jan 2007 02:14:06 +0100
-	     Message-ID: <9b18b3110701181714r4f3bc9ebq9ba462eba8338734@mail.gmail.com>
-	     
-	     [ 29887]
-	     Subject: Re: [PATCH] fix unicode split /\s+/
-	     From: SADAHIRO Tomoyuki <bqw10602@nifty.com>
-	     Message-Id: <20070120005232.D9CC.BQW10602@nifty.com>
-	     Date: Sat, 20 Jan 2007 00:52:42 +0900
-	     
-	     [ 29975]
-	     Subject: split by " \0" (const string staring with a SPACE followed by NULL)
-	     From: SADAHIRO Tomoyuki <bqw10602@nifty.com>
-	     Date: Fri, 19 Jan 2007 22:21:48 +0900
-	     Message-Id: <20070119221905.D162.BQW10602@nifty.com>
-     Branch: maint-5.8/perl
-	  !> op.c pp.c t/op/split.t
-____________________________________________________________________________
