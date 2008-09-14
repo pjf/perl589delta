@@ -26,27 +26,6 @@ ____________________________________________________________________________
 	     One too many ('s in change #28043. 
 	     
 ____________________________________________________________________________
-[ 30307] By: nicholas				   on 2007/02/14  22:42:21
-	Log: Integrate:
-	     [ 28389]
-	     Upgrade to Unicode-Normalize-1.00
-	     
-	     [ 28395]
-	     signedness nit in Unicode::Normalize::decompose
-	     
-	     [ 28406]
-	     Upgrade to Unicode::Normalize 1.01
-     Branch: maint-5.8/perl
-	  +> ext/Unicode/Normalize/t/tie.t
-	  !> MANIFEST ext/Unicode/Normalize/Changes
-	  !> ext/Unicode/Normalize/Normalize.pm
-	  !> ext/Unicode/Normalize/Normalize.xs
-	  !> ext/Unicode/Normalize/README ext/Unicode/Normalize/mkheader
-	  !> ext/Unicode/Normalize/t/fcdc.t ext/Unicode/Normalize/t/func.t
-	  !> ext/Unicode/Normalize/t/illegal.t
-	  !> ext/Unicode/Normalize/t/norm.t ext/Unicode/Normalize/t/null.t
-	  !> ext/Unicode/Normalize/t/test.t
-____________________________________________________________________________
 [ 30306] By: nicholas				   on 2007/02/14  22:38:24
 	Log: Update the integration history for ext/Encode/... for changes 25261
 	     and 25266. (Seems that the corrections were already merged to maint,

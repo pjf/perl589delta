@@ -433,6 +433,10 @@ C<Thread::Semaphore> upgraded to version 2.08
 
 =item *
 
+C<Unicode::Normalize> upgraded to version 1.01
+
+=item *
+
 C<XSLoader> upgraded to version 0.08
 
 =item *
