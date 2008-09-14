@@ -190,6 +190,10 @@ C<encoding> upgraded to version 0.11
 
 =item *
 
+c<Errno> upgraded to version 1.10
+
+=item *
+
 C<Exporter> upgraded to version 5.60
 
 =item *

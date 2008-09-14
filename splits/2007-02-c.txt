@@ -25,26 +25,6 @@ ____________________________________________________________________________
 	     [ 28046]
 	     One too many ('s in change #28043. 
 	     
-	     [ 28794]
-	     Convert Errno.t to Test::More.  Increase the test coverage
-	     while in there as well. 
-	     
-	     [ 29558]
-	     Subject: Re: [PATCH] Errno doesnt rebuild when things it depends on in Config.pm change
-	     From: demerphq <demerphq@gmail.com>
-	     Date: Fri, 15 Dec 2006 12:52:45 +0100
-	     Message-ID: <9b18b3110612150352y2394954bg5acd5ec5fd320d33@mail.gmail.com>
-	     
-	     [ 29595]
-	     Proper cleanup for Errno.pm
-	     
-	     [ 29627]
-	     Upgrade to Errno-1.10 (!).	 I have left the core tests as is for
-	     now as well as for Makefile.PL, which need some looking into.
-     Branch: maint-5.8/perl
-	  !> ext/Errno/ChangeLog ext/Errno/Errno_pm.PL
-	  !> ext/Errno/Makefile.PL ext/Errno/t/Errno.t
-____________________________________________________________________________
 [ 30308] By: nicholas				   on 2007/02/14  23:20:38
 	Log: Integrate:
 	     [ 27562]
