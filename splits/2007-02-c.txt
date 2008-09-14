@@ -77,23 +77,10 @@ ____________________________________________________________________________
 	     Date: Mon, 12 Dec 2005 19:22:32 +0100
 	     Message-ID: <20051212192232.39cd0c1e@grubert.mandrakesoft.com>
 	     
-	     [ 26813]
-	     Assorted VMS-only MakeMaker fixes for blead
-	     
-	     [ 27591]
-	     No reason to ship MakeMaker's META.yml
-	     
 	     [ 27592]
 	     When MAN3PODS is forced to {} in a Makefile.PL, manpages should not be
 	     built from pods. This change fixes bleadperl compilation -- trying to
 	     build manpages with miniperl causes a bootstrapping problem.
-	     
-	     [ 27595]
-	     Fix broken MM_Win32.t tests following 27590
-	     
-	     Test 31 was failing because 27590 had undone part of 25627.
-	     Test 41 was failing because the change to pasthru() in MM_Win32.pm
-	     means that $self->{MAKE} now needs to be initialized.
 	     
 	     [ 27708]
 	     Change 27592 disabled the building of manpages for non core-extensions
@@ -114,9 +101,6 @@ ____________________________________________________________________________
 	     [ 29977]
 	     The last parameter to gv_stashpv/gv_stashpvn/gv_stashsv is a bitmask
 	     of flags, not a boolean, so correct the documenation and callers.
-	     
-	     [ 30017]
-	     Silence a few pedantic warnings
 	     
 	     [ 30030]
 	     One last gv_fetchpv() that should be GV_ADD rather than TRUE.
