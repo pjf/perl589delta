@@ -218,6 +218,10 @@ C<ExtUtils::MakeMaker> upgraded to version 6.32
 
 =item *
 
+C<ExtUtils::Manifest> upgraded to version 1.51
+
+=item *
+
 C<Fatal> upgraded to version 1.06
 
 =over

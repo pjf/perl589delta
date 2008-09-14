@@ -109,14 +109,8 @@ ____________________________________________________________________________
 	     [ 28987]
 	     Upgrade to ExtUtils-Command-1.12.
 	     
-	     [ 28988]
-	     Upgrade to ExtUtils-Manifest-1.49.
-	     
 	     [ 28989]
 	     Adjust test count for ExtUtils::Command
-	     
-	     [ 29768]
-	     Upgrade to ExtUtils::Manifest 1.51
 	     
 	     [ 30146]
 	     Upgrade to ExtUtils-Command-1.13
