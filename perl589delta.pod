@@ -40,7 +40,11 @@ pluggable sub-modules. The bundled version is 3.6.
 
 =item *
 
-C<AutoSplit> upgraded to 1.05
+C<Autoloader> upgraded to version 5.66
+
+=item *
+
+C<AutoSplit> upgraded to 1.06
 
 =item *
 
@@ -123,6 +127,11 @@ C<CPAN> upgraded to version 1.9101
 
 =item *
 
+C<Cwd> upgraded to version 3.27 with C const-ing and some platform specific
+improvements (including for VMS).
+
+=item *
+
 C<DB> upgraded to version 1.30
 
 =over
@@ -140,6 +149,14 @@ C<DB_File> upgraded to version 1.815
 
 =item *
 
+C<Devel::DProf> upgraded to version 20080331.00.
+
+=item *
+
+C<Devel::Peek> upgraded to version 1.04
+
+=item *
+
 C<Devel::PPPort> upgraded to version 3.14_01
 
 =item *
@@ -148,11 +165,36 @@ C<diagnostics> upgraded to version 1.16
 
 =item *
 
+C<Digest::SHA> upgraded to version 5.46
+
+=item *
+
+C<DynaLoader> upgraded to version 1.09 and can now dynamically load a loadable
+object from a file with a non-default file extension.
+
+=item *
+
+C<Embed> upgraded to version 1.28
+
+=item *
+
 C<Encode> upgraded to version 2.20
 
 =item *
 
+C<Encode::Alias> includes a fix for encoding "646" (aka ASCII) on Solaris.
+
+=item *
+
+C<encoding> upgraded to version 0.11
+
+=item *
+
 C<Exporter> upgraded to version 5.60
+
+=item *
+
+C<ExtUtils::Command> upgraded to version 1.14
 
 =item *
 
@@ -164,7 +206,7 @@ C<ExtUtils::MakeMaker> upgraded to version 6.32
 
 =item *
 
-C<Fatal> upgraded to version 1.05
+C<Fatal> upgraded to version 1.06
 
 =over
 
@@ -173,6 +215,18 @@ C<Fatal> upgraded to version 1.05
 Allows to make fatal built-ins in CORE::GLOBAL.
 
 =back
+
+=item *
+
+C<File::Basename> upgraded to version 2.77
+
+=item *
+
+C<File::Copy> now uses 3-arg open.
+
+=item *
+
+C<File::Find> upgraded to version 1.13
 
 =item *
 
@@ -192,6 +246,14 @@ C<FileCache> upgraded to version 1.07
 
 =item *
 
+C<File::Spec>, C<File::Spec::Epoc>, C<File::Spec::Mac>, C<File::Spec::Functions>
+C<File::Spec::Unix>, C<File::Spec::VMS>, C<File::Spec::Win32> upgraded to version
+3.2701 with improved handling of bad arguments and some platform specific
+improvements (Including for VMS and Cygwin)
+
+
+=item *
+
 C<Getopt::Long> upgraded to version 2.36
 
 =item *
@@ -208,7 +270,23 @@ C<Math::BigInt> upgraded to version 1.82
 
 =item *
 
-C<Math::BigRat> upgraded to version 0.18
+C<Math::BigRat> upgraded to version 0.22
+
+=over 4
+
+=item *
+
+Implements new C<as_float> method.
+
+=back
+
+=item *
+
+C<Math::Complex>, C<Math::Trig> upgraded to version 1.54.
+
+=item *
+
+C<PerlIO::via> upgraded to version 0.05
 
 =item *
 
@@ -224,6 +302,14 @@ C<POSIX::remove> can removes empty directories.
 
 =item *
 
+C<POSIX> imports previously duplicated constants from C<Fcntl>, version bumped from 1.14 to 1.15.
+
+=item *
+
+C<scalar> upgraded to version 0.06
+
+=item *
+
 L<SelfLoader> upgraded to version 1.10
 
 =item *
@@ -236,7 +322,7 @@ L<sigtrap> upgraded to version 1.04
 
 =item *
 
-C<Socket> upgraded to version 1.79
+C<Socket> upgraded to version 1.81
 
 =over
 
@@ -300,7 +386,9 @@ C<Time::gmtime> upgraded to version 1.03
 
 =item *
 
-C<Time::HiRes> upgraded to version 1.9707
+C<Time::HiRes> upgraded to version 1.9715 with various build improvements and minor
+platform-specific bug fixes (including for HP-UX 11 ia64)
+
 
 =item *
 
@@ -333,115 +421,12 @@ C<Thread::Semaphore> upgraded to version 2.08
 
 =item *
 
-C<Math::BigRat> upgraded to version 0.22, implements new C<as_float> method.
-
-=item *
-
-C<Math::Complex>, C<Math::Trig> upgraded to version 1.54.
-
-=item *
-
 C<XSLoader> upgraded to version 0.08
 
 =item *
 
 C<XS::APItest> and C<XS::Typemap> are for internal use only and hence
 no longer installed.
-
-=item *
-
-C<File::Copy> now uses 3-arg open.
-
-=item *
-
-C<POSIX> imports previously duplicated constants from C<Fcntl>, version bumped from 1.14 to 1.15.
-
-=item *
-
-C<Encode::Alias> includes a fix for encoding "646" (aka ASCII) on Solaris.
-
-=item *
-
-C<Fatal> upgraded to version 1.06.
-
-=item *
-
-C<Devel::DProf> upgraded to version 20080331.00.
-
-=item *
-
-C<Devel::Peek> upgraded to version 1.04
-
-=item *
-
-C<encoding> upgraded to version 0.11
-
-=item *
-
-C<scalar> upgraded to version 0.06
-
-=item *
-
-C<PerlIO::via> upgraded to version 0.05
-
-=item *
-
-C<Socket> upgraded to version 1.81
-
-=item *
-
-C<Embed> upgraded to version 1.28
-
-=item *
-
-C<File::Basename> upgraded to version 2.77
-
-=item *
-
-C<File::Find> upgraded to version 1.13
-
-=item *
-
-C<OS2::REXX> upgraded to version 1.04
-
-=item *
-
-C<ExtUtils::Command> upgraded to version 1.14
-
-=item *
-
-C<Autoloader> upgraded to version 5.66
-
-=item *
-
-C<AutoSplit> upgraded to version 1.06
-
-=item *
-
-C<Cwd> upgraded to version 3.27 with C const-ing and some platform specific
-improvements (including for VMS).
-
-=item *
-
-C<File::Spec>, C<File::Spec::Epoc>, C<File::Spec::Mac>, C<File::Spec::Functions>
-C<File::Spec::Unix>, C<File::Spec::VMS>, C<File::Spec::Win32> upgraded to version
-3.2701 with improved handling of bad arguments and some platform specific
-improvements (Including for VMS and Cygwin)
-
-=item *
-
-C<Time::HiRes> upgraded to version 1.9715 with various build improvements and minor
-platform-specific bug fixes (including for HP-UX 11 ia64)
-
-=item *
-
-C<Digest::SHA> upgraded to version 5.46
-
-=item *
-
-C<DynaLoader> upgraded to version 1.09 and can now dynamically load a loadable
-object from a file with a non-default file extension.
-
 
 =back
 
@@ -628,6 +613,10 @@ Fixed PerlIO::Scalar in-memory file record-style reads.
 
 A build problem with specifying C<USE_MULTI> and C<USE_ITHREADS> but without
 C<USE_IMP_SYS> has been fixed.
+
+=item *
+
+C<OS2::REXX> upgraded to version 1.04
 
 =back
 
