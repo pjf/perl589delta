@@ -214,6 +214,10 @@ C<ExtUtils::Constant> upgraded to version 0.04
 
 =item *
 
+C<ExtUtils::Install> upgraded to version 1.41
+
+=item *
+
 C<ExtUtils::MakeMaker> upgraded to version 6.32
 
 =item *
