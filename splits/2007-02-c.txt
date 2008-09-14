@@ -11,27 +11,6 @@
 	     place would achieve. It doesn't avoid creating a long command-line as we
 	     would like to do.
 	     
-	     [ 29396]
-	     Make the win32/makefile.mk a little safer
-	     
-	     - Add a few missing s,\,$B, substitutions. We were living dangerously
-	     with various unescaped backslashes not causing problems purely because
-	     they don't make valid ecape codes anyway, e.g. ..\perl59.dll was only
-	     working because \p isn't an escape code so it didn't get mapped to
-	     anything nasty.
-	     
-	     - Move the $(BLINK_FLAGS) out of $(mktmp ...)'s because it could contain
-	     backslashes which would otherwise need escaping. (Adding in the
-	     escaping would be another fix but other cases don't put $(BLINK_FLAGS)
-	     into $(mktmp ...) files in the first place.)
-	     
-	     [ 29397]
-	     Add missing d_printf_format_null/PRINTF_FORMAT_NULL_OK to Win32 canned
-	     configs
-	     
-	     See:
-	     http://www.xray.mpe.mpg.de/mailing-lists/perl5-porters/2006-11/msg00923.html
-	     
 	     [ 29402]
 	     Give perl.exe an icon when built with MinGW and Borland
 	     
@@ -42,18 +21,6 @@
 	     path to assist ActivePerl builds: see:
 	     http://downloads.activestate.com/ActivePerl/src/5.8/AP819_diff.txt
 	     
-	     [ 29469]
-	     Extend d_pseudofork to Win32-land and set it when appropriate
-	     (namely, when we have USE_ITHREADS and PERL_IMPLICIT_SYSTEM)
-	     
-	     [ 29699]
-	     Do the same as #29697 for Win32
-	     
-	     [ 30197]
-	     Subject: [PATCH] Defend against cmd.exe stupidity (on Win2k at least)
-	     From: demerphq <demerphq@gmail.com>
-	     Message-ID: <9b18b3110702101100n76f65136ke65113bf0dbd01f@mail.gmail.com>
-	     Date: Sat, 10 Feb 2007 20:00:10 +0100
 	     
 ____________________________________________________________________________
 [ 30309] By: nicholas				   on 2007/02/14  23:53:19
