@@ -165,6 +165,10 @@ C<diagnostics> upgraded to version 1.16
 
 =item *
 
+C<Digest> upgraded to version 1.15
+
+=item *
+
 C<Digest::SHA> upgraded to version 5.46
 
 =item *
