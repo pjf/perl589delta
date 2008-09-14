@@ -40,6 +40,10 @@ pluggable sub-modules. The bundled version is 3.6.
 
 =item *
 
+C<ANSIColor> upgraded to version 1.11
+
+=item *
+
 C<Autoloader> upgraded to version 5.66
 
 =item *
