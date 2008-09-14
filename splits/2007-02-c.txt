@@ -1,35 +1,6 @@
 [ 30311] By: nicholas				   on 2007/02/15  11:24:02
 	Log: Integrate:
 	     
-	     [ 29285]
-	     Add support for building a perl-static.exe that doesn't depend on
-	     the perl59.dll. It currently can't load DLL extension modules, so
-	     any that are required must be statically linked too. This may be
-	     fixed sometime.  Changes to win32/makefile.mk also to follow.
-	     
-	     Subject: RE: [PATCH@29224] RE: [patch-at-29217] static linkage for perl.exe fo r win32
-	     From: "Konovalov, Vadim Vladimirovich (Vadim)** CTR **" <vkonovalov@Lucent.com>
-	     Date: Mon, 13 Nov 2006 19:45:05 +0100
-	     Message-ID: <E3FB32585BF1D411B9E900805FF51A080207FA41@ru0022exch001u.ru.lucent.com>
-	     
-	     (with minor tweaks for cleanup and embedding manifest file)
-	     
-	     [ 29303]
-	     Add perl-static.exe support to win32/makefile.mk
-	     
-	     This applies the same changes that were made in win32/Makefile by
-	     changes #29285 and #29296, plus a tweak to win32/runperl.c to fix
-	     a linker error when using MinGW/gcc
-	     
-	     [ 29305]
-	     Install perl-static.exe if it was built
-	     
-	     Perhaps this should be done via "installperl" so as to get, e.g.,
-	     perl5.9.5-static.exe and honour INST_VER and INST_ARCH?
-	     
-	     Just do it quick-and-dirty for now, as is done for wperl.exe. It
-	     can always be fixed later if anyone wants it.
-	     
 	     [ 29307]
 	     Fix the XXX in #29303
 	     

@@ -597,6 +597,10 @@ The process id is no longer truncated to 16 bits on some Windows platforms
 
 Added the ability to build perl with Visual C++ 2005 Express Edition (aka Visual C++ 8.x). 
 
+=item *
+
+Improvements to the perl-static.exe build process.
+
 =back
 
 =head3 VMS
