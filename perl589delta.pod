@@ -21,6 +21,9 @@ It's now possible to call C<stat> and the C<-X> filestat operators on
 dirhandles. When the situation is ambiguous, it favours the file handle
 semantics. They also treat C<*FILE{IO}> filehandles like C<*FILE> filehandles.
 
+Added B<perlthanks> which is just like C<perlbug> but allows the user to
+send a note of gratitude to the authors and maintainers of Perl. [33532]
+
 =head1 Modules and Pragmata
 
 =head2 New Modules
@@ -30,7 +33,7 @@ semantics. They also treat C<*FILE{IO}> filehandles like C<*FILE> filehandles.
 =item *
 
 C<Module::Pluggable> is a simple framework to create modules that accept
-pluggable sub-modules. The bundled version is 3.6.
+pluggable sub-modules. The bundled version is 3.7. [33505]
 
 =back
 
@@ -123,7 +126,7 @@ C<bignum> upgraded to 0.20
 
 =item *
 
-C<CGI> upgraded to version 3.28
+C<CGI> upgraded to version 3.35 [33568] 
 
 =item *
 
@@ -149,7 +152,7 @@ history.
 
 =item *
 
-C<DB_File> upgraded to version 1.815
+C<DB_File> upgraded to version 1.817 [33583]
 
 =item *
 
@@ -186,7 +189,7 @@ C<Embed> upgraded to version 1.28
 
 =item *
 
-C<Encode> upgraded to version 2.20
+C<Encode> upgraded to version 2.24 [33493]
 
 =item *
 
@@ -214,15 +217,19 @@ C<ExtUtils::Constant> upgraded to version 0.04
 
 =item *
 
-C<ExtUtils::Install> upgraded to version 1.41
+C<ExtUtils::Install> upgraded to version 1.51 [33567]
 
 =item *
 
-C<ExtUtils::MakeMaker> upgraded to version 6.32
+C<ExtUtils::MakeMaker> upgraded to version 6.44 [33396]
 
 =item *
 
 C<ExtUtils::Manifest> upgraded to version 1.51
+
+=item *
+
+C<ExtUtils::ParseXS> upgraded to version 2.19 [33392]
 
 =item *
 
@@ -271,6 +278,9 @@ C<File::Spec::Unix>, C<File::Spec::VMS>, C<File::Spec::Win32> upgraded to versio
 3.2701 with improved handling of bad arguments and some platform specific
 improvements (Including for VMS and Cygwin)
 
+=item *
+
+C<GDBM_File> upgraded to version 1.09
 
 =item *
 
@@ -314,7 +324,19 @@ C<PerlIO::via> upgraded to version 0.05
 
 =item *
 
-C<Pod::Html> upgraded to version 1.08
+C<Math::Complex> upgraded to version 1.52 [33293]
+
+=item *
+
+C<Module::Pluggable> upgraded to version 3.8 [33552]
+
+=item *
+
+C<Net::Ping> upgraded to version 2.35 [33242]
+
+=item *
+
+C<Pod::Html> upgraded to version 1.09 [33536]
 
 =item *
 
@@ -398,6 +420,14 @@ C<Text::Wrap> upgraded to version 2006.1117
 
 =item *
 
+C<Thread::Semaphore> upgraded to version 2.07 [33361]
+
+=item *
+
+C<Thread::Queue> upgraded to version 2.06 [33362]
+
+=item *
+
 C<Tie::Memoize> upgraded to version 1.1
 
 =over
@@ -416,7 +446,6 @@ C<Time::gmtime> upgraded to version 1.03
 
 C<Time::HiRes> upgraded to version 1.9715 with various build improvements and minor
 platform-specific bug fixes (including for HP-UX 11 ia64)
-
 
 =item *
 
@@ -556,7 +585,12 @@ C<Configure> is now better at removing temporary files. Tom Callaway
 passed to the compiler and the linker. Especially, C<-fPIC> is now
 enabled on linux. It will also croak when your F</dev/null> isn't a device.
 
-There are improved hints for DEC/OSF.
+There are improved hints for DEC/OSF, VOS (33425), Cygwin (33484).
+
+Many compilation warnings were cleaned up (33415, 33417, 33418, 33419,
+33420, 33421, 33427, 33428, 33429, 33435, 33436, 33441, 33444, 33479,
+33590,)
+
 
 =head1 Selected Bug Fixes
 
@@ -607,6 +641,11 @@ Fixed problems with split, unicode /\s+/ and / \0/.
 =item *
 
 Various improvements to 64 bit builds.
+
+=item *
+
+Mutex protection added in PerlIOStdio_close to avoid race conditions.  May
+fix threads free.t and blocks.t failures on OS X on 5.8.x (33502).
 
 =back
 
@@ -722,7 +761,7 @@ Reduced number of calls to C<getpeername> in L<IO::Socket> (29129).
 
 C<chr(65535)> ought to be allowed in regexes.
 
-=item *
+=item * 
 
 Using C<#!perl -d> could trigger an assertion, which has been fixed (30075).
 
@@ -756,6 +795,11 @@ tr/// is now threadsafe (29765)
 =item *
 
 De-duplictae C<@EXPORT> (26459)
+
+=item *
+
+C<pod2html> will label anchors more consistently (32079) and handles nested
+definition lists better (32727).
 
 =back
 
@@ -953,7 +997,6 @@ C<OS2::REXX::DLL>, C<OS2::REXX> updated to version 1.03
 C<File::Spec::VMS> upgraded to version 3.2701 (see above).
 
 =back
-
 
 =head1 Reporting Bugs
 
