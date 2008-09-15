@@ -1,0 +1,15 @@
+[ 32231] By: nicholas				   on 2007/11/06  21:33:05
+	Log: Missing part of 32228, spotted by Anton.
+     Branch: maint-5.8/perl
+	   ! regcomp.c
+____________________________________________________________________________
+[ 32228] By: nicholas				   on 2007/11/06  15:22:42
+	Log: Integrate:
+	     [ 30647]
+	     Subject: [PATCH] feel the the baß (encoding problems in the regex engine)
+	     From: demerphq <demerphq@gmail.com>
+	     Date: Tue, 20 Mar 2007 01:40:34 +0100
+	     Message-ID: <9b18b3110703191740m6bf21942p6521f3016ed8092f@mail.gmail.com>
+     Branch: maint-5.8/perl
+	  !> regcomp.c t/op/pat.t
+____________________________________________________________________________

@@ -21,8 +21,7 @@
 2007-02-a - Adam Flott                      Last seen, 10th Sep
 2007-02-b - Adam Flott                      Last seen, 10th Sep
 2007-02-e - Martin Ryan                     Last seen, 11th Sep
-2007-02-j - Shawn M Moore                   Last seen, 15th Sep
-2007-11 - Shawn M Moore (aka Sartak)        (Chunk scheduled for splitting)
+2007-02-j - Shawn M Moore (aka Sartak)      Last seen, 15th Sep
 2007-12 - theorbtwo                         Last seen,  8th Sep
 2008-01 - Adam Flott                        Last seen,  9th Sep
 2008-02 - Spiros Denaxas                    Last seen,  9th Sep
@@ -38,6 +37,16 @@
 2007-02-g - ==> Nobody <== 20k
 2007-02-h - ==> Nobody <== 20k
 2007-02-i - ==> Nobody <== 20k
+2007-11-a - ==> Nobody <== 20k
+2007-11-b - ==> Nobody <== 20k
+2007-11-c - ==> Nobody <== 20k
+2007-11-d - ==> Nobody <== 20k
+2007-11-e - ==> Nobody <== 20k
+2007-11-f - ==> Nobody <== 20k
+2007-11-g - ==> Nobody <== 20k
+2007-11-h - ==> Nobody <== 20k
+2007-11-i - ==> Nobody <== 20k
+2007-11-j - ==> Nobody <== 683 bytes
 2008-09   - ==> Nobody <== 31k (and growing!)
 
 == NOTES ==

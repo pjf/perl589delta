@@ -1,0 +1,534 @@
+[ 32347] By: nicholas				   on 2007/11/16  22:50:43
+	Log: Integrate:
+	     [ 31184]
+	     Partial reversion of bignum-0.21 to get tests to pass again.
+	     
+	     [ 31191]
+	     Subject: [PATCH] Fix bignum-0.21
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Wed, 9 May 2007 21:05:52 -0400
+	     Message-ID: <1ff86f510705091805n37c4137u16a35ca27810979f@mail.gmail.com>
+	     
+	     [ 31269]
+	     Subject: Re: perl pragma [PATCH]
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Wed, 23 May 2007 21:35:58 +0000
+	     Message-Id: <200705232135.59546@bloodgate.com>
+	     
+	     [ 31368]
+	     Subject: Re: integer vs. bigint [PATCH]
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Mon, 11 Jun 2007 19:31:16 +0200
+	     Message-Id: <200706111931.17616@bloodgate.com>
+	     
+	     [ 31403]
+	     Subject: bignum 0.22 take 4 (hex()/oct() overloading)
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Sat, 16 Jun 2007 14:33:47 +0200
+	     Message-Id: <200706161433.47489@bloodgate.com>
+	     
+	     [ 31450]
+	     Tels' patch to defer overloading of hex and oct,
+	     to avoid magic leaking and smoke failures under
+	     utf-8 locales
+	     
+	     [ 31479]
+	     Subject: Re: RFC: bigint et. al exporting PI method? [PATCH]
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Tue, 26 Jun 2007 20:56:45 +0200
+	     Message-Id: <200706262056.47311@bloodgate.com>
+	     
+	     [ 31480]
+	     Add an empty prototype to functions PI and e
+	     
+	     [ 31481]
+	     Revert change #31480. The PI and e functions can accept an argument.
+	     
+	     [ 31485]
+	     Subject: Re: Broken bignum tests [PATCH]
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Wed, 27 Jun 2007 19:15:45 +0200
+	     Message-Id: <200706271915.46068@bloodgate.com>
+	     
+	     [ 31679]
+	     Subject: [PATCH] fix typo in bigint POD
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Fri, 3 Aug 2007 12:06:01 +0200
+	     Message-Id: <200708031206.10365@bloodgate.com>
+     Branch: maint-5.8/perl
+	  +> lib/bignum/t/big_e_pi.t lib/bignum/t/bii_e_pi.t
+	  +> lib/bignum/t/bir_e_pi.t lib/bignum/t/in_effect.t
+	  +> lib/bignum/t/scope_f.t lib/bignum/t/scope_i.t
+	  +> lib/bignum/t/scope_r.t
+	  !> MANIFEST lib/bigint.pm lib/bignum.pm lib/bignum/t/bigint.t
+	  !> lib/bignum/t/bignum.t lib/bignum/t/bigrat.t
+	  !> lib/bignum/t/option_l.t lib/bigrat.pm lib/charnames.pm
+	  !> lib/utf8.pm lib/utf8_heavy.pl
+____________________________________________________________________________
+[ 32346] By: nicholas				   on 2007/11/16  22:11:27
+	Log: Integrate:
+	     [ 30880]
+	     Subject: [PATCH] Test for the qr// construct
+	     From: "Ævar Arnfjörð Bjarmason" <avarab@gmail.com>
+	     Date: Mon, 9 Apr 2007 20:36:58 +0000
+	     Message-ID: <51dd1af80704091336q335f0584o602b5e245bc210fe@mail.gmail.com>
+	     
+	     Includes add to the MANIFEST
+	     
+	     [ 30971]
+	     These test scripts probably wanted BEGIN blocks,
+	     not just blocks with "BEGIN:" labels.
+	     
+	     [ 31048]
+	     Subject: [PATCH t/base/num.t] Typo fix.
+	     From: Abigail <abigail@abigail.be>
+	     Date: Tue, 24 Apr 2007 00:48:26 +0200
+	     Message-ID: <20070423224826.GC544@abigail.nl>
+	     
+	     [ 31393]
+	     Subject: [PATCH] Show warning bits on failure in t/op/caller.t
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Fri, 15 Jun 2007 16:05:36 -0400
+	     Message-ID: <1ff86f510706151305j1ce8c46eib165ee9fad10b538@mail.gmail.com>
+	     
+	     [ 31435]
+	     Subject: [perl #43273] Enable lib/User/*.t on cygwin 
+	     From: Reini Urban (via RT) <perlbug-followup@perl.org>
+	     Date: Wed, 20 Jun 2007 16:22:48 -0700
+	     Message-ID: <rt-3.6.HEAD-1276-1182381767-470.43273-75-0@perl.org>
+	     
+	     [ 31438]
+	     Subject: [PATCH] cloexec.t works under Cygwin
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Wed, 20 Jun 2007 09:39:20 -0400
+	     Message-ID: <1ff86f510706200639t13f58ecbi286015713765c403@mail.gmail.com>
+     Branch: maint-5.8/perl
+	  +> t/op/qr.t
+	  !> MANIFEST lib/User/grent.t lib/User/pwent.t t/base/num.t
+	  !> t/comp/multiline.t t/op/caller.t t/op/exec.t t/run/cloexec.t
+____________________________________________________________________________
+[ 32345] By: nicholas				   on 2007/11/16  21:01:27
+	Log: Integrate:
+	     [ 30781]
+	     When dup'ing a filehandle, retain the :utf8 layer
+	     
+	     [ 30805]
+	     Don't use utf8.pm in the test (avoiding embedding utf8 in the test
+	     file), and use greek to test for something out of 8-bit latin, as
+	     Jarkko suggested. Everything flows.
+     Branch: maint-5.8/perl
+	  !> perlio.c t/io/dup.t
+____________________________________________________________________________
+[ 32343] By: nicholas				   on 2007/11/16  20:32:46
+	Log: Integrate:
+	     [ 30761]
+	     Make the warning "interpreted as function" a bit less annoying,
+	     and test it properly
+	     
+	     [ 31012]
+	     Eliminate Internals::inc_sub_generation, which nothing now calls.
+	     
+	     [ 31044]
+	     make initialisation of PL_sv_no etc unconditional
+	     
+	     [ 31051]
+	     Remove unnecessarily paranoid protection in pp_defined
+	     
+	     [ 31064]
+	     Subject: [PATCH] Move hash action constants to hv.h
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Tue, 24 Apr 2007 10:35:43 -0400
+	     Message-ID: <1ff86f510704240735t50cfc159g59b55726ac5ac64b@mail.gmail.com>
+	     
+	     [ 31295]
+	     Avoid calling SvEND() when SvPOKp() is not true.
+	     Remove an unneeded duplicate SvCUR_set() in Perl_sv_2pv_flags().
+     Branch: maint-5.8/perl
+	  !> hv.c hv.h perl.c sv.c t/lib/warnings/toke toke.c universal.c
+____________________________________________________________________________
+[ 32341] By: nicholas				   on 2007/11/16  19:45:53
+	Log: Integrate:
+	     [ 25261]
+	     Subject: [PATCH] Typos in *.p[lm]
+	     From: "Piotr Fusik" <pfusik@op.pl>
+	     Date: Sun, 31 Jul 2005 12:50:04 +0200
+	     Message-ID: <001401c595bd$dccb5d80$0bd34dd5@piec>
+	     
+	     [ 31159]
+	     Upgrade to Math::BigInt 1.86
+	     
+	     [ 31169]
+	     Upgrage to bignum-0.21 and Math-BigRat-0.19
+	     
+	     [ 31222]
+	     Subject: [PATCH] Math::BigInt v1.87
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Sun, 13 May 2007 14:34:11 +0000
+	     Message-Id: <200705131434.11992@bloodgate.com>
+	     
+	     Subject: Re: [PATCH] Math::BigInt v1.87 (take 2)
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Mon, 14 May 2007 15:41:36 +0000
+	     Message-Id: <200705141541.40678@bloodgate.com>
+	     
+	     Subject: Re: [PATCH] Math::BigInt v1.87 (take 3)
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Tue, 15 May 2007 19:02:54 +0000
+	     Message-Id: <200705151902.57372@bloodgate.com>
+	     
+	     [ 31253]
+	     Subject: Re: Smoke failures with blead@31225 (Linux) [PATCH]
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Mon, 21 May 2007 20:17:20 +0000
+	     Message-Id: <200705212017.23224@bloodgate.com>
+	     
+	     [ 31285]
+	     Subject: Re: [PATCH] Math::BigInt v1.87 take 5
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Sun, 27 May 2007 15:54:29 +0000
+	     Message-Id: <200705271554.32054@bloodgate.com>
+	     
+	     [ 31330]
+	     Subject: [PATCH] Math::BigInt v1.87 take 6
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Sat, 2 Jun 2007 13:40:45 +0000
+	     Message-Id: <200706021340.46806@bloodgate.com>
+	     
+	     [ 31364]
+	     Subject: pidigits benchmark and bpi() method in Math::BigFloat/Math::BigInt, take 7 [PATCH]
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Fri, 8 Jun 2007 19:29:41 +0200
+	     Message-Id: <200706081929.44888@bloodgate.com>
+	     
+	     [ 31365]
+	     Subject: Math::BigInt v1.87 take 8
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Sat, 9 Jun 2007 14:07:34 +0200
+	     Message-Id: <200706091407.36659@bloodgate.com>
+	     
+	     [ 31400]
+	     Subject: Math::BigInt take 9 (CORE::hex() vs. hex() in Calc.pm)
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Sat, 16 Jun 2007 13:43:45 +0200
+	     Message-Id: <200706161343.47110@bloodgate.com>
+	     
+	     [ 31449]
+	     Subject: [PATCH] Math::BigInt v1.87 take 10
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Fri, 22 Jun 2007 19:02:22 +0200
+	     Message-Id: <200706221902.22487@bloodgate.com>
+	     
+	     [ 31459]
+	     Subject: [Caffeine-Patch] Math::BigInt 1.87 take 11 (add batan2, fix batan, speedup bpi()
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Sat, 23 Jun 2007 15:30:49 +0200
+	     Message-Id: <200706231530.49865@bloodgate.com>
+	     
+	     [ 31478]
+	     Subject: Math::BigInt take 12 [PATCH]
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Tue, 26 Jun 2007 21:00:53 +0200
+	     Message-Id: <200706262100.54138@bloodgate.com>
+	     
+	     [ 31486]
+	     Subject: Math::BigFloat - fix bpi() and A [PATCH]
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Wed, 27 Jun 2007 18:34:14 +0200
+	     Message-Id: <200706271834.14904@bloodgate.com>
+	     
+	     [ 31509]
+	     Subject: FYI: Math::BigInt v1.87 released [PATCH]
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Sat, 30 Jun 2007 13:14:05 +0200
+	     Message-Id: <200706301314.07075@bloodgate.com>
+	     
+	     [ 31609]
+	     Subject: [PATCH] BigInt v1.88 take 1 (fix from_hex, from_oct, from_bin)
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Thu, 12 Jul 2007 19:11:01 +0200
+	     Message-Id: <200707121911.02528@bloodgate.com>
+	     
+	     [ 31629]
+	     Upgrade to Math-BigRat-0.20
+	     
+	     [ 31875]
+	     Subject: [PATCHES] various small Math::BigInt et. al. fixes
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Message-Id: <200709161123.14970@bloodgate.com>
+	     Date: Sun, 16 Sep 2007 11:23:14 +0200
+	     
+	     Subject: Re: [PATCHES] various small Math::BigInt et. al. fixes
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Message-Id: <200709161156.09071@bloodgate.com>
+	     Date: Sun, 16 Sep 2007 11:56:08 +0200
+	     
+	     [ 31879]
+	     Subject: [PATCH] fix bigint testsuite
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Sun, 16 Sep 2007 13:41:15 +0200
+	     Message-Id: <200709161341.15574@bloodgate.com>
+	     
+	     [ 31951]
+	     Subject: [PATCH] Re: BigInt bug with non-integer accuracy/precision
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Sat, 22 Sep 2007 11:33:34 +0200
+	     Message-Id: <200709221133.35110@bloodgate.com>
+     Branch: maint-5.8/perl
+	  +> lib/Math/BigInt/t/big_pi_e.t lib/Math/BigInt/t/round.t
+	  +> lib/Math/BigRat/t/biglog.t lib/Math/BigRat/t/bigroot.t
+	   - lib/Math/BigInt/t/fallback.t
+	  !> (integrate 30 files)
+____________________________________________________________________________
+[ 32340] By: nicholas				   on 2007/11/16  19:04:25
+	Log: Integrate:
+	     [ 30447]
+	     Compilation warnings fixes by Jerry D. Hedden
+	     
+	     [ 30774]
+	     Subject: [PATCH] stop the cargo cult of (MEM_SIZE)~0
+	     From: Jarkko Hietaniemi <jhi@cc.hut.fi>
+	     Date: Tue, 27 Mar 2007 15:07:52 +0300 (EEST)
+	     Message-Id: <200703271207.l2RC7qOC443040@kosh.hut.fi>
+	     
+	     [ 30900]
+	     Silence the g++ warnings "right-hand operand of comma has no effect"
+	     
+	     [ 31092]
+	     strxfrm() returns a size_t, not a ssize_t. See:
+	     
+	     Subject: locale.c usage of strxfrm
+	     From: "Devin Heitmueller" <devin.heitmueller@gmail.com>
+	     Date: Fri, 20 Apr 2007 18:20:21 -0400
+	     Message-ID: <412bdbff0704201520i7aac0189n74f0cef5c5213f41@mail.gmail.com>
+	     
+	     [ 31248]
+	     Subject: [PATCH] pp_sys.c: gethostbyaddr
+	     From: Jarkko Hietaniemi <jhi@iki.fi>
+	     Date: Mon, 21 May 2007 00:02:38 -0400
+	     Message-ID: <465119DE.6040208@iki.fi>
+     Branch: maint-5.8/perl
+	  !> handy.h locale.c perlio.c pp.c pp_sys.c universal.c util.c
+	  !> xsutils.c
+____________________________________________________________________________
+[ 32339] By: nicholas				   on 2007/11/16  17:09:48
+	Log: Integrate:
+	     [ 30561]
+	     Subject: [PATCH] inform constant.pm about UNITCHECK
+	     From: "Joshua ben Jore" <twists@gmail.com>
+	     Date: Tue, 13 Mar 2007 00:35:11 -0700
+	     Message-ID: <dc5c751d0703130035o1a739f45g1ea559d110bd5dd8@mail.gmail.com>
+	     
+	     [ 30824]
+	     Subject: [PATCH] Symbian sync
+	     From: Jarkko Hietaniemi <jhi@iki.fi>
+	     Date: Sat, 31 Mar 2007 15:30:09 -0400
+	     Message-ID: <460EB6C1.4020406@iki.fi>
+	     
+	     [ 30980]
+	     Subject: Re: new C3 MRO patch
+	     From: "Brandon Black" <blblack@gmail.com>
+	     Date: Tue, 17 Apr 2007 13:14:36 -0500
+	     Message-ID: <84621a60704171114k29b0460el5b08ce5185d55ed5@mail.gmail.com>
+	     
+	     [ 31963]
+	     Subject: Trans.: CPAN Upload: S/SA/SAPER/constant-1.11.tar.gz
+	     From: Sébastien Aperghis-Tramoni <maddingue@free.fr>
+	     Date: Tue, 25 Sep 2007 11:55:48 +0200
+	     Message-ID: <1190714148.46f8db2431f0c@imp.free.fr>
+	     
+	     [ 32227]
+	     Subject: Fwd: CPAN Upload: S/SA/SAPER/constant-1.12.tar.gz
+	     From: Sébastien Aperghis-Tramoni <maddingue@free.fr>
+	     Message-Id: <7B502F45-AB25-4EFF-8147-A02D8E2E9E21@free.fr>
+	     Date: Tue, 6 Nov 2007 02:49:51 +0100
+	     
+	     [ 32338]
+	     UNITCHECK is only a keyword post 5.009, so to allow safe upgrades of
+	     constant.pm on 5.8.x and earlier don't treat it as something special.
+     Branch: maint-5.8/perl
+	  !> lib/constant.pm lib/constant.t
+____________________________________________________________________________
+[ 32337] By: nicholas				   on 2007/11/16  16:16:55
+	Log: Integrate:
+	     [ 26970]
+	     Subject: Re: Make Passive mode the default for Net::FTP
+	     From: Gisle Aas <gisle@ActiveState.com>
+	     Date: 27 Jan 2006 07:21:16 -0800
+	     Message-ID: <lrslr91ytv.fsf@caliper.activestate.com>
+	     
+	     [ 27211]
+	     Fix precedence.
+	     
+	     Subject: [PATCH] 5.8.8: Debian patches
+	     From: "Brendan O'Dea" <bod@debian.org>
+	     Date: Sat, 11 Feb 2006 00:37:15 +1100
+	     Message-ID: <20060210133715.GA6826@londo.c47.org>
+	     
+	     [ 30576]
+	     Patch by Sébastien Aperghis-Tramoni to avoid encoding
+	     everything that goes through Net::Cmd as UTF-8
+	     (regression as of Net::Cmd 2.27, see CPAN RT #24835)
+	     
+	     [ 31460]
+	     That test too should be skipped in the core on EBCDIC platforms
+	     (because it requires Convert::EBCDIC)
+	     
+	     [ 31463]
+	     Upgrade to libnet 1.21
+	     
+	     [ 31464]
+	     Rename README and Changes for more readability
+	     
+	     [ 31844]
+	     Upgrade to libnet 1.22 (with some help by Jerry Hedden)
+     Branch: maint-5.8/perl
+	  +> lib/Net/Changes lib/Net/Hostname.pm.eg lib/Net/README
+	   - lib/Net/Changes.libnet lib/Net/Hostname.eg
+	   - lib/Net/README.libnet
+	  !> MANIFEST Porting/Maintainers.pl lib/Net/Cmd.pm
+	  !> lib/Net/Config.pm lib/Net/Domain.pm lib/Net/FTP.pm
+	  !> lib/Net/FTP/A.pm lib/Net/FTP/I.pm lib/Net/FTP/dataconn.pm
+	  !> lib/Net/NNTP.pm lib/Net/Netrc.pm lib/Net/POP3.pm
+	  !> lib/Net/SMTP.pm lib/Net/Time.pm lib/Net/libnetFAQ.pod
+	  !> lib/Net/t/datasend.t
+____________________________________________________________________________
+[ 32336] By: nicholas				   on 2007/11/16  15:19:23
+	Log: Integrate:
+	     [ 24688]
+	     Subject: [PATCH] Run ICMP ping tests on Windows as long as we have admin privs
+	     From: "Jan Dubois" <jand@ActiveState.com>
+	     Date: Mon, 18 Apr 2005 20:16:24 -0700
+	     Message-Id: <200504190311.j3J3BM4p001792@smtp3.ActiveState.com>
+	     
+	     Subject: RE: [PATCH] Run ICMP ping tests on Windows as long as we have admin privs
+	     From: "Jan Dubois" <jand@ActiveState.com>
+	     Date: Tue, 19 Apr 2005 01:49:51 -0700
+	     Message-Id: <200504190844.j3J8inkW032630@smtp3.ActiveState.com>
+	     
+	     (There was no reply from Rob Brown in over a month, so commit to blead
+	     for now.  I'll email him again...)
+	     
+	     [ 24699]
+	     Subject: Re: [PATCH] Improved ICMP_UNREACHABLE handling in Net::Ping
+	     From: Gisle Aas <gisle@activestate.com>
+	     Date: 03 Jun 2005 09:17:44 -0700
+	     Message-ID: <lry89rfm8n.fsf_-_@caliper.activestate.com>
+	     
+	     [ 25261]
+	     Subject: [PATCH] Typos in *.p[lm]
+	     From: "Piotr Fusik" <pfusik@op.pl>
+	     Date: Sun, 31 Jul 2005 12:50:04 +0200
+	     Message-ID: <001401c595bd$dccb5d80$0bd34dd5@piec>
+	     
+	     [ 26367]
+	     Subject: [perl #37915] Bad select error handling in Net::Ping 
+	     From: alexander_bluhm@genua.de (via RT) <perlbug-followup@perl.org>
+	     Date: Tue, 13 Dec 2005 10:44:47 -0800
+	     Message-ID: <rt-3.0.11-37915-125655.19.2646201463531@perl.org>
+	     
+	     [ 26368]
+	     More general fix for bug [perl #37915]
+	     Make Net::Ping::mselect return undef on error instead of -1.
+	     
+	     [ 26540]
+	     POSIX now declares missing constants as sub ... ();, so Net::Ping
+	     needs to define them with a prototype to match.
+	     
+	     [ 31517]
+	     Subject: [PATCH-revised] Address 250_ping_hires.t failure
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Sun, 1 Jul 2007 15:23:37 -0400
+	     Message-ID: <1ff86f510707011223u7557fc53m9df980815479892a@mail.gmail.com>
+	     
+	     [ 31529]
+	     Subject: RE: [PATCH] lib/Net/Ping/t/500_ping_icmp.t requires admin
+	     From: "Jan Dubois" <jand@activestate.com>
+	     Date: Mon, 2 Jul 2007 14:21:06 -0700
+	     Message-ID: <007901c7bcee$e7b5d400$b7217c00$@com>
+	     
+	     [ 31669]
+	     Upgrade to Net-Ping-2.32
+	     
+	     [ 31845]
+	     Upgrade to Net::Ping 2.33, with help from Jerry Hedden
+     Branch: maint-5.8/perl
+	  !> lib/Net/Ping.pm lib/Net/Ping/Changes
+	  !> lib/Net/Ping/t/110_icmp_inst.t lib/Net/Ping/t/250_ping_hires.t
+	  !> lib/Net/Ping/t/500_ping_icmp.t
+____________________________________________________________________________
+[ 32333] By: nicholas				   on 2007/11/16  12:46:24
+	Log: Integrate:
+	     [ 30148]
+	     Subject: [PATCH] current status on Unicode Regular Expressions
+	     From: SADAHIRO Tomoyuki <bqw10602@nifty.com>
+	     Date: Sat, 03 Feb 2007 17:01:52 +0900
+	     Message-Id: <20070203170135.3B43.BQW10602@nifty.com>
+	     
+	     [ 31744]
+	     Changes to unicore files to fix issues with certain quotation mark 
+	     characters.  Fixes are noted at the Unicode web site 
+	     <http://www.unicode.org/versions/corrigendum6.html>.  This fix
+	     was pointed out by Jarkko.
+     Branch: maint-5.8/perl
+	  !> lib/unicore/BidiMirroring.txt lib/unicore/UnicodeData.txt
+	  !> lib/unicore/mktables pod/perlunicode.pod t/op/pat.t
+____________________________________________________________________________
+[ 32331] By: nicholas				   on 2007/11/15  23:12:58
+	Log: Update Changes.
+     Branch: maint-5.8/perl
+	   ! Changes patchlevel.h
+____________________________________________________________________________
+[ 32328] By: nicholas				   on 2007/11/15  12:11:24
+	Log: Integrate:
+	     [ 29578]
+	     Subject: [PATCH 5.8.8] Fixes for the test suite on OS/2
+	     From: Ilya Zakharevich <nospam-abuse@ilyaz.org>
+	     Date: Wed, 13 Dec 2006 18:32:22 -0800
+	     Message-ID: <20061214023222.GA29084@powdermilk.math.berkeley.edu>
+	     
+	     [ 30544]
+	     ExtUtils::Manifest fix-ups for VMS:
+	     - don't use multiple dots in .bak filenames
+	     - remove VMS-specific clobbering of keys with values in mkmanifest()
+	     patch also in RT at <http://rt.cpan.org//Ticket/Display.html?id=25377>
+	     
+	     [ 30840]
+	     Subject: [PATCH] ext\ExtUtils\t\Embed.t fails test when upgrading a perl with different core headers.
+	     From: demerphq <demerphq@gmail.com>
+	     Date: Wed, 4 Apr 2007 03:17:21 +0200
+	     Message-ID: <9b18b3110704031817l37c034d3gf3d2b1cd205ac517@mail.gmail.com>
+	     
+	     [ 31298]
+	     Silence the warning "Can't locate auto/POSIX/autosplit.ix in @INC"
+	     when building the POSIX extension
+	     
+	     [ 31534]
+	     VMS syntax nit in new MakeMaker test.
+	     
+	     [ 31645]
+	     Update ExtUtils::Install, EU::Installed and EU::Packlist to the latest CPAN version 1.43
+	     
+	     [ 31707]
+	     Strip whitespace from the beginning of static_ext:
+	     
+	     Subject: [PATCH] CYG02lib-ExtUtils-Embed.patch
+	     From: Reini Urban <rurban@x-ray.at>
+	     Date: Tue, 14 Aug 2007 08:21:11 +0200
+	     Message-Id: <46C149D7.5060307@x-ray.at>
+	     
+	     [ 31724]
+	     Bump version to 1.26_01 after #31707.
+	     
+	     [ 31837]
+	     Upgrade to ExtUtils::Install 1.44
+	     
+	     [ 32327]
+	     Bump the VERSION on ExtUtils::Embed.
+     Branch: maint-5.8/perl
+	  !> lib/ExtUtils/Embed.pm lib/ExtUtils/Install.pm
+	  !> lib/ExtUtils/Installed.pm lib/ExtUtils/Manifest.pm
+	  !> lib/ExtUtils/Packlist.pm lib/ExtUtils/t/Embed.t
+	  !> lib/ExtUtils/t/Install.t lib/ExtUtils/t/Installed.t
+	  !> lib/ExtUtils/t/Manifest.t lib/ExtUtils/t/cd.t
+	  !> lib/ExtUtils/t/eu_command.t
+____________________________________________________________________________

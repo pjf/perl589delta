@@ -1,0 +1,525 @@
+[ 32450] By: nicholas				   on 2007/11/22  17:45:52
+	Log: Integrate:
+	     [ 32431]
+	     Subject: RE: Net/Ping/t/510_ping_udp.t fails on Windows Vista
+	     From: "Steve Hay" <SteveHay@planit.com>
+	     Date: Wed, 21 Nov 2007 09:45:57 -0000
+	     Message-ID: <1B32FF956ABF414C9BCE5E487A1497E7DC885B@ukmail02.planit.group>
+	     
+	     [ 32444]
+	     Add the Changes file for Win32.pm
+	     
+	     [ 32445]
+	     Upgrade to Win32 0.34
+     Branch: maint-5.8/perl
+	  +> ext/Win32/Changes
+	  !> MANIFEST ext/Win32/Win32.pm
+____________________________________________________________________________
+[ 32449] By: nicholas				   on 2007/11/22  17:31:11
+	Log: Integrate:
+	     [ 32446]
+	     5.00404 compile fix from Slaven Rezic.
+	     
+	     [ 32447]
+	     2.18 release.
+     Branch: maint-5.8/perl
+	  !> ext/Storable/ChangeLog ext/Storable/Storable.pm
+	  !> ext/Storable/Storable.xs
+____________________________________________________________________________
+[ 32442] By: nicholas				   on 2007/11/21  18:12:52
+	Log: Integrate:
+	     [ 32427]
+	     Update the files that need to be read/write in makerel, removing one
+	     exterminated file, one file that is now a dummy, and adding in various
+	     files that are actually read/write because they are regenerated from
+	     source files. Change the type of regcharclass.h to read/write in
+	     Perforce as it is auto-generated. (And all other auto-generated files
+	     are read/write. There's some irony here - the only read/write files
+	     are the ones you shouldn't edit. All the ones you can edit are read
+	     only.)
+	     
+	     [ 32439]
+	     Safe.pm is actually not under ext/Safe
+	     
+	     [ 32441]
+	     Make genlog 'unexpand -a' all the spaces into tabs, which results in
+	     smaller Changes files.
+     Branch: maint-5.8/perl
+	  !> Porting/Maintainers.pl Porting/genlog Porting/makerel
+____________________________________________________________________________
+[ 32438] By: nicholas				   on 2007/11/21  17:52:26
+	Log: Akin to change 32433, run unexpand -a on all the 5.8 Changes files,
+	     which were also a jumbled mix of tabs and spaces. Now they're all tabs.
+	     The diff may look huge, but run diff -db and you'll see that it's all
+	     whitespace.
+     Branch: maint-5.8/perl
+	   ! Changes Changes5.8.1 Changes5.8.2 Changes5.8.3 Changes5.8.4
+	   ! Changes5.8.5 Changes5.8.6 Changes5.8.7 Changes5.8.8
+____________________________________________________________________________
+[ 32437] By: nicholas				   on 2007/11/21  17:50:11
+	Log: Integrate:
+	     [ 32401]
+	     Subject: rc1 patch - delta, comment nits
+	     From: Jim Cromie <jim.cromie@gmail.com>
+	     Date: Sun, 18 Nov 2007 18:01:13 -0700
+	     Message-ID: <4740E059.30808@gmail.com>
+	     
+	     [ 32410]
+	     Subject: [Patch] perlboot.pod / added semicolons
+	     From: "Spiros Denaxas" <spiros@lokku.com>
+	     Date: Mon, 19 Nov 2007 23:43:11 +0000
+	     Message-ID: <bba689ec0711191543l31c7b3faw690d5fd7c5574823@mail.gmail.com>
+	     
+	     [ 32426]
+	     Note that traces of PL_na cling on in dark corners of the source code.
+	     Exterminate! Exterminate! Exterminate!
+	     
+	     [ 32433]
+	     Run unexpand -a on all the Changes files, which were a jumbled mix of
+	     tabs and spaces. Now they're all tabs, and about 1300K smaller.
+	     The diff may look huge, but run diff -db and you'll see that it's all
+	     whitespace.
+	     
+	     [ 32434]
+	     Update copyright in the README
+     Branch: maint-5.8/perl
+	  !> Changes5.000 Changes5.001 Changes5.002 Changes5.003
+	  !> Changes5.004 Changes5.005 Changes5.6 Changes5.8 README
+	  !> pod/perlboot.pod pod/perltodo.pod sv.c
+____________________________________________________________________________
+[ 32436] By: nicholas				   on 2007/11/21  16:35:42
+	Log: Patch from Steve Hay to merge in the parts of change 26379 that
+	     define, declare and initialise OSVERSIONINFO g_osver.
+	     (26379 can't be merged complete as it adds to the middle of a
+	     structure, and hence isn't binary compatible)
+     Branch: maint-5.8/perl
+	   ! win32/win32.c
+____________________________________________________________________________
+[ 32435] By: nicholas				   on 2007/11/21  16:04:47
+	Log: Integrate:
+	     [ 31347]
+	     Stop VC++ from warning "all references to 'SHELL32.dll' discarded
+	     by /OPT:REF" by removing the only reference to a SHELL32.dll function
+	     (namely, CommandLineToArgvW(), called from win32_argv2utf8(), which
+	     isn't actually used anywhere so delete it).
+	     
+	     That then caused the warning "/DELAYLOAD:shell32.dll ignored; no
+	     imports found from shell32.dll", so remove that /DELAYLOAD option too.
+     Branch: maint-5.8/perl
+	  !> win32/Makefile win32/makefile.mk win32/win32.c win32/win32.h
+	  !> win32/wince.c
+____________________________________________________________________________
+[ 32424] By: nicholas				   on 2007/11/20  16:06:10
+	Log: Integrate:
+	     [ 31073]
+	     Subject: Re: [Andreas J. Koenig] C3 MRO breaks Params::Util and Graph
+	     From: "Brandon Black" <blblack@gmail.com>
+	     Date: Tue, 24 Apr 2007 07:58:44 -0500
+	     Message-ID: <84621a60704240558q7ff65863l803c6f9b9b8ca4a6@mail.gmail.com>
+	     
+	     [ 31074]
+	     Move the require at the top of the file.
+	     Else, Test::More has test failures.
+	     
+	     [ 31075]
+	     Remove a now redundant require
+	     
+	     [ 31076]
+	     overload must not load XS modules at compile time, or perl
+	     doesn't compile.
+	     overload must not clobber $! or $@ behind the scenes when
+	     loading an XS module.
+     Branch: maint-5.8/perl
+	  !> ext/DynaLoader/t/DynaLoader.t lib/overload.pm
+____________________________________________________________________________
+[ 32422] By: nicholas				   on 2007/11/20  15:42:05
+	Log: Integrate:
+	     [ 31784]
+	     Add Win32 makefile option to link all extensions statically
+	     
+	     Subject: [PATCH-at31768] RE: [PATCH at 31761] RE: MakeMaker + static misbehaviour
+	     From: "Konovalov, Vadim Vladimirovich (Vadim)** CTR **" <vkonovalov@alcatel-lucent.com>
+	     Date: Fri, 31 Aug 2007 08:56:47 +0200
+	     Message-ID: <D16F05D0CAAA234BA2B753B80DE6100D448945@DEEXC1U02.de.lucent.com>
+	     
+	     (with a couple of tweaks to comments in Makefile, exclusion of one more
+	     module (Hash/Utils) from the "all static" build option, plus the same
+	     changes in makefile.mk)
+	     
+	     [ 32004]
+	     Subject: Re: [patch] clean out remnants of DEBUGGING_OPS (was opcode op_type:9)
+	     From: Jim Cromie <jim.cromie@gmail.com>
+	     Date: Mon, 01 Oct 2007 18:59:43 -0600
+	     Message-ID: <470197FF.5040709@gmail.com>
+	     
+	     [ 32066]
+	     Do the same as #32061 for Win32, which also fixes a static linking
+	     build problem with Hash/Util/FieldHash
+     Branch: maint-5.8/perl
+	  !> win32/FindExt.pm win32/Makefile win32/Makefile.ce
+	  !> win32/buildext.pl win32/makefile.mk
+____________________________________________________________________________
+[ 32421] By: nicholas				   on 2007/11/20  15:23:54
+	Log: Integrate:
+	     [ 31523]
+	     $Config{useshrplib} should be 'true' rather than 'yes' when using
+	     a shared perl library
+	     
+	     [ 31526]
+	     Correct a couple more cases of $Config{useshrplib}
+	     
+	     [ 31533]
+	     Replace C<shrplib='define'> with C<useshrplib='true'> on VMS.
+     Branch: maint-5.8/perl
+	  !> NetWare/config.wc configure.com hints/uts.sh
+	  !> lib/ExtUtils/MM_Unix.pm vms/genconfig.pl win32/config.bc
+	  !> win32/config.ce win32/config.gc win32/config.vc
+	  !> win32/config.vc64
+____________________________________________________________________________
+[ 32419] By: nicholas				   on 2007/11/20  14:28:43
+	Log: Integrate:
+	     [ 31355]
+	     Remove dead Perl_sys_intern_clear() from wince.c
+	     
+	     [ 31356]
+	     Change 31347 should also have removed win32_free_argvw()
+	     because it now isn't used anywhere.
+	     
+	     [ 31426]
+	     Subject: Re: Net::SMTP can't send large messages with bleadperl
+	     From: demerphq <demerphq@gmail.com>
+	     Date: Wed, 20 Jun 2007 15:22:31 +0200
+	     Message-ID: <9b18b3110706200622o344c417apbd50468c6e5eb533@mail.gmail.com>
+	     
+	     [ 31427]
+	     Change #31426 should also be applied to the windows CE version
+	     
+	     [ 31428]
+	     Change #31426 should also be applied to the PERL_IMPLICIT_SYS
+	     version of ioctl()
+	     
+	     [ 31466]
+	     Revert #30197 and #30219, which #31464 has just made redundant
+	     
+	     [ 31539]
+	     Add Borland linker option to not generate .map files
+	     (They are not generated by default by VC++ or MinGW, and there
+	     doesn't seem to be any need for them.)
+	     
+	     [ 31569]
+	     Some Win32 Config fixes for patchlevel and perl_patchlevel:
+	     - Set $Config{patchlevel} to PERL_VERSION (it was previously blank
+	     because it was wrongly being set from PATCHLEVEL, which was blank)
+	     - Set $Config{perl_patchlevel} and $Config{PERL_PATCHLEVEL} to the
+	     value in the top-level ".patch" file if it exists (the former was
+	     previously not set, while the latter was previously wrongly set to
+	     PERL_VERSION)
+	     
+	     [ 31742]
+	     Use -D_CRT_NONSTDC_NO_DEPRECATE rather than -wd4996 to suppress warnings
+	     about POSIX CRT function names being deprecated in VC8
+	     (-wd4996 suppresses all deprecated function warnings, so is more
+	     wide-ranging than is required)
+	     
+	     [ 31761]
+	     Add support for Visual C++ 2008 Express Edition (Beta 2)
+     Branch: maint-5.8/perl
+	  !> README.win32 makedef.pl pod/perltodo.pod win32/Makefile
+	  !> win32/config.bc win32/config.ce win32/config.gc
+	  !> win32/config.vc win32/config.vc64 win32/config_sh.PL
+	  !> win32/makefile.mk win32/perlhost.h win32/win32.c
+	  !> win32/win32sck.c win32/wince.c win32/wincesck.c
+____________________________________________________________________________
+[ 32417] By: nicholas				   on 2007/11/20  13:39:23
+	Log: Integrate:
+	     [ 31301]
+	     Subject: Re: localising hash element by variable
+	     From: Bo Lindbergh <blgl@hagernas.com>
+	     Date: Mon, 28 May 2007 20:26:00 +0200
+	     Message-Id: <BC2C451F-B286-4D38-923E-E3B473F7B5E1@hagernas.com>
+	     
+	     [ 31311]
+	     Subject: Re: localising hash element by variable 
+	     From: hv@crypt.org
+	     Date: Wed, 30 May 2007 13:21:15 +0100
+	     Message-Id: <200705301221.l4UCLFwf010411@zen.crypt.org>
+	     
+	     [ 31313]
+	     blead segfaults on local *@; eval {1} because ERRSV assumes that
+	     GvSV(PL_errgv) is always non-NULL. That stopped being the case with
+	     change 25009 (ish) - when we stopped automatically creating a(n unused)
+	     SV at GV creation time.
+     Branch: maint-5.8/perl
+	  !> scope.c t/op/local.t
+____________________________________________________________________________
+[ 32416] By: nicholas				   on 2007/11/20  12:43:02
+	Log: Integrate:
+	     [ 29266]
+	     Embed manifest files in EXEs and DLLs when building with VC++ 8.x
+	     
+	     See the thread starting here for details:
+	     http://www.xray.mpe.mpg.de/mailing-lists/perl5-porters/2006-11/msg00398.html
+	     
+	     (Still need to do something for Module::Build somtime...)
+	     
+	     [ 30878]
+	     Subject: [PATCH] Restore Win64 compilation with the Windows Platform SDK
+	     From: Jan Dubois <jand@ActiveState.com>
+	     Date: Mon, 09 Apr 2007 17:27:17 -0700
+	     Message-ID: <4kll13df3tndn8alp54gi9ur9jmq063aij@4ax.com>	
+	     
+	     [ 30970]
+	     Subject: [PATCH] Fix kill(0, $pid) on Windows
+	     From: "Jan Dubois" <jand@activestate.com>
+	     Date: Mon, 16 Apr 2007 17:35:48 -0700
+	     Message-ID: <01df01c78088$59718d30$0c54a790$@com>
+	     
+	     Fixes breakage caused by #29605.
+	     
+	     [ 30973]
+	     Add a test for the bug fixed by #30970
+	     
+	     [ 30979]
+	     Subject: [PATCH] Allow sending SIGINT to child processes on Windows *if* they are running Perl
+	     From: "Jan Dubois" <jand@activestate.com>
+	     Date: Mon, 16 Apr 2007 17:52:25 -0700
+	     Message-ID: <01e301c7808a$ac0cca30$04265e90$@com>
+	     
+	     [ 31054]
+	     Subject: [perl #42648] [PATCH] crash in win32/VMem.h when out of memory 
+	     From: "Devin Heitmueller" (via RT) <perlbug-followup@perl.org>
+	     Date: Fri, 20 Apr 2007 14:49:08 -0700
+	     Message-ID: <rt-3.6.HEAD-30201-1177105747-239.42648-75-0@perl.org>
+	     
+	     [ 31211]
+	     Subject: [PATCH] Restore Windows NT support
+	     From: "Jan Dubois" <jand@activestate.com>
+	     Date: Fri, 11 May 2007 18:25:39 -0700
+	     Message-ID: <02d101c79434$743be100$5cb3a300$@com>
+	     
+	     [ 31213]
+	     Older versions of windres interpret "-I" as the input format,
+	     so use the long option name "--include-dir" instead.
+	     
+	     [ 31271]
+	     Fix the ext/IO/t/io_sock.t failure when built with VC++ 2005
+	     
+	     Unknown to me win32/win32.h was defining USE_FIXED_OSFHANDLE, which
+	     arranged for a black magic fix to MSVCRT.DLL's _open_osfhandle() to
+	     be used. It seems that this is inappropriate for VC++ versions later
+	     than 6.x, since they don't use that DLL: simply not defining that
+	     symbol makes the io_sock.t failure go away.
+	     
+	     (Compare change #29233, which similarly disabled the fix to
+	     MSVCRT.DLL's read() for VC++ versions later than 6.x.)
+	     
+	     [ 31300]
+	     win32/makefile.mk doesn't support GSAR's old dmake (because of
+	     the use of || and && in conditional expressions, which that old
+	     dmake doesn't understand), so stop with a helpful error message
+	     if such a dmake is being used.
+	     
+	     There is now no need to have all the clutter of trying to support
+	     different backslash and newline semantics, so ditch that too.
+	     
+	     [ 31343]
+	     Stop VC7 and VC8 complaining about the DESCRIPTION statement
+	     in perldll.def (it isn't supported any more).
+	     
+	     [ 31344]
+	     Stop VC7 and VC8 warning about overriding /DPERLDLL with /UPERLDLL
+	     when compiling perlmain.c, and don't supply /DPERLDLL twice when
+	     compiling perlmainst.c
+     Branch: maint-5.8/perl
+	  +> t/op/kill0.t
+	  !> MANIFEST README.win32 makedef.pl win32/Makefile
+	  !> win32/makefile.mk win32/perllib.c win32/vdir.h win32/vmem.h
+	  !> win32/win32.c win32/win32.h
+____________________________________________________________________________
+[ 32413] By: nicholas				   on 2007/11/20  10:40:21
+	Log: Integrate:
+	     [ 31098]
+	     Subject: [PATCH] Cargo-cult fix for an AIX build problem
+	     From: "Jan Dubois" <jand@activestate.com>
+	     Date: Thu, 26 Apr 2007 17:02:01 -0700
+	     Message-ID: <048b01c7885f$48862510$d9926f30$@com>
+	     
+	     [ 31304]
+	     Revert change #30530, following Jan's advice
+	     
+	     [ 31366]
+	     Subject: Re: [PATCH-at-31365] (was - configpm frustrations)
+	     From: Vadim <vadim@vkonovalov.ru>
+	     Date: Mon, 11 Jun 2007 19:19:31 +0400
+	     Message-ID: <466D6803.1020808@vkonovalov.ru>
+	     
+	     [ 31591]
+	     Subject: [PATCH] 'make veryclean' still dirty
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Wed, 11 Jul 2007 20:06:39 -0400
+	     Message-ID: <1ff86f510707111706g7bfe8306o3c913409a307567c@mail.gmail.com>
+	     
+	     [ 31595]
+	     Revert part of #31591
+	     
+	     [ 31598]
+	     Subject: [PATCH] Re: [PATCH] 'make veryclean' still dirty
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Thu, 12 Jul 2007 10:49:29 -0400
+	     Message-ID: <1ff86f510707120749v3b4e12b4uf35d3673cce639f0@mail.gmail.com>
+	     
+	     [ 31658]
+	     Allow TEST_FILES make var to be used to pass an argument list through to harness when using the test_harness target.
+	     
+	     This allows things like 
+	     
+	     make test_harness TEST_FILES='-re x2p'
+	     
+	     which will run any test files that match the string 'x2p'. As x2p is the last test to be run this is kinda useful.
+	     
+	     [ 31979]
+	     Subject: [PATCH] No more ld2 and perlld under Cygwin
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Tue, 25 Sep 2007 10:45:47 -0400
+	     Message-ID: <1ff86f510709250745s1d17ae54y6403711e00b306a0@mail.gmail.com>
+     Branch: maint-5.8/perl
+	  !> Makefile.SH configpm x2p/Makefile.SH
+____________________________________________________________________________
+[ 32409] By: nicholas				   on 2007/11/19  18:38:44
+	Log: Integrate:
+	     [ 31745]
+	     bye bye charsize
+	     it is^Wwas always 1
+     Branch: maint-5.8/perl
+	  !> Configure NetWare/config.wc Porting/Glossary Porting/config.sh
+	  !> plan9/config_sh.sample uconfig.sh win32/config.bc
+	  !> win32/config.ce win32/config.gc win32/config.vc
+	  !> win32/config.vc64
+____________________________________________________________________________
+[ 32408] By: nicholas				   on 2007/11/19  18:18:27
+	Log: Integrate:
+	     [ 31232]
+	     Subject: [PATCH] Configure (and Makefile.SH): remove ODBM_File early if c++ (this time even with the Configure bits)
+	     From: Jarkko Hietaniemi <jhi@cc.hut.fi>
+	     Date: Wed, 16 May 2007 05:33:14 +0300 (EEST)
+	     Message-Id: <200705160233.l4G2XEET143034@kosh.hut.fi>
+	     
+	     [ 31323]
+	     Subject: [PATCH] Configure: O_NONBLOCK test uses fork() and pipe()
+	     From: Jarkko Hietaniemi <jhi@cc.hut.fi>
+	     Date: Fri, 1 Jun 2007 04:31:03 +0300 (EEST)
+	     Message-Id: <200706010131.l511V3kv417484@kosh.hut.fi>
+	     
+	     [ 31373]
+	     Subject: [PATCH] Configure: Erroneous C++ message
+	     From: Andy Dougherty <doughera@lafayette.edu>
+	     Date: Wed, 13 Jun 2007 14:33:54 -0400 (EDT)
+	     Message-ID: <Pine.LNX.4.64.0706131428510.18715@fractal.phys.lafayette.edu>
+	     
+	     [ 31375]
+	     Subject: Re: vsprintf
+	     From: Andy Dougherty <doughera@lafayette.edu>
+	     Date: Wed, 13 Jun 2007 14:41:44 -0400 (EDT)
+	     Message-ID: <Pine.LNX.4.64.0706131434120.18715@fractal.phys.lafayette.edu>
+	     
+	     [ 31395]
+	     Subject: [PATCH] Re: [perl #43216] Perl 5.8.8 does not compile on Solaris 8 with-Dusethreads
+	     From: Andy Dougherty <doughera@lafayette.edu>
+	     Date: Fri, 15 Jun 2007 12:05:36 -0400 (EDT)
+	     Message-ID: <Pine.LNX.4.64.0706151203200.14068@fractal.phys.lafayette.edu>
+	     
+	     [ 31637]
+	     Expand tabs, add -A ccflags=-DMACRO to -h
+	     
+	     [ 31639]
+	     Subject: [PATCH] Various Gentoo Patches
+	     From: Marcus Holland-Moritz <mhx-perl@gmx.net>
+	     Date: Wed, 18 Jul 2007 17:17:58 +0200
+	     Message-ID: <20070718171758.77912ed4@r2d2>
+	     
+	     perl-noksh.patch - http://bugs.gentoo.org/show_bug.cgi?id=42665
+	     
+	     [ 31830]
+	     The question auctioned at YAPC::Europe-2007 in Vienna
+     Branch: maint-5.8/perl
+	  !> Configure Makefile.SH
+____________________________________________________________________________
+[ 32407] By: nicholas				   on 2007/11/19  17:58:02
+	Log: Integrate:
+	     [ 31181]
+	     Better help ; regen after backport #31114 ; RT#42886 ' in uname
+	     
+	     [ 31183]
+	     Typing is for secretaries
+	     
+	     [ 31187]
+	     Subject: [PATCH] Syntax error in Configure in blead
+	     From: "Ævar Arnfjörð Bjarmason" <avarab@gmail.com>
+	     Date: Wed, 9 May 2007 20:30:04 +0000
+	     Message-ID: <51dd1af80705091330h1bb9b508g2154b03868b71d07@mail.gmail.com>
+     Branch: maint-5.8/perl
+	  !> Configure
+____________________________________________________________________________
+[ 32406] By: nicholas				   on 2007/11/19  17:03:26
+	Log: Integrate:
+	     [ 31258]
+	     Subject: [PATCH] Forgotten Cygwin patch
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Tue, 22 May 2007 20:58:04 -0400
+	     Message-ID: <1ff86f510705221758p71418517ncb89fac289d74c35@mail.gmail.com>
+	     
+	     [ 31379]
+	     Subject: [PATCH] Less sed'ing in Cygwin Makefile.SHs
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Thu, 14 Jun 2007 08:13:29 -0400
+	     Message-ID: <1ff86f510706140513v5d3bb0e0l89dff31da83abfb9@mail.gmail.com>
+	     
+	     [ 31439]
+	     Subject: [perl #43265] cygwin/Makefile.SHs: miniperl -Ilib for a clean @INC 
+	     From: cygwin@cygwin.com (via RT) <perlbug-followup@perl.org>
+	     Date: Wed, 20 Jun 2007 09:39:31 -0700
+	     Message-ID: <rt-3.6.HEAD-1276-1182357570-46.43265-75-0@perl.org>
+	     
+	     [ 31568]
+	     Subject: [PATCH] cygwin path conversions, take 4
+	     From: "Reini Urban" <rurban@x-ray.at>
+	     Date: Sat, 7 Jul 2007 15:00:54 +0200
+	     Message-ID: <6910a60707070600xa8638eak3c3f20b20ccc093a@mail.gmail.com>
+	     
+	     [ 31708]
+	     Subject: [PATCH] Cygwin::mount_table, Cygwin::mount_flags
+	     From: Reini Urban <rurban@x-ray.at>
+	     Date: Tue, 14 Aug 2007 08:40:44 +0200
+	     Message-Id: <46C14E6C.8020809@x-ray.at>
+	     
+	     [ 31710]
+	     Subject: [PATCH] get rid of cygwin perlld and ld2
+	     From: Reini Urban <rurban@x-ray.at>
+	     Date: Tue, 14 Aug 2007 08:51:50 +0200
+	     Message-Id: <46C15106.9080003@x-ray.at>
+	     
+	     [ 31712]
+	     Delete the files which #31710 should have removed.
+	     
+	     [ 31737]
+	     Subject: [PATCH] Get Cwd->cwd() to work under Cygwin
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Wed, 15 Aug 2007 10:39:41 -0400
+	     Message-ID: <1ff86f510708150739q18fa5863s55010b538d11f77f@mail.gmail.com>
+	     
+	     Updated patch originally by Reini Urban.
+	     
+	     [ 31760]
+	     Subject: Re: [PATCH] Cygwin::mount_table, Cygwin::mount_flags
+	     From: "Yitzchak Scott-Thoennes" <sthoenna@efn.org>
+	     Date: Thu, 16 Aug 2007 13:25:53 -0700 (PDT)
+	     Message-ID: <52892.64.81.167.122.1187295953.squirrel@webmail.efn.org>
+	     
+	     [ 31773]
+	     Following Jan's advice, remove Cygwin::is_textmount(),
+	     which duplicates the functionality of is_binmount().
+     Branch: maint-5.8/perl
+	   - cygwin/ld2.in cygwin/perlld.in
+	  !> MANIFEST README.cygwin cflags.SH cygwin/Makefile.SHs
+	  !> cygwin/cygwin.c hints/cygwin.sh t/lib/cygwin.t
+____________________________________________________________________________
