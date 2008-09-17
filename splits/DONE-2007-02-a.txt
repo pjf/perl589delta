@@ -1,13 +1,3 @@
-[ 30364] By: nicholas				   on 2007/02/19  22:53:32
-	Log: Some C++ fixups in toke.c and sv.c, plus a blast from the past:
-	     
-	     Integrate:
-	     [ 24175]
-	     Casting to/from (void *) sufficient to make a C++ compiler happy.
-     Branch: maint-5.8/perl
-	   ! sv.c toke.c
-	  !> ext/File/Glob/bsd_glob.c pad.h
-____________________________________________________________________________
 [ 30363] By: nicholas				   on 2007/02/19  21:52:57
 	Log: Integrate:
 	     [ 28086]
@@ -197,63 +187,8 @@ ____________________________________________________________________________
 	     [ 28035]
 	     Re-order one DO_UTF8 to be after the SvPV.
 	     
-	     [ 28614]
-	     Replace some sprintf()'s in Data::Dumper with my_snprintf()'s
-	     
-	     [ 28762]
-	     Subject: [PATCH] Change #24364 broke Data::Dumper::Seen()
-	     From: Marcus Holland-Moritz <mhx-perl@gmx.net>
-	     Date: Fri, 25 Aug 2006 22:35:33 +0200
-	     Message-ID: <20060825223533.04efdf2d@r2d2>
-	     
-	     [ 28956]
-	     Change sprintf() to my_sprintf(), and use the returned length from
-	     that and my_snprintf() to avoid calls to strlen()
-	     
-	     [ 28959]
-	     Eliminate two more unneeded strlen()s from Dumper.xs
-	     
-	     [ 28960]
-	     Use packed addresses for the seen tracking hash, rather than
-	     "stringified" references. These use less memory, and should be faster
-	     as there is no call to sprintf().
-	     
-	     [ 28963]
-	     Yves said that the XS version of Data::Dumper was inefficient because
-	     it keeps triggering realloc() due to sv_cat(). Here's a rather brute
-	     force approach to pre-stretching the buffer - if there are less than
-	     40 bytes free, grow it by 50%.
-	     
-	     Surprisingly effective for my test program
-	     ./perl -Ilib -MData::Dumper -MStorable=retrieve -we \
-	     'print Dumper(retrieve(shift))' ~/.cpan/Metadata >/dev/null
-	     
-	     Before
-	     real    2m42.921s
-	     user    1m43.321s
-	     sys     0m55.611s
-	     
-	     
-	     After
-	     real    0m5.205s
-	     user    0m4.885s
-	     sys     0m0.255s
-	     
-	     Same 25M of output, byte for byte. :-)
-	     
-	     [ 28964]
-	     Document the growth policy, and Yves suggested a better arbitary
-	     constant. (The original plan was add 80 if free space is less than 80,
-	     which wasn't a noticable improvement. Hence 40 was 80/2 for plan B)
-	     
 	     [ 29152]
 	     Silence a g++ warning reported by Jarkko.
-	     
-	     [ 29224]
-	     Subject: Re: [PATCH] [perl #40668] Data::Dumper fails to dump all hash keys when itertaor is not at start
-	     From: "Jerry D. Hedden" <jdhedden@yahoo.com>
-	     Date: Mon, 6 Nov 2006 08:57:04 -0800 (PST)
-	     Message-ID: <20061106165704.939.qmail@web30214.mail.mud.yahoo.com>
 	     
 	     [ 29693]
 	     Subject: Re: What if NV_PRESERVES_UV_BITS is undef? (was: Re: [PATCH] Configure test code fails to compile if SIGFPE is undefined)
@@ -286,18 +221,6 @@ ____________________________________________________________________________
 	     Date: Mon, 28 Aug 2006 00:21:25 -0700
 	     Message-ID: <rt-3.5.HEAD-31263-1156749685-634.40245-75-0@perl.org>
 	     
-	     [ 28798]
-	     Fix for [perl #40267] PerlIO::scalar doesn't respect readonly-ness
-	     
-	     [ 28799]
-	     Bump version of PerlIO::scalar
-	     
-	     [ 28903]
-	     Subject: [PATCH] PerlIO::scalar (aka open(my $fh, >\$foo)): zero-filling seekand don't talk to negative strangers
-	     From: Jarkko Hietaniemi <jhi@iki.fi>
-	     Date: Fri, 29 Sep 2006 17:41:28 +0300
-	     Message-ID: <451D3098.1000305@iki.fi>
-	     
 	     [ 29173]
 	     Doc clarification for PerlIO::encoding
 	     (thanks to Steve Hay)
@@ -308,12 +231,6 @@ ____________________________________________________________________________
 	     [ 29751]
 	     Fix bug #40407: after a seek on a PerlIO::scalar filehandle,
 	     ensure there's a string buffer in the scalar
-	     
-	     [ 30213]
-	     Subject: Re: [perl #41442] segfault (dead loop) with Encoding, use open :locale, print STDERR
-	     From: Slaven Rezic <slaven@rezic.de>
-	     Date: 05 Feb 2007 23:04:07 +0100
-	     Message-ID: <87veiggt2g.fsf@biokovo.herceg.de>
 	     
 	     [ 30214]
 	     Explicitly load PerlIO::encoding when testing it.
@@ -328,25 +245,6 @@ ____________________________________________________________________________
 	  !> ext/PerlIO/scalar/scalar.xs ext/PerlIO/t/encoding.t
 	  !> ext/PerlIO/t/scalar.t ext/PerlIO/via/via.pm
 	  !> ext/PerlIO/via/via.xs pod/perldiag.pod
-____________________________________________________________________________
-[ 30339] By: nicholas				   on 2007/02/17  16:43:32
-	Log: Integrate:
-	     [ 29467]
-	     Introduction of d_pseudofork
-	     
-	     [ 29473]
-	     d_pseudofork for configure.com
-	     
-	     [ 29485]
-	     Make use of $Config{d_pseudofork} in a couple of core tests
-	     
-	     Can't really use it in ext/IO/t/*.t and lib/Test/Simple/t/fork.t
-	     because they are dual-lived modules and must work with older perls
-	     that don't have d_pseudofork
-     Branch: maint-5.8/perl
-	  !> Configure Porting/Glossary Porting/config.sh config_h.SH
-	  !> configure.com ext/Socket/t/socketpair.t handy.h t/op/fork.t
-	  !> uconfig.sh
 ____________________________________________________________________________
 [ 30338] By: nicholas				   on 2007/02/17  15:53:17
 	Log: Integrate:
@@ -387,15 +285,6 @@ ____________________________________________________________________________
 	     Date: Sat, 11 Feb 2006 00:37:15 +1100
 	     Message-ID: <20060210133715.GA6826@londo.c47.org>
 	     
-	     [ 28044]
-	     Fix for RT #25366: h2xs 1.23 from "Aaron Kaplan".
-	     
-	     [ 28225]
-	     Subject: [perl #39130] h2ph generates incorrect code for '#if defined A || defined B' 
-	     From: Jason Vas Dias (via RT) <perlbug-followup@perl.org>
-	     Date: Thu, 11 May 2006 11:00:42 -0700
-	     Message-ID: <rt-3.0.11-39130-133411.1.91055283125046@perl.org>
-	     
 	     [ 28232]
 	     Adjust test following change #28225
 	     
@@ -421,12 +310,6 @@ ____________________________________________________________________________
 ____________________________________________________________________________
 [ 30324] By: nicholas				   on 2007/02/15  18:33:37
 	Log: Integrate:
-	     [ 25314]
-	     Don't install ptar in module tree
-	     
-	     [ 26964]
-	     Don't install ptardiff in the module tree
-	     
 	     [ 28344]
 	     Subject: [PATCH: installperl] Was: Bug#369481: perl-base: 5.8.4-8sarge4 seemed to trigger "weak references not implemented"
 	     From: Brendan O'Dea <bod@debian.org>
@@ -476,51 +359,8 @@ ____________________________________________________________________________
 	  !> t/op/inccode-tie.t t/op/regexp_noamp.t t/op/regexp_qr.t
 	  !> t/op/regexp_qr_embed.t t/op/threads.t t/op/utftaint.t
 	  !> t/uni/case.pl win32/ce-helpers/makedist.pl
-____________________________________________________________________________
-[ 30322] By: nicholas				   on 2007/02/15  17:15:34
-	Log: Integrate:
-	     [ 28295]
-	     Subject: [PATCH lib/AutoLoader.pm lib/AutoLoader.t] Export can() with AUTOLOAD()
-	     From: chromatic <chromatic@wgz.org>
-	     Date: Sat, 20 May 2006 11:40:27 -0700
-	     Message-Id: <200605201140.27789.chromatic@wgz.org>
-	     
-	     With tweaks: use built-in ref() instead of Scalar::Util::blessed
-	     
-	     [ 29743]
-	     Subject: Bug in AutoLoader.pm causing endless loop
-	     From: Steffen Mueller <rt8363b02@sneakemail.com>
-	     Date: Tue, 09 Jan 2007 19:15:36 +0100
-	     Message-ID: <45A3DBC8.4010203@sneakemail.com>
-	     
-	     [ 29750]
-	     Subject: [PATCH] AutoLoader fix, part 2
-	     From: Steffen Mueller <rt8363b02@sneakemail.com>
-	     Date: Wed, 10 Jan 2007 18:52:23 +0100
-	     Message-ID: <20070110175148.26694.qmail@lists.develooper.com>
-	     
-	     [ 29934]
-	     Upgrade to AutoLoader-5.63
-     Branch: maint-5.8/perl
-	  !> lib/AutoLoader.pm lib/AutoLoader.t
-____________________________________________________________________________
 [ 30321] By: nicholas				   on 2007/02/15  16:52:31
 	Log: Integrate:
-	     [ 27953]
-	     Subject: Re: [perl #38965] File::Find documentation - is "Don't modify thesevariables" still valid?
-	     From: David Landgren <david@landgren.net>
-	     Date: Mon, 24 Apr 2006 13:02:02 +0200
-	     Message-ID: <444CB02A.2000604@landgren.net>
-	     
-	     [ 27954]
-	     Reverting change #27953, as it appears that File::Find has 
-	     localized the C<$_> usable by the wanted function since 
-	     version 1.04 (change #18501, to be exact).	 Update the 
-	     docs to express this change.  Finally, bump the version.
-	     
-	     [ 27955]
-	     Really bump the version of File::Find.
-	     
 	     [ 28665]
 	     Subject: [PATCH] File::Basename add X<> tags, replace regex delimiters
 	     From: "Gabor Szabo" <szabgab@gmail.com>
@@ -549,17 +389,6 @@ ____________________________________________________________________________
 	     From: "Jerry D. Hedden" <jdhedden@yahoo.com>
 	     Date: Thu, 26 Oct 2006 06:50:04 -0700 (PDT)
 	     Message-ID: <20061026135004.79720.qmail@web30211.mail.mud.yahoo.com>
-	     
-	     [ 29272]
-	     Doc patch by Thomas O Smailus :
-	     Subject: Fwd: [perl #40866] Error on doc page? (File::Basename)
-	     From: "Adriano Rodrigues" <a.r.ferreira@gmail.com>
-	     Date: Tue, 14 Nov 2006 10:24:38 -0200
-	     Message-ID: <73ddeb6c0611140424t26b01d0aq667ca95e77f25e6@mail.gmail.com>
-	     
-	     [ 30002]
-	     Let File::Path report the extended system error message
-	     when available (Ilya Zakharevich)
 	     
 	     [ 30035]
 	     For VMS, a belated entry into the $^O jungle that is File::Find::_find_dir.

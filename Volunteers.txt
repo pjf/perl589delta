@@ -6,11 +6,15 @@
 2006-09 - DONE, MERGED (Mark Aufflick)
 2006-10 - DONE, MERGED (Moritz Lenz)
 2007-01 - DONE, MERGED (Moritz Lenz)
+2007-02-a - DONE, MERGED (Adam Flott)
+2007-02-g - DONE, MERGED (Moritz Lenz)
+2007-02-h - DONE, MERGED (Moritz Lenz)
 2007-03 - DONE, MERGED (Vincent Pit)
 2007-04 - DONE, MERGED (Vincent Pit)
 2007-05 - DONE, MERGED (Vincent Pit)
 2007-09 - DONE, MERGED (Paul Fenwick)
 2007-10 - DONE, MERGED (Jacinta Richardson)
+2008-01 - DONE, MERGED (Adam Flott)
 2008-05 - DONE, MERGED (Mark Aufflick)
 
 == IN PROGRESS ==
@@ -18,13 +22,13 @@
 2006-03 - Stephen Steneker (aka Stennie)    Last seen, 15th Sep
 2006-04 - Stephen Steneker (aka Stennie)    Last seen, 15th Sep
 2006-05 - Michael Peters                    Last seen, 10th Sep
-2007-02-a - Adam Flott                      Last seen, 15th Sep
 2007-02-b - Adam Flott                      Last seen, 15th Sep
 2007-02-c - Brad Dean                       Last seen, 17th Sep
 2007-02-e - Martin Ryan                     Last seen, 11th Sep
+2007-02-f - LesleyB                         Last seen, 17th Sep
+2007-02-i - Moritz Lenz                     Last seen, 17th Sep
 2007-02-j - Shawn M Moore (aka Sartak)      Last seen, 15th Sep
 2007-12 - theorbtwo                         Last seen,  8th Sep
-2008-01 - Adam Flott                        Last seen, 15th Sep
 2008-02 - Spiros Denaxas                    Last seen, 14th Sep
 2008-04 - Abhijit Menon-Sen (aka crab)      Last seen,  9th Sep
 2008-06 - Renee Backer                      Last seen,  9th Sep
@@ -32,10 +36,6 @@
 == AVAILABLE ==
 
 2007-02-d - ==> Nobody <== 11k (slimmed)
-2007-02-f - ==> Nobody <== 20k
-2007-02-g - ==> Nobody <== 20k
-2007-02-h - ==> Nobody <== 20k
-2007-02-i - ==> Nobody <== 20k
 2007-11-a - ==> Nobody <== 20k
 2007-11-b - ==> Nobody <== 20k
 2007-11-c - ==> Nobody <== 20k

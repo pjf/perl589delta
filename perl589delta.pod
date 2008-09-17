@@ -24,6 +24,8 @@ semantics. They also treat C<*FILE{IO}> filehandles like C<*FILE> filehandles.
 Added B<perlthanks> which is just like C<perlbug> but allows the user to
 send a note of gratitude to the authors and maintainers of Perl. [33532]
 
+Added support for Unicode 5.0.
+
 =head1 Modules and Pragmata
 
 =head2 New Modules
@@ -47,7 +49,7 @@ C<ANSIColor> upgraded to version 1.11
 
 =item *
 
-C<Autoloader> upgraded to version 5.66
+C<AutoLoader> upgraded to version 5.66
 
 =item *
 
@@ -103,7 +105,11 @@ constant subroutine is imported.
 
 =item *
 
-B<B::Debug> upgraded to version 1.03
+C<B::C> upgraded to 1.05
+
+=item *
+
+C<B::Debug> upgraded to version 1.03
 
 =item *
 
@@ -131,6 +137,10 @@ C<bignum> upgraded to 0.20
 
 =item *
 
+C<Carp> upgraded to version 1.09
+
+=item *
+
 C<CGI> upgraded to version 3.35 [33568] 
 
 =item *
@@ -141,6 +151,22 @@ C<CPAN> upgraded to version 1.9101
 
 C<Cwd> upgraded to version 3.27 with C const-ing and some platform specific
 improvements (including for VMS).
+
+=item *
+
+C<Data::Dumper> upgraded to version 2.121_11
+
+=over
+
+=item *
+
+Performance enhancements (28963)
+
+=item *
+
+Fixes hash iterator current position with the pure Perl version #40668 (29224)
+
+=back
 
 =item *
 
@@ -202,11 +228,23 @@ C<Encode::Alias> includes a fix for encoding "646" (aka ASCII) on Solaris.
 
 =item *
 
+C<File::Basename> upgraded to version 2.76
+
+=item *
+
+C<File::Find> upgraded to version 1.11
+
+=item *
+
+C<File::Glob> upgraded to version 1.06
+
+=item *
+
 C<encoding> upgraded to version 0.11
 
 =item *
 
-c<Errno> upgraded to version 1.10
+C<Errno> upgraded to version 1.10
 
 =item *
 
@@ -249,6 +287,10 @@ C<ExtUtils::ParseXS> upgraded to version 2.19 [33392]
 
 C<Fatal> upgraded to version 1.06
 
+=item *
+
+C<Time::Local> upgraded to version 1.18
+
 =over
 
 =item *
@@ -283,7 +325,7 @@ Fixes spurious results with brackets inside braces.
 
 =item *
 
-C<FileCache> upgraded to version 1.07
+C<File::Path> upgraded to version 1.09
 
 =item *
 
@@ -294,11 +336,23 @@ improvements (Including for VMS and Cygwin)
 
 =item *
 
+C<FindBin> upgraded to version 1.48
+
+=item *
+
+C<FileCache> upgraded to version 1.07
+
+=item *
+
 C<GDBM_File> upgraded to version 1.09
 
 =item *
 
 C<Getopt::Long> upgraded to version 2.36
+
+=item *
+
+C<Hash::Util> upgraded to version 0.07
 
 =item *
 
@@ -346,6 +400,18 @@ C<PathTools> upgraded to version 3.22
 
 =item *
 
+C<PerlIO::scalar> upgraded to version 0.05
+
+=over 4
+
+=item *
+
+[perl #40267] PerlIO::scalar doesn't respect readonly-ness
+
+=back
+
+=item *
+
 C<PerlIO::via> upgraded to version 0.05
 
 =item *
@@ -366,7 +432,15 @@ C<Pod::Html> upgraded to version 1.09 [33536]
 
 =item *
 
+C<Pod::Parser> upgraded to version 1.35
+
+=item *
+
 C<Pod::Perldoc> is now maintained by Hakim Cassimally (osfameron).
+
+=item * 
+
+C<Pod::Usage> upgraded to version 1.35 [30187]
 
 =item *
 
@@ -427,6 +501,10 @@ C<Switch> upgraded to version 2.13
 =item *
 
 C<Test::Simple> upgraded to version 0.70
+
+=item *
+
+C<Text::Balanced> upgraded to version 1.98 (32984)
 
 =item *
 
@@ -538,6 +616,14 @@ no longer installed.
 C<h2ph> now attempts to deal sensibly with the difference in path implications
 between C<""> and C<<E<lt>E<gt>>> quoting in C<#include> statements.
 
+=item *
+
+C<h2ph> generates correct correct code for C<#if defined A || defined B> now (perl #39130)
+
+=item *
+
+C<h2xs> won't define an empty string as a constant (perl #25366)
+
 =back
 
 =head1 New Documentation
@@ -631,6 +717,13 @@ Many compilation warnings were cleaned up (33415, 33417, 33418, 33419,
 
 bleadperl compilation failure (due to failed manpage building) has been fixed.
 
+Added C<d_pseudofork> to C<Configure> which is a new configuration variable,
+available as C<$Config{d_pseudofork}> in the L<Config> module, has been added,
+to distinguish real fork() support from fake pseudofork used on Windows
+platforms.
+
+L<ptar> and L<ptardiff> are no longer installed to C<$installbin>
+
 =head1 Selected Bug Fixes
 
 =over 4
@@ -668,6 +761,11 @@ a C<system()> call.
 =item *
 
 Fixed problems with split, unicode /\s+/ and / \0/.
+
+=item *
+
+Fixed bug RT #37886, unsafe dereferencations were allowed in the argument of
+C<defined()> even under the influence of C<use strict 'refs'>.
 
 =back
 
@@ -724,6 +822,14 @@ Improvements to the perl-static.exe build process.
 =item *
 
 Fixed PerlIO::Scalar in-memory file record-style reads.
+
+=item *
+
+Make pipe shutdown on VMS care about whether PerlIO has already shut down (33005)
+
+=item *
+
+Fix VMS exit handling broken in Test::Harness 2.64 (33008)
 
 =back
 
@@ -800,6 +906,10 @@ Reduced number of calls to C<getpeername> in L<IO::Socket> (29129).
 
 C<chr(65535)> ought to be allowed in regexes.
 
+=item *
+
+L<ExtUtils::MakeMaker> now detects DragonFlyBSD as a BSDish operating system (33006)
+
 =item * 
 
 Using C<#!perl -d> could trigger an assertion, which has been fixed (30075).
@@ -839,6 +949,11 @@ De-duplictae C<@EXPORT> (26459)
 
 C<pod2html> will label anchors more consistently (32079) and handles nested
 definition lists better (32727).
+
+=item *
+
+No longer segfaults when your locale charset is not utf8 with
+C<use open ':locale'> and printing Unicode characters to STDERR (30213)
 
 =back
 
@@ -892,11 +1007,6 @@ able to handle further incoming signals safely.
 This new fatal error occurs when a file test operator is used that is 
 not availble on the current platfom (25987).
 
-=head2 Panic: attempt to call %s in %s
-
-This new fatal error occurs when a file test operator is used that is 
-not availble on the current platfom (25987).
-
 =head2 Can't upgrade %s (%d) to %d
 
 This error now reports the type of things that made the upgrade fail (27253).
@@ -910,6 +1020,11 @@ correctly includes "or a subroutine". (RT #38955)
 
 This error in L<Fatal> previously did not show the name of the builtin in
 question (now represented by %s above).
+
+=head2 Offset outside string
+
+Changed to add the seek operation and is now included in the default warnings
+pragma (28903).
 
 =head1 Changed Internals
 
@@ -929,6 +1044,8 @@ visible to perl core extensions. This was required by L<Data::Alias>.
 C<set> magic on localizing/assigning to a magic variable will now only
 trigger for I<container magics>, i.e. it will for C<%ENV> or C<%SIG>
 but not for C<$#array>.
+
+Display the process id as part of the trace output if running with C<-Dv> (33039)
 
 A lot of small improvents in the code base were made due to reports from
 the Coverity static code analyzer.
@@ -963,6 +1080,10 @@ C<exit> can now be called in expressions that the optimizer constant-folds
 =item *
 
 Test smallbuf overflow in S_incline (30024)
+
+=item *
+
+Tests for mathematical functions in L<POSIX>
 
 =item *
 
