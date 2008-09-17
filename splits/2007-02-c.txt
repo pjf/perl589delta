@@ -1,15 +1,3 @@
-[ 30299] By: nicholas				   on 2007/02/14  21:31:37
-	Log: Integrate:
-	     [ 27592]
-	     When MAN3PODS is forced to {} in a Makefile.PL, manpages should not be
-	     built from pods. This change fixes bleadperl compilation -- trying to
-	     build manpages with miniperl causes a bootstrapping problem.
-	     
-	     [ 27708]
-	     Change 27592 disabled the building of manpages for non core-extensions
-	     The init_MAN3PODS method need to be called when no INSTALLMAN3DIR is
-	     present in the first place.
-	     
 [ 30297] By: nicholas				   on 2007/02/14  19:11:41
 	Log: Integrate:
 	     [ 29673]

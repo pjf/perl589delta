@@ -629,6 +629,7 @@ Many compilation warnings were cleaned up (33415, 33417, 33418, 33419,
 33420, 33421, 33427, 33428, 33429, 33435, 33436, 33441, 33444, 33479,
 33590,)
 
+bleadperl compilation failure (due to failed manpage building) has been fixed.
 
 =head1 Selected Bug Fixes
 
