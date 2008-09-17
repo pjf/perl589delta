@@ -5,12 +5,6 @@
 	     any -j flags. (And their implied disabling of backwards compatibility,
 	     which is the real cause of the make disttest failure).
 	     
-	     [ 26536]
-	     Subject: Re: [PATCH] Re: INSTALLSCRIPT versus INSTALLDIRS
-	     From: Rafael Garcia-Suarez <rgarciasuarez@mandriva.com>
-	     Date: Mon, 12 Dec 2005 19:22:32 +0100
-	     Message-ID: <20051212192232.39cd0c1e@grubert.mandrakesoft.com>
-	     
 	     [ 27592]
 	     When MAN3PODS is forced to {} in a Makefile.PL, manpages should not be
 	     built from pods. This change fixes bleadperl compilation -- trying to

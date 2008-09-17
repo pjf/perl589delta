@@ -228,6 +228,15 @@ C<ExtUtils::Install> upgraded to version 1.51 [33567]
 
 C<ExtUtils::MakeMaker> upgraded to version 6.44 [33396]
 
+=over
+
+=item *
+
+Support for INSTALLSITESCRIPT and INSTALLVENDORSCRIPT 
+configuration. [26536]
+
+=back
+
 =item *
 
 C<ExtUtils::Manifest> upgraded to version 1.51
