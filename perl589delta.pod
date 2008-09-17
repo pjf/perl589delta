@@ -47,7 +47,7 @@ C<ANSIColor> upgraded to version 1.11
 
 =item *
 
-C<Autoloader> upgraded to version 5.66
+C<AutoLoader> upgraded to version 5.66
 
 =item *
 
@@ -102,7 +102,7 @@ C<B::C> upgraded to 1.05
 
 =item *
 
-B<B::Debug> upgraded to version 1.03
+C<B::Debug> upgraded to version 1.03
 
 =item *
 
@@ -233,7 +233,7 @@ C<encoding> upgraded to version 0.11
 
 =item *
 
-c<Errno> upgraded to version 1.10
+C<Errno> upgraded to version 1.10
 
 =item *
 
@@ -935,11 +935,6 @@ Added forked terminal support to debugger under MacOSX (29415)
 This new fatal error occurs when the perl process has to abort due to
 too many pending signals, which is bound to prevent perl from being
 able to handle further incoming signals safely.
-
-=head2 Panic: attempt to call %s in %s
-
-This new fatal error occurs when a file test operator is used that is 
-not availble on the current platfom (25987).
 
 =head2 Panic: attempt to call %s in %s
 
