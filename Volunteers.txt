@@ -20,6 +20,7 @@
 2006-05 - Michael Peters                    Last seen, 10th Sep
 2007-02-a - Adam Flott                      Last seen, 15th Sep
 2007-02-b - Adam Flott                      Last seen, 15th Sep
+2007-02-c - Brad Dean                       Last seen, 17th Sep
 2007-02-e - Martin Ryan                     Last seen, 11th Sep
 2007-02-j - Shawn M Moore (aka Sartak)      Last seen, 15th Sep
 2007-12 - theorbtwo                         Last seen,  8th Sep
@@ -30,7 +31,6 @@
 
 == AVAILABLE ==
 
-2007-02-c - ==> Noobdy <==  5k (slimmed)
 2007-02-d - ==> Nobody <== 11k (slimmed)
 2007-02-f - ==> Nobody <== 20k
 2007-02-g - ==> Nobody <== 20k
