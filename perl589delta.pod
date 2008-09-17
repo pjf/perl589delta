@@ -98,6 +98,10 @@ New type B::HE added with methods VAL, HASH, SVKEY_force
 
 =item *
 
+C<B::C> upgraded to 1.05
+
+=item *
+
 B<B::Debug> upgraded to version 1.03
 
 =item *
@@ -136,6 +140,22 @@ C<CPAN> upgraded to version 1.9101
 
 C<Cwd> upgraded to version 3.27 with C const-ing and some platform specific
 improvements (including for VMS).
+
+=item *
+
+C<Data::Dumper> upgraded to version 2.121_11
+
+=over
+
+=item *
+
+Performance enhancements (28963)
+
+=item *
+
+Fixes hash iterator current position with the pure Perl version #40668 (29224)
+
+=back
 
 =item *
 
@@ -194,6 +214,18 @@ C<Encode> upgraded to version 2.24 [33493]
 =item *
 
 C<Encode::Alias> includes a fix for encoding "646" (aka ASCII) on Solaris.
+
+=item *
+
+C<File::Basename> upgraded to version 2.76
+
+=item *
+
+C<File::Find> upgraded to version 1.11
+
+=item *
+
+C<File::Glob> upgraded to version 1.06
 
 =item *
 
@@ -269,7 +301,7 @@ Fixes spurious results with brackets inside braces.
 
 =item *
 
-C<FileCache> upgraded to version 1.07
+C<File::Path> upgraded to version 1.09
 
 =item *
 
@@ -277,6 +309,14 @@ C<File::Spec>, C<File::Spec::Epoc>, C<File::Spec::Mac>, C<File::Spec::Functions>
 C<File::Spec::Unix>, C<File::Spec::VMS>, C<File::Spec::Win32> upgraded to version
 3.2701 with improved handling of bad arguments and some platform specific
 improvements (Including for VMS and Cygwin)
+
+=item *
+
+C<FindBin> upgraded to version 1.48
+
+=item *
+
+C<FileCache> upgraded to version 1.07
 
 =item *
 
@@ -317,6 +357,18 @@ C<Math::Complex>, C<Math::Trig> upgraded to version 1.54.
 =item *
 
 C<PathTools> upgraded to version 3.22
+
+=item *
+
+C<PerlIO::scalar> upgraded to version 0.05
+
+=over 4
+
+=item *
+
+[perl #40267] PerlIO::scalar doesn't respect readonly-ness
+
+=back
 
 =item *
 
@@ -504,6 +556,14 @@ no longer installed.
 C<h2ph> now attempts to deal sensibly with the difference in path implications
 between C<""> and C<<E<lt>E<gt>>> quoting in C<#include> statements.
 
+=item *
+
+C<h2ph> generates correct correct code for C<#if defined A || defined B> now (perl #39130)
+
+=item *
+
+C<h2xs> won't define an empty string as a constant (perl #25366)
+
 =back
 
 =head1 New Documentation
@@ -595,6 +655,13 @@ Many compilation warnings were cleaned up (33415, 33417, 33418, 33419,
 33420, 33421, 33427, 33428, 33429, 33435, 33436, 33441, 33444, 33479,
 33590,)
 
+
+Added C<d_pseudofork> to C<Configure> which is a new configuration variable,
+available as C<$Config{d_pseudofork}> in the L<Config> module, has been added,
+to distinguish real fork() support from fake pseudofork used on Windows
+platforms.
+
+L<ptar> and L<ptardiff> are no longer installed to C<$installbin>
 
 =head1 Selected Bug Fixes
 
@@ -817,6 +884,11 @@ De-duplictae C<@EXPORT> (26459)
 C<pod2html> will label anchors more consistently (32079) and handles nested
 definition lists better (32727).
 
+=item *
+
+No longer segfaults when your locale charset is not utf8 with
+C<use open ':locale'> and printing Unicode characters to STDERR (30213)
+
 =back
 
 =head2 Platform specific fixes
@@ -887,6 +959,11 @@ correctly includes "or a subroutine". (RT #38955)
 
 This error in L<Fatal> previously did not show the name of the builtin in
 question (now represented by %s above).
+
+=head2 Offset outside string
+
+Changed to add the seek operation and is now included in the default warnings
+pragma (28903).
 
 =head1 Changed Internals
 
