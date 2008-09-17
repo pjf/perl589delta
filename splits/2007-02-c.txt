@@ -1,12 +1,5 @@
 [ 30295] By: nicholas				   on 2007/02/14  18:04:52
 	Log: Integrate:
-	     [ 29977]
-	     The last parameter to gv_stashpv/gv_stashpvn/gv_stashsv is a bitmask
-	     of flags, not a boolean, so correct the documenation and callers.
-	     
-	     [ 30030]
-	     One last gv_fetchpv() that should be GV_ADD rather than TRUE.
-	     
 	     [ 30034]
 	     newPADOP()'s sv parameter is never NULL, so mark it as so.
 	     (Well, in theory it could be NULL if someone is creating ops during

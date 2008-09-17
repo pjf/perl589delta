@@ -935,6 +935,9 @@ the Coverity static code analyzer.
 
 C<ptr_table> functions are now available in unthreaded perl.
 
+Corrected use and documentation of C<gv_stashpv>, C<gv_stashpvn>, C<gv_stashsv>
+functions (last parameter is a bitmask, not boolean).
+
 =head1 New Tests
 
 =over 4
