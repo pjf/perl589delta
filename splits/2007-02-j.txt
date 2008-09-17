@@ -1,0 +1,101 @@
+[ 30098] By: nicholas				   on 2007/02/02  20:54:46
+	Log: Integrate:
+	     [ 29193]
+	     eval $undef should emit one warning, not three.
+	     Also ensure that eval $undef clears $@ (it did, but only by luck)
+	     
+	     [ 29194]
+	     add test that eval undef clears $@
+	     
+	     [ 29195]
+	     Change #29193 makes this addition unneeded
+     Branch: maint-5.8/perl
+	  !> pp_ctl.c t/lib/common.pl t/op/eval.t toke.c
+____________________________________________________________________________
+[ 30097] By: nicholas				   on 2007/02/02  20:40:18
+	Log: Integrate:
+	     [ 26401]
+	     Missing file from last change
+	     
+	     [ 29182]
+	     Fix the failures in warnings tests when PERL_UNICODE is defined
+	     that show up in the smokes under UTF-8 locales. Based on :
+	     
+	     Subject: Re: UTF-8 Failures in smoke ($PERL_UNICODE)
+	     From: "H.Merijn Brand" <h.m.brand@xs4all.nl>
+	     Date: Wed, 1 Nov 2006 17:03:55 +0100
+	     Message-ID: <20061101170355.7c57b515@pc09>
+	     
+	     [ 29184]
+	     More heuristics to make warnings.t pass under different
+	     combinations of PERL_UNICODE / locale
+     Branch: maint-5.8/perl
+	  +> t/lib/common.pl
+	  !> MANIFEST lib/warnings.t
+____________________________________________________________________________
+[ 30096] By: nicholas				   on 2007/02/02  18:03:45
+	Log: Integrate:
+	     [ 28559]
+	     Cleanup and conversion to t/test.pl
+	     
+	     [ 29643]
+	     PL_linestr needs to survive until the end of scope, not just the next
+	     FREETMPS. Fixes the underlying cause of the thread cloning SEGV
+	     reported in http://www.nntp.perl.org/group/perl.perl5.porters/63123
+	     
+	     [ 29668]
+	     PVMG can be isUV too.
+     Branch: maint-5.8/perl
+	  +> t/op/threads_create.pl
+	   ! dump.c
+	  !> MANIFEST ext/Devel/Peek/t/Peek.t sv.c t/op/threads.t toke.c
+____________________________________________________________________________
+[ 30095] By: nicholas				   on 2007/02/02  17:46:17
+	Log: Integrate:
+	     [ 29628]
+	     Change PAD_MAX to something a bit less FORTRAN-ish than 999999999.
+	     
+	     [ 29629]
+	     Abstract the pad code's overloaded use of SvNVX and SvIVX into
+	     4 macros COP_SEQ_RANGE_LOW, COP_SEQ_RANGE_HIGH, PARENT_PAD_INDEX
+	     and PARENT_FAKELEX_FLAGS
+	     
+	     [ 29631]
+	     Move PAD_FAKELEX_ANON and PAD_FAKELEX_MULTI to pad.h, export them via
+	     B.pm, so that B::Concise doesn't need to hard code magic numbers.
+	     
+	     [ 29663]
+	     Probably better to make PAD_FAKELEX_ANON and PAD_FAKELEX_MULTI special
+	     cases, instead of scanning pad.h to find them, and picking up 3 other
+	     superfluous definitions as a side effect.
+     Branch: maint-5.8/perl
+	   ! pad.c
+	  !> ext/B/B.pm ext/B/B.xs ext/B/B/Concise.pm ext/B/B/Deparse.pm
+	  !> ext/B/defsubs_h.PL ext/B/t/concise-xs.t pad.h
+____________________________________________________________________________
+[ 30094] By: nicholas				   on 2007/02/02  16:57:24
+	Log: Integrate:
+	     [ 29506]
+	     Subject: [PATCH] Re: [perl #41065] Out of memory!, while extending scalar
+	     From: Marcus Holland-Moritz <mhx-perl@gmx.net>
+	     Date: Sun, 10 Dec 2006 22:32:32 +0100
+	     Message-ID: <20061210223232.0f3a5318@r2d2>
+	     
+	     [ 29574]
+	     Subject: [PATCH] perl.c: leak avoidance
+	     From: Jarkko Hietaniemi <jhi@iki.fi>
+	     Date: Sat, 16 Dec 2006 11:48:13 -0500
+	     Message-ID: <4584234D.7070209@iki.fi>
+	     
+	     [ 29590]
+	     Subject: [PATCH] Don't destroy the Unicode system environment on Perl startup
+	     From: Jan Dubois <jand@ActiveState.com>
+	     Date: Mon, 18 Dec 2006 16:34:33 -0800
+	     Message-ID: <bsbeo2hama2sdo3kqdbrdhp505caeft6h9@4ax.com>
+	     
+	     [ 29614]
+	     syswrite() wasn't reporting a warning when writing to a filehandle
+	     opened only for input.
+     Branch: maint-5.8/perl
+	  !> doop.c perl.c pp_sys.c t/lib/warnings/pp_sys
+____________________________________________________________________________

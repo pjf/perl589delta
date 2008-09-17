@@ -1,0 +1,44 @@
+#!/usr/bin/perl -w
+use strict;
+use autodie;
+
+use constant DEBUG => 1;
+
+my $file         = shift || die "Usage: $0 file [size]\n";
+my $desired_size = shift || 20;      # Size in KB.
+
+$desired_size *= 1024;
+
+print "Chunking $file into $desired_size byte pieces\n" if DEBUG;
+
+# Figure out the file base name (without .txt)
+
+my ($base) = $file =~ /(.*)\.txt$/;
+$base ||= $file;
+
+open(my $orig_fh, '<', $file);
+
+{
+    local $/ = "\n" . ("_" x 76) . "\n";
+
+    my $size_so_far = 0;
+    my $piece = 'a';
+
+    open(my $out_fh, '>', "$base-$piece.txt");
+
+    print "$base-$piece.txt\n" if DEBUG;
+
+    while (<$orig_fh>) {
+        $size_so_far += length($_);
+
+        print {$out_fh} $_;
+
+        if ($size_so_far > $desired_size) {
+            $size_so_far = 0;
+            close($out_fh);
+            $piece++;
+            open($out_fh, '>', "$base-$piece.txt");
+            print "$base-$piece.txt\n" if DEBUG;
+        }
+    }
+}

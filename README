@@ -59,6 +59,15 @@ The procedure for volunteering to take a chunk of work is:
       and tools.  The push line will make sure your changes go
       back to the main repo.
 
+      If that fails, or if you're using a sub-chunk (something
+      that ends with a letter), then you'll need to make your
+      own branch and push it back to the mothership repository:
+
+            git checkout master
+            git pull
+            git branch 2007-02-x
+            git push origin 2007-02-x
+
       If you're not using git, or don't want to worry about the branches,
       just make changes normally and send patches to
       perl589delta@googlegroups.com, and they'll get applied to your branch.

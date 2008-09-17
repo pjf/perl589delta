@@ -1,0 +1,528 @@
+[ 30206] By: nicholas				   on 2007/02/10  22:44:37
+	Log: Integrate:
+	     [ 27201]
+	     Remove lib/Hash directory when doing make distclean
+	     
+	     [ 28482]
+	     Make the distclean target remove lib/Hash correctly
+	     
+	     [ 28615]
+	     Very recent development versions of gcc (4.2.0 20060715) seem
+	     to have switched from '<command line>' to '<command-line>'.
+	     
+	     [ 29871]
+	     perl rebuilds because of gcc's -g flag
+	     Subject: [PATCH] Re: [perl #41058] make rebuilds perl everytime
+	     From: Marcus Holland-Moritz <mhx-perl@gmx.net>
+	     Date: Thu, 18 Jan 2007 14:27:55 +0100
+	     Message-ID: <20070118142755.28e7f724@r2d2>
+     Branch: maint-5.8/perl
+	  !> Makefile.SH makedepend.SH
+____________________________________________________________________________
+[ 30205] By: nicholas				   on 2007/02/10  22:27:56
+	Log: Integrate:
+	     [ 26912]
+	     Fix hardcoded "/" in a filepath that causes ext/List/Util/t/p_tainted.t
+	     to fail on VMS.
+	     
+	     [ 28954]
+	     Subject: [PATCH] another g++ patch (Util.xs)
+	     From: "Paul Marquess" <paul.marquess@ntlworld.com>
+	     Date: Fri, 6 Oct 2006 11:14:03 +0100
+	     Message-ID: <00ea01c6e930$269f3d70$4e3c140a@myopwv.com>
+	     
+	     [ 29261]
+	     A new regression test from:
+	     
+	     Subject: [PATHCH]	Scalar::Util::readonly &  compression (was RE: Change 29117: [PATCH] IO::Compress modules)
+	     From: "Paul Marquess" <paul.marquess@ntlworld.com>
+	     Date: Sun, 29 Oct 2006 21:03:21 -0000
+	     Message-ID: <02cf01c6fb9d$ade808a0$6501a8c0@myopwv.com>
+	     
+	     [ 29262]
+	     The latest regression test to Scalar::Util doesn't pass with threaded perls
+	     
+	     [ 29498]
+	     Upgrade to Scalar-List-Utils-1.19
+	     
+	     [ 29499]
+	     Restore change 27486 accidently removed (also added to 1.19 before release)
+     Branch: maint-5.8/perl
+	  !> ext/List/Util/Changes ext/List/Util/README
+	  !> ext/List/Util/Util.xs ext/List/Util/lib/List/Util.pm
+	  !> ext/List/Util/lib/Scalar/Util.pm ext/List/Util/multicall.h
+	  !> ext/List/Util/t/p_tainted.t ext/List/Util/t/readonly.t
+____________________________________________________________________________
+[ 30204] By: nicholas				   on 2007/02/10  22:17:15
+	Log: Integrate:
+	     [ 27311]
+	     Upgrade to CPAN-1.86
+	     
+	     and remove the stowaway lib/CPAN/t/vcmp.t
+     Branch: maint-5.8/perl
+	   - lib/CPAN/t/vcmp.t
+	  !> lib/CPAN.pm lib/CPAN/SIGNATURE
+____________________________________________________________________________
+[ 30203] By: nicholas				   on 2007/02/10  22:04:40
+	Log: Integrate:
+	     [ 27581]
+	     Upgrade to Time::Local 1.12
+	     
+	     [ 27642]
+	     Upgrade to Time::Local 1.12_01
+	     
+	     [ 28683]
+	     Subject: PATCH: Sync Time::Local in blead to 1.13 on CPAN
+	     From: Dave Rolsky <autarch@urth.org>
+	     Date: Wed, 9 Aug 2006 04:38:28 -0500 (CDT)
+	     Message-ID: <Pine.LNX.4.64.0608090422450.8735@urth.org>
+	     
+	     [ 29931]
+	     Subject: [PATCH] Time::Local patch take 2
+	     From: Dave Rolsky <autarch@urth.org>
+	     Date: Mon, 22 Jan 2007 09:46:08 -0600 (CST)
+	     Message-ID: <Pine.LNX.4.64.0701220945040.28849@urth.org>
+	     
+	     [ 29936]
+	     Fix to Time::Local to fix problems with leap year calculation.
+	     
+	     [ 29937]
+	     Change 29936 missed a ;
+	     
+	     [ 29940]
+	     Upgrade to Time::Local 1.16
+	     
+	     [ 29994]
+	     Upgrade to Time::Local 1.17
+     Branch: maint-5.8/perl
+	  !> lib/Time/Local.pm lib/Time/Local.t
+____________________________________________________________________________
+[ 30202] By: nicholas				   on 2007/02/10  21:41:21
+	Log: Integrate:
+	     [ 26858]
+	     Subject: [PAUSE] CPAN Upload: A/AN/ANDK/CPAN-1.83_55.tar.gz
+	     From: andreas.koenig.gmwojprw@franz.ak.mind.de (Andreas J. Koenig)
+	     Date: Sat, 14 Jan 2006 12:57:48 +0100
+	     Message-ID: <87u0c7yqbn.fsf@k75.linux.bogus>
+	     
+	     [ 26923]
+	     Upgrade to CPAN-1.83_58
+	     
+	     [ 26986]
+	     Upgrade to CPAN-1.83_59
+	     
+	     [ 27062]
+	     Subject: [PAUSE] CPAN Upload: A/AN/ANDK/CPAN-1.83_64.tar.gz
+	     From: andreas.koenig.gmwojprw@franz.ak.mind.de (Andreas J. Koenig)
+	     Date: Thu, 02 Feb 2006 12:35:41 +0100
+	     Message-ID: <87acda0z8y.fsf@k75.linux.bogus>
+	     
+	     [ 27192]
+	     Subject:  [PAUSE] CPAN Upload: A/AN/ANDK/CPAN-1.84.tar.gz
+	     From: andreas.koenig.gmwojprw@franz.ak.mind.de (Andreas J. Koenig)
+	     Date: Wed, 15 Feb 2006 09:19:56 +0100
+	     Message-ID: <87oe19owyb.fsf@k75.linux.bogus>
+	     
+	     [ 27193]
+	     Fix to run this test in the core
+     Branch: maint-5.8/perl
+	  +> lib/CPAN/t/01loadme.t lib/CPAN/t/02nox.t lib/CPAN/t/03pkgs.t
+	  +> lib/CPAN/t/10version.t lib/CPAN/t/11mirroredby.t
+	   - lib/CPAN/t/Nox.t lib/CPAN/t/loadme.t lib/CPAN/t/mirroredby.t
+	   - lib/CPAN/t/version.t
+	  !> MANIFEST lib/CPAN.pm lib/CPAN/Debug.pm lib/CPAN/FirstTime.pm
+	  !> lib/CPAN/HandleConfig.pm lib/CPAN/Nox.pm lib/CPAN/SIGNATURE
+	  !> lib/CPAN/Tarzip.pm lib/CPAN/Version.pm lib/CPAN/bin/cpan
+	  !> lib/CPAN/t/vcmp.t
+____________________________________________________________________________
+[ 30201] By: nicholas				   on 2007/02/10  21:12:29
+	Log: Reverse change 27011, restoring us to CPAN.pm 1.83
+     Branch: maint-5.8/perl
+	   + lib/CPAN/Debug.pm lib/CPAN/HandleConfig.pm
+	   + lib/CPAN/PAUSE2005.pub lib/CPAN/Tarzip.pm lib/CPAN/Version.pm
+	   + lib/CPAN/t/version.t
+	   ! MANIFEST lib/CPAN.pm lib/CPAN/FirstTime.pm lib/CPAN/Nox.pm
+	   ! lib/CPAN/SIGNATURE lib/CPAN/bin/cpan lib/CPAN/t/Nox.t
+	   ! lib/CPAN/t/loadme.t lib/CPAN/t/mirroredby.t lib/CPAN/t/vcmp.t
+____________________________________________________________________________
+[ 30199] By: nicholas				   on 2007/02/10  20:32:08
+	Log: Properly integrate change 28127, despite perforce's best efforts to be
+	     software, and therefore hateful.
+     Branch: maint-5.8/perl
+	   - lib/Text/Balanced/t/00.load.t
+	   - lib/Text/Balanced/t/pod-coverage.t
+____________________________________________________________________________
+[ 30198] By: nicholas				   on 2007/02/10  20:31:15
+	Log: Integrate:
+	     [ 26435]
+	     Add tests for untested math functions in POSIX
+	     
+	     [ 28503]
+	     Subject: [PATCH] Test scripts for I18N::Langinfo and POSIX
+	     From: Sébastien Aperghis-Tramoni <maddingue@free.fr>
+	     Date: Fri, 07 Jul 2006 11:02:31 +0200
+	     Message-ID: <1152262951.44ae23272ffa0@imp3-g19.free.fr>
+	     
+	     Only includes changes to:
+	     * ext/I18N/Langinfo/t/Langinfo.t
+	     * ext/POSIX/t/sysconf.t
+	     * ext/POSIX/t/termios.t
+	     
+	     [ 28505]
+	     POSIX test improvements on True64
+	     Subject: [PATCH] the new POSIX tests
+	     From: Jarkko Hietaniemi <jhi@iki.fi>
+	     Date: Sat, 08 Jul 2006 11:43:05 +0300
+	     Message-ID: <44AF7019.3070509@iki.fi>
+	     
+	     [ 28508]
+	     Subject: Skip some POSIX tests when the thing they are testing is unimplemented
+	     From: demerphq <demerphq@gmail.com>
+	     Date: Sat, 8 Jul 2006 17:55:09 +0200
+	     Message-ID: <9b18b3110607080855g73407c4fx41a578815c2a6da2@mail.gmail.com>
+	     
+	     [ 28520]
+	     Subject: [PATCH] Skip tests of a POSIX constant on Mac OS X because saved IDs are borked
+	     From: Dominic Dunlop <shouldbedomo@mac.com>
+	     Date: Sun, 9 Jul 2006 22:22:14 +0200
+	     Message-Id: <F1942C06-CDE3-47C6-AC5A-4358960E0F6E@mac.com>
+	     
+	     [ 28540]
+	     Subject: [PATCH] sysconf.t: still failing in tru64, try harder to skip
+	     From: Jarkko Hietaniemi <jhi@cc.hut.fi>
+	     Date: Tue, 11 Jul 2006 09:23:08 +0300 (EEST)
+	     Message-Id: <200607110623.k6B6N8Ni488812@kosh.hut.fi>
+	     
+	     [ 28572]
+	     Skip tests for pathconf() and fpathconf() on HP-UX for 
+	     _PC_CHOWN_RESTRICTED.  The HP-UX manpage suggests not trying
+	     to do it, and that the errno will not be set on failure.
+	     
+	     [ 28574]
+	     Make sysconf tests handle unimplemented success indications
+	     for the benefit of Mac OS X and VMS.
+	     
+	     [ 28851]
+	     return value of -1 without errno set is ok in 
+	     ext/POSIX/t/sysconf.t (it just means the feature is
+	     not implemented, not defined, or has no limit)
+	     
+	     [ 30014]
+	     Fix ext/POSIX/t/sysconf.t failures on Cygwin.
+     Branch: maint-5.8/perl
+	  +> ext/POSIX/t/math.t ext/POSIX/t/sysconf.t ext/POSIX/t/termios.t
+	  !> MANIFEST ext/I18N/Langinfo/t/Langinfo.t ext/POSIX/POSIX.pod
+____________________________________________________________________________
+[ 30196] By: nicholas				   on 2007/02/10  19:13:38
+	Log: Integrate (ish):
+	     [ 26374]
+	     Fix for [perl #37886] strict 'refs' doesn't apply inside defined
+	     
+	     [ 29900]
+	     defined @$foo and defined %$bar should be subject to strict 'refs';
+	     
+	     [ 29905]
+	     Refactor the common soft-reference code from pp_rv2sv and pp_rv2av
+	     into a single routine Perl_softref2xv(). As soft references are
+	     rarely used compared with true references, move this code from pp_hot.c
+	     
+	     [ 29907]
+	     Remove register keyword from dSP; (at least for now)
+	     
+	     [ 30195]
+	     These casts to GV are no longer needed.
+	     
+	     
+	     but preserve the current behaviour of allowing defined $$foo, @$bar
+	     and %$baz to be exempt from strict refs, because somebody out there
+	     is bound to be using it.
+     Branch: maint-5.8/perl
+	   ! pp.c t/lib/strict/refs
+	  !> embed.fnc embed.h lib/DBM_Filter.pm pp.h pp_hot.c proto.h
+____________________________________________________________________________
+[ 30194] By: nicholas				   on 2007/02/10  18:07:51
+	Log: Integrate:
+	     [ 29835]
+	     Make changes analagous to pp_rv2hv's 21394 and 24489 in pp_rv2av.
+	     
+	     [ 29836]
+	     pp_rv2av and pp_rv2hv have a lot of common code, so it's certainly a
+	     space saving to merge them. Hopefully this will reduce L2 cache misses.
+     Branch: maint-5.8/perl
+	   ! pp_hot.c
+	  !> mathoms.c opcode.h opcode.pl pp.h
+____________________________________________________________________________
+[ 30193] By: nicholas				   on 2007/02/10  17:24:50
+	Log: Integrate:
+	     [ 28788]
+	     Subject: [PATCH] UCD 5.0.0
+	     From: Jarkko Hietaniemi <jhi@iki.fi>
+	     Date: Tue, 05 Sep 2006 21:29:45 +0300
+	     Message-ID: <44FDC219.8010006@iki.fi>
+	     
+	     [ 28792]
+	     Removed some leftover debugging accidentally added with
+	     change #28788.
+     Branch: maint-5.8/perl
+	  +> lib/unicore/NamedSqProv.txt
+	  !> (integrate 26 files)
+____________________________________________________________________________
+[ 30191] By: nicholas				   on 2007/02/10  17:19:08
+	Log: Integrate the tests from:
+	     [ 26370]
+	     Don't autovivify stashes as soon as the lexer sees them.
+	     This makes defined %foo::bar:: work again.
+	     Add tests for it, remove note in perldelta about having broken it.
+	     
+	     [ 26548]
+	     Add a test for change 26547. (We no longer expect to see errors about
+	     unbalanced string table reference counts.)
+	     
+	     [ 26574]
+	     Since we no longer autovivify stashes (change #26370), we need
+	     to turn off strict-refs on them, or we'll have a stricture
+	     error the first time we'd try to access them (when they'll be
+	     actually autovivified).
+	     
+	     [ 26867]
+	     defined %foo::bar:: wasn't working like it used to do in evals
+	     (and, consequently, when require'ing modules.)
+     Branch: maint-5.8/perl
+	   ! t/op/stash.t
+____________________________________________________________________________
+[ 30189] By: nicholas				   on 2007/02/10  13:00:46
+	Log: Integrate:
+	     [ 26206]
+	     Additional tests for B and POSIX.	The POSIX ones concern me a bit,
+	     but I don't expect any black smokes because of testing on OpenBSD,
+	     Linux, Win32, an Cygwin.
+	     
+	     [ 26207]
+	     Hmmm...strftime() does work on Win32, but tzset() is having problems
+	     on OpenBSD.
+	     
+	     [ 26208]
+	     Just be explicit about $TZ.  
+	     
+	     [ 26213]
+	     Deal with differences in what clock() does between POSIX and BSD.
+	     
+	     [ 26221]
+	     Mac OS X/Darwin seems to have problems with tzname().
+	     
+	     [ 26222]
+	     Fix ext/POSIX/t/time.t on Win32
+	     
+	     According to MSDN, "The string result produced by ctime contains
+	     exactly 26 characters and has the form: Wed Jan 02 02:03:55 1980\n\0"
+	     so we *do* want the leading zero on the day returned by strftime
+	     
+	     [ 26384]
+	     Fix for ext/POSIX/t/time.t so the strftime() test works on systems
+	     that aren't quite up to SUS3.  Based on a patch by David Dyck in
+	     RT #37960: POSIX/t/time fails bleadperl
+	     
+	     [ 26424]
+	     Fix typos in regular expressions
+     Branch: maint-5.8/perl
+	  +> ext/POSIX/t/time.t
+	  !> MANIFEST ext/B/t/b.t
+____________________________________________________________________________
+[ 30187] By: nicholas				   on 2007/02/09  23:24:25
+	Log: Integrate:
+	     [ 25686]
+	     Pod::Usage documentation fix, suggested by :
+	     
+	     Subject: [perl #37322] Pod::Usage implementation of -sections disagrees with its documentation 
+	     From: "Steven Schubiger via RT" <perlbug-followup@perl.org>
+	     Date: Sun, 02 Oct 2005 07:25:37 -0700
+	     Message-ID: <rt-3.0.11-37322-121918.15.4257995782182@perl.org>
+	     
+	     [ 26297]
+	     One quick fix to the test for differences in error output.
+	     
+	     [ 26303]
+	     Fix to Pod::Usage to work with all recent Pod::Text versions.  Also
+	     includes a change to the Pod::Usage test file for compatibility
+	     purposes.
+	     
+	     [ 26304]
+	     Further yak-shaving on Pod::Usage.	 Now, t/pod/pod2usage2.t tests 
+	     pass.
+	     
+	     [ 26305]
+	     Version bump for Pod::Usage
+	     
+	     [ 26306]
+	     One final Pod::Usage yak to shave...
+	     
+	     [ 29126]
+	     Upgrade to Pod-Parser-1.35.
+	     
+	     [ 29214]
+	     Sync Pod::Usage with the CPAN version
+     Branch: maint-5.8/perl
+	  +> t/pod/p2u_data.pl t/pod/twice.t
+	  !> MANIFEST lib/Pod/Checker.pm lib/Pod/ParseUtils.pm
+	  !> lib/Pod/Parser.pm lib/Pod/PlainText.pm lib/Pod/Select.pm
+	  !> lib/Pod/Usage.pm lib/Pod/t/Usage.t t/pod/pod2usage2.t
+	  !> t/pod/testcmp.pl
+____________________________________________________________________________
+[ 30186] By: nicholas				   on 2007/02/09  23:00:34
+	Log: Integrate:
+	     [ 26225]
+	     Subject: Re: [perl #37716] Re: File::Compare broken for filenames with whitespace
+	     From: andreas.koenig.gmwojprw@franz.ak.mind.de (Andreas J. Koenig)
+	     Date: Tue, 29 Nov 2005 08:07:19 +0100
+	     Message-ID: <878xv89bko.fsf@k75.linux.bogus>
+	     
+	     [ 26245]
+	     Replace ^M by a space in test for bug #37716, to make
+	     Cygwin happy (found by Yitzchak)
+	     
+	     [ 26337]
+	     Fix lib/File/Compare.t test failures on Win32
+	     
+	     Change 26225, updated by 26245, added a test for another filename with
+	     a trailing space but failed to open the new filehandle in binary mode
+	     
+	     To compound matters, creating a file called "foo " on Win32 "succeeds"
+	     but actually creates a file called just "foo", so we have actually
+	     overwritten the original file with this non-binary mode version, and
+	     hence some of the original tests started failing too!
+	     
+	     (And because of this the new test doesn't actually add anything new on
+	     Win32 at the moment, but right now I can't think of a filename that
+	     would have failed under 2-arg open but succeeds with 3-arg open, which
+	     was the purpose of this test)
+	     
+	     [ 26413]
+	     Subject: [PATCH] make failing cygwin test TODO'd
+	     From: Yitzchak Scott-Thoennes <sthoenna@efn.org>
+	     Date: Mon, 19 Dec 2005 03:41:12 -0800
+	     Message-ID: <20051219114112.GA5568@efn.org>
+	     
+	     [ 26889]
+	     special VMS handling no longer needed since we now close the file
+     Branch: maint-5.8/perl
+	  !> lib/File/Compare.pm lib/File/Compare.t
+____________________________________________________________________________
+[ 30185] By: nicholas				   on 2007/02/09  20:50:14
+	Log: Tests to verify that bug 37350 isn't fixed.
+     Branch: maint-5.8/perl
+	   ! t/op/array.t
+____________________________________________________________________________
+[ 30182] By: nicholas				   on 2007/02/09  18:32:16
+	Log: Integrate:
+	     [ 28898]
+	     Subject: Re: reentr reshuffle
+	     From: Jarkko Hietaniemi <jhi@iki.fi>
+	     Date: Thu, 28 Sep 2006 14:15:45 +0300
+	     Message-ID: <451BAEE1.1070509@iki.fi>
+     Branch: maint-5.8/perl
+	   ! reentr.inc
+	  !> reentr.h reentr.pl
+____________________________________________________________________________
+[ 30181] By: nicholas				   on 2007/02/09  17:20:56
+	Log: Reverse change 29132, which was the integration of change 25808:
+	     
+	     Subject: Re: [PATCH] Re: [perl #37350] $#{@$aref} in debugger gives: Bizarre copy of ARRAY in leave
+	     From: Robin Houston <robin@cpan.org>
+	     Date: Oct 14, 2005 1:54 AM
+	     Message-ID: <20051013235457.GA23386@rpc142.cs.man.ac.uk>
+	     
+	     
+	     because it's likely that too much code out there relies on this bug.
+     Branch: maint-5.8/perl
+	   ! embed.fnc embed.h global.sym mathoms.c op.c op.h proto.h
+	   ! t/op/array.t
+____________________________________________________________________________
+[ 30180] By: nicholas				   on 2007/02/09  16:04:07
+	Log: Regen headers and documentation. Some seem to be a little out of date
+	     here.
+     Branch: maint-5.8/perl
+	   ! ext/ByteLoader/byterun.c pod/perlapi.pod pod/perlintern.pod
+	   ! proto.h reentr.inc
+____________________________________________________________________________
+[ 30179] By: nicholas				   on 2007/02/09  12:25:37
+	Log: Integrate:
+	     [ 28619]
+	     Added tests from CGI.pm that had not been integrated into core.
+     Branch: maint-5.8/perl
+	  +> lib/CGI/t/start_end_asterisk.t lib/CGI/t/start_end_end.t
+	  +> lib/CGI/t/start_end_start.t
+	  !> MANIFEST
+____________________________________________________________________________
+[ 30176] By: nicholas				   on 2007/02/08  17:08:42
+	Log: Integrate:
+	     [ 24995]
+	     Make Carp.pm even lighter (and Carp::Heavy even heavier)
+	     Also move carp.pm pod to carp.pod
+	     
+	     [ 25006]
+	     move Carp.pod back into Carp.pm
+	     
+	     [ 25039]
+	     undo some excessive Carp.pm minimalisation
+	     
+	     [ 28330]
+	     ensure failure to load Carp::Heavy gets reported
+	     
+	     [ 29270]
+	     Subject: Re: Why aren't %Carp::Internal and %Carp::CarpInternal documented?
+	     From: "Ben Tilly" <btilly@gmail.com>
+	     Date: Sun, 22 Oct 2006 14:07:23 -0700
+	     Message-ID: <acc274b30610221407o39e0157gad44ad5828c2bc21@mail.gmail.com>
+	     
+	     [ 29382]
+	     Stop mod_perl looping forever in &Carp::shortmess_jmp as it somehow
+	     manages to forcibly re-load Carp.pm without re-loading Carp/Heavy.pm
+	     
+	     [ 29384]
+	     Remove unused lexical present since change 13426.
+	     
+	     [ 29385]
+	     Make the cache in Carp::trusts actually persist across calls :-)
+	     I made a similar mistake once long ago, and now spot the pattern.
+     Branch: maint-5.8/perl
+	  !> MANIFEST lib/Carp.pm lib/Carp.t lib/Carp/Heavy.pm
+	  !> lib/warnings.pm warnings.pl
+____________________________________________________________________________
+[ 30175] By: nicholas				   on 2007/02/08  16:33:12
+	Log: Integrate:
+	     
+	     parts of:
+	     [ 23768]
+	     Subject: Re: [PATCH] Remove Carp from warnings.pm
+	     From: Jim Cromie <jim.cromie@gmail.com>
+	     Date: Mon, 3 Jan 2005 06:36:16 -0700
+	     Message-ID: <cfe85dfa05010305367445dee6@mail.gmail.com>
+     Branch: maint-5.8/perl
+	  !> ext/B/t/stash.t lib/Carp.pm lib/English.pm lib/Exporter.pm
+	  !> lib/Exporter.t lib/Exporter/Heavy.pm
+____________________________________________________________________________
+[ 30174] By: nicholas				   on 2007/02/08  16:02:24
+	Log: Integrate:
+	     [ 28659]
+	     Subject: [PATCH] File::Copy pod updated adding X<>
+	     From: "Gabor Szabo" <szabgab@gmail.com>
+	     Date: Tue, 1 Aug 2006 08:55:37 +0200
+	     Message-ID: <d8a74af10607312355t7f3fed91g1459cb74b9b50fcd@mail.gmail.com>
+	     
+	     [ 28869]
+	     Subject: Re: [PATCH] lib/File/Copy.t - test descriptions and minor fixes
+	     From: "Adriano Ferreira" <a.r.ferreira@gmail.com>
+	     Date: Mon, 18 Sep 2006 17:36:50 -0300
+	     Message-ID: <73ddeb6c0609181336g53a90dceo9a29777f7686e372@mail.gmail.com>
+	     
+	     [ 30013]
+	     Subject: Re: [perl #32135] File::Copy module
+	     From: "Adriano Ferreira" <a.r.ferreira@gmail.com>
+	     Date: Fri, 26 Jan 2007 12:56:18 -0200
+	     Message-ID: <73ddeb6c0701260656i1c35b207r1f9624edd3503fa6@mail.gmail.com>
+	     
+	     [ 30172]
+	     Typo fix, by John P. Linderman
+     Branch: maint-5.8/perl
+	  !> lib/File/Copy.pm lib/File/Copy.t
+____________________________________________________________________________

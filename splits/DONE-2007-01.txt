@@ -4229,6 +4229,7 @@ ____________________________________________________________________________
 [ 29775] By: nicholas				   on 2007/01/12  14:07:47
 	Log: Integrate:
 	     [ 26334]
+         [ REVERTED!!! ]
 	     A suggestion by Yamashina Hio to speed up substitutions
 	     with right-hand side expressions by freeing temporaries.
 	     See :
