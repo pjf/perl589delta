@@ -1,0 +1,520 @@
+[ 32553] By: nicholas				   on 2007/11/29  16:00:15
+	Log: Integrate:
+	     [ 31548]
+	     Make Perl_find_runcv a member of the public API
+	     (so Sub::Current works on Windows)
+     Branch: maint-5.8/perl
+	  !> embed.fnc embed.h global.sym pod/perlapi.pod
+	  !> pod/perlintern.pod
+____________________________________________________________________________
+[ 32545] By: nicholas				   on 2007/11/28  23:35:51
+	Log: Integrate:
+	     [ 32059]
+	     Subject: [PATCH] Re: [perl #46011] overload "0+" doesn't handle integer results
+	     From: Rick Delaney <rick@bort.ca>
+	     Date: Sun, 7 Oct 2007 00:22:14 -0400
+	     Message-ID: <20071007042214.GH29047@bort.ca>
+	     
+	     [ 32062]
+	     Subject: Re: [perl #46011] [RESOLVED] overload "0+" doesn't handle integer results
+	     From: Rick Delaney <rick@bort.ca>
+	     Date: Sun, 7 Oct 2007 22:37:01 -0400
+	     Message-ID: <20071008023701.GI29047@bort.ca>
+	     
+	     [ 32071]
+	     Suggestion by Rick Delaney to make this test pass with -Duse64bitall
+	     on HP-UX (see bug #46011)
+	     
+	     [ 32100]
+	     Subject: [PATCH] pp_int should treat refs as UVs (not IVs)
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Thu, 11 Oct 2007 10:23:03 -0400
+	     Message-ID: <1ff86f510710110723p6cbed55fo558777258061b556@mail.gmail.com>
+	     
+	     [ 32141]
+	     Subject: [PATCH] Fix overloading for 64-bit ints (revised)
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Thu, 18 Oct 2007 14:49:40 -0400
+	     Message-ID: <1ff86f510710181149s1c096dd9qffa8fe42046e675b@mail.gmail.com>
+	     
+	     [ 32148]
+	     Subject: Re: [PATCH] Fix overloading for 64-bit ints (revised)
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Fri, 19 Oct 2007 20:50:27 -0400
+	     Message-ID: <1ff86f510710191750s3f25eae2x2dc2e90f18f1f716@mail.gmail.com>
+	     
+	     [ 32150]
+	     Revert code change from #32148
+	     
+	     [ 32157]
+	     Subject: Re: overload64.t failures
+	     From: Rick Delaney <rick@bort.ca>
+	     Date: Sun, 21 Oct 2007 16:13:51 -0400
+	     Message-ID: <20071021201351.GY29047@bort.ca>
+     Branch: maint-5.8/perl
+	  +> lib/overload64.t
+	  !> MANIFEST embed.fnc embed.h lib/overload.t pod/perlintern.pod
+	  !> pp.c pp_hot.c proto.h sv.c
+____________________________________________________________________________
+[ 32544] By: nicholas				   on 2007/11/28  23:06:16
+	Log: Integrate:
+	     [ 29827]
+	     extend threads 'veto cleanup' to perl_free and system stuff
+	     
+	     [ 31970]
+	     make PERL_SYS_INIT/INIT3/TERM into functions
+	     
+	     [ 31971]
+	     extend PL_veto_cleanup to all platforms
+	     The conditional skip of PERL_SYS_TERM introduced by change #29827
+	     now happens on all platforms, not just UNIX.
+	     
+	     [ 32215]
+	     Subject:  Re: building mod_perl-2.0.3 with Perl 5.10.0 (DEVEL32096)
+	     From:  Jarkko Hietaniemi <jhi@iki.fi>
+	     Date:  Fri, 02 Nov 2007 21:38:48 -0400
+	     Message-Id:  <472BD128.9080105@iki.fi>
+	     
+	     PerlIO_teardown is called when there may no longer be an
+	     interpreter available
+	     
+	     [ 32216]
+	     make PERLSYS_TERM not require a context
+	     
+	     [ 32235]
+	     Disable debugging output in PerlIO_teardown;
+	     it still relies on an interpreter being present.
+     Branch: maint-5.8/perl
+	  !> dosish.h embed.fnc embedvar.h epoc/epocish.h global.sym
+	  !> mpeix/mpeixish.h os2/os2ish.h perl.c perl.h perlapi.h perlio.c
+	  !> perliol.h perlvars.h plan9/plan9ish.h proto.h unixish.h
+	  !> vms/vmsish.h
+____________________________________________________________________________
+[ 32543] By: nicholas				   on 2007/11/28  22:15:48
+	Log: Integrate:
+	     [ 31756]
+	     Fix configure.com's d_fcntl_can_lock test to look for a file
+	     that actually exists.
+	     
+	     [ 31949]
+	     Allow IEEE math to be deselected on OpenVMS I64 (but it remains
+	     the default).
+	     
+	     [ 32198]
+	     Subject: problem with MAKE_EXT.COM
+	     From: Thomas Pfau <pfau@nbpfaus.net>
+	     Date: Sat, 27 Oct 2007 09:27:54 -0400
+	     Message-id: <47233CDA.8010908@nbpfaus.net>
+	     
+	     configure.com thinko in #30455.
+	     
+	     
+	     [ 32199]
+	     Subject: Re: Perl 5.10.0 getting close: please test
+	     From: lemkemch@t-online.de
+	     Date: Thu, 25 Oct 2007 00:25:55 +0200
+	     Message-id: <op.t0p271mr5o90vo@orion>
+	     
+	     Help older VMS compilers by using ccflags when building munchconfig.
+     Branch: maint-5.8/perl
+	  !> configure.com
+____________________________________________________________________________
+[ 32542] By: nicholas				   on 2007/11/28  22:12:50
+	Log: Integrate:
+	     [ 31473]
+	     Second patch from:
+	     Subject: Re: [perl #43357] *DESTROY = sub {} at runtime
+	     From: "Brandon Black" <blblack@gmail.com>
+	     Date: Tue, 26 Jun 2007 11:05:31 -0500
+	     Message-ID: <84621a60706260905x2da6eaf1x4bd7d5223951e52@mail.gmail.com>
+	     
+	     Fix MRO behaviour when one undefs @ISA
+	     
+	     
+	     [specifically call mg_clear() at the end of av_undef()]
+     Branch: maint-5.8/perl
+	  !> av.c
+____________________________________________________________________________
+[ 32541] By: nicholas				   on 2007/11/28  21:26:49
+	Log: Integrate:
+	     [ 31104]
+	     Don't try to build old Thread extension on VMS when -Duseithreads
+	     has been chosen.
+	     
+	     [ 31226]
+	     Better suppression of Threads build (probably still needed on 5.8.x)
+	     
+	     [ 31544]
+	     Fix the case of $Config{perl_patchlevel} on VMS.
+	     
+	     [ 31597]
+	     Set $Config{PERL_PATCHLEVEL} as well as $Config{perl_patchlevel}, and
+	     grab the value from a MAINTXXX or SMOKEXXX line in patchlevel.h if present.
+     Branch: maint-5.8/perl
+	  !> configure.com
+____________________________________________________________________________
+[ 32540] By: nicholas				   on 2007/11/28  20:56:52
+	Log: Integrate:
+	     [ 32201]
+	     Subject: Re: copyright notices for vms.c and vmsish.h
+	     From: Charles Bailey <bailey@newman.upenn.edu>
+	     Date: Fri, 26 Oct 2007 15:27:36 -0400
+	     Message-id: <47223FA8.90300@newman.upenn.edu>
+	     
+	     At my instigation, Charles agreed to wear the copyright hat for
+	     the major VMS files.  This is by analogy with the core files 
+	     for which Larry, as Prime Mover, is the only named copyright
+	     holder, but "and others" includes, well, lots of others.
+	     
+	     [ 32202]
+	     Typo in comment in 32201.
+     Branch: maint-5.8/perl
+	  !> vms/vms.c vms/vmsish.h
+____________________________________________________________________________
+[ 32538] By: nicholas				   on 2007/11/28  20:18:30
+	Log: Integrate:
+	     [ 31384]
+	     Fix missing PerlIO_releaseFILE in VMS::Stdio::getname().
+	     
+	     [ 32224]
+	     As reported in bug #46207, change 30633 to PerlIO_exportFILE() and
+	     PerlIO_releaseFILE() to manage the reference counts of fds correctly
+	     has the side effect of making some XS modules "leak" descriptors.
+	     This is because the typemap calls PerlIO_findFILE(), which sometimes
+	     (but not always) calls PerlIO_exportFILE(). To be consistent,
+	     PerlIO_fildFILE() needs to either always give you a reference, or
+	     always not give you a reference. It seems better to do the latter as
+	     the call to PerlIO_exportFILE() is only an implementation detail, so
+	     arrange for it to immediately free up the reference that
+	     PerlIO_exportFILE() created.
+     Branch: maint-5.8/perl
+	  !> perlio.c vms/ext/Stdio/Stdio.xs
+____________________________________________________________________________
+[ 32536] By: nicholas				   on 2007/11/28  19:43:06
+	Log: Integrate:
+	     [ 31362]
+	     Subject: [PATCH] cross-compilation for linux
+	     From: "Konovalov, Vadim Vladimirovich \(Vadim\)** CTR **" <vkonovalov@alcatel-lucent.com>
+	     Date: Sat, 9 Jun 2007 19:41:44 +0200
+	     Message-ID: <D16F05D0CAAA234BA2B753B80DE6100D278EBC@DEEXC1U02.de.lucent.com>
+	     
+	     [The changes to existing files]
+     Branch: maint-5.8/perl
+	  !> Cross/README README.ce win32/Makefile.ce
+____________________________________________________________________________
+[ 32535] By: nicholas				   on 2007/11/28  19:38:15
+	Log: Integrate:
+	     [ 31333]
+	     Remove support for assertions and -A
+     Branch: maint-5.8/perl
+	  !> lib/perl5db.pl op.c t/op/attrs.t warnings.pl xsutils.c
+____________________________________________________________________________
+[ 32534] By: nicholas				   on 2007/11/28  19:15:19
+	Log: Integrate:
+	     [ 31287]
+	     Subject: linux arm cross-compilation
+	     From: Vadim <vadim@vkonovalov.ru>
+	     Date: Mon, 28 May 2007 01:23:46 +0400
+	     Message-ID: <4659F6E2.3090805@vkonovalov.ru>
+	     
+	     with adjustments to the MANIFEST
+	     
+	     [just the configpm part]
+     Branch: maint-5.8/perl
+	  !> configpm
+____________________________________________________________________________
+[ 32532] By: nicholas				   on 2007/11/28  16:24:01
+	Log: Integrate:
+	     [ 31275]
+	     Change #31270 should have updated proto.h to match
+     Branch: maint-5.8/perl
+	  !> embed.fnc proto.h
+____________________________________________________________________________
+[ 32530] By: nicholas				   on 2007/11/28  14:10:54
+	Log: Integrate:
+	     [ 31107]
+	     Subject: Re: mro status, etc
+	     From: "Brandon Black" <blblack@gmail.com>
+	     Date: Sun, 29 Apr 2007 17:27:03 -0500
+	     Message-ID: <84621a60704291527y1b39be37l221ef66e4c828f66@mail.gmail.com>
+	     
+	     [just the perltoot addition]
+     Branch: maint-5.8/perl
+	  !> pod/perltoot.pod
+____________________________________________________________________________
+[ 32529] By: nicholas				   on 2007/11/28  13:55:58
+	Log: Integrate:
+	     [ 31878]
+	     Subject: Re: [PATCH] Cray XT4/Catamount build
+	     From: Jarkko Hietaniemi <jhi@iki.fi>
+	     Date: Sat, 15 Sep 2007 20:47:57 -0400
+	     Message-ID: <46EC7D3D.5010604@iki.fi>
+	     
+	     [ 31899]
+	     Subject: Re: [PATCH] Cray XT4/Catamount build
+	     From: Jarkko Hietaniemi <jhi@iki.fi>
+	     Date: Tue, 18 Sep 2007 19:48:48 -0400
+	     Message-ID: <46F063E0.1000004@iki.fi>
+	     
+	     (Restores a pre-generated utils/Makefile for the benefit of Win32,
+	     which can't run utils/Makefile.SH itself)
+	     
+	     [ 31906]
+	     Mark utils/Makefile as read/write in perforce.
+     Branch: maint-5.8/perl
+	   + utils/Makefile.SH
+	  !> MANIFEST Makefile.SH Porting/makerel ext/util/make_ext
+	  !> hints/catamount.sh utils/Makefile x2p/Makefile.SH
+____________________________________________________________________________
+[ 32528] By: nicholas				   on 2007/11/28  12:54:17
+	Log: Integrate:
+	     [ 31388]
+	     Subject: [PATCH] miscellanea
+	     From: Jarkko Hietaniemi <jhi@iki.fi>
+	     Date: Thu, 14 Jun 2007 22:32:49 -0400
+	     Message-ID: <4671FA51.4070001@iki.fi>
+	     
+	     [ 31404]
+	     Patches to compile perl on Cray XT4 Catamount/Qk, by Jarkko
+     Branch: maint-5.8/perl
+	  +> hints/catamount.sh
+	  !> Configure MANIFEST doio.c ext/util/make_ext hints/linux.sh
+	  !> perl.c perl.h pp_sys.c sv.c util.c
+____________________________________________________________________________
+[ 32527] By: nicholas				   on 2007/11/28  12:49:11
+	Log: Integrate:
+	     [ 31279]
+	     Subject: Re: argproc.c license Re: [perl #43037] Bad license in perl distribution
+	     From: Mark Pizzolato <mark@infocomm.com>
+	     Date: Fri, 25 May 2007 13:31:17 -0700 (PDT)
+	     Message-ID: <288163.41670.qm@web83606.mail.sp1.yahoo.com>
+     Branch: maint-5.8/perl
+	  !> vms/vms.c
+____________________________________________________________________________
+[ 32516] By: nicholas				   on 2007/11/26  23:54:19
+	Log: Naff orf!
+     Branch: maint-5.8/perl
+	   - mro.c
+____________________________________________________________________________
+[ 32515] By: nicholas				   on 2007/11/26  23:54:05
+	Log: Integrate:
+	     [ 31936]
+	     Silence a load of "value computed is not used" warnings
+	     
+	     [ 31938]
+	     hv_stores() on a literal string is now fractionally more efficient than
+	     hv_store().
+     Branch: maint-5.8/perl
+	  +> mro.c
+	  !> gv.c hv.c mg.c op.c pp_hot.c
+____________________________________________________________________________
+[ 32514] By: nicholas				   on 2007/11/26  23:34:16
+	Log: Integrate:
+	     [ 31931]
+	     Add a new function Perl_hv_common_key_len(), which contains the
+	     manipulations to convert negative lengths to positive length + UTF-8
+	     flag. hv_delete(), hv_exists(), hv_fetch(), hv_store() and
+	     hv_store_flags() all become mathoms. The macros hv_fetchs() and
+	     hv_stores() call hv_common() directly.
+	     
+	     [ 31932]
+	     Remove now-unnecessary =cuts where POD is now adjacent to POD.
+	     
+	     [ 31937]
+	     Fix Win32 breakage caused by #31926
+     Branch: maint-5.8/perl
+	  !> embed.fnc embed.h global.sym handy.h hv.c hv.h mathoms.c
+	  !> proto.h
+____________________________________________________________________________
+[ 32513] By: nicholas				   on 2007/11/26  23:07:51
+	Log: Integrate:
+	     [ 31916]
+	     Send all delete()/delete_ent() calls via S_hv_fetch_common().
+	     This puts all the key normalisation code in one place.
+	     
+	     [ 31919]
+	     Make hv_fetch_common() non-static, and change its name to hv_common(),
+	     as it now also performs hv_delete()/hv_delete_ent()
+	     
+	     [ 31924]
+	     Convert hv_delete_ent(), hv_exists_ent(), hv_fetch_ent() and
+	     hv_store_ent() to macros, and consign the function bodies to history.
+	     Er, mathoms.c
+	     
+	     [ 31925]
+	     Change 31919 forgot to add Perl_hv_common to global.sym
+	     
+	     [ 31926]
+	     Switch Perl_hv_common() to returning void * rather than HE *.
+	     
+	     [ 31927]
+	     Casts needed in mathoms.c to make it compile with g++ after the
+	     making Perl_hv_common() return void *.
+	     
+	     [ 31930]
+	     Move the SV dereference of Perl_hv_fetch()/Perl_hv_store()/
+	     Perl_hv_store_flags() into Perl_hv_common(). All already pass in
+	     HV_FETCH_JUST_SV, which only these three pass in.
+     Branch: maint-5.8/perl
+	  !> embed.fnc embed.h global.sym hv.c hv.h mathoms.c proto.h
+____________________________________________________________________________
+[ 32512] By: nicholas				   on 2007/11/26  22:24:26
+	Log: Integrate:
+	     [ 23843]
+	     Subject: [PATCH bleadperl] Re: [perl #31924] %INC caching failure-case problem
+	     From: Rick Delaney <rick@bort.ca>
+	     Date: Wed, 13 Oct 2004 12:40:18 -0400
+	     Message-ID: <20041013164018.GA32174@biff.bort.ca>
+	     
+	     [ 23873]
+	     Revert change 23843.
+	     (See discussion for bug [perl #31924])
+	     
+	     [ 31898]
+	     For an LVALUE fetch, "hv_fetch()" will recurse into "hv_store()" for a
+	     hash with magic. Field hashes have u magic, so this recursion triggers.
+	     However, key conversion replaces the original key with the converted
+	     key, so we need to ensure that conversion happens exactly once, else
+	     for a non-idempotent key conversion routine (eg ROT13) we will see
+	     double conversion in this case.
+     Branch: maint-5.8/perl
+	  !> cop.h hv.c hv.h
+____________________________________________________________________________
+[ 32511] By: nicholas				   on 2007/11/26  21:40:46
+	Log: Integrate:
+	     [ 28341]
+	     Add missing file to MANIFEST
+     Branch: maint-5.8/perl
+	  !> MANIFEST
+____________________________________________________________________________
+[ 32510] By: nicholas				   on 2007/11/26  21:35:15
+	Log: Integrate:
+	     [ 26523]
+	     re-implement MY_CXT API more efficiently, and add explicit
+	     interpeter arg variant
+	     
+	     [ 27000]
+	     Use a union for storing the shared hash key reference count, rather
+	     than messy pointer hacks.
+	     
+	     [ 27636]
+	     Fix bug 36267 - assigning to a tied hash shouldn't change the
+	     underlying hash. (It used to, if the underlying hash had had storage
+	     allocated). This has the side effect of changing the return value from
+	     hv_store and hv_store_ent for some tied hash scenarios. But *to*
+	     something consistent (ly crazy)
+	     
+	     [ 31898]
+	     For an LVALUE fetch, "hv_fetch()" will recurse into "hv_store()" for a
+	     hash with magic. Field hashes have u magic, so this recursion triggers.
+	     However, key conversion replaces the original key with the converted
+	     key, so we need to ensure that conversion happens exactly once, else
+	     for a non-idempotent key conversion routine (eg ROT13) we will see
+	     double conversion in this case.
+	     
+	     [ 31905]
+	     Call the key transformation function for hv_delete().
+	     Honour the HV_DISABLE_UVAR_XKEY for hv_delete().
+	     Test this.
+	     [Pass in 3 more parameters to S_hv_magic_uvar_xkey()]
+	     
+	     [ 31912]
+	     Call the key transformation function for hv_exists()/hv_fetch()/
+	     hv_store(). (And test this)
+	     
+	     [ 31914]
+	     Parameterise the code that tests the rot13 hash, and add a second
+	     hashtype to test - bitflip (that xors code point with 32).
+	     
+	     [ 31915]
+	     Lots more tests with many permuations of 7, 8 and $lots bit data.
+	     
+	     [ 31923]
+	     Use Perl_hv_common() to test disabling the key conversion in hash
+	     lookups.
+	     
+	     [ 31929]
+	     ext/XS/APITest/APITest.xs was suffering casting issues with g++
+	     as well after the addition of Perl_hv_common().
+	     
+	     [ 32483]
+	     Use a new (clean) anonymous hash for each loop, rather than a hash in
+	     the pad, as the latter can change internal state sufficiently to
+	     confuse matters (even though in all cases it has no keys and from
+	     Perl space is "measurably" identical).
+	     
+	     [ 32500]
+	     Get APItest.xs compiling on 5.8.x by making the compilation of the
+	     Perl_hv_common() test code conditional on the macro hv_common being
+	     defined, and the refcounted_he code conditional on it being 5.9 or
+	     later.
+	     
+	     [ 32501]
+	     Hack round the fact that UNITCHECK is nothing special on 5.8.x by
+	     conditionally creating a sub UNITCHECK(&);
+	     
+	     [ 32502]
+	     UNITCHECK isn't anything special in 5.8.x, so don't run those tests.
+	     
+	     [ 32503]
+	     Skip the op.t API test as it's not relevant to 5.8.x (%^H propagation).
+	     Correct the expectations of hash.t and svsetsv.t for 5.8.x.
+	     
+	     [ 32507]
+	     Test both dMY_CXT and dMY_CXT_INTERP.
+     Branch: maint-5.8/perl
+	  +> ext/XS/APItest/t/op.t
+	  !> ext/XS/APItest/APItest.pm ext/XS/APItest/APItest.xs
+	  !> ext/XS/APItest/Makefile.PL ext/XS/APItest/t/hash.t
+	  !> ext/XS/APItest/t/my_cxt.t ext/XS/APItest/t/svsetsv.t
+	  !> ext/XS/APItest/t/xs_special_subs_require.t
+____________________________________________________________________________
+[ 32509] By: nicholas				   on 2007/11/26  19:57:07
+	Log: For 5.8.8 and earlier, always call newCONSTSUB(), as the interpreter
+	     doesn't support proxy constant subroutines. For all 5.8.x add a cast
+	     to (char *) for the second argument to newCONSTSUB().
+     Branch: maint-5.8/perl
+	   ! lib/ExtUtils/Constant/ProxySubs.pm
+____________________________________________________________________________
+[ 32506] By: nicholas				   on 2007/11/26  18:02:05
+	Log: Integrate:
+	     [ 32505]
+	     A dummy implementation of dMY_CXT_INTERP for unthreaded builds.
+     Branch: maint-5.8/perl
+	  !> perl.h
+____________________________________________________________________________
+[ 32486] By: nicholas				   on 2007/11/25  16:28:05
+	Log: An implementation of dMY_CXT_INTERP() for 5.8.x
+     Branch: maint-5.8/perl
+	   ! perl.h
+____________________________________________________________________________
+[ 32479] By: nicholas				   on 2007/11/24  12:06:56
+	Log: Integrate:
+	     [ 32464]
+	     FAQ sync
+	     
+	     [ 32466]
+	     Subject: [PATCH] document return value of Getopt::Std::getopts()
+	     From: Mark Jason Dominus <mjd@plover.com>
+	     Date: Fri, 23 Nov 2007 09:54:38 -0500
+	     Message-ID: <20071123145438.6593.qmail@plover.com>
+	     
+	     [ 32475]
+	     Subject: [PATCH] Document different kill(-9, ...) semantics on Windows
+	     From: "Jan Dubois" <jand@activestate.com>
+	     Date: Fri, 23 Nov 2007 14:48:43 -0800
+	     Message-ID: <003201c82e23$0003a0f0$000ae2d0$@com>
+	     
+	     [ 32478]
+	     Eliminating the duplicate logic in S_method_common() and
+	     Perl_gv_fetchmethod_autoload() is clearly TODO.
+	     Move the paragraph
+	     "strcat(), strcpy(), strncat(), strncpy(), sprintf(), vsprintf()"
+	     to the section "Tasks that need a little C knowledge" as it doesn't
+	     need any XS knowledge.
+     Branch: maint-5.8/perl
+	  !> gv.c lib/Getopt/Std.pm pod/perlfaq.pod pod/perlfaq1.pod
+	  !> pod/perlfaq2.pod pod/perlfaq3.pod pod/perlfaq4.pod
+	  !> pod/perlfaq5.pod pod/perlfaq6.pod pod/perlfaq7.pod
+	  !> pod/perlfaq8.pod pod/perlport.pod pod/perltodo.pod
+____________________________________________________________________________

@@ -21,6 +21,9 @@ It's now possible to call C<stat> and the C<-X> filestat operators on
 dirhandles. When the situation is ambiguous, it favours the file handle
 semantics. They also treat C<*FILE{IO}> filehandles like C<*FILE> filehandles.
 
+Added B<perlthanks> which is just like C<perlbug> but allows the user to
+send a note of gratitude to the authors and maintainers of Perl. [33532]
+
 =head1 Modules and Pragmata
 
 =head2 New Modules
@@ -30,7 +33,7 @@ semantics. They also treat C<*FILE{IO}> filehandles like C<*FILE> filehandles.
 =item *
 
 C<Module::Pluggable> is a simple framework to create modules that accept
-pluggable sub-modules. The bundled version is 3.6.
+pluggable sub-modules. The bundled version is 3.7. [33505]
 
 =back
 
@@ -40,11 +43,15 @@ pluggable sub-modules. The bundled version is 3.6.
 
 =item *
 
-C<AutoLoader> upgraded to 5.63
+C<ANSIColor> upgraded to version 1.11
 
 =item *
 
-C<AutoSplit> upgraded to 1.05
+C<Autoloader> upgraded to version 5.66
+
+=item *
+
+C<AutoSplit> upgraded to 1.06
 
 =item *
 
@@ -123,11 +130,16 @@ C<bignum> upgraded to 0.20
 
 =item *
 
-C<CGI> upgraded to version 3.28
+C<CGI> upgraded to version 3.35 [33568] 
 
 =item *
 
 C<CPAN> upgraded to version 1.9101
+
+=item *
+
+C<Cwd> upgraded to version 3.27 with C const-ing and some platform specific
+improvements (including for VMS).
 
 =item *
 
@@ -160,7 +172,15 @@ history.
 
 =item *
 
-C<DB_File> upgraded to version 1.815
+C<DB_File> upgraded to version 1.817 [33583]
+
+=item *
+
+C<Devel::DProf> upgraded to version 20080331.00.
+
+=item *
+
+C<Devel::Peek> upgraded to version 1.04
 
 =item *
 
@@ -172,7 +192,48 @@ C<diagnostics> upgraded to version 1.16
 
 =item *
 
-C<Encode> upgraded to version 2.20
+C<Digest> upgraded to version 1.15
+
+=item *
+
+C<Digest::SHA> upgraded to version 5.46
+
+=item *
+
+C<DynaLoader> upgraded to version 1.09 and can now dynamically load a loadable
+object from a file with a non-default file extension.
+
+=item *
+
+C<Embed> upgraded to version 1.28
+
+=item *
+
+C<Encode> upgraded to version 2.24 [33493]
+
+=item *
+
+C<Encode::Alias> includes a fix for encoding "646" (aka ASCII) on Solaris.
+
+=item *
+
+C<File::Basename> upgraded to version 2.76
+
+=item *
+
+C<File::Find> upgraded to version 1.11
+
+=item *
+
+C<File::Glob> upgraded to version 1.06
+
+=item *
+
+C<encoding> upgraded to version 0.11
+
+=item *
+
+c<Errno> upgraded to version 1.10
 
 =item *
 
@@ -180,15 +241,31 @@ C<Exporter> upgraded to version 5.60
 
 =item *
 
+C<ExtUtils::Command> upgraded to version 1.14
+
+=item *
+
 C<ExtUtils::Constant> upgraded to version 0.04
 
 =item *
 
-C<ExtUtils::MakeMaker> upgraded to version 6.32
+C<ExtUtils::Install> upgraded to version 1.51 [33567]
 
 =item *
 
-C<Fatal> upgraded to version 1.05
+C<ExtUtils::MakeMaker> upgraded to version 6.44 [33396]
+
+=item *
+
+C<ExtUtils::Manifest> upgraded to version 1.51
+
+=item *
+
+C<ExtUtils::ParseXS> upgraded to version 2.19 [33392]
+
+=item *
+
+C<Fatal> upgraded to version 1.06
 
 =over
 
@@ -200,11 +277,15 @@ Allows to make fatal built-ins in CORE::GLOBAL.
 
 =item *
 
-C<File::Basename> upgraded to version 2.76
+C<File::Basename> upgraded to version 2.77
 
 =item *
 
-C<File::Find> upgraded to version 1.11
+C<File::Copy> now uses 3-arg open.
+
+=item *
+
+C<File::Find> upgraded to version 1.13
 
 =item *
 
@@ -224,11 +305,26 @@ C<File::Path> upgraded to version 1.09
 
 =item *
 
-C<FileCache> upgraded to version 1.07
+C<File::Spec>, C<File::Spec::Epoc>, C<File::Spec::Mac>, C<File::Spec::Functions>
+C<File::Spec::Unix>, C<File::Spec::VMS>, C<File::Spec::Win32> upgraded to version
+3.2701 with improved handling of bad arguments and some platform specific
+improvements (Including for VMS and Cygwin)
 
 =item *
 
 C<FindBin> upgraded to version 1.48
+
+=item *
+
+C<FileCache> upgraded to version 1.07
+
+=item *
+
+C<GDBM_File> upgraded to version 1.09
+
+=item *
+
+C<Getopt::Long> upgraded to version 2.36
 
 =item *
 
@@ -244,11 +340,43 @@ C<Math::BigInt> upgraded to version 1.82
 
 =item *
 
-C<Math::BigRat> upgraded to version 0.18
+C<Math::BigRat> upgraded to version 0.22
+
+=over 4
 
 =item *
 
-C<Pod::Html> upgraded to version 1.08
+Implements new C<as_float> method.
+
+=back
+
+=item *
+
+C<Math::Complex>, C<Math::Trig> upgraded to version 1.54.
+
+=item *
+
+C<PathTools> upgraded to version 3.22
+
+=item *
+
+C<PerlIO::via> upgraded to version 0.05
+
+=item *
+
+C<Math::Complex> upgraded to version 1.52 [33293]
+
+=item *
+
+C<Module::Pluggable> upgraded to version 3.8 [33552]
+
+=item *
+
+C<Net::Ping> upgraded to version 2.35 [33242]
+
+=item *
+
+C<Pod::Html> upgraded to version 1.09 [33536]
 
 =item *
 
@@ -257,6 +385,14 @@ C<Pod::Perldoc> is now maintained by Hakim Cassimally (osfameron).
 =item *
 
 C<POSIX::remove> can removes empty directories.
+
+=item *
+
+C<POSIX> imports previously duplicated constants from C<Fcntl>, version bumped from 1.14 to 1.15.
+
+=item *
+
+C<scalar> upgraded to version 0.06
 
 =item *
 
@@ -272,7 +408,7 @@ L<sigtrap> upgraded to version 1.04
 
 =item *
 
-C<Socket> upgraded to version 1.79
+C<Socket> upgraded to version 1.81
 
 =over
 
@@ -296,7 +432,15 @@ C<Test::Simple> upgraded to version 0.70
 
 =item *
 
+C<Text::Balanced> upgraded to version 1.98 (32984)
+
+=item *
+
 C<Text::ParseWords> upgraded to version 3.25
+
+=item *
+
+C<Text::Soundex> upgraded to version 3.02
 
 =item *
 
@@ -320,6 +464,14 @@ C<Text::Wrap> upgraded to version 2006.1117
 
 =item *
 
+C<Thread::Semaphore> upgraded to version 2.07 [33361]
+
+=item *
+
+C<Thread::Queue> upgraded to version 2.06 [33362]
+
+=item *
+
 C<Tie::Memoize> upgraded to version 1.1
 
 =over
@@ -336,7 +488,8 @@ C<Time::gmtime> upgraded to version 1.03
 
 =item *
 
-C<Time::HiRes> upgraded to version 1.9707
+C<Time::HiRes> upgraded to version 1.9715 with various build improvements and minor
+platform-specific bug fixes (including for HP-UX 11 ia64)
 
 =item *
 
@@ -369,11 +522,7 @@ C<Thread::Semaphore> upgraded to version 2.08
 
 =item *
 
-C<Math::BigRat> upgraded to version 0.22, implements new C<as_float> method.
-
-=item *
-
-C<Math::Complex>, C<Math::Trig> upgraded to version 1.54.
+C<Unicode::Normalize> upgraded to version 1.01
 
 =item *
 
@@ -383,101 +532,6 @@ C<XSLoader> upgraded to version 0.08
 
 C<XS::APItest> and C<XS::Typemap> are for internal use only and hence
 no longer installed.
-
-=item *
-
-C<File::Copy> now uses 3-arg open.
-
-=item *
-
-C<POSIX> imports previously duplicated constants from C<Fcntl>, version bumped from 1.14 to 1.15.
-
-=item *
-
-C<Encode::Alias> includes a fix for encoding "646" (aka ASCII) on Solaris.
-
-=item *
-
-C<Fatal> upgraded to version 1.06.
-
-=item *
-
-C<Devel::DProf> upgraded to version 20080331.00.
-
-=item *
-
-C<Devel::Peek> upgraded to version 1.04
-
-=item *
-
-C<encoding> upgraded to version 0.11
-
-=item *
-
-C<scalar> upgraded to version 0.06
-
-=item *
-
-C<PerlIO::via> upgraded to version 0.05
-
-=item *
-
-C<Socket> upgraded to version 1.81
-
-=item *
-
-C<Embed> upgraded to version 1.28
-
-=item *
-
-C<File::Basename> upgraded to version 2.77
-
-=item *
-
-C<File::Find> upgraded to version 1.13
-
-=item *
-
-C<OS2::REXX> upgraded to version 1.04
-
-=item *
-
-C<ExtUtils::Command> upgraded to version 1.14
-
-=item *
-
-C<Autoloader> upgraded to version 5.66
-
-=item *
-
-C<AutoSplit> upgraded to version 1.06
-
-=item *
-
-C<Cwd> upgraded to version 3.27 with C const-ing and some platform specific
-improvements (including for VMS).
-
-=item *
-
-C<File::Spec>, C<File::Spec::Epoc>, C<File::Spec::Mac>, C<File::Spec::Functions>
-C<File::Spec::Unix>, C<File::Spec::VMS>, C<File::Spec::Win32> upgraded to version
-3.2701 with improved handling of bad arguments and some platform specific
-improvements (Including for VMS and Cygwin)
-
-=item *
-
-C<Time::HiRes> upgraded to version 1.9715 with various build improvements and minor
-platform-specific bug fixes (including for HP-UX 11 ia64)
-
-=item *
-
-C<Digest::SHA> upgraded to version 5.46
-
-=item *
-
-C<DynaLoader> upgraded to version 1.09 and can now dynamically load a loadable
-object from a file with a non-default file extension.
-
 
 =back
 
@@ -575,7 +629,12 @@ C<Configure> is now better at removing temporary files. Tom Callaway
 passed to the compiler and the linker. Especially, C<-fPIC> is now
 enabled on linux. It will also croak when your F</dev/null> isn't a device.
 
-There are improved hints for DEC/OSF.
+There are improved hints for DEC/OSF, VOS (33425), Cygwin (33484).
+
+Many compilation warnings were cleaned up (33415, 33417, 33418, 33419,
+33420, 33421, 33427, 33428, 33429, 33435, 33436, 33441, 33444, 33479,
+33590,)
+
 
 Added C<d_pseudofork> to C<Configure> which is a new configuration variable,
 available as C<$Config{d_pseudofork}> in the L<Config> module, has been added,
@@ -618,6 +677,10 @@ is resolved. (RT #50256)
 Resolved issue where C<$!> could be changed by a signal handler interrupting
 a C<system()> call.
 
+=item *
+
+Fixed problems with split, unicode /\s+/ and / \0/.
+
 =back
 
 =head2 Platform specific fixes
@@ -629,6 +692,11 @@ a C<system()> call.
 =item *
 
 Various improvements to 64 bit builds.
+
+=item *
+
+Mutex protection added in PerlIOStdio_close to avoid race conditions.  May
+fix threads free.t and blocks.t failures on OS X on 5.8.x (33502).
 
 =back
 
@@ -651,6 +719,14 @@ C<USE_IMP_SYS> has been fixed.
 The process id is no longer truncated to 16 bits on some Windows platforms
 ( L<http://bugs.activestate.com/show_bug.cgi?id=72443> )
 
+=item *
+
+Various improvements to the win32 build process, includding support for Visual C++ 2005 Express Edition (aka Visual C++ 8.x). Also you should now have an icon for perl.exe if built with MinGW or Borland. 
+
+=item *
+
+Improvements to the perl-static.exe build process.
+
 =back
 
 =head3 VMS
@@ -660,6 +736,14 @@ The process id is no longer truncated to 16 bits on some Windows platforms
 =item *
 
 Fixed PerlIO::Scalar in-memory file record-style reads.
+
+=item *
+
+Make pipe shutdown on VMS care about whether PerlIO has already shut down (33005)
+
+=item *
+
+Fix VMS exit handling broken in Test::Harness 2.64 (33008)
 
 =back
 
@@ -672,6 +756,10 @@ Fixed PerlIO::Scalar in-memory file record-style reads.
 A build problem with specifying C<USE_MULTI> and C<USE_ITHREADS> but without
 C<USE_IMP_SYS> has been fixed.
 
+=item *
+
+C<OS2::REXX> upgraded to version 1.04
+
 =back
 
 =head3 Tru64
@@ -681,6 +769,16 @@ C<USE_IMP_SYS> has been fixed.
 =item *
 
 Aligned floating point build policies for cc and gcc. 
+
+=back
+
+=head3 RedHat Linux
+
+=over 4
+
+=item *
+
+Revisited a patch from 5.6.1 for RH7.2 for Intel's icc (RT #7916), added an aditional check for $Config{gccversion}.
 
 =back
 
@@ -724,6 +822,10 @@ C<chr(65535)> ought to be allowed in regexes.
 
 =item *
 
+L<ExtUtils::MakeMaker> now detects DragonFlyBSD as a BSDish operating system (33006)
+
+=item * 
+
 Using C<#!perl -d> could trigger an assertion, which has been fixed (30075).
 
 =item *
@@ -751,6 +853,19 @@ arguments of the form C<-foo=bar> (29865).
 
 =item *
 
+tr/// is now threadsafe (29765)
+
+=item *
+
+De-duplictae C<@EXPORT> (26459)
+
+=item *
+
+C<pod2html> will label anchors more consistently (32079) and handles nested
+definition lists better (32727).
+
+=item *
+
 No longer segfaults when your locale charset is not utf8 with
 C<use open ':locale'> and printing Unicode characters to STDERR (30213)
 
@@ -766,6 +881,30 @@ C<use open ':locale'> and printing Unicode characters to STDERR (30213)
 
 A build problem with specifying C<USE_MULTI> and C<USE_ITHREADS> but without
 C<USE_IMP_SYS> has been fixed.
+
+=item *
+
+Merge WinCE into Win32 directory (30281-30284, 20862)
+
+=back
+
+=head3 Solaris/i386
+
+=over 4
+
+=item *
+
+Use -DPTR_IS_LONG when using 64 bit integers (27001)
+
+=back
+
+=head3 MacOSX
+
+=over 4
+
+=item *
+
+Added forked terminal support to debugger under MacOSX (29415)
 
 =back
 
@@ -825,6 +964,8 @@ C<set> magic on localizing/assigning to a magic variable will now only
 trigger for I<container magics>, i.e. it will for C<%ENV> or C<%SIG>
 but not for C<$#array>.
 
+Display the process id as part of the trace output if running with C<-Dv> (33039)
+
 A lot of small improvents in the code base were made due to reports from
 the Coverity static code analyzer.
 
@@ -849,6 +990,14 @@ Tests for tainting and C<open> with C<|-> as second argument (30048).
 
 C<exit> can now be called in expressions that the optimizer constant-folds
 (29976).
+
+=item *
+
+Test smallbuf overflow in S_incline (30024)
+
+=item *
+
+Verify POSIX::AUTOLOAD works (29592)
 
 =back
 
@@ -923,7 +1072,6 @@ C<OS2::REXX::DLL>, C<OS2::REXX> updated to version 1.03
 C<File::Spec::VMS> upgraded to version 3.2701 (see above).
 
 =back
-
 
 =head1 Reporting Bugs
 

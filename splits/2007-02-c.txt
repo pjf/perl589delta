@@ -1,114 +1,5 @@
 [ 30311] By: nicholas				   on 2007/02/15  11:24:02
 	Log: Integrate:
-	     [ 28293]
-	     Subject: Re: [patch] win32/buildext.pl to handle inclusions and not just exclusions
-	     From: demerphq <demerphq@gmail.com>
-	     Date: Sun, 21 May 2006 12:20:12 +0200
-	     Message-ID: <9b18b3110605210320h5adc9df4hbee2302722b3dd6e@mail.gmail.com>
-	     
-	     [ 28697]
-	     Resync win32/config_H.* and win32/config.* with config_h.SH
-	     and Porting/config.sh respectively
-	     
-	     No real changes except for the addition of the missing
-	     HAS_C99_VARIADIC_MACROS to win32/config_H.* and
-	     initialinstalllocation, madlyh, madlyobj and madlysrc to
-	     win32/config.*
-	     
-	     [ 28832]
-	     Subject: mktables executes seven time per build sigh
-	     From: demerphq <demerphq@gmail.com>
-	     Date: Sun, 10 Sep 2006 17:52:10 +0200
-	     Message-ID: <9b18b3110609100852q2cfc2497ufceda5ff5d0875e3@mail.gmail.com>
-	     
-	     (Fix for Windows)
-	     
-	     [ 28978]
-	     Updates for building on Win32 with Visual C++ 2005 Express Edition
-	     
-	     Add some instructions in README.win32, clarify macro comments and add
-	     missing macros to makefile.mk, and drop the GLOBEXEBUILD macro from
-	     Makefile--the Express Edition of Visual C++ 2005 is free and includes
-	     setargv.obj, so there is no need to support the .NET 2.0 SDK compiler
-	     which didn't include it.
-	     
-	     Unfortunately, the build still doesn't work yet--my attempt got as far
-	     as building extensions, but miniperl.exe crashed.	Hopefully this can
-	     be sorted out soon.
-	     
-	     [ 29131]
-	     Subject: [PATCH] Add a few useful developers maketargets to win32/Makefile
-	     From: demerphq <demerphq@gmail.com>
-	     Date: Sun, 29 Oct 2006 13:28:31 +0200
-	     Message-ID: <9b18b3110610290328v71956891s7df10e40efd2350c@mail.gmail.com>
-	     
-	     [ 29147]
-	     Add some missing targets to win32/makefile.mk
-	     
-	     This updates makefile.mk w.r.t. Makefile, following changes #28293,
-	     #28832, #28904 and #29131
-	     
-	     [ 29218]
-	     Get Visual C++ 2005 (aka Visual C++ 8.x) support off the ground
-	     
-	     This is not a complete fix yet by any means (there are lots of compiler
-	     warnings and lots of test failures), but it's a step in the right
-	     direction.
-	     
-	     See the thread starting here:
-	     http://www.xray.mpe.mpg.de/mailing-lists/perl5-porters/2006-10/msg00893.html
-	     and continuing here:
-	     http://www.xray.mpe.mpg.de/mailing-lists/perl5-porters/2006-11/msg00102.html
-	     for further information
-	     
-	     [ 29233]
-	     Don't use the PERL_MSVCRT_READFIX when using VC++ 7.x onwards.
-	     
-	     VC++ 7.x onwards use their own MSVCR7x.dll, MSVCR8x.dll, etc, rather
-	     than MSVCRT.dll, so they do not require the read() fix.
-	     
-	     Therefore, we also don't need to update the ioinfo struct used by the
-	     read() fix w.r.t. VC++ 8.x, so back out that part of change #29218
-	     
-	     [ 29285]
-	     Add support for building a perl-static.exe that doesn't depend on
-	     the perl59.dll. It currently can't load DLL extension modules, so
-	     any that are required must be statically linked too. This may be
-	     fixed sometime.  Changes to win32/makefile.mk also to follow.
-	     
-	     Subject: RE: [PATCH@29224] RE: [patch-at-29217] static linkage for perl.exe fo r win32
-	     From: "Konovalov, Vadim Vladimirovich (Vadim)** CTR **" <vkonovalov@Lucent.com>
-	     Date: Mon, 13 Nov 2006 19:45:05 +0100
-	     Message-ID: <E3FB32585BF1D411B9E900805FF51A080207FA41@ru0022exch001u.ru.lucent.com>
-	     
-	     (with minor tweaks for cleanup and embedding manifest file)
-	     
-	     [ 29296]
-	     Fix Extensions_static dependencies to avoid relinking every time
-	     
-	     Subject: Re: [PATCH@29224] RE: [patch-at-29217] static linkage for perl.ex e fo r win32
-	     From: demerphq <demerphq@gmail.com>
-	     Date: Thu, 16 Nov 2006 13:58:32 +0100
-	     Message-ID: <9b18b3110611160458r6bebb7f6k8421abe68b474997@mail.gmail.com>
-	     
-	     [ 29298]
-	     Add missing d_ctermid/HAS_CTERMID to Win32 canned configs
-	     
-	     [ 29303]
-	     Add perl-static.exe support to win32/makefile.mk
-	     
-	     This applies the same changes that were made in win32/Makefile by
-	     changes #29285 and #29296, plus a tweak to win32/runperl.c to fix
-	     a linker error when using MinGW/gcc
-	     
-	     [ 29305]
-	     Install perl-static.exe if it was built
-	     
-	     Perhaps this should be done via "installperl" so as to get, e.g.,
-	     perl5.9.5-static.exe and honour INST_VER and INST_ARCH?
-	     
-	     Just do it quick-and-dirty for now, as is done for wperl.exe. It
-	     can always be fixed later if anyone wants it.
 	     
 	     [ 29307]
 	     Fix the XXX in #29303
@@ -120,138 +11,6 @@
 	     place would achieve. It doesn't avoid creating a long command-line as we
 	     would like to do.
 	     
-	     [ 29358]
-	     Silence VC8's warnings about "unsafe" CRT functions and POSIX CRT
-	     function names being deprecated, and add a note to perltodo to
-	     revisit this one day.
-	     
-	     [ 29396]
-	     Make the win32/makefile.mk a little safer
-	     
-	     - Add a few missing s,\,$B, substitutions. We were living dangerously
-	     with various unescaped backslashes not causing problems purely because
-	     they don't make valid ecape codes anyway, e.g. ..\perl59.dll was only
-	     working because \p isn't an escape code so it didn't get mapped to
-	     anything nasty.
-	     
-	     - Move the $(BLINK_FLAGS) out of $(mktmp ...)'s because it could contain
-	     backslashes which would otherwise need escaping. (Adding in the
-	     escaping would be another fix but other cases don't put $(BLINK_FLAGS)
-	     into $(mktmp ...) files in the first place.)
-	     
-	     [ 29397]
-	     Add missing d_printf_format_null/PRINTF_FORMAT_NULL_OK to Win32 canned
-	     configs
-	     
-	     See:
-	     http://www.xray.mpe.mpg.de/mailing-lists/perl5-porters/2006-11/msg00923.html
-	     
-	     [ 29402]
-	     Give perl.exe an icon when built with MinGW and Borland
-	     
-	     It already gets an icon when built with VC++, but the MinGW and Borland
-	     builds were not making any use of the resource file.
-	     
-	     Also add the top-level directory into MinGW's resource compiler search
-	     path to assist ActivePerl builds: see:
-	     http://downloads.activestate.com/ActivePerl/src/5.8/AP819_diff.txt
-	     
-	     [ 29409]
-	     Building with Visual C++ 2005 now works except for one test failure
-	     
-	     [ 29469]
-	     Extend d_pseudofork to Win32-land and set it when appropriate
-	     (namely, when we have USE_ITHREADS and PERL_IMPLICIT_SYSTEM)
-	     
-	     [ 29470]
-	     Make the check for PERL_IMPLICIT_SYS better
-	     
-	     [ 29699]
-	     Do the same as #29697 for Win32
-	     
-	     [ 30197]
-	     Subject: [PATCH] Defend against cmd.exe stupidity (on Win2k at least)
-	     From: demerphq <demerphq@gmail.com>
-	     Message-ID: <9b18b3110702101100n76f65136ke65113bf0dbd01f@mail.gmail.com>
-	     Date: Sat, 10 Feb 2007 20:00:10 +0100
-	     
-	     [ 30219]
-	     Apply #30197 to win32/makefile.mk too
-     Branch: maint-5.8/perl
-	  !> README.win32 lib/unicore/mktables perl.h win32/Makefile
-	  !> win32/buildext.pl win32/config.bc win32/config.gc
-	  !> win32/config.vc win32/config.vc64 win32/config_H.bc
-	  !> win32/config_H.gc win32/config_H.vc win32/config_H.vc64
-	  !> win32/config_sh.PL win32/makefile.mk win32/runperl.c
-	  !> win32/win32.c win32/win32.h
-____________________________________________________________________________
-[ 30309] By: nicholas				   on 2007/02/14  23:53:19
-	Log: Integrate:
-	     [ 28043]
-	     Fix for RT #7916: perl 5.6.1 with Intel's icc on RedHat 
-	     Linux 7.2.	 The original fix, change #13053, added a check
-	     for $Config{gccversion} which is now populated by newer
-	     Intel compilers.  This additional change checks to see
-	     if Intel is in $Config{gccversion}.  If it is, its not
-	     a gcc.
-	     
-	     [ 28046]
-	     One too many ('s in change #28043. 
-	     
-	     [ 28794]
-	     Convert Errno.t to Test::More.  Increase the test coverage
-	     while in there as well. 
-	     
-	     [ 29558]
-	     Subject: Re: [PATCH] Errno doesnt rebuild when things it depends on in Config.pm change
-	     From: demerphq <demerphq@gmail.com>
-	     Date: Fri, 15 Dec 2006 12:52:45 +0100
-	     Message-ID: <9b18b3110612150352y2394954bg5acd5ec5fd320d33@mail.gmail.com>
-	     
-	     [ 29595]
-	     Proper cleanup for Errno.pm
-	     
-	     [ 29627]
-	     Upgrade to Errno-1.10 (!).	 I have left the core tests as is for
-	     now as well as for Makefile.PL, which need some looking into.
-     Branch: maint-5.8/perl
-	  !> ext/Errno/ChangeLog ext/Errno/Errno_pm.PL
-	  !> ext/Errno/Makefile.PL ext/Errno/t/Errno.t
-____________________________________________________________________________
-[ 30308] By: nicholas				   on 2007/02/14  23:20:38
-	Log: Integrate:
-	     [ 27562]
-	     Upgrade to Digest-1.15
-	     
-	     [ 28580]
-	     Upgrade to ANSIColor-1.11
-     Branch: maint-5.8/perl
-	  +> lib/Term/ANSIColor/t/basic.t lib/Term/ANSIColor/t/pod.t
-	   - lib/Term/ANSIColor/test.pl
-	  !> MANIFEST lib/Digest.pm lib/Digest/Changes
-	  !> lib/Term/ANSIColor.pm lib/Term/ANSIColor/ChangeLog
-	  !> lib/Term/ANSIColor/README
-____________________________________________________________________________
-[ 30307] By: nicholas				   on 2007/02/14  22:42:21
-	Log: Integrate:
-	     [ 28389]
-	     Upgrade to Unicode-Normalize-1.00
-	     
-	     [ 28395]
-	     signedness nit in Unicode::Normalize::decompose
-	     
-	     [ 28406]
-	     Upgrade to Unicode::Normalize 1.01
-     Branch: maint-5.8/perl
-	  +> ext/Unicode/Normalize/t/tie.t
-	  !> MANIFEST ext/Unicode/Normalize/Changes
-	  !> ext/Unicode/Normalize/Normalize.pm
-	  !> ext/Unicode/Normalize/Normalize.xs
-	  !> ext/Unicode/Normalize/README ext/Unicode/Normalize/mkheader
-	  !> ext/Unicode/Normalize/t/fcdc.t ext/Unicode/Normalize/t/func.t
-	  !> ext/Unicode/Normalize/t/illegal.t
-	  !> ext/Unicode/Normalize/t/norm.t ext/Unicode/Normalize/t/null.t
-	  !> ext/Unicode/Normalize/t/test.t
 ____________________________________________________________________________
 [ 30306] By: nicholas				   on 2007/02/14  22:38:24
 	Log: Update the integration history for ext/Encode/... for changes 25261
@@ -263,14 +22,6 @@ ____________________________________________________________________________
 	  !> ext/Encode/lib/Encode/Alias.pm
 	  !> ext/Encode/lib/Encode/PerlIO.pod
 	  !> ext/Encode/lib/Encode/Supported.pod
-____________________________________________________________________________
-[ 30305] By: nicholas				   on 2007/02/14  22:33:56
-	Log: Integrate:
-	     [ 27346]
-	     Upgrade to CPAN 1.87
-     Branch: maint-5.8/perl
-	  !> lib/CPAN.pm lib/CPAN/FirstTime.pm lib/CPAN/HandleConfig.pm
-	  !> lib/CPAN/SIGNATURE lib/CPAN/Tarzip.pm
 ____________________________________________________________________________
 [ 30304] By: nicholas				   on 2007/02/14  22:27:59
 	Log: Integrate:
@@ -302,27 +53,6 @@ ____________________________________________________________________________
 	  !> ext/ODBM_File/t/odbm.t ext/SDBM_File/SDBM_File.pm
 	  !> ext/SDBM_File/SDBM_File.xs ext/SDBM_File/sdbm/sdbm.c
 ____________________________________________________________________________
-[ 30303] By: nicholas				   on 2007/02/14  22:09:03
-	Log: Integrate:
-	     [ 28927]
-	     Move Text::Soundex from lib/ to ext/ and upgrade it to 
-	     Text-Soundex-3.02.
-	     
-	     [ 28983]
-	     Update to PathTools-3.22.
-	     
-	     [ 28991]
-	     Grrr...moved the files, but forgot to update Soundex.pm
-	     
-	     
-	     [yes, 28983 touched Soundex.xs]
-     Branch: maint-5.8/perl
-	  +> ext/Text/Soundex/Changes ext/Text/Soundex/Makefile.PL
-	  +> ext/Text/Soundex/README ext/Text/Soundex/Soundex.pm
-	  +> ext/Text/Soundex/Soundex.xs ext/Text/Soundex/t/Soundex.t
-	   - lib/Text/Soundex.pm lib/Text/Soundex.t
-	  !> MANIFEST
-____________________________________________________________________________
 [ 30302] By: nicholas				   on 2007/02/14  22:00:02
 	Log: Integrate:
 	     [ 29566]
@@ -334,37 +64,8 @@ ____________________________________________________________________________
 	  +> t/lib/proxy_constant_subs.t
 	  !> MANIFEST dump.c gv.c pp_hot.c sv.h
 ____________________________________________________________________________
-[ 30301] By: nicholas				   on 2007/02/14  21:51:16
-	Log: Two stowaways from change 30299.
-     Branch: maint-5.8/perl
-	   - lib/ExtUtils/META.yml lib/ExtUtils/t/Command.t
-____________________________________________________________________________
-[ 30300] By: nicholas				   on 2007/02/14  21:45:49
-	Log: Integrate:
-	     [ 28987]
-	     Upgrade to ExtUtils-Command-1.12.
-	     
-	     [ 28988]
-	     Upgrade to ExtUtils-Manifest-1.49.
-	     
-	     [ 28989]
-	     Adjust test count for ExtUtils::Command
-	     
-	     [ 29768]
-	     Upgrade to ExtUtils::Manifest 1.51
-	     
-	     [ 30146]
-	     Upgrade to ExtUtils-Command-1.13
-     Branch: maint-5.8/perl
-	  !> lib/ExtUtils/Command.pm lib/ExtUtils/Manifest.pm
-	  !> lib/ExtUtils/t/Manifest.t lib/ExtUtils/t/eu_command.t
-____________________________________________________________________________
 [ 30299] By: nicholas				   on 2007/02/14  21:31:37
 	Log: Integrate:
-	     [ 26457]
-	     Fix for pod2man() in ExtUtils::Command::MM to work with 
-	     the Pod::Man 2.04.
-	     
 	     [ 26499]
 	     Removing MAKE_JOBS_FIFO from %ENV causes FreeBSD make to forget about
 	     any -j flags. (And their implied disabling of backwards compatibility,
@@ -376,91 +77,16 @@ ____________________________________________________________________________
 	     Date: Mon, 12 Dec 2005 19:22:32 +0100
 	     Message-ID: <20051212192232.39cd0c1e@grubert.mandrakesoft.com>
 	     
-	     [ 26813]
-	     Assorted VMS-only MakeMaker fixes for blead
-	     
-	     [ 26919]
-	     Make Manifest.t do what is says it's doing.
-	     
-	     [ 26930]
-	     Subject: [PATCH] Tru64: -Uusedl: lib/ExtUtils/t/Embed.t
-	     From: Jarkko Hietaniemi <jhietaniemi@gmail.com>
-	     Date: Mon, 23 Jan 2006 20:34:18 +0200
-	     Message-ID: <43D521AA.7030008@gmail.com>
-	     
-	     [ 27256]
-	     $ExtUtils::MM_Unix::VERSION needs to stay numeric to avoid test
-	     warnings.
-	     
-	     [ 27587]
-	     Get version numbers in line with what's in the CPAN
-	     EU::MM 6.30_01 tarball. (ExtUtils::Install has local changes,
-	     so bump its version number.)
-	     
-	     [ 27590]
-	     Merge changes from CPAN's EU:MM 6.30_01.
-	     The modules that have local changes have superior
-	     version numbers than the CPAN counterparts.
-	     
-	     [ 27591]
-	     No reason to ship MakeMaker's META.yml
-	     
 	     [ 27592]
 	     When MAN3PODS is forced to {} in a Makefile.PL, manpages should not be
 	     built from pods. This change fixes bleadperl compilation -- trying to
 	     build manpages with miniperl causes a bootstrapping problem.
-	     
-	     [ 27595]
-	     Fix broken MM_Win32.t tests following 27590
-	     
-	     Test 31 was failing because 27590 had undone part of 25627.
-	     Test 41 was failing because the change to pasthru() in MM_Win32.pm
-	     means that $self->{MAKE} now needs to be initialized.
-	     
-	     [ 27596]
-	     Bump version number of ExtUtils::MM_Win32
-	     
-	     [ 27597]
-	     restore EU::MM test fixes from 26079, 26813, and 26919
-	     that were lost in 27590
-	     
-	     [ 27613]
-	     EU::MM::MM_VMS::one_liner must quote "--" argument
 	     
 	     [ 27708]
 	     Change 27592 disabled the building of manpages for non core-extensions
 	     The init_MAN3PODS method need to be called when no INSTALLMAN3DIR is
 	     present in the first place.
 	     
-	     [ 28463]
-	     Subject:  [PATCH] Synchronize ExtUtils::Instal 1.41
-	     From:  demerphq <demerphq@gmail.com>
-	     Date:  Sun, 2 Jul 2006 16:23:21 +0200
-	     Message-Id:  <9b18b3110607020723h1765f051hda802b6682a99df0@mail.gmail.com>
-	     
-	     Sync ExtUtils::Install with CPAN (just trivially change version nos)
-	     
-	     [ 28825]
-	     Upgrade to MakeMaker 6.30_04
-	     
-	     [ 28918]
-	     Update to ExtUtils-Command-1.11
-	     
-	     [ 28921]
-	     Upgrade to ExtUtils-Manifest-1.48
-	     
-	     [ 28929]
-	     Quiet warnings in new test for ExtUtils::Command.
-	     
-	     [ 28984]
-	     Upgrade to ExtUtils-Makemaker-6.31.
-     Branch: maint-5.8/perl
-	  +> lib/ExtUtils/t/INSTALL_BASE.t lib/ExtUtils/t/build_man.t
-	  +> lib/ExtUtils/t/eu_command.t lib/ExtUtils/t/make.t
-	  +> lib/ExtUtils/t/pm.t lib/ExtUtils/t/revision.t
-	   - lib/ExtUtils/t/installbase.t
-	  !> (integrate 45 files)
-____________________________________________________________________________
 [ 30297] By: nicholas				   on 2007/02/14  19:11:41
 	Log: Integrate:
 	     [ 29673]
@@ -475,9 +101,6 @@ ____________________________________________________________________________
 	     [ 29977]
 	     The last parameter to gv_stashpv/gv_stashpvn/gv_stashsv is a bitmask
 	     of flags, not a boolean, so correct the documenation and callers.
-	     
-	     [ 30017]
-	     Silence a few pedantic warnings
 	     
 	     [ 30030]
 	     One last gv_fetchpv() that should be GV_ADD rather than TRUE.
@@ -497,26 +120,3 @@ ____________________________________________________________________________
 	  !> ext/PerlIO/via/via.xs gv.c op.c perlio.c pod/perlapi.pod
 	  !> pod/perlguts.pod pp.c pp_hot.c pp_sys.c proto.h sv.c toke.c
 	  !> universal.c utf8.c
-____________________________________________________________________________
-[ 30294] By: nicholas				   on 2007/02/14  17:41:03
-	Log: Integrate:
-	     [ 29880]
-	     Subject: [PATCH] fix unicode split /\s+/
-	     From: demerphq <demerphq@gmail.com>
-	     Date: Fri, 19 Jan 2007 02:14:06 +0100
-	     Message-ID: <9b18b3110701181714r4f3bc9ebq9ba462eba8338734@mail.gmail.com>
-	     
-	     [ 29887]
-	     Subject: Re: [PATCH] fix unicode split /\s+/
-	     From: SADAHIRO Tomoyuki <bqw10602@nifty.com>
-	     Message-Id: <20070120005232.D9CC.BQW10602@nifty.com>
-	     Date: Sat, 20 Jan 2007 00:52:42 +0900
-	     
-	     [ 29975]
-	     Subject: split by " \0" (const string staring with a SPACE followed by NULL)
-	     From: SADAHIRO Tomoyuki <bqw10602@nifty.com>
-	     Date: Fri, 19 Jan 2007 22:21:48 +0900
-	     Message-Id: <20070119221905.D162.BQW10602@nifty.com>
-     Branch: maint-5.8/perl
-	  !> op.c pp.c t/op/split.t
-____________________________________________________________________________
