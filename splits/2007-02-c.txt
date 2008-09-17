@@ -1,12 +1,3 @@
-[ 30297] By: nicholas				   on 2007/02/14  19:11:41
-	Log: Integrate:
-	     [ 29673]
-	     Make the ptr_table functions available in an unthreaded perl, as other
-	     code (such as Storable) can take advantage of them.
-     Branch: maint-5.8/perl
-	   ! embed.fnc global.sym intrpvar.h proto.h
-	  !> embed.h makedef.pl sv.c
-____________________________________________________________________________
 [ 30295] By: nicholas				   on 2007/02/14  18:04:52
 	Log: Integrate:
 	     [ 29977]

@@ -933,6 +933,8 @@ but not for C<$#array>.
 A lot of small improvents in the code base were made due to reports from
 the Coverity static code analyzer.
 
+C<ptr_table> functions are now available in unthreaded perl.
+
 =head1 New Tests
 
 =over 4
