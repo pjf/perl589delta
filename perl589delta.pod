@@ -360,6 +360,18 @@ C<PathTools> upgraded to version 3.22
 
 =item *
 
+C<PerlIO::scalar> upgraded to version 0.05
+
+=over 4
+
+=item *
+
+[perl #40267] PerlIO::scalar doesn't respect readonly-ness
+
+=back
+
+=item *
+
 C<PerlIO::via> upgraded to version 0.05
 
 =item *
@@ -543,6 +555,14 @@ no longer installed.
 
 C<h2ph> now attempts to deal sensibly with the difference in path implications
 between C<""> and C<<E<lt>E<gt>>> quoting in C<#include> statements.
+
+=item *
+
+C<h2ph> generates correct correct code for C<#if defined A || defined B> now (perl #39130)
+
+=item *
+
+C<h2xs> won't define an empty string as a constant (perl #25366)
 
 =back
 

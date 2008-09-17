@@ -221,12 +221,6 @@ ____________________________________________________________________________
 	     Date: Mon, 28 Aug 2006 00:21:25 -0700
 	     Message-ID: <rt-3.5.HEAD-31263-1156749685-634.40245-75-0@perl.org>
 	     
-	     [ 28798]
-	     Fix for [perl #40267] PerlIO::scalar doesn't respect readonly-ness
-	     
-	     [ 28799]
-	     Bump version of PerlIO::scalar
-	     
 	     [ 29173]
 	     Doc clarification for PerlIO::encoding
 	     (thanks to Steve Hay)
@@ -290,15 +284,6 @@ ____________________________________________________________________________
 	     From: "Brendan O'Dea" <bod@debian.org>
 	     Date: Sat, 11 Feb 2006 00:37:15 +1100
 	     Message-ID: <20060210133715.GA6826@londo.c47.org>
-	     
-	     [ 28044]
-	     Fix for RT #25366: h2xs 1.23 from "Aaron Kaplan".
-	     
-	     [ 28225]
-	     Subject: [perl #39130] h2ph generates incorrect code for '#if defined A || defined B' 
-	     From: Jason Vas Dias (via RT) <perlbug-followup@perl.org>
-	     Date: Thu, 11 May 2006 11:00:42 -0700
-	     Message-ID: <rt-3.0.11-39130-133411.1.91055283125046@perl.org>
 	     
 	     [ 28232]
 	     Adjust test following change #28225
