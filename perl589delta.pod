@@ -316,6 +316,18 @@ C<Math::Complex>, C<Math::Trig> upgraded to version 1.54.
 
 =item *
 
+C<NDBM_File> upgraded to version 1.07
+
+=over
+
+=item *
+
+Improve g++ handling for systems using GDBM compatibility headers.
+
+=back
+
+=item *
+
 C<PathTools> upgraded to version 3.22
 
 =item *
@@ -353,6 +365,18 @@ C<POSIX> imports previously duplicated constants from C<Fcntl>, version bumped f
 =item *
 
 C<scalar> upgraded to version 0.06
+
+=item *
+
+C<SDBM_File> upgraded to version 1.06
+
+=over
+
+=item *
+
+Improve g++ handling for systems using GDBM compatibility headers.
+
+=back
 
 =item *
 

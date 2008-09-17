@@ -1,33 +1,3 @@
-[ 30304] By: nicholas				   on 2007/02/14  22:27:59
-	Log: Integrate:
-	     [ 28298]
-	     Fix segfault in SDBM_File when the destructor is called multiple times
-	     
-	     [ 28976]
-	     Make g++ happy when compiling NDBM_File on a system that
-	     is likely using the GDBM compatibility headers that 
-	     g++ (and other C++ implementations) cannot handle.
-	     
-	     [ 28996]
-	     Fix typo in NDBM_File.xs and bump up the version number.
-	     
-	     [ 28997]
-	     Subject: RE: g++ compile and make test 100%
-	     From: "Robin Barker" <Robin.Barker@npl.co.uk>
-	     Date: Wed, 11 Oct 2006 15:29:43 +0100
-	     Message-ID: <2C2E01334A940D4792B3E115F95B7226120A65@exchsvr1.npl.ad.local>
-	     
-	     [ 29000]
-	     Subject: [PATCH] RE: g++ compile and make test 100%
-	     From: "Robin Barker" <Robin.Barker@npl.co.uk>
-	     Date: Wed, 11 Oct 2006 16:58:10 +0100
-	     Message-ID: <2C2E01334A940D4792B3E115F95B7226120A68@exchsvr1.npl.ad.local>
-     Branch: maint-5.8/perl
-	  !> ext/NDBM_File/Makefile.PL ext/NDBM_File/NDBM_File.pm
-	  !> ext/NDBM_File/NDBM_File.xs ext/NDBM_File/typemap
-	  !> ext/ODBM_File/t/odbm.t ext/SDBM_File/SDBM_File.pm
-	  !> ext/SDBM_File/SDBM_File.xs ext/SDBM_File/sdbm/sdbm.c
-____________________________________________________________________________
 [ 30302] By: nicholas				   on 2007/02/14  22:00:02
 	Log: Integrate:
 	     [ 29566]
