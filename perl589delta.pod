@@ -94,6 +94,11 @@ B::CV::XSUB and B::CV::XSUBANY return 0 on a non-XSUB.
 
 New type B::HE added with methods VAL, HASH, SVKEY_force
 
+=item *
+
+The B::GVf_IMPORTED_CV flag is now set correctly when a proxy
+constant subroutine is imported.
+
 =back
 
 =item *
