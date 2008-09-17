@@ -1,17 +1,3 @@
-[ 30311] By: nicholas				   on 2007/02/15  11:24:02
-	Log: Integrate:
-	     
-	     [ 29307]
-	     Fix the XXX in #29303
-	     
-	     [ 29321]
-	     Revert #29307. It doesn't fix the XXX after all. Using "$(shell @type )"
-	     on a temporary file just inserts the contents of the file in question
-	     into the command-line, exactly like putting the data there in the first
-	     place would achieve. It doesn't avoid creating a long command-line as we
-	     would like to do.
-	     
-____________________________________________________________________________
 [ 30306] By: nicholas				   on 2007/02/14  22:38:24
 	Log: Update the integration history for ext/Encode/... for changes 25261
 	     and 25266. (Seems that the corrections were already merged to maint,
