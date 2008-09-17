@@ -1,14 +1,3 @@
-[ 30306] By: nicholas				   on 2007/02/14  22:38:24
-	Log: Update the integration history for ext/Encode/... for changes 25261
-	     and 25266. (Seems that the corrections were already merged to maint,
-	     but somehow perforce didn't know this)(What a long changelog entry
-	     for empty diffs)
-     Branch: maint-5.8/perl
-	  !> ext/Encode/Encode.pm ext/Encode/encoding.pm
-	  !> ext/Encode/lib/Encode/Alias.pm
-	  !> ext/Encode/lib/Encode/PerlIO.pod
-	  !> ext/Encode/lib/Encode/Supported.pod
-____________________________________________________________________________
 [ 30304] By: nicholas				   on 2007/02/14  22:27:59
 	Log: Integrate:
 	     [ 28298]
