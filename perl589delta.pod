@@ -24,6 +24,8 @@ semantics. They also treat C<*FILE{IO}> filehandles like C<*FILE> filehandles.
 Added B<perlthanks> which is just like C<perlbug> but allows the user to
 send a note of gratitude to the authors and maintainers of Perl. [33532]
 
+Added support for Unicode 5.0.
+
 =head1 Modules and Pragmata
 
 =head2 New Modules
@@ -127,6 +129,10 @@ C<Benchmark> upgraded to version 1.10
 =item *
 
 C<bignum> upgraded to 0.20
+
+=item *
+
+C<Carp> upgraded to version 1.09
 
 =item *
 
@@ -267,6 +273,10 @@ C<ExtUtils::ParseXS> upgraded to version 2.19 [33392]
 
 C<Fatal> upgraded to version 1.06
 
+=item *
+
+C<Time::Local> upgraded to version 1.18
+
 =over
 
 =item *
@@ -325,6 +335,10 @@ C<GDBM_File> upgraded to version 1.09
 =item *
 
 C<Getopt::Long> upgraded to version 2.36
+
+=item *
+
+C<Hash::Util> upgraded to version 0.07
 
 =item *
 
@@ -392,7 +406,15 @@ C<Pod::Html> upgraded to version 1.09 [33536]
 
 =item *
 
+C<Pod::Parser> upgraded to version 1.35
+
+=item *
+
 C<Pod::Perldoc> is now maintained by Hakim Cassimally (osfameron).
+
+=item * 
+
+C<Pod::Usage> upgraded to version 1.35 [30187]
 
 =item *
 
@@ -700,6 +722,11 @@ a C<system()> call.
 =item *
 
 Fixed problems with split, unicode /\s+/ and / \0/.
+
+=item *
+
+Fixed bug RT #37886, unsafe dereferencations were allowed in the argument of
+C<defined()> even under the influence of C<use strict 'refs'>.
 
 =back
 
@@ -1009,6 +1036,10 @@ C<exit> can now be called in expressions that the optimizer constant-folds
 =item *
 
 Test smallbuf overflow in S_incline (30024)
+
+=item *
+
+Tests for mathematical functions in L<POSIX>
 
 =item *
 
