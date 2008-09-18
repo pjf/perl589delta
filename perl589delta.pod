@@ -96,6 +96,11 @@ B::CV::XSUB and B::CV::XSUBANY return 0 on a non-XSUB.
 
 New type B::HE added with methods VAL, HASH, SVKEY_force
 
+=item *
+
+The B::GVf_IMPORTED_CV flag is now set correctly when a proxy
+constant subroutine is imported.
+
 =back
 
 =item *
@@ -261,6 +266,15 @@ C<ExtUtils::Install> upgraded to version 1.51 [33567]
 
 C<ExtUtils::MakeMaker> upgraded to version 6.44 [33396]
 
+=over
+
+=item *
+
+Support for INSTALLSITESCRIPT and INSTALLVENDORSCRIPT 
+configuration. [26536]
+
+=back
+
 =item *
 
 C<ExtUtils::Manifest> upgraded to version 1.51
@@ -370,6 +384,18 @@ C<Math::Complex>, C<Math::Trig> upgraded to version 1.54.
 
 =item *
 
+C<NDBM_File> upgraded to version 1.07
+
+=over
+
+=item *
+
+Improve g++ handling for systems using GDBM compatibility headers.
+
+=back
+
+=item *
+
 C<PathTools> upgraded to version 3.22
 
 =item *
@@ -427,6 +453,18 @@ C<POSIX> imports previously duplicated constants from C<Fcntl>, version bumped f
 =item *
 
 C<scalar> upgraded to version 0.06
+
+=item *
+
+C<SDBM_File> upgraded to version 1.06
+
+=over
+
+=item *
+
+Improve g++ handling for systems using GDBM compatibility headers.
+
+=back
 
 =item *
 
@@ -677,6 +715,7 @@ Many compilation warnings were cleaned up (33415, 33417, 33418, 33419,
 33420, 33421, 33427, 33428, 33429, 33435, 33436, 33441, 33444, 33479,
 33590,)
 
+bleadperl compilation failure (due to failed manpage building) has been fixed.
 
 Added C<d_pseudofork> to C<Configure> which is a new configuration variable,
 available as C<$Config{d_pseudofork}> in the L<Config> module, has been added,
@@ -1010,6 +1049,11 @@ Display the process id as part of the trace output if running with C<-Dv> (33039
 
 A lot of small improvents in the code base were made due to reports from
 the Coverity static code analyzer.
+
+C<ptr_table> functions are now available in unthreaded perl.
+
+Corrected use and documentation of C<gv_stashpv>, C<gv_stashpvn>, C<gv_stashsv>
+functions (last parameter is a bitmask, not boolean).
 
 =head1 New Tests
 
