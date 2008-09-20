@@ -58,12 +58,6 @@
 	     [ 30896]
 	     Version change to ExtUtils::MM_Unix missed in change #30380.
 	     
-	     [ 30932]
-	     Subject: Re: [PATCH] Add CPANPLUS 0.78 to the core
-	     From: demerphq <demerphq@gmail.com>
-	     Date: Tue, 10 Apr 2007 18:31:28 +0200
-	     Message-ID: <9b18b3110704100931t5c0c97e0n9d3c059e6f404dd5@mail.gmail.com>
-	     
 	     [ 31124]
 	     Subject: [PATCH lib/ExtUtils/t/MM_Unix.t]	Fix warning.
 	     From: Abigail <abigail@abigail.be>
