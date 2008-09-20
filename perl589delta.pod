@@ -348,7 +348,7 @@ C<GDBM_File> upgraded to version 1.09
 
 =item *
 
-C<Getopt::Long> upgraded to version 2.36
+C<Getopt::Long> upgraded to version 2.37 (32009)
 
 =item *
 
