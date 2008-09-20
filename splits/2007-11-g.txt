@@ -76,14 +76,6 @@
 	     [ 31404]
 	     Patches to compile perl on Cray XT4 Catamount/Qk, by Jarkko
 	     
-	     [ 31519]
-	     Upgrade to ExtUtils-MakeMaker-6.35
-	     
-	     [ 31521]
-	     Include file missed from change #31519.
-	     
-	     [ 31522]
-	     Upgrade to ExtUtils-MakeMaker-6.36
      Branch: maint-5.8/perl
 	  +> lib/ExtUtils/t/WriteEmptyMakefile.t lib/ExtUtils/t/cd.t
 	  +> lib/ExtUtils/t/fixin.t lib/ExtUtils/t/prereq.t
