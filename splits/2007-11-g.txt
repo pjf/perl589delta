@@ -166,11 +166,6 @@ ____________________________________________________________________________
 	     Skip test #17 because select() is not interruptible and we run afoul
 	     of Perl's signal deferrals.
 	     
-	     [ 32046]
-	     Upgrade to Time-HiRes-1.9708
-	     
-	     [ 32303]
-	     Update Time::HiRes' Changes file
      Branch: maint-5.8/perl
 	  !> ext/Time/HiRes/Changes ext/Time/HiRes/HiRes.pm
 	  !> ext/Time/HiRes/t/HiRes.t
