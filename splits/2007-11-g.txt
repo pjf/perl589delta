@@ -154,22 +154,6 @@ ____________________________________________________________________________
 	  !> ext/ODBM_File/hints/linux.pl ext/POSIX/Makefile.PL
 	  !> ext/POSIX/POSIX.xs ext/POSIX/t/posix.t
 ____________________________________________________________________________
-[ 32317] By: nicholas				   on 2007/11/14  22:07:25
-	Log: Integrate:
-	     [ 31752]
-	     Subject: [patch@31739] ASTFLT in HiRes.t on VMS
-	     From: "John E. Malmberg" <wb8tyw@qsl.net>
-	     Date: Tue, 21 Aug 2007 22:44:58 -0500
-	     Message-id: <46CBB13A.6090405@qsl.net>
-	     
-	     
-	     Skip test #17 because select() is not interruptible and we run afoul
-	     of Perl's signal deferrals.
-	     
-     Branch: maint-5.8/perl
-	  !> ext/Time/HiRes/Changes ext/Time/HiRes/HiRes.pm
-	  !> ext/Time/HiRes/t/HiRes.t
-____________________________________________________________________________
 [ 32316] By: nicholas				   on 2007/11/14  19:58:25
 	Log: Integrate:
 	     [ 31306]

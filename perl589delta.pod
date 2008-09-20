@@ -568,8 +568,9 @@ C<Time::gmtime> upgraded to version 1.03
 
 =item *
 
-C<Time::HiRes> upgraded to version 1.9715 with various build improvements and minor
-platform-specific bug fixes (including for HP-UX 11 ia64)
+C<Time::HiRes> upgraded to version 1.9715 with various build improvements 
+(including VMS (31752)) and minor platform-specific bug fixes (including 
+for HP-UX 11 ia64)
 
 =item *
 
