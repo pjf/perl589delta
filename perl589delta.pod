@@ -500,6 +500,10 @@ C<Switch> upgraded to version 2.13
 
 =item *
 
+C<Term::ANSIColor> upgraded to version 1.12 (31036)
+
+=item *
+
 C<Test::Simple> upgraded to version 0.70
 
 =item *
