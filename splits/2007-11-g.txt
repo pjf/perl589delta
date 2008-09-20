@@ -172,18 +172,6 @@ ____________________________________________________________________________
 ____________________________________________________________________________
 [ 32310] By: nicholas				   on 2007/11/14  17:01:40
 	Log: Integrate:
-	     [ 30409]
-	     Subject: [PATCH] Re: [PATCH] Re: Win32 modules & cygwin
-	     From: "Yitzchak Scott-Thoennes" <sthoenna@efn.org>
-	     Date: Mon, 26 Feb 2007 00:45:10 -0800 (PST)
-	     Message-ID: <1300.63.226.247.142.1172479510.squirrel@63.226.247.142>
-	     
-	     (Stops Win32* extension tests from being run when the
-	     corresponding extensions haven't been built)
-	     
-	     [ 30411]
-	     Bump $Win32API::File::VERSION for change #30409
-	     
 	     [ 30425]
 	     Subject: Re: [PATCH] Re: Math::BigInt and Win32API::File whines a lot during make test...
 	     From: "Jerry D. Hedden" <jdhedden@yahoo.com>

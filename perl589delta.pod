@@ -1146,7 +1146,7 @@ compatibility.
 
 =item *
 
-C<Win32API> updated to 0.1001
+C<Win32API> updated to 0.1001_01 (30411)
 
 =item *
 
