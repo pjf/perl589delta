@@ -312,9 +312,6 @@ ____________________________________________________________________________
 	     A more general fix to non-threaded static extension build problems
 	     than #31220 was.
 	     
-	     [ 31235]
-	     Upgrade to Win32-0.29
-	     
 	     [ 31249]
 	     Subject: [PATCH] Skip win32core.t under Cygwin
 	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
@@ -349,9 +346,6 @@ ____________________________________________________________________________
 	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
 	     Date: Mon, 25 Jun 2007 10:23:15 -0400
 	     Message-ID: <1ff86f510706250723r4d6c5f5dg203b3f61cdeaa14d@mail.gmail.com>
-	     
-	     [ 31470]
-	     Upgrade to Win32-0.30
 	     
 	     [ 31487]
 	     Subject: Re: [PATCH-revised] ext/Win32/t/Unicode.t failures on FAT32 under Cygwin
@@ -400,9 +394,6 @@ ____________________________________________________________________________
 	     Date: Thu, 6 Sep 2007 14:50:15 -0400
 	     Message-ID: <1ff86f510709061150t4838c7d4i4c5b3f1f7dc0edd1@mail.gmail.com>
 	     
-	     [ 31852]
-	     Upgrade to Win32-0.31
-	     
 	     [ 31900]
 	     Subject: Re: [perl #45493] [patch] ext/Win32/Win32.xs compilation fails on msvc < 6
 	     From: Dmitry Karasik <dk@tetsuo.karasik.eu.org>
@@ -411,9 +402,6 @@ ____________________________________________________________________________
 	     
 	     (Adds some #defines missing from MSVC++ < 6, plus sorts the list into
 	     numerical order and tests each #define individually)
-	     
-	     [ 31935]
-	     Upgrade to Win32-0.32
 	     
 	     [ 31956]
 	     Subject: [PATCH - revised] Re: Change 31935: Upgrade to Win32-0.32
@@ -430,11 +418,6 @@ ____________________________________________________________________________
 	     Date: Mon, 24 Sep 2007 20:39:44 -0400
 	     Message-ID: <1ff86f510709241739q62b4f2eaycf13cb9956f8fab3@mail.gmail.com>
 	     
-	     [ 32300]
-	     Subject: RE: 5.10 code freeze and dual-life modules
-	     From: "Jan Dubois" <jand@activestate.com>
-	     Date: Mon, 12 Nov 2007 12:04:46 -0800
-	     Message-ID: <024101c82567$46ffd650$d4ff82f0$@com>
      Branch: maint-5.8/perl
 	  +> ext/Win32/longpath.inc ext/Win32/t/CreateFile.t
 	  +> ext/Win32/t/ExpandEnvironmentStrings.t
