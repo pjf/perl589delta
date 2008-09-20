@@ -82,17 +82,6 @@
 	  !> t/lib/MakeMaker/Test/Setup/Recurs.pm
 	  !> t/lib/MakeMaker/Test/Utils.pm
 ____________________________________________________________________________
-[ 32319] By: nicholas				   on 2007/11/14  23:26:31
-	Log: Integrate:
-	     [ 30684]
-	     Fix internal POD link
-	     
-     Branch: maint-5.8/perl
-	  !> lib/CGI.pm lib/CGI/Changes lib/Getopt/Long.pm
-	  !> lib/Term/ANSIColor.pm lib/Term/ANSIColor/ChangeLog
-	  !> lib/Term/ANSIColor/README lib/Term/ANSIColor/t/basic.t
-	  !> lib/Term/Cap.pm lib/Term/Cap.t lib/Time/Local.pm
-____________________________________________________________________________
 [ 32318] By: nicholas				   on 2007/11/14  23:02:34
 	Log: Integrate:
 	     [ 30826]
