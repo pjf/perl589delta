@@ -638,6 +638,10 @@ C<h2ph> generates correct correct code for C<#if defined A || defined B> now (pe
 
 C<h2xs> won't define an empty string as a constant (perl #25366)
 
+=item *
+
+C<h2xs> has examples for h2xs -X (31175)
+
 =back
 
 =head1 New Documentation

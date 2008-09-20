@@ -199,9 +199,6 @@ ____________________________________________________________________________
 	     Date: Wed, 25 Apr 2007 14:37:16 +0200
 	     Message-ID: <m2r6q8iq9v.fsf@phoenix.squirrel.nl>
 	     
-	     [ 31175]
-	     Add examples for h2xs -X, by Andy Armstrong
-	     
 	     [ 31531]
 	     Adapt perlivp to the ext/ reorganisation for Compress modules
 	     
