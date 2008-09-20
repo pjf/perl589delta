@@ -1,0 +1,25 @@
+#!/usr/bin/perl -w
+use strict;
+use autodie;
+use IPC::System::Simple qw(capture);
+use FindBin qw($Bin);
+
+# Builds the AUTHORS file which lists all project contributors.
+
+my $filename = $ARGV[0] || "$Bin/../AUTHORS";
+
+open(my $authors_fh, '>', $filename);
+
+my @logs = capture(qw(git log));
+
+my %author_email;
+
+foreach (@logs) {
+    $author_email{$1} = $2 if /^Author: (.*?)\s*<(.*)>/;
+}
+
+foreach my $name (sort keys %author_email) {
+    printf {$authors_fh} "%-30s<%s>\n", $name, $author_email{$name};
+}
+
+close($authors_fh);
