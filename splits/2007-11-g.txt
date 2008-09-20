@@ -137,12 +137,6 @@ ____________________________________________________________________________
 	  !> ext/ODBM_File/hints/linux.pl ext/POSIX/Makefile.PL
 	  !> ext/POSIX/POSIX.xs ext/POSIX/t/posix.t
 ____________________________________________________________________________
-[ 32315] By: nicholas				   on 2007/11/14  18:36:13
-	Log: Resort MANIFEST after p4 intergrate doesn't quite get it right.
-	     Update perltoc.pod.
-     Branch: maint-5.8/perl
-	   ! MANIFEST pod/perltoc.pod
-____________________________________________________________________________
 [ 32314] By: nicholas				   on 2007/11/14  18:34:38
 	Log: Integrate:
 	     [ 23990]
