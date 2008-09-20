@@ -145,7 +145,7 @@ C<CGI> upgraded to version 3.35 [33568]
 
 =item *
 
-C<CPAN> upgraded to version 1.9101
+C<CPAN> upgraded to version 1.9105 (32280)
 
 =item *
 

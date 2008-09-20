@@ -154,34 +154,6 @@ ____________________________________________________________________________
 	  !> ext/ODBM_File/hints/linux.pl ext/POSIX/Makefile.PL
 	  !> ext/POSIX/POSIX.xs ext/POSIX/t/posix.t
 ____________________________________________________________________________
-[ 32316] By: nicholas				   on 2007/11/14  19:58:25
-	Log: Integrate:
-	     [ 31306]
-	     Upgrade to CPAN-1.9102
-	     
-	     [ 32008]
-	     Upgrade to CPAN-1.9203
-	     
-	     [ 32010]
-	     Update to a file missed in change #32008.
-	     
-	     [ 32251]
-	     Update to CPAN.pm 1.9204
-	     
-	     [ 32280]
-	     Subject: CPAN.pm 1.9205
-	     From: andreas.koenig.7os6VVqR@franz.ak.mind.de (Andreas J. Koenig)
-	     Date: Sun, 11 Nov 2007 21:38:04 +0100
-	     Message-ID: <87lk944ixf.fsf@k75.linux.bogus>
-     Branch: maint-5.8/perl
-	  +> lib/CPAN/API/HOWTO.pm lib/CPAN/DeferedCode.pm
-	  !> MANIFEST lib/CPAN.pm lib/CPAN/Debug.pm lib/CPAN/FirstTime.pm
-	  !> lib/CPAN/HandleConfig.pm lib/CPAN/Kwalify.pm
-	  !> lib/CPAN/Kwalify/distroprefs.dd
-	  !> lib/CPAN/Kwalify/distroprefs.yml lib/CPAN/Nox.pm
-	  !> lib/CPAN/Queue.pm lib/CPAN/SIGNATURE lib/CPAN/Tarzip.pm
-	  !> lib/CPAN/Version.pm lib/CPAN/t/03pkgs.t lib/CPAN/t/10version.t
-____________________________________________________________________________
 [ 32315] By: nicholas				   on 2007/11/14  18:36:13
 	Log: Resort MANIFEST after p4 intergrate doesn't quite get it right.
 	     Update perltoc.pod.
