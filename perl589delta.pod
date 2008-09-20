@@ -504,6 +504,10 @@ C<Term::ANSIColor> upgraded to version 1.12 (31036)
 
 =item *
 
+C<Term::Cap> upgraded to version 1.10 (32143)
+
+=item *
+
 C<Test::Simple> upgraded to version 0.70
 
 =item *

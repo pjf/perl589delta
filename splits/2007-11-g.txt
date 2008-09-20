@@ -93,9 +93,6 @@ ____________________________________________________________________________
 	     [ 30684]
 	     Fix internal POD link
 	     
-	     [ 32143]
-	     Upgrade to Term::Cap 1.10
-	     
 	     [ 32211]
 	     Subject: [PATCH] - Update Time::Local to latest version
 	     From: Dave Rolsky <autarch@urth.org>
