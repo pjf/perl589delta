@@ -137,20 +137,6 @@ ____________________________________________________________________________
 	  !> ext/ODBM_File/hints/linux.pl ext/POSIX/Makefile.PL
 	  !> ext/POSIX/POSIX.xs ext/POSIX/t/posix.t
 ____________________________________________________________________________
-[ 32312] By: nicholas				   on 2007/11/14  18:09:03
-	Log: Integrate:
-  
-	     [ 31562]
-	     Fix corelist.pl after the reorganisation of the
-	     Compress modules in ext/. Re-update Module::CoreList.
-     Branch: maint-5.8/perl
-	  +> Porting/corelist.pl lib/Module/CoreList.pm
-	  +> lib/Module/CoreList/bin/corelist
-	  +> lib/Module/CoreList/t/corelist.t
-	  +> lib/Module/CoreList/t/find_modules.t pod/perl595delta.pod
-	  +> utils/corelist.PL
-	  !> MANIFEST META.yml pod/perlhist.pod utils.lst utils/Makefile
-____________________________________________________________________________
 [ 32311] By: nicholas				   on 2007/11/14  17:23:02
 	Log: Integrate:
 	     [ 31077]
