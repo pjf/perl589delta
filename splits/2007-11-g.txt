@@ -93,12 +93,6 @@ ____________________________________________________________________________
 	     [ 30684]
 	     Fix internal POD link
 	     
-	     [ 32211]
-	     Subject: [PATCH] - Update Time::Local to latest version
-	     From: Dave Rolsky <autarch@urth.org>
-	     Date: Wed, 31 Oct 2007 12:26:02 -0500 (CDT)
-	     Message-ID: <alpine.DEB.0.9999.0710311225010.19396@urth.org>
-	     
 	     [ 32301]
 	     Subject: Re: 5.10 code freeze and dual-life modules
 	     From: Jonathan Stowe <jns@gellyfish.com>
