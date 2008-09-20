@@ -137,11 +137,6 @@ ____________________________________________________________________________
 	  !> ext/ODBM_File/hints/linux.pl ext/POSIX/Makefile.PL
 	  !> ext/POSIX/POSIX.xs ext/POSIX/t/posix.t
 ____________________________________________________________________________
-[ 32313] By: nicholas				   on 2007/11/14  18:10:30
-	Log: Haven't I told you to go away once before?
-     Branch: maint-5.8/perl
-	   - pod/perl595delta.pod
-____________________________________________________________________________
 [ 32312] By: nicholas				   on 2007/11/14  18:09:03
 	Log: Integrate:
   
