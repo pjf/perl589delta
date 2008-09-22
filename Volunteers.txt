@@ -16,6 +16,7 @@
 2007-09 - DONE, MERGED (Paul Fenwick)
 2007-10 - DONE, MERGED (Jacinta Richardson)
 2008-01 - DONE, MERGED (Adam Flott)
+2008-04 - DONE, MERGED (Abhijit Menon-Sen (aka crab))
 2008-05 - DONE, MERGED (Mark Aufflick)
 
 == IN PROGRESS ==
@@ -33,7 +34,6 @@
 2007-11-c - Ben Hengst                      Last seen, 22nd Sep
 2007-11-g - Andreas Marienborg              Last seen, 20th Sep
 2008-02 - Spiros Denaxas                    Last seen, 14th Sep
-2008-04 - Abhijit Menon-Sen (aka crab)      Last seen, 22nd Sep
 2008-06 - Renee Backer                      Last seen,  9th Sep
 
 == AVAILABLE ==
