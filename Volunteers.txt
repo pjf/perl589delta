@@ -30,6 +30,7 @@
 2007-02-j - Shawn M Moore (aka Sartak)      Last seen, 15th Sep
 2007-11-a - Bradley Dean                    Last seen, 19th Sep
 2007-11-b - Bradley Dean                    Last seen, 19th Sep
+2007-11-c - Ben Hengst                      Last seen, 22nd Sep
 2007-11-g - Andreas Marienborg              Last seen, 20th Sep
 2007-12 - theorbtwo                         Last seen,  8th Sep
 2008-02 - Spiros Denaxas                    Last seen, 14th Sep
@@ -39,7 +40,6 @@
 == AVAILABLE ==
 
 2007-02-d - ==> Nobody <== 11k (slimmed)
-2007-11-c - ==> Nobody <== 20k
 2007-11-d - ==> Nobody <== 20k
 2007-11-e - ==> Nobody <== 20k
 2007-11-f - ==> Nobody <== 20k
