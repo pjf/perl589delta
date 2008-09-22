@@ -26,6 +26,12 @@ send a note of gratitude to the authors and maintainers of Perl. [33532]
 
 Updated Unicode definitions to 5.1.0.
 
+The Campaign for the Elimination of strlen() has successfully eliminated
+many calls to strlen().
+
+A very stubborn compiler warning in S_emulate_eaccess was killed six
+times.
+
 =head1 Modules and Pragmata
 
 =head2 New Modules
@@ -775,6 +781,25 @@ reported in error messages about elsif blocks.
 The tokenizer no longer treats =cute (and other words beginning
 with =cut) as a synonym for =cut.
 
+=item *
+
+Fixed bug RT #43207, where lc()/uc() inside sort affected the return
+value.
+
+=item *
+
+Fixed bug RT #45337, where using certain UTF-8 patterns in a regex led
+to a panic.
+
+=item *
+
+Fixed bug RT #45607, where *{"BONK"} = \&{"BONK"} didn't work correctly.
+
+=item *
+
+The "Unrecognised character 'x'" error now specifies in which column the
+unrecognised character actually occurred.
+
 =back
 
 =head2 Platform specific fixes
@@ -791,6 +816,10 @@ Various improvements to 64 bit builds.
 
 Mutex protection added in PerlIOStdio_close to avoid race conditions.  May
 fix threads free.t and blocks.t failures on OS X on 5.8.x (33502).
+
+=item *
+
+Added forked terminal support to debugger under MacOSX (29415)
 
 =back
 
@@ -820,6 +849,10 @@ Various improvements to the win32 build process, includding support for Visual C
 =item *
 
 Improvements to the perl-static.exe build process.
+
+=item *
+
+Merge WinCE into Win32 directory (30281-30284, 20862)
 
 =back
 
@@ -873,6 +906,37 @@ Aligned floating point build policies for cc and gcc.
 =item *
 
 Revisited a patch from 5.6.1 for RH7.2 for Intel's icc (RT #7916), added an aditional check for $Config{gccversion}.
+
+=back
+
+=head3 Windows and OS/2
+
+=over 4
+
+=item *
+
+A build problem with specifying C<USE_MULTI> and C<USE_ITHREADS> but without
+C<USE_IMP_SYS> has been fixed.
+
+=back
+
+=head3 Solaris/i386
+
+=over 4
+
+=item *
+
+Use -DPTR_IS_LONG when using 64 bit integers (27001)
+
+=back
+
+=head3 Symbian
+
+=over 4
+
+=item *
+
+Added support for Symbian series 90.
 
 =back
 
@@ -962,43 +1026,6 @@ definition lists better (32727).
 
 No longer segfaults when your locale charset is not utf8 with
 C<use open ':locale'> and printing Unicode characters to STDERR (30213)
-
-=back
-
-=head2 Platform specific fixes
-
-=head3 Windows and OS/2
-
-=over 4
-
-=item *
-
-A build problem with specifying C<USE_MULTI> and C<USE_ITHREADS> but without
-C<USE_IMP_SYS> has been fixed.
-
-=item *
-
-Merge WinCE into Win32 directory (30281-30284, 20862)
-
-=back
-
-=head3 Solaris/i386
-
-=over 4
-
-=item *
-
-Use -DPTR_IS_LONG when using 64 bit integers (27001)
-
-=back
-
-=head3 MacOSX
-
-=over 4
-
-=item *
-
-Added forked terminal support to debugger under MacOSX (29415)
 
 =back
 
