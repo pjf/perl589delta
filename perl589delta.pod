@@ -770,6 +770,11 @@ C<defined()> even under the influence of C<use strict 'refs'>.
 Fixed a long-standing bug that caused incorrect line numbers to be
 reported in error messages about elsif blocks.
 
+=item *
+
+The tokenizer no longer treats =cute (and other words beginning
+with =cut) as a synonym for =cut.
+
 =back
 
 =head2 Platform specific fixes
