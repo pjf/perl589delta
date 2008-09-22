@@ -24,7 +24,7 @@ semantics. They also treat C<*FILE{IO}> filehandles like C<*FILE> filehandles.
 Added B<perlthanks> which is just like C<perlbug> but allows the user to
 send a note of gratitude to the authors and maintainers of Perl. [33532]
 
-Added support for Unicode 5.0.
+Updated Unicode definitions to 5.1.0.
 
 =head1 Modules and Pragmata
 
@@ -764,6 +764,11 @@ Fixed problems with split, unicode /\s+/ and / \0/.
 
 Fixed bug RT #37886, unsafe dereferencations were allowed in the argument of
 C<defined()> even under the influence of C<use strict 'refs'>.
+
+=item *
+
+Fixed a long-standing bug that caused incorrect line numbers to be
+reported in error messages about elsif blocks.
 
 =back
 
