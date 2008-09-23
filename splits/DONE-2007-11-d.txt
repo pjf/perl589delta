@@ -1,0 +1,29 @@
+[ 32404] By: nicholas				   on 2007/11/19  13:18:32
+[ 32402] By: nicholas				   on 2007/11/19  11:01:20
+[ 32400] By: nicholas				   on 2007/11/19  10:32:56
+[ 32398] By: nicholas				   on 2007/11/19  09:41:28
+[ 32397] By: nicholas				   on 2007/11/18  22:57:47
+[ 32396] By: nicholas				   on 2007/11/18  22:52:40
+[ 32394] By: nicholas				   on 2007/11/18  22:16:34
+	     Fix [perl #43207] lc() or uc() inside sort affect the return value.
+	     
+	     Subject: Re: [PATCH] Adding more information to "Unrecognized character" error in toke.c
+
+	     [perl #45337] utf8 + "[a]a{2}" + /$.../ = panic: sv_len_utf8 cache
+	     when shrinking an SV, shrink the sv_len_utf8 cache too!
+[ 32393] By: nicholas				   on 2007/11/18  21:42:41
+	     Subject: [PATCH] Symbian port: add Series 90 support
+[ 32392] By: nicholas				   on 2007/11/18  20:45:05
+[ 32391] By: nicholas				   on 2007/11/18  20:28:30
+[ 32390] By: nicholas				   on 2007/11/18  19:03:22
+	     fix S_emulate_eaccess compiler warning
+[ 32389] By: nicholas				   on 2007/11/18  08:28:57
+	     Fix bug 45607 - for the corner case *{"BONK"} = \&{"BONK"} the order
+	     of op evaluation means that what had been a reference to a constant
+	     can turn into a typeglob before the sassign gets to run.
+[ 32388] By: nicholas				   on 2007/11/18  00:47:51
+[ 32387] By: nicholas				   on 2007/11/18  00:29:35
+[ 32386] By: nicholas				   on 2007/11/18  00:15:44
+[ 32385] By: nicholas				   on 2007/11/17  23:19:00
+[ 32384] By: nicholas				   on 2007/11/17  22:34:52
+[ 32383] By: nicholas				   on 2007/11/17  22:02:32

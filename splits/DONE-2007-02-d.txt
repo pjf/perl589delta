@@ -1,0 +1,10 @@
+[ 30292] By: nicholas				   on 2007/02/14  17:29:10
+[ 30291] By: nicholas				   on 2007/02/14  16:37:49
+	     Fix bug [perl #41234] : the tokenizer understands "=cute"
+	     or other words that begin with "cut" as synonyms for "=cut"
+[ 30290] By: nicholas				   on 2007/02/14  16:13:48
+[ 30286] By: nicholas				   on 2007/02/14  14:15:49
+[ 30279] By: nicholas				   on 2007/02/14  11:47:20
+[ 30274] By: nicholas				   on 2007/02/13  23:49:45
+[ 30273] By: nicholas				   on 2007/02/13  23:40:57
+[ 30271] By: nicholas				   on 2007/02/13  23:07:06
