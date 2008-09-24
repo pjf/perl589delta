@@ -28,15 +28,6 @@
 	     Date: Thu, 18 Oct 2007 14:49:40 -0400
 	     Message-ID: <1ff86f510710181149s1c096dd9qffa8fe42046e675b@mail.gmail.com>
 	     
-	     [ 32148]
-	     Subject: Re: [PATCH] Fix overloading for 64-bit ints (revised)
-	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
-	     Date: Fri, 19 Oct 2007 20:50:27 -0400
-	     Message-ID: <1ff86f510710191750s3f25eae2x2dc2e90f18f1f716@mail.gmail.com>
-	     
-	     [ 32150]
-	     Revert code change from #32148
-	     
 	     [ 32157]
 	     Subject: Re: overload64.t failures
 	     From: Rick Delaney <rick@bort.ca>
