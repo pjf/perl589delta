@@ -646,7 +646,106 @@ been contributed by Yves Orton.
 L<reverse> function documentation recieved scalar context examples.
 
 L<perlre> documentation updated to reflect the differences between
-C<[[:xxxxx:]]> and C<\p{IsXxxxx}> matches.
+C<[[:xxxxx:]]> and C<\p{IsXxxxx}> matches. Also added section on C</g> and
+C</c> modifiers.
+
+L<perlcommunity> provides an overview of the Perl Community along with further
+resources.
+
+L<perltoc> the table of content is updated with several new documentation and
+cleaned up unnecessary noises.
+
+L<perlvar> and L<perlre> add items C<${^PREMATCH}>, C<${^MATCH}>, and
+C<${^`POSTMATCH}> and also C</k> modifier.
+
+L<perlop> adds C</k> modifier in section C<s/PATTERN/REPLACEMENT/egimosxk>
+
+L<perlmodlib> is updated with C<CPAN::API::HOWTO> and
+C<Sys::Syslog::win32::Win32> 
+
+L<perldebug> is updated with information on how to call the debugger.
+
+L<perldiag> documentation updated with I<subroutine with an ampersand> on the
+argument to C<exists()> and C<delete()> and also several terminology updates on
+warnings.
+
+L<perlfunc> documentation is fixed in section C<caller> and C<pop>, added
+example of C<gethostbyname>, and also better wording in C<prototype> and
+C<split>.
+
+L<perlcheat> is updated with a better details on C<\w>, C<\d>, and C<\s>.
+
+L<perlsub> example is updated to use lexical variable on opendir syntax.
+
+L<perlrun> is updated to clarify on the hash seed I<PERL_HASH_SEED>. Also more
+information in option B<-x> and B<-u>.
+
+L<perluniintro> have been updated in the example of detecting data that's not
+valid in particular encoding. 
+
+L<perlbot> fixed C<ref> returns an empty string (not undef) when used on a
+string (#31685)
+
+L<perlunicode> is updated in section user defined properties.
+
+L<perlglossary> adds I<deprecated modules and features> and I<to be dropped modules>.
+
+L<perlhack> has been updated.
+
+Perl thread tutorial example is fixed in section L<Queues: Passing Data Around>
+both in L<perlothrtut> and L<perlothrtut>.
+
+The Perl FAQs (F<perlfaq1>..F<perlfaq9>) have been updated.
+
+L<perltodo> is updated with:
+
+=over
+
+=item *
+
+removed section L<Ordering of "global" variables|perltodo>.
+
+=item *
+
+removed section L<The roadmap to 5.10|perltodo>.
+
+=item *
+
+added B<-Duse32bit*>.
+
+=item *
+
+added L<__FUNCTION__ for MSVC|perltodo>.
+
+=item *
+
+added more detail about @INC order.
+
+=item *
+
+added section L<merge common code in installperl and installman|perltodo>.
+
+=item *
+
+added section L<merge checkpods and podchecker|perltodo>.
+
+=item *
+
+added section L<Investigate PADTMP hash pessimisation|perltodo>.
+
+=item *
+
+added C<does()> built-in and L<Tied filehandles and write() don't mix|perltodo>.
+
+=item *
+
+added section L<Unicode and lc/uc operators|perltodo>.
+
+=item *
+
+added section L<Optimize away empty destructors>.
+
+=back
 
 =head1 Performance Enhancements
 
@@ -686,6 +785,15 @@ for regexp matching in all code using it.
 Regular expressions classes of a single character are now treated the same as
 if the character had been used as a literal, meaning that code that uses
 char-classes as an escaping mechanism will see a speedup. (Yves Orton)
+
+=item *
+
+Regular expression introduces C</k> modifier for matching along with new perl
+variables C<${^PREMATCH}>, C<${^MATCH}>, C<${^POSTMATCH}> which are equivalent
+to C<$`>, C<$&> and C<$'>, B<except> that they are only guaranteed to be
+defined after a successful match that was executed with the C</k> (keep-copy)
+modifier. The use of these variables incurs no global performance penalty,
+unlike their punctuation char equivalents (#32263).
 
 =item *
 
@@ -1089,6 +1197,12 @@ C<ptr_table> functions are now available in unthreaded perl.
 
 Corrected use and documentation of C<gv_stashpv>, C<gv_stashpvn>, C<gv_stashsv>
 functions (last parameter is a bitmask, not boolean).
+
+Machine generated C<B::Asmdata> via C<bytecode.pl> is now more warnings free and
+read C<@optype> and C<@specialsv_name> from ext/B/B.pm (#32264, #32266)
+
+Reorder global variable in C<intrpvar.h> saves another 40 bytes from the
+interpreter structure (#31034).
 
 =head1 New Tests
 
