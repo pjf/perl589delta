@@ -1,12 +1,3 @@
-[ 32553] By: nicholas				   on 2007/11/29  16:00:15
-	Log: Integrate:
-	     [ 31548]
-	     Make Perl_find_runcv a member of the public API
-	     (so Sub::Current works on Windows)
-     Branch: maint-5.8/perl
-	  !> embed.fnc embed.h global.sym pod/perlapi.pod
-	  !> pod/perlintern.pod
-____________________________________________________________________________
 [ 32545] By: nicholas				   on 2007/11/28  23:35:51
 	Log: Integrate:
 	     [ 32059]

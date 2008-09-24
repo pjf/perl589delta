@@ -1108,6 +1108,9 @@ C<av_reify>, C<lex_end>, C<mod>, C<op_clear>, C<pop_return>,
 C<qerror>, C<setdefout>, C<vivify_defelem> and C<yylex> are now
 visible to perl core extensions. This was required by L<Data::Alias>.
 
+C<find_runcv> is now visible to perl core extensions. This was required to
+allow L<Sub::Current> to work on Windows.
+
 C<set> magic on localizing/assigning to a magic variable will now only
 trigger for I<container magics>, i.e. it will for C<%ENV> or C<%SIG>
 but not for C<$#array>.
