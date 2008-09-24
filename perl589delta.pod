@@ -604,6 +604,10 @@ C<Unicode::Normalize> upgraded to version 1.01
 
 =item *
 
+C<Win32> upgraded to version 0.34
+
+=item *
+
 C<XSLoader> upgraded to version 0.08
 
 =item *
