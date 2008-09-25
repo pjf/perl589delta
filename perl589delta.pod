@@ -890,6 +890,10 @@ Improvements to the perl-static.exe build process.
 
 =item *
 
+Add Win32 makefile option to link all extensions statically.
+
+=item *
+
 Merge WinCE into Win32 directory (30281-30284, 20862)
 
 =back

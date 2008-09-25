@@ -69,33 +69,6 @@ ____________________________________________________________________________
      Branch: maint-5.8/perl
 	  !> ext/DynaLoader/t/DynaLoader.t lib/overload.pm
 ____________________________________________________________________________
-[ 32422] By: nicholas				   on 2007/11/20  15:42:05
-	Log: Integrate:
-	     [ 31784]
-	     Add Win32 makefile option to link all extensions statically
-	     
-	     Subject: [PATCH-at31768] RE: [PATCH at 31761] RE: MakeMaker + static misbehaviour
-	     From: "Konovalov, Vadim Vladimirovich (Vadim)** CTR **" <vkonovalov@alcatel-lucent.com>
-	     Date: Fri, 31 Aug 2007 08:56:47 +0200
-	     Message-ID: <D16F05D0CAAA234BA2B753B80DE6100D448945@DEEXC1U02.de.lucent.com>
-	     
-	     (with a couple of tweaks to comments in Makefile, exclusion of one more
-	     module (Hash/Utils) from the "all static" build option, plus the same
-	     changes in makefile.mk)
-	     
-	     [ 32004]
-	     Subject: Re: [patch] clean out remnants of DEBUGGING_OPS (was opcode op_type:9)
-	     From: Jim Cromie <jim.cromie@gmail.com>
-	     Date: Mon, 01 Oct 2007 18:59:43 -0600
-	     Message-ID: <470197FF.5040709@gmail.com>
-	     
-	     [ 32066]
-	     Do the same as #32061 for Win32, which also fixes a static linking
-	     build problem with Hash/Util/FieldHash
-     Branch: maint-5.8/perl
-	  !> win32/FindExt.pm win32/Makefile win32/Makefile.ce
-	  !> win32/buildext.pl win32/makefile.mk
-____________________________________________________________________________
 [ 32421] By: nicholas				   on 2007/11/20  15:23:54
 	Log: Integrate:
 	     [ 31523]
