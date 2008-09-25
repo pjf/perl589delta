@@ -755,7 +755,7 @@ There are improved hints for DEC/OSF, VOS (33425), Cygwin (33484).
 
 Many compilation warnings were cleaned up (33415, 33417, 33418, 33419,
 33420, 33421, 33427, 33428, 33429, 33435, 33436, 33441, 33444, 33479,
-33590,)
+33590, 31347,)
 
 Added C<d_pseudofork> to C<Configure> which is a new configuration variable,
 available as C<$Config{d_pseudofork}> in the L<Config> module, has been added,

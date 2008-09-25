@@ -46,20 +46,6 @@ ____________________________________________________________________________
      Branch: maint-5.8/perl
 	   ! win32/win32.c
 ____________________________________________________________________________
-[ 32435] By: nicholas				   on 2007/11/21  16:04:47
-	Log: Integrate:
-	     [ 31347]
-	     Stop VC++ from warning "all references to 'SHELL32.dll' discarded
-	     by /OPT:REF" by removing the only reference to a SHELL32.dll function
-	     (namely, CommandLineToArgvW(), called from win32_argv2utf8(), which
-	     isn't actually used anywhere so delete it).
-	     
-	     That then caused the warning "/DELAYLOAD:shell32.dll ignored; no
-	     imports found from shell32.dll", so remove that /DELAYLOAD option too.
-     Branch: maint-5.8/perl
-	  !> win32/Makefile win32/makefile.mk win32/win32.c win32/win32.h
-	  !> win32/wince.c
-____________________________________________________________________________
 [ 32424] By: nicholas				   on 2007/11/20  16:06:10
 	Log: Integrate:
 	     [ 31073]
