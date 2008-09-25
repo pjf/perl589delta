@@ -4,11 +4,6 @@ ____________________________________________________________________________
 	     [ 32446]
 	     5.00404 compile fix from Slaven Rezic.
 	     
-	     [ 32447]
-	     2.18 release.
-     Branch: maint-5.8/perl
-	  !> ext/Storable/ChangeLog ext/Storable/Storable.pm
-	  !> ext/Storable/Storable.xs
 ____________________________________________________________________________
 [ 32442] By: nicholas				   on 2007/11/21  18:12:52
 	Log: Integrate:

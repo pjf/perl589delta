@@ -523,7 +523,7 @@ This fixes an optimistic use of C<gethostbyname()>.
 
 =item *
 
-C<Storable> upgraded to 2.16
+C<Storable> upgraded to 2.18
 
 =item *
 
