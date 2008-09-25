@@ -1136,7 +1136,7 @@ Regression tests for anchored regexes using C<\s> that failed to set C<$&>
 
 =item * 
 
-Regression tests for sprinf with 64 bit semantics (30058).
+Regression tests for sprintf with 64 bit semantics (30058).
 
 =item *
 
