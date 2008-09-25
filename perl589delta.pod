@@ -982,6 +982,11 @@ It's now possible to overload C<eq> when using C<nomethod>.
 
 =item *
 
+Various problems using L<overload> with 64-bit ints corrected (identified
+in new tests).
+
+=item *
+
 The reference count of PerlIO file descriptors is now correctly handled.
 
 =item *
@@ -1137,6 +1142,10 @@ Regression tests for anchored regexes using C<\s> that failed to set C<$&>
 =item * 
 
 Regression tests for sprintf with 64 bit semantics (30058).
+
+=item *
+
+Tests for L<overload> for 64-bit ints (32141).
 
 =item *
 

@@ -22,17 +22,6 @@
 	     Date: Thu, 11 Oct 2007 10:23:03 -0400
 	     Message-ID: <1ff86f510710110723p6cbed55fo558777258061b556@mail.gmail.com>
 	     
-	     [ 32141]
-	     Subject: [PATCH] Fix overloading for 64-bit ints (revised)
-	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
-	     Date: Thu, 18 Oct 2007 14:49:40 -0400
-	     Message-ID: <1ff86f510710181149s1c096dd9qffa8fe42046e675b@mail.gmail.com>
-	     
-	     [ 32157]
-	     Subject: Re: overload64.t failures
-	     From: Rick Delaney <rick@bort.ca>
-	     Date: Sun, 21 Oct 2007 16:13:51 -0400
-	     Message-ID: <20071021201351.GY29047@bort.ca>
      Branch: maint-5.8/perl
 	  +> lib/overload64.t
 	  !> MANIFEST embed.fnc embed.h lib/overload.t pod/perlintern.pod
