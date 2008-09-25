@@ -764,6 +764,8 @@ platforms.
 
 L<ptar> and L<ptardiff> are no longer installed to C<$installbin>
 
+'unexpand -a' spaces converted to tabs to create smaller Changes files.
+
 =head1 Selected Bug Fixes
 
 =over 4

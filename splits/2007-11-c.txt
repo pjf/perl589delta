@@ -19,21 +19,6 @@ ____________________________________________________________________________
 	     
 	     [ 32439]
 	     Safe.pm is actually not under ext/Safe
-	     
-	     [ 32441]
-	     Make genlog 'unexpand -a' all the spaces into tabs, which results in
-	     smaller Changes files.
-     Branch: maint-5.8/perl
-	  !> Porting/Maintainers.pl Porting/genlog Porting/makerel
-____________________________________________________________________________
-[ 32438] By: nicholas				   on 2007/11/21  17:52:26
-	Log: Akin to change 32433, run unexpand -a on all the 5.8 Changes files,
-	     which were also a jumbled mix of tabs and spaces. Now they're all tabs.
-	     The diff may look huge, but run diff -db and you'll see that it's all
-	     whitespace.
-     Branch: maint-5.8/perl
-	   ! Changes Changes5.8.1 Changes5.8.2 Changes5.8.3 Changes5.8.4
-	   ! Changes5.8.5 Changes5.8.6 Changes5.8.7 Changes5.8.8
 ____________________________________________________________________________
 [ 32437] By: nicholas				   on 2007/11/21  17:50:11
 	Log: Integrate:
