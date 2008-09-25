@@ -37,19 +37,6 @@ ____________________________________________________________________________
 	     [ 32426]
 	     Note that traces of PL_na cling on in dark corners of the source code.
 	     Exterminate! Exterminate! Exterminate!
-	     
-	     [ 32433]
-	     Run unexpand -a on all the Changes files, which were a jumbled mix of
-	     tabs and spaces. Now they're all tabs, and about 1300K smaller.
-	     The diff may look huge, but run diff -db and you'll see that it's all
-	     whitespace.
-	     
-	     [ 32434]
-	     Update copyright in the README
-     Branch: maint-5.8/perl
-	  !> Changes5.000 Changes5.001 Changes5.002 Changes5.003
-	  !> Changes5.004 Changes5.005 Changes5.6 Changes5.8 README
-	  !> pod/perlboot.pod pod/perltodo.pod sv.c
 ____________________________________________________________________________
 [ 32436] By: nicholas				   on 2007/11/21  16:35:42
 	Log: Patch from Steve Hay to merge in the parts of change 26379 that
