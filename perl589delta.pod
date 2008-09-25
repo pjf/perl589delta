@@ -55,6 +55,14 @@ C<ANSIColor> upgraded to version 1.11
 
 =item *
 
+C<Archive::Extract> upgraded to version 0.26
+
+=item *
+
+C<Attribute::Handlers> upgraded to version 0.79
+
+=item *
+
 C<AutoLoader> upgraded to version 5.66
 
 =item *
@@ -67,7 +75,7 @@ C<autouse> upgraded to version 1.06
 
 =item *
 
-C<B> upgraded from 1.09_01 to 1.19.
+C<B> upgraded from 1.09_01 to 1.19
 
 =over
 
@@ -123,7 +131,7 @@ C<B::Deparse> upgraded to version 0.81
 
 =item *
 
-C<B::Lint> upgraded to version 1.09
+C<B::Lint> upgraded to version 1.11
 
 =item *
 
@@ -148,6 +156,10 @@ C<Carp> upgraded to version 1.09
 =item *
 
 C<CGI> upgraded to version 3.35 [33568] 
+
+=item *
+
+C<constant> upgraded to version 1.15
 
 =item *
 
@@ -335,12 +347,21 @@ C<File::Path> upgraded to version 1.09
 
 =item *
 
-C<File::Spec>, C<File::Spec::Epoc>, C<File::Spec::Mac>, C<File::Spec::Functions>
-C<File::Spec::Unix>, C<File::Spec::VMS>, C<File::Spec::Win32> upgraded to version
-3.2701 with improved handling of bad arguments and some platform specific
-improvements (Including for VMS and Cygwin)
+C<File::Spec>, C<File::Spec::Epoc>, C<File::Spec::Mac>,
+C<File::Spec::Functions> C<File::Spec::Unix>, C<File::Spec::VMS>,
+C<File::Spec::Win32> upgraded to version 3.2701 with improved handling of bad
+arguments and some platform specific improvements (Including for VMS and
+Cygwin)
 
 =item *
+
+C<File::Spec::Unix> upgraded to version 1.5_01
+
+=item *
+
+C<File::Temp> upgraded to version 0.20
+
+=item * 
 
 C<FindBin> upgraded to version 1.48
 
@@ -390,6 +411,14 @@ C<Math::Complex>, C<Math::Trig> upgraded to version 1.54.
 
 =item *
 
+C<Module::Pluggable> upgraded to version 3.8 [33552]
+
+=item *
+
+C<Net::Ping> upgraded to version 2.35 [33242]
+
+=item *
+
 C<NDBM_File> upgraded to version 1.07
 
 =over
@@ -402,7 +431,15 @@ Improve g++ handling for systems using GDBM compatibility headers.
 
 =item *
 
-C<PathTools> upgraded to version 3.22
+C<Opcode::Safe> upgraded to version 2.14
+
+=item *
+
+C<open> upgraded to 1.06
+
+=item *
+
+C<PathTools> upgraded to version 3.2501
 
 =item *
 
@@ -419,18 +456,6 @@ C<PerlIO::scalar> upgraded to version 0.05
 =item *
 
 C<PerlIO::via> upgraded to version 0.05
-
-=item *
-
-C<Math::Complex> upgraded to version 1.52 [33293]
-
-=item *
-
-C<Module::Pluggable> upgraded to version 3.8 [33552]
-
-=item *
-
-C<Net::Ping> upgraded to version 2.35 [33242]
 
 =item *
 
@@ -474,7 +499,7 @@ Improve g++ handling for systems using GDBM compatibility headers.
 
 =item *
 
-L<SelfLoader> upgraded to version 1.10
+L<SelfLoader> upgraded to version 1.15
 
 =item *
 
@@ -503,6 +528,10 @@ C<Storable> upgraded to 2.16
 =item *
 
 C<Switch> upgraded to version 2.13
+
+=item *
+
+C<Sys-Syslog upraded to version 0.24>
 
 =item *
 
@@ -560,14 +589,16 @@ Tie::Memoize::EXISTS now correctly caches its results.
 
 =back
 
+C<Tie::RefHash> upgraded to version 1.38
+
 =item *
 
 C<Time::gmtime> upgraded to version 1.03
 
 =item *
 
-C<Time::HiRes> upgraded to version 1.9715 with various build improvements and minor
-platform-specific bug fixes (including for HP-UX 11 ia64)
+C<Time::HiRes> upgraded to version 1.9715 with various build improvements and
+minor platform-specific bug fixes (including for HP-UX 11 ia64)
 
 =item *
 
@@ -628,7 +659,8 @@ between C<""> and C<<E<lt>E<gt>>> quoting in C<#include> statements.
 
 =item *
 
-C<h2ph> generates correct correct code for C<#if defined A || defined B> now (perl #39130)
+C<h2ph> generates correct correct code for C<#if defined A || defined B> now
+(perl #39130)
 
 =item *
 
