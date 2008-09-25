@@ -12,10 +12,6 @@
 	     Date: Sun, 7 Oct 2007 22:37:01 -0400
 	     Message-ID: <20071008023701.GI29047@bort.ca>
 	     
-	     [ 32071]
-	     Suggestion by Rick Delaney to make this test pass with -Duse64bitall
-	     on HP-UX (see bug #46011)
-	     
 	     [ 32100]
 	     Subject: [PATCH] pp_int should treat refs as UVs (not IVs)
 	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
