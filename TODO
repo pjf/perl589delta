@@ -19,3 +19,5 @@
 * Are ptar and ptardiff really out? They are in 5.10.0 --aflott
 * 29609 says "Upgrade to Text::Balanced 2.0.0" and doesn't seem to get
   reverted later on, but lib/Text/Balanced.pm says it's 1.98 --moritz
+* Make sure that Spiros' name is entered correctly in the AUTHORS
+  file.
