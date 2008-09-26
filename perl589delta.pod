@@ -1064,6 +1064,11 @@ definition lists better (32727).
 No longer segfaults when your locale charset is not utf8 with
 C<use open ':locale'> and printing Unicode characters to STDERR (30213)
 
+=item *
+
+L<threads> cleanup veto has been extended to include C<perl_free> and
+C<perl_destruct> (29827)
+
 =back
 
 =head1 New or Changed Diagnostics
