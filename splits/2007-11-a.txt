@@ -1,10 +1,5 @@
 [ 32544] By: nicholas				   on 2007/11/28  23:06:16
 	Log: Integrate:
-	     [ 31971]
-	     extend PL_veto_cleanup to all platforms
-	     The conditional skip of PERL_SYS_TERM introduced by change #29827
-	     now happens on all platforms, not just UNIX.
-	     
 	     [ 32215]
 	     Subject:  Re: building mod_perl-2.0.3 with Perl 5.10.0 (DEVEL32096)
 	     From:  Jarkko Hietaniemi <jhi@iki.fi>
