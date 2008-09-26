@@ -1,26 +1,3 @@
-[ 32544] By: nicholas				   on 2007/11/28  23:06:16
-	Log: Integrate:
-	     [ 32215]
-	     Subject:  Re: building mod_perl-2.0.3 with Perl 5.10.0 (DEVEL32096)
-	     From:  Jarkko Hietaniemi <jhi@iki.fi>
-	     Date:  Fri, 02 Nov 2007 21:38:48 -0400
-	     Message-Id:  <472BD128.9080105@iki.fi>
-	     
-	     PerlIO_teardown is called when there may no longer be an
-	     interpreter available
-	     
-	     [ 32216]
-	     make PERLSYS_TERM not require a context
-	     
-	     [ 32235]
-	     Disable debugging output in PerlIO_teardown;
-	     it still relies on an interpreter being present.
-     Branch: maint-5.8/perl
-	  !> dosish.h embed.fnc embedvar.h epoc/epocish.h global.sym
-	  !> mpeix/mpeixish.h os2/os2ish.h perl.c perl.h perlapi.h perlio.c
-	  !> perliol.h perlvars.h plan9/plan9ish.h proto.h unixish.h
-	  !> vms/vmsish.h
-____________________________________________________________________________
 [ 32543] By: nicholas				   on 2007/11/28  22:15:48
 	Log: Integrate:
 	     [ 31756]

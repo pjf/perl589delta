@@ -1141,6 +1141,11 @@ functions (last parameter is a bitmask, not boolean).
 C<PERL_SYS_INIT>, C<PERL_SYS_INIT3> and C<PERL_SYS_TERM> macros have been
 changed into functions (31970).
 
+C<PERLSYS_TERM> no longer requires a context (32216). In C<PerlIO_teardown>
+is now also called without a context (32215), and debugging output in this
+function has been disabled because this requires that an interpreter is present
+(32235).
+
 =head1 New Tests
 
 =over 4
