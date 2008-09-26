@@ -1,8 +1,5 @@
 [ 32544] By: nicholas				   on 2007/11/28  23:06:16
 	Log: Integrate:
-	     [ 31970]
-	     make PERL_SYS_INIT/INIT3/TERM into functions
-	     
 	     [ 31971]
 	     extend PL_veto_cleanup to all platforms
 	     The conditional skip of PERL_SYS_TERM introduced by change #29827
