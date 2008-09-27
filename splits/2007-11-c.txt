@@ -69,23 +69,6 @@ ____________________________________________________________________________
      Branch: maint-5.8/perl
 	  !> ext/DynaLoader/t/DynaLoader.t lib/overload.pm
 ____________________________________________________________________________
-[ 32421] By: nicholas				   on 2007/11/20  15:23:54
-	Log: Integrate:
-	     [ 31523]
-	     $Config{useshrplib} should be 'true' rather than 'yes' when using
-	     a shared perl library
-	     
-	     [ 31526]
-	     Correct a couple more cases of $Config{useshrplib}
-	     
-	     [ 31533]
-	     Replace C<shrplib='define'> with C<useshrplib='true'> on VMS.
-     Branch: maint-5.8/perl
-	  !> NetWare/config.wc configure.com hints/uts.sh
-	  !> lib/ExtUtils/MM_Unix.pm vms/genconfig.pl win32/config.bc
-	  !> win32/config.ce win32/config.gc win32/config.vc
-	  !> win32/config.vc64
-____________________________________________________________________________
 [ 32419] By: nicholas				   on 2007/11/20  14:28:43
 	Log: Integrate:
 	     [ 31355]
