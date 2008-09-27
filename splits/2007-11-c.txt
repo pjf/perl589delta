@@ -46,29 +46,6 @@ ____________________________________________________________________________
      Branch: maint-5.8/perl
 	   ! win32/win32.c
 ____________________________________________________________________________
-[ 32424] By: nicholas				   on 2007/11/20  16:06:10
-	Log: Integrate:
-	     [ 31073]
-	     Subject: Re: [Andreas J. Koenig] C3 MRO breaks Params::Util and Graph
-	     From: "Brandon Black" <blblack@gmail.com>
-	     Date: Tue, 24 Apr 2007 07:58:44 -0500
-	     Message-ID: <84621a60704240558q7ff65863l803c6f9b9b8ca4a6@mail.gmail.com>
-	     
-	     [ 31074]
-	     Move the require at the top of the file.
-	     Else, Test::More has test failures.
-	     
-	     [ 31075]
-	     Remove a now redundant require
-	     
-	     [ 31076]
-	     overload must not load XS modules at compile time, or perl
-	     doesn't compile.
-	     overload must not clobber $! or $@ behind the scenes when
-	     loading an XS module.
-     Branch: maint-5.8/perl
-	  !> ext/DynaLoader/t/DynaLoader.t lib/overload.pm
-____________________________________________________________________________
 [ 32419] By: nicholas				   on 2007/11/20  14:28:43
 	Log: Integrate:
 	     [ 31355]
