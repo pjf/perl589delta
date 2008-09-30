@@ -115,11 +115,34 @@ C<B::C> upgraded to 1.05
 
 =item *
 
-C<B::Debug> upgraded to version 1.03
+C<B::Concise> upgraded to 0.74
+
+=over
 
 =item *
 
-C<B::Deparse> upgraded to version 0.81
+Supports option B<-src>, i.e. the rendering of each statement (starting with
+the nextstate OP) will be preceded by the 1st line of source code that
+generates it.
+
+=item *
+
+Support option B<-stash="somepackage">, i.e. "somepackage" will be required,
+then the stash is inspected, and each function is rendered.
+
+=item *
+
+Now has a documentation of detailed hint symbols.
+
+=back
+
+=item *
+
+C<B::Debug> upgraded to version 1.05
+
+=item *
+
+C<B::Deparse> upgraded to version 0.82
 
 =item *
 
@@ -160,7 +183,7 @@ improvements (including for VMS).
 
 =item *
 
-C<Data::Dumper> upgraded to version 2.121_11
+C<Data::Dumper> upgraded to version 2.121_13
 
 =over
 
@@ -658,6 +681,8 @@ cleaned up unnecessary noises.
 L<perlvar> and L<perlre> add items C<${^PREMATCH}>, C<${^MATCH}>, and
 C<${^`POSTMATCH}> and also C</k> modifier.
 
+L<perlvar> fixes confusion about real GID C<$(> and effective GID C<$)>. 
+
 L<perlop> adds C</k> modifier in section C<s/PATTERN/REPLACEMENT/egimosxk>
 
 L<perlmodlib> is updated with C<CPAN::API::HOWTO> and
@@ -669,9 +694,39 @@ L<perldiag> documentation updated with I<subroutine with an ampersand> on the
 argument to C<exists()> and C<delete()> and also several terminology updates on
 warnings.
 
-L<perlfunc> documentation is fixed in section C<caller> and C<pop>, added
-example of C<gethostbyname>, and also better wording in C<prototype> and
-C<split>.
+L<perllocale> documentation is adjusted for the number of localization and
+C<POSIX::setlocale()> to fix debian bug in RT ##379463.
+
+L<perlfork> documents the limitation of exec() inside pseudo-processes.
+
+L<perlfunc>
+
+=over
+
+=item *
+
+Documentation is fixed in section C<caller> and C<pop>. 
+
+=item * 
+
+Added example of C<gethostbyname>. 
+
+=item * 
+
+Better wording in C<prototype> and C<split>. 
+
+=item *
+
+Function C<alarm()> now mentions C<Time::HiRes::ualarm> in preference
+to C<select()>.
+
+=item *
+
+Regarding precedence in C<-X>, filetest operators are the same as unary
+operators, but not regarding parsing and parentheses (spotted by Eirik Berg
+Hanssen).
+
+=back
 
 L<perlcheat> is updated with a better details on C<\w>, C<\d>, and C<\s>.
 
@@ -690,7 +745,7 @@ L<perlunicode> is updated in section user defined properties.
 
 L<perlglossary> adds I<deprecated modules and features> and I<to be dropped modules>.
 
-L<perlhack> has been updated.
+L<perlhack> has been updated and added resources on smoke testing.
 
 Perl thread tutorial example is fixed in section L<Queues: Passing Data Around>
 both in L<perlothrtut> and L<perlothrtut>.
@@ -744,6 +799,15 @@ added section L<Unicode and lc/uc operators|perltodo>.
 =item *
 
 added section L<Optimize away empty destructors>.
+
+=item *
+
+Maybe the default order of directories in C<@INC> should be modified to support
+upgrade core (dual-life) modules without overwriting files.
+
+=item *
+
+Todo for perl 5.12, virtualize operating system access.
 
 =back
 
@@ -908,6 +972,35 @@ Fixed bug RT #45607, where *{"BONK"} = \&{"BONK"} didn't work correctly.
 The "Unrecognised character 'x'" error now specifies in which column the
 unrecognised character actually occurred.
 
+=item *
+
+Fixed bug on RT #43010, now C<B::Deparse> handles ''->(), ::(), sub :: {}, 
+etc correctly (31268). All bugs in parsing these kind of syntax are now fixed:
+
+=over
+
+=item *
+
+perl -MO=Deparse -e '"my %h = "->()'
+
+=item *
+
+perl -MO=Deparse -e '::->()'
+
+=item *
+
+perl -MO=Deparse -e 'sub :: {}'
+
+=item *
+
+perl -MO=Deparse -e 'package a; sub a::b::c {}'
+
+=item *
+
+perl -MO=Deparse -e 'sub the::main::road {}'
+
+=back
+
 =back
 
 =head2 Platform specific fixes
@@ -1066,8 +1159,19 @@ On VMS, escaped dots will be preserved when converted to UNIX syntax.
 
 =item *
 
-L<B::Deparse> has been instructed on how to properly deparse C<print
-readpipe $x, $y>.
+L<B::Deparse> has been instructed on:
+
+=over
+
+=item *
+
+how to properly deparse C<print readpipe $x, $y>.
+
+=item *
+
+B<not> to deparse C<$^H{v_string}>, which is automatically set by the internals.
+
+=back
 
 =item *
 
@@ -1123,7 +1227,7 @@ tr/// is now threadsafe (29765)
 
 =item *
 
-De-duplictae C<@EXPORT> (26459)
+De-duplicate C<@EXPORT> (26459)
 
 =item *
 
@@ -1134,6 +1238,10 @@ definition lists better (32727).
 
 No longer segfaults when your locale charset is not utf8 with
 C<use open ':locale'> and printing Unicode characters to STDERR (30213)
+
+=item *
+
+C<B> now can compile outside of the perl source tree.
 
 =back
 
@@ -1202,7 +1310,11 @@ Machine generated C<B::Asmdata> via C<bytecode.pl> is now more warnings free and
 read C<@optype> and C<@specialsv_name> from ext/B/B.pm (#32264, #32266)
 
 Reorder global variable in C<intrpvar.h> saves another 40 bytes from the
-interpreter structure (#31034).
+interpreter structure (#31034). Also delete C<thrdvar.h> and move its contents
+to C<intrpvar.h> (#31245).
+
+Support for B<assertions> and B<-A> is now removed from C<XS> module and in
+C<ext> (#31333). 
 
 =head1 New Tests
 
