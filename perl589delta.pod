@@ -660,33 +660,13 @@ C<h2xs> won't define an empty string as a constant (perl #25366)
 As usual, the documentation received its share of corrections, clarifications
 and other nitfixes. More C<< X<...> >> tags were added for indexing.
 
-L<perlunitut> is a tutorial written by Juerd Waalboer on Unicode-related
-terminology and how to correctly handle Unicode in Perl scripts.
+L<perlbot> fixed C<ref> returns an empty string (not undef) when used on a
+string (#31685)
 
-L<perlreguts> describe the internals of the regular expressions engine. It has
-been contributed by Yves Orton.
-
-L<reverse> function documentation recieved scalar context examples.
-
-L<perlre> documentation updated to reflect the differences between
-C<[[:xxxxx:]]> and C<\p{IsXxxxx}> matches. Also added section on C</g> and
-C</c> modifiers.
+L<perlcheat> is updated with better details on C<\w>, C<\d>, and C<\s>.
 
 L<perlcommunity> provides an overview of the Perl Community along with further
 resources.
-
-L<perltoc> the table of content is updated with several new documentation and
-cleaned up unnecessary noises.
-
-L<perlvar> and L<perlre> add items C<${^PREMATCH}>, C<${^MATCH}>, and
-C<${^`POSTMATCH}> and also C</k> modifier.
-
-L<perlvar> fixes confusion about real GID C<$(> and effective GID C<$)>. 
-
-L<perlop> adds C</k> modifier in section C<s/PATTERN/REPLACEMENT/egimosxk>
-
-L<perlmodlib> is updated with C<CPAN::API::HOWTO> and
-C<Sys::Syslog::win32::Win32> 
 
 L<perldebug> is updated with information on how to call the debugger.
 
@@ -694,12 +674,9 @@ L<perldiag> documentation updated with I<subroutine with an ampersand> on the
 argument to C<exists()> and C<delete()> and also several terminology updates on
 warnings.
 
-L<perllocale> documentation is adjusted for the number of localization and
-C<POSIX::setlocale()> to fix debian bug in RT ##379463.
-
 L<perlfork> documents the limitation of exec() inside pseudo-processes.
 
-L<perlfunc>
+L<perlfunc>:
 
 =over
 
@@ -728,29 +705,52 @@ Hanssen).
 
 =back
 
-L<perlcheat> is updated with a better details on C<\w>, C<\d>, and C<\s>.
+L<perlglossary> adds I<deprecated modules and features> and I<to be dropped modules>.
 
-L<perlsub> example is updated to use lexical variable on opendir syntax.
+L<perlhack> has been updated and added resources on smoke testing.
+
+L<perllocale> documentation is adjusted for the number of localization and
+C<POSIX::setlocale()> to fix debian bug in RT ##379463.
+
+L<perlmodlib> is updated with C<CPAN::API::HOWTO> and
+C<Sys::Syslog::win32::Win32> 
+
+L<perlop> adds C</k> modifier in section C<s/PATTERN/REPLACEMENT/egimosxk>
+
+L<perlre> documentation updated to reflect the differences between
+C<[[:xxxxx:]]> and C<\p{IsXxxxx}> matches. Also added section on C</g> and
+C</c> modifiers.
+
+L<perlreguts> describe the internals of the regular expressions engine. It has
+been contributed by Yves Orton.
 
 L<perlrun> is updated to clarify on the hash seed I<PERL_HASH_SEED>. Also more
 information in option B<-x> and B<-u>.
 
-L<perluniintro> have been updated in the example of detecting data that's not
-valid in particular encoding. 
+L<perlsub> example is updated to use lexical variable on opendir syntax.
 
-L<perlbot> fixed C<ref> returns an empty string (not undef) when used on a
-string (#31685)
+L<perltoc> the table of content is updated with several new documentation and
+cleaned up unnecessary noises.
 
 L<perlunicode> is updated in section user defined properties.
 
-L<perlglossary> adds I<deprecated modules and features> and I<to be dropped modules>.
+L<perluniintro> have been updated in the example of detecting data that's not
+valid in particular encoding. 
 
-L<perlhack> has been updated and added resources on smoke testing.
+L<perlunitut> is a tutorial written by Juerd Waalboer on Unicode-related
+terminology and how to correctly handle Unicode in Perl scripts.
+
+L<perlvar> and L<perlre> add items C<${^PREMATCH}>, C<${^MATCH}>, and
+C<${^`POSTMATCH}> and also C</k> modifier.
+
+L<perlvar> fixes confusion about real GID C<$(> and effective GID C<$)>. 
 
 Perl thread tutorial example is fixed in section L<Queues: Passing Data Around>
 both in L<perlothrtut> and L<perlothrtut>.
 
 The Perl FAQs (F<perlfaq1>..F<perlfaq9>) have been updated.
+
+L<reverse> function documentation recieved scalar context examples.
 
 L<perltodo> is updated with:
 
