@@ -17,12 +17,17 @@
 2007-09 - DONE, MERGED (Paul Fenwick)
 2007-10 - DONE, MERGED (Jacinta Richardson)
 2007-11-d - DONE, MERGED (Abhijit Menon-Sen (aka crab))
+2007-11-i - DONE, MERGED (Eddy Tan)
 2007-11-j - DONE, MERGED (Abhijit Menon-Sen (aka crab))
 2007-12   - DONE, MERGED (Abhijit Menon-Sen (aka crab))
 2008-01 - DONE, MERGED (Adam Flott)
 2008-03 - DONE, MERGED (Abhijit Menon-Sen (aka crab))
 2008-04 - DONE, MERGED (Abhijit Menon-Sen (aka crab))
 2008-05 - DONE, MERGED (Mark Aufflick)
+
+== PENDING MERGE (with possibly slimming) ==
+2007-02-f - LesleyB                         Last seen, 17th Sep
+2007-11-f - Crab                            Last seen, 22nd Sep
 
 == IN PROGRESS ==
 
@@ -31,15 +36,11 @@
 2006-05 - Michael Peters                    Last seen, 10th Sep
 2007-02-b - Adam Flott                      Last seen, 15th Sep
 2007-02-e - Martin Ryan                     Last seen, 11th Sep
-2007-02-f - LesleyB                         Last seen, 17th Sep
-2007-02-i - Eddy Tan                        Last seen,  1st Oct
 2007-02-j - Shawn M Moore (aka Sartak)      Last seen, 15th Sep
 2007-11-a - Bradley Dean                    Last seen, 19th Sep
 2007-11-b - Bradley Dean                    Last seen, 19th Sep
 2007-11-c - Ben Hengst                      Last seen, 22nd Sep
-2007-11-f - Crab                            Last seen, 22nd Sep
 2007-11-g - Andreas Marienborg              Last seen, 20th Sep
-2007-11-i - Eddy Tan                        Last seen, 23rd Sep
 2008-06 - Renee Backer                      Last seen,  9th Sep
 
 == AVAILABLE ==
