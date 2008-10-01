@@ -32,6 +32,7 @@
 2007-02-b - Adam Flott                      Last seen, 15th Sep
 2007-02-e - Martin Ryan                     Last seen, 11th Sep
 2007-02-f - LesleyB                         Last seen, 17th Sep
+2007-02-i - Eddy Tan                        Last seen,  1st Oct
 2007-02-j - Shawn M Moore (aka Sartak)      Last seen, 15th Sep
 2007-11-a - Bradley Dean                    Last seen, 19th Sep
 2007-11-b - Bradley Dean                    Last seen, 19th Sep
@@ -44,7 +45,6 @@
 
 == AVAILABLE ==
 
-2007-02-i - ==> Nobody <== 20k
 2007-11-e - ==> Nobody <== 20k
 2007-11-h - ==> Nobody <== 20k
 2008-09   - ==> Nobody <== 31k (and growing!)
