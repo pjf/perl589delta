@@ -1,9 +1,5 @@
 [ 32543] By: nicholas				   on 2007/11/28  22:15:48
 	Log: Integrate:
-	     [ 31949]
-	     Allow IEEE math to be deselected on OpenVMS I64 (but it remains
-	     the default).
-	     
 	     [ 32198]
 	     Subject: problem with MAKE_EXT.COM
 	     From: Thomas Pfau <pfau@nbpfaus.net>

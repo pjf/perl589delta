@@ -932,6 +932,18 @@ platforms.
 
 L<ptar> and L<ptardiff> are no longer installed to C<$installbin>
 
+=head2 Platform specific changes
+
+=head3 VMS
+
+=over 4
+
+=item *
+
+Allow IEEE math to be deselected on OpenVMS I64 (but it remains the default).
+
+=back
+
 =head1 Selected Bug Fixes
 
 =over 4
