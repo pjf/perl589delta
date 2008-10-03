@@ -1105,6 +1105,10 @@ Make pipe shutdown on VMS care about whether PerlIO has already shut down (33005
 
 Fix VMS exit handling broken in Test::Harness 2.64 (33008)
 
+=item *
+
+Fix fcntl locking capability test in C<configure.com> (31756)
+
 =back
 
 =head3 OS/2

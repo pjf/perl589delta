@@ -1,9 +1,5 @@
 [ 32543] By: nicholas				   on 2007/11/28  22:15:48
 	Log: Integrate:
-	     [ 31756]
-	     Fix configure.com's d_fcntl_can_lock test to look for a file
-	     that actually exists.
-	     
 	     [ 31949]
 	     Allow IEEE math to be deselected on OpenVMS I64 (but it remains
 	     the default).
