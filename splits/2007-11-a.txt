@@ -1,14 +1,5 @@
 [ 32543] By: nicholas				   on 2007/11/28  22:15:48
 	Log: Integrate:
-	     [ 32198]
-	     Subject: problem with MAKE_EXT.COM
-	     From: Thomas Pfau <pfau@nbpfaus.net>
-	     Date: Sat, 27 Oct 2007 09:27:54 -0400
-	     Message-id: <47233CDA.8010908@nbpfaus.net>
-	     
-	     configure.com thinko in #30455.
-	     
-	     
 	     [ 32199]
 	     Subject: Re: Perl 5.10.0 getting close: please test
 	     From: lemkemch@t-online.de
