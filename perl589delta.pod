@@ -123,11 +123,34 @@ C<B::C> upgraded to 1.05
 
 =item *
 
-C<B::Debug> upgraded to version 1.03
+C<B::Concise> upgraded to 0.74
+
+=over
 
 =item *
 
-C<B::Deparse> upgraded to version 0.81
+Supports option B<-src>, i.e. the rendering of each statement (starting with
+the nextstate OP) will be preceded by the 1st line of source code that
+generates it.
+
+=item *
+
+Support option B<-stash="somepackage">, i.e. "somepackage" will be required,
+then the stash is inspected, and each function is rendered.
+
+=item *
+
+Now has a documentation of detailed hint symbols.
+
+=back
+
+=item *
+
+C<B::Debug> upgraded to version 1.05
+
+=item *
+
+C<B::Deparse> upgraded to version 0.82
 
 =item *
 
@@ -172,7 +195,7 @@ improvements (including for VMS).
 
 =item *
 
-C<Data::Dumper> upgraded to version 2.121_11
+C<Data::Dumper> upgraded to version 2.121_13
 
 =over
 
@@ -669,16 +692,156 @@ C<h2xs> won't define an empty string as a constant (perl #25366)
 As usual, the documentation received its share of corrections, clarifications
 and other nitfixes. More C<< X<...> >> tags were added for indexing.
 
-L<perlunitut> is a tutorial written by Juerd Waalboer on Unicode-related
-terminology and how to correctly handle Unicode in Perl scripts.
+L<perlbot> fixed C<ref> returns an empty string (not undef) when used on a
+string (#31685)
+
+L<perlcheat> is updated with better details on C<\w>, C<\d>, and C<\s>.
+
+L<perlcommunity> provides an overview of the Perl Community along with further
+resources.
+
+L<perldebug> is updated with information on how to call the debugger.
+
+L<perldiag> documentation updated with I<subroutine with an ampersand> on the
+argument to C<exists()> and C<delete()> and also several terminology updates on
+warnings.
+
+L<perlfork> documents the limitation of exec() inside pseudo-processes.
+
+L<perlfunc>:
+
+=over
+
+=item *
+
+Documentation is fixed in section C<caller> and C<pop>. 
+
+=item * 
+
+Added example of C<gethostbyname>. 
+
+=item * 
+
+Better wording in C<prototype> and C<split>. 
+
+=item *
+
+Function C<alarm()> now mentions C<Time::HiRes::ualarm> in preference
+to C<select()>.
+
+=item *
+
+Regarding precedence in C<-X>, filetest operators are the same as unary
+operators, but not regarding parsing and parentheses (spotted by Eirik Berg
+Hanssen).
+
+=back
+
+L<perlglossary> adds I<deprecated modules and features> and I<to be dropped modules>.
+
+L<perlhack> has been updated and added resources on smoke testing.
+
+L<perllocale> documentation is adjusted for the number of localization and
+C<POSIX::setlocale()> to fix debian bug in RT ##379463.
+
+L<perlmodlib> is updated with C<CPAN::API::HOWTO> and
+C<Sys::Syslog::win32::Win32> 
+
+L<perlop> adds C</k> modifier in section C<s/PATTERN/REPLACEMENT/egimosxk>
+
+L<perlre> documentation updated to reflect the differences between
+C<[[:xxxxx:]]> and C<\p{IsXxxxx}> matches. Also added section on C</g> and
+C</c> modifiers.
 
 L<perlreguts> describe the internals of the regular expressions engine. It has
 been contributed by Yves Orton.
 
+L<perlrun> is updated to clarify on the hash seed I<PERL_HASH_SEED>. Also more
+information in option B<-x> and B<-u>.
+
+L<perlsub> example is updated to use lexical variable on opendir syntax.
+
+L<perltoc> the table of content is updated with several new documentation and
+cleaned up unnecessary noises.
+
+L<perlunicode> is updated in section user defined properties.
+
+L<perluniintro> have been updated in the example of detecting data that's not
+valid in particular encoding. 
+
+L<perlunitut> is a tutorial written by Juerd Waalboer on Unicode-related
+terminology and how to correctly handle Unicode in Perl scripts.
+
+L<perlvar> and L<perlre> add items C<${^PREMATCH}>, C<${^MATCH}>, and
+C<${^`POSTMATCH}> and also C</k> modifier.
+
+L<perlvar> fixes confusion about real GID C<$(> and effective GID C<$)>. 
+
+Perl thread tutorial example is fixed in section L<Queues: Passing Data Around>
+both in L<perlothrtut> and L<perlothrtut>.
+
+The Perl FAQs (F<perlfaq1>..F<perlfaq9>) have been updated.
+
 L<reverse> function documentation recieved scalar context examples.
 
-L<perlre> documentation updated to reflect the differences between
-C<[[:xxxxx:]]> and C<\p{IsXxxxx}> matches.
+L<perltodo> is updated with:
+
+=over
+
+=item *
+
+removed section L<Ordering of "global" variables|perltodo>.
+
+=item *
+
+removed section L<The roadmap to 5.10|perltodo>.
+
+=item *
+
+added B<-Duse32bit*>.
+
+=item *
+
+added L<__FUNCTION__ for MSVC|perltodo>.
+
+=item *
+
+added more detail about @INC order.
+
+=item *
+
+added section L<merge common code in installperl and installman|perltodo>.
+
+=item *
+
+added section L<merge checkpods and podchecker|perltodo>.
+
+=item *
+
+added section L<Investigate PADTMP hash pessimisation|perltodo>.
+
+=item *
+
+added C<does()> built-in and L<Tied filehandles and write() don't mix|perltodo>.
+
+=item *
+
+added section L<Unicode and lc/uc operators|perltodo>.
+
+=item *
+
+added section L<Optimize away empty destructors>.
+
+=item *
+
+Maybe the default order of directories in C<@INC> should be modified to support
+upgrade core (dual-life) modules without overwriting files.
+
+=item *
+
+Todo for perl 5.12, virtualize operating system access.
+
+=back
 
 =head1 Performance Enhancements
 
@@ -718,6 +881,15 @@ for regexp matching in all code using it.
 Regular expressions classes of a single character are now treated the same as
 if the character had been used as a literal, meaning that code that uses
 char-classes as an escaping mechanism will see a speedup. (Yves Orton)
+
+=item *
+
+Regular expression introduces C</k> modifier for matching along with new perl
+variables C<${^PREMATCH}>, C<${^MATCH}>, C<${^POSTMATCH}> which are equivalent
+to C<$`>, C<$&> and C<$'>, B<except> that they are only guaranteed to be
+defined after a successful match that was executed with the C</k> (keep-copy)
+modifier. The use of these variables incurs no global performance penalty,
+unlike their punctuation char equivalents (#32263).
 
 =item *
 
@@ -831,6 +1003,35 @@ Fixed bug RT #45607, where *{"BONK"} = \&{"BONK"} didn't work correctly.
 
 The "Unrecognised character 'x'" error now specifies in which column the
 unrecognised character actually occurred.
+
+=item *
+
+Fixed bug on RT #43010, now C<B::Deparse> handles ''->(), ::(), sub :: {}, 
+etc correctly (31268). All bugs in parsing these kind of syntax are now fixed:
+
+=over
+
+=item *
+
+perl -MO=Deparse -e '"my %h = "->()'
+
+=item *
+
+perl -MO=Deparse -e '::->()'
+
+=item *
+
+perl -MO=Deparse -e 'sub :: {}'
+
+=item *
+
+perl -MO=Deparse -e 'package a; sub a::b::c {}'
+
+=item *
+
+perl -MO=Deparse -e 'sub the::main::road {}'
+
+=back
 
 =back
 
@@ -995,8 +1196,19 @@ On VMS, escaped dots will be preserved when converted to UNIX syntax.
 
 =item *
 
-L<B::Deparse> has been instructed on how to properly deparse C<print
-readpipe $x, $y>.
+L<B::Deparse> has been instructed on:
+
+=over
+
+=item *
+
+how to properly deparse C<print readpipe $x, $y>.
+
+=item *
+
+B<not> to deparse C<$^H{v_string}>, which is automatically set by the internals.
+
+=back
 
 =item *
 
@@ -1052,7 +1264,7 @@ tr/// is now threadsafe (29765)
 
 =item *
 
-De-duplictae C<@EXPORT> (26459)
+De-duplicate C<@EXPORT> (26459)
 
 =item *
 
@@ -1071,6 +1283,10 @@ C<perl_destruct> (29827)
 
 C<PL_veto_cleanup> now happens on all platforms, not
 just UNIX (31971)
+
+=item *
+
+C<B> now can compile outside of the perl source tree.
 
 =back
 
@@ -1141,10 +1357,20 @@ functions (last parameter is a bitmask, not boolean).
 C<PERL_SYS_INIT>, C<PERL_SYS_INIT3> and C<PERL_SYS_TERM> macros have been
 changed into functions (31970).
 
+Machine generated C<B::Asmdata> via C<bytecode.pl> is now more warnings free and
+read C<@optype> and C<@specialsv_name> from ext/B/B.pm (#32264, #32266)
+
 C<PERLSYS_TERM> no longer requires a context (32216). In C<PerlIO_teardown>
 is now also called without a context (32215), and debugging output in this
 function has been disabled because this requires that an interpreter is present
 (32235).
+
+Reorder global variable in C<intrpvar.h> saves another 40 bytes from the
+interpreter structure (#31034). Also delete C<thrdvar.h> and move its contents
+to C<intrpvar.h> (#31245).
+
+Support for B<assertions> and B<-A> is now removed from C<XS> module and in
+C<ext> (#31333). 
 
 =head1 New Tests
 

@@ -21,3 +21,11 @@
   reverted later on, but lib/Text/Balanced.pm says it's 1.98 --moritz
 * Make sure that Spiros' name is entered correctly in the AUTHORS
   file.
+* In 2007-11-i.txt, changes 31860, 31882, and 31885 seems to deal with "say"
+  which I'm not sure it's true (see comments above in 2006-10.txt by morits 
+  and aflott) -- eddy
+* Changes 31964, 31986, 31988, and 31992 deal with OptreeCheck.pm and its tests
+  but I have no idea what that is -- eddy 
+* Not sure what essential change in 32164 and 32177 -- eddy
+* Change 31863 and 31887 is just another addition in perltodo, but not sure how
+  to include them in the delta -- eddy
