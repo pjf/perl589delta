@@ -942,6 +942,10 @@ L<ptar> and L<ptardiff> are no longer installed to C<$installbin>
 
 Allow IEEE math to be deselected on OpenVMS I64 (but it remains the default).
 
+=item *
+
+Help older VMS compilers by using C<ccflags> when building C<munchconfig.exe>.
+
 =back
 
 =head1 Selected Bug Fixes

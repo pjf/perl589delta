@@ -1,15 +1,3 @@
-[ 32543] By: nicholas				   on 2007/11/28  22:15:48
-	Log: Integrate:
-	     [ 32199]
-	     Subject: Re: Perl 5.10.0 getting close: please test
-	     From: lemkemch@t-online.de
-	     Date: Thu, 25 Oct 2007 00:25:55 +0200
-	     Message-id: <op.t0p271mr5o90vo@orion>
-	     
-	     Help older VMS compilers by using ccflags when building munchconfig.
-     Branch: maint-5.8/perl
-	  !> configure.com
-____________________________________________________________________________
 [ 32542] By: nicholas				   on 2007/11/28  22:12:50
 	Log: Integrate:
 	     [ 31473]
