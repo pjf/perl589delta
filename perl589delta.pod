@@ -1068,6 +1068,10 @@ perl -MO=Deparse -e 'sub the::main::road {}'
 
 Fix MRO behaviour when one undefs C<@ISA> (32542)
 
+=item *
+
+Fix descriptor leak caused by change (30633) to C<PerlIO_exportFILE> (32224)
+
 =back
 
 =head2 Platform specific fixes
@@ -1143,6 +1147,10 @@ Fix VMS exit handling broken in Test::Harness 2.64 (33008)
 =item *
 
 Fix fcntl locking capability test in C<configure.com> (31756)
+
+=item *
+
+Fix missing C<PerlIO_releaseFILE> in C<VMS::Stdio::getname> (31384)
 
 =back
 

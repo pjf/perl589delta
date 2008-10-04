@@ -1,22 +1,3 @@
-[ 32538] By: nicholas				   on 2007/11/28  20:18:30
-	Log: Integrate:
-	     [ 31384]
-	     Fix missing PerlIO_releaseFILE in VMS::Stdio::getname().
-	     
-	     [ 32224]
-	     As reported in bug #46207, change 30633 to PerlIO_exportFILE() and
-	     PerlIO_releaseFILE() to manage the reference counts of fds correctly
-	     has the side effect of making some XS modules "leak" descriptors.
-	     This is because the typemap calls PerlIO_findFILE(), which sometimes
-	     (but not always) calls PerlIO_exportFILE(). To be consistent,
-	     PerlIO_fildFILE() needs to either always give you a reference, or
-	     always not give you a reference. It seems better to do the latter as
-	     the call to PerlIO_exportFILE() is only an implementation detail, so
-	     arrange for it to immediately free up the reference that
-	     PerlIO_exportFILE() created.
-     Branch: maint-5.8/perl
-	  !> perlio.c vms/ext/Stdio/Stdio.xs
-____________________________________________________________________________
 [ 32536] By: nicholas				   on 2007/11/28  19:43:06
 	Log: Integrate:
 	     [ 31362]
