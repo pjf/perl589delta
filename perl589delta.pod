@@ -1049,6 +1049,10 @@ perl -MO=Deparse -e 'sub the::main::road {}'
 
 =back
 
+=item *
+
+Fix MRO behaviour when one undefs C<@ISA> (32542)
+
 =back
 
 =head2 Platform specific fixes
