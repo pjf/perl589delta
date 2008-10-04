@@ -1,68 +1,5 @@
-[ 30239] By: nicholas				   on 2007/02/12  20:04:15
-	Log: Integrate:
-	     [ 25084]
-	     a long /etc/groups entry could cause memory exhaustion.
-	     Too small a buffer would cause ERANGE and a retry with double the
-	     buffer size. later at EOF, the apparent error got 'stuck' as
-	     ERANGE rather than ENOENT, so the buffer size doubled recursively 
-	     
-	     [ 28749]
-	     Part of one of Jarkko's g++ patches that was missed.
-	     
-	     [ 28750]
-	     The previous change causes compile failures with threaded Perls.
-	     
-	     [ 28877]
-	     Subject: [PATCH] deal with some gcc warnings
-	     From: Jarkko Hietaniemi <jhi@iki.fi>
-	     Date: Thu, 21 Sep 2006 09:08:47 +0300
-	     Message-ID: <45122C6F.9080904@iki.fi>
-	     
-	     [ 29209]
-	     RE: [perl #26136] localtime(3) calls tzset(3), but localtime_r(3) may not.
-	     From: "Benjamin Holzman" <bholzman@longitude.com>
-	     Date: Wed, 19 Jul 2006 07:11:09 -0400
-	     Message-ID: <010801c6ab24$09b9ed30$ce0515ac@office.iseoptions.com>
-	     
-	     [ 29210]
-	     Change reentr.pl to generate reentr.h accordingly to change 29209
-	     
-	     [ 29213]
-	     The non-unix parts for localtime_r_needs_tzset
-	     Plus forced Glossary entry. That is a TODO for automation
-	     
-	     [ 29704]
-	     Add 2007 copyrights in a few more .pl files that
-	     generate code (thanks to Jarkko)
-     Branch: maint-5.8/perl
-	   ! reentr.c reentr.inc
-	  !> Configure Cross/config.sh-arm-linux NetWare/config.wc
-	  !> Porting/Glossary Porting/config_H config_h.SH configure.com
-	  !> epoc/config.sh handy.h overload.pl plan9/config.plan9
-	  !> plan9/config_h.sample plan9/config_sh.sample reentr.h
-	  !> reentr.pl t/op/time.t uconfig.sh win32/config.bc
-	  !> win32/config.gc win32/config.vc win32/config.vc64
-	  !> win32/config_H.bc win32/config_H.gc win32/config_H.vc
-	  !> win32/config_H.vc64
-____________________________________________________________________________
-[ 30238] By: nicholas				   on 2007/02/12  19:38:26
-	Log: Integrate:
-	     [ 25084]
-	     a long /etc/groups entry could cause memory exhaustion.
-	     Too small a buffer would cause ERANGE and a retry with double the
-	     buffer size. later at EOF, the apparent error got 'stuck' as
-	     ERANGE rather than ENOENT, so the buffer size doubled recursively 
-	     
-	     (reentr.pl is rather forked, which is a pain)
-     Branch: maint-5.8/perl
-	   ! reentr.inc
-	  !> reentr.h reentr.pl
-____________________________________________________________________________
 [ 30237] By: nicholas				   on 2007/02/12  19:15:16
 	Log: Integrate:
-	     [ 27036]
-	     Doc nit by Andy Dougherty
-	     
 	     [ 28870]
 	     Changed +DA2.0w to +DD64; Added notes about C ANSI C updates
 	     on HP-UX 11.00.
@@ -84,12 +21,6 @@ ____________________________________________________________________________
 ____________________________________________________________________________
 [ 30232] By: nicholas				   on 2007/02/12  16:27:14
 	Log: Integrate:
-	     [ 27184]
-	     Back out change change 10214 (drop SVp_IOK from >> PRIVSHIFT) as it
-	     never felt quite correct, and other parts of the SV conversion
-	     implementation have improved such that the symptoms 10214 covered
-	     over are gone even without it.
-	     
 	     [ 27228]
 	     To make arithmetic on tainted dualvars work properly requires that
 	     sv_2nv uses SvIVX in preference to SvPVX, if SVp_IOK is true.
@@ -101,141 +32,6 @@ ____________________________________________________________________________
 	     there are already public flags.
      Branch: maint-5.8/perl
 	  !> mg.c scope.c sv.c t/op/taint.t
-____________________________________________________________________________
-[ 30231] By: nicholas				   on 2007/02/12  16:02:29
-	Log: Integrate:
-	     [ 28292]
-	     correct POPSTACK/POPMARK confusion in perlhack.pod
-	     
-	     [ 28303]
-	     Subject:  RE: perlhack.pod confused about POPSTACK
-	     From:  "Jan Dubois" <jand@activestate.com>
-	     Date:  Wed, 24 May 2006 16:35:14 -0700
-	     Message-Id:  <03ee01c67f8a$b4d6aca0$2217a8c0@candy>
-	     
-	     clean up davem's doc thinko of change #28292
-	     
-	     [ 28317]
-	     Subject:  RE: perlhack.pod confused about POPSTACK
-	     From:  "Jan Dubois" <jand@activestate.com>
-	     Date:  Thu, 25 May 2006 18:20:25 -0700
-	     Message-Id:  <059101c68062$9143d550$2217a8c0@candy>
-	     
-	     more fixing of the PUSHMARK example
-	     
-	     [ 28418]
-	     Subject: Re: [PATCH] perlhack.pod
-	     From: "Dr.Ruud" <rvtol+news@isolution.nl>
-	     Date: Thu, 22 Jun 2006 23:42:53 +0200
-	     Message-ID: <20060622215407.9605.qmail@lists.develooper.com>
-	     
-	     [ 28515]
-	     Subject: [PATCH] perlhack.pod
-	     From: Jarkko Hietaniemi <jhi@iki.fi>
-	     Date: Sun, 09 Jul 2006 14:55:20 +0300
-	     Message-ID: <44B0EEA8.4080003@iki.fi>
-	     
-	     [ 28516]
-	     Subject: [PATCH] some coding guidelines/tips to perlhack (+ one perltodo)
-	     From: Jarkko Hietaniemi <jhi@iki.fi>
-	     Date: Sun, 09 Jul 2006 19:42:10 +0300
-	     Message-ID: <44B131E2.8050805@iki.fi>
-	     
-	     [ 28518]
-	     Tweak for Jarkko's addition to perlhack, suggested by Yves.
-	     
-	     [ 28521]
-	     Even Jarkko's patches should go in only once
-	     Subject: [PATCH] undouble Jarkko's patch
-	     From: andy@petdance.com (Andy Lester)
-	     Date: Mon, 10 Jul 2006 00:22:18 -0500
-	     Message-ID: <20060710052218.GA7477@petdance.com>
-	     
-	     [ 28527]
-	     Subject: [PATCH] perlhack: more portability musings
-	     From: Jarkko Hietaniemi <jhi@iki.fi>
-	     Date: Mon, 10 Jul 2006 15:41:10 +0300
-	     Message-ID: <44B24AE6.6030708@iki.fi>
-	     
-	     [ 28530]
-	     More perlhack portability additions by Jarkko
-	     
-	     [ 28531]
-	     Typo found by Craig Berry
-	     
-	     [ 28532]
-	     POD fixes in perlhack
-	     
-	     [ 28537]
-	     Subject: [PATCH] perlhack: argh...
-	     From: Jarkko Hietaniemi <jhi@iki.fi>
-	     Date: Mon, 10 Jul 2006 21:07:35 +0300
-	     Message-ID: <44B29767.4040606@iki.fi>
-	     
-	     [ 28562]
-	     Additions to perlhack based on a patch by Gabor Szabo
-	     
-	     [ 28578]
-	     Subject: [PATCH] various safety/portability tweaks
-	     From: Jarkko Hietaniemi <jhi@iki.fi>
-	     Date: Sat, 15 Jul 2006 13:14:32 +0300
-	     Message-ID: <44B8C008.4030300@iki.fi>
-	     
-	     [ 28588]
-	     Subject: [PATCH] perlhack: advertise Configure -Dgccansipedantic
-	     From: Jarkko Hietaniemi <jhi@cc.hut.fi>
-	     Date: Sun, 16 Jul 2006 20:27:20 +0300 (EEST)
-	     Message-Id: <200607161727.k6GHRKFk069579@kosh.hut.fi>
-	     
-	     [ 28595]
-	     Remove the C89 checking with gcc
-	     (but leave a note in perlhack)
-	     
-	     [ 28599]
-	     Subject: [PATCH] make magic vtables const if PERL_GLOBAL_STRUCT_PRIVATE
-	     From: Jarkko Hietaniemi <jhi@iki.fi>
-	     Date: Mon, 17 Jul 2006 09:09:24 +0300
-	     Message-ID: <44BB2994.5090609@iki.fi>
-	     
-	     [ 28698]
-	     Subject: [PATCH] perlhack.pod: more portability pitfalls
-	     From: Jarkko Hietaniemi <jhi@cc.hut.fi>
-	     Date: Sat, 12 Aug 2006 10:33:38 +0300 (EEST)
-	     Message-Id: <200608120733.k7C7XcU0268432@kosh.hut.fi>
-	     
-	     [ 28699]
-	     Fix a couple URLs in perlhack
-	     
-	     [ 28743]
-	     Subject: [PATCH] perlhack.pod: small porta-tweaks (this time without pod2man :-)
-	     From: Jarkko Hietaniemi <jhi@cc.hut.fi>
-	     Date: Mon, 21 Aug 2006 22:39:35 +0300 (EEST)
-	     Message-Id: <200608211939.k7LJdZ9P170671@kosh.hut.fi>
-	     
-	     [ 29377]
-	     Subject: [PATCH] perlhack: some portability updates
-	     From: Jarkko Hietaniemi <jhi@cc.hut.fi>
-	     Date: Sat, 25 Nov 2006 17:57:23 +0200 (EET)
-	     Message-Id: <200611251557.kAPFvNKw011342@kosh.hut.fi>
-	     
-	     [ 29398]
-	     Subject: [PATCH] Re: [PATCH] perlhack: some portability updates
-	     From: Dominic Dunlop <shouldbedomo@mac.com>
-	     Date: Sun, 26 Nov 2006 12:01:16 +0100
-	     Message-Id: <253514EB-BA57-4A43-93FA-75D6F3CF27BC@mac.com>
-	     
-	     [ 29505]
-	     perlhack.pod nit by Jarkko
-	     
-	     [ 29803]
-	     Subject: Re: Memory...growing, and growing
-	     From: Marvin Humphrey <marvin@rectangular.com>
-	     Date: Sat, 13 Jan 2007 12:05:30 -0800
-	     Message-Id: <3CCCF699-345E-4C65-BCCB-1549EB99547A@rectangular.com>
-	     
-	     Document -DDL_UNLOAD_ALL_AT_EXIT
-     Branch: maint-5.8/perl
-	  !> pod/perlhack.pod
 ____________________________________________________________________________
 [ 30230] By: nicholas				   on 2007/02/12  15:40:42
 	Log: Integrate:
@@ -255,25 +51,6 @@ ____________________________________________________________________________
      Branch: maint-5.8/perl
 	  !> mkppport
 ____________________________________________________________________________
-[ 30226] By: nicholas				   on 2007/02/12  14:48:32
-	Log: Integrate:
-	     [ 27884]
-	     Subject: [PATCH] Support compiling for RISC OS
-	     From: Alex Waugh <alex@alexwaugh.com>
-	     Date: Mon, 17 Apr 2006 00:14:26 +0100
-	     Message-ID: <2498b2184e.ajw498@caramel.cp15.org>
-	     
-	     [ 27887]
-	     Addition to README.riscos suggested by Nicholas
-	     
-	     [ 28239]
-	     Add README.riscos to pod.lst
-     Branch: maint-5.8/perl
-	  +> README.riscos hints/riscos.sh
-	   ! vms/descrip_mms.template
-	  !> MANIFEST ext/Errno/Errno_pm.PL hv.c pod.lst pod/perl.pod
-	  !> util.c win32/Makefile win32/makefile.mk
-____________________________________________________________________________
 [ 30225] By: nicholas				   on 2007/02/12  14:01:09
 	Log: Integrate:
 	     [ 28238]
@@ -284,83 +61,10 @@ ____________________________________________________________________________
 [ 30224] By: nicholas				   on 2007/02/12  13:52:13
 	Log: All the TODOs plus on perlrun.pod change that was related.
 	     
-	     Integrate:
-	     [ 27083]
-	     The TODO 'Tidy up global variables' can go, replaced with a second
-	     paragraph on 'Ordering of "global" variables'.
-	     
-	     [ 27131]
-	     Wave hands about encoding::warnings
-	     
-	     [ 27209]
-	     In TODO: make encoding.pm lexical ?
-	     
-	     [ 27404]
-	     TPF++ # http://www.perlfoundation.org/gc/grants/2006-perl5-improve.html
-	     Shrinking PVGVs, PVLVs, PVCVs and PVFMs is TODOne.
-	     
-	     [ 27406]
-	     Two more TODOs for those with C knowledge.
-	     
-	     [ 27461]
-	     Teaching embed.pl about conditional symbols is a TODO.
-	     
-	     [ 27524]
-	     Note that it's worth looking to downsize variables in the interpreter
-	     structure.
-	     
-	     [ 27621]
-	     Having tested IPv6 support in all builtins for TCP and UDP, it all
-	     seem to work perfectly. So remove from perltodo.pod.
-	     
-	     [ 27872]
-	     Note that PVIOs probably aren't worth shrinking. Note 3 possible
-	     subflags for -C if the two Unicode TODOs are done.
-	     
-	     [ 27885]
-	     Relocatable @INC and parallel builds pretty much work now.
-	     
-	     [ 27886]
-	     Note that Rafael has done the first cut of state variables.
-	     Document that UTF-8 cleansing the tokeniser and the pads is TODO.
-	     
-	     [ 27890]
-	     Expand "am I hot or not" into a more general "Profile Perl" section.
-	     
-	     [ 27892]
-	     Add a TODO regarding merging the win32 and wince codebases.
-	     
-	     [ 28311]
-	     Fix pod nit in perltodo.
-	     
-	     [ 28416]
-	     perltodo additions by Vadim Konovalov
-	     
-	     [ 28454]
-	     Small adjustment to the Plan
-	     
-	     [ 28461]
-	     Must not forget that.
-	     
-	     [ 28509]
-	     Making encoding::warnings lexical is to-done.
-	     
-	     [ 28516]
-	     Subject: [PATCH] some coding guidelines/tips to perlhack (+ one perltodo)
-	     From: Jarkko Hietaniemi <jhi@iki.fi>
-	     Date: Sun, 09 Jul 2006 19:42:10 +0300
-	     Message-ID: <44B131E2.8050805@iki.fi>
-	     
 	     [ 28528]
 	     Change existing uses of strlcpy()/strlcat() to use new my_strlcpy()/
 	     my_strlcat() API.	Convert ext/File/Glob/bsd_glob.c to use 
 	     my_strlcat().  Add to the strlcy()/strlcat() todo entry.
-	     
-	     [ 28555]
-	     Additions and removals in perltodo
-	     
-	     [ 28557]
-	     Integration of strlcat is to-done (noticed by Yves)
 	     
 	     [ 28578]
 	     Subject: [PATCH] various safety/portability tweaks
@@ -368,48 +72,8 @@ ____________________________________________________________________________
 	     Date: Sat, 15 Jul 2006 13:14:32 +0300
 	     Message-ID: <44B8C008.4030300@iki.fi>
 	     
-	     [ 28939]
-	     Subject: Re: [PATCH] Add recursive regexes similar to PCRE
-	     From: demerphq <demerphq@gmail.com>
-	     Date: Wed, 4 Oct 2006 15:45:15 +0200
-	     Message-ID: <9b18b3110610040645s563220a2id6f235494b497e90@mail.gmail.com>
-	     
-	     Subject: Re: [PATCH] Add recursive regexes similar to PCRE
-	     From: demerphq <demerphq@gmail.com>
-	     Date: Wed, 4 Oct 2006 21:05:10 +0200
-	     Message-ID: <9b18b3110610041205m2660eb43m1315cf4b0653db96@mail.gmail.com>
-	     
-	     [ 28957]
-	     Subject: Re: [PATCH] Initial attempt at named captures for perls regexp engine
-	     From: demerphq <demerphq@gmail.com>
-	     Date: Fri, 6 Oct 2006 19:16:01 +0200
-	     Message-ID: <9b18b3110610061016x5ddce965u30d9a821f632d450@mail.gmail.com>
-	     
-	     [ 29005]
-	     Subject: [PATCH] Add possessive quantifiers to regex engine.
-	     From: demerphq <demerphq@gmail.com>
-	     Date: Thu, 12 Oct 2006 21:23:15 +0200
-	     Message-ID: <9b18b3110610121223m191e47ddtce3398cb0e8ba320@mail.gmail.com>
-	     
-	     With doc tweaks
-	     
-	     [ 29054]
-	     Trim perltodo.
-	     
-	     [ 29128]
-	     I shrunk struct context, so remove it from perltodo.
-	     
-	     [ 29130]
-	     Add the note from change 25773 about auditing for destruction ordering.
-	     
-	     [ 29167]
-	     Remove duplicated entries
-	     
 	     [ 29168]
 	     Make readpipe() overridable (and also `` and qx//)
-	     
-	     [ 29265]
-	     Todo (nice to have): an improvement to ~~
 	     
 	     [ 29299]
 	     Subject: [PATCH] add regmust() to re.pm/re.xs
@@ -417,49 +81,16 @@ ____________________________________________________________________________
 	     Date: Fri, 17 Nov 2006 00:54:13 +0100
 	     Message-ID: <9b18b3110611161554m222446bay7912ec1f778d3aaa@mail.gmail.com>
 	     
-	     [ 29343]
-	     Remove assertions.pm review from perltodo
-	     
 	     [ 29358]
 	     Silence VC8's warnings about "unsafe" CRT functions and POSIX CRT
 	     function names being deprecated, and add a note to perltodo to
 	     revisit this one day.
-	     
-	     [ 29435]
-	     Subject: [PATCH] perltodo.pod: add perlio todos/thinkabouts
-	     From: Jarkko Hietaniemi <jhi@cc.hut.fi>
-	     Date: Fri, 1 Dec 2006 22:05:17 +0200 (EET)
-	     Message-Id: <200612012005.kB1K5Hn3448004@kosh.hut.fi>
 	     
 	     [ 29544]
 	     Eliminate PVBM. Store fast Boyer-Moore tables in PVGV.
 	     Add the placeholder for new type, temporarily named BIND, for binding
 	     and aliasing in 6 on 5.
 	     
-	     [ 29562]
-	     TODO addition by Jerry D. Hedden.
-	     
-	     [ 29588]
-	     Making strict et al propagate into autoloaded subroutines seems a
-	     worthy todo.
-	     
-	     [ 29681]
-	     Subject: [PATCH] Add note to perltodo.pod about Unicode and file globbing
-	     From: Jan Dubois <jand@ActiveState.com>
-	     Date: Thu, 28 Dec 2006 19:06:00 -0800
-	     Message-ID: <4e19p2lgme9qbqjkv78q7154vg6hlaar19@4ax.com>
-	     
-	     [ 29719]
-	     Mention -C on #! line in perltodo. Remove some trailing whitespace that
-	     podchecker warned over.
-	     
-	     [ 29786]
-	     TODO: yada yada yada
-	     
-	     [ 29998]
-	     Mention //w in perltodo.
-     Branch: maint-5.8/perl
-	  !> pod/perlrun.pod pod/perltodo.pod
 ____________________________________________________________________________
 [ 30223] By: nicholas				   on 2007/02/12  11:55:20
 	Log: Integrate:
@@ -487,11 +118,6 @@ ____________________________________________________________________________
 	     Message-ID: <1344.63.226.247.186.1170675179.squirrel@63.226.247.186>
      Branch: maint-5.8/perl
 	  !> cygwin/cygwin.c hints/cygwin.sh
-____________________________________________________________________________
-[ 30210] By: nicholas				   on 2007/02/10  23:58:45
-	Log: Be gone, stowaway. Your time has not yet come.
-     Branch: maint-5.8/perl
-	   - win32/Makefile.ce
 ____________________________________________________________________________
 [ 30209] By: nicholas				   on 2007/02/10  23:55:04
 	Log: Integrate:
@@ -540,38 +166,4 @@ ____________________________________________________________________________
 	   - win32/ext/Win32API/File/ppport.h
 	  !> MANIFEST Makefile.SH vms/descrip_mms.template win32/Makefile
 	  !> win32/makefile.mk
-____________________________________________________________________________
-[ 30207] By: nicholas				   on 2007/02/10  23:17:30
-	Log: Integrate:
-	     [ 28460]
-	     Add Win32API::File to the core
-	     
-	     For discussions, see the thread starting here:
-	     http://www.xray.mpe.mpg.de/mailing-lists/perl5-porters/2006-06/msg00710.html
-	     
-	     [ 28467]
-	     Subject: Re: Win32API::File now in core
-	     From: demerphq <demerphq@gmail.com>
-	     Date: Sun, 2 Jul 2006 15:19:58 +0200
-	     Message-ID: <9b18b3110607020619s4c4480d8ra3e681aee69a8d7@mail.gmail.com>
-	     
-	     Sync blead with Win32API-File-0.1001
-	     (plus change to sync README too)
-     Branch: maint-5.8/perl
-	  +> win32/ext/Win32API/File/Changes
-	  +> win32/ext/Win32API/File/ExtUtils/Myconst2perl.pm
-	  +> win32/ext/Win32API/File/File.pm
-	  +> win32/ext/Win32API/File/File.xs
-	  +> win32/ext/Win32API/File/Makefile.PL
-	  +> win32/ext/Win32API/File/README
-	  +> win32/ext/Win32API/File/buffers.h
-	  +> win32/ext/Win32API/File/cFile.h
-	  +> win32/ext/Win32API/File/cFile.pc
-	  +> win32/ext/Win32API/File/const2perl.h
-	  +> win32/ext/Win32API/File/ppport.h
-	  +> win32/ext/Win32API/File/t/file.t
-	  +> win32/ext/Win32API/File/t/tie.t
-	  +> win32/ext/Win32API/File/typemap
-	  !> MANIFEST Porting/Maintainers.pl t/TEST t/harness
-	  !> win32/Makefile win32/config_sh.PL win32/makefile.mk
 ____________________________________________________________________________
