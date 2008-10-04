@@ -29,3 +29,6 @@
 * Not sure what essential change in 32164 and 32177 -- eddy
 * Change 31863 and 31887 is just another addition in perltodo, but not sure how
   to include them in the delta -- eddy
+* Change 32540 is purely about a change in copyright for the major VMS files.
+  I'm not sure that it needs to be documented, or if it does some new section
+  on copyright may be needed.
