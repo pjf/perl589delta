@@ -946,6 +946,21 @@ Allow IEEE math to be deselected on OpenVMS I64 (but it remains the default).
 
 Help older VMS compilers by using C<ccflags> when building C<munchconfig.exe>.
 
+=item * 
+
+Don't try to build old L<Thread> extension on VMS when C<-Duseithreads> has
+been chosen. (31104)
+
+=item * 
+
+Better suppression logic for not building L<Thread> extension (31226).
+
+=item * 
+
+Fix the case of C<$Config{perl_patchlevel}> (31544) (but keep setting
+C<$Config{PERL_PATCHLEVEL}> and grab the value from a C<MAINTXXX> or 
+C<SMOKEXXX> line in patchlevel.h if present. (31597)).
+
 =back
 
 =head1 Selected Bug Fixes

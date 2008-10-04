@@ -1,21 +1,3 @@
-[ 32541] By: nicholas				   on 2007/11/28  21:26:49
-	Log: Integrate:
-	     [ 31104]
-	     Don't try to build old Thread extension on VMS when -Duseithreads
-	     has been chosen.
-	     
-	     [ 31226]
-	     Better suppression of Threads build (probably still needed on 5.8.x)
-	     
-	     [ 31544]
-	     Fix the case of $Config{perl_patchlevel} on VMS.
-	     
-	     [ 31597]
-	     Set $Config{PERL_PATCHLEVEL} as well as $Config{perl_patchlevel}, and
-	     grab the value from a MAINTXXX or SMOKEXXX line in patchlevel.h if present.
-     Branch: maint-5.8/perl
-	  !> configure.com
-____________________________________________________________________________
 [ 32540] By: nicholas				   on 2007/11/28  20:56:52
 	Log: Integrate:
 	     [ 32201]
