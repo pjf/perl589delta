@@ -656,7 +656,7 @@ L<perlhack> documentation extensively improved by Jarkko Hietaniemi and others.
 
 =head1 Changes to Existing Documentation
 
-L<perltdo> was, of course, extensively modified; with the notable marking of the srlcpy/strcat 
+L<perltodo> was, of course, extensively modified; with the notable marking of the srlcpy/strcat 
 to my_strlcpy/my_strcat update as a TODONE.
 
 =head1 Performance Enhancements
