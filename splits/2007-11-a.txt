@@ -1,17 +1,3 @@
-[ 32534] By: nicholas				   on 2007/11/28  19:15:19
-	Log: Integrate:
-	     [ 31287]
-	     Subject: linux arm cross-compilation
-	     From: Vadim <vadim@vkonovalov.ru>
-	     Date: Mon, 28 May 2007 01:23:46 +0400
-	     Message-ID: <4659F6E2.3090805@vkonovalov.ru>
-	     
-	     with adjustments to the MANIFEST
-	     
-	     [just the configpm part]
-     Branch: maint-5.8/perl
-	  !> configpm
-____________________________________________________________________________
 [ 32532] By: nicholas				   on 2007/11/28  16:24:01
 	Log: Integrate:
 	     [ 31275]

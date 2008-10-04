@@ -947,6 +947,8 @@ platforms.
 
 L<ptar> and L<ptardiff> are no longer installed to C<$installbin>
 
+C<Config.pod> and C<config.sh> are now placed correctly for cross-compilation.
+
 =head2 Platform specific changes
 
 =head3 VMS
