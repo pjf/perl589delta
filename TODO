@@ -29,3 +29,10 @@
 * Not sure what essential change in 32164 and 32177 -- eddy
 * Change 31863 and 31887 is just another addition in perltodo, but not sure how
   to include them in the delta -- eddy
+* 30224 was a lot of work on perlrun.pod but also has extra stuff I could
+  not translate into anything useful - specifically 28528, 28578, 29168,
+  29299, 29358 and 29544.
+* Unsure what to do with 30237 which contains 28870, 28982, 29778.
+  Similarly 30232 (27228, 29669), 30230 (26799), 30227 (28715), 
+  30225 (28238), 30223 (30183, 30218),  30222 (30087, 30129), 
+  30209 ( 29593,29594, 29659,30010), 30208 (28513)   

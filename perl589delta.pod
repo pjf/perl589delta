@@ -32,6 +32,10 @@ many calls to strlen().
 A very stubborn compiler warning in S_emulate_eaccess was killed six
 times.
 
+=head1 New Platforms
+
+Compile support added for RISC OS 
+
 =head1 Modules and Pragmata
 
 =head2 New Modules
@@ -782,7 +786,7 @@ both in L<perlothrtut> and L<perlothrtut>.
 
 The Perl FAQs (F<perlfaq1>..F<perlfaq9>) have been updated.
 
-L<reverse> function documentation recieved scalar context examples.
+L<reverse> function documentation received scalar context examples.
 
 L<perltodo> is updated with:
 
@@ -843,6 +847,13 @@ Todo for perl 5.12, virtualize operating system access.
 
 =back
 
+L<perlhack> documentation extensively improved by Jarkko Hietaniemi and others.
+
+=head1 Changes to Existing Documentation
+
+L<perltodo> was, of course, extensively modified; with the notable marking of the srlcpy/strcat 
+to my_strlcpy/my_strcat update as a TODONE.
+
 =head1 Performance Enhancements
 
 =over
@@ -899,14 +910,18 @@ changes with a saving of two ops and one stack push, measured as a 6.4% improve
 
 =item *
 
-Creating anonymous array and hash references (ie. C<[]> and C<{}>) now incurs
-no more overhead than creating an anonymous list or hash. Nicholas Clark provid
-changes with a saving of two ops and one stack push, measured as a 6.4% improve
+Substitutions with repeated right hand expressions (ie. C<s///ge>) are now more
+efficient.
+
 
 =item *
 
-Substitutions with repeated right hand expressions (ie. C<s///ge>) are now more
-efficient.
+Stopped memory leak on long /etc/groups entries
+
+=item *
+
+Recursive regexes now possible.  Possessive quantifiers and named captures are 
+now possible within the regex engine.
 
 =back
 
@@ -1033,8 +1048,6 @@ perl -MO=Deparse -e 'sub the::main::road {}'
 
 =back
 
-=back
-
 =head2 Platform specific fixes
 
 =head3 Darwin / MacOS X
@@ -1064,6 +1077,8 @@ Added forked terminal support to debugger under MacOSX (29415)
 
 C<File::Find> used to fail when the target dir is a bare drive letter and
 C<no_chdir> is 1 (the default is 0). (RT #41555)
+
+C<Win32API::File> added to the core
 
 =item *
 
@@ -1274,6 +1289,12 @@ C<use open ':locale'> and printing Unicode characters to STDERR (30213)
 =item *
 
 C<B> now can compile outside of the perl source tree.
+
+=item *
+
+On some systems, changes to C<$ENV{TZ}> would not always be
+respected by the underlying calls to C<localtime_r>.  Perl now
+forces the inspection of the environment on these systems.  (29213)
 
 =back
 
