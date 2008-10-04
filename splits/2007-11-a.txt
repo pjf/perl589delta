@@ -10,13 +10,6 @@
      Branch: maint-5.8/perl
 	  !> Cross/README README.ce win32/Makefile.ce
 ____________________________________________________________________________
-[ 32535] By: nicholas				   on 2007/11/28  19:38:15
-	Log: Integrate:
-	     [ 31333]
-	     Remove support for assertions and -A
-     Branch: maint-5.8/perl
-	  !> lib/perl5db.pl op.c t/op/attrs.t warnings.pl xsutils.c
-____________________________________________________________________________
 [ 32534] By: nicholas				   on 2007/11/28  19:15:19
 	Log: Integrate:
 	     [ 31287]
