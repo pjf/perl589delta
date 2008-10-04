@@ -1,15 +1,3 @@
-[ 32536] By: nicholas				   on 2007/11/28  19:43:06
-	Log: Integrate:
-	     [ 31362]
-	     Subject: [PATCH] cross-compilation for linux
-	     From: "Konovalov, Vadim Vladimirovich \(Vadim\)** CTR **" <vkonovalov@alcatel-lucent.com>
-	     Date: Sat, 9 Jun 2007 19:41:44 +0200
-	     Message-ID: <D16F05D0CAAA234BA2B753B80DE6100D278EBC@DEEXC1U02.de.lucent.com>
-	     
-	     [The changes to existing files]
-     Branch: maint-5.8/perl
-	  !> Cross/README README.ce win32/Makefile.ce
-____________________________________________________________________________
 [ 32534] By: nicholas				   on 2007/11/28  19:15:19
 	Log: Integrate:
 	     [ 31287]
