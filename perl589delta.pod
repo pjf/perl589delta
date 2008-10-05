@@ -1506,6 +1506,10 @@ Tests for mathematical functions in L<POSIX>
 
 Verify POSIX::AUTOLOAD works (29592)
 
+=item *
+
+Added hash test L<XS::APItest::Hash::bitflip_hash> (31914)
+
 =back
 
 =over 4

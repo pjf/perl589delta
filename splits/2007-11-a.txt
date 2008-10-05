@@ -10,10 +10,6 @@
 	     Call the key transformation function for hv_exists()/hv_fetch()/
 	     hv_store(). (And test this)
 	     
-	     [ 31914]
-	     Parameterise the code that tests the rot13 hash, and add a second
-	     hashtype to test - bitflip (that xors code point with 32).
-	     
 	     [ 31915]
 	     Lots more tests with many permuations of 7, 8 and $lots bit data.
 	     
