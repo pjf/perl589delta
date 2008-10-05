@@ -33,7 +33,7 @@ foreach my $name (sort keys %author_email) {
     # Fix e-mail addresses
     s{ben\.hengst\@gmail\.com}   {notbenh\@cpan.org};
     s{spiros\@karoto\.config}    {spiros\@lokku.com};
-    s{andremar\@am-mbook.local}  {omega\@palle.net};
+    s{andremar\@am-mbook.local}  {andreas.marienborg\@gmail.com};
 
     print {$authors_fh} $_;
 }
