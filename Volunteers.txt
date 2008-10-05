@@ -40,20 +40,25 @@
 2007-02-j - Shawn M Moore (aka Sartak)      Last seen, 15th Sep
 2007-11-b - Bradley Dean                    Last seen,  1st Oct
 2007-11-c - Ben Hengst                      Last seen,  1st Oct
-2007-11-g - Andreas Marienborg              Last seen, 20th Sep
 2008-06 - Renee Backer                      Last seen,  9th Sep
 
 == AVAILABLE ==
 
 2007-02-f - ==> Nobody <==  6k
 2007-11-e - ==> Nobody <== 20k
+2007-11-g - ==> Nobody <== 16k
 2007-11-h - ==> Nobody <== 20k
 2008-02   - ==> Nodody <== 57k
 2008-09   - ==> Nobody <== 31k (and growing!)
 
 == NOTES ==
 
+2007-02 branch appears to contain misplaced commits that are now
+in 2007-02-a, which has been merged.
+
 2007-02-d - Has been slimmed by Drew Stephens.
 2007-02-f - Has been slimmed by Lesley Binks
+2007-11-g - Has been slimmed by Andreas Marienborg
+2008-03   - Has been slimmed by Jacinta Richardson.
 2008-03   - Has been slimmed by Jacinta Richardson.
 2008-02   - Has been slimmed by Spiros Denaxas.

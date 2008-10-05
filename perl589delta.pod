@@ -59,6 +59,17 @@ Cray XT4/Catamount
 C<Module::Pluggable> is a simple framework to create modules that accept
 pluggable sub-modules. The bundled version is 3.7. [33505]
 
+=item *
+
+C<Module::CoreList> is a hash of hashes that is keyed on perl version as
+indicated in $]. The bundled version is 2.12 (31561)
+
+=item *
+
+C<CPANPLUS> is an API to the CPAN mirrors and a collection of interactive 
+shells, commandline programs, etc, that use this API. The bundled version 
+is 0.78 (30932)
+
 =back
 
 =head2 Updated Modules
@@ -202,7 +213,7 @@ C<constant> upgraded to version 1.15
 
 =item *
 
-C<CPAN> upgraded to version 1.9101
+C<CPAN> upgraded to version 1.9105 (32280)
 
 =item *
 
@@ -418,7 +429,7 @@ C<GDBM_File> upgraded to version 1.09
 
 =item *
 
-C<Getopt::Long> upgraded to version 2.36
+C<Getopt::Long> upgraded to version 2.37 (32009)
 
 =item *
 
@@ -574,7 +585,15 @@ C<Switch> upgraded to version 2.13
 
 =item *
 
-C<Sys-Syslog upraded to version 0.24>
+C<Sys-Syslog> upraded to version 0.24
+
+=item *
+
+C<Term::ANSIColor> upgraded to version 1.12 (31036)
+
+=item *
+
+C<Term::Cap> upgraded to version 1.11 (32143, 32301)
 
 =item *
 
@@ -640,8 +659,9 @@ C<Time::gmtime> upgraded to version 1.03
 
 =item *
 
-C<Time::HiRes> upgraded to version 1.9715 with various build improvements and
-minor platform-specific bug fixes (including for HP-UX 11 ia64)
+C<Time::HiRes> upgraded to version 1.9715 with various build improvements 
+(including VMS (31752)) and minor platform-specific bug fixes (including 
+for HP-UX 11 ia64)
 
 =item *
 
@@ -704,6 +724,10 @@ C<h2ph> generates correct correct code for C<#if defined A || defined B> now
 =item *
 
 C<h2xs> won't define an empty string as a constant (perl #25366)
+
+=item *
+
+C<h2xs> has examples for h2xs -X (31175)
 
 =back
 
@@ -1562,7 +1586,7 @@ compatibility.
 
 =item *
 
-C<Win32API> updated to 0.1001
+C<Win32API> updated to 0.1001_01 (30411)
 
 =item *
 
