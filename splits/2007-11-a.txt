@@ -1,15 +1,5 @@
 [ 32512] By: nicholas				   on 2007/11/26  22:24:26
 	Log: Integrate:
-	     [ 23843]
-	     Subject: [PATCH bleadperl] Re: [perl #31924] %INC caching failure-case problem
-	     From: Rick Delaney <rick@bort.ca>
-	     Date: Wed, 13 Oct 2004 12:40:18 -0400
-	     Message-ID: <20041013164018.GA32174@biff.bort.ca>
-	     
-	     [ 23873]
-	     Revert change 23843.
-	     (See discussion for bug [perl #31924])
-	     
 	     [ 31898]
 	     For an LVALUE fetch, "hv_fetch()" will recurse into "hv_store()" for a
 	     hash with magic. Field hashes have u magic, so this recursion triggers.
