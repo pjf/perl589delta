@@ -1,11 +1,5 @@
 [ 32479] By: nicholas				   on 2007/11/24  12:06:56
 	Log: Integrate:
-	     [ 32466]
-	     Subject: [PATCH] document return value of Getopt::Std::getopts()
-	     From: Mark Jason Dominus <mjd@plover.com>
-	     Date: Fri, 23 Nov 2007 09:54:38 -0500
-	     Message-ID: <20071123145438.6593.qmail@plover.com>
-	     
 	     [ 32478]
 	     Eliminating the duplicate logic in S_method_common() and
 	     Perl_gv_fetchmethod_autoload() is clearly TODO.
