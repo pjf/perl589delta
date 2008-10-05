@@ -1,12 +1,5 @@
 [ 32514] By: nicholas				   on 2007/11/26  23:34:16
 	Log: Integrate:
-	     [ 31931]
-	     Add a new function Perl_hv_common_key_len(), which contains the
-	     manipulations to convert negative lengths to positive length + UTF-8
-	     flag. hv_delete(), hv_exists(), hv_fetch(), hv_store() and
-	     hv_store_flags() all become mathoms. The macros hv_fetchs() and
-	     hv_stores() call hv_common() directly.
-	     
 	     [ 31932]
 	     Remove now-unnecessary =cuts where POD is now adjacent to POD.
 	     
