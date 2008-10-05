@@ -1,12 +1,3 @@
-[ 32515] By: nicholas				   on 2007/11/26  23:54:05
-	Log: Integrate:
-	     [ 31938]
-	     hv_stores() on a literal string is now fractionally more efficient than
-	     hv_store().
-     Branch: maint-5.8/perl
-	  +> mro.c
-	  !> gv.c hv.c mg.c op.c pp_hot.c
-____________________________________________________________________________
 [ 32514] By: nicholas				   on 2007/11/26  23:34:16
 	Log: Integrate:
 	     [ 31931]
