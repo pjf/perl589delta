@@ -1,35 +1,3 @@
-[ 32513] By: nicholas				   on 2007/11/26  23:07:51
-	Log: Integrate:
-	     [ 31916]
-	     Send all delete()/delete_ent() calls via S_hv_fetch_common().
-	     This puts all the key normalisation code in one place.
-	     
-	     [ 31919]
-	     Make hv_fetch_common() non-static, and change its name to hv_common(),
-	     as it now also performs hv_delete()/hv_delete_ent()
-	     
-	     [ 31924]
-	     Convert hv_delete_ent(), hv_exists_ent(), hv_fetch_ent() and
-	     hv_store_ent() to macros, and consign the function bodies to history.
-	     Er, mathoms.c
-	     
-	     [ 31925]
-	     Change 31919 forgot to add Perl_hv_common to global.sym
-	     
-	     [ 31926]
-	     Switch Perl_hv_common() to returning void * rather than HE *.
-	     
-	     [ 31927]
-	     Casts needed in mathoms.c to make it compile with g++ after the
-	     making Perl_hv_common() return void *.
-	     
-	     [ 31930]
-	     Move the SV dereference of Perl_hv_fetch()/Perl_hv_store()/
-	     Perl_hv_store_flags() into Perl_hv_common(). All already pass in
-	     HV_FETCH_JUST_SV, which only these three pass in.
-     Branch: maint-5.8/perl
-	  !> embed.fnc embed.h global.sym hv.c hv.h mathoms.c proto.h
-____________________________________________________________________________
 [ 32512] By: nicholas				   on 2007/11/26  22:24:26
 	Log: Integrate:
 	     [ 23843]
