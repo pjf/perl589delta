@@ -1,15 +1,3 @@
-[ 32530] By: nicholas				   on 2007/11/28  14:10:54
-	Log: Integrate:
-	     [ 31107]
-	     Subject: Re: mro status, etc
-	     From: "Brandon Black" <blblack@gmail.com>
-	     Date: Sun, 29 Apr 2007 17:27:03 -0500
-	     Message-ID: <84621a60704291527y1b39be37l221ef66e4c828f66@mail.gmail.com>
-	     
-	     [just the perltoot addition]
-     Branch: maint-5.8/perl
-	  !> pod/perltoot.pod
-____________________________________________________________________________
 [ 32529] By: nicholas				   on 2007/11/28  13:55:58
 	Log: Integrate:
 	     [ 31878]
