@@ -1,9 +1,5 @@
 [ 32510] By: nicholas				   on 2007/11/26  21:35:15
 	Log: Integrate:
-	     [ 27000]
-	     Use a union for storing the shared hash key reference count, rather
-	     than messy pointer hacks.
-	     
 	     [ 31905]
 	     Call the key transformation function for hv_delete().
 	     Honour the HV_DISABLE_UVAR_XKEY for hv_delete().
