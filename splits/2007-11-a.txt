@@ -6,12 +6,6 @@
 	     Date: Fri, 23 Nov 2007 09:54:38 -0500
 	     Message-ID: <20071123145438.6593.qmail@plover.com>
 	     
-	     [ 32475]
-	     Subject: [PATCH] Document different kill(-9, ...) semantics on Windows
-	     From: "Jan Dubois" <jand@activestate.com>
-	     Date: Fri, 23 Nov 2007 14:48:43 -0800
-	     Message-ID: <003201c82e23$0003a0f0$000ae2d0$@com>
-	     
 	     [ 32478]
 	     Eliminating the duplicate logic in S_method_common() and
 	     Perl_gv_fetchmethod_autoload() is clearly TODO.

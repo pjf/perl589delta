@@ -867,6 +867,9 @@ L<perlhack> documentation extensively improved by Jarkko Hietaniemi and others.
 
 L<perltoot> provides information on modifying C<@UNIVERSAL::ISA>.
 
+L<perlport> documentation extended to include different C<kill(-9, ...)>
+semantics on Windows.
+
 =head1 Changes to Existing Documentation
 
 L<perltodo> was, of course, extensively modified; with the notable marking of the srlcpy/strcat 
