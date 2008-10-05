@@ -1,8 +1,5 @@
 [ 32515] By: nicholas				   on 2007/11/26  23:54:05
 	Log: Integrate:
-	     [ 31936]
-	     Silence a load of "value computed is not used" warnings
-	     
 	     [ 31938]
 	     hv_stores() on a literal string is now fractionally more efficient than
 	     hv_store().
