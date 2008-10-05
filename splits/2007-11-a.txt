@@ -8,14 +8,6 @@
 	     Use a union for storing the shared hash key reference count, rather
 	     than messy pointer hacks.
 	     
-	     [ 31898]
-	     For an LVALUE fetch, "hv_fetch()" will recurse into "hv_store()" for a
-	     hash with magic. Field hashes have u magic, so this recursion triggers.
-	     However, key conversion replaces the original key with the converted
-	     key, so we need to ensure that conversion happens exactly once, else
-	     for a non-idempotent key conversion routine (eg ROT13) we will see
-	     double conversion in this case.
-	     
 	     [ 31905]
 	     Call the key transformation function for hv_delete().
 	     Honour the HV_DISABLE_UVAR_XKEY for hv_delete().
