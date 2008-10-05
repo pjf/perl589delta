@@ -1,13 +1,3 @@
-[ 32527] By: nicholas				   on 2007/11/28  12:49:11
-	Log: Integrate:
-	     [ 31279]
-	     Subject: Re: argproc.c license Re: [perl #43037] Bad license in perl distribution
-	     From: Mark Pizzolato <mark@infocomm.com>
-	     Date: Fri, 25 May 2007 13:31:17 -0700 (PDT)
-	     Message-ID: <288163.41670.qm@web83606.mail.sp1.yahoo.com>
-     Branch: maint-5.8/perl
-	  !> vms/vms.c
-____________________________________________________________________________
 [ 32516] By: nicholas				   on 2007/11/26  23:54:19
 	Log: Naff orf!
      Branch: maint-5.8/perl
