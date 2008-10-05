@@ -19,8 +19,6 @@
 * Are ptar and ptardiff really out? They are in 5.10.0 --aflott
 * 29609 says "Upgrade to Text::Balanced 2.0.0" and doesn't seem to get
   reverted later on, but lib/Text/Balanced.pm says it's 1.98 --moritz
-* Make sure that Spiros' name is entered correctly in the AUTHORS
-  file.  Ditto for LesleyB.
 * In 2007-11-i.txt, changes 31860, 31882, and 31885 seems to deal with "say"
   which I'm not sure it's true (see comments above in 2006-10.txt by morits 
   and aflott) -- eddy
@@ -31,8 +29,8 @@
   to include them in the delta -- eddy
 * 30224 was a lot of work on perlrun.pod but also has extra stuff I could
   not translate into anything useful - specifically 28528, 28578, 29168,
-  29299, 29358 and 29544.
+  29299, 29358 and 29544. -- LesleyB
 * Unsure what to do with 30237 which contains 28870, 28982, 29778.
   Similarly 30232 (27228, 29669), 30230 (26799), 30227 (28715), 
   30225 (28238), 30223 (30183, 30218),  30222 (30087, 30129), 
-  30209 ( 29593,29594, 29659,30010), 30208 (28513)   
+  30209 ( 29593,29594, 29659,30010), 30208 (28513)  -- LesleyB
