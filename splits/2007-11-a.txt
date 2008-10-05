@@ -1,8 +1,5 @@
 [ 32510] By: nicholas				   on 2007/11/26  21:35:15
 	Log: Integrate:
-	     [ 31915]
-	     Lots more tests with many permuations of 7, 8 and $lots bit data.
-	     
 	     [ 31923]
 	     Use Perl_hv_common() to test disabling the key conversion in hash
 	     lookups.

@@ -1508,7 +1508,7 @@ Verify POSIX::AUTOLOAD works (29592)
 
 =item *
 
-Added hash test L<XS::APItest::Hash::bitflip_hash> (31914)
+Added bitflip hash tests (31914, 31915)
 
 =item *
 
