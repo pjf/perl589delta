@@ -1,15 +1,3 @@
-[ 32512] By: nicholas				   on 2007/11/26  22:24:26
-	Log: Integrate:
-	     [ 31898]
-	     For an LVALUE fetch, "hv_fetch()" will recurse into "hv_store()" for a
-	     hash with magic. Field hashes have u magic, so this recursion triggers.
-	     However, key conversion replaces the original key with the converted
-	     key, so we need to ensure that conversion happens exactly once, else
-	     for a non-idempotent key conversion routine (eg ROT13) we will see
-	     double conversion in this case.
-     Branch: maint-5.8/perl
-	  !> cop.h hv.c hv.h
-____________________________________________________________________________
 [ 32511] By: nicholas				   on 2007/11/26  21:40:46
 	Log: Integrate:
 	     [ 28341]
