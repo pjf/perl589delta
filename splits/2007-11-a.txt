@@ -1,25 +1,3 @@
-[ 32529] By: nicholas				   on 2007/11/28  13:55:58
-	Log: Integrate:
-	     [ 31878]
-	     Subject: Re: [PATCH] Cray XT4/Catamount build
-	     From: Jarkko Hietaniemi <jhi@iki.fi>
-	     Date: Sat, 15 Sep 2007 20:47:57 -0400
-	     Message-ID: <46EC7D3D.5010604@iki.fi>
-	     
-	     [ 31899]
-	     Subject: Re: [PATCH] Cray XT4/Catamount build
-	     From: Jarkko Hietaniemi <jhi@iki.fi>
-	     Date: Tue, 18 Sep 2007 19:48:48 -0400
-	     Message-ID: <46F063E0.1000004@iki.fi>
-	     
-	     (Restores a pre-generated utils/Makefile for the benefit of Win32,
-	     which can't run utils/Makefile.SH itself)
-	     
-     Branch: maint-5.8/perl
-	   + utils/Makefile.SH
-	  !> MANIFEST Makefile.SH Porting/makerel ext/util/make_ext
-	  !> hints/catamount.sh utils/Makefile x2p/Makefile.SH
-____________________________________________________________________________
 [ 32528] By: nicholas				   on 2007/11/28  12:54:17
 	Log: Integrate:
 	     [ 31388]

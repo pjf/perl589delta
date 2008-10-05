@@ -34,7 +34,19 @@ times.
 
 =head1 New Platforms
 
-Compile support added for RISC OS 
+Compile support added for:
+
+=over
+
+=item *
+
+RISC OS 
+
+=item
+
+Cray XT4/Catamount
+
+=back
 
 =head1 Modules and Pragmata
 
