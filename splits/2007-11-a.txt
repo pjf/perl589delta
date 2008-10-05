@@ -8,13 +8,6 @@
 	     Use a union for storing the shared hash key reference count, rather
 	     than messy pointer hacks.
 	     
-	     [ 27636]
-	     Fix bug 36267 - assigning to a tied hash shouldn't change the
-	     underlying hash. (It used to, if the underlying hash had had storage
-	     allocated). This has the side effect of changing the return value from
-	     hv_store and hv_store_ent for some tied hash scenarios. But *to*
-	     something consistent (ly crazy)
-	     
 	     [ 31898]
 	     For an LVALUE fetch, "hv_fetch()" will recurse into "hv_store()" for a
 	     hash with magic. Field hashes have u magic, so this recursion triggers.

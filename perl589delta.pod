@@ -1103,6 +1103,11 @@ Fix MRO behaviour when one undefs C<@ISA> (32542)
 
 Fix descriptor leak caused by change (30633) to C<PerlIO_exportFILE> (32224)
 
+=item *
+
+Fix bug 36267 so that assigning to a tied hash doesn't change the
+underlying hash (27636)
+
 =back
 
 =head2 Platform specific fixes
