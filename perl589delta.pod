@@ -937,6 +937,11 @@ Stopped memory leak on long /etc/groups entries
 Recursive regexes now possible.  Possessive quantifiers and named captures are 
 now possible within the regex engine.
 
+=item *
+
+The MY_CXT API has been made more efficient (and an explicit interpeter argument
+variant has been added).
+
 =back
 
 =head1 Installation and Configuration Improvements

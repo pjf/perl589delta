@@ -1,9 +1,5 @@
 [ 32510] By: nicholas				   on 2007/11/26  21:35:15
 	Log: Integrate:
-	     [ 26523]
-	     re-implement MY_CXT API more efficiently, and add explicit
-	     interpeter arg variant
-	     
 	     [ 27000]
 	     Use a union for storing the shared hash key reference count, rather
 	     than messy pointer hacks.
