@@ -1,8 +1,5 @@
 [ 32479] By: nicholas				   on 2007/11/24  12:06:56
 	Log: Integrate:
-	     [ 32464]
-	     FAQ sync
-	     
 	     [ 32466]
 	     Subject: [PATCH] document return value of Getopt::Std::getopts()
 	     From: Mark Jason Dominus <mjd@plover.com>
