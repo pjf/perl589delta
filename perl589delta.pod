@@ -1527,6 +1527,10 @@ Test disabling key conversion in hash lookups (31923)
 Significantly improved testing for C<$/> usage with PerlIO::Scalar in-memory
 files.
 
+=item *
+
+Test both C<MY_CXT> and C<MY_CXT_INTERP> in the CXT API.
+
 =back
 
 =head1 Known Problems
