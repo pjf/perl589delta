@@ -1,10 +1,3 @@
-[ 32509] By: nicholas				   on 2007/11/26  19:57:07
-	Log: For 5.8.8 and earlier, always call newCONSTSUB(), as the interpreter
-	     doesn't support proxy constant subroutines. For all 5.8.x add a cast
-	     to (char *) for the second argument to newCONSTSUB().
-     Branch: maint-5.8/perl
-	   ! lib/ExtUtils/Constant/ProxySubs.pm
-____________________________________________________________________________
 [ 32506] By: nicholas				   on 2007/11/26  18:02:05
 	Log: Integrate:
 	     [ 32505]

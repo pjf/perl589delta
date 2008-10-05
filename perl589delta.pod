@@ -317,6 +317,10 @@ C<ExtUtils::Constant> upgraded to version 0.04
 
 =item *
 
+C<ExtUtils::Constant::ProxySubs> upgraded to version 0.06
+
+=item *
+
 C<ExtUtils::Install> upgraded to version 1.51 [33567]
 
 =item *
