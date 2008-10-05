@@ -1,10 +1,3 @@
-[ 32506] By: nicholas				   on 2007/11/26  18:02:05
-	Log: Integrate:
-	     [ 32505]
-	     A dummy implementation of dMY_CXT_INTERP for unthreaded builds.
-     Branch: maint-5.8/perl
-	  !> perl.h
-____________________________________________________________________________
 [ 32486] By: nicholas				   on 2007/11/25  16:28:05
 	Log: An implementation of dMY_CXT_INTERP() for 5.8.x
      Branch: maint-5.8/perl
