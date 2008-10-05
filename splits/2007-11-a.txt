@@ -15,8 +15,6 @@
 	     (Restores a pre-generated utils/Makefile for the benefit of Win32,
 	     which can't run utils/Makefile.SH itself)
 	     
-	     [ 31906]
-	     Mark utils/Makefile as read/write in perforce.
      Branch: maint-5.8/perl
 	   + utils/Makefile.SH
 	  !> MANIFEST Makefile.SH Porting/makerel ext/util/make_ext
