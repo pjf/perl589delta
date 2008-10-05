@@ -1,15 +1,5 @@
 [ 32510] By: nicholas				   on 2007/11/26  21:35:15
 	Log: Integrate:
-	     [ 31905]
-	     Call the key transformation function for hv_delete().
-	     Honour the HV_DISABLE_UVAR_XKEY for hv_delete().
-	     Test this.
-	     [Pass in 3 more parameters to S_hv_magic_uvar_xkey()]
-	     
-	     [ 31912]
-	     Call the key transformation function for hv_exists()/hv_fetch()/
-	     hv_store(). (And test this)
-	     
 	     [ 31915]
 	     Lots more tests with many permuations of 7, 8 and $lots bit data.
 	     

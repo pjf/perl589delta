@@ -1510,6 +1510,10 @@ Verify POSIX::AUTOLOAD works (29592)
 
 Added hash test L<XS::APItest::Hash::bitflip_hash> (31914)
 
+=item *
+
+Tests for C<hv_delete>, C<hv_exists>, C<hv_fetch>, C<hv_store> (31905, 31912)
+
 =back
 
 =over 4
