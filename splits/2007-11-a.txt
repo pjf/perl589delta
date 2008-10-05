@@ -1,16 +1,5 @@
 [ 32510] By: nicholas				   on 2007/11/26  21:35:15
 	Log: Integrate:
-	     [ 32501]
-	     Hack round the fact that UNITCHECK is nothing special on 5.8.x by
-	     conditionally creating a sub UNITCHECK(&);
-	     
-	     [ 32502]
-	     UNITCHECK isn't anything special in 5.8.x, so don't run those tests.
-	     
-	     [ 32503]
-	     Skip the op.t API test as it's not relevant to 5.8.x (%^H propagation).
-	     Correct the expectations of hash.t and svsetsv.t for 5.8.x.
-	     
 	     [ 32507]
 	     Test both dMY_CXT and dMY_CXT_INTERP.
      Branch: maint-5.8/perl
