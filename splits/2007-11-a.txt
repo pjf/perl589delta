@@ -1,9 +1,5 @@
 [ 32510] By: nicholas				   on 2007/11/26  21:35:15
 	Log: Integrate:
-	     [ 31923]
-	     Use Perl_hv_common() to test disabling the key conversion in hash
-	     lookups.
-	     
 	     [ 31929]
 	     ext/XS/APITest/APITest.xs was suffering casting issues with g++
 	     as well after the addition of Perl_hv_common().

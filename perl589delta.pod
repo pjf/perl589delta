@@ -1514,6 +1514,10 @@ Added bitflip hash tests (31914, 31915)
 
 Tests for C<hv_delete>, C<hv_exists>, C<hv_fetch>, C<hv_store> (31905, 31912)
 
+=item *
+
+Test disabling key conversion in hash lookups (31923)
+
 =back
 
 =over 4
