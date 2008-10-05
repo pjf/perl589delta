@@ -1,10 +1,3 @@
-[ 32532] By: nicholas				   on 2007/11/28  16:24:01
-	Log: Integrate:
-	     [ 31275]
-	     Change #31270 should have updated proto.h to match
-     Branch: maint-5.8/perl
-	  !> embed.fnc proto.h
-____________________________________________________________________________
 [ 32530] By: nicholas				   on 2007/11/28  14:10:54
 	Log: Integrate:
 	     [ 31107]
