@@ -577,7 +577,7 @@ This fixes an optimistic use of C<gethostbyname()>.
 
 =item *
 
-C<Storable> upgraded to 2.16
+C<Storable> upgraded to 2.18
 
 =item *
 
@@ -695,6 +695,10 @@ C<Thread::Semaphore> upgraded to version 2.08
 =item *
 
 C<Unicode::Normalize> upgraded to version 1.01
+
+=item *
+
+C<Win32> upgraded to version 0.34
 
 =item *
 
@@ -988,7 +992,7 @@ There are improved hints for DEC/OSF, VOS (33425), Cygwin (33484).
 
 Many compilation warnings were cleaned up (33415, 33417, 33418, 33419,
 33420, 33421, 33427, 33428, 33429, 33435, 33436, 33441, 33444, 33479,
-33590,)
+33590, 31347, 31073, 31074, 31075)
 
 Added C<d_pseudofork> to C<Configure> which is a new configuration variable,
 available as C<$Config{d_pseudofork}> in the L<Config> module, has been added,
@@ -998,6 +1002,8 @@ platforms.
 L<ptar> and L<ptardiff> are no longer installed to C<$installbin>
 
 C<Config.pod> and C<config.sh> are now placed correctly for cross-compilation.
+
+'unexpand -a' spaces converted to tabs to create smaller Changes files.
 
 =head2 Platform specific changes
 
@@ -1029,6 +1035,10 @@ C<$Config{PERL_PATCHLEVEL}> and grab the value from a C<MAINTXXX> or
 C<SMOKEXXX> line in patchlevel.h if present. (31597)).
 
 =back
+=======
+$Config{useshrplib} is now 'true' rather than 'yes' when using a shared perl
+library.
+>>>>>>> origin/2007-11-c:perl589delta.pod
 
 =head1 Selected Bug Fixes
 
@@ -1198,6 +1208,10 @@ Improvements to the perl-static.exe build process.
 
 =item *
 
+Add Win32 makefile option to link all extensions statically.
+
+=item *
+
 Merge WinCE into Win32 directory (30281-30284, 20862)
 
 =back
@@ -1221,6 +1235,10 @@ Fix VMS exit handling broken in Test::Harness 2.64 (33008)
 =item *
 
 Fix fcntl locking capability test in C<configure.com> (31756)
+
+=item *
+
+Replaced C<shrplib='define'> with C<useshrplib='true'> on VMS.
 
 =item *
 
