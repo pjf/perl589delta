@@ -1,8 +1,5 @@
 [ 32514] By: nicholas				   on 2007/11/26  23:34:16
 	Log: Integrate:
-	     [ 31932]
-	     Remove now-unnecessary =cuts where POD is now adjacent to POD.
-	     
 	     [ 31937]
 	     Fix Win32 breakage caused by #31926
      Branch: maint-5.8/perl
