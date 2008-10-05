@@ -1,11 +1,5 @@
 [ 32510] By: nicholas				   on 2007/11/26  21:35:15
 	Log: Integrate:
-	     [ 32483]
-	     Use a new (clean) anonymous hash for each loop, rather than a hash in
-	     the pad, as the latter can change internal state sufficiently to
-	     confuse matters (even though in all cases it has no keys and from
-	     Perl space is "measurably" identical).
-	     
 	     [ 32500]
 	     Get APItest.xs compiling on 5.8.x by making the compilation of the
 	     Perl_hv_common() test code conditional on the macro hv_common being
