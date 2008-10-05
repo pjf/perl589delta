@@ -1,18 +1,3 @@
-[ 32528] By: nicholas				   on 2007/11/28  12:54:17
-	Log: Integrate:
-	     [ 31388]
-	     Subject: [PATCH] miscellanea
-	     From: Jarkko Hietaniemi <jhi@iki.fi>
-	     Date: Thu, 14 Jun 2007 22:32:49 -0400
-	     Message-ID: <4671FA51.4070001@iki.fi>
-	     
-	     [ 31404]
-	     Patches to compile perl on Cray XT4 Catamount/Qk, by Jarkko
-     Branch: maint-5.8/perl
-	  +> hints/catamount.sh
-	  !> Configure MANIFEST doio.c ext/util/make_ext hints/linux.sh
-	  !> perl.c perl.h pp_sys.c sv.c util.c
-____________________________________________________________________________
 [ 32527] By: nicholas				   on 2007/11/28  12:49:11
 	Log: Integrate:
 	     [ 31279]
