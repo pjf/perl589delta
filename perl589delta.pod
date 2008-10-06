@@ -1005,6 +1005,9 @@ C<Config.pod> and C<config.sh> are now placed correctly for cross-compilation.
 
 'unexpand -a' spaces converted to tabs to create smaller Changes files.
 
+$Config{useshrplib} is now 'true' rather than 'yes' when using a shared perl
+library.
+
 =head2 Platform specific changes
 
 =head3 VMS
@@ -1035,10 +1038,6 @@ C<$Config{PERL_PATCHLEVEL}> and grab the value from a C<MAINTXXX> or
 C<SMOKEXXX> line in patchlevel.h if present. (31597)).
 
 =back
-=======
-$Config{useshrplib} is now 'true' rather than 'yes' when using a shared perl
-library.
->>>>>>> origin/2007-11-c:perl589delta.pod
 
 =head1 Selected Bug Fixes
 
