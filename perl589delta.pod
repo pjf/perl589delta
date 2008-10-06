@@ -374,7 +374,8 @@ C<File::Spec>, C<File::Spec::Epoc>, C<File::Spec::Mac>,
 C<File::Spec::Functions> C<File::Spec::Unix>, C<File::Spec::VMS>,
 C<File::Spec::Win32> upgraded to version 3.2701 with improved handling of bad
 arguments and some platform specific improvements (Including for VMS and
-Cygwin)
+Cygwin) including an optimization on C<abs2rel()> when handling both relative
+arguments.
 
 =item *
 

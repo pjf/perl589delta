@@ -25,17 +25,7 @@
      Branch: maint-5.8/perl
 	  !> lib/ExtUtils/ParseXS.pm
 ____________________________________________________________________________
-[ 30133] By: nicholas				   on 2007/02/05  18:05:43
-	Log: Integrate:
-	     
-	     
-	     [ 28511]
-	     Subject: [PATCH] optimisation for File::Spec::abs2rel where both args are relative
-	     From: Brendan O'Dea <bod@debian.org>
-	     Date: Thu, 6 Jul 2006 01:02:41 +1000
-	     Message-ID: <20060705150241.GA2244@londo.c47.org>
-	     
-____________________________________________________________________________
+
 [ 30132] By: nicholas				   on 2007/02/05  17:37:09
 	Log: Integrate:
 	     [ 26071]
