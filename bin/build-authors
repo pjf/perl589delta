@@ -19,7 +19,23 @@ foreach (@logs) {
 }
 
 foreach my $name (sort keys %author_email) {
-    printf {$authors_fh} "%-30s<%s>\n", $name, $author_email{$name};
+
+    # No Ben, you can't be counted twice.
+    next if $name eq "Ben Hengst (system)";
+
+    my $formatted_name = $name;
+
+    $formatted_name =~ s{LesleyB}   {Lesley Binks};
+    $formatted_name =~ s{spiros}    {Spiros Denaxas};
+
+    $_ = sprintf "%-30s<%s>\n", $formatted_name, $author_email{$name};
+
+    # Fix e-mail addresses
+    s{ben\.hengst\@gmail\.com}   {notbenh\@cpan.org};
+    s{spiros\@karoto\.config}    {spiros\@lokku.com};
+    s{andremar\@am-mbook.local}  {andreas.marienborg\@gmail.com};
+
+    print {$authors_fh} $_;
 }
 
 close($authors_fh);

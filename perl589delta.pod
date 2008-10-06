@@ -32,6 +32,22 @@ many calls to strlen().
 A very stubborn compiler warning in S_emulate_eaccess was killed six
 times.
 
+=head1 New Platforms
+
+Compile support added for:
+
+=over
+
+=item *
+
+RISC OS 
+
+=item
+
+Cray XT4/Catamount
+
+=back
+
 =head1 Modules and Pragmata
 
 =head2 New Modules
@@ -42,6 +58,17 @@ times.
 
 C<Module::Pluggable> is a simple framework to create modules that accept
 pluggable sub-modules. The bundled version is 3.7. [33505]
+
+=item *
+
+C<Module::CoreList> is a hash of hashes that is keyed on perl version as
+indicated in $]. The bundled version is 2.12 (31561)
+
+=item *
+
+C<CPANPLUS> is an API to the CPAN mirrors and a collection of interactive 
+shells, commandline programs, etc, that use this API. The bundled version 
+is 0.78 (30932)
 
 =back
 
@@ -186,7 +213,7 @@ C<constant> upgraded to version 1.15
 
 =item *
 
-C<CPAN> upgraded to version 1.9101
+C<CPAN> upgraded to version 1.9105 (32280)
 
 =item *
 
@@ -301,6 +328,10 @@ C<ExtUtils::Constant> upgraded to version 0.04
 
 =item *
 
+C<ExtUtils::Constant::ProxySubs> upgraded to version 0.06
+
+=item *
+
 C<ExtUtils::Install> upgraded to version 1.51 [33567]
 
 =item *
@@ -399,7 +430,7 @@ C<GDBM_File> upgraded to version 1.09
 
 =item *
 
-C<Getopt::Long> upgraded to version 2.36
+C<Getopt::Long> upgraded to version 2.37 (32009)
 
 =item *
 
@@ -547,7 +578,7 @@ This fixes an optimistic use of C<gethostbyname()>.
 
 =item *
 
-C<Storable> upgraded to 2.16
+C<Storable> upgraded to 2.18
 
 =item *
 
@@ -555,7 +586,15 @@ C<Switch> upgraded to version 2.13
 
 =item *
 
-C<Sys-Syslog upraded to version 0.24>
+C<Sys-Syslog> upraded to version 0.24
+
+=item *
+
+C<Term::ANSIColor> upgraded to version 1.12 (31036)
+
+=item *
+
+C<Term::Cap> upgraded to version 1.11 (32143, 32301)
 
 =item *
 
@@ -621,8 +660,9 @@ C<Time::gmtime> upgraded to version 1.03
 
 =item *
 
-C<Time::HiRes> upgraded to version 1.9715 with various build improvements and
-minor platform-specific bug fixes (including for HP-UX 11 ia64)
+C<Time::HiRes> upgraded to version 1.9715 with various build improvements 
+(including VMS (31752)) and minor platform-specific bug fixes (including 
+for HP-UX 11 ia64)
 
 =item *
 
@@ -659,6 +699,10 @@ C<Unicode::Normalize> upgraded to version 1.01
 
 =item *
 
+C<Win32> upgraded to version 0.34
+
+=item *
+
 C<XSLoader> upgraded to version 0.08
 
 =item *
@@ -685,6 +729,10 @@ C<h2ph> generates correct correct code for C<#if defined A || defined B> now
 =item *
 
 C<h2xs> won't define an empty string as a constant (perl #25366)
+
+=item *
+
+C<h2xs> has examples for h2xs -X (31175)
 
 =back
 
@@ -783,7 +831,7 @@ both in L<perlothrtut> and L<perlothrtut>.
 
 The Perl FAQs (F<perlfaq1>..F<perlfaq9>) have been updated.
 
-L<reverse> function documentation recieved scalar context examples.
+L<reverse> function documentation received scalar context examples.
 
 L<perltodo> is updated with:
 
@@ -844,6 +892,18 @@ Todo for perl 5.12, virtualize operating system access.
 
 =back
 
+L<perlhack> documentation extensively improved by Jarkko Hietaniemi and others.
+
+L<perltoot> provides information on modifying C<@UNIVERSAL::ISA>.
+
+L<perlport> documentation extended to include different C<kill(-9, ...)>
+semantics on Windows.
+
+=head1 Changes to Existing Documentation
+
+L<perltodo> was, of course, extensively modified; with the notable marking of the srlcpy/strcat 
+to my_strlcpy/my_strcat update as a TODONE.
+
 =head1 Performance Enhancements
 
 =over
@@ -900,14 +960,23 @@ changes with a saving of two ops and one stack push, measured as a 6.4% improve
 
 =item *
 
-Creating anonymous array and hash references (ie. C<[]> and C<{}>) now incurs
-no more overhead than creating an anonymous list or hash. Nicholas Clark provid
-changes with a saving of two ops and one stack push, measured as a 6.4% improve
+Substitutions with repeated right hand expressions (ie. C<s///ge>) are now more
+efficient.
+
 
 =item *
 
-Substitutions with repeated right hand expressions (ie. C<s///ge>) are now more
-efficient.
+Stopped memory leak on long /etc/groups entries
+
+=item *
+
+Recursive regexes now possible.  Possessive quantifiers and named captures are 
+now possible within the regex engine.
+
+=item *
+
+The MY_CXT API has been made more efficient (and an explicit interpeter argument
+variant has been added).
 
 =back
 
@@ -924,7 +993,7 @@ There are improved hints for DEC/OSF, VOS (33425), Cygwin (33484).
 
 Many compilation warnings were cleaned up (33415, 33417, 33418, 33419,
 33420, 33421, 33427, 33428, 33429, 33435, 33436, 33441, 33444, 33479,
-33590,)
+33590, 31347, 31073, 31074, 31075)
 
 Added C<d_pseudofork> to C<Configure> which is a new configuration variable,
 available as C<$Config{d_pseudofork}> in the L<Config> module, has been added,
@@ -932,6 +1001,44 @@ to distinguish real fork() support from fake pseudofork used on Windows
 platforms.
 
 L<ptar> and L<ptardiff> are no longer installed to C<$installbin>
+
+C<Config.pod> and C<config.sh> are now placed correctly for cross-compilation.
+
+'unexpand -a' spaces converted to tabs to create smaller Changes files.
+
+$Config{useshrplib} is now 'true' rather than 'yes' when using a shared perl
+library.
+
+=head2 Platform specific changes
+
+=head3 VMS
+
+=over 4
+
+=item *
+
+Allow IEEE math to be deselected on OpenVMS I64 (but it remains the default).
+
+=item *
+
+Help older VMS compilers by using C<ccflags> when building C<munchconfig.exe>.
+
+=item * 
+
+Don't try to build old L<Thread> extension on VMS when C<-Duseithreads> has
+been chosen. (31104)
+
+=item * 
+
+Better suppression logic for not building L<Thread> extension (31226).
+
+=item * 
+
+Fix the case of C<$Config{perl_patchlevel}> (31544) (but keep setting
+C<$Config{PERL_PATCHLEVEL}> and grab the value from a C<MAINTXXX> or 
+C<SMOKEXXX> line in patchlevel.h if present. (31597)).
+
+=back
 
 =head1 Selected Bug Fixes
 
@@ -1036,14 +1143,27 @@ perl -MO=Deparse -e 'sub the::main::road {}'
 
 =item * 
 
+Fix MRO behaviour when one undefs C<@ISA> (32542)
+
+=item *
+
 Fixed bug RT #35878, croaking from a XSUB called via goto &xsub corrupts perl
 internals.
+
+=item * 
+
+Fix descriptor leak caused by change (30633) to C<PerlIO_exportFILE> (32224)
 
 =item *
 
 Fixed bug RT #32539, C<DynaLoader.o> is moved into C<libperl.so> to avoid the need to
 statically link DynaLoader into the stub perl executable and make C<libperl.so>
 provides all codes needed to get a functional embedded perl interpreter runs.
+
+=item *
+
+Fix bug 36267 so that assigning to a tied hash doesn't change the
+underlying hash (27636)
 
 =back
 
@@ -1077,6 +1197,8 @@ Added forked terminal support to debugger under MacOSX (29415)
 C<File::Find> used to fail when the target dir is a bare drive letter and
 C<no_chdir> is 1 (the default is 0). (RT #41555)
 
+C<Win32API::File> added to the core
+
 =item *
 
 A build problem with specifying C<USE_MULTI> and C<USE_ITHREADS> but without
@@ -1094,6 +1216,10 @@ Various improvements to the win32 build process, includding support for Visual C
 =item *
 
 Improvements to the perl-static.exe build process.
+
+=item *
+
+Add Win32 makefile option to link all extensions statically.
 
 =item *
 
@@ -1116,6 +1242,18 @@ Make pipe shutdown on VMS care about whether PerlIO has already shut down (33005
 =item *
 
 Fix VMS exit handling broken in Test::Harness 2.64 (33008)
+
+=item *
+
+Fix fcntl locking capability test in C<configure.com> (31756)
+
+=item *
+
+Replaced C<shrplib='define'> with C<useshrplib='true'> on VMS.
+
+=item *
+
+Fix missing C<PerlIO_releaseFILE> in C<VMS::Stdio::getname> (31384)
 
 =back
 
@@ -1192,6 +1330,11 @@ Added support for Symbian series 90.
 =item *
 
 It's now possible to overload C<eq> when using C<nomethod>.
+
+=item *
+
+Various problems using L<overload> with 64-bit ints corrected (identified
+in new tests).
 
 =item *
 
@@ -1285,7 +1428,21 @@ C<use open ':locale'> and printing Unicode characters to STDERR (30213)
 
 =item *
 
+L<threads> cleanup veto has been extended to include C<perl_free> and
+C<perl_destruct> (29827)
+
+C<PL_veto_cleanup> now happens on all platforms, not
+just UNIX (31971)
+
+=item *
+
 C<B> now can compile outside of the perl source tree.
+
+=item *
+
+On some systems, changes to C<$ENV{TZ}> would not always be
+respected by the underlying calls to C<localtime_r>.  Perl now
+forces the inspection of the environment on these systems.  (29213)
 
 =back
 
@@ -1336,6 +1493,9 @@ C<av_reify>, C<lex_end>, C<mod>, C<op_clear>, C<pop_return>,
 C<qerror>, C<setdefout>, C<vivify_defelem> and C<yylex> are now
 visible to perl core extensions. This was required by L<Data::Alias>.
 
+C<find_runcv> is now visible to perl core extensions. This was required to
+allow L<Sub::Current> to work on Windows.
+
 C<set> magic on localizing/assigning to a magic variable will now only
 trigger for I<container magics>, i.e. it will for C<%ENV> or C<%SIG>
 but not for C<$#array>.
@@ -1350,8 +1510,16 @@ C<ptr_table> functions are now available in unthreaded perl.
 Corrected use and documentation of C<gv_stashpv>, C<gv_stashpvn>, C<gv_stashsv>
 functions (last parameter is a bitmask, not boolean).
 
+C<PERL_SYS_INIT>, C<PERL_SYS_INIT3> and C<PERL_SYS_TERM> macros have been
+changed into functions (31970).
+
 Machine generated C<B::Asmdata> via C<bytecode.pl> is now more warnings free and
 read C<@optype> and C<@specialsv_name> from ext/B/B.pm (#32264, #32266)
+
+C<PERLSYS_TERM> no longer requires a context (32216). In C<PerlIO_teardown>
+is now also called without a context (32215), and debugging output in this
+function has been disabled because this requires that an interpreter is present
+(32235).
 
 Reorder global variable in C<intrpvar.h> saves another 40 bytes from the
 interpreter structure (#31034). Also delete C<thrdvar.h> and move its contents
@@ -1371,7 +1539,11 @@ Regression tests for anchored regexes using C<\s> that failed to set C<$&>
 
 =item * 
 
-Regression tests for sprinf with 64 bit semantics (30058).
+Regression tests for sprintf with 64 bit semantics (30058).
+
+=item *
+
+Tests for L<overload> for 64-bit ints (32141).
 
 =item *
 
@@ -1400,6 +1572,18 @@ Remove C<DynaLoader> from C<1_compile.t> as it's now part of C<libperl.so>
 (27549, 27566, 28226, 28227, 28228, 28274, 28308). Also skip test on VMS and
 darwin (28333, 28840).
 
+=item *
+
+Added bitflip hash tests (31914, 31915)
+
+=item *
+
+Tests for C<hv_delete>, C<hv_exists>, C<hv_fetch>, C<hv_store> (31905, 31912)
+
+=item *
+
+Test disabling key conversion in hash lookups (31923)
+
 =back
 
 =over 4
@@ -1408,6 +1592,10 @@ darwin (28333, 28840).
 
 Significantly improved testing for C<$/> usage with PerlIO::Scalar in-memory
 files.
+
+=item *
+
+Test both C<MY_CXT> and C<MY_CXT_INTERP> in the CXT API.
 
 =back
 
@@ -1433,7 +1621,7 @@ compatibility.
 
 =item *
 
-C<Win32API> updated to 0.1001
+C<Win32API> updated to 0.1001_01 (30411)
 
 =item *
 

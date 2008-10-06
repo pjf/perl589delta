@@ -1,30 +1,9 @@
-[ 32450] By: nicholas				   on 2007/11/22  17:45:52
-	Log: Integrate:
-	     [ 32431]
-	     Subject: RE: Net/Ping/t/510_ping_udp.t fails on Windows Vista
-	     From: "Steve Hay" <SteveHay@planit.com>
-	     Date: Wed, 21 Nov 2007 09:45:57 -0000
-	     Message-ID: <1B32FF956ABF414C9BCE5E487A1497E7DC885B@ukmail02.planit.group>
-	     
-	     [ 32444]
-	     Add the Changes file for Win32.pm
-	     
-	     [ 32445]
-	     Upgrade to Win32 0.34
-     Branch: maint-5.8/perl
-	  +> ext/Win32/Changes
-	  !> MANIFEST ext/Win32/Win32.pm
 ____________________________________________________________________________
 [ 32449] By: nicholas				   on 2007/11/22  17:31:11
 	Log: Integrate:
 	     [ 32446]
 	     5.00404 compile fix from Slaven Rezic.
 	     
-	     [ 32447]
-	     2.18 release.
-     Branch: maint-5.8/perl
-	  !> ext/Storable/ChangeLog ext/Storable/Storable.pm
-	  !> ext/Storable/Storable.xs
 ____________________________________________________________________________
 [ 32442] By: nicholas				   on 2007/11/21  18:12:52
 	Log: Integrate:
@@ -40,21 +19,6 @@ ____________________________________________________________________________
 	     
 	     [ 32439]
 	     Safe.pm is actually not under ext/Safe
-	     
-	     [ 32441]
-	     Make genlog 'unexpand -a' all the spaces into tabs, which results in
-	     smaller Changes files.
-     Branch: maint-5.8/perl
-	  !> Porting/Maintainers.pl Porting/genlog Porting/makerel
-____________________________________________________________________________
-[ 32438] By: nicholas				   on 2007/11/21  17:52:26
-	Log: Akin to change 32433, run unexpand -a on all the 5.8 Changes files,
-	     which were also a jumbled mix of tabs and spaces. Now they're all tabs.
-	     The diff may look huge, but run diff -db and you'll see that it's all
-	     whitespace.
-     Branch: maint-5.8/perl
-	   ! Changes Changes5.8.1 Changes5.8.2 Changes5.8.3 Changes5.8.4
-	   ! Changes5.8.5 Changes5.8.6 Changes5.8.7 Changes5.8.8
 ____________________________________________________________________________
 [ 32437] By: nicholas				   on 2007/11/21  17:50:11
 	Log: Integrate:
@@ -73,19 +37,6 @@ ____________________________________________________________________________
 	     [ 32426]
 	     Note that traces of PL_na cling on in dark corners of the source code.
 	     Exterminate! Exterminate! Exterminate!
-	     
-	     [ 32433]
-	     Run unexpand -a on all the Changes files, which were a jumbled mix of
-	     tabs and spaces. Now they're all tabs, and about 1300K smaller.
-	     The diff may look huge, but run diff -db and you'll see that it's all
-	     whitespace.
-	     
-	     [ 32434]
-	     Update copyright in the README
-     Branch: maint-5.8/perl
-	  !> Changes5.000 Changes5.001 Changes5.002 Changes5.003
-	  !> Changes5.004 Changes5.005 Changes5.6 Changes5.8 README
-	  !> pod/perlboot.pod pod/perltodo.pod sv.c
 ____________________________________________________________________________
 [ 32436] By: nicholas				   on 2007/11/21  16:35:42
 	Log: Patch from Steve Hay to merge in the parts of change 26379 that
@@ -94,87 +45,6 @@ ____________________________________________________________________________
 	     structure, and hence isn't binary compatible)
      Branch: maint-5.8/perl
 	   ! win32/win32.c
-____________________________________________________________________________
-[ 32435] By: nicholas				   on 2007/11/21  16:04:47
-	Log: Integrate:
-	     [ 31347]
-	     Stop VC++ from warning "all references to 'SHELL32.dll' discarded
-	     by /OPT:REF" by removing the only reference to a SHELL32.dll function
-	     (namely, CommandLineToArgvW(), called from win32_argv2utf8(), which
-	     isn't actually used anywhere so delete it).
-	     
-	     That then caused the warning "/DELAYLOAD:shell32.dll ignored; no
-	     imports found from shell32.dll", so remove that /DELAYLOAD option too.
-     Branch: maint-5.8/perl
-	  !> win32/Makefile win32/makefile.mk win32/win32.c win32/win32.h
-	  !> win32/wince.c
-____________________________________________________________________________
-[ 32424] By: nicholas				   on 2007/11/20  16:06:10
-	Log: Integrate:
-	     [ 31073]
-	     Subject: Re: [Andreas J. Koenig] C3 MRO breaks Params::Util and Graph
-	     From: "Brandon Black" <blblack@gmail.com>
-	     Date: Tue, 24 Apr 2007 07:58:44 -0500
-	     Message-ID: <84621a60704240558q7ff65863l803c6f9b9b8ca4a6@mail.gmail.com>
-	     
-	     [ 31074]
-	     Move the require at the top of the file.
-	     Else, Test::More has test failures.
-	     
-	     [ 31075]
-	     Remove a now redundant require
-	     
-	     [ 31076]
-	     overload must not load XS modules at compile time, or perl
-	     doesn't compile.
-	     overload must not clobber $! or $@ behind the scenes when
-	     loading an XS module.
-     Branch: maint-5.8/perl
-	  !> ext/DynaLoader/t/DynaLoader.t lib/overload.pm
-____________________________________________________________________________
-[ 32422] By: nicholas				   on 2007/11/20  15:42:05
-	Log: Integrate:
-	     [ 31784]
-	     Add Win32 makefile option to link all extensions statically
-	     
-	     Subject: [PATCH-at31768] RE: [PATCH at 31761] RE: MakeMaker + static misbehaviour
-	     From: "Konovalov, Vadim Vladimirovich (Vadim)** CTR **" <vkonovalov@alcatel-lucent.com>
-	     Date: Fri, 31 Aug 2007 08:56:47 +0200
-	     Message-ID: <D16F05D0CAAA234BA2B753B80DE6100D448945@DEEXC1U02.de.lucent.com>
-	     
-	     (with a couple of tweaks to comments in Makefile, exclusion of one more
-	     module (Hash/Utils) from the "all static" build option, plus the same
-	     changes in makefile.mk)
-	     
-	     [ 32004]
-	     Subject: Re: [patch] clean out remnants of DEBUGGING_OPS (was opcode op_type:9)
-	     From: Jim Cromie <jim.cromie@gmail.com>
-	     Date: Mon, 01 Oct 2007 18:59:43 -0600
-	     Message-ID: <470197FF.5040709@gmail.com>
-	     
-	     [ 32066]
-	     Do the same as #32061 for Win32, which also fixes a static linking
-	     build problem with Hash/Util/FieldHash
-     Branch: maint-5.8/perl
-	  !> win32/FindExt.pm win32/Makefile win32/Makefile.ce
-	  !> win32/buildext.pl win32/makefile.mk
-____________________________________________________________________________
-[ 32421] By: nicholas				   on 2007/11/20  15:23:54
-	Log: Integrate:
-	     [ 31523]
-	     $Config{useshrplib} should be 'true' rather than 'yes' when using
-	     a shared perl library
-	     
-	     [ 31526]
-	     Correct a couple more cases of $Config{useshrplib}
-	     
-	     [ 31533]
-	     Replace C<shrplib='define'> with C<useshrplib='true'> on VMS.
-     Branch: maint-5.8/perl
-	  !> NetWare/config.wc configure.com hints/uts.sh
-	  !> lib/ExtUtils/MM_Unix.pm vms/genconfig.pl win32/config.bc
-	  !> win32/config.ce win32/config.gc win32/config.vc
-	  !> win32/config.vc64
 ____________________________________________________________________________
 [ 32419] By: nicholas				   on 2007/11/20  14:28:43
 	Log: Integrate:
