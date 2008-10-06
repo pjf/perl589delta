@@ -18,10 +18,6 @@
 	     
 	     (plus a couple of other similar fixes for change 32238 that Jan missed)
 	     
-	     [ 32275]
-	     Following 32238, change "interpreter_size" to "interp_size" in the new 
-	     global symbols to keep overall symbol length within 31 characters, 
-	     which is what the VMS C compiler with default flags can handle.
      Branch: maint-5.8/perl
 	  !> embedvar.h intrpvar.h makedef.pl perl.h perlapi.h perlvars.h
 ____________________________________________________________________________
