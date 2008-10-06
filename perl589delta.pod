@@ -633,6 +633,10 @@ C<Text::Wrap> upgraded to version 2006.1117
 
 =item *
 
+C<Thread> upgraded to version 2.01 [32470]
+
+=item *
+
 C<Thread::Semaphore> upgraded to version 2.07 [33361]
 
 =item *
@@ -1597,6 +1601,10 @@ files.
 =item *
 
 Test both C<MY_CXT> and C<MY_CXT_INTERP> in the CXT API.
+
+=item *
+
+Tests for L<Thread>.
 
 =back
 

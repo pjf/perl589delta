@@ -1,20 +1,3 @@
-[ 32470] By: nicholas				   on 2007/11/23  21:17:23
-	Log: Integrate:
-	     [ 30953]
-	     Subject: [PATCH] Fix Thread.pm
-	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
-	     Date: Fri, 13 Apr 2007 12:51:40 -0400
-	     Message-ID: <1ff86f510704130951t5f66baa0m4ed13018539976a3@mail.gmail.com>
-	     
-	     [ 30967]
-	     Subject: [PATCH] Re: Thread.t hangs, even under normal test...
-	     From: "Jerry D. Hedden" <jdhedden@gmail.com>
-	     Date: Mon, 16 Apr 2007 09:31:39 -0400
-	     Message-ID: <1ff86f510704160631ue286a97kb66a0ce649c9aae4@mail.gmail.com>
-     Branch: maint-5.8/perl
-	  +> lib/Thread.t
-	  !> MANIFEST lib/Thread.pm
-____________________________________________________________________________
 [ 32469] By: nicholas				   on 2007/11/23  20:37:18
 	Log: Integrate:
 	     [ 25261]
