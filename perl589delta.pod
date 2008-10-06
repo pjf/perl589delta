@@ -189,7 +189,7 @@ C<B::Terse> upgraded to version 1.04
 
 =item *
 
-C<base> upgraded to version 2.08
+C<base> upgraded to version 2.13
 
 =item *
 
@@ -370,6 +370,10 @@ C<Time::Local> upgraded to version 1.18
 Allows to make fatal built-ins in CORE::GLOBAL.
 
 =back
+
+=item *
+
+C<fields> upgraded to version 2.12
 
 =item *
 
@@ -1605,6 +1609,24 @@ Test both C<MY_CXT> and C<MY_CXT_INTERP> in the CXT API.
 =item *
 
 Tests for L<Thread>.
+
+=item *
+
+Regression tests for L<base> manipulation of C<@ISA> under certain
+inheritance conditions. (32469)
+
+=item *
+
+Test that L<base> does not mask C<SIGDIE>. (32469)
+
+=item *
+
+Test that L<base> does not confuse the version. (32469)
+
+=item *
+
+Test that inheriting from a base with protected fields generates a warning.
+(32469)
 
 =back
 
