@@ -1039,6 +1039,12 @@ perl -MO=Deparse -e 'sub the::main::road {}'
 Fixed bug RT #35878, croaking from a XSUB called via goto &xsub corrupts perl
 internals.
 
+=item *
+
+Fixed bug RT #32539, C<DynaLoader.o> is moved into C<libperl.so> to avoid the need to
+statically link DynaLoader into the stub perl executable and make C<libperl.so>
+provides all codes needed to get a functional embedded perl interpreter runs.
+
 =back
 
 =head2 Platform specific fixes
@@ -1387,6 +1393,12 @@ Tests for mathematical functions in L<POSIX>
 =item *
 
 Verify POSIX::AUTOLOAD works (29592)
+
+=item *
+
+Remove C<DynaLoader> from C<1_compile.t> as it's now part of C<libperl.so>
+(27549, 27566, 28226, 28227, 28228, 28274, 28308). Also skip test on VMS and
+darwin (28333, 28840).
 
 =back
 

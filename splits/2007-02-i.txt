@@ -98,84 +98,11 @@ ____________________________________________________________________________
 [ 30115] By: nicholas				   on 2007/02/04  18:49:54
 	Log: Integrate:
 	     
-	     [ 27522]
-	     Avoid hardcoded $(OBJ_EXT)
-	     
-	     [ 27549]
-	     Move DynaLoader.o into libperl.so.
-	     
-	     This avoids the need to statically link DynaLoader into the stub perl
-	     executable and make libperl.so provide all the code needed to get a
-	     functional embedded perl interpreter up running.  As a side effect
-	     this also moves DynaLoader into libperl.a for non-useshrplib builds.
-	     
-	     Fixes [perl #32539]
-	     
-	     [ 27566]
-	     Adjust docs to reflect that DynaLoader, as of change 27549,
-	     is part of libperl.
-	     
-	     [ 28226]
-	     Subject: [PATCH] Test script for DynaLoader
-	     From: Sébastien Aperghis-Tramoni <maddingue@free.fr>
-	     Date: Thu, 18 May 2006 16:46:00 +0200
-	     Message-ID: <1147963560.446c88a8891e1@imp1-g19.free.fr>
-	     
-	     [ 28227]
-	     Nits in the DynaLoader test: make it warning-clean,
-	     and avoid checking OS- and locale-specific messages
-	     
-	     [ 28228]
-	     We can now remove DynaLoader from 1_compile.t
-	     
-	     [ 28274]
-	     Better handling for error-checking
-	     From: IRC/#p5p/Maddingue (Sebastien Aperghis-Tramoni)
-	     
-	     [ 28308]
-	     Subject: Re: [PATCH] Test script for DynaLoader
-	     From: demerphq <demerphq@gmail.com>
-	     Date: Thu, 25 May 2006 13:20:53 +0200
-	     Message-ID: <9b18b3110605250420m7431bfbeve44aada2025264f7@mail.gmail.com>
-	     
-	     [ 28318]
-	     use the same arg names everyone else does and handle undef filename
-	     
-	     [ 28321]
-	     Subject: [PATCH] DynaLoader.t: less assumptions
-	     From: Jarkko Hietaniemi <jhietaniemi@gmail.com>
-	     Message-ID: <44796AF2.8060903@gmail.com>
-	     Date: Sun, 28 May 2006 12:18:42 +0300
-	     
-	     [ 28333]
-	     And some more DynaLoader things that should not be tested on
-	     VMS since they are not part of the implementation.
-	     
-	     [ 28840]
-	     darwin also seems to be lacking a dl_unload_file() in its
-	     DynaLoader, so some additional skips are needed.  If I only
-	     had a NeXT to test with now...
-	     
-	     [ 29017]
-	     Upgrade to XSLoader-0.07.
-	     
 	     [ 29188]
 	     Subject: [patch at 21983] factor out $^O eq 'darwin' from XSLoader.pm
 	     From: "Konovalov, Vadim Vladimirovich (Vadim)** CTR **" <vkonovalov@Lucent.com>
 	     Date: Thu, 2 Nov 2006 12:36:49 +0100 
 	     Message-ID: <E3FB32585BF1D411B9E900805FF51A080204E833@ru0022exch001u.ru.lucent.com>
-	     
-	     [ 29198]
-	     Wrap the $VERSION initialization of DynaLoader in a BEGIN block
-	     
-	     Subject: [perl #40651] (Obscure) Bug in Dynaloader 
-	     From: gml4410@ggr.co.uk (via RT) <perlbug-followup@perl.org>
-	     Date: Thu, 02 Nov 2006 09:30:34 -0800
-	     Message-ID: <rt-3.5.HEAD-4979-1162488633-1267.40651-75-0@perl.org>
-	     
-	     [ 29200]
-	     The assignment to $VERSION must be on its own line, for
-	     ExtUtils::MM_Unix::parse_version to be happy.
 	     
 	     [ 29253]
 	     The DynaLoader test isn't happy with OpenBSD's libc.so.39.3.
@@ -192,8 +119,6 @@ ____________________________________________________________________________
 	     Date: Sun, 7 Jan 2007 11:56:21 -0800 (PST)
 	     Message-ID: <1675.63.226.247.31.1168199781.squirrel@63.226.247.31>
 	     
-	     [ 29857]
-	     Fix a typo in Dynaloader_pm.PL.
      Branch: maint-5.8/perl
 	  +> ext/DynaLoader/t/DynaLoader.t
 	  !> MANIFEST Makefile.SH ext/DynaLoader/DynaLoader_pm.PL
