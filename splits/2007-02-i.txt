@@ -95,22 +95,8 @@ ____________________________________________________________________________
 	  !> dump.c scope.h
 ____________________________________________________________________________
 
-[ 30116] By: nicholas				   on 2007/02/04  18:51:01
-	Log: Put the assignment to $XS_VERSION in a BEGIN block too.
-     Branch: maint-5.8/perl
-	   ! ext/DynaLoader/DynaLoader_pm.PL
-____________________________________________________________________________
 [ 30115] By: nicholas				   on 2007/02/04  18:49:54
 	Log: Integrate:
-	     [ 24041]
-	     Don't use vars in DynaLoader
-	     Remove left-over maintenance code
-	     
-	     [ 24271]
-	     Subject: [PATCH] Symbian port of Perl
-	     From: <jarkko.hietaniemi@nokia.com>
-	     Date: Mon, 18 Apr 2005 13:18:30 +0300
-	     Message-ID: <B356D8F434D20B40A8CEDAEC305A1F2453D653@esebe105.NOE.Nokia.com>
 	     
 	     [ 27522]
 	     Avoid hardcoded $(OBJ_EXT)
