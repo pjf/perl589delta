@@ -1,31 +1,3 @@
-[ 30135] By: nicholas				   on 2007/02/05  18:48:59
-	Log: Integrate:
-	     [ 26473]
-	     ExtUtils::ParseXS needs to stack $filepathname to make #line directives
-	     in #INCLUDEs work.
-	     
-	     [ 28856]
-	     Upgrade to ExtUtils-ParseXS-2.16.	There actually are a couple of
-	     changes in bleadperl not in the new version, so version was bumped
-	     to 2.16_01.
-	     
-	     [ 29269]
-	     Subject: [PATCH] ParseXS.pm: small optimization for "Usage: ..." constant strings
-	     From: Alexey Tourbin <at@altlinux.ru>
-	     Date: Tue, 14 Nov 2006 05:45:40 +0300
-	     Message-ID: <20061114024540.GA21986@localhost.localdomain>
-	     
-	     [ 29418]
-	     Upgrade to ExtUtils-ParseXS-2.17.	Actuall just caught up with 
-	     most of the patches to bleadperl.	The remaining change missing
-	     is #29252, so, the version has been bumped to 2.17_01.
-	     
-	     [ 30134]
-	     Upgrade to ExtUtils-ParseXS-2.18
-     Branch: maint-5.8/perl
-	  !> lib/ExtUtils/ParseXS.pm
-____________________________________________________________________________
-
 [ 30132] By: nicholas				   on 2007/02/05  17:37:09
 	Log: Integrate:
 	     [ 26071]
