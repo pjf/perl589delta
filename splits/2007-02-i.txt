@@ -1,35 +1,3 @@
-[ 30132] By: nicholas				   on 2007/02/05  17:37:09
-	Log: Integrate:
-	     [ 26071]
-	     Subject: [PATCH @26062] wince patch
-	     From: "Konovalov, Vadim" <vkonovalov@spb.lucent.com>
-	     Date: Wed, 9 Nov 2005 20:22:52 +0300 
-	     Message-ID: <7DD1BE2C50259746ABB8683672D2089E12DC02@itotest-1.spb.lucent.com>
-	     
-	     [ 26072]
-	     Really apply change #26071.
-	     
-	     [ 26140]
-	     Subject: [PATCH @26137] for wince
-	     From: "Konovalov, Vadim" <vkonovalov@spb.lucent.com>
-	     Date: Wed, 16 Nov 2005 20:57:13 +0300
-	     Message-ID: <7DD1BE2C50259746ABB8683672D2089E12DC9F@itotest-1.spb.lucent.com>
-	     
-	     [ 26200]
-	     Subject: [PATCH @26198] perlce touches
-	     From: Konovalov, Vadim <vkonovalov@spb.lucent.com>
-	     Date: Nov 23, 2005 8:55 PM
-	     Message-ID: <7DD1BE2C50259746ABB8683672D2089E12DDC3@itotest-1.spb.lucent.com>
-	     
-	     [ 26201]
-	     Delete a README made redundant by change 26200.
-     Branch: maint-5.8/perl
-	   - wince/README.perlce
-	  !> INSTALL MANIFEST README.ce configpm ext/Cwd/Cwd.xs makedef.pl
-	  !> wince/Makefile.ce wince/config.ce wince/config_H.ce
-	  !> wince/config_h.PL wince/config_sh.PL wince/wince.c
-____________________________________________________________________________
-
 [ 30127] By: nicholas				   on 2007/02/05  11:57:18
 	Log: Integrate:
 	     [ 24361]
