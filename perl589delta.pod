@@ -1438,6 +1438,11 @@ On some systems, changes to C<$ENV{TZ}> would not always be
 respected by the underlying calls to C<localtime_r>.  Perl now
 forces the inspection of the environment on these systems.  (29213)
 
+=item *
+
+Avoid a segfault for perl built without C<PERL_DONT_CREATE_GVSV> defined
+when writing to C<$ARGV>. (32472, 32473)
+
 =back
 
 =head1 New or Changed Diagnostics

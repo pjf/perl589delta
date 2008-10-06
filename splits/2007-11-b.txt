@@ -1,20 +1,3 @@
-[ 32473] By: nicholas				   on 2007/11/23  23:29:53
-	Log: The GvSV code from change 32472 can be made conditional, which is
-	     beneficial because for the default options for 5.8.x the if() branch
-	     will always be taken without needing the if() test or the else branch.
-     Branch: maint-5.8/perl
-	   ! pp_sys.c
-____________________________________________________________________________
-[ 32472] By: nicholas				   on 2007/11/23  22:55:09
-	Log: Integrate:
-	     [ 32120]
-	     Subject: [PATCH] Fix a few segfaults and a when() bug
-	     From: "josh" <twists@gmail.com>
-	     Date: Sun, 14 Oct 2007 21:37:08 -0700
-	     Message-ID: <20071015043708.GA10981@grenekatz.org>
-     Branch: maint-5.8/perl
-	  !> MANIFEST pp_sys.c t/io/argv.t
-____________________________________________________________________________
 [ 32471] By: nicholas				   on 2007/11/23  21:59:05
 	Log: Integrate:
 	     [ 32238]
