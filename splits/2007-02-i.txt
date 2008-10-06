@@ -225,13 +225,6 @@ ____________________________________________________________________________
 	     pointer to imply a zero length string, which saves creating a mortal
 	     in pp_require, only for it to be ignored in favour of a new SV.
 	     
-	     [ 29685]
-	     Subject: Re: [PATCH] Symbian port: add Series 90 support
-	     From: Jarkko Hietaniemi <jhi@iki.fi>
-	     Date: Thu, 04 Jan 2007 03:35:54 -0500
-	     Message-ID: <459CBC6A.4060806@iki.fi>
-	     
-	     Fixes a VC7/VC7.1 linker error following #29650/#29651
      Branch: maint-5.8/perl
 	  !> embed.fnc perl.h pp_ctl.c proto.h toke.c util.c
 ____________________________________________________________________________
