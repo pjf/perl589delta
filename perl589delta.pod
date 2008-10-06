@@ -1527,6 +1527,14 @@ to C<intrpvar.h> (#31245).
 Support for B<assertions> and B<-A> is now removed from C<XS> module and in
 C<ext> (#31333). 
 
+"Bake" the values of C<PERL_REVISION>, C<PERL_VERSION> and C<PERL_SUBVERSION>
+into global variables (and hence a shared perl library). Additionally under
+C<MULTIPLICITY> record the size of the interpreter structure (total, and for
+this version) and under C<PERL_GLOBAL_STRUCT> the size of the global variables
+structure. Coupled with PL_bincompat_options this will allow 5.10.1 (and
+later), when compiled with a shared perl library, to perform sanity checks in
+C<main()> to verify that the shared library is indeed binary compatible.
+
 =head1 New Tests
 
 =over 4
