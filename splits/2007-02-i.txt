@@ -29,46 +29,7 @@
 	  !> wince/Makefile.ce wince/config.ce wince/config_H.ce
 	  !> wince/config_h.PL wince/config_sh.PL wince/wince.c
 ____________________________________________________________________________
-[ 30131] By: nicholas				   on 2007/02/05  17:13:40
-	Log: Integrate:
-	     [ 27202]
-	     Upgrade to CGI-3.16, with version bump on CGI.pm for documentation
-	     fixes not yet integrated.
-	     
-	     [ 27255]
-	     Subject: Patches: B, CGI, ExtUtils::MM_Unix
-	     From: "Joshua ben Jore" <twists@gmail.com>
-	     Date: Sun, 19 Feb 2006 02:58:10 -0600
-	     Message-ID: <dc5c751d0602190058t78d915fv78c6318370307b63@mail.gmail.com>
-	     
-	     [ 27354]
-	     Upgrade to CGI.pm-3.17, but continuing the version bump for 
-	     unintegrated changes.
-	     
-	     [ 27873]
-	     Upgrade to CGI.pm-3.19.
-	     
-	     [ 28082]
-	     Upgrade to CGI-3.20
-	     
-	     [ 28732]
-	     Fix to problem where CGI can lose the filehandle during an upload.
-	     Patch posted to the Debian bug list by Eric Wong 
-	     <eric@petta-tech.com>.
-	     
-	     [ 28746]
-	     Upgrade to CGI.pm-3.21
-	     
-	     [ 28752]
-	     Upgrade to CGI.pm-3.22.
-	     
-	     [ 28930]
-	     Upgrade to CGI.pm-3.25
-     Branch: maint-5.8/perl
-	  !> AUTHORS lib/CGI.pm lib/CGI/Carp.pm lib/CGI/Changes
-	  !> lib/CGI/Cookie.pm lib/CGI/Fast.pm lib/CGI/Util.pm
-	  !> lib/CGI/t/cookie.t lib/CGI/t/function.t lib/CGI/t/html.t
-____________________________________________________________________________
+
 [ 30130] By: nicholas				   on 2007/02/05  16:25:02
 	Log: Integrate:
 	     [ 24535]
