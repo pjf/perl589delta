@@ -1034,6 +1034,11 @@ Fix the case of C<$Config{perl_patchlevel}> (31544) (but keep setting
 C<$Config{PERL_PATCHLEVEL}> and grab the value from a C<MAINTXXX> or 
 C<SMOKEXXX> line in patchlevel.h if present. (31597)).
 
+=item *
+
+Passing a raw string of "NaN" to L<nawk(1)> causes a core dump - so the string
+has been changed to "*NaN*" (31975)
+
 =back
 =======
 $Config{useshrplib} is now 'true' rather than 'yes' when using a shared perl

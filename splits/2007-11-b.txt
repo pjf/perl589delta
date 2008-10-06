@@ -7,11 +7,6 @@
 ____________________________________________________________________________
 [ 32472] By: nicholas				   on 2007/11/23  22:55:09
 	Log: Integrate:
-	     [ 31975]
-	     On VAX, feeding a bare "NaN" to nawk causes nawk to core dump since
-	     it tries to interpret it as a number, which causes an FP exception.
-	     (Patch from NetBSD)
-	     
 	     [ 32120]
 	     Subject: [PATCH] Fix a few segfaults and a when() bug
 	     From: "josh" <twists@gmail.com>
