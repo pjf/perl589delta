@@ -94,11 +94,7 @@ ____________________________________________________________________________
      Branch: maint-5.8/perl
 	  !> dump.c scope.h
 ____________________________________________________________________________
-[ 30117] By: nicholas				   on 2007/02/04  19:00:56
-	Log: local $[ works quite nicely in maint, so un-TODO it.
-     Branch: maint-5.8/perl
-	   ! t/op/local.t
-____________________________________________________________________________
+
 [ 30116] By: nicholas				   on 2007/02/04  18:51:01
 	Log: Put the assignment to $XS_VERSION in a BEGIN block too.
      Branch: maint-5.8/perl
