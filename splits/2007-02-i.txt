@@ -30,18 +30,6 @@
 	  !> wince/config_h.PL wince/config_sh.PL wince/wince.c
 ____________________________________________________________________________
 
-[ 30130] By: nicholas				   on 2007/02/05  16:25:02
-	Log: Integrate:
-	     [ 24535]
-	     [perl #35878] goto &xsub that croaks corrupts memory
-	     When an XS sub is called, a CxSUB context shouldn't be pushed. Make
-	     goto &xs_sub mimic this behaviour by first popping the old CxSUB
-	     
-	     [ 24642]
-	     add pointer to email explaining why eval {goto &foo} is banned
-     Branch: maint-5.8/perl
-	  !> pp_ctl.c t/op/goto_xs.t
-____________________________________________________________________________
 [ 30127] By: nicholas				   on 2007/02/05  11:57:18
 	Log: Integrate:
 	     [ 24361]

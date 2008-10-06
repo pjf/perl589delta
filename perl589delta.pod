@@ -1034,6 +1034,11 @@ perl -MO=Deparse -e 'sub the::main::road {}'
 
 =back
 
+=item * 
+
+Fixed bug RT #35878, croaking from a XSUB called via goto &xsub corrupts perl
+internals.
+
 =back
 
 =head2 Platform specific fixes
