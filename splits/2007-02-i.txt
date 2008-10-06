@@ -27,27 +27,7 @@
 ____________________________________________________________________________
 [ 30133] By: nicholas				   on 2007/02/05  18:05:43
 	Log: Integrate:
-	     [ 26174]
-	     Upgrade to PathTools-3.14
 	     
-	     [ 26318]
-	     Upgrade to PathTools-3.14_01
-	     
-	     [ 26319]
-	     Re-instate the old perl getcwd as _perl_getcwd, and use it if loading
-	     the XS fails. (Needed to bootstrap the core build)
-	     
-	     [ 26508]
-	     Upgrade to PathTools-3.15
-	     
-	     [ 27398]
-	     Upgrade to PathTools-3.17
-	     
-	     [ 28001]
-	     Upgrade to Pathtools-3.18
-	     
-	     [ 28004]
-	     Added Changes file left out from change #28001.
 	     
 	     [ 28511]
 	     Subject: [PATCH] optimisation for File::Spec::abs2rel where both args are relative
@@ -55,27 +35,6 @@ ____________________________________________________________________________
 	     Date: Thu, 6 Jul 2006 01:02:41 +1000
 	     Message-ID: <20060705150241.GA2244@londo.c47.org>
 	     
-	     [ 28551]
-	     Upgrade to PathTools 3.19
-	     
-	     [ 28948]
-	     Upgrade to PathTools-3.21
-	     
-	     [ 28983]
-	     Update to PathTools-3.22.
-	     
-	     [ 29004]
-	     Upgrade to PathTools-3.23.
-	     
-	     [ 29356]
-	     Upgrade to PathTools-3.24.
-     Branch: maint-5.8/perl
-	  +> lib/File/Spec/t/tmpdir.t
-	  !> MANIFEST ext/Cwd/Changes ext/Cwd/Cwd.xs ext/Cwd/t/cwd.t
-	  !> lib/Cwd.pm lib/File/Spec.pm lib/File/Spec/Cygwin.pm
-	  !> lib/File/Spec/Mac.pm lib/File/Spec/Unix.pm
-	  !> lib/File/Spec/VMS.pm lib/File/Spec/Win32.pm
-	  !> lib/File/Spec/t/Spec.t lib/File/Spec/t/crossplatform.t
 ____________________________________________________________________________
 [ 30132] By: nicholas				   on 2007/02/05  17:37:09
 	Log: Integrate:
