@@ -1069,6 +1069,10 @@ has been changed to "*NaN*" (31975)
 
 F<uupacktool.pl> has been updated for VMS and is now used during the VMS build.
 
+=item *
+
+Removed F<vms/genconfig.pl> and references to it (obsolete as of change 1084).
+
 =back
 
 =head1 Selected Bug Fixes
