@@ -746,6 +746,11 @@ C<h2xs> won't define an empty string as a constant (perl #25366)
 
 C<h2xs> has examples for h2xs -X (31175)
 
+=item *
+
+The Emacs perl mode (emacs/cperl-mode.el) has been updated to version
+5.23.
+
 =back
 
 =head1 New Documentation

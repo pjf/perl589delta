@@ -1,8 +1,5 @@
 [ 32458] By: nicholas				   on 2007/11/22  23:20:19
 	Log: Integrate:
-	     [ 32210]
-	     Upgrade to cperl-mode 5.23
-	     
 	     [ 32361]
 	     Subject: [PATCH] perl5db.pl update for Mac OS X 10.5
 	     From: Bo Lindbergh <blgl@hagernas.com>
