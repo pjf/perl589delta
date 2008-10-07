@@ -1027,6 +1027,9 @@ C<Config.pod> and C<config.sh> are now placed correctly for cross-compilation.
 $Config{useshrplib} is now 'true' rather than 'yes' when using a shared perl
 library.
 
+Avoid building man pages for extensions even if the F<Makefile.PL> forgets to
+specify it.
+
 =head2 Platform specific changes
 
 =head3 VMS
