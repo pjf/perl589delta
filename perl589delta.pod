@@ -42,7 +42,7 @@ Compile support added for:
 
 RISC OS 
 
-=item
+=item *
 
 Cray XT4/Catamount
 
@@ -834,8 +834,8 @@ C<${^`POSTMATCH}> and also C</k> modifier.
 
 L<perlvar> fixes confusion about real GID C<$(> and effective GID C<$)>. 
 
-Perl thread tutorial example is fixed in section L<Queues: Passing Data Around>
-both in L<perlothrtut> and L<perlothrtut>.
+Perl thread tutorial example is fixed in section
+L<perlthrtut/Queues: Passing Data Around> and L<perlothrtut>.
 
 The Perl FAQs (F<perlfaq1>..F<perlfaq9>) have been updated.
 
@@ -883,11 +883,11 @@ added C<does()> built-in and L<Tied filehandles and write() don't mix|perltodo>.
 
 =item *
 
-added section L<Unicode and lc/uc operators|perltodo>.
+added section L<Unicode and lcE<sol>uc operators|perltodo>.
 
 =item *
 
-added section L<Optimize away empty destructors>.
+added section L<perltodo/Optimize away empty destructors>.
 
 =item *
 
@@ -1663,6 +1663,8 @@ Test that inheriting from a base with protected fields generates a warning.
 =back
 
 =head1 Known Problems
+
+None.
 
 =head1 Platform Specific Notes
 
