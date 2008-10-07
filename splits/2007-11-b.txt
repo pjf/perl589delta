@@ -1,8 +1,5 @@
 [ 32457] By: nicholas				   on 2007/11/22  23:19:55
 	Log: Integrate:
-	     [ 31492]
-	     New valgrind suppressions.
-	     
 	     [ 31532]
 	     Remove vms/genconfig.pl and references to it; it was made obsolete way back
 	     in change #1084.  Remove references to vms/config.vms, which was removed in
