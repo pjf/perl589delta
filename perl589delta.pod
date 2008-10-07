@@ -602,6 +602,10 @@ C<Term::Cap> upgraded to version 1.11 (32143, 32301)
 
 =item *
 
+C<Term::ReadLine> upgraded to version 1.03 (31862)
+
+=item *
+
 C<Test::Simple> upgraded to version 0.70
 
 =item *
