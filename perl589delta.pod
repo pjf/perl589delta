@@ -1033,6 +1033,19 @@ library.
 
 =head2 Platform Specific Changes
 
+=head3 FreeBSD
+
+=over 4
+
+=item *
+
+Drop C<-std=c89> and C<-ansi> if using 'long long' as the main integral type.
+
+In FreeBSD 6.2 (and perhaps other releases), headers do not declare a required
+function if this is not done.
+
+=back
+
 =head3 VMS
 
 =over 4
