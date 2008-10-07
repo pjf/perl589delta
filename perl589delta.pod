@@ -1027,7 +1027,7 @@ C<Config.pod> and C<config.sh> are now placed correctly for cross-compilation.
 $Config{useshrplib} is now 'true' rather than 'yes' when using a shared perl
 library.
 
-=head2 Platform specific changes
+=head2 Platform Specific Changes
 
 =head3 VMS
 
@@ -1208,7 +1208,7 @@ bracket) instead of just C<$10> (29616 - 29619).
 
 =back
 
-=head2 Platform specific fixes
+=head2 Platform Specific Fixes
 
 =head3 Darwin / MacOS X
 
