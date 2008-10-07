@@ -12,27 +12,6 @@
 	  !> t/perl.supp uupacktool.pl vms/descrip_mms.template
 	  !> vms/ext/XSSymSet.pm vms/myconfig.com
 ____________________________________________________________________________
-[ 32454] By: nicholas				   on 2007/11/22  21:40:50
-	Log: Integrate:
-	     [ 31397]
-	     Subject: [DOC PATCH] MANIFEST: t/op/exec.t tests exec, system AND qx
-	     From: "Adriano Ferreira" <a.r.ferreira@gmail.com>
-	     Date: Sat, 16 Jun 2007 15:03:41 -0300
-	     Message-ID: <73ddeb6c0706161103oe4afe43i941223debc00543@mail.gmail.com>
-	     
-	     [ 31574]
-	     Subject: [PATCH] CORE.pod
-	     From: Tels <nospam-abuse@bloodgate.com>
-	     Date: Mon, 9 Jul 2007 17:28:43 +0200
-	     Message-Id: <200707091728.43634@bloodgate.com>
-	     
-	     [ 31575]
-	     Mention the two ways of overriding built-ins.
-	     Link to perlsub. Fix typos and indentation.
-     Branch: maint-5.8/perl
-	  +> lib/CORE.pod
-	  !> MANIFEST
-____________________________________________________________________________
 [ 32453] By: nicholas				   on 2007/11/22  19:06:32
 	Log: Integrate:
 	     [ 32418]

@@ -764,6 +764,8 @@ Added C<uupacktool.pl> (handles binary files in source tree).
 As usual, the documentation received its share of corrections, clarifications
 and other nitfixes. More C<< X<...> >> tags were added for indexing.
 
+L<CORE> documents the pseudo-namespace for Perl's core routines.
+
 L<perlbot> fixed C<ref> returns an empty string (not undef) when used on a
 string (#31685)
 
