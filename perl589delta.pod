@@ -401,7 +401,7 @@ Fixes spurious results with brackets inside braces.
 
 =item *
 
-C<File::Path> upgraded to version 1.09
+C<File::Path> upgraded to version 2.04
 
 =item *
 
