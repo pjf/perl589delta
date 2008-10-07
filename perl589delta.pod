@@ -448,6 +448,10 @@ C<libnet> upgraded to version 1.20
 
 =item *
 
+C<Locale::Maketext> upgraded to 1.12
+
+=item *
+
 C<Math::BigFloat> upgraded to version 1.54
 
 =item *
@@ -1728,6 +1732,10 @@ Test that L<base> can coexist with a L<consant> called C<FIELDS>. (31420)
 =item *
 
 Test that L<Carp::cluck> correctly reports undef values. (31858)
+
+=item *
+
+Test that C<$@> is correctly localised in L<Locale::Maketext>. (25547)
 
 =back
 
