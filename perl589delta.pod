@@ -1745,6 +1745,10 @@ C<OS2::REXX::DLL>, C<OS2::REXX> updated to version 1.03
 
 C<File::Spec::VMS> upgraded to version 3.2701 (see above).
 
+=item *
+
+C<VMS::XSSymSet> upgraded to 1.1 (31236).
+
 =back
 
 =head1 Reporting Bugs
