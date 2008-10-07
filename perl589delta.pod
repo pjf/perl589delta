@@ -383,6 +383,8 @@ C<File::Basename> upgraded to version 2.77
 
 C<File::Copy> now uses 3-arg open.
 
+C<File::Copy> upgraded to 2.11
+
 =item *
 
 C<File::Find> upgraded to version 1.13
@@ -422,7 +424,7 @@ C<File::Temp> upgraded to version 0.20
 
 =item * 
 
-C<FindBin> upgraded to version 1.48
+C<FindBin> upgraded to version 1.49
 
 =item *
 
@@ -614,7 +616,7 @@ C<Text::Balanced> upgraded to version 1.98 (32984)
 
 =item *
 
-C<Text::ParseWords> upgraded to version 3.25
+C<Text::ParseWords> upgraded to version 3.26
 
 =item *
 
@@ -1702,6 +1704,14 @@ Test that L<base> does not confuse the version. (32469)
 
 Test that inheriting from a base with protected fields generates a warning.
 (32469)
+
+=item *
+
+Test that L<base> can coexist with a L<consant> called C<FIELDS>. (31420)
+
+=item *
+
+Test that L<Carp::cluck> correctly reports undef values. (31858)
 
 =back
 
