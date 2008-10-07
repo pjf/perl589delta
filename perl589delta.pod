@@ -189,7 +189,7 @@ C<B::Terse> upgraded to version 1.04
 
 =item *
 
-C<base> upgraded to version 2.08
+C<base> upgraded to version 2.13
 
 =item *
 
@@ -370,6 +370,10 @@ C<Time::Local> upgraded to version 1.18
 Allows to make fatal built-ins in CORE::GLOBAL.
 
 =back
+
+=item *
+
+C<fields> upgraded to version 2.12
 
 =item *
 
@@ -631,6 +635,10 @@ This made it able to handle newlines.
 =item *
 
 C<Text::Wrap> upgraded to version 2006.1117
+
+=item *
+
+C<Thread> upgraded to version 2.01 [32470]
 
 =item *
 
@@ -1038,6 +1046,11 @@ Better suppression logic for not building L<Thread> extension (31226).
 Fix the case of C<$Config{perl_patchlevel}> (31544) (but keep setting
 C<$Config{PERL_PATCHLEVEL}> and grab the value from a C<MAINTXXX> or 
 C<SMOKEXXX> line in patchlevel.h if present. (31597)).
+
+=item *
+
+Passing a raw string of "NaN" to L<nawk(1)> causes a core dump - so the string
+has been changed to "*NaN*" (31975)
 
 =back
 
@@ -1455,6 +1468,11 @@ forces the inspection of the environment on these systems.  (29213)
 
 Calling C<dump()> from Win32 and cygwin now gives a proper fatal error (26947).
 
+=item *
+
+Avoid a segfault for perl built without C<PERL_DONT_CREATE_GVSV> defined
+when writing to C<$ARGV>. (32472, 32473)
+
 =back
 
 =head1 New or Changed Diagnostics
@@ -1539,6 +1557,14 @@ to C<intrpvar.h> (#31245).
 Support for B<assertions> and B<-A> is now removed from C<XS> module and in
 C<ext> (#31333). 
 
+"Bake" the values of C<PERL_REVISION>, C<PERL_VERSION> and C<PERL_SUBVERSION>
+into global variables (and hence a shared perl library). Additionally under
+C<MULTIPLICITY> record the size of the interpreter structure (total, and for
+this version) and under C<PERL_GLOBAL_STRUCT> the size of the global variables
+structure. Coupled with PL_bincompat_options this will allow 5.10.1 (and
+later), when compiled with a shared perl library, to perform sanity checks in
+C<main()> to verify that the shared library is indeed binary compatible.
+
 =head1 New Tests
 
 =over 4
@@ -1611,6 +1637,28 @@ Test both C<MY_CXT> and C<MY_CXT_INTERP> in the CXT API.
 =item *
 
 Added test to run regex substitution C<s///> under taint mode (29618).
+
+=item *
+
+Tests for L<Thread>.
+
+=item *
+
+Regression tests for L<base> manipulation of C<@ISA> under certain
+inheritance conditions. (32469)
+
+=item *
+
+Test that L<base> does not mask C<SIGDIE>. (32469)
+
+=item *
+
+Test that L<base> does not confuse the version. (32469)
+
+=item *
+
+Test that inheriting from a base with protected fields generates a warning.
+(32469)
 
 =back
 
