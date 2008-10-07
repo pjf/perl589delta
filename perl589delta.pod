@@ -1219,6 +1219,11 @@ fix threads free.t and blocks.t failures on OS X on 5.8.x (33502).
 
 Added forked terminal support to debugger under MacOSX (29415)
 
+=item *
+
+L<perl5db.pl> has been updated for Mac OS X 10.5 (as there is now a direct
+accessor for the tty device name) to update the window title.
+
 =back
 
 =head3 Windows
