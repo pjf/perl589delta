@@ -1030,6 +1030,10 @@ Allow IEEE math to be deselected on OpenVMS I64 (but it remains the default).
 
 =item *
 
+Record IEEE usage in C<config.h>
+
+=item *
+
 Help older VMS compilers by using C<ccflags> when building C<munchconfig.exe>.
 
 =item * 
