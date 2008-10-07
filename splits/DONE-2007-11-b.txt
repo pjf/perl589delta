@@ -1,0 +1,420 @@
+[ 32463] By: nicholas				   on 2007/11/23  11:22:27
+	Log: Integrate:
+	     [ 31870]
+	     Save some C<","> in the embedded program used to generate -V output.
+	     
+	     [ 31872]
+	     Rejig the word wrapping code for the "Compile-time options:" of perl -V
+	     Replace the rather elegant C code with Perl code that can also sort the
+	     options first, as this will allow them to be split into those that
+	     affect binary compatibility, and those that do not.
+	     
+	     [ 31873]
+	     Move all the compile time options that affect binary compatibility into
+	     a global variable PL_bincompat_options. Because the string will be
+	     embedded in any shared perl library, it will allow a comparison check
+	     to be added to perlmain.c in the future, to detect library mismatch.
+	     
+	     [ 31876]
+	     Change 31873 was not robust against the possibility that the
+	     configuration has no #defined options. So add a "" that will make the
+	     initialiser for PL_bincompat_options syntactically correct in this
+	     case.
+	     
+	     [ 31944]
+	     Record IEEE usage in config.h on VMS.
+	     
+	     [ 31945]
+	     Add USE_IEEE to PL_bincompat_options, as use_ieee in the configuration
+	     on VMS affects binary compatibility.
+	     
+	     [ 31946]
+	     And some more VMS-specific additions to PL_bincompat_options.
+     Branch: maint-5.8/perl
+	  !> configure.com perl.c perl.h
+____________________________________________________________________________
+[ 32459] By: nicholas				   on 2007/11/22  23:47:54
+	Log: Integrate:
+	     [ 31862]
+	     Subject: [patch@31788] Term::ReadLine::Stub missing get_line
+	     From: "John E. Malmberg" <wb8tyw@qsl.net>
+	     Date: Wed, 12 Sep 2007 20:14:53 -0500
+	     Message-id: <46E88F0D.2090405@qsl.net>
+	     
+	     [ 32182]
+	     Subject: [PATCH] documentation typo for Text::Wrap
+	     From: David Landgren <david@landgren.net>
+	     Date: Tue, 23 Oct 2007 21:43:29 +0200
+	     Message-ID: <471E4EE1.5010500@landgren.net>
+     Branch: maint-5.8/perl
+	  !> lib/Term/ReadLine.pm lib/Text/Wrap.pm
+____________________________________________________________________________
+[ 32458] By: nicholas				   on 2007/11/22  23:20:19
+	Log: Integrate:
+	     [ 32210]
+	     Upgrade to cperl-mode 5.23
+	     
+	     [ 32361]
+	     Subject: [PATCH] perl5db.pl update for Mac OS X 10.5
+	     From: Bo Lindbergh <blgl@hagernas.com>
+	     Date: Fri, 16 Nov 2007 15:50:52 +0100
+	     Message-Id: <EAF6EFA7-D069-4809-9060-B66A746BBEF2@hagernas.com>
+     Branch: maint-5.8/perl
+	  !> emacs/cperl-mode.el lib/perl5db.pl
+____________________________________________________________________________
+[ 32457] By: nicholas				   on 2007/11/22  23:19:55
+	Log: Integrate:
+	     [ 31236]
+	     When trimming long XS symbols on VMS, avoid warnings from operator
+	     precedence mistakes, but for now give the same symbol mangling
+	     results as before.
+	     
+	     [ 31247]
+	     VMSify uupacktool.pl and run it during VMS build.
+	     
+	     [ 31396]
+	     More portability nits by Jarkko
+	     
+	     [ 31492]
+	     New valgrind suppressions.
+	     
+	     [ 31532]
+	     Remove vms/genconfig.pl and references to it; it was made obsolete way back
+	     in change #1084.  Remove references to vms/config.vms, which was removed in
+	     change #1084.
+	     
+	     [ 31771]
+	     Patch by Gerard Goosen to avoid building man pages for extensions
+	     even if the Makefile.PL forgets to specify it.
+	     
+	     [ 31884]
+	     Subject: [ patch ] add line-number to embed.pl warnings
+	     From: Jim Cromie <jim.cromie@gmail.com>
+	     Date: Wed, 12 Sep 2007 11:25:08 -0600
+	     Message-ID: <46E820F4.80106@gmail.com>
+	     
+	     [ 31974]
+	     Assume NetBSD has touch
+	     (patch from NetBSD package)
+	     
+	     [ 32174]
+	     Subject: [PATCH] FreeBSD atoll() warning (Was Re: Code freeze
+	     From: Andy Dougherty <doughera@lafayette.edu>
+	     Message-ID: <Pine.LNX.4.64.0710221246340.31725@fractal.phys.lafayette.edu>
+	     Date: Mon, 22 Oct 2007 12:49:25 -0400 (EDT)
+	     
+	     [ 32181]
+	     Subject: [PATCH] Re: [perl #46725] v5.10.0 util.c and pp_sys.c fail to compile under Mac OS X
+	     From: Andy Dougherty <doughera@lafayette.edu>
+	     Message-ID: <Pine.LNX.4.64.0710230817250.18303@fractal.phys.lafayette.edu>
+	     Date: Tue, 23 Oct 2007 08:54:51 -0400 (EDT)
+	     
+	     [ 32234]
+	     Subject: [PATCH] Erroneous binmode() call in uupacktool.pl
+	     From: "Jan Dubois" <jand@activestate.com>
+	     Date: Tue, 6 Nov 2007 15:58:05 -0800
+	     Message-ID: <01f101c820d0$df6c9220$9e45b660$@com>
+	     
+	     [ 32440]
+	     Test::More and Test::Builder are actually part of the Test::Simple distribution
+     Branch: maint-5.8/perl
+	   - vms/genconfig.pl
+	  !> MANIFEST Porting/Maintainers.pl README.vms cflags.SH
+	  !> configure.com embed.pl ext/util/make_ext gv.h makedepend.SH
+	  !> t/perl.supp uupacktool.pl vms/descrip_mms.template
+	  !> vms/ext/XSSymSet.pm vms/myconfig.com
+____________________________________________________________________________
+[ 32456] By: nicholas				   on 2007/11/22  22:42:00
+	Log: Integrate:
+	     [ 25052]
+	     do just-in-time loading of Carp.pm in some modules
+	     
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Subject: [PATCH] No Carp #4 AutoSplit.pm
+	     Subject: [PATCH] no Carp #5 (File::Path)
+	     Subject: [PATCH] no Carp #7 - charnames.pm
+	     Subject: [PATCH] no Carp #6 (File::Compare, File::Copy, File::Temp)
+	     Subject: [PATCH] no Carp #8 - SelfLoader, Text/Balanced and open.pm
+	     
+	     [ 31315]
+	     Subject: [PATCH] Update File-Path to 2.00
+	     From: David Landgren <david@landgren.net>
+	     Date: Wed, 30 May 2007 19:50:38 +0200
+	     Message-ID: <465DB96E.1020106@landgren.net>
+	     
+	     [ 31327]
+	     In File::Path::_rmtree, we want a list of files, not directories (some of them 
+	     may be directory files, which is ok).
+	     
+	     [ 31329]
+	     Subject: Re: [PATCH] Update File-Path to 2.00
+	     From: David Landgren <david@landgren.net>
+	     Date: Sat, 02 Jun 2007 20:58:16 +0200
+	     Message-ID: <4661BDC8.6040102@landgren.net>
+	     
+	     [ 31336]
+	     Subject: Re: [PATCH] Update File-Path to 2.00
+	     From: David Landgren <david@landgren.net>
+	     Date: Tue, 05 Jun 2007 23:21:40 +0200
+	     Message-ID: <4665D3E4.2030809@landgren.net>
+	     
+	     Silences some unnecessary carping (e.g. from ExtUtils::Command line 109
+	     when building perl).
+	     
+	     [ 31337]
+	     Subject: Re: [PATCH] Update File-Path to 2.00
+	     From: Joshua Juran <jjuran@gmail.com>
+	     Date: Wed, 6 Jun 2007 01:14:31 -0700
+	     Message-Id: <5F26D98D-8B6D-4F4A-B2E9-168F71B963DD@gmail.com>
+	     
+	     Fixes typo in the POD.
+	     
+	     [ 31345]
+	     Subject: Re: [PATCH] Update File-Path to 2.00
+	     From: David Landgren <david@landgren.net>
+	     Date: Wed, 06 Jun 2007 23:57:34 +0200
+	     Message-ID: <46672DCE.2080508@landgren.net>
+	     
+	     [ 31349]
+	     Subject: Re: [PATCH] Update File-Path to 2.00
+	     From: David Landgren <david@landgren.net>
+	     Date: Thu, 07 Jun 2007 14:02:36 +0200
+	     Message-ID: <4667F3DC.9070203@landgren.net>
+	     
+	     [ 31357]
+	     Fix lib/File/Path.t failure on Win32
+	     (Create a 'ZZ' directory instead of 'Z' because we already have a 'z'
+	     which is the same as 'Z' on Win32's case-insensitive filesystem)
+	     
+	     [ 31361]
+	     A couple of File::Path tests require unix syntax on VMS.
+	     
+	     [ 31484]
+	     Subject: [PATCH] bring File-Path up to 2.01
+	     From: David Landgren <david@landgren.net>
+	     Date: Wed, 27 Jun 2007 21:46:39 +0200
+	     Message-ID: <4682BE9F.6080502@landgren.net>
+	     
+	     [ 31535]
+	     New File::Path tests require unix syntax on VMS.
+	     
+	     [ 31583]
+	     Subject: Re: [PATCH] File-Path fix wrong skip count
+	     From: David Landgren <david@landgren.net>
+	     Date: Tue, 10 Jul 2007 22:48:53 +0200
+	     Message-ID: <4693F0B5.1030505@landgren.net>
+	     
+	     [ 31775]
+	     Avoid infinite recursion in File::Path::_rmtree on VMS when there
+	     is a file present with a single dot as the name.  Reported by
+	     John Malmberg in <46D79A90.50405@qsl.net>.
+	     
+	     [ 31819]
+	     Subject: [PATCH] sync blead with File-Path 2.00_11
+	     From: David Landgren <david@landgren.net>
+	     Date: Sat, 08 Sep 2007 10:46:15 +0200
+	     Message-ID: <46E26157.4050307@landgren.net>
+	     
+	     [ 31843]
+	     VMS help for File::Path 2.00_11:  chdir() is finicky about directory
+	     format; catdir spews warnings when given files that aren't directories;
+	     File::Spec functions may call stat(), thus zapping C<_>; filenames with 
+	     characters that need escaping (such as spaces), must have some path
+	     syntax attached to them and be converted to native syntax in order to
+	     force escaping to take place.
+	     
+	     [ 31903]
+	     Subject: [PATCH] minor changes to File::Path (and more tests)
+	     From: David Landgren <david@landgren.net>
+	     Date: Mon, 17 Sep 2007 23:27:45 +0200
+	     Message-ID: <46EEF151.6010409@landgren.net>
+	     
+	     [ 31997]
+	     Subject: [PATCH] bring File::Path up to 2.01 (was: Re: Freeze ?)
+	     From: David Landgren <david@landgren.net>
+	     Date: Sun, 30 Sep 2007 15:19:49 +0200
+	     Message-ID: <46FFA275.6010304@landgren.net>
+	     
+	     [ 32186]
+	     Subject: [PATCH] File::Path 2.02
+	     From: David Landgren <david@landgren.net>
+	     Date: Wed, 24 Oct 2007 15:11:29 +0200
+	     Message-ID: <471F4481.6010103@landgren.net>
+	     
+	     [ 32276]
+	     Make File::Path::_rmtree behave when passed an individual file
+	     with a relative path that is already in VMS syntax.
+	     
+	     [ 32305]
+	     Subject: Re: [PATCH] File-Path-2.04 (this time with patch)
+	     From: David Landgren <david@landgren.net>
+	     Date: Tue, 13 Nov 2007 14:44:22 +0100
+	     Message-ID: <4739AA36.7000809@landgren.net>
+     Branch: maint-5.8/perl
+	  !> lib/File/Path.pm lib/File/Path.t
+____________________________________________________________________________
+[ 32455] By: nicholas				   on 2007/11/22  22:07:11
+	Log: Integrate:
+	     [ 31105]
+	     VMS-specific tweak to FindBin for when $0 returns a unix-style filespec.
+	     
+	     [ 31163]
+	     Fix [perl #42163] "use base" masks $SIG{__DIE__}
+	     adapted from a patch by Michael G Schwern
+	     
+	     [ 31420]
+	     Subject: [perl #43242] "use base" breaks code containing peculiarly named constant 
+	     From: Martin Becker (via RT) <perlbug-followup@perl.org>
+	     Date: Mon, 18 Jun 2007 09:48:54 -0700
+	     Message-ID: <rt-3.6.HEAD-7948-1182185333-640.43242-75-0@perl.org>
+	     
+	     plus a test case
+	     
+	     [ 31659]
+	     Rework Text::ParseWords regex so it doesnt core dump on older perls due to stack exhaustion.
+	     
+	     This makes of the (?>...) construct in the regex engine making Text::ParseWords not backwards compatible with Perls from 
+	     before the time this construct was added.
+	     
+	     [ 31689]
+	     Subject: [PATCH] Move Tie::StdHandle into its own file.
+	     From: Michael G Schwern <schwern@pobox.com>
+	     Date: Tue, 07 Aug 2007 15:47:31 -0700
+	     Message-Id: <46B8F683.7040607@pobox.com>
+	     
+	     [ 31741]
+	     Subject: [patch] File::CheckTree - a side effect of making the build whitespace safe(r)
+	     From: Max Maischein <corion@corion.net>
+	     Date: Sun, 19 Aug 2007 23:45:57 +0200
+	     Message-Id: <46C8BA15.3080300@corion.net>
+	     
+	     (Applied with some tweaks.)
+	     
+	     [ 31759]
+	     Subject: [patch@31750] Unit variable in /lib/File/Copy.pm
+	     From: "John E. Malmberg" <wb8tyw@qsl.net>
+	     Date: Mon, 27 Aug 2007 23:21:31 -0500
+	     Message-ID: <46D3A2CB.8010205@qsl.net>
+	     
+	     [ 31858]
+	     Carp's argument backtrace code would show undef as "undef" - a string.
+	     
+	     [ 32122]
+	     Subject: [PATCH] Minor fix in File::Copy POD
+	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
+	     Date: Mon, 15 Oct 2007 09:56:33 -0400
+	     Message-ID: <1ff86f510710150656w4c06b94aub1c8ff5fa29a8603@mail.gmail.com>
+	     
+	     [ 32175]
+	     Make the File::Find tests stay under t/ where they
+	     belong (the first call to cleanup() was leaving us
+	     at the top of the Perl source tree).
+	     
+	     [ 32176]
+	     File::Find::_find_dir nit for VMS, plus version bump.
+	     
+	     [ 32180]
+	     Subject: [PATCH] hostname.t busted
+	     From: Ricardo SIGNES <rjbs-perl-p5p@lists.manxome.org>
+	     Date: Mon, 22 Oct 2007 09:01:09 -0400
+	     Message-ID: <20071022130109.GA16748@knight>
+	     
+	     [ 32184]
+	     Subject: patch@32181 File::Copy.pm patches for VMS
+	     From: "John E. Malmberg" <wb8tyw@qsl.net>
+	     Date: Wed, 24 Oct 2007 00:27:33 -0500
+	     Message-id: <471ED7C5.9040900@qsl.net>
+	     
+	     [ 32279]
+	     Subject: patch@32274 file/find/t/ find.t and taint.t fixes for VMS.
+	     From: "John E. Malmberg" <wb8tyw@qsl.net>
+	Date: Sun, 11 Nov 2007 17:42:46 -0600
+	Message-id: <47379376.6070809@qsl.net>
+	     
+	     With variations to make it cross-platform.
+
+     Branch: maint-5.8/perl
+	  +> lib/Tie/Handle/stdhandle_from_handle.t lib/Tie/StdHandle.pm
+	  !> MANIFEST lib/Carp.pm lib/Carp.t lib/Carp/Heavy.pm
+	  !> lib/File/CheckTree.pm lib/File/CheckTree.t lib/File/Copy.pm
+	  !> lib/File/Find.pm lib/File/Find/t/find.t
+	  !> lib/File/Find/t/taint.t lib/FindBin.pm lib/Net/t/hostname.t
+	  !> lib/Text/ParseWords.pm lib/Tie/Handle.pm
+	  !> lib/Tie/Handle/stdhandle.t lib/base.pm lib/base/t/base.t
+____________________________________________________________________________
+[ 32454] By: nicholas				   on 2007/11/22  21:40:50
+	Log: Integrate:
+	     [ 31397]
+	     Subject: [DOC PATCH] MANIFEST: t/op/exec.t tests exec, system AND qx
+	     From: "Adriano Ferreira" <a.r.ferreira@gmail.com>
+	     Date: Sat, 16 Jun 2007 15:03:41 -0300
+	     Message-ID: <73ddeb6c0706161103oe4afe43i941223debc00543@mail.gmail.com>
+	     
+	     [ 31574]
+	     Subject: [PATCH] CORE.pod
+	     From: Tels <nospam-abuse@bloodgate.com>
+	     Date: Mon, 9 Jul 2007 17:28:43 +0200
+	     Message-Id: <200707091728.43634@bloodgate.com>
+	     
+	     [ 31575]
+	     Mention the two ways of overriding built-ins.
+	     Link to perlsub. Fix typos and indentation.
+     Branch: maint-5.8/perl
+	  +> lib/CORE.pod
+	  !> MANIFEST
+____________________________________________________________________________
+[ 32453] By: nicholas				   on 2007/11/22  19:06:32
+	Log: Integrate:
+	     [ 32418]
+	     Subject: [PATCH] RC1: In Solaris 10 do not use versioned solibs
+	     From: Jarkko Hietaniemi <jhi@iki.fi>
+	     Date: Tue, 20 Nov 2007 08:29:05 -0500
+	     Message-ID: <4742E121.2090306@iki.fi>
+	     
+	     [ 32429]
+	     Subject: [PATCH] RC1: Future-proof solaris 10 versioned solibs hint
+	     From: Andy Dougherty <doughera@lafayette.edu>
+	     Date: Tue, 20 Nov 2007 13:49:41 -0500 (EST)
+	     Message-ID: <Pine.LNX.4.64.0711201346560.31844@fractal.phys.lafayette.edu>
+     Branch: maint-5.8/perl
+	  !> hints/solaris_2.sh
+____________________________________________________________________________
+[ 32452] By: nicholas				   on 2007/11/22  18:36:56
+	Log: Integrate:
+	     Integrate:
+	     [ 25563]
+	     Forgot to update MANIFEST in change 25547
+     Branch: maint-5.8/perl
+	  !> MANIFEST
+____________________________________________________________________________
+[ 32451] By: nicholas				   on 2007/11/22  18:35:58
+	Log: Integrate:
+	     [ 25547]
+	     Localize $@ in Locale::Maketext::maketext()
+	     so that $lh->maketext("Error: [_1]\n", $@) works as expected
+	     
+	     Also added a new test for this fix
+	     
+	     [ 26103]
+	     Upgrade to Locale-Maketext-1.10.  As change #25547 did not make it
+	     into the module release, I bumped the version number and added the
+	     missing code.
+	     
+	     [ 27358]
+	     Grammar nit in Locale::Maketext::TPJ13.pod, found by Justin Pryzby.
+	     
+	     [ 32415]
+	     Upgrade to Locale::Maketext 1.12
+     Branch: maint-5.8/perl
+	  +> lib/Locale/Maketext/t/30_local.t
+	  !> lib/Locale/Maketext.pm lib/Locale/Maketext.pod
+	  !> lib/Locale/Maketext/ChangeLog lib/Locale/Maketext/Guts.pm
+	  !> lib/Locale/Maketext/GutsLoader.pm
+	  !> lib/Locale/Maketext/TPJ13.pod
+	  !> lib/Locale/Maketext/t/01_about_verbose.t
+	  !> lib/Locale/Maketext/t/10_make.t lib/Locale/Maketext/t/20_get.t
+	  !> lib/Locale/Maketext/t/40_super.t
+	  !> lib/Locale/Maketext/t/50_super.t
+	  !> lib/Locale/Maketext/t/60_super.t
+	  !> lib/Locale/Maketext/t/90_utf8.t
+____________________________________________________________________________
