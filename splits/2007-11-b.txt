@@ -5,9 +5,6 @@
 	     From: Andy Dougherty <doughera@lafayette.edu>
 	     Message-ID: <Pine.LNX.4.64.0710230817250.18303@fractal.phys.lafayette.edu>
 	     Date: Tue, 23 Oct 2007 08:54:51 -0400 (EDT)
-	     
-	     [ 32440]
-	     Test::More and Test::Builder are actually part of the Test::Simple distribution
      Branch: maint-5.8/perl
 	   - vms/genconfig.pl
 	  !> MANIFEST Porting/Maintainers.pl README.vms cflags.SH
