@@ -3,12 +3,6 @@
 	     [ 31870]
 	     Save some C<","> in the embedded program used to generate -V output.
 	     
-	     [ 31872]
-	     Rejig the word wrapping code for the "Compile-time options:" of perl -V
-	     Replace the rather elegant C code with Perl code that can also sort the
-	     options first, as this will allow them to be split into those that
-	     affect binary compatibility, and those that do not.
-	     
 	     [ 31873]
 	     Move all the compile time options that affect binary compatibility into
 	     a global variable PL_bincompat_options. Because the string will be
