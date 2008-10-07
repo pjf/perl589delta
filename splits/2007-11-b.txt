@@ -1,8 +1,5 @@
 [ 32457] By: nicholas				   on 2007/11/22  23:19:55
 	Log: Integrate:
-	     [ 31247]
-	     VMSify uupacktool.pl and run it during VMS build.
-	     
 	     [ 31396]
 	     More portability nits by Jarkko
 	     

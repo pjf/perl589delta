@@ -1065,6 +1065,10 @@ C<SMOKEXXX> line in patchlevel.h if present. (31597)).
 Passing a raw string of "NaN" to L<nawk(1)> causes a core dump - so the string
 has been changed to "*NaN*" (31975)
 
+=item *
+
+F<uupacktool.pl> has been updated for VMS and is now used during the VMS build.
+
 =back
 
 =head1 Selected Bug Fixes
