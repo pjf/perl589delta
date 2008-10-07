@@ -409,7 +409,8 @@ C<File::Spec>, C<File::Spec::Epoc>, C<File::Spec::Mac>,
 C<File::Spec::Functions> C<File::Spec::Unix>, C<File::Spec::VMS>,
 C<File::Spec::Win32> upgraded to version 3.2701 with improved handling of bad
 arguments and some platform specific improvements (Including for VMS and
-Cygwin)
+Cygwin) including an optimization on C<abs2rel()> when handling both relative
+arguments.
 
 =item *
 
@@ -904,7 +905,8 @@ L<perlhack> documentation extensively improved by Jarkko Hietaniemi and others.
 L<perltoot> provides information on modifying C<@UNIVERSAL::ISA>.
 
 L<perlport> documentation extended to include different C<kill(-9, ...)>
-semantics on Windows.
+semantics on Windows. It also clearly states C<dump()> is not supported on Win32
+and cygwin.
 
 =head1 Changes to Existing Documentation
 
@@ -1153,18 +1155,35 @@ perl -MO=Deparse -e 'sub the::main::road {}'
 
 =back
 
-=item *
+=item * 
 
 Fix MRO behaviour when one undefs C<@ISA> (32542)
 
 =item *
 
+Fixed bug RT #35878, croaking from a XSUB called via goto &xsub corrupts perl
+internals.
+
+=item * 
+
 Fix descriptor leak caused by change (30633) to C<PerlIO_exportFILE> (32224)
+
+=item *
+
+Fixed bug RT #32539, C<DynaLoader.o> is moved into C<libperl.so> to avoid the need to
+statically link DynaLoader into the stub perl executable and make C<libperl.so>
+provides all codes needed to get a functional embedded perl interpreter runs.
 
 =item *
 
 Fix bug 36267 so that assigning to a tied hash doesn't change the
 underlying hash (27636)
+
+=item *
+
+Fix bug RT #6006, regex replaces using large replacement variables fail some of
+the time, i.e. when substitution contains something like C<${10}> (note the
+bracket) instead of just C<$10> (29616 - 29619).
 
 =back
 
@@ -1447,6 +1466,10 @@ forces the inspection of the environment on these systems.  (29213)
 
 =item *
 
+Calling C<dump()> from Win32 and cygwin now gives a proper fatal error (26947).
+
+=item *
+
 Avoid a segfault for perl built without C<PERL_DONT_CREATE_GVSV> defined
 when writing to C<$ARGV>. (32472, 32473)
 
@@ -1582,6 +1605,12 @@ Verify POSIX::AUTOLOAD works (29592)
 
 =item *
 
+Remove C<DynaLoader> from C<1_compile.t> as it's now part of C<libperl.so>
+(27549, 27566, 28226, 28227, 28228, 28274, 28308). Also skip failure test on
+these patforms: VMS, darwin, OpenBSD, and cygwin (28333, 28840, 29253, 29707).
+
+=item *
+
 Added bitflip hash tests (31914, 31915)
 
 =item *
@@ -1604,6 +1633,10 @@ files.
 =item *
 
 Test both C<MY_CXT> and C<MY_CXT_INTERP> in the CXT API.
+
+=item *
+
+Added test to run regex substitution C<s///> under taint mode (29618).
 
 =item *
 
