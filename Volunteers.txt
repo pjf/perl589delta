@@ -40,7 +40,6 @@
 2007-02-j - Shawn M Moore (aka Sartak)      Last seen, 15th Sep
 2007-11-b - Bradley Dean                    Last seen,  1st Oct
 2007-11-c - Ben Hengst                      Last seen,  1st Oct
-2008-06 - Renee Backer                      Last seen,  9th Sep
 
 == AVAILABLE ==
 
@@ -50,6 +49,7 @@
 2007-11-g - ==> Nobody <== 16k
 2007-11-h - ==> Nobody <== 20k
 2008-02   - ==> Nodody <== 57k
+2008-06   - ==> Nobody <== 12k
 2008-09   - ==> Nobody <== 31k (and growing!)
 
 == NOTES ==
