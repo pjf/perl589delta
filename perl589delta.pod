@@ -1050,6 +1050,20 @@ function if this is not done.
 
 =back
 
+=head3 Solaris
+
+=over 4
+
+=item *
+
+Starting with Solaris 10, we don't want versioned shared libraries because
+those often indicate a private use only library.  Especially badly that would
+break things with L<SUNWbdb> (Berkeley DB) being installed.
+
+If Solaris 10 is detected set C<ignore_versioned_solibs=y>.
+
+=back
+
 =head3 VMS
 
 =over 4

@@ -12,22 +12,6 @@
 	  !> t/perl.supp uupacktool.pl vms/descrip_mms.template
 	  !> vms/ext/XSSymSet.pm vms/myconfig.com
 ____________________________________________________________________________
-[ 32453] By: nicholas				   on 2007/11/22  19:06:32
-	Log: Integrate:
-	     [ 32418]
-	     Subject: [PATCH] RC1: In Solaris 10 do not use versioned solibs
-	     From: Jarkko Hietaniemi <jhi@iki.fi>
-	     Date: Tue, 20 Nov 2007 08:29:05 -0500
-	     Message-ID: <4742E121.2090306@iki.fi>
-	     
-	     [ 32429]
-	     Subject: [PATCH] RC1: Future-proof solaris 10 versioned solibs hint
-	     From: Andy Dougherty <doughera@lafayette.edu>
-	     Date: Tue, 20 Nov 2007 13:49:41 -0500 (EST)
-	     Message-ID: <Pine.LNX.4.64.0711201346560.31844@fractal.phys.lafayette.edu>
-     Branch: maint-5.8/perl
-	  !> hints/solaris_2.sh
-____________________________________________________________________________
 [ 32452] By: nicholas				   on 2007/11/22  18:36:56
 	Log: Integrate:
 	     Integrate:
