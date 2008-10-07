@@ -1,11 +1,5 @@
 [ 32457] By: nicholas				   on 2007/11/22  23:19:55
 	Log: Integrate:
-	     [ 31884]
-	     Subject: [ patch ] add line-number to embed.pl warnings
-	     From: Jim Cromie <jim.cromie@gmail.com>
-	     Date: Wed, 12 Sep 2007 11:25:08 -0600
-	     Message-ID: <46E820F4.80106@gmail.com>
-	     
 	     [ 31974]
 	     Assume NetBSD has touch
 	     (patch from NetBSD package)
