@@ -12,12 +12,6 @@
 	     Message-ID: <Pine.LNX.4.64.0710230817250.18303@fractal.phys.lafayette.edu>
 	     Date: Tue, 23 Oct 2007 08:54:51 -0400 (EDT)
 	     
-	     [ 32234]
-	     Subject: [PATCH] Erroneous binmode() call in uupacktool.pl
-	     From: "Jan Dubois" <jand@activestate.com>
-	     Date: Tue, 6 Nov 2007 15:58:05 -0800
-	     Message-ID: <01f101c820d0$df6c9220$9e45b660$@com>
-	     
 	     [ 32440]
 	     Test::More and Test::Builder are actually part of the Test::Simple distribution
      Branch: maint-5.8/perl
