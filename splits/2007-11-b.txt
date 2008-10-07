@@ -2,13 +2,6 @@
 	Log: Integrate:
 	     [ 31944]
 	     Record IEEE usage in config.h on VMS.
-	     
-	     [ 31945]
-	     Add USE_IEEE to PL_bincompat_options, as use_ieee in the configuration
-	     on VMS affects binary compatibility.
-	     
-	     [ 31946]
-	     And some more VMS-specific additions to PL_bincompat_options.
      Branch: maint-5.8/perl
 	  !> configure.com perl.c perl.h
 ____________________________________________________________________________
