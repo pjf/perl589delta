@@ -1,17 +1,5 @@
 [ 32463] By: nicholas				   on 2007/11/23  11:22:27
 	Log: Integrate:
-	     [ 31873]
-	     Move all the compile time options that affect binary compatibility into
-	     a global variable PL_bincompat_options. Because the string will be
-	     embedded in any shared perl library, it will allow a comparison check
-	     to be added to perlmain.c in the future, to detect library mismatch.
-	     
-	     [ 31876]
-	     Change 31873 was not robust against the possibility that the
-	     configuration has no #defined options. So add a "" that will make the
-	     initialiser for PL_bincompat_options syntactically correct in this
-	     case.
-	     
 	     [ 31944]
 	     Record IEEE usage in config.h on VMS.
 	     

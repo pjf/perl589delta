@@ -1565,6 +1565,10 @@ structure. Coupled with PL_bincompat_options this will allow 5.10.1 (and
 later), when compiled with a shared perl library, to perform sanity checks in
 C<main()> to verify that the shared library is indeed binary compatible.
 
+All compile time options which affect binary compatability have been grouped
+together into a global variable (C<PL_bincompat_options>). This will allow
+comparisons to be made in the future.
+
 =head1 New Tests
 
 =over 4
