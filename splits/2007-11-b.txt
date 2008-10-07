@@ -1,8 +1,5 @@
 [ 32463] By: nicholas				   on 2007/11/23  11:22:27
 	Log: Integrate:
-	     [ 31870]
-	     Save some C<","> in the embedded program used to generate -V output.
-	     
 	     [ 31873]
 	     Move all the compile time options that affect binary compatibility into
 	     a global variable PL_bincompat_options. Because the string will be
