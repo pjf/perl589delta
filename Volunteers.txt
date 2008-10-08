@@ -16,7 +16,8 @@
 2007-05 - DONE, MERGED (Vincent Pit)
 2007-09 - DONE, MERGED (Paul Fenwick)
 2007-10 - DONE, MERGED (Jacinta Richardson)
-2007-11-a - DONE, MERGED (Brad Bean)
+2007-11-a - DONE, MERGED (Brad Dean)
+2007-11-b - DONE, MERGED (Brad Dean)
 2007-11-d - DONE, MERGED (Abhijit Menon-Sen (aka crab))
 2007-11-i - DONE, MERGED (Eddy Tan)
 2007-11-j - DONE, MERGED (Abhijit Menon-Sen (aka crab))
@@ -37,7 +38,6 @@
 2007-02-b - Adam Flott                      Last seen, 15th Sep
 2007-02-e - Martin Ryan                     Last seen, 11th Sep
 2007-02-j - Shawn M Moore (aka Sartak)      Last seen,  7th Oct
-2007-11-b - Bradley Dean                    Last seen,  7th Oct
 2007-11-c - Ben Hengst                      Last seen,  1st Oct
 
 == AVAILABLE ==
