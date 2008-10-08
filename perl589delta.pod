@@ -383,6 +383,8 @@ C<File::Basename> upgraded to version 2.77
 
 C<File::Copy> now uses 3-arg open.
 
+C<File::Copy> upgraded to 2.11
+
 =item *
 
 C<File::Find> upgraded to version 1.13
@@ -401,7 +403,7 @@ Fixes spurious results with brackets inside braces.
 
 =item *
 
-C<File::Path> upgraded to version 1.09
+C<File::Path> upgraded to version 2.04
 
 =item *
 
@@ -422,7 +424,7 @@ C<File::Temp> upgraded to version 0.20
 
 =item * 
 
-C<FindBin> upgraded to version 1.48
+C<FindBin> upgraded to version 1.49
 
 =item *
 
@@ -443,6 +445,10 @@ C<Hash::Util> upgraded to version 0.07
 =item *
 
 C<libnet> upgraded to version 1.20
+
+=item *
+
+C<Locale::Maketext> upgraded to 1.12
 
 =item *
 
@@ -602,6 +608,10 @@ C<Term::Cap> upgraded to version 1.11 (32143, 32301)
 
 =item *
 
+C<Term::ReadLine> upgraded to version 1.03 (31862)
+
+=item *
+
 C<Test::Simple> upgraded to version 0.70
 
 =item *
@@ -610,7 +620,7 @@ C<Text::Balanced> upgraded to version 1.98 (32984)
 
 =item *
 
-C<Text::ParseWords> upgraded to version 3.25
+C<Text::ParseWords> upgraded to version 3.26
 
 =item *
 
@@ -742,12 +752,23 @@ C<h2xs> won't define an empty string as a constant (perl #25366)
 
 C<h2xs> has examples for h2xs -X (31175)
 
+=item *
+
+The Emacs perl mode (emacs/cperl-mode.el) has been updated to version
+5.23.
+
+=item *
+
+Added C<uupacktool.pl> (handles binary files in source tree).
+
 =back
 
 =head1 New Documentation
 
 As usual, the documentation received its share of corrections, clarifications
 and other nitfixes. More C<< X<...> >> tags were added for indexing.
+
+L<CORE> documents the pseudo-namespace for Perl's core routines.
 
 L<perlbot> fixed C<ref> returns an empty string (not undef) when used on a
 string (#31685)
@@ -1018,7 +1039,34 @@ C<Config.pod> and C<config.sh> are now placed correctly for cross-compilation.
 $Config{useshrplib} is now 'true' rather than 'yes' when using a shared perl
 library.
 
-=head2 Platform specific changes
+=head2 Platform Specific Changes
+
+=head3 FreeBSD
+
+=over 4
+
+=item *
+
+Drop C<-std=c89> and C<-ansi> if using 'long long' as the main integral type.
+
+In FreeBSD 6.2 (and perhaps other releases), headers do not declare a required
+function if this is not done.
+
+=back
+
+=head3 Solaris
+
+=over 4
+
+=item *
+
+Starting with Solaris 10, we don't want versioned shared libraries because
+those often indicate a private use only library.  Especially badly that would
+break things with L<SUNWbdb> (Berkeley DB) being installed.
+
+If Solaris 10 is detected set C<ignore_versioned_solibs=y>.
+
+=back
 
 =head3 VMS
 
@@ -1027,6 +1075,10 @@ library.
 =item *
 
 Allow IEEE math to be deselected on OpenVMS I64 (but it remains the default).
+
+=item *
+
+Record IEEE usage in C<config.h>
 
 =item *
 
@@ -1051,6 +1103,10 @@ C<SMOKEXXX> line in patchlevel.h if present. (31597)).
 
 Passing a raw string of "NaN" to L<nawk(1)> causes a core dump - so the string
 has been changed to "*NaN*" (31975)
+
+=item *
+
+Removed F<vms/genconfig.pl> and references to it (obsolete as of change 1084).
 
 =back
 
@@ -1187,7 +1243,7 @@ bracket) instead of just C<$10> (29616 - 29619).
 
 =back
 
-=head2 Platform specific fixes
+=head2 Platform Specific Fixes
 
 =head3 Darwin / MacOS X
 
@@ -1205,6 +1261,11 @@ fix threads free.t and blocks.t failures on OS X on 5.8.x (33502).
 =item *
 
 Added forked terminal support to debugger under MacOSX (29415)
+
+=item *
+
+L<perl5db.pl> has been updated for Mac OS X 10.5 (as there is now a direct
+accessor for the tty device name) to update the window title.
 
 =back
 
@@ -1565,6 +1626,10 @@ structure. Coupled with PL_bincompat_options this will allow 5.10.1 (and
 later), when compiled with a shared perl library, to perform sanity checks in
 C<main()> to verify that the shared library is indeed binary compatible.
 
+All compile time options which affect binary compatability have been grouped
+together into a global variable (C<PL_bincompat_options>). This will allow
+comparisons to be made in the future.
+
 =head1 New Tests
 
 =over 4
@@ -1660,6 +1725,18 @@ Test that L<base> does not confuse the version. (32469)
 Test that inheriting from a base with protected fields generates a warning.
 (32469)
 
+=item *
+
+Test that L<base> can coexist with a L<consant> called C<FIELDS>. (31420)
+
+=item *
+
+Test that L<Carp::cluck> correctly reports undef values. (31858)
+
+=item *
+
+Test that C<$@> is correctly localised in L<Locale::Maketext>. (25547)
+
 =back
 
 =head1 Known Problems
@@ -1724,6 +1801,10 @@ C<OS2::REXX::DLL>, C<OS2::REXX> updated to version 1.03
 =item *
 
 C<File::Spec::VMS> upgraded to version 3.2701 (see above).
+
+=item *
+
+C<VMS::XSSymSet> upgraded to 1.1 (31236).
 
 =back
 

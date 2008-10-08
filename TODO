@@ -34,3 +34,7 @@
   Similarly 30232 (27228, 29669), 30230 (26799), 30227 (28715), 
   30225 (28238), 30223 (30183, 30218),  30222 (30087, 30129), 
   30209 ( 29593,29594, 29659,30010), 30208 (28513)  -- LesleyB
+* I can't quite see why 32181 does what the email subject suggests, nor if it
+  is correct what comment (if any) to put in. -- Brad
+* Check final version of File::Copy - I suspect an upgrade I've documented
+  may be superseded somewhere. -- Brad
