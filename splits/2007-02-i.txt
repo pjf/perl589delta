@@ -64,12 +64,6 @@ ____________________________________________________________________________
      Branch: maint-5.8/perl
 	   ! ext/DynaLoader/DynaLoader_pm.PL ext/DynaLoader/Makefile.PL
 ____________________________________________________________________________
-[ 30110] By: nicholas				   on 2007/02/03  19:00:21
-	Log: Clarify that all the dire (sounding) "unsafe" warnings apply to 5005
-	     threads.
-     Branch: maint-5.8/perl
-	   ! gv.c op.c perl.c sv.c
-____________________________________________________________________________
 [ 30109] By: nicholas				   on 2007/02/03  18:52:20
 	Log: Integrate:
 	     [ 29502]
