@@ -1,20 +1,3 @@
-[ 32382] By: nicholas				   on 2007/11/17  20:52:52
-	Log: Integrate:
-	     [ 31518]
-	     Subject: [PATCH] Add add-package.pl to the core (was Re: Why no (XML|DBI|WWW|Template) modules in the core?)
-	     From: "Jos I. Boumans" <kane@dwim.org>
-	     Date: Mon, 2 Jul 2007 15:20:37 +0200
-	     Message-Id: <A819F8C7-19C9-4ECE-8CF5-80FAAF54F890@dwim.org>
-	     
-	     [ 32030]
-	     Subject: [PATCH] Update add-package.pl
-	     From: "Jos I. Boumans" <jos@dwim.org>
-	     Date: Thu, 4 Oct 2007 11:24:05 +0200
-	     Message-Id: <9D8CA217-8B5B-487E-96A4-92D9047FE921@dwim.org>
-     Branch: maint-5.8/perl
-	  +> Porting/add-package.pl
-	  !> MANIFEST
-____________________________________________________________________________
 [ 32381] By: nicholas				   on 2007/11/17  20:50:15
 	Log: Integrate:
 	     [ 31321]

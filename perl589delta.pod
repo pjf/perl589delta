@@ -761,6 +761,10 @@ The Emacs perl mode (emacs/cperl-mode.el) has been updated to version
 
 Added C<uupacktool.pl> (handles binary files in source tree).
 
+=item *
+
+Added C<add-package.pl> (adds/updates CPAN modules that are part of Core).
+
 =back
 
 =head1 New Documentation
