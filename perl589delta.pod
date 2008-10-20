@@ -1043,6 +1043,8 @@ C<Config.pod> and C<config.sh> are now placed correctly for cross-compilation.
 $Config{useshrplib} is now 'true' rather than 'yes' when using a shared perl
 library.
 
+C<installman> now works with C<-Duserelocatableinc> and C<DESTDIR>.
+
 =head2 Platform Specific Changes
 
 =head3 FreeBSD

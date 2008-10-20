@@ -51,8 +51,6 @@
 	     Date: Tue, 14 Aug 2007 08:59:58 +0200
 	     Message-Id: <46C152EE.2080506@x-ray.at>
 	     
-	     [ 32212]
-	     Make installman work with -Duserelocatableinc and DESTDIR
      Branch: maint-5.8/perl
 	  !> installman installperl
 ____________________________________________________________________________
