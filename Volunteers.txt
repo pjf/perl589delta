@@ -27,8 +27,6 @@
 2008-04 - DONE, MERGED (Abhijit Menon-Sen (aka crab))
 2008-05 - DONE, MERGED (Mark Aufflick)
 
-== MISSING COMMITS? (Contact PJF if you find them) ==
-2007-11-f - Crab                            Last seen, 22nd Sep
 
 == IN PROGRESS ==
 
@@ -40,12 +38,13 @@
 2007-02-i - Paul Fenwick                    Last seen, 12th Oct
 2007-02-j - Shawn M Moore (aka Sartak)      Last seen,  7th Oct
 2007-11-c - Ben Hengst                      Last seen,  1st Oct
+2007-11-e - Brad Dean                       Last seen, 20th Oct
+2007-11-f - Crab                            Last seen, 22nd Sep
 2008-06   - Eddy Tan                        Last seen, 20th Oct
 
 == AVAILABLE ==
 
 2007-02-f - ==> Nobody <==  6k
-2007-11-e - ==> Nobody <== 20k
 2007-11-g - ==> Nobody <== 16k
 2007-11-h - ==> Nobody <== 20k
 2008-02   - ==> Nodody <== 57k
