@@ -717,7 +717,16 @@ C<Unicode::Normalize> upgraded to version 1.01
 
 =item *
 
-C<Win32> upgraded to version 0.34
+C<Win32> upgraded to version 0.38
+
+=over
+
+=item *
+
+Added new function C<GetCurrentProcessId()> which returns the regular Window
+process identifier of the current process, even when called from within a fork.
+
+=back
 
 =item *
 
@@ -1756,10 +1765,10 @@ filename if the long name is outside the current codepage (Jan Dubois).
 
 =item *
 
-C<Win32> upgraded to version 0.36. Now has a documented 'WinVista' response
+C<Win32> upgraded to version 0.38. Now has a documented 'WinVista' response
 from GetOSName and support for Vista's privilege elevation in C<IsAdminUser>.
 Support for Unicode characters in path names. Improved cygwin and Win64
-compatibility.
+compatibility. 
 
 =item *
 

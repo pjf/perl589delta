@@ -1,18 +1,3 @@
-[ 34096] By: nicholas				   on 2008/06/30  20:44:32
-	Log: Integrate:
-	     [ 34095]
-	     Integrate:
-	     [ 34090]
-	     Upgrade to Win32-0.37
-	     
-	     [ 34094]
-	     Upgrade to Win32-0.38
-	     (including changes to GetCurrentThreadId.t which should have gone into
-	     the 0.37 upgrade, but which I missed then)
-     Branch: maint-5.8/perl
-	  !> ext/Win32/Changes ext/Win32/Win32.pm ext/Win32/Win32.xs
-	  !> ext/Win32/t/GetCurrentThreadId.t
-____________________________________________________________________________
 [ 34082] By: nicholas				   on 2008/06/24  10:30:46
 	Log: Integrate:
 	     [ 33718]
