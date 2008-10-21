@@ -11,13 +11,6 @@
 	     
 	     Date: Sat, 22 Dec 2007 00:39:47 -0000
 	     
-	     [ 32709]
-	     Upgrade to IPC::SysV 1.99_07
-	     
-	     [ 33719]
-	     Integrate:
-	     [ 32780]
-	     Upgrade to IPC::SysV 2.00
      Branch: maint-5.8/perl
 	  +> ext/IPC/SysV/Changes ext/IPC/SysV/MANIFEST.SKIP
 	  +> ext/IPC/SysV/TODO ext/IPC/SysV/const-c.inc

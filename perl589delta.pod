@@ -444,6 +444,10 @@ C<Hash::Util> upgraded to version 0.07
 
 =item *
 
+C<IPC::SysV> upgraded to version 2.00
+
+=item *
+
 C<libnet> upgraded to version 1.20
 
 =item *
