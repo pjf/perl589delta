@@ -1,3 +1,4 @@
 *.eml
 *.patch
 *.orig
+*.backup
