@@ -15,18 +15,6 @@ ____________________________________________________________________________
 	     Date: Sun, 1 Jun 2008 14:51:59 +0200
 	     Message-ID: <6910a60806010551u30199befr43761fe53d5d896@mail.gmail.com>
 	     
-	     [ 34024]
-	     Subject: Fwd: [PATCH-2] Re: testing $/ with in memory files
-	     From: Bram <p5p@perl.wizbit.be>
-	     Date: Mon, 26 May 2008 09:12:58 +0200
-	     Message-ID: <20080526091258.vbcecy2dc00gwg08@horde.wizbit.be>
-	     
-	     [ 34054]
-	     Subject: [PATCH] Re: testing $/ with in memory files
-	     From: Bram <p5p@perl.wizbit.be>
-	     Date: Sat, 14 Jun 2008 18:20:05 +0200
-	     Message-ID: <20080614182005.yxuyk1mntwkog0o0@horde.wizbit.be>
-	     
 	     [ 34056]
 	     Subject: [perl #47746] Not OK: perl 5.10.0 +RC1 on ia64-linux 2.4.21-sgi302r24
 	     From: "John P. Linderman" <jpl@research.att.com>
