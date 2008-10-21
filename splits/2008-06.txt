@@ -8,11 +8,6 @@ ____________________________________________________________________________
 	Log: Integrate:
 	     [ 34065]
 	     Integrate:
-	     [ 33979]
-	     Probably starting with the changes in change #33897,
-	     t/run/exit.t has been failing on Win32.  Update the skipping
-	     mechanism to do more that check for the definition of
-	     POSIX::WIFEXITED.
 	     
 	     [ 33982]
 	     Subject: Re: [perl #55160] perlbug AutoReply: Fix cygwin mount test
