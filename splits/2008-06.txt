@@ -3,29 +3,6 @@
 	     [ 33718]
 	     Integrate:
 	     (only the ext/IPC/SysV/SysV.xs part of) 
-	     
-	     [ 32703]
-	     Subject: [PATCH] ext/ consting
-	     From: "Robin Barker" <Robin.Barker@npl.co.uk>
-	     Message-ID: <46A0F33545E63740BC7563DE59CA9C6D09399D@exchsvr2.npl.ad.local>
-	     
-	     Date: Sat, 22 Dec 2007 00:39:47 -0000
-	     
-     Branch: maint-5.8/perl
-	  +> ext/IPC/SysV/Changes ext/IPC/SysV/MANIFEST.SKIP
-	  +> ext/IPC/SysV/TODO ext/IPC/SysV/const-c.inc
-	  +> ext/IPC/SysV/const-xs.inc ext/IPC/SysV/lib/IPC/Msg.pm
-	  +> ext/IPC/SysV/lib/IPC/Semaphore.pm
-	  +> ext/IPC/SysV/lib/IPC/SharedMem.pm ext/IPC/SysV/lib/IPC/SysV.pm
-	  +> ext/IPC/SysV/regen.pl ext/IPC/SysV/t/pod.t
-	  +> ext/IPC/SysV/t/podcov.t ext/IPC/SysV/t/shm.t
-	  +> ext/IPC/SysV/typemap
-	   - ext/IPC/SysV/ChangeLog ext/IPC/SysV/MANIFEST
-	   - ext/IPC/SysV/Msg.pm ext/IPC/SysV/Semaphore.pm
-	   - ext/IPC/SysV/SysV.pm
-	  !> MANIFEST ext/IPC/SysV/Makefile.PL ext/IPC/SysV/README
-	  !> ext/IPC/SysV/SysV.xs ext/IPC/SysV/t/ipcsysv.t
-	  !> ext/IPC/SysV/t/msg.t ext/IPC/SysV/t/sem.t mkppport.lst
 ____________________________________________________________________________
 [ 34066] By: nicholas				   on 2008/06/16  17:12:59
 	Log: Integrate:
