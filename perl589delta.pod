@@ -1783,7 +1783,22 @@ Test that C<$@> is correctly localised in L<Locale::Maketext>. (25547)
 
 =item *
 
+B<TODO> test for "C<goto()> from an if to an else doesn't undo local". (RT #43403)
+
+=back
+
+=head1 Changed Tests
+
+=over 4
+
+=item *
+
 C<setlocale()> tests have been re-enabled for Windows XP onwards. (31491)
+
+=item *
+
+C<commonsense.t> tests no longer require that C<DB_File> or C<*DBM_File> are
+included. (31528)
 
 =back
 

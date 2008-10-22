@@ -1,23 +1,5 @@
 [ 32379] By: nicholas				   on 2007/11/17  20:42:55
 	Log: Integrate:
-	     [ 31493]
-	     Fix tests so they actually test $@. like() demands a qr//.
-	     
-	     [ 31494]
-	     Add a TODO test cases RT# 43403.
-	     
-	     [ 31504]
-	     Subject: [PATCH] Fix up change 31494
-	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
-	     Date: Fri, 29 Jun 2007 12:02:17 -0400
-	     Message-ID: <1ff86f510706290902k57b540a5n446fad22c1afdab0@mail.gmail.com>
-	     
-	     [ 31528]
-	     Don't require to have at least DB_File or *DBM_File
-	     
-	     [ 31594]
-	     Link TODO test to appropriate RT ticket
-	     
 	     [ 31601]
 	     Silence mandatory warning by using @# instead of $#.
 	     "no warnings" is probably a bit inappropriate for a
