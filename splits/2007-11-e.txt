@@ -1,15 +1,5 @@
 [ 32379] By: nicholas				   on 2007/11/17  20:42:55
 	Log: Integrate:
-	     [ 31601]
-	     Silence mandatory warning by using @# instead of $#.
-	     "no warnings" is probably a bit inappropriate for a
-	     base test. Putting -X on the command-line is probably
-	     not a good idea, since it may hide other interesting
-	     warnings in the future.
-	     
-	     [ 31604]
-	     Avoid POD in test files
-	     
 	     [ 31646]
 	     Make TabsWrap tests work around broken VMS pipes.
 	     
@@ -24,9 +14,6 @@
 	     [ 31666]
 	     Oops, 31665 was empty.
 	     
-	     [ 31668]
-	     Fix typos in comments.
-	     
 	     [ 31754]
 	     Test that all the unknown command line flags are unknown.
 	     
@@ -35,9 +22,6 @@
 	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
 	     Date: Thu, 6 Sep 2007 13:37:34 -0400
 	     Message-ID: <1ff86f510709061037q6744827cub29f666ca5fb5904@mail.gmail.com>
-	     
-	     [ 31890]
-	     Fix spelling errors in comments.
 	     
 	     [ 31896]
 	     Subject: [PATCH] t/TEST doesn't check exit (was Re: Test::More bug?)
@@ -79,14 +63,6 @@
 	     [ 32200]
 	     Leopard has more standard /etc/passwd files than previous
 	     versions of darwin. Thanks to David Morel for testing.
-	     
-	     [ 32214]
-	     Based on a patch by John E. Malberg: make TestInit.pm
-	     use an absolute path in @INC, so that changes of directories
-	     don't break dynamically loaded modules.
-	     
-	     [ 32219]
-	     Roll back #32214 as it causes more failures than it prevents.
 	     
 	     [ 32225]
 	     Adjust the skip count for t/io/dup.t for the -Uuseperlio case, in a way
