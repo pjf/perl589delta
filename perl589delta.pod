@@ -1781,6 +1781,10 @@ Test that L<Carp::cluck> correctly reports undef values. (31858)
 
 Test that C<$@> is correctly localised in L<Locale::Maketext>. (25547)
 
+=item *
+
+C<setlocale()> tests have been re-enabled for Windows XP onwards. (31491)
+
 =back
 
 =head1 Known Problems

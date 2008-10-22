@@ -1,10 +1,5 @@
 [ 32379] By: nicholas				   on 2007/11/17  20:42:55
 	Log: Integrate:
-	     [ 31491]
-	     Re-enable the setlocale() tests for Windows XP onwards
-	     since they seem to work OK. Not sure about older flavours
-	     of Windows, so leave them alone.
-	     
 	     [ 31493]
 	     Fix tests so they actually test $@. like() demands a qr//.
 	     
