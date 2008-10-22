@@ -1045,9 +1045,28 @@ library.
 
 C<installman> now works with C<-Duserelocatableinc> and C<DESTDIR>.
 
-C<installperl> no longer installs static library files of statically linked
-extensions when a shared perl library is being used. (They are not needed,
-also see L<Windows> specific reasons).
+C<installperl> no longer installs:
+
+=over 4
+
+=item *
+
+static library files of statically linked extensions when a shared perl library
+is being used. (They are not needed, also see L<Windows> specific reasons).
+
+=item *
+
+C<SIGNATURE> and C<PAUSE*.pub> (CPAN files)
+
+=item *
+
+C<NOTES> and C<PATCHING> (ExtUtils files)
+
+=item *
+
+C<perlld> and C<ld2> (Cygwin files)
+
+=back
 
 =head2 Platform Specific Changes
 
