@@ -1,21 +1,5 @@
 [ 32380] By: nicholas				   on 2007/11/17  20:47:39
 	Log: Integrate:
-	     [ 31672]
-	     For files ignored by installperl:
-	     
-	     - Split README handling into a separate case.
-	     - Extend the MANIFEST pattern to include .SKIP.
-	     
-	     Based on the following:
-	     
-	     Subject: [PATCH] Don't install MANIFEST.SKIP files
-	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
-	     Date: Wed, 1 Aug 2007 12:28:49 -0400
-	     Message-Id: <1ff86f510708010928o48ea74d6je46148b0a409bffa@mail.gmail.com>
-	     
-	     [ 31673]
-	     MANIFEST.SKIP ought not to have been skipped after all.
-	     
 	     [ 31676]
 	     Make installperl skip lib/CPAN/SIGNATURE and PAUSE*.pub.
 	     
