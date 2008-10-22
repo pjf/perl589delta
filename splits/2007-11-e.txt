@@ -1,8 +1,5 @@
 [ 32379] By: nicholas				   on 2007/11/17  20:42:55
 	Log: Integrate:
-	     [ 30827]
-	     Update name of Perl executable on VMS following #30414.
-	     
 	     [ 31491]
 	     Re-enable the setlocale() tests for Windows XP onwards
 	     since they seem to work OK. Not sure about older flavours
