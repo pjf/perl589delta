@@ -1045,6 +1045,10 @@ library.
 
 C<installman> now works with C<-Duserelocatableinc> and C<DESTDIR>.
 
+C<installperl> no longer installs static library files of statically linked
+extensions when a shared perl library is being used. (They are not needed,
+also see L<Windows> specific reasons).
+
 =head2 Platform Specific Changes
 
 =head3 FreeBSD
@@ -1113,6 +1117,21 @@ has been changed to "*NaN*" (31975)
 =item *
 
 Removed F<vms/genconfig.pl> and references to it (obsolete as of change 1084).
+
+=back
+
+=head3 Windows
+
+=over 4
+
+=item *
+
+When using a shared perl library C<installperl> no longer installs static
+library files, import library files and export library files (of statically
+linked extensions) and empty bootstrap files (of dynamically linked
+extensions).
+
+This fixes a problem building PAR-Packer on Win32 with a debug build of perl.
 
 =back
 

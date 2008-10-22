@@ -1,18 +1,5 @@
 [ 32380] By: nicholas				   on 2007/11/17  20:47:39
 	Log: Integrate:
-	     [ 31570]
-	     Don't install static library files of statically linked extensions
-	     when using a shared perl library. The files are not needed, and this
-	     fixes a problem building PAR-Packer on Win32 with a debug build of
-	     perl. (If Win32CORE.lib gets installed then PAR-Packer wants to link
-	     against it and its PDB file, vc60.pdb, but the latter is not installed.)
-	     Also skip installing a few other unnecessary files.
-	     
-	     Subject: Re: Problem in Win32CORE when building PAR-Packer-0.975 with bleadperl on Win32
-	     From: Steve Hay <steve.hay@uk.radan.com>
-	     Date: Fri, 06 Jul 2007 12:20:06 +0100
-	     Message-ID: <468E2566.8090504@uk.radan.com>
-	     
 	     [ 31672]
 	     For files ignored by installperl:
 	     
