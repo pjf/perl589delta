@@ -1800,6 +1800,11 @@ C<setlocale()> tests have been re-enabled for Windows XP onwards. (31491)
 C<commonsense.t> tests no longer require that C<DB_File> or C<*DBM_File> are
 included. (31528)
 
+=item *
+
+Printing to C<stdout> by C<TabsWrap> tests has been consolidated to avoid
+problems with VMS pipes. (31646)
+
 =back
 
 =head1 Known Problems
