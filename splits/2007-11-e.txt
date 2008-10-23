@@ -1,8 +1,5 @@
 [ 32379] By: nicholas				   on 2007/11/17  20:42:55
 	Log: Integrate:
-	     [ 31754]
-	     Test that all the unknown command line flags are unknown.
-	     
 	     [ 31809]
 	     Subject: [PATCH] Fix t/op/magic.t failures under Cygwin
 	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
