@@ -1805,6 +1805,11 @@ included. (31528)
 Printing to C<stdout> by C<TabsWrap> tests has been consolidated to avoid
 problems with VMS pipes. (31646)
 
+=item *
+
+C<t/op/stat.t> tests will no test hard links on VMS if they are supported.
+(31665, 31666)
+
 =back
 
 =head1 Known Problems

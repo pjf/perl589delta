@@ -1,16 +1,5 @@
 [ 32379] By: nicholas				   on 2007/11/17  20:42:55
 	Log: Integrate:
-	     [ 31665]
-	     Subject: [patch@31553] t/op/stat.t Test $nlink if $Config{d_link}
-	     From: "John E. Malmberg" <wb8tyw@qsl.net>
-	     Date: Sun, 29 Jul 2007 07:56:22 -0500
-	Message-id: <46AC8E76.5040902@qsl.net>
-
-
-	     
-	     [ 31666]
-	     Oops, 31665 was empty.
-	     
 	     [ 31754]
 	     Test that all the unknown command line flags are unknown.
 	     
