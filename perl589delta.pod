@@ -1807,7 +1807,7 @@ problems with VMS pipes. (31646)
 
 =item *
 
-C<t/op/stat.t> tests will no test hard links on VMS if they are supported.
+C<t/op/stat.t> tests will now test hard links on VMS if they are supported.
 (31665, 31666)
 
 =back
