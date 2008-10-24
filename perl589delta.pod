@@ -550,6 +550,10 @@ C<POSIX> imports previously duplicated constants from C<Fcntl>, version bumped f
 
 =item *
 
+C<re> gains the regmust() function.
+
+=item *
+
 C<scalar> upgraded to version 0.06
 
 =item *

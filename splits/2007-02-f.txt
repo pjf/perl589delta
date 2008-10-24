@@ -2,12 +2,6 @@ ____________________________________________________________________________
 [ 30224] By: nicholas				   on 2007/02/12  13:52:13
 	Log: All the TODOs plus on perlrun.pod change that was related.
 	     
-	     [ 29299]
-	     Subject: [PATCH] add regmust() to re.pm/re.xs
-	     From: demerphq <demerphq@gmail.com>
-	     Date: Fri, 17 Nov 2006 00:54:13 +0100
-	     Message-ID: <9b18b3110611161554m222446bay7912ec1f778d3aaa@mail.gmail.com>
-	     
 	     [ 29358]
 	     Silence VC8's warnings about "unsafe" CRT functions and POSIX CRT
 	     function names being deprecated, and add a note to perltodo to
