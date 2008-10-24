@@ -58,12 +58,6 @@
 	     [ 30896]
 	     Version change to ExtUtils::MM_Unix missed in change #30380.
 	     
-	     [ 30932]
-	     Subject: Re: [PATCH] Add CPANPLUS 0.78 to the core
-	     From: demerphq <demerphq@gmail.com>
-	     Date: Tue, 10 Apr 2007 18:31:28 +0200
-	     Message-ID: <9b18b3110704100931t5c0c97e0n9d3c059e6f404dd5@mail.gmail.com>
-	     
 	     [ 31124]
 	     Subject: [PATCH lib/ExtUtils/t/MM_Unix.t]	Fix warning.
 	     From: Abigail <abigail@abigail.be>
@@ -76,14 +70,6 @@
 	     [ 31404]
 	     Patches to compile perl on Cray XT4 Catamount/Qk, by Jarkko
 	     
-	     [ 31519]
-	     Upgrade to ExtUtils-MakeMaker-6.35
-	     
-	     [ 31521]
-	     Include file missed from change #31519.
-	     
-	     [ 31522]
-	     Upgrade to ExtUtils-MakeMaker-6.36
      Branch: maint-5.8/perl
 	  +> lib/ExtUtils/t/WriteEmptyMakefile.t lib/ExtUtils/t/cd.t
 	  +> lib/ExtUtils/t/fixin.t lib/ExtUtils/t/prereq.t
@@ -95,40 +81,6 @@
 	  !> lib/ExtUtils/t/writemakefile_args.t
 	  !> t/lib/MakeMaker/Test/Setup/Recurs.pm
 	  !> t/lib/MakeMaker/Test/Utils.pm
-____________________________________________________________________________
-[ 32319] By: nicholas				   on 2007/11/14  23:26:31
-	Log: Integrate:
-	     [ 30684]
-	     Fix internal POD link
-	     
-	     [ 31036]
-	     Upgrade to Term::ANSIColor 1.12.
-	     
-	     [ 31170]
-	     Upgrade to CGI.pm-3.29
-	     
-	     [ 32009]
-	     Upgrade to Getopt-Long-2.37
-	     
-	     [ 32143]
-	     Upgrade to Term::Cap 1.10
-	     
-	     [ 32211]
-	     Subject: [PATCH] - Update Time::Local to latest version
-	     From: Dave Rolsky <autarch@urth.org>
-	     Date: Wed, 31 Oct 2007 12:26:02 -0500 (CDT)
-	     Message-ID: <alpine.DEB.0.9999.0710311225010.19396@urth.org>
-	     
-	     [ 32301]
-	     Subject: Re: 5.10 code freeze and dual-life modules
-	     From: Jonathan Stowe <jns@gellyfish.com>
-	     Date: Mon, 12 Nov 2007 21:34:17 +0000
-	     Message-Id: <1194903257.6243.8.camel@coriolanus>
-     Branch: maint-5.8/perl
-	  !> lib/CGI.pm lib/CGI/Changes lib/Getopt/Long.pm
-	  !> lib/Term/ANSIColor.pm lib/Term/ANSIColor/ChangeLog
-	  !> lib/Term/ANSIColor/README lib/Term/ANSIColor/t/basic.t
-	  !> lib/Term/Cap.pm lib/Term/Cap.t lib/Time/Local.pm
 ____________________________________________________________________________
 [ 32318] By: nicholas				   on 2007/11/14  23:02:34
 	Log: Integrate:
@@ -185,193 +137,6 @@ ____________________________________________________________________________
 	  !> ext/ODBM_File/hints/linux.pl ext/POSIX/Makefile.PL
 	  !> ext/POSIX/POSIX.xs ext/POSIX/t/posix.t
 ____________________________________________________________________________
-[ 32317] By: nicholas				   on 2007/11/14  22:07:25
-	Log: Integrate:
-	     [ 31752]
-	     Subject: [patch@31739] ASTFLT in HiRes.t on VMS
-	     From: "John E. Malmberg" <wb8tyw@qsl.net>
-	     Date: Tue, 21 Aug 2007 22:44:58 -0500
-	     Message-id: <46CBB13A.6090405@qsl.net>
-	     
-	     
-	     Skip test #17 because select() is not interruptible and we run afoul
-	     of Perl's signal deferrals.
-	     
-	     [ 32046]
-	     Upgrade to Time-HiRes-1.9708
-	     
-	     [ 32303]
-	     Update Time::HiRes' Changes file
-     Branch: maint-5.8/perl
-	  !> ext/Time/HiRes/Changes ext/Time/HiRes/HiRes.pm
-	  !> ext/Time/HiRes/t/HiRes.t
-____________________________________________________________________________
-[ 32316] By: nicholas				   on 2007/11/14  19:58:25
-	Log: Integrate:
-	     [ 31306]
-	     Upgrade to CPAN-1.9102
-	     
-	     [ 32008]
-	     Upgrade to CPAN-1.9203
-	     
-	     [ 32010]
-	     Update to a file missed in change #32008.
-	     
-	     [ 32251]
-	     Update to CPAN.pm 1.9204
-	     
-	     [ 32280]
-	     Subject: CPAN.pm 1.9205
-	     From: andreas.koenig.7os6VVqR@franz.ak.mind.de (Andreas J. Koenig)
-	     Date: Sun, 11 Nov 2007 21:38:04 +0100
-	     Message-ID: <87lk944ixf.fsf@k75.linux.bogus>
-     Branch: maint-5.8/perl
-	  +> lib/CPAN/API/HOWTO.pm lib/CPAN/DeferedCode.pm
-	  !> MANIFEST lib/CPAN.pm lib/CPAN/Debug.pm lib/CPAN/FirstTime.pm
-	  !> lib/CPAN/HandleConfig.pm lib/CPAN/Kwalify.pm
-	  !> lib/CPAN/Kwalify/distroprefs.dd
-	  !> lib/CPAN/Kwalify/distroprefs.yml lib/CPAN/Nox.pm
-	  !> lib/CPAN/Queue.pm lib/CPAN/SIGNATURE lib/CPAN/Tarzip.pm
-	  !> lib/CPAN/Version.pm lib/CPAN/t/03pkgs.t lib/CPAN/t/10version.t
-____________________________________________________________________________
-[ 32315] By: nicholas				   on 2007/11/14  18:36:13
-	Log: Resort MANIFEST after p4 intergrate doesn't quite get it right.
-	     Update perltoc.pod.
-     Branch: maint-5.8/perl
-	   ! MANIFEST pod/perltoc.pod
-____________________________________________________________________________
-[ 32314] By: nicholas				   on 2007/11/14  18:34:38
-	Log: Integrate:
-	     [ 23990]
-	     Porting/manicheck is not happy when I use spaces instead of tabs.
-	     
-	     [ 24115]
-	     Add a tool to generate data for Module::CoreList
-     Branch: maint-5.8/perl
-	  !> MANIFEST
-____________________________________________________________________________
-[ 32313] By: nicholas				   on 2007/11/14  18:10:30
-	Log: Haven't I told you to go away once before?
-     Branch: maint-5.8/perl
-	   - pod/perl595delta.pod
-____________________________________________________________________________
-[ 32312] By: nicholas				   on 2007/11/14  18:09:03
-	Log: Integrate:
-	     [ 23947]
-	     Add Module::CoreList to bleadperl.
-	     
-	     Subject: [PATCH] Module::CoreList 1.98 integration (was: Re: [RFC] More core integration)
-	     From: "Jos I. Boumans" <kane@xs4all.net>
-	     Date: Fri, 28 Jan 2005 17:38:27 +0100
-	     Message-Id: <097CE3D0-714B-11D9-B82E-000A956B0E06@xs4all.net>
-	     
-	     [ 23948]
-	     Fix typo in corelist
-	     
-	     [ 24119]
-	     Upgrade to Module::CoreList 1.99
-	     
-	     [ 24219]
-	     Module::CoreList: Data from Sebastien Aperghis-Tramoni for perl
-	     5.00{0,1,2}. Upgrade version number.
-	     
-	     [ 24220]
-	     POD typo.
-	     
-	     [ 24300]
-	     Patch by Yves Orton to accept several options on the corelist(1)
-	     command-line. Plus POD nits.
-	     
-	     [ 24311]
-	     Add %patchlevel hash to Module::CoreList
-	     
-	     [ 24650]
-	     Upgrade to Module::CoreList 2.02
-	     
-	     [ 24651]
-	     Remove duplicated line
-	     
-	     [ 27031]
-	     Update to Module::CoreList 2.03 (includes 5.8.8 and 5.9.3)
-	     
-	     [ 27033]
-	     Fix corelist data for 5.8.8
-	     
-	     [ 27051]
-	     perl-5.8.8 also contained change 27040.
-	     
-	     [ 27052]
-	     Update to Module::CoreList 3.04.
-	     Cleanup corelist manpage.
-	     Remove -w in corelist shebang to avoid spurious warnings.
-	     
-	     [ 28360]
-	     Upgrade to Module::CoreList 2.05
-	     (contains a patch by Adriano Ferreira to make corelist accept
-	     regexps as arguments)
-	     
-	     [ 28640]
-	     Patch by Marius Feraru <altblue@n0i.net> to handle dotted perl versions
-	     in the corelist utility, and to add an easy way to determine what was
-	     some module's version bundled with a specified Perl release.
-	     
-	     [ 28641]
-	     Bump version of Module::CoreList
-	     
-	     [ 28680]
-	     Fix data for 5.9.2, 5.9.3, 5.8.7 and 5.8.8
-	     
-	     [ 28682]
-	     Add OS-specific core modules in Module::CoreList for 5.8.[78] and 5.9.[23]
-	     
-	     [ 28726]
-	     Update Module::CoreList data with 5.9.4
-	     
-	     [ 28938]
-	     Upgrade to Module::CoreList 2.09:
-	     - make the dependency on version.pm optional
-	     - improve doc of corelist(1)
-	     
-	     [ 29471]
-	     Silence a warning from Module::CoreList that occurs when the module version is
-	     something like X.XX_XX.
-	     
-	     [ 31177]
-	     Added all traceable Unicode versions
-	     
-	     [ 31178]
-	     Bump the version of Module::CoreList and add docs
-	     for the Unicode module name, that Merijn just added
-	     
-	     [ 31192]
-	     first_release() now returns the first release in the order of
-	     perl version numbers. Add a new method first_release_by_date()
-	     to keep the old behaviour available. Suggested by Michael G Schwern.
-	     
-	     [ 31193]
-	     New data for Unicode on older versions, thanks to Nicholas
-	     and Dave Rolsky
-	     
-	     [ 31265]
-	     It suddendly annoyed me that corelist returned sometimes two
-	     spaces in a row.
-	     
-	     [ 31561]
-	     Update Module::CoreList, regenerate META.yml,
-	     mention Log::Message::* in perldelta and
-	     update perlhist with 5.9.5
-	     
-	     [ 31562]
-	     Fix corelist.pl after the reorganisation of the
-	     Compress modules in ext/. Re-update Module::CoreList.
-     Branch: maint-5.8/perl
-	  +> Porting/corelist.pl lib/Module/CoreList.pm
-	  +> lib/Module/CoreList/bin/corelist
-	  +> lib/Module/CoreList/t/corelist.t
-	  +> lib/Module/CoreList/t/find_modules.t pod/perl595delta.pod
-	  +> utils/corelist.PL
-	  !> MANIFEST META.yml pod/perlhist.pod utils.lst utils/Makefile
-____________________________________________________________________________
 [ 32311] By: nicholas				   on 2007/11/14  17:23:02
 	Log: Integrate:
 	     [ 31077]
@@ -381,9 +146,6 @@ ____________________________________________________________________________
 	     From: Johan Vromans <jvromans@squirrel.nl>
 	     Date: Wed, 25 Apr 2007 14:37:16 +0200
 	     Message-ID: <m2r6q8iq9v.fsf@phoenix.squirrel.nl>
-	     
-	     [ 31175]
-	     Add examples for h2xs -X, by Andy Armstrong
 	     
 	     [ 31531]
 	     Adapt perlivp to the ext/ reorganisation for Compress modules
@@ -410,18 +172,6 @@ ____________________________________________________________________________
 ____________________________________________________________________________
 [ 32310] By: nicholas				   on 2007/11/14  17:01:40
 	Log: Integrate:
-	     [ 30409]
-	     Subject: [PATCH] Re: [PATCH] Re: Win32 modules & cygwin
-	     From: "Yitzchak Scott-Thoennes" <sthoenna@efn.org>
-	     Date: Mon, 26 Feb 2007 00:45:10 -0800 (PST)
-	     Message-ID: <1300.63.226.247.142.1172479510.squirrel@63.226.247.142>
-	     
-	     (Stops Win32* extension tests from being run when the
-	     corresponding extensions haven't been built)
-	     
-	     [ 30411]
-	     Bump $Win32API::File::VERSION for change #30409
-	     
 	     [ 30425]
 	     Subject: Re: [PATCH] Re: Math::BigInt and Win32API::File whines a lot during make test...
 	     From: "Jerry D. Hedden" <jdhedden@yahoo.com>
@@ -498,9 +248,6 @@ ____________________________________________________________________________
 	     A more general fix to non-threaded static extension build problems
 	     than #31220 was.
 	     
-	     [ 31235]
-	     Upgrade to Win32-0.29
-	     
 	     [ 31249]
 	     Subject: [PATCH] Skip win32core.t under Cygwin
 	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
@@ -535,9 +282,6 @@ ____________________________________________________________________________
 	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
 	     Date: Mon, 25 Jun 2007 10:23:15 -0400
 	     Message-ID: <1ff86f510706250723r4d6c5f5dg203b3f61cdeaa14d@mail.gmail.com>
-	     
-	     [ 31470]
-	     Upgrade to Win32-0.30
 	     
 	     [ 31487]
 	     Subject: Re: [PATCH-revised] ext/Win32/t/Unicode.t failures on FAT32 under Cygwin
@@ -586,9 +330,6 @@ ____________________________________________________________________________
 	     Date: Thu, 6 Sep 2007 14:50:15 -0400
 	     Message-ID: <1ff86f510709061150t4838c7d4i4c5b3f1f7dc0edd1@mail.gmail.com>
 	     
-	     [ 31852]
-	     Upgrade to Win32-0.31
-	     
 	     [ 31900]
 	     Subject: Re: [perl #45493] [patch] ext/Win32/Win32.xs compilation fails on msvc < 6
 	     From: Dmitry Karasik <dk@tetsuo.karasik.eu.org>
@@ -597,9 +338,6 @@ ____________________________________________________________________________
 	     
 	     (Adds some #defines missing from MSVC++ < 6, plus sorts the list into
 	     numerical order and tests each #define individually)
-	     
-	     [ 31935]
-	     Upgrade to Win32-0.32
 	     
 	     [ 31956]
 	     Subject: [PATCH - revised] Re: Change 31935: Upgrade to Win32-0.32
@@ -616,11 +354,6 @@ ____________________________________________________________________________
 	     Date: Mon, 24 Sep 2007 20:39:44 -0400
 	     Message-ID: <1ff86f510709241739q62b4f2eaycf13cb9956f8fab3@mail.gmail.com>
 	     
-	     [ 32300]
-	     Subject: RE: 5.10 code freeze and dual-life modules
-	     From: "Jan Dubois" <jand@activestate.com>
-	     Date: Mon, 12 Nov 2007 12:04:46 -0800
-	     Message-ID: <024101c82567$46ffd650$d4ff82f0$@com>
      Branch: maint-5.8/perl
 	  +> ext/Win32/longpath.inc ext/Win32/t/CreateFile.t
 	  +> ext/Win32/t/ExpandEnvironmentStrings.t

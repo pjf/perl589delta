@@ -1,205 +1,3 @@
-[ 30135] By: nicholas				   on 2007/02/05  18:48:59
-	Log: Integrate:
-	     [ 26473]
-	     ExtUtils::ParseXS needs to stack $filepathname to make #line directives
-	     in #INCLUDEs work.
-	     
-	     [ 28856]
-	     Upgrade to ExtUtils-ParseXS-2.16.	There actually are a couple of
-	     changes in bleadperl not in the new version, so version was bumped
-	     to 2.16_01.
-	     
-	     [ 29269]
-	     Subject: [PATCH] ParseXS.pm: small optimization for "Usage: ..." constant strings
-	     From: Alexey Tourbin <at@altlinux.ru>
-	     Date: Tue, 14 Nov 2006 05:45:40 +0300
-	     Message-ID: <20061114024540.GA21986@localhost.localdomain>
-	     
-	     [ 29418]
-	     Upgrade to ExtUtils-ParseXS-2.17.	Actuall just caught up with 
-	     most of the patches to bleadperl.	The remaining change missing
-	     is #29252, so, the version has been bumped to 2.17_01.
-	     
-	     [ 30134]
-	     Upgrade to ExtUtils-ParseXS-2.18
-     Branch: maint-5.8/perl
-	  !> lib/ExtUtils/ParseXS.pm
-____________________________________________________________________________
-[ 30133] By: nicholas				   on 2007/02/05  18:05:43
-	Log: Integrate:
-	     [ 26174]
-	     Upgrade to PathTools-3.14
-	     
-	     [ 26318]
-	     Upgrade to PathTools-3.14_01
-	     
-	     [ 26319]
-	     Re-instate the old perl getcwd as _perl_getcwd, and use it if loading
-	     the XS fails. (Needed to bootstrap the core build)
-	     
-	     [ 26508]
-	     Upgrade to PathTools-3.15
-	     
-	     [ 27398]
-	     Upgrade to PathTools-3.17
-	     
-	     [ 28001]
-	     Upgrade to Pathtools-3.18
-	     
-	     [ 28004]
-	     Added Changes file left out from change #28001.
-	     
-	     [ 28511]
-	     Subject: [PATCH] optimisation for File::Spec::abs2rel where both args are relative
-	     From: Brendan O'Dea <bod@debian.org>
-	     Date: Thu, 6 Jul 2006 01:02:41 +1000
-	     Message-ID: <20060705150241.GA2244@londo.c47.org>
-	     
-	     [ 28551]
-	     Upgrade to PathTools 3.19
-	     
-	     [ 28948]
-	     Upgrade to PathTools-3.21
-	     
-	     [ 28983]
-	     Update to PathTools-3.22.
-	     
-	     [ 29004]
-	     Upgrade to PathTools-3.23.
-	     
-	     [ 29356]
-	     Upgrade to PathTools-3.24.
-     Branch: maint-5.8/perl
-	  +> lib/File/Spec/t/tmpdir.t
-	  !> MANIFEST ext/Cwd/Changes ext/Cwd/Cwd.xs ext/Cwd/t/cwd.t
-	  !> lib/Cwd.pm lib/File/Spec.pm lib/File/Spec/Cygwin.pm
-	  !> lib/File/Spec/Mac.pm lib/File/Spec/Unix.pm
-	  !> lib/File/Spec/VMS.pm lib/File/Spec/Win32.pm
-	  !> lib/File/Spec/t/Spec.t lib/File/Spec/t/crossplatform.t
-____________________________________________________________________________
-[ 30132] By: nicholas				   on 2007/02/05  17:37:09
-	Log: Integrate:
-	     [ 26071]
-	     Subject: [PATCH @26062] wince patch
-	     From: "Konovalov, Vadim" <vkonovalov@spb.lucent.com>
-	     Date: Wed, 9 Nov 2005 20:22:52 +0300 
-	     Message-ID: <7DD1BE2C50259746ABB8683672D2089E12DC02@itotest-1.spb.lucent.com>
-	     
-	     [ 26072]
-	     Really apply change #26071.
-	     
-	     [ 26140]
-	     Subject: [PATCH @26137] for wince
-	     From: "Konovalov, Vadim" <vkonovalov@spb.lucent.com>
-	     Date: Wed, 16 Nov 2005 20:57:13 +0300
-	     Message-ID: <7DD1BE2C50259746ABB8683672D2089E12DC9F@itotest-1.spb.lucent.com>
-	     
-	     [ 26200]
-	     Subject: [PATCH @26198] perlce touches
-	     From: Konovalov, Vadim <vkonovalov@spb.lucent.com>
-	     Date: Nov 23, 2005 8:55 PM
-	     Message-ID: <7DD1BE2C50259746ABB8683672D2089E12DDC3@itotest-1.spb.lucent.com>
-	     
-	     [ 26201]
-	     Delete a README made redundant by change 26200.
-     Branch: maint-5.8/perl
-	   - wince/README.perlce
-	  !> INSTALL MANIFEST README.ce configpm ext/Cwd/Cwd.xs makedef.pl
-	  !> wince/Makefile.ce wince/config.ce wince/config_H.ce
-	  !> wince/config_h.PL wince/config_sh.PL wince/wince.c
-____________________________________________________________________________
-[ 30131] By: nicholas				   on 2007/02/05  17:13:40
-	Log: Integrate:
-	     [ 27202]
-	     Upgrade to CGI-3.16, with version bump on CGI.pm for documentation
-	     fixes not yet integrated.
-	     
-	     [ 27255]
-	     Subject: Patches: B, CGI, ExtUtils::MM_Unix
-	     From: "Joshua ben Jore" <twists@gmail.com>
-	     Date: Sun, 19 Feb 2006 02:58:10 -0600
-	     Message-ID: <dc5c751d0602190058t78d915fv78c6318370307b63@mail.gmail.com>
-	     
-	     [ 27354]
-	     Upgrade to CGI.pm-3.17, but continuing the version bump for 
-	     unintegrated changes.
-	     
-	     [ 27873]
-	     Upgrade to CGI.pm-3.19.
-	     
-	     [ 28082]
-	     Upgrade to CGI-3.20
-	     
-	     [ 28732]
-	     Fix to problem where CGI can lose the filehandle during an upload.
-	     Patch posted to the Debian bug list by Eric Wong 
-	     <eric@petta-tech.com>.
-	     
-	     [ 28746]
-	     Upgrade to CGI.pm-3.21
-	     
-	     [ 28752]
-	     Upgrade to CGI.pm-3.22.
-	     
-	     [ 28930]
-	     Upgrade to CGI.pm-3.25
-     Branch: maint-5.8/perl
-	  !> AUTHORS lib/CGI.pm lib/CGI/Carp.pm lib/CGI/Changes
-	  !> lib/CGI/Cookie.pm lib/CGI/Fast.pm lib/CGI/Util.pm
-	  !> lib/CGI/t/cookie.t lib/CGI/t/function.t lib/CGI/t/html.t
-____________________________________________________________________________
-[ 30130] By: nicholas				   on 2007/02/05  16:25:02
-	Log: Integrate:
-	     [ 24535]
-	     [perl #35878] goto &xsub that croaks corrupts memory
-	     When an XS sub is called, a CxSUB context shouldn't be pushed. Make
-	     goto &xs_sub mimic this behaviour by first popping the old CxSUB
-	     
-	     [ 24642]
-	     add pointer to email explaining why eval {goto &foo} is banned
-     Branch: maint-5.8/perl
-	  !> pp_ctl.c t/op/goto_xs.t
-____________________________________________________________________________
-[ 30127] By: nicholas				   on 2007/02/05  11:57:18
-	Log: Integrate:
-	     [ 24361]
-	     move the SETJMP exception-handing definitions from scope.h to cop.h
-	     so that a JMPENV* entry can be added to struct block_eval
-	     
-	     [ 24362]
-	     Revert change #15705 (Core dump in 'leavetry')
-	     This fixes bug #34682, reintroduces bug #8738 (ID 20020301.011),
-	     and reintroduces an eval optimisation for innter runops levels
-	     
-	     [ 24363]
-	     Better fix for #8738  (Core dump in 'leavetry')
-	     When in an inner runops loop (eg via a tie or sort), an eval
-	     needs a new JMPENV pushing by S_docatch. If an exception is raised,
-	     control is returned to S_docatch, and it must determine whether
-	     the eval that trapped the exception is an inner eval or an outer
-	     one. In the former case, restart the loop, in the latter case,
-	     rethrow the exception. This is determined by whether we are still
-	     at the same PL_curstackinfo level. This fails in the case of
-	     SPLICE(), which pushes a new SETJMP and runops level, but not a
-	     new stackinfo level. There may be other code which does similar.
-	     The solution is to store the current value of PL_top_env in each
-	     pushed CxEVAL, and see if it's still the same as PL_top_env when
-	     the exception is handled.
-	     
-	     [ 24387]
-	     add test for [perl #34682] leaving eval via last in inner runops
-     Branch: maint-5.8/perl
-	   ! cop.h pp_ctl.c
-	  !> scope.h t/op/eval.t
-____________________________________________________________________________
-[ 30122] By: nicholas				   on 2007/02/04  22:37:19
-	Log: Clear up a maint specific compiler warning - in 5.8.x we have more
-	     than 16 entries in the arena data structures, so SVt_PTE is > 15,
-	     so won't fit in 4 bits. It's not actually needed by the sanity test,
-	     so change its "type" to 0.
-     Branch: maint-5.8/perl
-	   ! sv.c
-____________________________________________________________________________
 [ 30121] By: nicholas				   on 2007/02/04  21:32:10
 	Log: Integrate:
 	     [ 23753]
@@ -224,88 +22,9 @@ ____________________________________________________________________________
      Branch: maint-5.8/perl
 	  !> dump.c scope.h
 ____________________________________________________________________________
-[ 30117] By: nicholas				   on 2007/02/04  19:00:56
-	Log: local $[ works quite nicely in maint, so un-TODO it.
-     Branch: maint-5.8/perl
-	   ! t/op/local.t
-____________________________________________________________________________
-[ 30116] By: nicholas				   on 2007/02/04  18:51:01
-	Log: Put the assignment to $XS_VERSION in a BEGIN block too.
-     Branch: maint-5.8/perl
-	   ! ext/DynaLoader/DynaLoader_pm.PL
-____________________________________________________________________________
+
 [ 30115] By: nicholas				   on 2007/02/04  18:49:54
 	Log: Integrate:
-	     [ 24041]
-	     Don't use vars in DynaLoader
-	     Remove left-over maintenance code
-	     
-	     [ 24271]
-	     Subject: [PATCH] Symbian port of Perl
-	     From: <jarkko.hietaniemi@nokia.com>
-	     Date: Mon, 18 Apr 2005 13:18:30 +0300
-	     Message-ID: <B356D8F434D20B40A8CEDAEC305A1F2453D653@esebe105.NOE.Nokia.com>
-	     
-	     [ 27522]
-	     Avoid hardcoded $(OBJ_EXT)
-	     
-	     [ 27549]
-	     Move DynaLoader.o into libperl.so.
-	     
-	     This avoids the need to statically link DynaLoader into the stub perl
-	     executable and make libperl.so provide all the code needed to get a
-	     functional embedded perl interpreter up running.  As a side effect
-	     this also moves DynaLoader into libperl.a for non-useshrplib builds.
-	     
-	     Fixes [perl #32539]
-	     
-	     [ 27566]
-	     Adjust docs to reflect that DynaLoader, as of change 27549,
-	     is part of libperl.
-	     
-	     [ 28226]
-	     Subject: [PATCH] Test script for DynaLoader
-	     From: Sébastien Aperghis-Tramoni <maddingue@free.fr>
-	     Date: Thu, 18 May 2006 16:46:00 +0200
-	     Message-ID: <1147963560.446c88a8891e1@imp1-g19.free.fr>
-	     
-	     [ 28227]
-	     Nits in the DynaLoader test: make it warning-clean,
-	     and avoid checking OS- and locale-specific messages
-	     
-	     [ 28228]
-	     We can now remove DynaLoader from 1_compile.t
-	     
-	     [ 28274]
-	     Better handling for error-checking
-	     From: IRC/#p5p/Maddingue (Sebastien Aperghis-Tramoni)
-	     
-	     [ 28308]
-	     Subject: Re: [PATCH] Test script for DynaLoader
-	     From: demerphq <demerphq@gmail.com>
-	     Date: Thu, 25 May 2006 13:20:53 +0200
-	     Message-ID: <9b18b3110605250420m7431bfbeve44aada2025264f7@mail.gmail.com>
-	     
-	     [ 28318]
-	     use the same arg names everyone else does and handle undef filename
-	     
-	     [ 28321]
-	     Subject: [PATCH] DynaLoader.t: less assumptions
-	     From: Jarkko Hietaniemi <jhietaniemi@gmail.com>
-	     Message-ID: <44796AF2.8060903@gmail.com>
-	     Date: Sun, 28 May 2006 12:18:42 +0300
-	     
-	     [ 28333]
-	     And some more DynaLoader things that should not be tested on
-	     VMS since they are not part of the implementation.
-	     
-	     [ 28840]
-	     darwin also seems to be lacking a dl_unload_file() in its
-	     DynaLoader, so some additional skips are needed.  If I only
-	     had a NeXT to test with now...
-	     
-	     [ 29017]
-	     Upgrade to XSLoader-0.07.
 	     
 	     [ 29188]
 	     Subject: [patch at 21983] factor out $^O eq 'darwin' from XSLoader.pm
@@ -313,35 +32,12 @@ ____________________________________________________________________________
 	     Date: Thu, 2 Nov 2006 12:36:49 +0100 
 	     Message-ID: <E3FB32585BF1D411B9E900805FF51A080204E833@ru0022exch001u.ru.lucent.com>
 	     
-	     [ 29198]
-	     Wrap the $VERSION initialization of DynaLoader in a BEGIN block
-	     
-	     Subject: [perl #40651] (Obscure) Bug in Dynaloader 
-	     From: gml4410@ggr.co.uk (via RT) <perlbug-followup@perl.org>
-	     Date: Thu, 02 Nov 2006 09:30:34 -0800
-	     Message-ID: <rt-3.5.HEAD-4979-1162488633-1267.40651-75-0@perl.org>
-	     
-	     [ 29200]
-	     The assignment to $VERSION must be on its own line, for
-	     ExtUtils::MM_Unix::parse_version to be happy.
-	     
-	     [ 29253]
-	     The DynaLoader test isn't happy with OpenBSD's libc.so.39.3.
-	     
 	     [ 29580]
 	     Subject: [PATCH 5.8.8] OS/2-specific fixes, round II
 	     From: Ilya Zakharevich <nospam-abuse@ilyaz.org>
 	     Date: Mon, 18 Dec 2006 00:45:24 -0800
 	     Message-ID: <20061218084524.GA14866@powdermilk.math.berkeley.edu>
 	     
-	     [ 29707]
-	     Subject: DynaLoader test failure on cygwin
-	     From: "Yitzchak Scott-Thoennes" <sthoenna@efn.org>
-	     Date: Sun, 7 Jan 2007 11:56:21 -0800 (PST)
-	     Message-ID: <1675.63.226.247.31.1168199781.squirrel@63.226.247.31>
-	     
-	     [ 29857]
-	     Fix a typo in Dynaloader_pm.PL.
      Branch: maint-5.8/perl
 	  +> ext/DynaLoader/t/DynaLoader.t
 	  !> MANIFEST Makefile.SH ext/DynaLoader/DynaLoader_pm.PL
@@ -367,12 +63,6 @@ ____________________________________________________________________________
 	     DynaLoader upgraded)
      Branch: maint-5.8/perl
 	   ! ext/DynaLoader/DynaLoader_pm.PL ext/DynaLoader/Makefile.PL
-____________________________________________________________________________
-[ 30110] By: nicholas				   on 2007/02/03  19:00:21
-	Log: Clarify that all the dire (sounding) "unsafe" warnings apply to 5005
-	     threads.
-     Branch: maint-5.8/perl
-	   ! gv.c op.c perl.c sv.c
 ____________________________________________________________________________
 [ 30109] By: nicholas				   on 2007/02/03  18:52:20
 	Log: Integrate:
@@ -412,15 +102,6 @@ ____________________________________________________________________________
 	     From: Yitzchak Scott-Thoennes <sthoenna@efn.org>
 	     Date: Thu, 10 Nov 2005 00:46:33 -0800
 	     Message-ID: <20051110084633.GA3364@efn.org>
-	     
-	     [ 26947]
-	     Make dump and -u croak on Win32 and Cygwin to avoid confusion
-	     such as was seen here:
-	     
-	     Subject: Weird Win32 error: "This application has requested the Runtime to terminate it in an unusual way."
-	     From: demerphq <demerphq@gmail.com>
-	     Date: Thu, 26 Jan 2006 15:40:42 +0100
-	     Message-ID: <9b18b3110601260640x34b2442cnf5379d2f83b74187@mail.gmail.com>
 	     
 	     [ 27252]
 	     Subject: [PATCH] op/magic failure on cygwin after 1.5.19-4
@@ -474,44 +155,6 @@ ____________________________________________________________________________
 	   ! reentr.h
 	  !> pad.c pod/perlembed.pod pod/perlxs.pod reentr.c reentr.pl
 ____________________________________________________________________________
-[ 30102] By: nicholas				   on 2007/02/02  22:11:03
-	Log: Integrate:
-	     [ 29616]
-	     Fix RT #6006: Regexp replaces using large replacement variables fail
-	     some of the time (i.e. when the substitution contains something
-	     like ${10}). Patch derived from a patch by Hugo van der Sanden;
-	     added also a second test (Yves Orton already added a TODO test
-	     for this.)
-	     
-	     [ 29617]
-	     A better fix for RT #6006: revert change 29616, which was bogus,
-	     and add OP_SCOPE to the list of "dangerous" ops that might appear
-	     on the right side of s///.
-	     However, this fix does not work under taint mode, and op/subst.t
-	     has -T.
-	     
-	     [ 29618]
-	     Remove -T from op/subst.t, and add a new test file, substT.t,
-	     to run the s/// tests under taint mode; mark the test for
-	     RT #6006 as TODO, but only with -T.
-	     
-	     [ 29619]
-	     Fix #6006 for taint mode too.
-     Branch: maint-5.8/perl
-	  +> t/op/substT.t
-	   ! op.c
-	  !> MANIFEST t/op/subst.t
-____________________________________________________________________________
-[ 30100] By: nicholas				   on 2007/02/02  21:52:26
-	Log: Integrate:
-	     [ 29308]
-	     Subject: [perl #36909] $^R undefined on matches involving backreferences
-	     From: yves orton via RT <bugs-perl5@bugs6.perl.org>
-	     Date: Nov 17, 2006 4:07 PM
-     Branch: maint-5.8/perl
-	   ! t/op/pat.t
-	  !> regcomp.c regexec.c t/op/subst.t
-____________________________________________________________________________
 [ 30099] By: nicholas				   on 2007/02/02  21:14:53
 	Log: Integrate:
 	     [ 29644]
@@ -525,13 +168,6 @@ ____________________________________________________________________________
 	     pointer to imply a zero length string, which saves creating a mortal
 	     in pp_require, only for it to be ignored in favour of a new SV.
 	     
-	     [ 29685]
-	     Subject: Re: [PATCH] Symbian port: add Series 90 support
-	     From: Jarkko Hietaniemi <jhi@iki.fi>
-	     Date: Thu, 04 Jan 2007 03:35:54 -0500
-	     Message-ID: <459CBC6A.4060806@iki.fi>
-	     
-	     Fixes a VC7/VC7.1 linker error following #29650/#29651
      Branch: maint-5.8/perl
 	  !> embed.fnc perl.h pp_ctl.c proto.h toke.c util.c
 ____________________________________________________________________________

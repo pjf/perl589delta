@@ -16,7 +16,10 @@
 2007-05 - DONE, MERGED (Vincent Pit)
 2007-09 - DONE, MERGED (Paul Fenwick)
 2007-10 - DONE, MERGED (Jacinta Richardson)
+2007-11-a - DONE, MERGED (Brad Dean)
+2007-11-b - DONE, MERGED (Brad Dean)
 2007-11-d - DONE, MERGED (Abhijit Menon-Sen (aka crab))
+2007-11-i - DONE, MERGED (Eddy Tan)
 2007-11-j - DONE, MERGED (Abhijit Menon-Sen (aka crab))
 2007-12   - DONE, MERGED (Abhijit Menon-Sen (aka crab))
 2008-01 - DONE, MERGED (Adam Flott)
@@ -24,32 +27,38 @@
 2008-04 - DONE, MERGED (Abhijit Menon-Sen (aka crab))
 2008-05 - DONE, MERGED (Mark Aufflick)
 
+
 == IN PROGRESS ==
 
-2006-03 - Stephen Steneker (aka Stennie)    Last seen, 15th Sep
-2006-04 - Stephen Steneker (aka Stennie)    Last seen, 15th Sep
+2006-03 - Stephen Steneker (aka Stennie)    Last seen,  7th Oct
+2006-04 - Stephen Steneker (aka Stennie)    Last seen,  7th Oct
 2006-05 - Michael Peters                    Last seen, 10th Sep
 2007-02-b - Adam Flott                      Last seen, 15th Sep
 2007-02-e - Martin Ryan                     Last seen, 11th Sep
-2007-02-f - LesleyB                         Last seen, 17th Sep
-2007-02-i - Eddy Tan                        Last seen,  1st Oct
-2007-02-j - Shawn M Moore (aka Sartak)      Last seen, 15th Sep
-2007-11-a - Bradley Dean                    Last seen, 19th Sep
-2007-11-b - Bradley Dean                    Last seen, 19th Sep
-2007-11-c - Ben Hengst                      Last seen, 22nd Sep
+2007-02-i - Paul Fenwick                    Last seen, 12th Oct
+2007-02-j - Shawn M Moore (aka Sartak)      Last seen,  7th Oct
+2007-11-c - Ben Hengst                      Last seen,  1st Oct
+2007-11-e - Brad Dean                       Last seen, 20th Oct
 2007-11-f - Crab                            Last seen, 22nd Sep
-2007-11-g - Andreas Marienborg              Last seen, 20th Sep
-2007-11-i - Eddy Tan                        Last seen, 23rd Sep
-2008-02 - Spiros Denaxas                    Last seen, 14th Sep
-2008-06 - Renee Backer                      Last seen,  9th Sep
+2008-06   - Eddy Tan                        Last seen, 20th Oct
 
 == AVAILABLE ==
 
-2007-11-e - ==> Nobody <== 20k
+2007-02-f - ==> Nobody <==  6k
+2007-11-g - ==> Nobody <== 16k
 2007-11-h - ==> Nobody <== 20k
+2008-02   - ==> Nodody <== 57k
 2008-09   - ==> Nobody <== 31k (and growing!)
 
 == NOTES ==
 
+2007-02 branch appears to contain misplaced commits that are now
+in 2007-02-a, which has been merged.
+
 2007-02-d - Has been slimmed by Drew Stephens.
-2008-03   - Has been slimmed by Jacinta Richardson
+2007-02-f - Has been slimmed by Lesley Binks
+2007-02-i - Has been slimmed by Eddy Tan
+2007-11-g - Has been slimmed by Andreas Marienborg
+2008-03   - Has been slimmed by Jacinta Richardson.
+2008-03   - Has been slimmed by Jacinta Richardson.
+2008-02   - Has been slimmed by Spiros Denaxas.
