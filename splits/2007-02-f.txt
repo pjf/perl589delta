@@ -1,79 +1,6 @@
-[ 30237] By: nicholas				   on 2007/02/12  19:15:16
-	Log: Integrate:
-	     [ 28870]
-	     Changed +DA2.0w to +DD64; Added notes about C ANSI C updates
-	     on HP-UX 11.00.
-	     
-	     [ 28982]
-	     New shiny models
-	     
-	     [ 29575]
-	     Subject: PATCH: Add =encoding directive to non-latin READMEs
-	     From: Slaven Rezic <slaven@rezic.de>
-	     Date: 16 Dec 2006 11:20:36 +0100
-	     Message-ID: <87wt4sdtvv.fsf@biokovo.herceg.de>
-	     
-	     [ 29778]
-	     Superdome now also in Itanium series (sx1000 & sx2000),
-	     cx2600 is Madison 6
-     Branch: maint-5.8/perl
-	  !> README.aix README.cn README.hpux README.jp README.ko README.tw
-____________________________________________________________________________
-[ 30232] By: nicholas				   on 2007/02/12  16:27:14
-	Log: Integrate:
-	     [ 27228]
-	     To make arithmetic on tainted dualvars work properly requires that
-	     sv_2nv uses SvIVX in preference to SvPVX, if SVp_IOK is true.
-	     
-	     [ 29669]
-	     Assignment to a tainted variable was causing confusion if the source
-	     value was an NV too large for an IV (bug #40708). Fix the confusion
-	     by not promoting private flags to public flags in S_save_magic if
-	     there are already public flags.
-     Branch: maint-5.8/perl
-	  !> mg.c scope.c sv.c t/op/taint.t
-____________________________________________________________________________
-[ 30230] By: nicholas				   on 2007/02/12  15:40:42
-	Log: Integrate:
-	     [ 26799]
-	     Subject: Re: cloning and foo_dup functions
-	     From: Yitzchak Scott-Thoennes <sthoenna@efn.org>
-	     Date: Thu, 12 Jan 2006 01:41:18 -0800
-	     Message-ID: <20060112094118.GA1432@efn.org>
-     Branch: maint-5.8/perl
-	  !> embed.fnc pod/perltodo.pod
-____________________________________________________________________________
-[ 30227] By: nicholas				   on 2007/02/12  15:05:29
-	Log: Integrate:
-	     [ 28715]
-	     Only copy ppport.h to destination if it is different.
-	     This avoids unneccessary rebuilds.
-     Branch: maint-5.8/perl
-	  !> mkppport
-____________________________________________________________________________
-[ 30225] By: nicholas				   on 2007/02/12  14:01:09
-	Log: Integrate:
-	     [ 28238]
-	     pod/buildtoc has fussy ideas about the order of MANIFEST
-     Branch: maint-5.8/perl
-	   ! MANIFEST
 ____________________________________________________________________________
 [ 30224] By: nicholas				   on 2007/02/12  13:52:13
 	Log: All the TODOs plus on perlrun.pod change that was related.
-	     
-	     [ 28528]
-	     Change existing uses of strlcpy()/strlcat() to use new my_strlcpy()/
-	     my_strlcat() API.	Convert ext/File/Glob/bsd_glob.c to use 
-	     my_strlcat().  Add to the strlcy()/strlcat() todo entry.
-	     
-	     [ 28578]
-	     Subject: [PATCH] various safety/portability tweaks
-	     From: Jarkko Hietaniemi <jhi@iki.fi>
-	     Date: Sat, 15 Jul 2006 13:14:32 +0300
-	     Message-ID: <44B8C008.4030300@iki.fi>
-	     
-	     [ 29168]
-	     Make readpipe() overridable (and also `` and qx//)
 	     
 	     [ 29299]
 	     Subject: [PATCH] add regmust() to re.pm/re.xs
@@ -91,19 +18,6 @@ ____________________________________________________________________________
 	     Add the placeholder for new type, temporarily named BIND, for binding
 	     and aliasing in 6 on 5.
 	     
-____________________________________________________________________________
-[ 30223] By: nicholas				   on 2007/02/12  11:55:20
-	Log: Integrate:
-	     [ 30183]
-	     Unknown formatting code U<> spotted by Jesse - presumably it should be
-	     L<>
-	     
-	     [ 30218]
-	     FAQ sync
-     Branch: maint-5.8/perl
-	  !> pod/perlfaq1.pod pod/perlfaq2.pod pod/perlfaq3.pod
-	  !> pod/perlfaq4.pod pod/perlfaq5.pod pod/perlfaq6.pod
-	  !> pod/perlfaq7.pod pod/perlfaq8.pod pod/perlfaq9.pod
 ____________________________________________________________________________
 [ 30222] By: nicholas				   on 2007/02/12  11:54:27
 	Log: Integrate:
