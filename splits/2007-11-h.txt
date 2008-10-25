@@ -1,47 +1,4 @@
 ____________________________________________________________________________
-[ 32292] By: nicholas				   on 2007/11/12  21:25:52
-	Log: Integrate:
-	     [the Devel::PPPort parts of]
-	     
-	     [ 30728]
-	     Upgrade to Devel::PPPort 3.11_01
-	     
-	     [ 31134]
-	     move PL_expect and PL_copline into the PL_parser structure
-	     
-	     [ 31157]
-	     Make ppptools.pl allow a trailing dot in filenames for VMS.
-	     
-	     [ 31199]
-	     move PL_rsfp into the PL_parser struct
-	     and simplify its creation and destruction
-	     
-	     [ 31200]
-	     move PL_rsfp_filters into the parser struct
-	     
-	     [ 31705]
-	     Upgrade to Devel::PPPort 3.11_02
-	     
-	     [ 31713]
-	     Upgrade to Devel::PPPort 3.11_03
-	     
-	     [ 31739]
-	     Upgrade to Devel::PPPort 3.11_05
-	     
-	     [ 31848]
-	     Upgrade to Devel::PPPort 3.11_06
-	     
-	     [ 31939]
-	     Upgrade to Devel::PPPort 3.12
-	     
-	     [ 32023]
-	     Upgrade to Devel::PPPort 3.13
-     Branch: maint-5.8/perl
-	  +> ext/Devel/PPPort/parts/inc/shared_pv
-	  +> ext/Devel/PPPort/parts/ppport.fnc
-	  +> ext/Devel/PPPort/t/shared_pv.t
-	  !> (integrate 57 files)
-____________________________________________________________________________
 [ 32291] By: nicholas				   on 2007/11/12  20:55:44
 	Log: Integrate:
 	     [ 31198]
