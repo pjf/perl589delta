@@ -502,7 +502,7 @@ C<PathTools> upgraded to version 3.2501
 
 =item *
 
-C<PerlIO::scalar> upgraded to version 0.05
+C<PerlIO::scalar> upgraded to version 0.06
 
 =over 4
 
@@ -539,10 +539,6 @@ C<POSIX::remove> can removes empty directories.
 =item *
 
 C<POSIX> imports previously duplicated constants from C<Fcntl>, version bumped from 1.14 to 1.15.
-
-=item *
-
-C<PerlIO::scalar> upgraded to version 0.06
 
 =item *
 
