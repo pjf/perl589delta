@@ -66,12 +66,6 @@ pluggable sub-modules. The bundled version is 3.7. [33505]
 C<Module::CoreList> is a hash of hashes that is keyed on perl version as
 indicated in $]. The bundled version is 2.12 (31561)
 
-=item *
-
-C<CPANPLUS> is an API to the CPAN mirrors and a collection of interactive 
-shells, commandline programs, etc, that use this API. The bundled version 
-is 0.78 (30932)
-
 =back
 
 =head2 Updated Modules
@@ -215,7 +209,7 @@ C<constant> upgraded to version 1.15
 
 =item *
 
-C<CPAN> upgraded to version 1.9105 (32280)
+C<CPAN> upgraded to version 1.9205 (32280)
 
 =item *
 
@@ -510,7 +504,7 @@ C<PathTools> upgraded to version 3.2501
 
 =item *
 
-C<PerlIO::scalar> upgraded to version 0.05
+C<PerlIO::scalar> upgraded to version 0.06
 
 =over 4
 
@@ -551,10 +545,6 @@ C<POSIX> imports previously duplicated constants from C<Fcntl>, version bumped f
 =item *
 
 C<re> gains the regmust() function.
-
-=item *
-
-C<scalar> upgraded to version 0.06
 
 =item *
 
