@@ -763,6 +763,11 @@ The Emacs perl mode (emacs/cperl-mode.el) has been updated to version
 
 =item *
 
+C<perlbug> now checks if you're reporting about a non-core module and suggests
+you report it to the CPAN author instead.
+
+=item *
+
 Added C<uupacktool.pl> (handles binary files in source tree).
 
 =item *

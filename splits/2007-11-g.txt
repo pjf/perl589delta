@@ -1,53 +1,6 @@
 ____________________________________________________________________________
-[ 32318] By: nicholas				   on 2007/11/14  23:02:34
-	Log: Integrate:
-	     [ 31611]
-	     Fix typos, readability nits
-	     
-	     [ 31721]
-	     Skip the POSIX::strftime() time test with a 60sec parameter on Vista:
-	     it seems to have the same problem as when built with the VC8 CRT
-	     (Fixes perl #44589)
-	     
-	     Also, change the %D to the equivalent %m/%d/%y because %D isn't
-	     supported at all by Microsoft's CRT and just converts to nothing
-	     with VC6's CRT and causes another invalid parameter error with VC8
-	     and Vista
-	     
-	     [ 31725]
-	     Correct parentheses. Calling Win32::GetOSVersion() on non-win32 would
-	     be bad, m'kay.
-	     
-	     [ 31780]
-	     Subject: [perl #45093] Can't find ODBM library while compiling 5.9.5 
-	     From: Clinton Gormley (via RT) <perlbug-followup@perl.org>
-	     Date: Fri, 31 Aug 2007 10:29:13 -0700
-	     Message-ID: <rt-3.6.HEAD-10743-1188581353-593.45093-75-0@perl.org>
-     Branch: maint-5.8/perl
-	  !> ext/DynaLoader/DynaLoader_pm.PL ext/DynaLoader/Makefile.PL
-	  !> ext/File/Glob/t/basic.t ext/Hash/Util/lib/Hash/Util.pm
-	  !> ext/ODBM_File/hints/linux.pl ext/POSIX/Makefile.PL
-	  !> ext/POSIX/POSIX.xs ext/POSIX/t/posix.t
-____________________________________________________________________________
 [ 32311] By: nicholas				   on 2007/11/14  17:23:02
 	Log: Integrate:
-	     [ 31077]
-	     Small perlivp.PL updates
-	     
-	     Subject: Re: [Andreas J. Koenig] C3 MRO breaks Params::Util and Graph
-	     From: Johan Vromans <jvromans@squirrel.nl>
-	     Date: Wed, 25 Apr 2007 14:37:16 +0200
-	     Message-ID: <m2r6q8iq9v.fsf@phoenix.squirrel.nl>
-	     
-	     [ 31531]
-	     Adapt perlivp to the ext/ reorganisation for Compress modules
-	     
-	     [ 31599]
-	     Subject: [PATCH] perlbug
-	     From: Alexandr Ciornii <alexchorny@gmail.com>
-	     Date: Thu, 12 Jul 2007 13:46:24 +0300
-	     Message-ID: <1367844687.20070712134624@gmail.com>
-	     
 	     [ 31801]
 	     If perl's minimal required version number is >= 5.6.0,
 	     we can write it 5.XXXXXX always. Fixes h2xs.t failiing
