@@ -1,32 +1,4 @@
 ____________________________________________________________________________
-[ 32295] By: nicholas				   on 2007/11/12  22:22:11
-	Log: Integrate:
-	     [ 31702]
-	     Use sysconf/getpagesize/page.h to determine page size on Linux,
-	     in that order.
-	     
-	     Subject: Re: [PATCH] Various Gentoo Patches
-	     From: Marcus Holland-Moritz <mhx-perl@gmx.net>
-	     Date: Sun, 12 Aug 2007 13:16:52 +0200
-	     Message-Id: <20070812131652.16ca5444@r2d2>
-	     
-	     [ 31967]
-	     Subject: Re: [perl #45513] Test failures on amd64-freebsd 6.2
-	     From: Slaven Rezic <slaven@rezic.de>
-	     Date: 19 Sep 2007 21:56:00 +0200
-	     Message-ID: <87abri1lbj.fsf@biokovo-amd64.herceg.de>
-	     
-	     [ 32077]
-	     Fix fallback definitions of S_IRWX[UGO] (didn't include
-	     the 'X', but 'W' twice) and fix the value of IPC_GETACL,
-	     which was set to IPC_EXCL.
-	     
-	     [ 32078]
-	     Increment IPC::SysV version number.
-     Branch: maint-5.8/perl
-	  !> ext/IPC/SysV/SysV.pm ext/IPC/SysV/SysV.xs
-	  !> ext/IPC/SysV/t/ipcsysv.t
-____________________________________________________________________________
 [ 32293] By: nicholas				   on 2007/11/12  21:51:49
 	Log: Integrate:
 	     [ 30493]
