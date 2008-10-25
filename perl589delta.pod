@@ -542,7 +542,7 @@ C<POSIX> imports previously duplicated constants from C<Fcntl>, version bumped f
 
 =item *
 
-C<scalar> upgraded to version 0.06
+C<PerlIO::scalar> upgraded to version 0.06
 
 =item *
 
