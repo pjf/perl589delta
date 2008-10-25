@@ -1,9 +1,6 @@
 ____________________________________________________________________________
 [ 32290] By: nicholas				   on 2007/11/12  20:20:34
 	Log: Integrate:
-	     [ 32091]
-	     newCONTSUB() wasn't thread-safe ([perl #45053])
-	     
 	     [ 32098]
 	     Subject: [PATCH] Move threads test added in change 32091
 	     From: "Jerry D. Hedden" <jdhedden@cpan.org>

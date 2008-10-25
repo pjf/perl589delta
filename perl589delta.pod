@@ -1285,6 +1285,10 @@ Fix bug RT #6006, regex replaces using large replacement variables fail some of
 the time, i.e. when substitution contains something like C<${10}> (note the
 bracket) instead of just C<$10> (29616 - 29619).
 
+=item *
+
+Fix bug #4503, newCONSTSUB() is now thread safe.
+
 =back
 
 =head2 Platform Specific Fixes
