@@ -44,11 +44,14 @@
 
 == AVAILABLE ==
 
-2007-02-f - ==> Nobody <==  6k
-2007-11-g - ==> Nobody <== 16k
-2007-11-h - ==> Nobody <== 20k
 2008-02   - ==> Nodody <== 57k
 2008-09   - ==> Nobody <== 31k (and growing!)
+
+== TO MERGE ==
+
+2007-02-f - ==> Schwern
+2007-11-g - ==> Schwern
+2007-11-h - ==> Schwern
 
 == NOTES ==
 
