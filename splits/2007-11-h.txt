@@ -1,45 +1,4 @@
 ____________________________________________________________________________
-[ 32293] By: nicholas				   on 2007/11/12  21:51:49
-	Log: Integrate:
-	     [ 30493]
-	     Subject: Re: [PATCH] (Re: [PATCH] unicode/utf8 pod)
-	     From: Juerd Waalboer <juerd@convolution.nl>
-	     Date: Sun, 4 Mar 2007 16:00:19 +0100
-	     Message-ID: <20070304150019.GN4723@c4.convolution.nl>
-	     
-	     [ 30678]
-	     Subject: [PATCH] Resolve PL_curpm issues with (??{}) and fix corruption of match results when pattern is a qr.
-	     From: demerphq <demerphq@gmail.com>
-	     Date: Wed, 21 Mar 2007 10:39:24 +0100
-	     Message-ID: <9b18b3110703210239x540f5ad9mdb41c2ea6229ac31@mail.gmail.com>
-	     
-	     plus two follow-up patches (minor tweaks)
-	     
-	     [ 31194]
-	     Subject: Re: Compress::Zlib, pack "C" and utf-8 [PATCH]
-	     From: Marc Lehmann <schmorp@schmorp.de>
-	     Date: Thu, 12 Apr 2007 08:41:53 +0200
-	     Message-ID: <20070412064153.GA22475@schmorp.de>
-	     
-	     [ 31212]
-	     Upgrade to Encode-2.21
-	     
-	     [ 31305]
-	     Upgrade to Encode 2.22
-	     
-	     [ 31307]
-	     Plug a memory leak in Encode
-	     
-	     [ 31310]
-	     Upgrade to Encode 2.23
-     Branch: maint-5.8/perl
-	  +> ext/Encode/lib/Encode/MIME/Name.pm ext/Encode/t/mime-name.t
-	  !> MANIFEST ext/Encode/Changes ext/Encode/Encode.pm
-	  !> ext/Encode/Encode.xs ext/Encode/Makefile.PL
-	  !> ext/Encode/Unicode/Unicode.pm ext/Encode/encoding.pm
-	  !> ext/Encode/lib/Encode/Encoding.pm ext/Encode/t/Aliases.t
-	  !> ext/Encode/t/encoding.t ext/Encode/t/fallback.t
-____________________________________________________________________________
 [ 32292] By: nicholas				   on 2007/11/12  21:25:52
 	Log: Integrate:
 	     [the Devel::PPPort parts of]
