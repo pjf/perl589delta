@@ -1,31 +1,6 @@
 ____________________________________________________________________________
 [ 32318] By: nicholas				   on 2007/11/14  23:02:34
 	Log: Integrate:
-	     [ 30826]
-	     Mark new regex glob test as a TODO on VMS.
-	     
-	     [ 31230]
-	     DynaLoader doesn't seem to need -DPERL_CORE, and no other extensions
-	     are compiled with it, so let's see if we can get away with removing
-	     it. Revert this change if it causes black smoke!
-	     
-	     [ 31308]
-	     DBL_EPSILON DBL_MIN FLT_EPSILON FLT_MIN are not C constant expressions
-	     on z/OS, so move them to the list of non const constants.
-	     
-	     [ 31324]
-	     Subject: [PATCH] Fix DynaLoader::dl_findfile() to locate .so files again
-	     From: "Jan Dubois" <jand@activestate.com>
-	     Date: Thu, 31 May 2007 13:17:22 -0700
-	     Message-ID: <00a501c7a3c0$b2d880d0$18898270$@com>
-	     
-	     [ 31482]
-	     Fix POSIX::setlocale(): the CRT function returns a pointer to a
-	     buffer that may be overwritten by subsequent calls to the CRT
-	     function, so we must make a safe copy of that buffer for our own
-	     use. This fixes lib/locale.t on Win32 with the Borland compiler,
-	     but presumably could affect other compilers too.
-	     
 	     [ 31611]
 	     Fix typos, readability nits
 	     
