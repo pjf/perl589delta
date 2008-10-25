@@ -1,46 +1,4 @@
 ____________________________________________________________________________
-[ 32296] By: nicholas				   on 2007/11/12  23:04:43
-	Log: Integrate:
-	     [ 31430]
-	     Silence "signed/unsigned mismatch" warning from VC++ when building
-	     with -DPERL_DEBUGGING_MSTATS
-	     
-	     [ 31581]
-	     Add additional SUSV3 constants to Socket for use with setsockopt() 
-	     and getsockopt().
-	     
-	     [ 31651]
-	     Subject: [perl #39420] [PATCH] Data::Dumper fails to escape bless class name
-	     From: "Adriano Ferreira" <a.r.ferreira@gmail.com>
-	     Date: Tue, 24 Jul 2007 16:29:21 -0300
-	     Message-ID: <73ddeb6c0707241229of8f87d7r9315855344451b05@mail.gmail.com>
-	     
-	     [ 31660]
-	     Subject: [PATCH] Silence diag in ext/Data/Dumper/t/bless.t
-	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
-	     Date: Wed, 25 Jul 2007 14:27:44 -0400
-	     Message-Id: <1ff86f510707251127l3530b011q853608654a7347f7@mail.gmail.com>
-	     
-	     Subject: Cleanup CPANPLUS test dirs
-	     From: "Jerry D. Hedden" <jdhedden@cpan.org>
-	     Date: Wed, 25 Jul 2007 14:30:25 -0400
-	     Message-Id: <1ff86f510707251130x771e3ccds55f20b83cc162818@mail.gmail.com>
-	     
-	     [ 31662]
-	     Don't use C++ comments.
-	     
-	     [ 31677]
-	     Subject: [perl #44349] DProf - poor timer resolution on BSDs (patch) 
-	     From: "agrow@thegotonerd.com" <perlbug-followup@perl.org>
-	     Date: Thu, 02 Aug 2007 15:36:42 -0700
-	     Message-Id: <rt-3.6.HEAD-23341-1186094202-398.44349-75-0@perl.org>
-     Branch: maint-5.8/perl
-	  +> ext/Data/Dumper/t/bless.t
-	  !> MANIFEST Makefile.SH ext/Data/Dumper/Dumper.pm
-	  !> ext/Data/Dumper/Dumper.xs ext/Devel/DProf/DProf.xs
-	  !> ext/Devel/Peek/Peek.xs ext/Socket/Makefile.PL
-	  !> ext/Socket/Socket.pm
-____________________________________________________________________________
 [ 32295] By: nicholas				   on 2007/11/12  22:22:11
 	Log: Integrate:
 	     [ 31702]
