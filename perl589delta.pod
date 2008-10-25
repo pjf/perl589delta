@@ -1785,11 +1785,6 @@ Test that C<$@> is correctly localised in L<Locale::Maketext>. (25547)
 
 B<TODO> test for "C<goto()> from an if to an else doesn't undo local". (RT #43403)
 
-=item *
-
-Test that all unusued ASCII alpha-numeric command-line switches to the perl
-interpreter are reported as unrecognised. (31754)
- 
 =back
 
 =head1 Changed Tests
