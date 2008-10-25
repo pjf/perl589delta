@@ -935,8 +935,18 @@ and cygwin.
 
 =head1 Changes to Existing Documentation
 
+=over 4
+
+=item *
+
 L<perltodo> was, of course, extensively modified; with the notable marking of the srlcpy/strcat 
 to my_strlcpy/my_strcat update as a TODONE.
+
+=item *
+
+L<INSTALL> has been updated and modernized.
+
+=back
 
 =head1 Performance Enhancements
 
