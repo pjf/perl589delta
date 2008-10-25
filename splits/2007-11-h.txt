@@ -1,41 +1,4 @@
 ____________________________________________________________________________
-[ 32291] By: nicholas				   on 2007/11/12  20:55:44
-	Log: Integrate:
-	     [ 31198]
-	     Work around to get Unicode tests passing.
-	     
-	     [ 31338]
-	     Upgrade to Unicode::Normalize 1.02
-	     
-	     [ 31339]
-	     A test file was removed from the latest Unicode::Normalize
-	     
-	     [ 31567]
-	     Subject: [PATCH] Update Filter::Call::Util version
-	     From: "Paul Marquess" <Paul.Marquess@ntlworld.com>
-	     Date: Sat, 7 Jul 2007 20:24:21 +0100
-	     Message-ID: <007e01c7c0cc$6d07af30$6801a8c0@myopwv.com>
-	     
-	     [ 31749]
-	     Upgrade to Text-Soundex-3.03
-	     
-	     [ 32208]
-	     Subject: [PATCH] DB_File
-	     From: "Paul Marquess" <paul_marquess@yahoo.co.uk>
-	     Date: Mon, 29 Oct 2007 13:08:31 -0000
-	     Message-ID: <004a01c81a2c$ce1eb020$3a3c140a@myopwv.com>
-     Branch: maint-5.8/perl
-	   - ext/Unicode/Normalize/t/short.t
-	  !> MANIFEST ext/DB_File/Changes ext/DB_File/DB_File.pm
-	  !> ext/DB_File/DB_File.xs ext/Filter/Util/Call/Call.pm
-	  !> ext/Filter/Util/Call/Call.xs ext/Text/Soundex/Soundex.pm
-	  !> ext/Text/Soundex/Soundex.xs ext/Unicode/Normalize/Changes
-	  !> ext/Unicode/Normalize/Normalize.pm
-	  !> ext/Unicode/Normalize/Normalize.xs
-	  !> ext/Unicode/Normalize/README ext/Unicode/Normalize/mkheader
-	  !> ext/Unicode/Normalize/t/fcdc.t ext/Unicode/Normalize/t/func.t
-	  !> ext/Unicode/Normalize/t/test.t
-____________________________________________________________________________
 [ 32290] By: nicholas				   on 2007/11/12  20:20:34
 	Log: Integrate:
 	     [ 32091]
