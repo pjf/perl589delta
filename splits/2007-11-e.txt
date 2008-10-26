@@ -1,13 +1,3 @@
-[ 32356] By: nicholas				   on 2007/11/17  00:05:48
-	Log: Integrate:
-	     [ 32354]
-	     Let's install the *current* perldelta on VMS.
-	     
-	     
-	     [oops!]
-     Branch: maint-5.8/perl
-	  !> vms/descrip_mms.template
-____________________________________________________________________________
 [ 32355] By: nicholas				   on 2007/11/16  23:57:47
 	Log: Integrate:
 	     [ 31116]
