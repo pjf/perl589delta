@@ -1,8 +1,3 @@
-[ 32369] By: nicholas				   on 2007/11/17  15:23:17
-	Log: Regenerate headers.
-     Branch: maint-5.8/perl
-	   ! proto.h
-____________________________________________________________________________
 [ 32368] By: nicholas				   on 2007/11/17  15:06:50
 	Log: Integrate:
 	     [ 31123]
