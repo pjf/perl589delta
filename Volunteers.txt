@@ -19,6 +19,8 @@
 2007-11-a - DONE, MERGED (Brad Dean)
 2007-11-b - DONE, MERGED (Brad Dean)
 2007-11-d - DONE, MERGED (Abhijit Menon-Sen (aka crab))
+2007-11-g - DONE, MERGED (Michael Schwern)
+2007-11-h - DONE, MERGED (Michael Schwern)
 2007-11-i - DONE, MERGED (Eddy Tan)
 2007-11-j - DONE, MERGED (Abhijit Menon-Sen (aka crab))
 2007-12   - DONE, MERGED (Abhijit Menon-Sen (aka crab))
@@ -50,8 +52,6 @@
 == TO MERGE ==
 
 2007-02-f - ==> Schwern
-2007-11-g - ==> Schwern
-2007-11-h - ==> Schwern
 
 == NOTES ==
 
