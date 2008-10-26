@@ -9,6 +9,7 @@
 2007-02-a - DONE, MERGED (Adam Flott)
 2007-02-c - DONE, MERGED (Brad Dean)
 2007-02-d - DONE, MERGED (Abhijit Menon-Sen (aka crab))
+2007-02-f - DONE, MERGED (Michael G. Schwern)
 2007-02-g - DONE, MERGED (Moritz Lenz)
 2007-02-h - DONE, MERGED (Moritz Lenz)
 2007-03 - DONE, MERGED (Vincent Pit)
@@ -48,10 +49,6 @@
 
 2008-02   - ==> Nodody <== 57k
 2008-09   - ==> Nobody <== 31k (and growing!)
-
-== TO MERGE ==
-
-2007-02-f - ==> Schwern
 
 == NOTES ==
 
