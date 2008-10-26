@@ -48,7 +48,8 @@
 == AVAILABLE ==
 
 2008-02   - ==> Nodody <== 57k
-2008-09   - ==> Nobody <== 31k (and growing!)
+2008-09   - ==> Nobody <== 52k
+2008-10   - ==> Nobody <== 19k (and growing)
 
 == NOTES ==
 
