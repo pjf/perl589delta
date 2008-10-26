@@ -1,19 +1,10 @@
 [ 32377] By: nicholas				   on 2007/11/17  19:27:36
 	Log: Integrate:
-	     [ 31110]
-	     Two new manpages, by Abigail
-	     
-	     [ 31424]
-	     Fix docs for \u ; plus a POD formatting nit
-	     
 	     [ 31425]
 	     A first stab at making perlreref.pod up to date
 	     
 	     [ 31612]
 	     More typo fixes in the regexp docs
-	     
-	     [ 31613]
-	     Comment out links to docs that don't exist yet.
 	     
 	     [ 31683]
 	     Documentation updates for new regexp features

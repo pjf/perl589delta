@@ -843,6 +843,12 @@ C</c> modifiers.
 L<perlreguts> describe the internals of the regular expressions engine. It has
 been contributed by Yves Orton.
 
+L<perlrebackslash> describes all perl regular expression backslash and escape
+sequences.
+
+L<perlrecharclass> describes the syntax and use of character classes in
+Perl Regular Expressions.
+
 L<perlrun> is updated to clarify on the hash seed I<PERL_HASH_SEED>. Also more
 information in option B<-x> and B<-u>.
 
