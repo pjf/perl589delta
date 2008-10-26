@@ -1,11 +1,5 @@
 [ 32348] By: nicholas				   on 2007/11/16  23:12:47
 	Log: Integrate:
-	     [ 31082]
-	     Subject: Re: The Strict trap
-	     From: Johan Vromans <jvromans@squirrel.nl>
-	     Date: Wed, 25 Apr 2007 16:12:58 +0200
-	     Message-ID: <m2lkggilud.fsf@phoenix.squirrel.nl>
-	     
 	     [ 31664]
 	     Subject: [rt.cpan.org #28537] PATCH for croak.t test failure 
 	     From: Slaven_Rezic via RT <bug-Storable@rt.cpan.org>
