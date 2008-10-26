@@ -6,8 +6,6 @@
 	     Date: Fri, 3 Aug 2007 14:16:34 +0800
 	     Message-Id: <OF9205F187.AEDD9A24-ON4825732C.0021701B-4825732C.002279E4@IBMCN>
 	     
-	     [ 32344]
-	     For the 2.17 release.
      Branch: maint-5.8/perl
 	  !> ext/Storable/ChangeLog ext/Storable/Storable.pm
 	  !> ext/Storable/t/code.t ext/Storable/t/croak.t
