@@ -1,15 +1,3 @@
-[ 32364] By: nicholas				   on 2007/11/17  13:28:27
-	Log: Integrate:
-	     [ 29204]
-	     Subject: Re: [perl #40641] crash with unicode characters in regex comment
-	     From: SADAHIRO Tomoyuki <bqw10602@nifty.com>
-	     Date: Sat, 04 Nov 2006 21:53:50 +0900
-	     Message-Id: <20061104215302.3325.BQW10602@nifty.com>
-     Branch: maint-5.8/perl
-	  +> t/uni/greek.t t/uni/latin2.t
-	  !> MANIFEST embed.fnc embed.h global.sym pod/perldiag.pod proto.h
-	  !> regcomp.c t/uni/tr_utf8.t
-____________________________________________________________________________
 [ 32359] By: nicholas				   on 2007/11/17  12:07:43
 	Log: Integrate:
 	     [ 31112]

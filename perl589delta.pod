@@ -1331,6 +1331,10 @@ Fix bug #4503, newCONSTSUB() is now thread safe.
 Fix bug #42839 - the unicode swatch cache is now used (the lookup had a key
 mismatch).
 
+=item *
+
+Fix bug #40641 - fixed encoding of unicode characters in regular expressions.
+
 =back
 
 =head2 Platform Specific Fixes
