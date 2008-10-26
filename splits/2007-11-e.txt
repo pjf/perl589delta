@@ -1,25 +1,3 @@
-[ 32375] By: nicholas				   on 2007/11/17  17:32:13
-	Log: Integrate:
-	     [ 30833]
-	     Subject: [PATCH] Allow testing of DBM_Filter with any *DBM_File
-	     From: "Jerry D. Hedden" <jdhedden@yahoo.com>
-	     Date: Mon, 2 Apr 2007 10:15:47 -0700 (PDT)
-	     Message-ID: <642435.53086.qm@web30215.mail.mud.yahoo.com>
-	     
-	     [ 31227]
-	     Subject: [PATCH] DBM_Filter test: use std test preamble
-	     From: Jarkko Hietaniemi <jhi@cc.hut.fi>
-	     Date: Wed, 16 May 2007 05:29:17 +0300 (EEST)
-	     Message-Id: <200705160229.l4G2THSE421947@kosh.hut.fi>
-	     
-	     [ 31816]
-	     Spelling nit by Jim Cromie
-     Branch: maint-5.8/perl
-	  !> lib/DBM_Filter/t/01error.t lib/DBM_Filter/t/02core.t
-	  !> lib/DBM_Filter/t/compress.t lib/DBM_Filter/t/encode.t
-	  !> lib/DBM_Filter/t/int32.t lib/DBM_Filter/t/null.t
-	  !> lib/DBM_Filter/t/utf8.t
-____________________________________________________________________________
 [ 32374] By: nicholas				   on 2007/11/17  17:32:02
 	Log: Integrate:
 	     [ 32321]
