@@ -6,10 +6,6 @@
 	     Date: Fri, 3 Aug 2007 14:16:34 +0800
 	     Message-Id: <OF9205F187.AEDD9A24-ON4825732C.0021701B-4825732C.002279E4@IBMCN>
 	     
-	     [ 32302]
-	     Update the Storable changelog. Note that, while Storable's code is
-	     in sync between the core and the CPAN, the tests are not.
-	     
 	     [ 32344]
 	     For the 2.17 release.
      Branch: maint-5.8/perl
