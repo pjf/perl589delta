@@ -1669,6 +1669,11 @@ question (now represented by %s above).
 Changed to add the seek operation and is now included in the default warnings
 pragma (28903).
 
+=head2 Invalid escape in the specified encoding in regex; marked by <-- HERE in m/%s/
+
+New error, introduced as part of the fix to RT #40641 to handle encoding
+of unicode characters in regular expression comments.
+
 =head1 Changed Internals
 
 The new API function C<newSV_type> can be used to replace more efficiently the
