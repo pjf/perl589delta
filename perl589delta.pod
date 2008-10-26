@@ -13,6 +13,8 @@ There are no changes incompatible with 5.8.8.
 
 =head1 Core Enhancements
 
+readpipe() (and thus `` and qx//) can now be overridden.
+
 Nicholas Clark allowed symbolic references to have embedded NULs. The new
 public function C<get_cvn_flags> can be used in extensions if you have to
 handle them.
@@ -63,12 +65,6 @@ pluggable sub-modules. The bundled version is 3.7. [33505]
 
 C<Module::CoreList> is a hash of hashes that is keyed on perl version as
 indicated in $]. The bundled version is 2.12 (31561)
-
-=item *
-
-C<CPANPLUS> is an API to the CPAN mirrors and a collection of interactive 
-shells, commandline programs, etc, that use this API. The bundled version 
-is 0.78 (30932)
 
 =back
 
@@ -213,7 +209,7 @@ C<constant> upgraded to version 1.15
 
 =item *
 
-C<CPAN> upgraded to version 1.9105 (32280)
+C<CPAN> upgraded to version 1.9205 (32280)
 
 =item *
 
@@ -508,7 +504,7 @@ C<PathTools> upgraded to version 3.2501
 
 =item *
 
-C<PerlIO::scalar> upgraded to version 0.05
+C<PerlIO::scalar> upgraded to version 0.06
 
 =over 4
 
@@ -548,7 +544,11 @@ C<POSIX> imports previously duplicated constants from C<Fcntl>, version bumped f
 
 =item *
 
-C<scalar> upgraded to version 0.06
+C<POSIX::setlocale> safer to call multiple times.
+
+=item *
+
+C<re> gains the regmust() function.
 
 =item *
 
@@ -759,6 +759,11 @@ The Emacs perl mode (emacs/cperl-mode.el) has been updated to version
 
 =item *
 
+C<perlbug> now checks if you're reporting about a non-core module and suggests
+you report it to the CPAN author instead.
+
+=item *
+
 Added C<uupacktool.pl> (handles binary files in source tree).
 
 =item *
@@ -935,8 +940,18 @@ and cygwin.
 
 =head1 Changes to Existing Documentation
 
+=over 4
+
+=item *
+
 L<perltodo> was, of course, extensively modified; with the notable marking of the srlcpy/strcat 
 to my_strlcpy/my_strcat update as a TODONE.
+
+=item *
+
+L<INSTALL> has been updated and modernized.
+
+=back
 
 =head1 Performance Enhancements
 
@@ -1285,6 +1300,10 @@ Fix bug RT #6006, regex replaces using large replacement variables fail some of
 the time, i.e. when substitution contains something like C<${10}> (note the
 bracket) instead of just C<$10> (29616 - 29619).
 
+=item *
+
+Fix bug #4503, newCONSTSUB() is now thread safe.
+
 =back
 
 =head2 Platform Specific Fixes
@@ -1577,6 +1596,13 @@ Calling C<dump()> from Win32 and cygwin now gives a proper fatal error (26947).
 
 Avoid a segfault for perl built without C<PERL_DONT_CREATE_GVSV> defined
 when writing to C<$ARGV>. (32472, 32473)
+
+=item *
+
+The special variable C<$^R> is now more consistently set when executing
+regexps using the C<(?{...})> construct.  In particular, it will still
+be set even if backreferences or optional sub-patterns C<(?:...)?> are
+used.  (30100)
 
 =back
 

@@ -2,7 +2,7 @@
 use strict;
 use autodie;
 use constant DEBUG => 1;
-use constant ALREADY_DONE => "2008-05";
+use constant ALREADY_DONE => "2008-08";
 
 my $changes = shift;
 

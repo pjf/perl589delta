@@ -9,6 +9,7 @@
 2007-02-a - DONE, MERGED (Adam Flott)
 2007-02-c - DONE, MERGED (Brad Dean)
 2007-02-d - DONE, MERGED (Abhijit Menon-Sen (aka crab))
+2007-02-f - DONE, MERGED (Michael G. Schwern)
 2007-02-g - DONE, MERGED (Moritz Lenz)
 2007-02-h - DONE, MERGED (Moritz Lenz)
 2007-03 - DONE, MERGED (Vincent Pit)
@@ -19,6 +20,8 @@
 2007-11-a - DONE, MERGED (Brad Dean)
 2007-11-b - DONE, MERGED (Brad Dean)
 2007-11-d - DONE, MERGED (Abhijit Menon-Sen (aka crab))
+2007-11-g - DONE, MERGED (Michael Schwern)
+2007-11-h - DONE, MERGED (Michael Schwern)
 2007-11-i - DONE, MERGED (Eddy Tan)
 2007-11-j - DONE, MERGED (Abhijit Menon-Sen (aka crab))
 2007-12   - DONE, MERGED (Abhijit Menon-Sen (aka crab))
@@ -44,11 +47,9 @@
 
 == AVAILABLE ==
 
-2007-02-f - ==> Nobody <==  6k
-2007-11-g - ==> Nobody <== 16k
-2007-11-h - ==> Nobody <== 20k
 2008-02   - ==> Nodody <== 57k
-2008-09   - ==> Nobody <== 31k (and growing!)
+2008-09   - ==> Nobody <== 52k
+2008-10   - ==> Nobody <== 19k (and growing)
 
 == NOTES ==
 
