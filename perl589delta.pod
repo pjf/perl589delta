@@ -733,6 +733,10 @@ C<Unicode::Normalize> upgraded to version 1.01
 
 =item *
 
+C<Unicode::UCD> upgraded to version 0.25
+
+=item *
+
 C<Win32> upgraded to version 0.34
 
 =item *

@@ -1,13 +1,3 @@
-[ 32349] By: nicholas				   on 2007/11/16  23:31:39
-	Log: Integrate:
-	     [ 31237]
-	     Subject: [PATCH] Unicode::UCD: add general category and bidi type interfaces
-	     From: Jarkko Hietaniemi <jhi@cc.hut.fi>
-	     Date: Fri, 18 May 2007 03:45:29 +0300 (EEST)
-	     Message-Id: <200705180045.l4I0jTeI221780@kosh.hut.fi>
-     Branch: maint-5.8/perl
-	  !> lib/Unicode/UCD.pm lib/Unicode/UCD.t
-____________________________________________________________________________
 [ 32348] By: nicholas				   on 2007/11/16  23:12:47
 	Log: Integrate:
 	     [ 31082]
