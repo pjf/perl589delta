@@ -1,8 +1,3 @@
-[ 32373] By: nicholas				   on 2007/11/17  17:16:59
-	Log: Dear perforce, please stop being hateful.
-     Branch: maint-5.8/perl
-	   - lib/Test/Simple/t/BEGIN_use_ok.t
-____________________________________________________________________________
 [ 32371] By: nicholas				   on 2007/11/17  16:19:24
 	Log: Integrate:
 	     [ 31398]
