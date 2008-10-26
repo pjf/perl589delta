@@ -1,30 +1,3 @@
-[ 32368] By: nicholas				   on 2007/11/17  15:06:50
-	Log: Integrate:
-	     [ 31123]
-	     Subject: The revenge of the consts
-	     From: andy@petdance.com (Andy Lester)
-	     Date: Thu, 3 May 2007 00:45:54 -0500
-	     Message-ID: <20070503054554.GA30975@petdance.com>
-	     
-	     [ 31167]
-	     Subject: [PATCH] more consting
-	     From: andy@petdance.com (Andy Lester)
-	     Date: Mon, 7 May 2007 11:34:16 -0500
-	     Message-ID: <20070507163416.GA6187@petdance.com>
-	     
-	     [ 31270]
-	     Subject: [PATCH] Consting dump.c
-	     From: Andy Lester <andy@petdance.com>
-	     Date: Thu, 24 May 2007 13:25:43 -0500
-	     Message-Id: <B46A083E-A133-4D38-9BE8-BE1EB0AAA326@petdance.com>
-	     
-	     [ 32014]
-	     One const too much. (Unfortunately, the Copy macro casts
-	     the constness away, so the compiler cannot detect this.)
-     Branch: maint-5.8/perl
-	  !> XSUB.h av.c doio.c doop.c dump.c embed.fnc hv.c numeric.c
-	  !> proto.h regcomp.c
-____________________________________________________________________________
 [ 32365] By: nicholas				   on 2007/11/17  13:47:46
 	Log: Integrate:
 	     [ 31119]
