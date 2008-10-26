@@ -1,9 +1,3 @@
-[ 32378] By: nicholas				   on 2007/11/17  19:36:09
-	Log: Remove references to 5.10 regexp constructions.
-	     (Easier to do it this way than try to fix it as part of the merging)
-     Branch: maint-5.8/perl
-	   ! pod/perlrebackslash.pod pod/perlrecharclass.pod
-____________________________________________________________________________
 [ 32377] By: nicholas				   on 2007/11/17  19:27:36
 	Log: Integrate:
 	     [ 31110]
