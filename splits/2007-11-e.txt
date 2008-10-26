@@ -1,14 +1,3 @@
-[ 32365] By: nicholas				   on 2007/11/17  13:47:46
-	Log: Integrate:
-	     [ 31119]
-	     Subject: [perl #42839] Swatch hash cache has key mismatch 
-	     From: Jonathan Steinert (via RT) <perlbug-followup@perl.org>
-	     Date: Tue, 01 May 2007 05:18:52 -0700
-	     Message-ID: <rt-3.6.HEAD-30557-1178021932-1416.42839-75-0@perl.org>
-     Branch: maint-5.8/perl
-	  +> t/uni/cache.t
-	  !> MANIFEST lib/utf8_heavy.pl
-____________________________________________________________________________
 [ 32364] By: nicholas				   on 2007/11/17  13:28:27
 	Log: Integrate:
 	     [ 29204]

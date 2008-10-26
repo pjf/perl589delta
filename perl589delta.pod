@@ -1326,6 +1326,11 @@ bracket) instead of just C<$10> (29616 - 29619).
 
 Fix bug #4503, newCONSTSUB() is now thread safe.
 
+=item *
+
+Fix bug #42839 - the unicode swatch cache is now used (the lookup had a key
+mismatch).
+
 =back
 
 =head2 Platform Specific Fixes
