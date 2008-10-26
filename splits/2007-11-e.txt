@@ -1,16 +1,3 @@
-[ 32358] By: nicholas				   on 2007/11/17  11:25:48
-	Log: Integrate:
-	     [ 31045]
-	     inline S_init_lexer() and regen
-	     
-	     [ 31046]
-	     eliminate some uses of PL_linestr in perl.c
-	     
-	     [ 31083]
-	     eliminate "unused var" warning
-     Branch: maint-5.8/perl
-	  !> embed.fnc embed.h perl.c proto.h
-____________________________________________________________________________
 [ 32356] By: nicholas				   on 2007/11/17  00:05:48
 	Log: Integrate:
 	     [ 32354]
