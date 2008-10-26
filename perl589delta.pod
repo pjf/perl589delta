@@ -612,7 +612,35 @@ C<Term::ReadLine> upgraded to version 1.03 (31862)
 
 =item *
 
-C<Test::Simple> upgraded to version 0.70
+C<Test::Builder> upgraded to version 0.72 (32371)
+
+=item *
+
+C<Test::Builder::Module> upgraded to version 0.72 (32371)
+
+=item *
+
+C<Test::Builder::Tester> upgraded to version 1.09 (32371)
+
+=item *
+
+C<Test::More> upgraded to version 0.72 (32371)
+
+=item *
+
+C<Test::Simple> upgraded to version 0.72 (32371)
+
+=item *
+
+C<Test::Harness> upgraded version to 2.64
+
+=over
+
+=item *
+
+This made it able to handle newlines.
+
+=back
 
 =item *
 
@@ -629,18 +657,6 @@ C<Text::Soundex> upgraded to version 3.02
 =item *
 
 C<Text::Tabs> upgraded to version 2007.1117
-
-=item *
-
-C<Test::Harness> upgraded version to 2.64
-
-=over
-
-=item *
-
-This made it able to handle newlines.
-
-=back
 
 =item *
 
