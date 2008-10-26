@@ -13,6 +13,8 @@ There are no changes incompatible with 5.8.8.
 
 =head1 Core Enhancements
 
+readpipe() (and thus `` and qx//) can now be overridden.
+
 Nicholas Clark allowed symbolic references to have embedded NULs. The new
 public function C<get_cvn_flags> can be used in extensions if you have to
 handle them.
@@ -543,6 +545,10 @@ C<POSIX> imports previously duplicated constants from C<Fcntl>, version bumped f
 =item *
 
 C<POSIX::setlocale> safer to call multiple times.
+
+=item *
+
+C<re> gains the regmust() function.
 
 =item *
 
