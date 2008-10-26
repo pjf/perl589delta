@@ -1,22 +1,3 @@
-[ 32370] By: nicholas				   on 2007/11/17  15:41:47
-	Log: Integrate:
-	     [ 28185]
-	     Can't do require Foo if $tainted; because taint tunnels.
-	     (Documented, but I regard this as a serious practical deficiency in
-	     tainting) 
-	     
-	     [ 29419]
-	     Upgrade to Tie-RefHash-1.35_01, which is just a version change for
-	     bleadperl.
-	     
-	     [ 31166]
-	     Subject: Sync Tie::RefHash with CPAN (1.37)
-	     From: Yuval Kogman <nothingmuch@woobling.org>
-	     Date: Mon, 7 May 2007 18:35:08 +0300
-	     Message-ID: <20070507153508.GZ17982@woobling.org>
-     Branch: maint-5.8/perl
-	  !> lib/Tie/RefHash.pm lib/Tie/RefHash/threaded.t
-____________________________________________________________________________
 [ 32369] By: nicholas				   on 2007/11/17  15:23:17
 	Log: Regenerate headers.
      Branch: maint-5.8/perl
