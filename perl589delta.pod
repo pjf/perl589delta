@@ -1635,6 +1635,11 @@ regexps using the C<(?{...})> construct.  In particular, it will still
 be set even if backreferences or optional sub-patterns C<(?:...)?> are
 used.  (30100)
 
+=item *
+
+Avoid a subtle problem which caused L<SQL::Translator> to mistakenly
+see a proxy constant subroutines as a GV (typeglob structure). (32172)
+
 =back
 
 =head1 New or Changed Diagnostics
@@ -1673,6 +1678,11 @@ pragma (28903).
 
 New error, introduced as part of the fix to RT #40641 to handle encoding
 of unicode characters in regular expression comments.
+
+=head2 FETCHSIZE returned a negative value
+
+New error indicating that a tied array has claimed to have a negative
+number of elements (31116).
 
 =head1 Changed Internals
 

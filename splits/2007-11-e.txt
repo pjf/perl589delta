@@ -1,21 +1,3 @@
-[ 32355] By: nicholas				   on 2007/11/16  23:57:47
-	Log: Integrate:
-	     [ 31116]
-	     Subject: [PATCH] When FETCHSIZE returns <0 perl segfaults
-	     From: "Ævar Arnfjörð Bjarmason" <avarab@gmail.com>
-	     Date: Tue, 1 May 2007 21:06:47 +0000
-	     Message-ID: <51dd1af80705011406j7897772bm58e9c770183ef3ed@mail.gmail.com>
-	     
-	     [ 32172]
-	     SQL::Translator triggered a subtle piece of wrongness, whereby it
-	     managed to cause a proxy constant subroutine in the symbol table to
-	     be upgraded to a GV at precisely the point where it was being
-	     considered as a possible IO handle name. The core's user-space visible
-	     behaviour certainly was buggy - I believe this patch to be the correct
-	     fix. However, it seems to be very hard to write a test for it.
-     Branch: maint-5.8/perl
-	  !> gv.c mg.c pod/perldiag.pod t/op/tiearray.t
-____________________________________________________________________________
 [ 32349] By: nicholas				   on 2007/11/16  23:31:39
 	Log: Integrate:
 	     [ 31237]
