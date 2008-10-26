@@ -1,17 +1,5 @@
 [ 32348] By: nicholas				   on 2007/11/16  23:12:47
 	Log: Integrate:
-	     [ 31664]
-	     Subject: [rt.cpan.org #28537] PATCH for croak.t test failure 
-	     From: Slaven_Rezic via RT <bug-Storable@rt.cpan.org>
-	     Date: Sun, 29 Jul 2007 05:10:46 -0400
-	     Message-Id: <rt-3.6.HEAD-28249-1185700244-992.28537-4-0@rt.cpan.org>
-	     
-	     "The attached patch solves a possible failure in the croak.t
-	     test. It seems that in some version Config.pm pre-loads Carp.pm,
-	     causing the test to fail. The patch just makes sure that
-	     Config.pm is only loaded when building Storable within core
-	     perl."
-	     
 	     [ 31678]
 	     Subject: problems in ext/Storable/t/file_magic.t on EBCDIC platform
 	     From: Chun Bing Ge <gecb@cn.ibm.com>
