@@ -542,6 +542,10 @@ C<POSIX> imports previously duplicated constants from C<Fcntl>, version bumped f
 
 =item *
 
+C<POSIX::setlocale> safer to call multiple times.
+
+=item *
+
 C<SDBM_File> upgraded to version 1.06
 
 =over
@@ -746,6 +750,11 @@ C<h2xs> has examples for h2xs -X (31175)
 
 The Emacs perl mode (emacs/cperl-mode.el) has been updated to version
 5.23.
+
+=item *
+
+C<perlbug> now checks if you're reporting about a non-core module and suggests
+you report it to the CPAN author instead.
 
 =item *
 
