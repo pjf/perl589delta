@@ -833,7 +833,7 @@ L<perlglossary> adds I<deprecated modules and features> and I<to be dropped modu
 L<perlhack> has been updated and added resources on smoke testing.
 
 L<perllocale> documentation is adjusted for the number of localization and
-C<POSIX::setlocale()> to fix debian bug in RT ##379463.
+C<POSIX::setlocale()> to fix debian bug in RT #379463.
 
 L<perlmodlib> is updated with C<CPAN::API::HOWTO> and
 C<Sys::Syslog::win32::Win32> 
