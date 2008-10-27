@@ -5,18 +5,6 @@
 	     (only the ext/IPC/SysV/SysV.xs part of) 
 ____________________________________________________________________________
 
-[ 34036] By: nicholas				   on 2008/06/09  17:51:09
-	Log: Integrate:
-	     [ 34032]
-	     Integrate:
-	     [ 33988]
-	     Embarrassing errors to find: missing quotes in sed commands
-	     
-	     [ 33990]
-	     #33988 for AIX 3 and AIX 4: missing quotes in sed commands
-     Branch: maint-5.8/perl
-	  !> hints/aix.sh hints/aix_3.sh hints/aix_4.sh
-____________________________________________________________________________
 [ 34035] By: nicholas				   on 2008/06/08  22:20:43
 	Log: Integrate:
 	     [ 34034]
