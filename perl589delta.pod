@@ -1319,6 +1319,11 @@ Add Win32 makefile option to link all extensions statically.
 
 Merge WinCE into Win32 directory (30281-30284, 20862)
 
+=item *
+
+Fixed bug RT #54828 in C<perlio.c> when calling C<Binmode()> on Win32 and Cgywin
+may cause segmentation fault.
+
 =back
 
 =head3 VMS

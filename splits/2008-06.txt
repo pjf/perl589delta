@@ -8,13 +8,6 @@ ____________________________________________________________________________
 	Log: Integrate:
 	     [ 34033]
 	     Integrate:
-	     [ 33978]
-	     Subject: [perl #54828] perlio.c has a problem (both 5.8 and 5.10) 
-	     From: "Goro Fuji" (via RT) <perlbug-followup@perl.org>
-	     Date: Sun, 25 May 2008 23:10:42 -0700
-	     Message-ID: <rt-3.6.HEAD-11257-1211782242-1590.54828-75-0@perl.org>
-	     
-	     First chunk of the patch only
 	     
 	     [ 34002]
 	     Subject: [perl #55302] cc_runtime syntax error
