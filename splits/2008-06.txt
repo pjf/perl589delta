@@ -4,19 +4,7 @@
 	     Integrate:
 	     (only the ext/IPC/SysV/SysV.xs part of) 
 ____________________________________________________________________________
-[ 34037] By: nicholas				   on 2008/06/09  18:17:41
-	Log: Integrate:
-	     [ 34033]
-	     Integrate:
-	     
-	     [ 34002]
-	     Subject: [perl #55302] cc_runtime syntax error
-	     From: "Reini Urban via RT" <perlbug-followup@perl.org>
-	     Date: Wed, 04 Jun 2008 14:07:05 -0700
-	     Message-ID: <rt-3.6.HEAD-11257-1212613625-313.55302-15-0@perl.org>
-     Branch: maint-5.8/perl
-	  !> cc_runtime.h perlio.c
-____________________________________________________________________________
+
 [ 34036] By: nicholas				   on 2008/06/09  17:51:09
 	Log: Integrate:
 	     [ 34032]

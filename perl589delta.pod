@@ -1254,6 +1254,11 @@ Fix bug RT #6006, regex replaces using large replacement variables fail some of
 the time, i.e. when substitution contains something like C<${10}> (note the
 bracket) instead of just C<$10> (29616 - 29619).
 
+=item *
+
+Fix bug RT #55302, a long existed bug when using C<B::CC> on threaded perl which
+uses eval will cause syntax error.
+
 =back
 
 =head2 Platform Specific Fixes
