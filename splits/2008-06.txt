@@ -9,12 +9,6 @@ ____________________________________________________________________________
 	     [ 34065]
 	     Integrate:
 	     
-	     [ 33982]
-	     Subject: Re: [perl #55160] perlbug AutoReply: Fix cygwin mount test
-	     From: "Reini Urban" <rurban@x-ray.at>
-	     Date: Sun, 1 Jun 2008 14:51:59 +0200
-	     Message-ID: <6910a60806010551u30199befr43761fe53d5d896@mail.gmail.com>
-	     
 	     [ 34056]
 	     Subject: [perl #47746] Not OK: perl 5.10.0 +RC1 on ia64-linux 2.4.21-sgi302r24
 	     From: "John P. Linderman" <jpl@research.att.com>
