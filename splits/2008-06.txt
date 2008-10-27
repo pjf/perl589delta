@@ -15,10 +15,6 @@ ____________________________________________________________________________
 	     Date: Tue, 27 Nov 2007 13:50:14 -0500 (EST)
 	     Message-Id: <200711271850.lARIoEfN14794612@raptor.research.att.com>
 	     
-	     [ 34060]
-	     Make lib/open.t under -Duseperlio
-     Branch: maint-5.8/perl
-	  !> lib/open.t t/base/rs.t t/lib/cygwin.t t/op/stat.t t/run/exit.t
 ____________________________________________________________________________
 [ 34037] By: nicholas				   on 2008/06/09  18:17:41
 	Log: Integrate:
