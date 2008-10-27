@@ -5,22 +5,6 @@
 	     (only the ext/IPC/SysV/SysV.xs part of) 
 ____________________________________________________________________________
 
-[ 34035] By: nicholas				   on 2008/06/08  22:20:43
-	Log: Integrate:
-	     [ 34034]
-	     Integrate:
-	     [ 33989]
-	     Subject: AW: IO::Dir destructor
-	     From: "Dintelmann, Peter" <Peter.Dintelmann@dresdner-bank.com>
-	     Date: Mon, 2 Jun 2008 14:48:35 +0200
-	     Message-ID: <3852726AFA94DE4F87E616F13F416A5F0216D9BE@naimucu1.ffz00k.rootdom.net>
-	     
-	     [ 33996]
-	     Forgot to update version in DirHandle.pm after updating.
-	     No cookie for me.
-     Branch: maint-5.8/perl
-	  !> lib/DirHandle.pm
-____________________________________________________________________________
 [ 34018] By: nicholas				   on 2008/06/07  17:06:39
 	Log: Integrate:
 	     [ 34017]

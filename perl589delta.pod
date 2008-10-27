@@ -275,6 +275,19 @@ C<Digest::SHA> upgraded to version 5.46
 
 =item *
 
+C<DirHandle> upgraded to version 1.02
+
+=over
+
+=item *
+
+Now localize C<$.>, C<$@>, C<$!>, C<$^E>, and C<$?> before closing directory
+handle to suppress warning about already being closed.
+
+=back
+
+=item *
+
 C<DynaLoader> upgraded to version 1.09 and can now dynamically load a loadable
 object from a file with a non-default file extension.
 
