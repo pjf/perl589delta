@@ -1320,7 +1320,7 @@ uses eval will cause syntax error.
 
 =item *
 
-Fix bug #4503, newCONSTSUB() is now thread safe.
+Fix bug #45053, newCONSTSUB() is now thread safe.
 
 =back
 
