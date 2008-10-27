@@ -20,8 +20,9 @@ foreach (@logs) {
 
 foreach my $name (sort keys %author_email) {
 
-    # No Ben, you can't be counted twice.
+    # No Ben and Schwern, you can't be counted twice.
     next if $name eq "Ben Hengst (system)";
+    next if $name eq "Michael G Schwern";   # G. Schwern is let through.
 
     my $formatted_name = $name;
 

@@ -1,43 +1,3 @@
-[ 30127] By: nicholas				   on 2007/02/05  11:57:18
-	Log: Integrate:
-	     [ 24361]
-	     move the SETJMP exception-handing definitions from scope.h to cop.h
-	     so that a JMPENV* entry can be added to struct block_eval
-	     
-	     [ 24362]
-	     Revert change #15705 (Core dump in 'leavetry')
-	     This fixes bug #34682, reintroduces bug #8738 (ID 20020301.011),
-	     and reintroduces an eval optimisation for innter runops levels
-	     
-	     [ 24363]
-	     Better fix for #8738  (Core dump in 'leavetry')
-	     When in an inner runops loop (eg via a tie or sort), an eval
-	     needs a new JMPENV pushing by S_docatch. If an exception is raised,
-	     control is returned to S_docatch, and it must determine whether
-	     the eval that trapped the exception is an inner eval or an outer
-	     one. In the former case, restart the loop, in the latter case,
-	     rethrow the exception. This is determined by whether we are still
-	     at the same PL_curstackinfo level. This fails in the case of
-	     SPLICE(), which pushes a new SETJMP and runops level, but not a
-	     new stackinfo level. There may be other code which does similar.
-	     The solution is to store the current value of PL_top_env in each
-	     pushed CxEVAL, and see if it's still the same as PL_top_env when
-	     the exception is handled.
-	     
-	     [ 24387]
-	     add test for [perl #34682] leaving eval via last in inner runops
-     Branch: maint-5.8/perl
-	   ! cop.h pp_ctl.c
-	  !> scope.h t/op/eval.t
-____________________________________________________________________________
-[ 30122] By: nicholas				   on 2007/02/04  22:37:19
-	Log: Clear up a maint specific compiler warning - in 5.8.x we have more
-	     than 16 entries in the arena data structures, so SVt_PTE is > 15,
-	     so won't fit in 4 bits. It's not actually needed by the sanity test,
-	     so change its "type" to 0.
-     Branch: maint-5.8/perl
-	   ! sv.c
-____________________________________________________________________________
 [ 30121] By: nicholas				   on 2007/02/04  21:32:10
 	Log: Integrate:
 	     [ 23753]
@@ -103,12 +63,6 @@ ____________________________________________________________________________
 	     DynaLoader upgraded)
      Branch: maint-5.8/perl
 	   ! ext/DynaLoader/DynaLoader_pm.PL ext/DynaLoader/Makefile.PL
-____________________________________________________________________________
-[ 30110] By: nicholas				   on 2007/02/03  19:00:21
-	Log: Clarify that all the dire (sounding) "unsafe" warnings apply to 5005
-	     threads.
-     Branch: maint-5.8/perl
-	   ! gv.c op.c perl.c sv.c
 ____________________________________________________________________________
 [ 30109] By: nicholas				   on 2007/02/03  18:52:20
 	Log: Integrate:
@@ -200,17 +154,6 @@ ____________________________________________________________________________
      Branch: maint-5.8/perl
 	   ! reentr.h
 	  !> pad.c pod/perlembed.pod pod/perlxs.pod reentr.c reentr.pl
-____________________________________________________________________________
-
-[ 30100] By: nicholas				   on 2007/02/02  21:52:26
-	Log: Integrate:
-	     [ 29308]
-	     Subject: [perl #36909] $^R undefined on matches involving backreferences
-	     From: yves orton via RT <bugs-perl5@bugs6.perl.org>
-	     Date: Nov 17, 2006 4:07 PM
-     Branch: maint-5.8/perl
-	   ! t/op/pat.t
-	  !> regcomp.c regexec.c t/op/subst.t
 ____________________________________________________________________________
 [ 30099] By: nicholas				   on 2007/02/02  21:14:53
 	Log: Integrate:
