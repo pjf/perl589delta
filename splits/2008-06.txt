@@ -4,18 +4,6 @@
 	     Integrate:
 	     (only the ext/IPC/SysV/SysV.xs part of) 
 ____________________________________________________________________________
-[ 34066] By: nicholas				   on 2008/06/16  17:12:59
-	Log: Integrate:
-	     [ 34065]
-	     Integrate:
-	     
-	     [ 34056]
-	     Subject: [perl #47746] Not OK: perl 5.10.0 +RC1 on ia64-linux 2.4.21-sgi302r24
-	     From: "John P. Linderman" <jpl@research.att.com>
-	     Date: Tue, 27 Nov 2007 13:50:14 -0500 (EST)
-	     Message-Id: <200711271850.lARIoEfN14794612@raptor.research.att.com>
-	     
-____________________________________________________________________________
 [ 34037] By: nicholas				   on 2008/06/09  18:17:41
 	Log: Integrate:
 	     [ 34033]
