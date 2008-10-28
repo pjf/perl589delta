@@ -18,12 +18,6 @@ ____________________________________________________________________________
 	     
 	     with some spelling nits
 	     
-	     [ 33992]
-	     Small typo fix in Carp.pm
-	     
-	     [ 34014]
-	     $Carp::VERSION++ following change 33992.
-	     
 	     [ 34016]
 	     $attributes::VERSION++ following change 33985.
      Branch: maint-5.8/perl
