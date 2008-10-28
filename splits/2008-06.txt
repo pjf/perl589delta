@@ -9,11 +9,6 @@ ____________________________________________________________________________
 	Log: Integrate:
 	     [ 34017]
 	     Integrate:
-	     [ 33977]
-	     Subject: [perl #54424] perlipc mistype 
-	     From: andrew@sundale.net (via RT) <perlbug-followup@perl.org>
-	     Date: Sun, 18 May 2008 22:20:06 -0700
-	     Message-ID: <rt-3.6.HEAD-11257-1211174406-1790.54424-75-0@perl.org>
 	     
 	     [ 33985]
 	     Subject: [perl #36516] attributes.pm documentation is recursive and incomplete 
