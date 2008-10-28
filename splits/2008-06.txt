@@ -5,24 +5,6 @@
 	     (only the ext/IPC/SysV/SysV.xs part of) 
 ____________________________________________________________________________
 
-[ 34018] By: nicholas				   on 2008/06/07  17:06:39
-	Log: Integrate:
-	     [ 34017]
-	     Integrate:
-	     
-	     [ 33985]
-	     Subject: [perl #36516] attributes.pm documentation is recursive and incomplete 
-	     From: "reneeb via RT" <perlbug-followup@perl.org>
-	     Date: Sun, 25 May 2008 07:30:37 -0700
-	     Message-ID: <rt-3.6.HEAD-19826-1211725834-911.36516-15-0@perl.org>
-	     
-	     with some spelling nits
-	     
-	     [ 34016]
-	     $attributes::VERSION++ following change 33985.
-     Branch: maint-5.8/perl
-	  !> lib/Carp.pm lib/attributes.pm pod/perlipc.pod
-____________________________________________________________________________
 [ 34015] By: nicholas				   on 2008/06/07  16:16:05
 	Log: Integrate:
 	     [ 33955]

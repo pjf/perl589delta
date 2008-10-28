@@ -74,6 +74,10 @@ indicated in $]. The bundled version is 2.12 (31561)
 
 =item *
 
+C<attributes> upgraded to version 0.09
+
+=item *
+
 C<ANSIColor> upgraded to version 1.11
 
 =item *
