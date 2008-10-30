@@ -658,7 +658,35 @@ C<Term::ReadLine> upgraded to version 1.03 (31862)
 
 =item *
 
-C<Test::Simple> upgraded to version 0.70
+C<Test::Builder> upgraded to version 0.72 (32371)
+
+=item *
+
+C<Test::Builder::Module> upgraded to version 0.72 (32371)
+
+=item *
+
+C<Test::Builder::Tester> upgraded to version 1.09 (32371)
+
+=item *
+
+C<Test::More> upgraded to version 0.72 (32371)
+
+=item *
+
+C<Test::Simple> upgraded to version 0.72 (32371)
+
+=item *
+
+C<Test::Harness> upgraded version to 2.64
+
+=over
+
+=item *
+
+This made it able to handle newlines.
+
+=back
 
 =item *
 
@@ -675,18 +703,6 @@ C<Text::Soundex> upgraded to version 3.02
 =item *
 
 C<Text::Tabs> upgraded to version 2007.1117
-
-=item *
-
-C<Test::Harness> upgraded version to 2.64
-
-=over
-
-=item *
-
-This made it able to handle newlines.
-
-=back
 
 =item *
 
@@ -763,9 +779,13 @@ C<Unicode::Normalize> upgraded to version 1.01
 
 =item *
 
+C<Unicode::UCD> upgraded to version 0.25
+
+=item *
+
 C<Win32> upgraded to version 0.38
 
-=over
+=over 4
 
 =item *
 
@@ -897,6 +917,12 @@ C</c> modifiers.
 
 L<perlreguts> describe the internals of the regular expressions engine. It has
 been contributed by Yves Orton.
+
+L<perlrebackslash> describes all perl regular expression backslash and escape
+sequences.
+
+L<perlrecharclass> describes the syntax and use of character classes in
+Perl Regular Expressions.
 
 L<perlrun> is updated to clarify on the hash seed I<PERL_HASH_SEED>. Also more
 information in option B<-x> and B<-u>.
@@ -1364,6 +1390,15 @@ uses eval will cause syntax error.
 
 Fix bug #45053, newCONSTSUB() is now thread safe.
 
+=item *
+
+Fix bug #42839 - the unicode swatch cache is now used (the lookup had a key
+mismatch).
+
+=item *
+
+Fix bug #40641 - fixed encoding of unicode characters in regular expressions.
+
 =back
 
 =head2 Platform Specific Fixes
@@ -1669,6 +1704,11 @@ regexps using the C<(?{...})> construct.  In particular, it will still
 be set even if backreferences or optional sub-patterns C<(?:...)?> are
 used.  (30100)
 
+=item *
+
+Avoid a subtle problem which caused L<SQL::Translator> to mistakenly
+see a proxy constant subroutines as a GV (typeglob structure). (32172)
+
 =back
 
 =head1 New or Changed Diagnostics
@@ -1702,6 +1742,16 @@ question (now represented by %s above).
 
 Changed to add the seek operation and is now included in the default warnings
 pragma (28903).
+
+=head2 Invalid escape in the specified encoding in regex; marked by <-- HERE in m/%s/
+
+New error, introduced as part of the fix to RT #40641 to handle encoding
+of unicode characters in regular expression comments.
+
+=head2 FETCHSIZE returned a negative value
+
+New error indicating that a tied array has claimed to have a negative
+number of elements (31116).
 
 =head1 Changed Internals
 
@@ -1876,11 +1926,6 @@ Test that C<$@> is correctly localised in L<Locale::Maketext>. (25547)
 
 B<TODO> test for "C<goto()> from an if to an else doesn't undo local". (RT #43403)
 
-=item *
-
-Test that all unusued ASCII alpha-numeric command-line switches to the perl
-interpreter are reported as unrecognised. (31754)
- 
 =back
 
 =head1 Changed Tests

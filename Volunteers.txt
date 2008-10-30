@@ -20,6 +20,7 @@
 2007-11-a - DONE, MERGED (Brad Dean)
 2007-11-b - DONE, MERGED (Brad Dean)
 2007-11-d - DONE, MERGED (Abhijit Menon-Sen (aka crab))
+2007-11-e   DONE, MERGED (Brad Dean)
 2007-11-g - DONE, MERGED (Michael Schwern)
 2007-11-h - DONE, MERGED (Michael Schwern)
 2007-11-i - DONE, MERGED (Eddy Tan)
@@ -41,7 +42,6 @@
 2007-02-i - Paul Fenwick                    Last seen, 12th Oct
 2007-02-j - Shawn M Moore (aka Sartak)      Last seen,  7th Oct
 2007-11-c - Ben Hengst                      Last seen,  1st Oct
-2007-11-e - Brad Dean                       Last seen, 20th Oct
 2007-11-f - Crab                            Last seen, 22nd Sep
 2008-06   - Eddy Tan                        Last seen, 20th Oct
 
