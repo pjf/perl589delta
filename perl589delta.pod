@@ -275,6 +275,19 @@ C<Digest::SHA> upgraded to version 5.46
 
 =item *
 
+C<DirHandle> upgraded to version 1.02
+
+=over
+
+=item *
+
+Now localize C<$.>, C<$@>, C<$!>, C<$^E>, and C<$?> before closing directory
+handle to suppress warning about already being closed.
+
+=back
+
+=item *
+
 C<DynaLoader> upgraded to version 1.09 and can now dynamically load a loadable
 object from a file with a non-default file extension.
 
@@ -437,6 +450,10 @@ C<Getopt::Long> upgraded to version 2.37 (32009)
 =item *
 
 C<Hash::Util> upgraded to version 0.07
+
+=item *
+
+C<IPC::SysV> upgraded to version 2.00
 
 =item *
 
@@ -737,7 +754,16 @@ C<Unicode::UCD> upgraded to version 0.25
 
 =item *
 
-C<Win32> upgraded to version 0.34
+C<Win32> upgraded to version 0.38
+
+=over 4
+
+=item *
+
+Added new function C<GetCurrentProcessId()> which returns the regular Window
+process identifier of the current process, even when called from within a fork.
+
+=back
 
 =item *
 
@@ -849,7 +875,7 @@ L<perlglossary> adds I<deprecated modules and features> and I<to be dropped modu
 L<perlhack> has been updated and added resources on smoke testing.
 
 L<perllocale> documentation is adjusted for the number of localization and
-C<POSIX::setlocale()> to fix debian bug in RT ##379463.
+C<POSIX::setlocale()> to fix debian bug in RT #379463.
 
 L<perlmodlib> is updated with C<CPAN::API::HOWTO> and
 C<Sys::Syslog::win32::Win32> 
@@ -1328,7 +1354,12 @@ bracket) instead of just C<$10> (29616 - 29619).
 
 =item *
 
-Fix bug #4503, newCONSTSUB() is now thread safe.
+Fix bug RT #55302, a long existed bug when using C<B::CC> on threaded perl which
+uses eval will cause syntax error.
+
+=item *
+
+Fix bug #45053, newCONSTSUB() is now thread safe.
 
 =item *
 
@@ -1403,6 +1434,11 @@ Add Win32 makefile option to link all extensions statically.
 =item *
 
 Merge WinCE into Win32 directory (30281-30284, 20862)
+
+=item *
+
+Fixed bug RT #54828 in C<perlio.c> when calling C<Binmode()> on Win32 and Cgywin
+may cause segmentation fault.
 
 =back
 
@@ -1905,10 +1941,10 @@ filename if the long name is outside the current codepage (Jan Dubois).
 
 =item *
 
-C<Win32> upgraded to version 0.36. Now has a documented 'WinVista' response
+C<Win32> upgraded to version 0.38. Now has a documented 'WinVista' response
 from GetOSName and support for Vista's privilege elevation in C<IsAdminUser>.
 Support for Unicode characters in path names. Improved cygwin and Win64
-compatibility.
+compatibility. 
 
 =item *
 
