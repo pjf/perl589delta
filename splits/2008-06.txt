@@ -24,11 +24,6 @@ ____________________________________________________________________________
      Branch: maint-5.8/perl
 	  !> lib/lib.t lib/lib_pm.PL
 ____________________________________________________________________________
-[ 34008] By: nicholas				   on 2008/06/07  12:29:04
-	Log: Fix up MANIFEST after 34007.
-     Branch: maint-5.8/perl
-	   ! MANIFEST
-____________________________________________________________________________
 [ 33994] By: craigb				   on 2008/06/04  03:05:26
 	Log: Perl_start_glob VMS fix adapted from change #33993 for 5.8.x since
 	     other dependencies prevent integration.
