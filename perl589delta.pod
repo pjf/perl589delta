@@ -461,6 +461,18 @@ C<IPC::SysV> upgraded to version 2.00
 
 =item *
 
+C<lib> upgraded to version 0.56
+
+=over
+
+=item *
+
+Avoid warning about loading F<.par> files
+
+=back
+
+=item *
+
 C<libnet> upgraded to version 1.20
 
 =item *

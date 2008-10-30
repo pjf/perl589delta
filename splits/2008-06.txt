@@ -11,14 +11,6 @@ ____________________________________________________________________________
 	     Integrate:
 	     ...
 	     
-	     [ 33927]
-	     Subject: [PATCH] lib.pm should not warn about loading .par files
-	     From: Paul Fenwick <pjf@perltraining.com.au>
-	     Date: Thu, 22 May 2008 23:24:34 +1000
-	     Message-ID: <48357412.5020703@perltraining.com.au>
-	     
-	     ...
-	     
 	     [ 34011]
 	     Integrate:
 	     [ 33973]
