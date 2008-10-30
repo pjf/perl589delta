@@ -38,3 +38,6 @@
   is correct what comment (if any) to put in. -- Brad
 * Check final version of File::Copy - I suspect an upgrade I've documented
   may be superseded somewhere. -- Brad
+* In 2008-06.txt, changes 33718, 33980, 34011 seem to be dealing with 5.10 only
+  but I am *not* certain if it also affects 5.8
+* Change 33994 - dunno what this fix for VMS is about.
