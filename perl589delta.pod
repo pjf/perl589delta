@@ -477,7 +477,7 @@ C<libnet> upgraded to version 1.20
 
 =item *
 
-C<Locale::Maketext> upgraded to 1.12
+C<Locale::Maketext> upgraded to 1.13
 
 =item *
 
