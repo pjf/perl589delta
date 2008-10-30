@@ -18,7 +18,7 @@ foreach (@logs) {
     $author_email{$1} = $2 if /^Author: (.*?)\s*<(.*)>/;
 }
 
-foreach my $name (sort keys %author_email) {
+foreach my $name (sort {lc $a cmp lc $b } keys %author_email) {
 
     # No Ben and Schwern, you can't be counted twice.
     next if $name eq "Ben Hengst (system)";
