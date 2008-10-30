@@ -24,22 +24,6 @@ ____________________________________________________________________________
      Branch: maint-5.8/perl
 	  !> lib/lib.t lib/lib_pm.PL
 ____________________________________________________________________________
-[ 34012] By: nicholas				   on 2008/06/07  15:02:39
-	Log: Integrate:
-	     [ 33955]
-	     Integrate:
-	     ...
-	     
-	     [ 33937]
-	     [perl #54758] Perl 5.10 memory corruption
-	     When @a = sort @a is pessimised if @a has magic,
-	     growing the stack requires various pointers to be reset in case
-	     the stack gets reallocated.
-	     
-	     ...
-     Branch: maint-5.8/perl
-	  !> pp_sort.c
-____________________________________________________________________________
 [ 34010] By: nicholas				   on 2008/06/07  14:27:04
 	Log: Integrate:
 	     [ 33976]
