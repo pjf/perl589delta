@@ -24,30 +24,6 @@ ____________________________________________________________________________
      Branch: maint-5.8/perl
 	  !> lib/lib.t lib/lib_pm.PL
 ____________________________________________________________________________
-[ 34010] By: nicholas				   on 2008/06/07  14:27:04
-	Log: Integrate:
-	     [ 33976]
-	     Integrate:
-	     [ 32827]
-	     Upgrade to Devel::PPPort 3.13_01
-	     
-	     [ 33672]
-	     Upgrade to Devel::PPPort 3.13_02
-	     
-	     [ 33824]
-	     Upgrade to Devel::PPPort 3.13_03
-	     
-	     [ 33975]
-	     Upgrade to Devel::PPPort 3.14
-     Branch: maint-5.8/perl
-	  +> ext/Devel/PPPort/parts/base/5010000
-	  +> ext/Devel/PPPort/parts/base/5011000
-	  +> ext/Devel/PPPort/parts/inc/newSVpv
-	  +> ext/Devel/PPPort/parts/todo/5010000
-	  +> ext/Devel/PPPort/parts/todo/5011000
-	  +> ext/Devel/PPPort/t/format.t ext/Devel/PPPort/t/newSVpv.t
-	  !> (integrate 71 files)
-____________________________________________________________________________
 [ 34009] By: nicholas				   on 2008/06/07  14:01:05
 	Log: Integrate:
 	     [ 33960]
