@@ -5,28 +5,6 @@
 	     (only the ext/IPC/SysV/SysV.xs part of) 
 ____________________________________________________________________________
 
-[ 34015] By: nicholas				   on 2008/06/07  16:16:05
-	Log: Integrate:
-	     [ 33955]
-	     Integrate:
-	     ...
-	     
-	     [ 33951]
-	     Add index() tests for embedded nulls
-	     
-	     Subject:  Re: [perl #53746] bug with index() matching beyond end of string when \0 bytes (00000000) are involved
-	     From:  Abigail <abigail@abigail.be>
-	     Date:  Tue, 6 May 2008 14:57:36 +0200
-	     Message-Id:  <20080506125736.GC17310@abigail.be>
-	     
-	     [ 33952]
-	     [perl #53746] bug with index() matching beyond end of string
-	     An off-by-one error meant that index($str,...)
-	     was effectively being executed as index("$str\0", ...).
-	     Probably introduced by change #26511.
-     Branch: maint-5.8/perl
-	  !> t/op/index.t util.c
-____________________________________________________________________________
 [ 34013] By: nicholas				   on 2008/06/07  15:12:43
 	Log: Integrate:
 	     [ 33955]
