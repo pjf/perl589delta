@@ -37,12 +37,6 @@ ____________________________________________________________________________
 	     Date: Fri, 9 Jul 2004 17:06:07 -0500 (CDT)
 	     Message-ID: <Pine.LNX.4.58.0407091703010.4578@urth.org>
 	     
-	     [ 25261]
-	     Subject: [PATCH] Typos in *.p[lm]
-	     From: "Piotr Fusik" <pfusik@op.pl>
-	     Date: Sun, 31 Jul 2005 12:50:04 +0200
-	     Message-ID: <001401c595bd$dccb5d80$0bd34dd5@piec>
-	     
 	     [ 33943]
 	     Integrate:
 	     ...
