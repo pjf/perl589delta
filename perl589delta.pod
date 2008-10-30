@@ -513,6 +513,19 @@ C<Net::Ping> upgraded to version 2.35 [33242]
 
 =item *
 
+C<NEXT> upgraded to version 0.61 [34007]
+
+=over
+
+=item *
+
+Fix several bugs with L<NEXT> when working with C<AUTOLOAD>, C<eval> block, and
+within overloaded stringification.
+
+=back
+
+=item *
+
 C<NDBM_File> upgraded to version 1.07
 
 =over

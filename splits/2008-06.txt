@@ -29,47 +29,6 @@ ____________________________________________________________________________
      Branch: maint-5.8/perl
 	   ! MANIFEST
 ____________________________________________________________________________
-[ 34007] By: nicholas				   on 2008/06/07  12:11:34
-	Log: Integrate:
-	     [ 23075]
-	     Subject: Bug with NEXT when called from an eval block
-	     From: Dave Rolsky <autarch@urth.org>
-	     Date: Fri, 9 Jul 2004 17:06:07 -0500 (CDT)
-	     Message-ID: <Pine.LNX.4.58.0407091703010.4578@urth.org>
-	     
-	     [ 33943]
-	     Integrate:
-	     ...
-	     
-	     [ 33416]
-	     Subject: Re: [PATCH] NEXT.pm bug within overloaded stringification
-	     From: Marcel Grünauer <gr@univie.ac.at>
-	     Message-Id: <511B0A54-AB2D-4A65-A02E-E2E07C043EAB@univie.ac.at>
-	     Date: Mon, 3 Mar 2008 16:08:48 +0100
-	     
-	     (a resend of <7BBCFD93-91CF-4656-A97F-ED5E749F7B2E@univie.ac.at>)
-	     
-	     ...
-	     
-	     [ 33439]
-	     Bump VERSION after change #33416
-	     (so we don't end up with different code but same version in
-	     5.10.0 and, say, 5.10.1)
-	     
-	     ...
-	     
-	     [ 34006]
-	     Integrate:
-	     [ 33991]
-	     Update to NEXT by Damian.
-	     This fixes the working of NEXT with AUTOLOAD.
-	     
-	     [ 33995]
-	     Bump NEXT version to 0.61 for CPAN release
-     Branch: maint-5.8/perl
-	  +> lib/NEXT/t/stringify.t
-	  !> lib/NEXT.pm lib/NEXT/t/next.t
-____________________________________________________________________________
 [ 33994] By: craigb				   on 2008/06/04  03:05:26
 	Log: Perl_start_glob VMS fix adapted from change #33993 for 5.8.x since
 	     other dependencies prevent integration.
