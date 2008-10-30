@@ -30,6 +30,7 @@
 2008-03 - DONE, MERGED (Abhijit Menon-Sen (aka crab))
 2008-04 - DONE, MERGED (Abhijit Menon-Sen (aka crab))
 2008-05 - DONE, MERGED (Mark Aufflick)
+2008-06   DONE, MERGED (Eddy Tan)
 
 
 == IN PROGRESS ==
@@ -43,7 +44,6 @@
 2007-02-j - Shawn M Moore (aka Sartak)      Last seen,  7th Oct
 2007-11-c - Ben Hengst                      Last seen,  1st Oct
 2007-11-f - Crab                            Last seen, 22nd Sep
-2008-06   - Eddy Tan                        Last seen, 20th Oct
 
 == AVAILABLE ==
 
